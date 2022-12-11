@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static LunaRiteTakeSacrificeRewardRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiRMdW5hUml0ZVRha2VTYWNyaWZpY2VSZXdhcmRSc3AucHJvdG8ikAEKHkx1",
-            "bmFSaXRlVGFrZVNhY3JpZmljZVJld2FyZFJzcBINCgVpbmRleBgLIAEoDRId",
-            "ChVzYWNyaWZpY2VfcmV3YXJkX2xpc3QYAiADKA0SHgoWc2FjcmlmaWNlX3Jl",
-            "d2FyZF9pbmRleBgOIAEoDRIPCgdhcmVhX2lkGAYgASgNEg8KB3JldGNvZGUY",
-            "DCABKAVCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "CiRMdW5hUml0ZVRha2VTYWNyaWZpY2VSZXdhcmRSc3AucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8ikAEKHkx1bmFSaXRlVGFrZVNh",
+            "Y3JpZmljZVJld2FyZFJzcBIPCgdhcmVhX2lkGA4gASgNEg8KB3JldGNvZGUY",
+            "ASABKAUSHgoWc2FjcmlmaWNlX3Jld2FyZF9pbmRleBgGIAEoDRIdChVzYWNy",
+            "aWZpY2VfcmV3YXJkX2xpc3QYCSADKA0SDQoFaW5kZXgYBCABKA1iBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.LunaRiteTakeSacrificeRewardRsp), global::Weedwacker.Shared.Network.Proto.LunaRiteTakeSacrificeRewardRsp.Parser, new[]{ "Index", "SacrificeRewardList", "SacrificeRewardIndex", "AreaId", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.LunaRiteTakeSacrificeRewardRsp), global::Weedwacker.Shared.Network.Proto.LunaRiteTakeSacrificeRewardRsp.Parser, new[]{ "AreaId", "Retcode", "SacrificeRewardIndex", "SacrificeRewardList", "Index" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8397
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8895;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class LunaRiteTakeSacrificeRewardRsp : pb::IMessage<LunaRiteTakeSacrificeRewardRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,11 +83,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LunaRiteTakeSacrificeRewardRsp(LunaRiteTakeSacrificeRewardRsp other) : this() {
-      index_ = other.index_;
-      sacrificeRewardList_ = other.sacrificeRewardList_.Clone();
-      sacrificeRewardIndex_ = other.sacrificeRewardIndex_;
       areaId_ = other.areaId_;
       retcode_ = other.retcode_;
+      sacrificeRewardIndex_ = other.sacrificeRewardIndex_;
+      sacrificeRewardList_ = other.sacrificeRewardList_.Clone();
+      index_ = other.index_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,43 +97,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new LunaRiteTakeSacrificeRewardRsp(this);
     }
 
-    /// <summary>Field number for the "index" field.</summary>
-    public const int IndexFieldNumber = 11;
-    private uint index_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Index {
-      get { return index_; }
-      set {
-        index_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "sacrifice_reward_list" field.</summary>
-    public const int SacrificeRewardListFieldNumber = 2;
-    private static readonly pb::FieldCodec<uint> _repeated_sacrificeRewardList_codec
-        = pb::FieldCodec.ForUInt32(18);
-    private readonly pbc::RepeatedField<uint> sacrificeRewardList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> SacrificeRewardList {
-      get { return sacrificeRewardList_; }
-    }
-
-    /// <summary>Field number for the "sacrifice_reward_index" field.</summary>
-    public const int SacrificeRewardIndexFieldNumber = 14;
-    private uint sacrificeRewardIndex_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SacrificeRewardIndex {
-      get { return sacrificeRewardIndex_; }
-      set {
-        sacrificeRewardIndex_ = value;
-      }
-    }
-
     /// <summary>Field number for the "area_id" field.</summary>
-    public const int AreaIdFieldNumber = 6;
+    public const int AreaIdFieldNumber = 14;
     private uint areaId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -141,7 +110,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 12;
+    public const int RetcodeFieldNumber = 1;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -149,6 +118,41 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return retcode_; }
       set {
         retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "sacrifice_reward_index" field.</summary>
+    public const int SacrificeRewardIndexFieldNumber = 6;
+    private uint sacrificeRewardIndex_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SacrificeRewardIndex {
+      get { return sacrificeRewardIndex_; }
+      set {
+        sacrificeRewardIndex_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "sacrifice_reward_list" field.</summary>
+    public const int SacrificeRewardListFieldNumber = 9;
+    private static readonly pb::FieldCodec<uint> _repeated_sacrificeRewardList_codec
+        = pb::FieldCodec.ForUInt32(74);
+    private readonly pbc::RepeatedField<uint> sacrificeRewardList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> SacrificeRewardList {
+      get { return sacrificeRewardList_; }
+    }
+
+    /// <summary>Field number for the "index" field.</summary>
+    public const int IndexFieldNumber = 4;
+    private uint index_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Index {
+      get { return index_; }
+      set {
+        index_ = value;
       }
     }
 
@@ -167,11 +171,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Index != other.Index) return false;
-      if(!sacrificeRewardList_.Equals(other.sacrificeRewardList_)) return false;
-      if (SacrificeRewardIndex != other.SacrificeRewardIndex) return false;
       if (AreaId != other.AreaId) return false;
       if (Retcode != other.Retcode) return false;
+      if (SacrificeRewardIndex != other.SacrificeRewardIndex) return false;
+      if(!sacrificeRewardList_.Equals(other.sacrificeRewardList_)) return false;
+      if (Index != other.Index) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -179,11 +183,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Index != 0) hash ^= Index.GetHashCode();
-      hash ^= sacrificeRewardList_.GetHashCode();
-      if (SacrificeRewardIndex != 0) hash ^= SacrificeRewardIndex.GetHashCode();
       if (AreaId != 0) hash ^= AreaId.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (SacrificeRewardIndex != 0) hash ^= SacrificeRewardIndex.GetHashCode();
+      hash ^= sacrificeRewardList_.GetHashCode();
+      if (Index != 0) hash ^= Index.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -202,22 +206,22 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      sacrificeRewardList_.WriteTo(output, _repeated_sacrificeRewardList_codec);
-      if (AreaId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(AreaId);
-      }
-      if (Index != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(Index);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(8);
         output.WriteInt32(Retcode);
       }
+      if (Index != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Index);
+      }
       if (SacrificeRewardIndex != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(48);
         output.WriteUInt32(SacrificeRewardIndex);
+      }
+      sacrificeRewardList_.WriteTo(output, _repeated_sacrificeRewardList_codec);
+      if (AreaId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(AreaId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -229,22 +233,22 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      sacrificeRewardList_.WriteTo(ref output, _repeated_sacrificeRewardList_codec);
-      if (AreaId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(AreaId);
-      }
-      if (Index != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(Index);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(8);
         output.WriteInt32(Retcode);
       }
+      if (Index != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Index);
+      }
       if (SacrificeRewardIndex != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(48);
         output.WriteUInt32(SacrificeRewardIndex);
+      }
+      sacrificeRewardList_.WriteTo(ref output, _repeated_sacrificeRewardList_codec);
+      if (AreaId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(AreaId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -256,18 +260,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Index != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Index);
-      }
-      size += sacrificeRewardList_.CalculateSize(_repeated_sacrificeRewardList_codec);
-      if (SacrificeRewardIndex != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SacrificeRewardIndex);
-      }
       if (AreaId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AreaId);
       }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (SacrificeRewardIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SacrificeRewardIndex);
+      }
+      size += sacrificeRewardList_.CalculateSize(_repeated_sacrificeRewardList_codec);
+      if (Index != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Index);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -281,18 +285,18 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Index != 0) {
-        Index = other.Index;
-      }
-      sacrificeRewardList_.Add(other.sacrificeRewardList_);
-      if (other.SacrificeRewardIndex != 0) {
-        SacrificeRewardIndex = other.SacrificeRewardIndex;
-      }
       if (other.AreaId != 0) {
         AreaId = other.AreaId;
       }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
+      }
+      if (other.SacrificeRewardIndex != 0) {
+        SacrificeRewardIndex = other.SacrificeRewardIndex;
+      }
+      sacrificeRewardList_.Add(other.sacrificeRewardList_);
+      if (other.Index != 0) {
+        Index = other.Index;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -309,25 +313,25 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18:
-          case 16: {
-            sacrificeRewardList_.AddEntriesFrom(input, _repeated_sacrificeRewardList_codec);
-            break;
-          }
-          case 48: {
-            AreaId = input.ReadUInt32();
-            break;
-          }
-          case 88: {
-            Index = input.ReadUInt32();
-            break;
-          }
-          case 96: {
+          case 8: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 112: {
+          case 32: {
+            Index = input.ReadUInt32();
+            break;
+          }
+          case 48: {
             SacrificeRewardIndex = input.ReadUInt32();
+            break;
+          }
+          case 74:
+          case 72: {
+            sacrificeRewardList_.AddEntriesFrom(input, _repeated_sacrificeRewardList_codec);
+            break;
+          }
+          case 112: {
+            AreaId = input.ReadUInt32();
             break;
           }
         }
@@ -345,25 +349,25 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18:
-          case 16: {
-            sacrificeRewardList_.AddEntriesFrom(ref input, _repeated_sacrificeRewardList_codec);
-            break;
-          }
-          case 48: {
-            AreaId = input.ReadUInt32();
-            break;
-          }
-          case 88: {
-            Index = input.ReadUInt32();
-            break;
-          }
-          case 96: {
+          case 8: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 112: {
+          case 32: {
+            Index = input.ReadUInt32();
+            break;
+          }
+          case 48: {
             SacrificeRewardIndex = input.ReadUInt32();
+            break;
+          }
+          case 74:
+          case 72: {
+            sacrificeRewardList_.AddEntriesFrom(ref input, _repeated_sacrificeRewardList_codec);
+            break;
+          }
+          case 112: {
+            AreaId = input.ReadUInt32();
             break;
           }
         }

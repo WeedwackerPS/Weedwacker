@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static ReunionBriefInfoRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlSZXVuaW9uQnJpZWZJbmZvUnNwLnByb3RvGhZSZXVuaW9uQnJpZWZJbmZv",
-            "LnByb3RvImoKE1JldW5pb25CcmllZkluZm9Sc3ASEwoLaXNfYWN0aXZhdGUY",
-            "DSABKAgSDwoHcmV0Y29kZRgOIAEoBRItChJyZXVuaW9uX2JyaWVmX2luZm8Y",
-            "BSABKAsyES5SZXVuaW9uQnJpZWZJbmZvQiKqAh9XZWVkd2Fja2VyLlNoYXJl",
-            "ZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChlSZXVuaW9uQnJpZWZJbmZvUnNwLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvGhZSZXVuaW9uQnJpZWZJbmZvLnByb3RvIooBChNS",
+            "ZXVuaW9uQnJpZWZJbmZvUnNwEg8KB3JldGNvZGUYAiABKAUSTQoScmV1bmlv",
+            "bl9icmllZl9pbmZvGA0gASgLMjEuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90by5SZXVuaW9uQnJpZWZJbmZvEhMKC2lzX2FjdGl2YXRlGA8gASgI",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ReunionBriefInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ReunionBriefInfoRsp), global::Weedwacker.Shared.Network.Proto.ReunionBriefInfoRsp.Parser, new[]{ "IsActivate", "Retcode", "ReunionBriefInfo" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ReunionBriefInfoRsp), global::Weedwacker.Shared.Network.Proto.ReunionBriefInfoRsp.Parser, new[]{ "Retcode", "ReunionBriefInfo", "IsActivate" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5068
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5091;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ReunionBriefInfoRsp : pb::IMessage<ReunionBriefInfoRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +83,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ReunionBriefInfoRsp(ReunionBriefInfoRsp other) : this() {
-      isActivate_ = other.isActivate_;
       retcode_ = other.retcode_;
       reunionBriefInfo_ = other.reunionBriefInfo_ != null ? other.reunionBriefInfo_.Clone() : null;
+      isActivate_ = other.isActivate_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,20 +95,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ReunionBriefInfoRsp(this);
     }
 
-    /// <summary>Field number for the "is_activate" field.</summary>
-    public const int IsActivateFieldNumber = 13;
-    private bool isActivate_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsActivate {
-      get { return isActivate_; }
-      set {
-        isActivate_ = value;
-      }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 14;
+    public const int RetcodeFieldNumber = 2;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,7 +108,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "reunion_brief_info" field.</summary>
-    public const int ReunionBriefInfoFieldNumber = 5;
+    public const int ReunionBriefInfoFieldNumber = 13;
     private global::Weedwacker.Shared.Network.Proto.ReunionBriefInfo reunionBriefInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,6 +116,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return reunionBriefInfo_; }
       set {
         reunionBriefInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_activate" field.</summary>
+    public const int IsActivateFieldNumber = 15;
+    private bool isActivate_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsActivate {
+      get { return isActivate_; }
+      set {
+        isActivate_ = value;
       }
     }
 
@@ -141,9 +146,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsActivate != other.IsActivate) return false;
       if (Retcode != other.Retcode) return false;
       if (!object.Equals(ReunionBriefInfo, other.ReunionBriefInfo)) return false;
+      if (IsActivate != other.IsActivate) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,9 +156,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsActivate != false) hash ^= IsActivate.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (reunionBriefInfo_ != null) hash ^= ReunionBriefInfo.GetHashCode();
+      if (IsActivate != false) hash ^= IsActivate.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,17 +177,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (Retcode != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Retcode);
+      }
       if (reunionBriefInfo_ != null) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(106);
         output.WriteMessage(ReunionBriefInfo);
       }
       if (IsActivate != false) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(120);
         output.WriteBool(IsActivate);
-      }
-      if (Retcode != 0) {
-        output.WriteRawTag(112);
-        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -194,17 +199,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Retcode != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Retcode);
+      }
       if (reunionBriefInfo_ != null) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(106);
         output.WriteMessage(ReunionBriefInfo);
       }
       if (IsActivate != false) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(120);
         output.WriteBool(IsActivate);
-      }
-      if (Retcode != 0) {
-        output.WriteRawTag(112);
-        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -216,14 +221,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsActivate != false) {
-        size += 1 + 1;
-      }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (reunionBriefInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ReunionBriefInfo);
+      }
+      if (IsActivate != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -237,9 +242,6 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsActivate != false) {
-        IsActivate = other.IsActivate;
-      }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
@@ -248,6 +250,9 @@ namespace Weedwacker.Shared.Network.Proto {
           ReunionBriefInfo = new global::Weedwacker.Shared.Network.Proto.ReunionBriefInfo();
         }
         ReunionBriefInfo.MergeFrom(other.ReunionBriefInfo);
+      }
+      if (other.IsActivate != false) {
+        IsActivate = other.IsActivate;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -264,19 +269,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 42: {
+          case 16: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 106: {
             if (reunionBriefInfo_ == null) {
               ReunionBriefInfo = new global::Weedwacker.Shared.Network.Proto.ReunionBriefInfo();
             }
             input.ReadMessage(ReunionBriefInfo);
             break;
           }
-          case 104: {
+          case 120: {
             IsActivate = input.ReadBool();
-            break;
-          }
-          case 112: {
-            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -294,19 +299,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 42: {
+          case 16: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 106: {
             if (reunionBriefInfo_ == null) {
               ReunionBriefInfo = new global::Weedwacker.Shared.Network.Proto.ReunionBriefInfo();
             }
             input.ReadMessage(ReunionBriefInfo);
             break;
           }
-          case 104: {
+          case 120: {
             IsActivate = input.ReadBool();
-            break;
-          }
-          case 112: {
-            Retcode = input.ReadInt32();
             break;
           }
         }

@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static QuestDestroyNpcRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhRdWVzdERlc3Ryb3lOcGNSc3AucHJvdG8iTgoSUXVlc3REZXN0cm95TnBj",
-            "UnNwEg4KBm5wY19pZBgMIAEoDRIXCg9wYXJlbnRfcXVlc3RfaWQYBCABKA0S",
-            "DwoHcmV0Y29kZRgFIAEoBUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
-            "ay5Qcm90b2IGcHJvdG8z"));
+            "ChhRdWVzdERlc3Ryb3lOcGNSc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8iTgoSUXVlc3REZXN0cm95TnBjUnNwEg4KBm5wY19p",
+            "ZBgOIAEoDRIXCg9wYXJlbnRfcXVlc3RfaWQYCCABKA0SDwoHcmV0Y29kZRgN",
+            "IAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 465
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 489;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class QuestDestroyNpcRsp : pb::IMessage<QuestDestroyNpcRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "npc_id" field.</summary>
-    public const int NpcIdFieldNumber = 12;
+    public const int NpcIdFieldNumber = 14;
     private uint npcId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "parent_quest_id" field.</summary>
-    public const int ParentQuestIdFieldNumber = 4;
+    public const int ParentQuestIdFieldNumber = 8;
     private uint parentQuestId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,7 +118,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 5;
+    public const int RetcodeFieldNumber = 13;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -172,15 +176,15 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (ParentQuestId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(64);
         output.WriteUInt32(ParentQuestId);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(104);
         output.WriteInt32(Retcode);
       }
       if (NpcId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(112);
         output.WriteUInt32(NpcId);
       }
       if (_unknownFields != null) {
@@ -194,15 +198,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (ParentQuestId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(64);
         output.WriteUInt32(ParentQuestId);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(104);
         output.WriteInt32(Retcode);
       }
       if (NpcId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(112);
         output.WriteUInt32(NpcId);
       }
       if (_unknownFields != null) {
@@ -260,15 +264,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
+          case 64: {
             ParentQuestId = input.ReadUInt32();
             break;
           }
-          case 40: {
+          case 104: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 96: {
+          case 112: {
             NpcId = input.ReadUInt32();
             break;
           }
@@ -287,15 +291,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
+          case 64: {
             ParentQuestId = input.ReadUInt32();
             break;
           }
-          case 40: {
+          case 104: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 96: {
+          case 112: {
             NpcId = input.ReadUInt32();
             break;
           }

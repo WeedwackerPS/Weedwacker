@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGMsgCostReviseReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZHQ0dNc2dDb3N0UmV2aXNlLnByb3RvGhdHQ0dDb3N0UmV2aXNlSW5mby5w",
-            "cm90byJSChBHQ0dNc2dDb3N0UmV2aXNlEhUKDWNvbnRyb2xsZXJfaWQYBSAB",
-            "KA0SJwoLY29zdF9yZXZpc2UYDSABKAsyEi5HQ0dDb3N0UmV2aXNlSW5mb0Ii",
-            "qgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChZHQ0dNc2dDb3N0UmV2aXNlLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvGhdHQ0dDb3N0UmV2aXNlSW5mby5wcm90byJyChBHQ0dN",
+            "c2dDb3N0UmV2aXNlEkcKC2Nvc3RfcmV2aXNlGAMgASgLMjIuV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90by5HQ0dDb3N0UmV2aXNlSW5mbxIVCg1j",
+            "b250cm9sbGVyX2lkGAEgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGCostReviseInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGMsgCostRevise), global::Weedwacker.Shared.Network.Proto.GCGMsgCostRevise.Parser, new[]{ "ControllerId", "CostRevise" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGMsgCostRevise), global::Weedwacker.Shared.Network.Proto.GCGMsgCostRevise.Parser, new[]{ "CostRevise", "ControllerId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +73,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGMsgCostRevise(GCGMsgCostRevise other) : this() {
-      controllerId_ = other.controllerId_;
       costRevise_ = other.costRevise_ != null ? other.costRevise_.Clone() : null;
+      controllerId_ = other.controllerId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -83,20 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GCGMsgCostRevise(this);
     }
 
-    /// <summary>Field number for the "controller_id" field.</summary>
-    public const int ControllerIdFieldNumber = 5;
-    private uint controllerId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ControllerId {
-      get { return controllerId_; }
-      set {
-        controllerId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "cost_revise" field.</summary>
-    public const int CostReviseFieldNumber = 13;
+    public const int CostReviseFieldNumber = 3;
     private global::Weedwacker.Shared.Network.Proto.GCGCostReviseInfo costRevise_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,6 +93,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return costRevise_; }
       set {
         costRevise_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "controller_id" field.</summary>
+    public const int ControllerIdFieldNumber = 1;
+    private uint controllerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ControllerId {
+      get { return controllerId_; }
+      set {
+        controllerId_ = value;
       }
     }
 
@@ -122,8 +123,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (ControllerId != other.ControllerId) return false;
       if (!object.Equals(CostRevise, other.CostRevise)) return false;
+      if (ControllerId != other.ControllerId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -131,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (ControllerId != 0) hash ^= ControllerId.GetHashCode();
       if (costRevise_ != null) hash ^= CostRevise.GetHashCode();
+      if (ControllerId != 0) hash ^= ControllerId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -152,11 +153,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (ControllerId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(8);
         output.WriteUInt32(ControllerId);
       }
       if (costRevise_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(26);
         output.WriteMessage(CostRevise);
       }
       if (_unknownFields != null) {
@@ -170,11 +171,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (ControllerId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(8);
         output.WriteUInt32(ControllerId);
       }
       if (costRevise_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(26);
         output.WriteMessage(CostRevise);
       }
       if (_unknownFields != null) {
@@ -187,11 +188,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (ControllerId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ControllerId);
-      }
       if (costRevise_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(CostRevise);
+      }
+      if (ControllerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ControllerId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -205,14 +206,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.ControllerId != 0) {
-        ControllerId = other.ControllerId;
-      }
       if (other.costRevise_ != null) {
         if (costRevise_ == null) {
           CostRevise = new global::Weedwacker.Shared.Network.Proto.GCGCostReviseInfo();
         }
         CostRevise.MergeFrom(other.CostRevise);
+      }
+      if (other.ControllerId != 0) {
+        ControllerId = other.ControllerId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -229,11 +230,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
+          case 8: {
             ControllerId = input.ReadUInt32();
             break;
           }
-          case 106: {
+          case 26: {
             if (costRevise_ == null) {
               CostRevise = new global::Weedwacker.Shared.Network.Proto.GCGCostReviseInfo();
             }
@@ -255,11 +256,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
+          case 8: {
             ControllerId = input.ReadUInt32();
             break;
           }
-          case 106: {
+          case 26: {
             if (costRevise_ == null) {
               CostRevise = new global::Weedwacker.Shared.Network.Proto.GCGCostReviseInfo();
             }

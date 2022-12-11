@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static EntityTagChangeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtFbnRpdHlUYWdDaGFuZ2VOb3RpZnkucHJvdG8iRwoVRW50aXR5VGFnQ2hh",
-            "bmdlTm90aWZ5EgsKA3RhZxgCIAEoCRIRCgllbnRpdHlfaWQYCCABKA0SDgoG",
-            "aXNfYWRkGAogASgIQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
-            "b3RvYgZwcm90bzM="));
+            "ChtFbnRpdHlUYWdDaGFuZ2VOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8iRwoVRW50aXR5VGFnQ2hhbmdlTm90aWZ5EgsK",
+            "A3RhZxgDIAEoCRIRCgllbnRpdHlfaWQYCyABKA0SDgoGaXNfYWRkGAIgASgI",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3316
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3192;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class EntityTagChangeNotify : pb::IMessage<EntityTagChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "tag" field.</summary>
-    public const int TagFieldNumber = 2;
+    public const int TagFieldNumber = 3;
     private string tag_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 8;
+    public const int EntityIdFieldNumber = 11;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,7 +118,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_add" field.</summary>
-    public const int IsAddFieldNumber = 10;
+    public const int IsAddFieldNumber = 2;
     private bool isAdd_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -171,17 +175,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (IsAdd != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(IsAdd);
+      }
       if (Tag.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(26);
         output.WriteString(Tag);
       }
       if (EntityId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(88);
         output.WriteUInt32(EntityId);
-      }
-      if (IsAdd != false) {
-        output.WriteRawTag(80);
-        output.WriteBool(IsAdd);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -193,17 +197,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (IsAdd != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(IsAdd);
+      }
       if (Tag.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(26);
         output.WriteString(Tag);
       }
       if (EntityId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(88);
         output.WriteUInt32(EntityId);
-      }
-      if (IsAdd != false) {
-        output.WriteRawTag(80);
-        output.WriteBool(IsAdd);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -260,16 +264,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
+          case 16: {
+            IsAdd = input.ReadBool();
+            break;
+          }
+          case 26: {
             Tag = input.ReadString();
             break;
           }
-          case 64: {
+          case 88: {
             EntityId = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            IsAdd = input.ReadBool();
             break;
           }
         }
@@ -287,16 +291,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
+          case 16: {
+            IsAdd = input.ReadBool();
+            break;
+          }
+          case 26: {
             Tag = input.ReadString();
             break;
           }
-          case 64: {
+          case 88: {
             EntityId = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            IsAdd = input.ReadBool();
             break;
           }
         }

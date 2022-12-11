@@ -24,10 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static DigActivityChangeGadgetStateReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVEaWdBY3Rpdml0eUNoYW5nZUdhZGdldFN0YXRlUmVxLnByb3RvIjQKH0Rp",
-            "Z0FjdGl2aXR5Q2hhbmdlR2FkZ2V0U3RhdGVSZXESEQoJZW50aXR5X2lkGAog",
-            "ASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90",
-            "bzM="));
+            "CiVEaWdBY3Rpdml0eUNoYW5nZUdhZGdldFN0YXRlUmVxLnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIjQKH0RpZ0FjdGl2aXR5Q2hh",
+            "bmdlR2FkZ2V0U3RhdGVSZXESEQoJZW50aXR5X2lkGAogASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +38,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8464
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8372;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class DigActivityChangeGadgetStateReq : pb::IMessage<DigActivityChangeGadgetStateReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

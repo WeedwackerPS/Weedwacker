@@ -24,13 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static TowerTeamReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg9Ub3dlclRlYW0ucHJvdG8iPAoJVG93ZXJUZWFtEhUKDXRvd2VyX3RlYW1f",
-            "aWQYAyABKA0SGAoQYXZhdGFyX2d1aWRfbGlzdBgOIAMoBEIiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Cg9Ub3dlclRlYW0ucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8iPAoJVG93ZXJUZWFtEhgKEGF2YXRhcl9ndWlkX2xpc3QYBSADKAQS",
+            "FQoNdG93ZXJfdGVhbV9pZBgOIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TowerTeam), global::Weedwacker.Shared.Network.Proto.TowerTeam.Parser, new[]{ "TowerTeamId", "AvatarGuidList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TowerTeam), global::Weedwacker.Shared.Network.Proto.TowerTeam.Parser, new[]{ "AvatarGuidList", "TowerTeamId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -71,8 +71,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TowerTeam(TowerTeam other) : this() {
-      towerTeamId_ = other.towerTeamId_;
       avatarGuidList_ = other.avatarGuidList_.Clone();
+      towerTeamId_ = other.towerTeamId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -82,8 +82,19 @@ namespace Weedwacker.Shared.Network.Proto {
       return new TowerTeam(this);
     }
 
+    /// <summary>Field number for the "avatar_guid_list" field.</summary>
+    public const int AvatarGuidListFieldNumber = 5;
+    private static readonly pb::FieldCodec<ulong> _repeated_avatarGuidList_codec
+        = pb::FieldCodec.ForUInt64(42);
+    private readonly pbc::RepeatedField<ulong> avatarGuidList_ = new pbc::RepeatedField<ulong>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<ulong> AvatarGuidList {
+      get { return avatarGuidList_; }
+    }
+
     /// <summary>Field number for the "tower_team_id" field.</summary>
-    public const int TowerTeamIdFieldNumber = 3;
+    public const int TowerTeamIdFieldNumber = 14;
     private uint towerTeamId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -92,17 +103,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         towerTeamId_ = value;
       }
-    }
-
-    /// <summary>Field number for the "avatar_guid_list" field.</summary>
-    public const int AvatarGuidListFieldNumber = 14;
-    private static readonly pb::FieldCodec<ulong> _repeated_avatarGuidList_codec
-        = pb::FieldCodec.ForUInt64(114);
-    private readonly pbc::RepeatedField<ulong> avatarGuidList_ = new pbc::RepeatedField<ulong>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<ulong> AvatarGuidList {
-      get { return avatarGuidList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -120,8 +120,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (TowerTeamId != other.TowerTeamId) return false;
       if(!avatarGuidList_.Equals(other.avatarGuidList_)) return false;
+      if (TowerTeamId != other.TowerTeamId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -129,8 +129,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (TowerTeamId != 0) hash ^= TowerTeamId.GetHashCode();
       hash ^= avatarGuidList_.GetHashCode();
+      if (TowerTeamId != 0) hash ^= TowerTeamId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -149,11 +149,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      avatarGuidList_.WriteTo(output, _repeated_avatarGuidList_codec);
       if (TowerTeamId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(112);
         output.WriteUInt32(TowerTeamId);
       }
-      avatarGuidList_.WriteTo(output, _repeated_avatarGuidList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -164,11 +164,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      avatarGuidList_.WriteTo(ref output, _repeated_avatarGuidList_codec);
       if (TowerTeamId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(112);
         output.WriteUInt32(TowerTeamId);
       }
-      avatarGuidList_.WriteTo(ref output, _repeated_avatarGuidList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -179,10 +179,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += avatarGuidList_.CalculateSize(_repeated_avatarGuidList_codec);
       if (TowerTeamId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TowerTeamId);
       }
-      size += avatarGuidList_.CalculateSize(_repeated_avatarGuidList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -195,10 +195,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      avatarGuidList_.Add(other.avatarGuidList_);
       if (other.TowerTeamId != 0) {
         TowerTeamId = other.TowerTeamId;
       }
-      avatarGuidList_.Add(other.avatarGuidList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -214,13 +214,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            TowerTeamId = input.ReadUInt32();
+          case 42:
+          case 40: {
+            avatarGuidList_.AddEntriesFrom(input, _repeated_avatarGuidList_codec);
             break;
           }
-          case 114:
           case 112: {
-            avatarGuidList_.AddEntriesFrom(input, _repeated_avatarGuidList_codec);
+            TowerTeamId = input.ReadUInt32();
             break;
           }
         }
@@ -238,13 +238,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            TowerTeamId = input.ReadUInt32();
+          case 42:
+          case 40: {
+            avatarGuidList_.AddEntriesFrom(ref input, _repeated_avatarGuidList_codec);
             break;
           }
-          case 114:
           case 112: {
-            avatarGuidList_.AddEntriesFrom(ref input, _repeated_avatarGuidList_codec);
+            TowerTeamId = input.ReadUInt32();
             break;
           }
         }

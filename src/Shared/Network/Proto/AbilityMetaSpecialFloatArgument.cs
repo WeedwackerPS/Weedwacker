@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static AbilityMetaSpecialFloatArgumentReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVBYmlsaXR5TWV0YVNwZWNpYWxGbG9hdEFyZ3VtZW50LnByb3RvIkgKH0Fi",
-            "aWxpdHlNZXRhU3BlY2lhbEZsb2F0QXJndW1lbnQSFgoOYXJndW1lbnRfdmFs",
-            "dWUYDiABKAISDQoFaXNfb24YCiABKAhCIqoCH1dlZWR3YWNrZXIuU2hhcmVk",
-            "Lk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiVBYmlsaXR5TWV0YVNwZWNpYWxGbG9hdEFyZ3VtZW50LnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIkgKH0FiaWxpdHlNZXRhU3Bl",
+            "Y2lhbEZsb2F0QXJndW1lbnQSFgoOYXJndW1lbnRfdmFsdWUYBCABKAISDQoF",
+            "aXNfb24YCiABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "argument_value" field.</summary>
-    public const int ArgumentValueFieldNumber = 14;
+    public const int ArgumentValueFieldNumber = 4;
     private float argumentValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -151,13 +151,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (ArgumentValue != 0F) {
+        output.WriteRawTag(37);
+        output.WriteFloat(ArgumentValue);
+      }
       if (IsOn != false) {
         output.WriteRawTag(80);
         output.WriteBool(IsOn);
-      }
-      if (ArgumentValue != 0F) {
-        output.WriteRawTag(117);
-        output.WriteFloat(ArgumentValue);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -169,13 +169,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ArgumentValue != 0F) {
+        output.WriteRawTag(37);
+        output.WriteFloat(ArgumentValue);
+      }
       if (IsOn != false) {
         output.WriteRawTag(80);
         output.WriteBool(IsOn);
-      }
-      if (ArgumentValue != 0F) {
-        output.WriteRawTag(117);
-        output.WriteFloat(ArgumentValue);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -226,12 +226,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 80: {
-            IsOn = input.ReadBool();
+          case 37: {
+            ArgumentValue = input.ReadFloat();
             break;
           }
-          case 117: {
-            ArgumentValue = input.ReadFloat();
+          case 80: {
+            IsOn = input.ReadBool();
             break;
           }
         }
@@ -249,12 +249,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 80: {
-            IsOn = input.ReadBool();
+          case 37: {
+            ArgumentValue = input.ReadFloat();
             break;
           }
-          case 117: {
-            ArgumentValue = input.ReadFloat();
+          case 80: {
+            IsOn = input.ReadBool();
             break;
           }
         }

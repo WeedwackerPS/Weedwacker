@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static OpenStateUpdateNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtPcGVuU3RhdGVVcGRhdGVOb3RpZnkucHJvdG8ijgEKFU9wZW5TdGF0ZVVw",
-            "ZGF0ZU5vdGlmeRJACg5vcGVuX3N0YXRlX21hcBgGIAMoCzIoLk9wZW5TdGF0",
-            "ZVVwZGF0ZU5vdGlmeS5PcGVuU3RhdGVNYXBFbnRyeRozChFPcGVuU3RhdGVN",
-            "YXBFbnRyeRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiABKA06AjgBQiKqAh9X",
-            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChtPcGVuU3RhdGVVcGRhdGVOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8irgEKFU9wZW5TdGF0ZVVwZGF0ZU5vdGlmeRJg",
+            "Cg5vcGVuX3N0YXRlX21hcBgMIAMoCzJILldlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8uT3BlblN0YXRlVXBkYXRlTm90aWZ5Lk9wZW5TdGF0ZU1h",
+            "cEVudHJ5GjMKEU9wZW5TdGF0ZU1hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2",
+            "YWx1ZRgCIAEoDToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 193
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 107;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class OpenStateUpdateNotify : pb::IMessage<OpenStateUpdateNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +94,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "open_state_map" field.</summary>
-    public const int OpenStateMapFieldNumber = 6;
+    public const int OpenStateMapFieldNumber = 12;
     private static readonly pbc::MapField<uint, uint>.Codec _map_openStateMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 50);
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 98);
     private readonly pbc::MapField<uint, uint> openStateMap_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -192,7 +197,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 50: {
+          case 98: {
             openStateMap_.AddEntriesFrom(input, _map_openStateMap_codec);
             break;
           }
@@ -211,7 +216,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 50: {
+          case 98: {
             openStateMap_.AddEntriesFrom(ref input, _map_openStateMap_codec);
             break;
           }

@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static AdjustWorldLevelReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlBZGp1c3RXb3JsZExldmVsUmVxLnByb3RvIkoKE0FkanVzdFdvcmxkTGV2",
-            "ZWxSZXESGgoSZXhwZWN0X3dvcmxkX2xldmVsGAggASgNEhcKD2N1cl93b3Js",
-            "ZF9sZXZlbBgJIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
-            "cm90b2IGcHJvdG8z"));
+            "ChlBZGp1c3RXb3JsZExldmVsUmVxLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvIk8KE0FkanVzdFdvcmxkTGV2ZWxSZXESGwoTVW5r",
+            "MzMwMF9ETkxLSU1HTEJMUBgOIAEoDRIbChNVbmszMzAwX0RKQktCUERDQkZI",
+            "GAMgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AdjustWorldLevelReq), global::Weedwacker.Shared.Network.Proto.AdjustWorldLevelReq.Parser, new[]{ "ExpectWorldLevel", "CurWorldLevel" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AdjustWorldLevelReq), global::Weedwacker.Shared.Network.Proto.AdjustWorldLevelReq.Parser, new[]{ "Unk3300DNLKIMGLBLP", "Unk3300DJBKBPDCBFH" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 164
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 112;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class AdjustWorldLevelReq : pb::IMessage<AdjustWorldLevelReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AdjustWorldLevelReq(AdjustWorldLevelReq other) : this() {
-      expectWorldLevel_ = other.expectWorldLevel_;
-      curWorldLevel_ = other.curWorldLevel_;
+      unk3300DNLKIMGLBLP_ = other.unk3300DNLKIMGLBLP_;
+      unk3300DJBKBPDCBFH_ = other.unk3300DJBKBPDCBFH_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,27 +93,27 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AdjustWorldLevelReq(this);
     }
 
-    /// <summary>Field number for the "expect_world_level" field.</summary>
-    public const int ExpectWorldLevelFieldNumber = 8;
-    private uint expectWorldLevel_;
+    /// <summary>Field number for the "Unk3300_DNLKIMGLBLP" field.</summary>
+    public const int Unk3300DNLKIMGLBLPFieldNumber = 14;
+    private uint unk3300DNLKIMGLBLP_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ExpectWorldLevel {
-      get { return expectWorldLevel_; }
+    public uint Unk3300DNLKIMGLBLP {
+      get { return unk3300DNLKIMGLBLP_; }
       set {
-        expectWorldLevel_ = value;
+        unk3300DNLKIMGLBLP_ = value;
       }
     }
 
-    /// <summary>Field number for the "cur_world_level" field.</summary>
-    public const int CurWorldLevelFieldNumber = 9;
-    private uint curWorldLevel_;
+    /// <summary>Field number for the "Unk3300_DJBKBPDCBFH" field.</summary>
+    public const int Unk3300DJBKBPDCBFHFieldNumber = 3;
+    private uint unk3300DJBKBPDCBFH_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurWorldLevel {
-      get { return curWorldLevel_; }
+    public uint Unk3300DJBKBPDCBFH {
+      get { return unk3300DJBKBPDCBFH_; }
       set {
-        curWorldLevel_ = value;
+        unk3300DJBKBPDCBFH_ = value;
       }
     }
 
@@ -128,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (ExpectWorldLevel != other.ExpectWorldLevel) return false;
-      if (CurWorldLevel != other.CurWorldLevel) return false;
+      if (Unk3300DNLKIMGLBLP != other.Unk3300DNLKIMGLBLP) return false;
+      if (Unk3300DJBKBPDCBFH != other.Unk3300DJBKBPDCBFH) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -137,8 +141,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (ExpectWorldLevel != 0) hash ^= ExpectWorldLevel.GetHashCode();
-      if (CurWorldLevel != 0) hash ^= CurWorldLevel.GetHashCode();
+      if (Unk3300DNLKIMGLBLP != 0) hash ^= Unk3300DNLKIMGLBLP.GetHashCode();
+      if (Unk3300DJBKBPDCBFH != 0) hash ^= Unk3300DJBKBPDCBFH.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -157,13 +161,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ExpectWorldLevel != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(ExpectWorldLevel);
+      if (Unk3300DJBKBPDCBFH != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300DJBKBPDCBFH);
       }
-      if (CurWorldLevel != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(CurWorldLevel);
+      if (Unk3300DNLKIMGLBLP != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300DNLKIMGLBLP);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -175,13 +179,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ExpectWorldLevel != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(ExpectWorldLevel);
+      if (Unk3300DJBKBPDCBFH != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300DJBKBPDCBFH);
       }
-      if (CurWorldLevel != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(CurWorldLevel);
+      if (Unk3300DNLKIMGLBLP != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300DNLKIMGLBLP);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -193,11 +197,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (ExpectWorldLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ExpectWorldLevel);
+      if (Unk3300DNLKIMGLBLP != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DNLKIMGLBLP);
       }
-      if (CurWorldLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurWorldLevel);
+      if (Unk3300DJBKBPDCBFH != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DJBKBPDCBFH);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -211,11 +215,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.ExpectWorldLevel != 0) {
-        ExpectWorldLevel = other.ExpectWorldLevel;
+      if (other.Unk3300DNLKIMGLBLP != 0) {
+        Unk3300DNLKIMGLBLP = other.Unk3300DNLKIMGLBLP;
       }
-      if (other.CurWorldLevel != 0) {
-        CurWorldLevel = other.CurWorldLevel;
+      if (other.Unk3300DJBKBPDCBFH != 0) {
+        Unk3300DJBKBPDCBFH = other.Unk3300DJBKBPDCBFH;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -232,12 +236,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 64: {
-            ExpectWorldLevel = input.ReadUInt32();
+          case 24: {
+            Unk3300DJBKBPDCBFH = input.ReadUInt32();
             break;
           }
-          case 72: {
-            CurWorldLevel = input.ReadUInt32();
+          case 112: {
+            Unk3300DNLKIMGLBLP = input.ReadUInt32();
             break;
           }
         }
@@ -255,12 +259,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 64: {
-            ExpectWorldLevel = input.ReadUInt32();
+          case 24: {
+            Unk3300DJBKBPDCBFH = input.ReadUInt32();
             break;
           }
-          case 72: {
-            CurWorldLevel = input.ReadUInt32();
+          case 112: {
+            Unk3300DNLKIMGLBLP = input.ReadUInt32();
             break;
           }
         }

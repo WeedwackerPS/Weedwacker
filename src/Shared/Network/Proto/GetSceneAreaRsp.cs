@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetSceneAreaRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVHZXRTY2VuZUFyZWFSc3AucHJvdG8aDkNpdHlJbmZvLnByb3RvIm0KD0dl",
-            "dFNjZW5lQXJlYVJzcBIPCgdyZXRjb2RlGAcgASgFEiEKDmNpdHlfaW5mb19s",
-            "aXN0GA0gAygLMgkuQ2l0eUluZm8SEAoIc2NlbmVfaWQYDyABKA0SFAoMYXJl",
-            "YV9pZF9saXN0GAkgAygNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
-            "LlByb3RvYgZwcm90bzM="));
+            "ChVHZXRTY2VuZUFyZWFSc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8aDkNpdHlJbmZvLnByb3RvIo0BCg9HZXRTY2VuZUFyZWFS",
+            "c3ASEAoIc2NlbmVfaWQYCCABKA0SDwoHcmV0Y29kZRgBIAEoBRIUCgxhcmVh",
+            "X2lkX2xpc3QYDyADKA0SQQoOY2l0eV9pbmZvX2xpc3QYCSADKAsyKS5XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkNpdHlJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CityInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetSceneAreaRsp), global::Weedwacker.Shared.Network.Proto.GetSceneAreaRsp.Parser, new[]{ "Retcode", "CityInfoList", "SceneId", "AreaIdList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetSceneAreaRsp), global::Weedwacker.Shared.Network.Proto.GetSceneAreaRsp.Parser, new[]{ "SceneId", "Retcode", "AreaIdList", "CityInfoList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 204
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 244;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GetSceneAreaRsp : pb::IMessage<GetSceneAreaRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,10 +82,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetSceneAreaRsp(GetSceneAreaRsp other) : this() {
-      retcode_ = other.retcode_;
-      cityInfoList_ = other.cityInfoList_.Clone();
       sceneId_ = other.sceneId_;
+      retcode_ = other.retcode_;
       areaIdList_ = other.areaIdList_.Clone();
+      cityInfoList_ = other.cityInfoList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,31 +95,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GetSceneAreaRsp(this);
     }
 
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 7;
-    private int retcode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "city_info_list" field.</summary>
-    public const int CityInfoListFieldNumber = 13;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.CityInfo> _repeated_cityInfoList_codec
-        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.CityInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CityInfo> cityInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CityInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CityInfo> CityInfoList {
-      get { return cityInfoList_; }
-    }
-
     /// <summary>Field number for the "scene_id" field.</summary>
-    public const int SceneIdFieldNumber = 15;
+    public const int SceneIdFieldNumber = 8;
     private uint sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -126,15 +107,38 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 1;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
     /// <summary>Field number for the "area_id_list" field.</summary>
-    public const int AreaIdListFieldNumber = 9;
+    public const int AreaIdListFieldNumber = 15;
     private static readonly pb::FieldCodec<uint> _repeated_areaIdList_codec
-        = pb::FieldCodec.ForUInt32(74);
+        = pb::FieldCodec.ForUInt32(122);
     private readonly pbc::RepeatedField<uint> areaIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<uint> AreaIdList {
       get { return areaIdList_; }
+    }
+
+    /// <summary>Field number for the "city_info_list" field.</summary>
+    public const int CityInfoListFieldNumber = 9;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.CityInfo> _repeated_cityInfoList_codec
+        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.CityInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CityInfo> cityInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CityInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CityInfo> CityInfoList {
+      get { return cityInfoList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -152,10 +156,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Retcode != other.Retcode) return false;
-      if(!cityInfoList_.Equals(other.cityInfoList_)) return false;
       if (SceneId != other.SceneId) return false;
+      if (Retcode != other.Retcode) return false;
       if(!areaIdList_.Equals(other.areaIdList_)) return false;
+      if(!cityInfoList_.Equals(other.cityInfoList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -163,10 +167,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      hash ^= cityInfoList_.GetHashCode();
       if (SceneId != 0) hash ^= SceneId.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       hash ^= areaIdList_.GetHashCode();
+      hash ^= cityInfoList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -186,15 +190,15 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Retcode != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(8);
         output.WriteInt32(Retcode);
       }
-      areaIdList_.WriteTo(output, _repeated_areaIdList_codec);
-      cityInfoList_.WriteTo(output, _repeated_cityInfoList_codec);
       if (SceneId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(64);
         output.WriteUInt32(SceneId);
       }
+      cityInfoList_.WriteTo(output, _repeated_cityInfoList_codec);
+      areaIdList_.WriteTo(output, _repeated_areaIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -206,15 +210,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Retcode != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(8);
         output.WriteInt32(Retcode);
       }
-      areaIdList_.WriteTo(ref output, _repeated_areaIdList_codec);
-      cityInfoList_.WriteTo(ref output, _repeated_cityInfoList_codec);
       if (SceneId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(64);
         output.WriteUInt32(SceneId);
       }
+      cityInfoList_.WriteTo(ref output, _repeated_cityInfoList_codec);
+      areaIdList_.WriteTo(ref output, _repeated_areaIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -225,14 +229,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
-      size += cityInfoList_.CalculateSize(_repeated_cityInfoList_codec);
       if (SceneId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
       }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
       size += areaIdList_.CalculateSize(_repeated_areaIdList_codec);
+      size += cityInfoList_.CalculateSize(_repeated_cityInfoList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -245,14 +249,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
-      }
-      cityInfoList_.Add(other.cityInfoList_);
       if (other.SceneId != 0) {
         SceneId = other.SceneId;
       }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
       areaIdList_.Add(other.areaIdList_);
+      cityInfoList_.Add(other.cityInfoList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -268,21 +272,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
+          case 8: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 74:
-          case 72: {
-            areaIdList_.AddEntriesFrom(input, _repeated_areaIdList_codec);
+          case 64: {
+            SceneId = input.ReadUInt32();
             break;
           }
-          case 106: {
+          case 74: {
             cityInfoList_.AddEntriesFrom(input, _repeated_cityInfoList_codec);
             break;
           }
+          case 122:
           case 120: {
-            SceneId = input.ReadUInt32();
+            areaIdList_.AddEntriesFrom(input, _repeated_areaIdList_codec);
             break;
           }
         }
@@ -300,21 +304,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
+          case 8: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 74:
-          case 72: {
-            areaIdList_.AddEntriesFrom(ref input, _repeated_areaIdList_codec);
+          case 64: {
+            SceneId = input.ReadUInt32();
             break;
           }
-          case 106: {
+          case 74: {
             cityInfoList_.AddEntriesFrom(ref input, _repeated_cityInfoList_codec);
             break;
           }
+          case 122:
           case 120: {
-            SceneId = input.ReadUInt32();
+            areaIdList_.AddEntriesFrom(ref input, _repeated_areaIdList_codec);
             break;
           }
         }

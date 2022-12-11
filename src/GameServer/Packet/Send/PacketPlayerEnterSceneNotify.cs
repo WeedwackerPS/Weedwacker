@@ -4,6 +4,8 @@ using Weedwacker.GameServer.Enums;
 using Weedwacker.GameServer.Systems.Player;
 using Weedwacker.GameServer.Systems.World;
 using Weedwacker.Shared.Network.Proto;
+using Weedwacker.Shared.Utils;
+using EnterReason = Weedwacker.GameServer.Enums.EnterReason;
 
 namespace Weedwacker.GameServer.Packet.Send
 {

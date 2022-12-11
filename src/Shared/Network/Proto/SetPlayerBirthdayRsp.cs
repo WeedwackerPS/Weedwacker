@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static SetPlayerBirthdayRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpTZXRQbGF5ZXJCaXJ0aGRheVJzcC5wcm90bxoOQmlydGhkYXkucHJvdG8i",
-            "RAoUU2V0UGxheWVyQmlydGhkYXlSc3ASGwoIYmlydGhkYXkYAiABKAsyCS5C",
-            "aXJ0aGRheRIPCgdyZXRjb2RlGAUgASgFQiKqAh9XZWVkd2Fja2VyLlNoYXJl",
-            "ZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChpTZXRQbGF5ZXJCaXJ0aGRheVJzcC5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxoOQmlydGhkYXkucHJvdG8iZAoUU2V0UGxheWVy",
+            "QmlydGhkYXlSc3ASOwoIYmlydGhkYXkYASABKAsyKS5XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvLkJpcnRoZGF5Eg8KB3JldGNvZGUYBCABKAVi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.BirthdayReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4097
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4099;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class SetPlayerBirthdayRsp : pb::IMessage<SetPlayerBirthdayRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "birthday" field.</summary>
-    public const int BirthdayFieldNumber = 2;
+    public const int BirthdayFieldNumber = 1;
     private global::Weedwacker.Shared.Network.Proto.Birthday birthday_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 5;
+    public const int RetcodeFieldNumber = 4;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,11 +162,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (birthday_ != null) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(10);
         output.WriteMessage(Birthday);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(32);
         output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
@@ -175,11 +180,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (birthday_ != null) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(10);
         output.WriteMessage(Birthday);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(32);
         output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
@@ -234,14 +239,14 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
+          case 10: {
             if (birthday_ == null) {
               Birthday = new global::Weedwacker.Shared.Network.Proto.Birthday();
             }
             input.ReadMessage(Birthday);
             break;
           }
-          case 40: {
+          case 32: {
             Retcode = input.ReadInt32();
             break;
           }
@@ -260,14 +265,14 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
+          case 10: {
             if (birthday_ == null) {
               Birthday = new global::Weedwacker.Shared.Network.Proto.Birthday();
             }
             input.ReadMessage(Birthday);
             break;
           }
-          case 40: {
+          case 32: {
             Retcode = input.ReadInt32();
             break;
           }

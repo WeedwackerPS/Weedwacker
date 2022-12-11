@@ -24,10 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static AbilityMixinWidgetMpSupportReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFBYmlsaXR5TWl4aW5XaWRnZXRNcFN1cHBvcnQucHJvdG8iNwobQWJpbGl0",
-            "eU1peGluV2lkZ2V0TXBTdXBwb3J0EhgKEHRhcmdldF9lbnRpdHlfaWQYCSAB",
-            "KA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3Rv",
-            "Mw=="));
+            "CiFBYmlsaXR5TWl4aW5XaWRnZXRNcFN1cHBvcnQucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iNwobQWJpbGl0eU1peGluV2lkZ2V0",
+            "TXBTdXBwb3J0EhgKEHRhcmdldF9lbnRpdHlfaWQYAiABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +82,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "target_entity_id" field.</summary>
-    public const int TargetEntityIdFieldNumber = 9;
+    public const int TargetEntityIdFieldNumber = 2;
     private uint targetEntityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -137,7 +136,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (TargetEntityId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(16);
         output.WriteUInt32(TargetEntityId);
       }
       if (_unknownFields != null) {
@@ -151,7 +150,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (TargetEntityId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(16);
         output.WriteUInt32(TargetEntityId);
       }
       if (_unknownFields != null) {
@@ -197,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 72: {
+          case 16: {
             TargetEntityId = input.ReadUInt32();
             break;
           }
@@ -216,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 72: {
+          case 16: {
             TargetEntityId = input.ReadUInt32();
             break;
           }

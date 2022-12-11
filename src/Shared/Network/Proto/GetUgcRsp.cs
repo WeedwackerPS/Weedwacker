@@ -24,19 +24,21 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetUgcRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg9HZXRVZ2NSc3AucHJvdG8aEVJlY29yZFVzYWdlLnByb3RvGhdVZ2NNdXNp",
-            "Y0JyaWVmSW5mby5wcm90bxoUVWdjTXVzaWNSZWNvcmQucHJvdG8aDVVnY1R5",
-            "cGUucHJvdG8i3wEKCUdldFVnY1JzcBIQCgh1Z2NfZ3VpZBgPIAEoBBIaCgh1",
-            "Z2NfdHlwZRgKIAEoDjIILlVnY1R5cGUSDwoHcmV0Y29kZRgCIAEoBRImChB1",
-            "Z2NfcmVjb3JkX3VzYWdlGA4gASgOMgwuUmVjb3JkVXNhZ2USJwoMbXVzaWNf",
-            "cmVjb3JkGAQgASgLMg8uVWdjTXVzaWNSZWNvcmRIABIvChBtdXNpY19icmll",
-            "Zl9pbmZvGJsOIAEoCzISLlVnY011c2ljQnJpZWZJbmZvSAFCCAoGcmVjb3Jk",
-            "QgcKBWJyaWVmQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "Cg9HZXRVZ2NSc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8aEVJlY29yZFVzYWdlLnByb3RvGhdVZ2NNdXNpY0JyaWVmSW5mby5w",
+            "cm90bxoUVWdjTXVzaWNSZWNvcmQucHJvdG8aDVVnY1R5cGUucHJvdG8i3wIK",
+            "CUdldFVnY1JzcBIPCgdyZXRjb2RlGAogASgFEkYKEHVnY19yZWNvcmRfdXNh",
+            "Z2UYBSABKA4yLC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlJl",
+            "Y29yZFVzYWdlEjoKCHVnY190eXBlGAYgASgOMiguV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90by5VZ2NUeXBlEhAKCHVnY19ndWlkGAMgASgEEkcK",
+            "DG11c2ljX3JlY29yZBgCIAEoCzIvLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uVWdjTXVzaWNSZWNvcmRIABJPChBtdXNpY19icmllZl9pbmZv",
+            "GIQMIAEoCzIyLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uVWdj",
+            "TXVzaWNCcmllZkluZm9IAUIICgZyZWNvcmRCBwoFYnJpZWZiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.RecordUsageReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.UgcMusicRecordReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.UgcTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetUgcRsp), global::Weedwacker.Shared.Network.Proto.GetUgcRsp.Parser, new[]{ "UgcGuid", "UgcType", "Retcode", "UgcRecordUsage", "MusicRecord", "MusicBriefInfo" }, new[]{ "Record", "Brief" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetUgcRsp), global::Weedwacker.Shared.Network.Proto.GetUgcRsp.Parser, new[]{ "Retcode", "UgcRecordUsage", "UgcType", "UgcGuid", "MusicRecord", "MusicBriefInfo" }, new[]{ "Record", "Brief" }, null, null, null)
           }));
     }
     #endregion
@@ -44,9 +46,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 6318
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 6341;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GetUgcRsp : pb::IMessage<GetUgcRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -82,10 +88,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetUgcRsp(GetUgcRsp other) : this() {
-      ugcGuid_ = other.ugcGuid_;
-      ugcType_ = other.ugcType_;
       retcode_ = other.retcode_;
       ugcRecordUsage_ = other.ugcRecordUsage_;
+      ugcType_ = other.ugcType_;
+      ugcGuid_ = other.ugcGuid_;
       switch (other.RecordCase) {
         case RecordOneofCase.MusicRecord:
           MusicRecord = other.MusicRecord.Clone();
@@ -107,32 +113,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GetUgcRsp(this);
     }
 
-    /// <summary>Field number for the "ugc_guid" field.</summary>
-    public const int UgcGuidFieldNumber = 15;
-    private ulong ugcGuid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong UgcGuid {
-      get { return ugcGuid_; }
-      set {
-        ugcGuid_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "ugc_type" field.</summary>
-    public const int UgcTypeFieldNumber = 10;
-    private global::Weedwacker.Shared.Network.Proto.UgcType ugcType_ = global::Weedwacker.Shared.Network.Proto.UgcType.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.UgcType UgcType {
-      get { return ugcType_; }
-      set {
-        ugcType_ = value;
-      }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 2;
+    public const int RetcodeFieldNumber = 10;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -144,7 +126,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "ugc_record_usage" field.</summary>
-    public const int UgcRecordUsageFieldNumber = 14;
+    public const int UgcRecordUsageFieldNumber = 5;
     private global::Weedwacker.Shared.Network.Proto.RecordUsage ugcRecordUsage_ = global::Weedwacker.Shared.Network.Proto.RecordUsage.UgcRecordUsageNone;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -155,8 +137,32 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "ugc_type" field.</summary>
+    public const int UgcTypeFieldNumber = 6;
+    private global::Weedwacker.Shared.Network.Proto.UgcType ugcType_ = global::Weedwacker.Shared.Network.Proto.UgcType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.UgcType UgcType {
+      get { return ugcType_; }
+      set {
+        ugcType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ugc_guid" field.</summary>
+    public const int UgcGuidFieldNumber = 3;
+    private ulong ugcGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong UgcGuid {
+      get { return ugcGuid_; }
+      set {
+        ugcGuid_ = value;
+      }
+    }
+
     /// <summary>Field number for the "music_record" field.</summary>
-    public const int MusicRecordFieldNumber = 4;
+    public const int MusicRecordFieldNumber = 2;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.UgcMusicRecord MusicRecord {
@@ -168,7 +174,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "music_brief_info" field.</summary>
-    public const int MusicBriefInfoFieldNumber = 1819;
+    public const int MusicBriefInfoFieldNumber = 1540;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo MusicBriefInfo {
@@ -183,7 +189,7 @@ namespace Weedwacker.Shared.Network.Proto {
     /// <summary>Enum of possible cases for the "record" oneof.</summary>
     public enum RecordOneofCase {
       None = 0,
-      MusicRecord = 4,
+      MusicRecord = 2,
     }
     private RecordOneofCase recordCase_ = RecordOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -203,7 +209,7 @@ namespace Weedwacker.Shared.Network.Proto {
     /// <summary>Enum of possible cases for the "brief" oneof.</summary>
     public enum BriefOneofCase {
       None = 0,
-      MusicBriefInfo = 1819,
+      MusicBriefInfo = 1540,
     }
     private BriefOneofCase briefCase_ = BriefOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -234,10 +240,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (UgcGuid != other.UgcGuid) return false;
-      if (UgcType != other.UgcType) return false;
       if (Retcode != other.Retcode) return false;
       if (UgcRecordUsage != other.UgcRecordUsage) return false;
+      if (UgcType != other.UgcType) return false;
+      if (UgcGuid != other.UgcGuid) return false;
       if (!object.Equals(MusicRecord, other.MusicRecord)) return false;
       if (!object.Equals(MusicBriefInfo, other.MusicBriefInfo)) return false;
       if (RecordCase != other.RecordCase) return false;
@@ -249,10 +255,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (UgcGuid != 0UL) hash ^= UgcGuid.GetHashCode();
-      if (UgcType != global::Weedwacker.Shared.Network.Proto.UgcType.None) hash ^= UgcType.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (UgcRecordUsage != global::Weedwacker.Shared.Network.Proto.RecordUsage.UgcRecordUsageNone) hash ^= UgcRecordUsage.GetHashCode();
+      if (UgcType != global::Weedwacker.Shared.Network.Proto.UgcType.None) hash ^= UgcType.GetHashCode();
+      if (UgcGuid != 0UL) hash ^= UgcGuid.GetHashCode();
       if (recordCase_ == RecordOneofCase.MusicRecord) hash ^= MusicRecord.GetHashCode();
       if (briefCase_ == BriefOneofCase.MusicBriefInfo) hash ^= MusicBriefInfo.GetHashCode();
       hash ^= (int) recordCase_;
@@ -275,28 +281,28 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Retcode != 0) {
-        output.WriteRawTag(16);
-        output.WriteInt32(Retcode);
-      }
       if (recordCase_ == RecordOneofCase.MusicRecord) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(18);
         output.WriteMessage(MusicRecord);
       }
-      if (UgcType != global::Weedwacker.Shared.Network.Proto.UgcType.None) {
-        output.WriteRawTag(80);
-        output.WriteEnum((int) UgcType);
-      }
-      if (UgcRecordUsage != global::Weedwacker.Shared.Network.Proto.RecordUsage.UgcRecordUsageNone) {
-        output.WriteRawTag(112);
-        output.WriteEnum((int) UgcRecordUsage);
-      }
       if (UgcGuid != 0UL) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(24);
         output.WriteUInt64(UgcGuid);
       }
+      if (UgcRecordUsage != global::Weedwacker.Shared.Network.Proto.RecordUsage.UgcRecordUsageNone) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) UgcRecordUsage);
+      }
+      if (UgcType != global::Weedwacker.Shared.Network.Proto.UgcType.None) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) UgcType);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(Retcode);
+      }
       if (briefCase_ == BriefOneofCase.MusicBriefInfo) {
-        output.WriteRawTag(218, 113);
+        output.WriteRawTag(162, 96);
         output.WriteMessage(MusicBriefInfo);
       }
       if (_unknownFields != null) {
@@ -309,28 +315,28 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Retcode != 0) {
-        output.WriteRawTag(16);
-        output.WriteInt32(Retcode);
-      }
       if (recordCase_ == RecordOneofCase.MusicRecord) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(18);
         output.WriteMessage(MusicRecord);
       }
-      if (UgcType != global::Weedwacker.Shared.Network.Proto.UgcType.None) {
-        output.WriteRawTag(80);
-        output.WriteEnum((int) UgcType);
-      }
-      if (UgcRecordUsage != global::Weedwacker.Shared.Network.Proto.RecordUsage.UgcRecordUsageNone) {
-        output.WriteRawTag(112);
-        output.WriteEnum((int) UgcRecordUsage);
-      }
       if (UgcGuid != 0UL) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(24);
         output.WriteUInt64(UgcGuid);
       }
+      if (UgcRecordUsage != global::Weedwacker.Shared.Network.Proto.RecordUsage.UgcRecordUsageNone) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) UgcRecordUsage);
+      }
+      if (UgcType != global::Weedwacker.Shared.Network.Proto.UgcType.None) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) UgcType);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(Retcode);
+      }
       if (briefCase_ == BriefOneofCase.MusicBriefInfo) {
-        output.WriteRawTag(218, 113);
+        output.WriteRawTag(162, 96);
         output.WriteMessage(MusicBriefInfo);
       }
       if (_unknownFields != null) {
@@ -343,17 +349,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (UgcGuid != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(UgcGuid);
-      }
-      if (UgcType != global::Weedwacker.Shared.Network.Proto.UgcType.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) UgcType);
-      }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (UgcRecordUsage != global::Weedwacker.Shared.Network.Proto.RecordUsage.UgcRecordUsageNone) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) UgcRecordUsage);
+      }
+      if (UgcType != global::Weedwacker.Shared.Network.Proto.UgcType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) UgcType);
+      }
+      if (UgcGuid != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(UgcGuid);
       }
       if (recordCase_ == RecordOneofCase.MusicRecord) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(MusicRecord);
@@ -373,17 +379,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.UgcGuid != 0UL) {
-        UgcGuid = other.UgcGuid;
-      }
-      if (other.UgcType != global::Weedwacker.Shared.Network.Proto.UgcType.None) {
-        UgcType = other.UgcType;
-      }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
       if (other.UgcRecordUsage != global::Weedwacker.Shared.Network.Proto.RecordUsage.UgcRecordUsageNone) {
         UgcRecordUsage = other.UgcRecordUsage;
+      }
+      if (other.UgcType != global::Weedwacker.Shared.Network.Proto.UgcType.None) {
+        UgcType = other.UgcType;
+      }
+      if (other.UgcGuid != 0UL) {
+        UgcGuid = other.UgcGuid;
       }
       switch (other.RecordCase) {
         case RecordOneofCase.MusicRecord:
@@ -418,11 +424,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 34: {
+          case 18: {
             global::Weedwacker.Shared.Network.Proto.UgcMusicRecord subBuilder = new global::Weedwacker.Shared.Network.Proto.UgcMusicRecord();
             if (recordCase_ == RecordOneofCase.MusicRecord) {
               subBuilder.MergeFrom(MusicRecord);
@@ -431,19 +433,23 @@ namespace Weedwacker.Shared.Network.Proto {
             MusicRecord = subBuilder;
             break;
           }
-          case 80: {
-            UgcType = (global::Weedwacker.Shared.Network.Proto.UgcType) input.ReadEnum();
-            break;
-          }
-          case 112: {
-            UgcRecordUsage = (global::Weedwacker.Shared.Network.Proto.RecordUsage) input.ReadEnum();
-            break;
-          }
-          case 120: {
+          case 24: {
             UgcGuid = input.ReadUInt64();
             break;
           }
-          case 14554: {
+          case 40: {
+            UgcRecordUsage = (global::Weedwacker.Shared.Network.Proto.RecordUsage) input.ReadEnum();
+            break;
+          }
+          case 48: {
+            UgcType = (global::Weedwacker.Shared.Network.Proto.UgcType) input.ReadEnum();
+            break;
+          }
+          case 80: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 12322: {
             global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo();
             if (briefCase_ == BriefOneofCase.MusicBriefInfo) {
               subBuilder.MergeFrom(MusicBriefInfo);
@@ -467,11 +473,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 34: {
+          case 18: {
             global::Weedwacker.Shared.Network.Proto.UgcMusicRecord subBuilder = new global::Weedwacker.Shared.Network.Proto.UgcMusicRecord();
             if (recordCase_ == RecordOneofCase.MusicRecord) {
               subBuilder.MergeFrom(MusicRecord);
@@ -480,19 +482,23 @@ namespace Weedwacker.Shared.Network.Proto {
             MusicRecord = subBuilder;
             break;
           }
-          case 80: {
-            UgcType = (global::Weedwacker.Shared.Network.Proto.UgcType) input.ReadEnum();
-            break;
-          }
-          case 112: {
-            UgcRecordUsage = (global::Weedwacker.Shared.Network.Proto.RecordUsage) input.ReadEnum();
-            break;
-          }
-          case 120: {
+          case 24: {
             UgcGuid = input.ReadUInt64();
             break;
           }
-          case 14554: {
+          case 40: {
+            UgcRecordUsage = (global::Weedwacker.Shared.Network.Proto.RecordUsage) input.ReadEnum();
+            break;
+          }
+          case 48: {
+            UgcType = (global::Weedwacker.Shared.Network.Proto.UgcType) input.ReadEnum();
+            break;
+          }
+          case 80: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 12322: {
             global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.UgcMusicBriefInfo();
             if (briefCase_ == BriefOneofCase.MusicBriefInfo) {
               subBuilder.MergeFrom(MusicBriefInfo);

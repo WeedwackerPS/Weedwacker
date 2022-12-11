@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlayerLuaShellNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpQbGF5ZXJMdWFTaGVsbE5vdGlmeS5wcm90bxoSTHVhU2hlbGxUeXBlLnBy",
-            "b3RvImoKFFBsYXllckx1YVNoZWxsTm90aWZ5EiEKCnNoZWxsX3R5cGUYByAB",
-            "KA4yDS5MdWFTaGVsbFR5cGUSCgoCaWQYBSABKA0SEQoJbHVhX3NoZWxsGAwg",
-            "ASgMEhAKCHVzZV90eXBlGAogASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5O",
-            "ZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChpQbGF5ZXJMdWFTaGVsbE5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxoSTHVhU2hlbGxUeXBlLnByb3RvIooBChRQbGF5",
+            "ZXJMdWFTaGVsbE5vdGlmeRIKCgJpZBgIIAEoDRJBCgpzaGVsbF90eXBlGAEg",
+            "ASgOMi0uV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5MdWFTaGVs",
+            "bFR5cGUSEQoJbHVhX3NoZWxsGAQgASgMEhAKCHVzZV90eXBlGAIgASgNYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.LuaShellTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerLuaShellNotify), global::Weedwacker.Shared.Network.Proto.PlayerLuaShellNotify.Parser, new[]{ "ShellType", "Id", "LuaShell", "UseType" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerLuaShellNotify), global::Weedwacker.Shared.Network.Proto.PlayerLuaShellNotify.Parser, new[]{ "Id", "ShellType", "LuaShell", "UseType" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 133
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 166;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class PlayerLuaShellNotify : pb::IMessage<PlayerLuaShellNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlayerLuaShellNotify(PlayerLuaShellNotify other) : this() {
-      shellType_ = other.shellType_;
       id_ = other.id_;
+      shellType_ = other.shellType_;
       luaShell_ = other.luaShell_;
       useType_ = other.useType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -91,20 +96,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PlayerLuaShellNotify(this);
     }
 
-    /// <summary>Field number for the "shell_type" field.</summary>
-    public const int ShellTypeFieldNumber = 7;
-    private global::Weedwacker.Shared.Network.Proto.LuaShellType shellType_ = global::Weedwacker.Shared.Network.Proto.LuaShellType.LuashellNone;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.LuaShellType ShellType {
-      get { return shellType_; }
-      set {
-        shellType_ = value;
-      }
-    }
-
     /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 5;
+    public const int IdFieldNumber = 8;
     private uint id_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,8 +108,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "shell_type" field.</summary>
+    public const int ShellTypeFieldNumber = 1;
+    private global::Weedwacker.Shared.Network.Proto.LuaShellType shellType_ = global::Weedwacker.Shared.Network.Proto.LuaShellType.LuashellNone;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.LuaShellType ShellType {
+      get { return shellType_; }
+      set {
+        shellType_ = value;
+      }
+    }
+
     /// <summary>Field number for the "lua_shell" field.</summary>
-    public const int LuaShellFieldNumber = 12;
+    public const int LuaShellFieldNumber = 4;
     private pb::ByteString luaShell_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -128,7 +133,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "use_type" field.</summary>
-    public const int UseTypeFieldNumber = 10;
+    public const int UseTypeFieldNumber = 2;
     private uint useType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -154,8 +159,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (ShellType != other.ShellType) return false;
       if (Id != other.Id) return false;
+      if (ShellType != other.ShellType) return false;
       if (LuaShell != other.LuaShell) return false;
       if (UseType != other.UseType) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -165,8 +170,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (ShellType != global::Weedwacker.Shared.Network.Proto.LuaShellType.LuashellNone) hash ^= ShellType.GetHashCode();
       if (Id != 0) hash ^= Id.GetHashCode();
+      if (ShellType != global::Weedwacker.Shared.Network.Proto.LuaShellType.LuashellNone) hash ^= ShellType.GetHashCode();
       if (LuaShell.Length != 0) hash ^= LuaShell.GetHashCode();
       if (UseType != 0) hash ^= UseType.GetHashCode();
       if (_unknownFields != null) {
@@ -187,21 +192,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Id != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(Id);
-      }
       if (ShellType != global::Weedwacker.Shared.Network.Proto.LuaShellType.LuashellNone) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(8);
         output.WriteEnum((int) ShellType);
       }
       if (UseType != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(16);
         output.WriteUInt32(UseType);
       }
       if (LuaShell.Length != 0) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(34);
         output.WriteBytes(LuaShell);
+      }
+      if (Id != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Id);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -213,21 +218,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Id != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(Id);
-      }
       if (ShellType != global::Weedwacker.Shared.Network.Proto.LuaShellType.LuashellNone) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(8);
         output.WriteEnum((int) ShellType);
       }
       if (UseType != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(16);
         output.WriteUInt32(UseType);
       }
       if (LuaShell.Length != 0) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(34);
         output.WriteBytes(LuaShell);
+      }
+      if (Id != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Id);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -239,11 +244,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (ShellType != global::Weedwacker.Shared.Network.Proto.LuaShellType.LuashellNone) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ShellType);
-      }
       if (Id != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Id);
+      }
+      if (ShellType != global::Weedwacker.Shared.Network.Proto.LuaShellType.LuashellNone) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ShellType);
       }
       if (LuaShell.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(LuaShell);
@@ -263,11 +268,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.ShellType != global::Weedwacker.Shared.Network.Proto.LuaShellType.LuashellNone) {
-        ShellType = other.ShellType;
-      }
       if (other.Id != 0) {
         Id = other.Id;
+      }
+      if (other.ShellType != global::Weedwacker.Shared.Network.Proto.LuaShellType.LuashellNone) {
+        ShellType = other.ShellType;
       }
       if (other.LuaShell.Length != 0) {
         LuaShell = other.LuaShell;
@@ -290,20 +295,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
-            Id = input.ReadUInt32();
-            break;
-          }
-          case 56: {
+          case 8: {
             ShellType = (global::Weedwacker.Shared.Network.Proto.LuaShellType) input.ReadEnum();
             break;
           }
-          case 80: {
+          case 16: {
             UseType = input.ReadUInt32();
             break;
           }
-          case 98: {
+          case 34: {
             LuaShell = input.ReadBytes();
+            break;
+          }
+          case 64: {
+            Id = input.ReadUInt32();
             break;
           }
         }
@@ -321,20 +326,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
-            Id = input.ReadUInt32();
-            break;
-          }
-          case 56: {
+          case 8: {
             ShellType = (global::Weedwacker.Shared.Network.Proto.LuaShellType) input.ReadEnum();
             break;
           }
-          case 80: {
+          case 16: {
             UseType = input.ReadUInt32();
             break;
           }
-          case 98: {
+          case 34: {
             LuaShell = input.ReadBytes();
+            break;
+          }
+          case 64: {
+            Id = input.ReadUInt32();
             break;
           }
         }

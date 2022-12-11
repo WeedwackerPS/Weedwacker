@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static MultistageSettleWatcherInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFNdWx0aXN0YWdlU2V0dGxlV2F0Y2hlckluZm8ucHJvdG8icwobTXVsdGlz",
-            "dGFnZVNldHRsZVdhdGNoZXJJbmZvEhYKDnRvdGFsX3Byb2dyZXNzGA0gASgN",
-            "EhQKDGN1cl9wcm9ncmVzcxgFIAEoDRISCgp3YXRjaGVyX2lkGAcgASgNEhIK",
-            "CmlzX2ludmVyc2UYDCABKAhCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
-            "cmsuUHJvdG9iBnByb3RvMw=="));
+            "CiFNdWx0aXN0YWdlU2V0dGxlV2F0Y2hlckluZm8ucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8icwobTXVsdGlzdGFnZVNldHRsZVdh",
+            "dGNoZXJJbmZvEhIKCmlzX2ludmVyc2UYAyABKAgSFAoMY3VyX3Byb2dyZXNz",
+            "GAYgASgNEhIKCndhdGNoZXJfaWQYBSABKA0SFgoOdG90YWxfcHJvZ3Jlc3MY",
+            "CyABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MultistageSettleWatcherInfo), global::Weedwacker.Shared.Network.Proto.MultistageSettleWatcherInfo.Parser, new[]{ "TotalProgress", "CurProgress", "WatcherId", "IsInverse" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MultistageSettleWatcherInfo), global::Weedwacker.Shared.Network.Proto.MultistageSettleWatcherInfo.Parser, new[]{ "IsInverse", "CurProgress", "WatcherId", "TotalProgress" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,10 +73,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MultistageSettleWatcherInfo(MultistageSettleWatcherInfo other) : this() {
-      totalProgress_ = other.totalProgress_;
+      isInverse_ = other.isInverse_;
       curProgress_ = other.curProgress_;
       watcherId_ = other.watcherId_;
-      isInverse_ = other.isInverse_;
+      totalProgress_ = other.totalProgress_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,20 +86,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new MultistageSettleWatcherInfo(this);
     }
 
-    /// <summary>Field number for the "total_progress" field.</summary>
-    public const int TotalProgressFieldNumber = 13;
-    private uint totalProgress_;
+    /// <summary>Field number for the "is_inverse" field.</summary>
+    public const int IsInverseFieldNumber = 3;
+    private bool isInverse_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TotalProgress {
-      get { return totalProgress_; }
+    public bool IsInverse {
+      get { return isInverse_; }
       set {
-        totalProgress_ = value;
+        isInverse_ = value;
       }
     }
 
     /// <summary>Field number for the "cur_progress" field.</summary>
-    public const int CurProgressFieldNumber = 5;
+    public const int CurProgressFieldNumber = 6;
     private uint curProgress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -111,7 +111,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "watcher_id" field.</summary>
-    public const int WatcherIdFieldNumber = 7;
+    public const int WatcherIdFieldNumber = 5;
     private uint watcherId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,15 +122,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_inverse" field.</summary>
-    public const int IsInverseFieldNumber = 12;
-    private bool isInverse_;
+    /// <summary>Field number for the "total_progress" field.</summary>
+    public const int TotalProgressFieldNumber = 11;
+    private uint totalProgress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsInverse {
-      get { return isInverse_; }
+    public uint TotalProgress {
+      get { return totalProgress_; }
       set {
-        isInverse_ = value;
+        totalProgress_ = value;
       }
     }
 
@@ -149,10 +149,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (TotalProgress != other.TotalProgress) return false;
+      if (IsInverse != other.IsInverse) return false;
       if (CurProgress != other.CurProgress) return false;
       if (WatcherId != other.WatcherId) return false;
-      if (IsInverse != other.IsInverse) return false;
+      if (TotalProgress != other.TotalProgress) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -160,10 +160,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (TotalProgress != 0) hash ^= TotalProgress.GetHashCode();
+      if (IsInverse != false) hash ^= IsInverse.GetHashCode();
       if (CurProgress != 0) hash ^= CurProgress.GetHashCode();
       if (WatcherId != 0) hash ^= WatcherId.GetHashCode();
-      if (IsInverse != false) hash ^= IsInverse.GetHashCode();
+      if (TotalProgress != 0) hash ^= TotalProgress.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -182,20 +182,20 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CurProgress != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(CurProgress);
-      }
-      if (WatcherId != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(WatcherId);
-      }
       if (IsInverse != false) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(24);
         output.WriteBool(IsInverse);
       }
+      if (WatcherId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(WatcherId);
+      }
+      if (CurProgress != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(CurProgress);
+      }
       if (TotalProgress != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(88);
         output.WriteUInt32(TotalProgress);
       }
       if (_unknownFields != null) {
@@ -208,20 +208,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CurProgress != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(CurProgress);
-      }
-      if (WatcherId != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(WatcherId);
-      }
       if (IsInverse != false) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(24);
         output.WriteBool(IsInverse);
       }
+      if (WatcherId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(WatcherId);
+      }
+      if (CurProgress != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(CurProgress);
+      }
       if (TotalProgress != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(88);
         output.WriteUInt32(TotalProgress);
       }
       if (_unknownFields != null) {
@@ -234,8 +234,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (TotalProgress != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalProgress);
+      if (IsInverse != false) {
+        size += 1 + 1;
       }
       if (CurProgress != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurProgress);
@@ -243,8 +243,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (WatcherId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WatcherId);
       }
-      if (IsInverse != false) {
-        size += 1 + 1;
+      if (TotalProgress != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalProgress);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -258,8 +258,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.TotalProgress != 0) {
-        TotalProgress = other.TotalProgress;
+      if (other.IsInverse != false) {
+        IsInverse = other.IsInverse;
       }
       if (other.CurProgress != 0) {
         CurProgress = other.CurProgress;
@@ -267,8 +267,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.WatcherId != 0) {
         WatcherId = other.WatcherId;
       }
-      if (other.IsInverse != false) {
-        IsInverse = other.IsInverse;
+      if (other.TotalProgress != 0) {
+        TotalProgress = other.TotalProgress;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -285,19 +285,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
-            CurProgress = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            WatcherId = input.ReadUInt32();
-            break;
-          }
-          case 96: {
+          case 24: {
             IsInverse = input.ReadBool();
             break;
           }
-          case 104: {
+          case 40: {
+            WatcherId = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            CurProgress = input.ReadUInt32();
+            break;
+          }
+          case 88: {
             TotalProgress = input.ReadUInt32();
             break;
           }
@@ -316,19 +316,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
-            CurProgress = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            WatcherId = input.ReadUInt32();
-            break;
-          }
-          case 96: {
+          case 24: {
             IsInverse = input.ReadBool();
             break;
           }
-          case 104: {
+          case 40: {
+            WatcherId = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            CurProgress = input.ReadUInt32();
+            break;
+          }
+          case 88: {
             TotalProgress = input.ReadUInt32();
             break;
           }

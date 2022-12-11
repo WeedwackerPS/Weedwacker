@@ -24,18 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneGalleryHomeSeekFurnitureInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CidTY2VuZUdhbGxlcnlIb21lU2Vla0Z1cm5pdHVyZUluZm8ucHJvdG8igwIK",
-            "IVNjZW5lR2FsbGVyeUhvbWVTZWVrRnVybml0dXJlSW5mbxIZChFjdXJfdGlk",
-            "ZV9sZWZ0X251bRgGIAEoDRJQChBwbGF5ZXJfc2NvcmVfbWFwGAggAygLMjYu",
-            "U2NlbmVHYWxsZXJ5SG9tZVNlZWtGdXJuaXR1cmVJbmZvLlBsYXllclNjb3Jl",
-            "TWFwRW50cnkSHgoWY3VyX3RpZGVfZHVyYXRpb25fdGltZRgMIAEoDRIaChJj",
-            "dXJfdGlkZV90b3RhbF9udW0YCSABKA0aNQoTUGxheWVyU2NvcmVNYXBFbnRy",
-            "eRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiABKA06AjgBQiKqAh9XZWVkd2Fj",
-            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CidTY2VuZUdhbGxlcnlIb21lU2Vla0Z1cm5pdHVyZUluZm8ucHJvdG8SH1dl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iowIKIVNjZW5lR2FsbGVy",
+            "eUhvbWVTZWVrRnVybml0dXJlSW5mbxIbChNVbmszMzAwX0RBRUVCSUVBT01O",
+            "GAMgASgNEhsKE1VuazMzMDBfRU5LT0dQSUVIRkQYDiABKA0ScAoQcGxheWVy",
+            "X3Njb3JlX21hcBgKIAMoCzJWLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8uU2NlbmVHYWxsZXJ5SG9tZVNlZWtGdXJuaXR1cmVJbmZvLlBsYXll",
+            "clNjb3JlTWFwRW50cnkSGwoTVW5rMzMwMF9MR0VBUExKQ0pGSBgMIAEoDRo1",
+            "ChNQbGF5ZXJTY29yZU1hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgC",
+            "IAEoDToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneGalleryHomeSeekFurnitureInfo), global::Weedwacker.Shared.Network.Proto.SceneGalleryHomeSeekFurnitureInfo.Parser, new[]{ "CurTideLeftNum", "PlayerScoreMap", "CurTideDurationTime", "CurTideTotalNum" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneGalleryHomeSeekFurnitureInfo), global::Weedwacker.Shared.Network.Proto.SceneGalleryHomeSeekFurnitureInfo.Parser, new[]{ "Unk3300DAEEBIEAOMN", "Unk3300ENKOGPIEHFD", "PlayerScoreMap", "Unk3300LGEAPLJCJFH" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -76,10 +77,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SceneGalleryHomeSeekFurnitureInfo(SceneGalleryHomeSeekFurnitureInfo other) : this() {
-      curTideLeftNum_ = other.curTideLeftNum_;
+      unk3300DAEEBIEAOMN_ = other.unk3300DAEEBIEAOMN_;
+      unk3300ENKOGPIEHFD_ = other.unk3300ENKOGPIEHFD_;
       playerScoreMap_ = other.playerScoreMap_.Clone();
-      curTideDurationTime_ = other.curTideDurationTime_;
-      curTideTotalNum_ = other.curTideTotalNum_;
+      unk3300LGEAPLJCJFH_ = other.unk3300LGEAPLJCJFH_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,22 +90,34 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SceneGalleryHomeSeekFurnitureInfo(this);
     }
 
-    /// <summary>Field number for the "cur_tide_left_num" field.</summary>
-    public const int CurTideLeftNumFieldNumber = 6;
-    private uint curTideLeftNum_;
+    /// <summary>Field number for the "Unk3300_DAEEBIEAOMN" field.</summary>
+    public const int Unk3300DAEEBIEAOMNFieldNumber = 3;
+    private uint unk3300DAEEBIEAOMN_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurTideLeftNum {
-      get { return curTideLeftNum_; }
+    public uint Unk3300DAEEBIEAOMN {
+      get { return unk3300DAEEBIEAOMN_; }
       set {
-        curTideLeftNum_ = value;
+        unk3300DAEEBIEAOMN_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_ENKOGPIEHFD" field.</summary>
+    public const int Unk3300ENKOGPIEHFDFieldNumber = 14;
+    private uint unk3300ENKOGPIEHFD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300ENKOGPIEHFD {
+      get { return unk3300ENKOGPIEHFD_; }
+      set {
+        unk3300ENKOGPIEHFD_ = value;
       }
     }
 
     /// <summary>Field number for the "player_score_map" field.</summary>
-    public const int PlayerScoreMapFieldNumber = 8;
+    public const int PlayerScoreMapFieldNumber = 10;
     private static readonly pbc::MapField<uint, uint>.Codec _map_playerScoreMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 66);
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 82);
     private readonly pbc::MapField<uint, uint> playerScoreMap_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -112,27 +125,15 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return playerScoreMap_; }
     }
 
-    /// <summary>Field number for the "cur_tide_duration_time" field.</summary>
-    public const int CurTideDurationTimeFieldNumber = 12;
-    private uint curTideDurationTime_;
+    /// <summary>Field number for the "Unk3300_LGEAPLJCJFH" field.</summary>
+    public const int Unk3300LGEAPLJCJFHFieldNumber = 12;
+    private uint unk3300LGEAPLJCJFH_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurTideDurationTime {
-      get { return curTideDurationTime_; }
+    public uint Unk3300LGEAPLJCJFH {
+      get { return unk3300LGEAPLJCJFH_; }
       set {
-        curTideDurationTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "cur_tide_total_num" field.</summary>
-    public const int CurTideTotalNumFieldNumber = 9;
-    private uint curTideTotalNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurTideTotalNum {
-      get { return curTideTotalNum_; }
-      set {
-        curTideTotalNum_ = value;
+        unk3300LGEAPLJCJFH_ = value;
       }
     }
 
@@ -151,10 +152,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CurTideLeftNum != other.CurTideLeftNum) return false;
+      if (Unk3300DAEEBIEAOMN != other.Unk3300DAEEBIEAOMN) return false;
+      if (Unk3300ENKOGPIEHFD != other.Unk3300ENKOGPIEHFD) return false;
       if (!PlayerScoreMap.Equals(other.PlayerScoreMap)) return false;
-      if (CurTideDurationTime != other.CurTideDurationTime) return false;
-      if (CurTideTotalNum != other.CurTideTotalNum) return false;
+      if (Unk3300LGEAPLJCJFH != other.Unk3300LGEAPLJCJFH) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -162,10 +163,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CurTideLeftNum != 0) hash ^= CurTideLeftNum.GetHashCode();
+      if (Unk3300DAEEBIEAOMN != 0) hash ^= Unk3300DAEEBIEAOMN.GetHashCode();
+      if (Unk3300ENKOGPIEHFD != 0) hash ^= Unk3300ENKOGPIEHFD.GetHashCode();
       hash ^= PlayerScoreMap.GetHashCode();
-      if (CurTideDurationTime != 0) hash ^= CurTideDurationTime.GetHashCode();
-      if (CurTideTotalNum != 0) hash ^= CurTideTotalNum.GetHashCode();
+      if (Unk3300LGEAPLJCJFH != 0) hash ^= Unk3300LGEAPLJCJFH.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -184,18 +185,18 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CurTideLeftNum != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(CurTideLeftNum);
+      if (Unk3300DAEEBIEAOMN != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300DAEEBIEAOMN);
       }
       playerScoreMap_.WriteTo(output, _map_playerScoreMap_codec);
-      if (CurTideTotalNum != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(CurTideTotalNum);
-      }
-      if (CurTideDurationTime != 0) {
+      if (Unk3300LGEAPLJCJFH != 0) {
         output.WriteRawTag(96);
-        output.WriteUInt32(CurTideDurationTime);
+        output.WriteUInt32(Unk3300LGEAPLJCJFH);
+      }
+      if (Unk3300ENKOGPIEHFD != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300ENKOGPIEHFD);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -207,18 +208,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CurTideLeftNum != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(CurTideLeftNum);
+      if (Unk3300DAEEBIEAOMN != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300DAEEBIEAOMN);
       }
       playerScoreMap_.WriteTo(ref output, _map_playerScoreMap_codec);
-      if (CurTideTotalNum != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(CurTideTotalNum);
-      }
-      if (CurTideDurationTime != 0) {
+      if (Unk3300LGEAPLJCJFH != 0) {
         output.WriteRawTag(96);
-        output.WriteUInt32(CurTideDurationTime);
+        output.WriteUInt32(Unk3300LGEAPLJCJFH);
+      }
+      if (Unk3300ENKOGPIEHFD != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300ENKOGPIEHFD);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -230,15 +231,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CurTideLeftNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurTideLeftNum);
+      if (Unk3300DAEEBIEAOMN != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DAEEBIEAOMN);
+      }
+      if (Unk3300ENKOGPIEHFD != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300ENKOGPIEHFD);
       }
       size += playerScoreMap_.CalculateSize(_map_playerScoreMap_codec);
-      if (CurTideDurationTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurTideDurationTime);
-      }
-      if (CurTideTotalNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurTideTotalNum);
+      if (Unk3300LGEAPLJCJFH != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LGEAPLJCJFH);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -252,15 +253,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.CurTideLeftNum != 0) {
-        CurTideLeftNum = other.CurTideLeftNum;
+      if (other.Unk3300DAEEBIEAOMN != 0) {
+        Unk3300DAEEBIEAOMN = other.Unk3300DAEEBIEAOMN;
+      }
+      if (other.Unk3300ENKOGPIEHFD != 0) {
+        Unk3300ENKOGPIEHFD = other.Unk3300ENKOGPIEHFD;
       }
       playerScoreMap_.Add(other.playerScoreMap_);
-      if (other.CurTideDurationTime != 0) {
-        CurTideDurationTime = other.CurTideDurationTime;
-      }
-      if (other.CurTideTotalNum != 0) {
-        CurTideTotalNum = other.CurTideTotalNum;
+      if (other.Unk3300LGEAPLJCJFH != 0) {
+        Unk3300LGEAPLJCJFH = other.Unk3300LGEAPLJCJFH;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -277,20 +278,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
-            CurTideLeftNum = input.ReadUInt32();
+          case 24: {
+            Unk3300DAEEBIEAOMN = input.ReadUInt32();
             break;
           }
-          case 66: {
+          case 82: {
             playerScoreMap_.AddEntriesFrom(input, _map_playerScoreMap_codec);
             break;
           }
-          case 72: {
-            CurTideTotalNum = input.ReadUInt32();
+          case 96: {
+            Unk3300LGEAPLJCJFH = input.ReadUInt32();
             break;
           }
-          case 96: {
-            CurTideDurationTime = input.ReadUInt32();
+          case 112: {
+            Unk3300ENKOGPIEHFD = input.ReadUInt32();
             break;
           }
         }
@@ -308,20 +309,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
-            CurTideLeftNum = input.ReadUInt32();
+          case 24: {
+            Unk3300DAEEBIEAOMN = input.ReadUInt32();
             break;
           }
-          case 66: {
+          case 82: {
             playerScoreMap_.AddEntriesFrom(ref input, _map_playerScoreMap_codec);
             break;
           }
-          case 72: {
-            CurTideTotalNum = input.ReadUInt32();
+          case 96: {
+            Unk3300LGEAPLJCJFH = input.ReadUInt32();
             break;
           }
-          case 96: {
-            CurTideDurationTime = input.ReadUInt32();
+          case 112: {
+            Unk3300ENKOGPIEHFD = input.ReadUInt32();
             break;
           }
         }

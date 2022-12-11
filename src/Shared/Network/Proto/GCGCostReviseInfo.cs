@@ -24,19 +24,21 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGCostReviseInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdHQ0dDb3N0UmV2aXNlSW5mby5wcm90bxoXR0NHQXR0YWNrQ29zdEluZm8u",
-            "cHJvdG8aGUdDR1BsYXlDYXJkQ29zdEluZm8ucHJvdG8aHkdDR1NlbGVjdE9u",
-            "U3RhZ2VDb3N0SW5mby5wcm90byLsAQoRR0NHQ29zdFJldmlzZUluZm8SFQoN",
-            "aXNfY2FuX2F0dGFjaxgEIAEoCBIhChljYW5fdXNlX2hhbmRfY2FyZF9pZF9s",
-            "aXN0GAsgAygNEjEKE3BsYXlfY2FyZF9jb3N0X2xpc3QYBSADKAsyFC5HQ0dQ",
-            "bGF5Q2FyZENvc3RJbmZvEjwKGXNlbGVjdF9vbl9zdGFnZV9jb3N0X2xpc3QY",
-            "CiADKAsyGS5HQ0dTZWxlY3RPblN0YWdlQ29zdEluZm8SLAoQYXR0YWNrX2Nv",
-            "c3RfbGlzdBgCIAMoCzISLkdDR0F0dGFja0Nvc3RJbmZvQiKqAh9XZWVkd2Fj",
-            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChdHQ0dDb3N0UmV2aXNlSW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxoXR0NHQXR0YWNrQ29zdEluZm8ucHJvdG8aGUdDR1Bs",
+            "YXlDYXJkQ29zdEluZm8ucHJvdG8aHkdDR1NlbGVjdE9uU3RhZ2VDb3N0SW5m",
+            "by5wcm90byLMAgoRR0NHQ29zdFJldmlzZUluZm8SIQoZY2FuX3VzZV9oYW5k",
+            "X2NhcmRfaWRfbGlzdBgPIAMoDRJcChlzZWxlY3Rfb25fc3RhZ2VfY29zdF9s",
+            "aXN0GA0gAygLMjkuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5H",
+            "Q0dTZWxlY3RPblN0YWdlQ29zdEluZm8SUQoTcGxheV9jYXJkX2Nvc3RfbGlz",
+            "dBgFIAMoCzI0LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uR0NH",
+            "UGxheUNhcmRDb3N0SW5mbxJMChBhdHRhY2tfY29zdF9saXN0GAwgAygLMjIu",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5HQ0dBdHRhY2tDb3N0",
+            "SW5mbxIVCg1pc19jYW5fYXR0YWNrGA4gASgIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGAttackCostInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGPlayCardCostInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGSelectOnStageCostInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGCostReviseInfo), global::Weedwacker.Shared.Network.Proto.GCGCostReviseInfo.Parser, new[]{ "IsCanAttack", "CanUseHandCardIdList", "PlayCardCostList", "SelectOnStageCostList", "AttackCostList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGCostReviseInfo), global::Weedwacker.Shared.Network.Proto.GCGCostReviseInfo.Parser, new[]{ "CanUseHandCardIdList", "SelectOnStageCostList", "PlayCardCostList", "AttackCostList", "IsCanAttack" }, null, null, null, null)
           }));
     }
     #endregion
@@ -77,11 +79,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGCostReviseInfo(GCGCostReviseInfo other) : this() {
-      isCanAttack_ = other.isCanAttack_;
       canUseHandCardIdList_ = other.canUseHandCardIdList_.Clone();
-      playCardCostList_ = other.playCardCostList_.Clone();
       selectOnStageCostList_ = other.selectOnStageCostList_.Clone();
+      playCardCostList_ = other.playCardCostList_.Clone();
       attackCostList_ = other.attackCostList_.Clone();
+      isCanAttack_ = other.isCanAttack_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,27 +93,26 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GCGCostReviseInfo(this);
     }
 
-    /// <summary>Field number for the "is_can_attack" field.</summary>
-    public const int IsCanAttackFieldNumber = 4;
-    private bool isCanAttack_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsCanAttack {
-      get { return isCanAttack_; }
-      set {
-        isCanAttack_ = value;
-      }
-    }
-
     /// <summary>Field number for the "can_use_hand_card_id_list" field.</summary>
-    public const int CanUseHandCardIdListFieldNumber = 11;
+    public const int CanUseHandCardIdListFieldNumber = 15;
     private static readonly pb::FieldCodec<uint> _repeated_canUseHandCardIdList_codec
-        = pb::FieldCodec.ForUInt32(90);
+        = pb::FieldCodec.ForUInt32(122);
     private readonly pbc::RepeatedField<uint> canUseHandCardIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<uint> CanUseHandCardIdList {
       get { return canUseHandCardIdList_; }
+    }
+
+    /// <summary>Field number for the "select_on_stage_cost_list" field.</summary>
+    public const int SelectOnStageCostListFieldNumber = 13;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GCGSelectOnStageCostInfo> _repeated_selectOnStageCostList_codec
+        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.GCGSelectOnStageCostInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGSelectOnStageCostInfo> selectOnStageCostList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGSelectOnStageCostInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGSelectOnStageCostInfo> SelectOnStageCostList {
+      get { return selectOnStageCostList_; }
     }
 
     /// <summary>Field number for the "play_card_cost_list" field.</summary>
@@ -125,26 +126,27 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return playCardCostList_; }
     }
 
-    /// <summary>Field number for the "select_on_stage_cost_list" field.</summary>
-    public const int SelectOnStageCostListFieldNumber = 10;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GCGSelectOnStageCostInfo> _repeated_selectOnStageCostList_codec
-        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.GCGSelectOnStageCostInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGSelectOnStageCostInfo> selectOnStageCostList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGSelectOnStageCostInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGSelectOnStageCostInfo> SelectOnStageCostList {
-      get { return selectOnStageCostList_; }
-    }
-
     /// <summary>Field number for the "attack_cost_list" field.</summary>
-    public const int AttackCostListFieldNumber = 2;
+    public const int AttackCostListFieldNumber = 12;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GCGAttackCostInfo> _repeated_attackCostList_codec
-        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.GCGAttackCostInfo.Parser);
+        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.GCGAttackCostInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGAttackCostInfo> attackCostList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGAttackCostInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGAttackCostInfo> AttackCostList {
       get { return attackCostList_; }
+    }
+
+    /// <summary>Field number for the "is_can_attack" field.</summary>
+    public const int IsCanAttackFieldNumber = 14;
+    private bool isCanAttack_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsCanAttack {
+      get { return isCanAttack_; }
+      set {
+        isCanAttack_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -162,11 +164,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsCanAttack != other.IsCanAttack) return false;
       if(!canUseHandCardIdList_.Equals(other.canUseHandCardIdList_)) return false;
-      if(!playCardCostList_.Equals(other.playCardCostList_)) return false;
       if(!selectOnStageCostList_.Equals(other.selectOnStageCostList_)) return false;
+      if(!playCardCostList_.Equals(other.playCardCostList_)) return false;
       if(!attackCostList_.Equals(other.attackCostList_)) return false;
+      if (IsCanAttack != other.IsCanAttack) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -174,11 +176,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsCanAttack != false) hash ^= IsCanAttack.GetHashCode();
       hash ^= canUseHandCardIdList_.GetHashCode();
-      hash ^= playCardCostList_.GetHashCode();
       hash ^= selectOnStageCostList_.GetHashCode();
+      hash ^= playCardCostList_.GetHashCode();
       hash ^= attackCostList_.GetHashCode();
+      if (IsCanAttack != false) hash ^= IsCanAttack.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -197,13 +199,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      playCardCostList_.WriteTo(output, _repeated_playCardCostList_codec);
       attackCostList_.WriteTo(output, _repeated_attackCostList_codec);
+      selectOnStageCostList_.WriteTo(output, _repeated_selectOnStageCostList_codec);
       if (IsCanAttack != false) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(112);
         output.WriteBool(IsCanAttack);
       }
-      playCardCostList_.WriteTo(output, _repeated_playCardCostList_codec);
-      selectOnStageCostList_.WriteTo(output, _repeated_selectOnStageCostList_codec);
       canUseHandCardIdList_.WriteTo(output, _repeated_canUseHandCardIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -215,13 +217,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      playCardCostList_.WriteTo(ref output, _repeated_playCardCostList_codec);
       attackCostList_.WriteTo(ref output, _repeated_attackCostList_codec);
+      selectOnStageCostList_.WriteTo(ref output, _repeated_selectOnStageCostList_codec);
       if (IsCanAttack != false) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(112);
         output.WriteBool(IsCanAttack);
       }
-      playCardCostList_.WriteTo(ref output, _repeated_playCardCostList_codec);
-      selectOnStageCostList_.WriteTo(ref output, _repeated_selectOnStageCostList_codec);
       canUseHandCardIdList_.WriteTo(ref output, _repeated_canUseHandCardIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -233,13 +235,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += canUseHandCardIdList_.CalculateSize(_repeated_canUseHandCardIdList_codec);
+      size += selectOnStageCostList_.CalculateSize(_repeated_selectOnStageCostList_codec);
+      size += playCardCostList_.CalculateSize(_repeated_playCardCostList_codec);
+      size += attackCostList_.CalculateSize(_repeated_attackCostList_codec);
       if (IsCanAttack != false) {
         size += 1 + 1;
       }
-      size += canUseHandCardIdList_.CalculateSize(_repeated_canUseHandCardIdList_codec);
-      size += playCardCostList_.CalculateSize(_repeated_playCardCostList_codec);
-      size += selectOnStageCostList_.CalculateSize(_repeated_selectOnStageCostList_codec);
-      size += attackCostList_.CalculateSize(_repeated_attackCostList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -252,13 +254,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      canUseHandCardIdList_.Add(other.canUseHandCardIdList_);
+      selectOnStageCostList_.Add(other.selectOnStageCostList_);
+      playCardCostList_.Add(other.playCardCostList_);
+      attackCostList_.Add(other.attackCostList_);
       if (other.IsCanAttack != false) {
         IsCanAttack = other.IsCanAttack;
       }
-      canUseHandCardIdList_.Add(other.canUseHandCardIdList_);
-      playCardCostList_.Add(other.playCardCostList_);
-      selectOnStageCostList_.Add(other.selectOnStageCostList_);
-      attackCostList_.Add(other.attackCostList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -274,24 +276,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
-            attackCostList_.AddEntriesFrom(input, _repeated_attackCostList_codec);
-            break;
-          }
-          case 32: {
-            IsCanAttack = input.ReadBool();
-            break;
-          }
           case 42: {
             playCardCostList_.AddEntriesFrom(input, _repeated_playCardCostList_codec);
             break;
           }
-          case 82: {
+          case 98: {
+            attackCostList_.AddEntriesFrom(input, _repeated_attackCostList_codec);
+            break;
+          }
+          case 106: {
             selectOnStageCostList_.AddEntriesFrom(input, _repeated_selectOnStageCostList_codec);
             break;
           }
-          case 90:
-          case 88: {
+          case 112: {
+            IsCanAttack = input.ReadBool();
+            break;
+          }
+          case 122:
+          case 120: {
             canUseHandCardIdList_.AddEntriesFrom(input, _repeated_canUseHandCardIdList_codec);
             break;
           }
@@ -310,24 +312,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
-            attackCostList_.AddEntriesFrom(ref input, _repeated_attackCostList_codec);
-            break;
-          }
-          case 32: {
-            IsCanAttack = input.ReadBool();
-            break;
-          }
           case 42: {
             playCardCostList_.AddEntriesFrom(ref input, _repeated_playCardCostList_codec);
             break;
           }
-          case 82: {
+          case 98: {
+            attackCostList_.AddEntriesFrom(ref input, _repeated_attackCostList_codec);
+            break;
+          }
+          case 106: {
             selectOnStageCostList_.AddEntriesFrom(ref input, _repeated_selectOnStageCostList_codec);
             break;
           }
-          case 90:
-          case 88: {
+          case 112: {
+            IsCanAttack = input.ReadBool();
+            break;
+          }
+          case 122:
+          case 120: {
             canUseHandCardIdList_.AddEntriesFrom(ref input, _repeated_canUseHandCardIdList_codec);
             break;
           }

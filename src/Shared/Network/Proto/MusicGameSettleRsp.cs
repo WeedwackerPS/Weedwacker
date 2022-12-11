@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static MusicGameSettleRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhNdXNpY0dhbWVTZXR0bGVSc3AucHJvdG8ihAEKEk11c2ljR2FtZVNldHRs",
-            "ZVJzcBIPCgdyZXRjb2RlGAsgASgFEhYKDm11c2ljX2Jhc2ljX2lkGAUgASgN",
-            "EhUKDWlzX25ld19yZWNvcmQYBiABKAgSHAoUaXNfdW5sb2NrX25leHRfbGV2",
-            "ZWwYAiABKAgSEAoIdWdjX2d1aWQYCiABKARCIqoCH1dlZWR3YWNrZXIuU2hh",
-            "cmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChhNdXNpY0dhbWVTZXR0bGVSc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8ihAEKEk11c2ljR2FtZVNldHRsZVJzcBIPCgdyZXRj",
+            "b2RlGAwgASgFEhAKCHVnY19ndWlkGAcgASgEEhUKDWlzX25ld19yZWNvcmQY",
+            "CCABKAgSHAoUaXNfdW5sb2NrX25leHRfbGV2ZWwYCiABKAgSFgoObXVzaWNf",
+            "YmFzaWNfaWQYASABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MusicGameSettleRsp), global::Weedwacker.Shared.Network.Proto.MusicGameSettleRsp.Parser, new[]{ "Retcode", "MusicBasicId", "IsNewRecord", "IsUnlockNextLevel", "UgcGuid" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MusicGameSettleRsp), global::Weedwacker.Shared.Network.Proto.MusicGameSettleRsp.Parser, new[]{ "Retcode", "UgcGuid", "IsNewRecord", "IsUnlockNextLevel", "MusicBasicId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8673
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8360;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class MusicGameSettleRsp : pb::IMessage<MusicGameSettleRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,10 +83,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MusicGameSettleRsp(MusicGameSettleRsp other) : this() {
       retcode_ = other.retcode_;
-      musicBasicId_ = other.musicBasicId_;
+      ugcGuid_ = other.ugcGuid_;
       isNewRecord_ = other.isNewRecord_;
       isUnlockNextLevel_ = other.isUnlockNextLevel_;
-      ugcGuid_ = other.ugcGuid_;
+      musicBasicId_ = other.musicBasicId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 11;
+    public const int RetcodeFieldNumber = 12;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,20 +108,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "music_basic_id" field.</summary>
-    public const int MusicBasicIdFieldNumber = 5;
-    private uint musicBasicId_;
+    /// <summary>Field number for the "ugc_guid" field.</summary>
+    public const int UgcGuidFieldNumber = 7;
+    private ulong ugcGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MusicBasicId {
-      get { return musicBasicId_; }
+    public ulong UgcGuid {
+      get { return ugcGuid_; }
       set {
-        musicBasicId_ = value;
+        ugcGuid_ = value;
       }
     }
 
     /// <summary>Field number for the "is_new_record" field.</summary>
-    public const int IsNewRecordFieldNumber = 6;
+    public const int IsNewRecordFieldNumber = 8;
     private bool isNewRecord_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -129,7 +133,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_unlock_next_level" field.</summary>
-    public const int IsUnlockNextLevelFieldNumber = 2;
+    public const int IsUnlockNextLevelFieldNumber = 10;
     private bool isUnlockNextLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -140,15 +144,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "ugc_guid" field.</summary>
-    public const int UgcGuidFieldNumber = 10;
-    private ulong ugcGuid_;
+    /// <summary>Field number for the "music_basic_id" field.</summary>
+    public const int MusicBasicIdFieldNumber = 1;
+    private uint musicBasicId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong UgcGuid {
-      get { return ugcGuid_; }
+    public uint MusicBasicId {
+      get { return musicBasicId_; }
       set {
-        ugcGuid_ = value;
+        musicBasicId_ = value;
       }
     }
 
@@ -168,10 +172,10 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (Retcode != other.Retcode) return false;
-      if (MusicBasicId != other.MusicBasicId) return false;
+      if (UgcGuid != other.UgcGuid) return false;
       if (IsNewRecord != other.IsNewRecord) return false;
       if (IsUnlockNextLevel != other.IsUnlockNextLevel) return false;
-      if (UgcGuid != other.UgcGuid) return false;
+      if (MusicBasicId != other.MusicBasicId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -180,10 +184,10 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      if (MusicBasicId != 0) hash ^= MusicBasicId.GetHashCode();
+      if (UgcGuid != 0UL) hash ^= UgcGuid.GetHashCode();
       if (IsNewRecord != false) hash ^= IsNewRecord.GetHashCode();
       if (IsUnlockNextLevel != false) hash ^= IsUnlockNextLevel.GetHashCode();
-      if (UgcGuid != 0UL) hash ^= UgcGuid.GetHashCode();
+      if (MusicBasicId != 0) hash ^= MusicBasicId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -202,24 +206,24 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsUnlockNextLevel != false) {
-        output.WriteRawTag(16);
-        output.WriteBool(IsUnlockNextLevel);
-      }
       if (MusicBasicId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(8);
         output.WriteUInt32(MusicBasicId);
       }
-      if (IsNewRecord != false) {
-        output.WriteRawTag(48);
-        output.WriteBool(IsNewRecord);
-      }
       if (UgcGuid != 0UL) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(56);
         output.WriteUInt64(UgcGuid);
       }
+      if (IsNewRecord != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsNewRecord);
+      }
+      if (IsUnlockNextLevel != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(IsUnlockNextLevel);
+      }
       if (Retcode != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(96);
         output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
@@ -232,24 +236,24 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsUnlockNextLevel != false) {
-        output.WriteRawTag(16);
-        output.WriteBool(IsUnlockNextLevel);
-      }
       if (MusicBasicId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(8);
         output.WriteUInt32(MusicBasicId);
       }
-      if (IsNewRecord != false) {
-        output.WriteRawTag(48);
-        output.WriteBool(IsNewRecord);
-      }
       if (UgcGuid != 0UL) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(56);
         output.WriteUInt64(UgcGuid);
       }
+      if (IsNewRecord != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsNewRecord);
+      }
+      if (IsUnlockNextLevel != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(IsUnlockNextLevel);
+      }
       if (Retcode != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(96);
         output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
@@ -265,8 +269,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
-      if (MusicBasicId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MusicBasicId);
+      if (UgcGuid != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(UgcGuid);
       }
       if (IsNewRecord != false) {
         size += 1 + 1;
@@ -274,8 +278,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (IsUnlockNextLevel != false) {
         size += 1 + 1;
       }
-      if (UgcGuid != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(UgcGuid);
+      if (MusicBasicId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MusicBasicId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -292,8 +296,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      if (other.MusicBasicId != 0) {
-        MusicBasicId = other.MusicBasicId;
+      if (other.UgcGuid != 0UL) {
+        UgcGuid = other.UgcGuid;
       }
       if (other.IsNewRecord != false) {
         IsNewRecord = other.IsNewRecord;
@@ -301,8 +305,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.IsUnlockNextLevel != false) {
         IsUnlockNextLevel = other.IsUnlockNextLevel;
       }
-      if (other.UgcGuid != 0UL) {
-        UgcGuid = other.UgcGuid;
+      if (other.MusicBasicId != 0) {
+        MusicBasicId = other.MusicBasicId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -319,23 +323,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            IsUnlockNextLevel = input.ReadBool();
-            break;
-          }
-          case 40: {
+          case 8: {
             MusicBasicId = input.ReadUInt32();
             break;
           }
-          case 48: {
+          case 56: {
+            UgcGuid = input.ReadUInt64();
+            break;
+          }
+          case 64: {
             IsNewRecord = input.ReadBool();
             break;
           }
           case 80: {
-            UgcGuid = input.ReadUInt64();
+            IsUnlockNextLevel = input.ReadBool();
             break;
           }
-          case 88: {
+          case 96: {
             Retcode = input.ReadInt32();
             break;
           }
@@ -354,23 +358,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            IsUnlockNextLevel = input.ReadBool();
-            break;
-          }
-          case 40: {
+          case 8: {
             MusicBasicId = input.ReadUInt32();
             break;
           }
-          case 48: {
+          case 56: {
+            UgcGuid = input.ReadUInt64();
+            break;
+          }
+          case 64: {
             IsNewRecord = input.ReadBool();
             break;
           }
           case 80: {
-            UgcGuid = input.ReadUInt64();
+            IsUnlockNextLevel = input.ReadBool();
             break;
           }
-          case 88: {
+          case 96: {
             Retcode = input.ReadInt32();
             break;
           }

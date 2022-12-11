@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static DelScenePlayTeamEntityNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJEZWxTY2VuZVBsYXlUZWFtRW50aXR5Tm90aWZ5LnByb3RvIkwKHERlbFNj",
-            "ZW5lUGxheVRlYW1FbnRpdHlOb3RpZnkSGgoSZGVsX2VudGl0eV9pZF9saXN0",
-            "GAIgAygNEhAKCHNjZW5lX2lkGAQgASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJl",
-            "ZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiJEZWxTY2VuZVBsYXlUZWFtRW50aXR5Tm90aWZ5LnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIkwKHERlbFNjZW5lUGxheVRlYW1F",
+            "bnRpdHlOb3RpZnkSGgoSZGVsX2VudGl0eV9pZF9saXN0GAUgAygNEhAKCHNj",
+            "ZW5lX2lkGAogASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3318
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3237;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class DelScenePlayTeamEntityNotify : pb::IMessage<DelScenePlayTeamEntityNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "del_entity_id_list" field.</summary>
-    public const int DelEntityIdListFieldNumber = 2;
+    public const int DelEntityIdListFieldNumber = 5;
     private static readonly pb::FieldCodec<uint> _repeated_delEntityIdList_codec
-        = pb::FieldCodec.ForUInt32(18);
+        = pb::FieldCodec.ForUInt32(42);
     private readonly pbc::RepeatedField<uint> delEntityIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -100,7 +104,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "scene_id" field.</summary>
-    public const int SceneIdFieldNumber = 4;
+    public const int SceneIdFieldNumber = 10;
     private uint sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,7 +161,7 @@ namespace Weedwacker.Shared.Network.Proto {
     #else
       delEntityIdList_.WriteTo(output, _repeated_delEntityIdList_codec);
       if (SceneId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(80);
         output.WriteUInt32(SceneId);
       }
       if (_unknownFields != null) {
@@ -172,7 +176,7 @@ namespace Weedwacker.Shared.Network.Proto {
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       delEntityIdList_.WriteTo(ref output, _repeated_delEntityIdList_codec);
       if (SceneId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(80);
         output.WriteUInt32(SceneId);
       }
       if (_unknownFields != null) {
@@ -220,12 +224,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18:
-          case 16: {
+          case 42:
+          case 40: {
             delEntityIdList_.AddEntriesFrom(input, _repeated_delEntityIdList_codec);
             break;
           }
-          case 32: {
+          case 80: {
             SceneId = input.ReadUInt32();
             break;
           }
@@ -244,12 +248,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18:
-          case 16: {
+          case 42:
+          case 40: {
             delEntityIdList_.AddEntriesFrom(ref input, _repeated_delEntityIdList_codec);
             break;
           }
-          case 32: {
+          case 80: {
             SceneId = input.ReadUInt32();
             break;
           }

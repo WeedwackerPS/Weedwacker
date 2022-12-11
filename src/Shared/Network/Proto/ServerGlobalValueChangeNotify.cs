@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static ServerGlobalValueChangeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNTZXJ2ZXJHbG9iYWxWYWx1ZUNoYW5nZU5vdGlmeS5wcm90byJTCh1TZXJ2",
-            "ZXJHbG9iYWxWYWx1ZUNoYW5nZU5vdGlmeRIRCgllbnRpdHlfaWQYBiABKA0S",
-            "DQoFdmFsdWUYDCABKAISEAoIa2V5X2hhc2gYDSABKA1CIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiNTZXJ2ZXJHbG9iYWxWYWx1ZUNoYW5nZU5vdGlmeS5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90byJTCh1TZXJ2ZXJHbG9iYWxWYWx1",
+            "ZUNoYW5nZU5vdGlmeRIQCghrZXlfaGFzaBgDIAEoDRINCgV2YWx1ZRgPIAEo",
+            "AhIRCgllbnRpdHlfaWQYByABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ServerGlobalValueChangeNotify), global::Weedwacker.Shared.Network.Proto.ServerGlobalValueChangeNotify.Parser, new[]{ "EntityId", "Value", "KeyHash" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ServerGlobalValueChangeNotify), global::Weedwacker.Shared.Network.Proto.ServerGlobalValueChangeNotify.Parser, new[]{ "KeyHash", "Value", "EntityId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1197
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1199;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ServerGlobalValueChangeNotify : pb::IMessage<ServerGlobalValueChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,9 +81,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ServerGlobalValueChangeNotify(ServerGlobalValueChangeNotify other) : this() {
-      entityId_ = other.entityId_;
-      value_ = other.value_;
       keyHash_ = other.keyHash_;
+      value_ = other.value_;
+      entityId_ = other.entityId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,20 +93,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ServerGlobalValueChangeNotify(this);
     }
 
-    /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 6;
-    private uint entityId_;
+    /// <summary>Field number for the "key_hash" field.</summary>
+    public const int KeyHashFieldNumber = 3;
+    private uint keyHash_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EntityId {
-      get { return entityId_; }
+    public uint KeyHash {
+      get { return keyHash_; }
       set {
-        entityId_ = value;
+        keyHash_ = value;
       }
     }
 
     /// <summary>Field number for the "value" field.</summary>
-    public const int ValueFieldNumber = 12;
+    public const int ValueFieldNumber = 15;
     private float value_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -113,15 +117,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "key_hash" field.</summary>
-    public const int KeyHashFieldNumber = 13;
-    private uint keyHash_;
+    /// <summary>Field number for the "entity_id" field.</summary>
+    public const int EntityIdFieldNumber = 7;
+    private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint KeyHash {
-      get { return keyHash_; }
+    public uint EntityId {
+      get { return entityId_; }
       set {
-        keyHash_ = value;
+        entityId_ = value;
       }
     }
 
@@ -140,9 +144,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (EntityId != other.EntityId) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Value, other.Value)) return false;
       if (KeyHash != other.KeyHash) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Value, other.Value)) return false;
+      if (EntityId != other.EntityId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,9 +154,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (EntityId != 0) hash ^= EntityId.GetHashCode();
-      if (Value != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Value);
       if (KeyHash != 0) hash ^= KeyHash.GetHashCode();
+      if (Value != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Value);
+      if (EntityId != 0) hash ^= EntityId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -171,17 +175,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (KeyHash != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(KeyHash);
+      }
       if (EntityId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteUInt32(EntityId);
       }
       if (Value != 0F) {
-        output.WriteRawTag(101);
+        output.WriteRawTag(125);
         output.WriteFloat(Value);
-      }
-      if (KeyHash != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(KeyHash);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -193,17 +197,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (KeyHash != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(KeyHash);
+      }
       if (EntityId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteUInt32(EntityId);
       }
       if (Value != 0F) {
-        output.WriteRawTag(101);
+        output.WriteRawTag(125);
         output.WriteFloat(Value);
-      }
-      if (KeyHash != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(KeyHash);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -215,14 +219,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (EntityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
+      if (KeyHash != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(KeyHash);
       }
       if (Value != 0F) {
         size += 1 + 4;
       }
-      if (KeyHash != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(KeyHash);
+      if (EntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -236,14 +240,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.EntityId != 0) {
-        EntityId = other.EntityId;
+      if (other.KeyHash != 0) {
+        KeyHash = other.KeyHash;
       }
       if (other.Value != 0F) {
         Value = other.Value;
       }
-      if (other.KeyHash != 0) {
-        KeyHash = other.KeyHash;
+      if (other.EntityId != 0) {
+        EntityId = other.EntityId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -260,16 +264,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
+          case 24: {
+            KeyHash = input.ReadUInt32();
+            break;
+          }
+          case 56: {
             EntityId = input.ReadUInt32();
             break;
           }
-          case 101: {
+          case 125: {
             Value = input.ReadFloat();
-            break;
-          }
-          case 104: {
-            KeyHash = input.ReadUInt32();
             break;
           }
         }
@@ -287,16 +291,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
+          case 24: {
+            KeyHash = input.ReadUInt32();
+            break;
+          }
+          case 56: {
             EntityId = input.ReadUInt32();
             break;
           }
-          case 101: {
+          case 125: {
             Value = input.ReadFloat();
-            break;
-          }
-          case 104: {
-            KeyHash = input.ReadUInt32();
             break;
           }
         }

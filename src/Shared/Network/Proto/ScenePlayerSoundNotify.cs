@@ -24,18 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static ScenePlayerSoundNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxTY2VuZVBsYXllclNvdW5kTm90aWZ5LnByb3RvGgxWZWN0b3IucHJvdG8i",
-            "4QEKFlNjZW5lUGxheWVyU291bmROb3RpZnkSEgoKc291bmRfbmFtZRgEIAEo",
-            "CRI4CglwbGF5X3R5cGUYCCABKA4yJS5TY2VuZVBsYXllclNvdW5kTm90aWZ5",
-            "LlBsYXlTb3VuZFR5cGUSGQoIcGxheV9wb3MYAyABKAsyBy5WZWN0b3IiXgoN",
-            "UGxheVNvdW5kVHlwZRIYChRQTEFZX1NPVU5EX1RZUEVfTk9ORRAAEhkKFVBM",
-            "QVlfU09VTkRfVFlQRV9TVEFSVBABEhgKFFBMQVlfU09VTkRfVFlQRV9TVE9Q",
-            "EAJCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3Rv",
-            "Mw=="));
+            "ChxTY2VuZVBsYXllclNvdW5kTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGgxWZWN0b3IucHJvdG8ioQIKFlNjZW5lUGxh",
+            "eWVyU291bmROb3RpZnkSOQoIcGxheV9wb3MYBiABKAsyJy5XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvLlZlY3RvchJYCglwbGF5X3R5cGUYDyAB",
+            "KA4yRS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlNjZW5lUGxh",
+            "eWVyU291bmROb3RpZnkuUGxheVNvdW5kVHlwZRISCgpzb3VuZF9uYW1lGA4g",
+            "ASgJIl4KDVBsYXlTb3VuZFR5cGUSGAoUUExBWV9TT1VORF9UWVBFX05PTkUQ",
+            "ABIZChVQTEFZX1NPVU5EX1RZUEVfU1RBUlQQARIYChRQTEFZX1NPVU5EX1RZ",
+            "UEVfU1RPUBACYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ScenePlayerSoundNotify), global::Weedwacker.Shared.Network.Proto.ScenePlayerSoundNotify.Parser, new[]{ "SoundName", "PlayType", "PlayPos" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.ScenePlayerSoundNotify.Types.PlaySoundType) }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ScenePlayerSoundNotify), global::Weedwacker.Shared.Network.Proto.ScenePlayerSoundNotify.Parser, new[]{ "PlayPos", "PlayType", "SoundName" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.ScenePlayerSoundNotify.Types.PlaySoundType) }, null, null)
           }));
     }
     #endregion
@@ -43,9 +44,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 233
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 266;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ScenePlayerSoundNotify : pb::IMessage<ScenePlayerSoundNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -81,9 +86,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ScenePlayerSoundNotify(ScenePlayerSoundNotify other) : this() {
-      soundName_ = other.soundName_;
-      playType_ = other.playType_;
       playPos_ = other.playPos_ != null ? other.playPos_.Clone() : null;
+      playType_ = other.playType_;
+      soundName_ = other.soundName_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,20 +98,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ScenePlayerSoundNotify(this);
     }
 
-    /// <summary>Field number for the "sound_name" field.</summary>
-    public const int SoundNameFieldNumber = 4;
-    private string soundName_ = "";
+    /// <summary>Field number for the "play_pos" field.</summary>
+    public const int PlayPosFieldNumber = 6;
+    private global::Weedwacker.Shared.Network.Proto.Vector playPos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string SoundName {
-      get { return soundName_; }
+    public global::Weedwacker.Shared.Network.Proto.Vector PlayPos {
+      get { return playPos_; }
       set {
-        soundName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        playPos_ = value;
       }
     }
 
     /// <summary>Field number for the "play_type" field.</summary>
-    public const int PlayTypeFieldNumber = 8;
+    public const int PlayTypeFieldNumber = 15;
     private global::Weedwacker.Shared.Network.Proto.ScenePlayerSoundNotify.Types.PlaySoundType playType_ = global::Weedwacker.Shared.Network.Proto.ScenePlayerSoundNotify.Types.PlaySoundType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -117,15 +122,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "play_pos" field.</summary>
-    public const int PlayPosFieldNumber = 3;
-    private global::Weedwacker.Shared.Network.Proto.Vector playPos_;
+    /// <summary>Field number for the "sound_name" field.</summary>
+    public const int SoundNameFieldNumber = 14;
+    private string soundName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector PlayPos {
-      get { return playPos_; }
+    public string SoundName {
+      get { return soundName_; }
       set {
-        playPos_ = value;
+        soundName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -144,9 +149,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (SoundName != other.SoundName) return false;
-      if (PlayType != other.PlayType) return false;
       if (!object.Equals(PlayPos, other.PlayPos)) return false;
+      if (PlayType != other.PlayType) return false;
+      if (SoundName != other.SoundName) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -154,9 +159,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (SoundName.Length != 0) hash ^= SoundName.GetHashCode();
-      if (PlayType != global::Weedwacker.Shared.Network.Proto.ScenePlayerSoundNotify.Types.PlaySoundType.None) hash ^= PlayType.GetHashCode();
       if (playPos_ != null) hash ^= PlayPos.GetHashCode();
+      if (PlayType != global::Weedwacker.Shared.Network.Proto.ScenePlayerSoundNotify.Types.PlaySoundType.None) hash ^= PlayType.GetHashCode();
+      if (SoundName.Length != 0) hash ^= SoundName.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -176,15 +181,15 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (playPos_ != null) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(50);
         output.WriteMessage(PlayPos);
       }
       if (SoundName.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(114);
         output.WriteString(SoundName);
       }
       if (PlayType != global::Weedwacker.Shared.Network.Proto.ScenePlayerSoundNotify.Types.PlaySoundType.None) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(120);
         output.WriteEnum((int) PlayType);
       }
       if (_unknownFields != null) {
@@ -198,15 +203,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (playPos_ != null) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(50);
         output.WriteMessage(PlayPos);
       }
       if (SoundName.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(114);
         output.WriteString(SoundName);
       }
       if (PlayType != global::Weedwacker.Shared.Network.Proto.ScenePlayerSoundNotify.Types.PlaySoundType.None) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(120);
         output.WriteEnum((int) PlayType);
       }
       if (_unknownFields != null) {
@@ -219,14 +224,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (SoundName.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(SoundName);
+      if (playPos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PlayPos);
       }
       if (PlayType != global::Weedwacker.Shared.Network.Proto.ScenePlayerSoundNotify.Types.PlaySoundType.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) PlayType);
       }
-      if (playPos_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PlayPos);
+      if (SoundName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(SoundName);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -240,17 +245,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.SoundName.Length != 0) {
-        SoundName = other.SoundName;
-      }
-      if (other.PlayType != global::Weedwacker.Shared.Network.Proto.ScenePlayerSoundNotify.Types.PlaySoundType.None) {
-        PlayType = other.PlayType;
-      }
       if (other.playPos_ != null) {
         if (playPos_ == null) {
           PlayPos = new global::Weedwacker.Shared.Network.Proto.Vector();
         }
         PlayPos.MergeFrom(other.PlayPos);
+      }
+      if (other.PlayType != global::Weedwacker.Shared.Network.Proto.ScenePlayerSoundNotify.Types.PlaySoundType.None) {
+        PlayType = other.PlayType;
+      }
+      if (other.SoundName.Length != 0) {
+        SoundName = other.SoundName;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -267,18 +272,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
+          case 50: {
             if (playPos_ == null) {
               PlayPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(PlayPos);
             break;
           }
-          case 34: {
+          case 114: {
             SoundName = input.ReadString();
             break;
           }
-          case 64: {
+          case 120: {
             PlayType = (global::Weedwacker.Shared.Network.Proto.ScenePlayerSoundNotify.Types.PlaySoundType) input.ReadEnum();
             break;
           }
@@ -297,18 +302,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
+          case 50: {
             if (playPos_ == null) {
               PlayPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(PlayPos);
             break;
           }
-          case 34: {
+          case 114: {
             SoundName = input.ReadString();
             break;
           }
-          case 64: {
+          case 120: {
             PlayType = (global::Weedwacker.Shared.Network.Proto.ScenePlayerSoundNotify.Types.PlaySoundType) input.ReadEnum();
             break;
           }

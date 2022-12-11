@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static MassiveEntityStateChangedNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVNYXNzaXZlRW50aXR5U3RhdGVDaGFuZ2VkTm90aWZ5LnByb3RvGhhNYXNz",
-            "aXZlRW50aXR5U3RhdGUucHJvdG8iWQofTWFzc2l2ZUVudGl0eVN0YXRlQ2hh",
-            "bmdlZE5vdGlmeRI2ChltYXNzaXZlX2VudGl0eV9zdGF0ZV9saXN0GAQgAygL",
-            "MhMuTWFzc2l2ZUVudGl0eVN0YXRlQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5O",
-            "ZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiVNYXNzaXZlRW50aXR5U3RhdGVDaGFuZ2VkTm90aWZ5LnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGhhNYXNzaXZlRW50aXR5U3Rh",
+            "dGUucHJvdG8ieQofTWFzc2l2ZUVudGl0eVN0YXRlQ2hhbmdlZE5vdGlmeRJW",
+            "ChltYXNzaXZlX2VudGl0eV9zdGF0ZV9saXN0GA4gAygLMjMuV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90by5NYXNzaXZlRW50aXR5U3RhdGViBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MassiveEntityStateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 370
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 349;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class MassiveEntityStateChangedNotify : pb::IMessage<MassiveEntityStateChangedNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,9 +95,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "massive_entity_state_list" field.</summary>
-    public const int MassiveEntityStateListFieldNumber = 4;
+    public const int MassiveEntityStateListFieldNumber = 14;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.MassiveEntityState> _repeated_massiveEntityStateList_codec
-        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.MassiveEntityState.Parser);
+        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.MassiveEntityState.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MassiveEntityState> massiveEntityStateList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MassiveEntityState>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -193,7 +198,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 34: {
+          case 114: {
             massiveEntityStateList_.AddEntriesFrom(input, _repeated_massiveEntityStateList_codec);
             break;
           }
@@ -212,7 +217,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 34: {
+          case 114: {
             massiveEntityStateList_.AddEntriesFrom(ref input, _repeated_massiveEntityStateList_codec);
             break;
           }

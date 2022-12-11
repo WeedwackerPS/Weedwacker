@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static AbilityActionDeductStaminaReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBBYmlsaXR5QWN0aW9uRGVkdWN0U3RhbWluYS5wcm90byItChpBYmlsaXR5",
-            "QWN0aW9uRGVkdWN0U3RhbWluYRIPCgdpc19zd2ltGAEgASgIQiKqAh9XZWVk",
-            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiBBYmlsaXR5QWN0aW9uRGVkdWN0U3RhbWluYS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byItChpBYmlsaXR5QWN0aW9uRGVkdWN0",
+            "U3RhbWluYRIPCgdpc19zd2ltGAcgASgIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,7 +82,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_swim" field.</summary>
-    public const int IsSwimFieldNumber = 1;
+    public const int IsSwimFieldNumber = 7;
     private bool isSwim_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -136,7 +136,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (IsSwim != false) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(56);
         output.WriteBool(IsSwim);
       }
       if (_unknownFields != null) {
@@ -150,7 +150,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (IsSwim != false) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(56);
         output.WriteBool(IsSwim);
       }
       if (_unknownFields != null) {
@@ -196,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 56: {
             IsSwim = input.ReadBool();
             break;
           }
@@ -215,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 56: {
             IsSwim = input.ReadBool();
             break;
           }

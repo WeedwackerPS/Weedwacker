@@ -24,36 +24,38 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlayerLoginReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRQbGF5ZXJMb2dpblJlcS5wcm90bxoYQWRqdXN0VHJhY2tpbmdJbmZvLnBy",
-            "b3RvGhRUcmFja2luZ0lPSW5mby5wcm90byKJCAoOUGxheWVyTG9naW5SZXES",
-            "FQoNbGFuZ3VhZ2VfdHlwZRgGIAEoDRIVCgxyZWdfcGxhdGZvcm0Y5wQgASgN",
-            "EioKEHRyYWNraW5nX2lvX2luZm8Y/AwgASgLMg8uVHJhY2tpbmdJT0luZm8S",
-            "FAoMYWNjb3VudF90eXBlGA0gASgNEg0KBXRva2VuGA8gASgJEhcKDmV4dHJh",
-            "X2Jpbl9kYXRhGLILIAEoDBITCgpjaGFubmVsX2lkGKIKIAEoDRIcChNjbGll",
-            "bnRfZGF0YV92ZXJzaW9uGLAFIAEoDRITCgthY2NvdW50X3VpZBgCIAEoCRIW",
-            "Cg5jbGllbnRfdmVyc2lvbhgMIAEoCRIdChRzZWN1cml0eV9saWJyYXJ5X21k",
-            "NRiEBiABKAkSFQoMY291bnRyeV9jb2RlGNAPIAEoCRIPCgZwc25faWQY9Akg",
-            "ASgJEhQKC2NsaWVudF9wb3J0GK8DIAEoDRITCgtkZXZpY2VfbmFtZRgJIAEo",
-            "CRIMCgNjcHMYiwkgASgJEhIKCmxvZ2luX3JhbmQYAyABKAQSGgoRdGFyZ2V0",
-            "X2hvbWVfcGFyYW0Y2AcgASgNEjIKFGFkanVzdF90cmFja2luZ19pbmZvGJgO",
-            "IAEoCzITLkFkanVzdFRyYWNraW5nSW5mbxIUCgtpc190cmFuc2ZlchiMByAB",
-            "KAgSDAoDdGFnGPsNIAEoDRIQCghpc19ndWVzdBgFIAEoCBIfChZlbnZpcm9u",
-            "bWVudF9lcnJvcl9jb2RlGOoPIAEoDBISCglvbmxpbmVfaWQYhwcgASgJEhEK",
-            "CWlzX2VkaXRvchgIIAEoCBIgChdjaGVja3N1bV9jbGllbnRfdmVyc2lvbhjd",
-            "BiABKAkSGwoSc2VjdXJpdHlfY21kX3JlcGx5GMsPIAEoDBIhChhzZWN1cml0",
-            "eV9saWJyYXJ5X3ZlcnNpb24YvQkgASgJEhEKCGJpcnRoZGF5GPQMIAEoCRIT",
-            "CgtkZXZpY2VfdXVpZBgEIAEoCRIVCgxjbGllbnRfdG9rZW4YigwgASgNEhYK",
-            "DnN1Yl9jaGFubmVsX2lkGBcgASgNEhIKCnRhcmdldF91aWQYCyABKA0SEwoL",
-            "ZGV2aWNlX2luZm8YASABKAkSHAoTY2xpZW50X3Zlcmlzb25faGFzaBirDSAB",
-            "KAkSEQoIY2hlY2tzdW0Y/AsgASgJEhUKDXBsYXRmb3JtX3R5cGUYDiABKA0S",
-            "HgoVdGFyZ2V0X2hvbWVfb3duZXJfdWlkGMgOIAEoDRIYCg9jbG91ZF9jbGll",
-            "bnRfaXAYtwogASgNEg8KBmdtX3VpZBjkBCABKA0SFgoOc3lzdGVtX3ZlcnNp",
-            "b24YCiABKAkSEAoIcGxhdGZvcm0YByABKAlCIqoCH1dlZWR3YWNrZXIuU2hh",
-            "cmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChRQbGF5ZXJMb2dpblJlcS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90bxoYQWRqdXN0VHJhY2tpbmdJbmZvLnByb3RvGhRUcmFja2lu",
+            "Z0lPSW5mby5wcm90byLtCAoOUGxheWVyTG9naW5SZXESEwoLZGV2aWNlX3V1",
+            "aWQYBSABKAkSEgoKdGFyZ2V0X3VpZBgKIAEoDRIXCg5leHRyYV9iaW5fZGF0",
+            "YRj+DyABKAwSEAoIcGxhdGZvcm0YBCABKAkSEQoIY2hlY2tzdW0YtgogASgJ",
+            "EhMKCmNoYW5uZWxfaWQYnQwgASgNEhwKE2NsaWVudF92ZXJpc29uX2hhc2gY",
+            "+A8gASgJEhUKDWxhbmd1YWdlX3R5cGUYCyABKA0SHAoTY2xpZW50X2RhdGFf",
+            "dmVyc2lvbhjPBiABKA0SFAoMYWNjb3VudF90eXBlGAcgASgNEh0KFHNlY3Vy",
+            "aXR5X2xpYnJhcnlfbWQ1GOQGIAEoCRISCglvbmxpbmVfaWQYwQQgASgJEhsK",
+            "E1VuazMzMDBfUE1HRkJNSk5OQ0wYUiABKA0SEwoLZGV2aWNlX25hbWUYDCAB",
+            "KAkSEQoIYmlydGhkYXkY6wYgASgJEgwKA3RhZxiNBCABKA0SEwoLYWNjb3Vu",
+            "dF91aWQYDiABKAkSEwoLZGV2aWNlX2luZm8YDyABKAkSHAoTVW5rMzMwMF9J",
+            "QURGSkhORktJQhiyCyABKA0SEQoJaXNfZWRpdG9yGAEgASgIEg0KBXRva2Vu",
+            "GAggASgJEhUKDHJlZ19wbGF0Zm9ybRioAyABKA0SIAoXY2hlY2tzdW1fY2xp",
+            "ZW50X3ZlcnNpb24YxQQgASgJEhsKE1VuazMzMDBfT09CSEFJSUlQSEgYVSAB",
+            "KA0SHAoTVW5rMzMwMF9ORExBTkJFSUdFRxioCiABKA0SFAoMY291bnRyeV9j",
+            "b2RlGGggASgJEhwKE1VuazMzMDBfUElQTERFQVBNTU4Y/g0gASgNEkoKEHRy",
+            "YWNraW5nX2lvX2luZm8YsQ0gASgLMi8uV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5UcmFja2luZ0lPSW5mbxIUCgtpc190cmFuc2ZlchjwBCAB",
+            "KAgSIQoYc2VjdXJpdHlfbGlicmFyeV92ZXJzaW9uGLwGIAEoCRIWCg5jbGll",
+            "bnRfdmVyc2lvbhgCIAEoCRIQCghpc19ndWVzdBgNIAEoCBIWCg5zeXN0ZW1f",
+            "dmVyc2lvbhgGIAEoCRIeChV0YXJnZXRfaG9tZV9vd25lcl91aWQYgwcgASgN",
+            "Eg8KBnBzbl9pZBj6CCABKAkSGwoSc2VjdXJpdHlfY21kX3JlcGx5GOoGIAEo",
+            "DBIcChNVbmszMzAwX09GRkhQQUZJRkdEGIQIIAEoDRISCgpsb2dpbl9yYW5k",
+            "GAkgASgEElEKFGFkanVzdF90cmFja2luZ19pbmZvGEAgASgLMjMuV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5BZGp1c3RUcmFja2luZ0luZm8S",
+            "HwoWZW52aXJvbm1lbnRfZXJyb3JfY29kZRiAAiABKAwSFQoNcGxhdGZvcm1f",
+            "dHlwZRgDIAEoDRIMCgNjcHMYvw8gASgJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AdjustTrackingInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.TrackingIOInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerLoginReq), global::Weedwacker.Shared.Network.Proto.PlayerLoginReq.Parser, new[]{ "LanguageType", "RegPlatform", "TrackingIoInfo", "AccountType", "Token", "ExtraBinData", "ChannelId", "ClientDataVersion", "AccountUid", "ClientVersion", "SecurityLibraryMd5", "CountryCode", "PsnId", "ClientPort", "DeviceName", "Cps", "LoginRand", "TargetHomeParam", "AdjustTrackingInfo", "IsTransfer", "Tag", "IsGuest", "EnvironmentErrorCode", "OnlineId", "IsEditor", "ChecksumClientVersion", "SecurityCmdReply", "SecurityLibraryVersion", "Birthday", "DeviceUuid", "ClientToken", "SubChannelId", "TargetUid", "DeviceInfo", "ClientVerisonHash", "Checksum", "PlatformType", "TargetHomeOwnerUid", "CloudClientIp", "GmUid", "SystemVersion", "Platform" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerLoginReq), global::Weedwacker.Shared.Network.Proto.PlayerLoginReq.Parser, new[]{ "DeviceUuid", "TargetUid", "ExtraBinData", "Platform", "Checksum", "ChannelId", "ClientVerisonHash", "LanguageType", "ClientDataVersion", "AccountType", "SecurityLibraryMd5", "OnlineId", "Unk3300PMGFBMJNNCL", "DeviceName", "Birthday", "Tag", "AccountUid", "DeviceInfo", "Unk3300IADFJHNFKIB", "IsEditor", "Token", "RegPlatform", "ChecksumClientVersion", "Unk3300OOBHAIIIPHH", "Unk3300NDLANBEIGEG", "CountryCode", "Unk3300PIPLDEAPMMN", "TrackingIoInfo", "IsTransfer", "SecurityLibraryVersion", "ClientVersion", "IsGuest", "SystemVersion", "TargetHomeOwnerUid", "PsnId", "SecurityCmdReply", "Unk3300OFFHPAFIFGD", "LoginRand", "AdjustTrackingInfo", "EnvironmentErrorCode", "PlatformType", "Cps" }, null, null, null, null)
           }));
     }
     #endregion
@@ -61,10 +63,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 112
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 156;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class PlayerLoginReq : pb::IMessage<PlayerLoginReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -100,48 +106,48 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlayerLoginReq(PlayerLoginReq other) : this() {
-      languageType_ = other.languageType_;
-      regPlatform_ = other.regPlatform_;
-      trackingIoInfo_ = other.trackingIoInfo_ != null ? other.trackingIoInfo_.Clone() : null;
-      accountType_ = other.accountType_;
-      token_ = other.token_;
-      extraBinData_ = other.extraBinData_;
-      channelId_ = other.channelId_;
-      clientDataVersion_ = other.clientDataVersion_;
-      accountUid_ = other.accountUid_;
-      clientVersion_ = other.clientVersion_;
-      securityLibraryMd5_ = other.securityLibraryMd5_;
-      countryCode_ = other.countryCode_;
-      psnId_ = other.psnId_;
-      clientPort_ = other.clientPort_;
-      deviceName_ = other.deviceName_;
-      cps_ = other.cps_;
-      loginRand_ = other.loginRand_;
-      targetHomeParam_ = other.targetHomeParam_;
-      adjustTrackingInfo_ = other.adjustTrackingInfo_ != null ? other.adjustTrackingInfo_.Clone() : null;
-      isTransfer_ = other.isTransfer_;
-      tag_ = other.tag_;
-      isGuest_ = other.isGuest_;
-      environmentErrorCode_ = other.environmentErrorCode_;
-      onlineId_ = other.onlineId_;
-      isEditor_ = other.isEditor_;
-      checksumClientVersion_ = other.checksumClientVersion_;
-      securityCmdReply_ = other.securityCmdReply_;
-      securityLibraryVersion_ = other.securityLibraryVersion_;
-      birthday_ = other.birthday_;
       deviceUuid_ = other.deviceUuid_;
-      clientToken_ = other.clientToken_;
-      subChannelId_ = other.subChannelId_;
       targetUid_ = other.targetUid_;
-      deviceInfo_ = other.deviceInfo_;
-      clientVerisonHash_ = other.clientVerisonHash_;
-      checksum_ = other.checksum_;
-      platformType_ = other.platformType_;
-      targetHomeOwnerUid_ = other.targetHomeOwnerUid_;
-      cloudClientIp_ = other.cloudClientIp_;
-      gmUid_ = other.gmUid_;
-      systemVersion_ = other.systemVersion_;
+      extraBinData_ = other.extraBinData_;
       platform_ = other.platform_;
+      checksum_ = other.checksum_;
+      channelId_ = other.channelId_;
+      clientVerisonHash_ = other.clientVerisonHash_;
+      languageType_ = other.languageType_;
+      clientDataVersion_ = other.clientDataVersion_;
+      accountType_ = other.accountType_;
+      securityLibraryMd5_ = other.securityLibraryMd5_;
+      onlineId_ = other.onlineId_;
+      unk3300PMGFBMJNNCL_ = other.unk3300PMGFBMJNNCL_;
+      deviceName_ = other.deviceName_;
+      birthday_ = other.birthday_;
+      tag_ = other.tag_;
+      accountUid_ = other.accountUid_;
+      deviceInfo_ = other.deviceInfo_;
+      unk3300IADFJHNFKIB_ = other.unk3300IADFJHNFKIB_;
+      isEditor_ = other.isEditor_;
+      token_ = other.token_;
+      regPlatform_ = other.regPlatform_;
+      checksumClientVersion_ = other.checksumClientVersion_;
+      unk3300OOBHAIIIPHH_ = other.unk3300OOBHAIIIPHH_;
+      unk3300NDLANBEIGEG_ = other.unk3300NDLANBEIGEG_;
+      countryCode_ = other.countryCode_;
+      unk3300PIPLDEAPMMN_ = other.unk3300PIPLDEAPMMN_;
+      trackingIoInfo_ = other.trackingIoInfo_ != null ? other.trackingIoInfo_.Clone() : null;
+      isTransfer_ = other.isTransfer_;
+      securityLibraryVersion_ = other.securityLibraryVersion_;
+      clientVersion_ = other.clientVersion_;
+      isGuest_ = other.isGuest_;
+      systemVersion_ = other.systemVersion_;
+      targetHomeOwnerUid_ = other.targetHomeOwnerUid_;
+      psnId_ = other.psnId_;
+      securityCmdReply_ = other.securityCmdReply_;
+      unk3300OFFHPAFIFGD_ = other.unk3300OFFHPAFIFGD_;
+      loginRand_ = other.loginRand_;
+      adjustTrackingInfo_ = other.adjustTrackingInfo_ != null ? other.adjustTrackingInfo_.Clone() : null;
+      environmentErrorCode_ = other.environmentErrorCode_;
+      platformType_ = other.platformType_;
+      cps_ = other.cps_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -151,356 +157,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PlayerLoginReq(this);
     }
 
-    /// <summary>Field number for the "language_type" field.</summary>
-    public const int LanguageTypeFieldNumber = 6;
-    private uint languageType_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint LanguageType {
-      get { return languageType_; }
-      set {
-        languageType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "reg_platform" field.</summary>
-    public const int RegPlatformFieldNumber = 615;
-    private uint regPlatform_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RegPlatform {
-      get { return regPlatform_; }
-      set {
-        regPlatform_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "tracking_io_info" field.</summary>
-    public const int TrackingIoInfoFieldNumber = 1660;
-    private global::Weedwacker.Shared.Network.Proto.TrackingIOInfo trackingIoInfo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.TrackingIOInfo TrackingIoInfo {
-      get { return trackingIoInfo_; }
-      set {
-        trackingIoInfo_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "account_type" field.</summary>
-    public const int AccountTypeFieldNumber = 13;
-    private uint accountType_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint AccountType {
-      get { return accountType_; }
-      set {
-        accountType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "token" field.</summary>
-    public const int TokenFieldNumber = 15;
-    private string token_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Token {
-      get { return token_; }
-      set {
-        token_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "extra_bin_data" field.</summary>
-    public const int ExtraBinDataFieldNumber = 1458;
-    private pb::ByteString extraBinData_ = pb::ByteString.Empty;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pb::ByteString ExtraBinData {
-      get { return extraBinData_; }
-      set {
-        extraBinData_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "channel_id" field.</summary>
-    public const int ChannelIdFieldNumber = 1314;
-    private uint channelId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ChannelId {
-      get { return channelId_; }
-      set {
-        channelId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "client_data_version" field.</summary>
-    public const int ClientDataVersionFieldNumber = 688;
-    private uint clientDataVersion_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ClientDataVersion {
-      get { return clientDataVersion_; }
-      set {
-        clientDataVersion_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "account_uid" field.</summary>
-    public const int AccountUidFieldNumber = 2;
-    private string accountUid_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string AccountUid {
-      get { return accountUid_; }
-      set {
-        accountUid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "client_version" field.</summary>
-    public const int ClientVersionFieldNumber = 12;
-    private string clientVersion_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ClientVersion {
-      get { return clientVersion_; }
-      set {
-        clientVersion_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "security_library_md5" field.</summary>
-    public const int SecurityLibraryMd5FieldNumber = 772;
-    private string securityLibraryMd5_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string SecurityLibraryMd5 {
-      get { return securityLibraryMd5_; }
-      set {
-        securityLibraryMd5_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "country_code" field.</summary>
-    public const int CountryCodeFieldNumber = 2000;
-    private string countryCode_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string CountryCode {
-      get { return countryCode_; }
-      set {
-        countryCode_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "psn_id" field.</summary>
-    public const int PsnIdFieldNumber = 1268;
-    private string psnId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string PsnId {
-      get { return psnId_; }
-      set {
-        psnId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "client_port" field.</summary>
-    public const int ClientPortFieldNumber = 431;
-    private uint clientPort_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ClientPort {
-      get { return clientPort_; }
-      set {
-        clientPort_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "device_name" field.</summary>
-    public const int DeviceNameFieldNumber = 9;
-    private string deviceName_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string DeviceName {
-      get { return deviceName_; }
-      set {
-        deviceName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "cps" field.</summary>
-    public const int CpsFieldNumber = 1163;
-    private string cps_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Cps {
-      get { return cps_; }
-      set {
-        cps_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "login_rand" field.</summary>
-    public const int LoginRandFieldNumber = 3;
-    private ulong loginRand_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong LoginRand {
-      get { return loginRand_; }
-      set {
-        loginRand_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "target_home_param" field.</summary>
-    public const int TargetHomeParamFieldNumber = 984;
-    private uint targetHomeParam_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TargetHomeParam {
-      get { return targetHomeParam_; }
-      set {
-        targetHomeParam_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "adjust_tracking_info" field.</summary>
-    public const int AdjustTrackingInfoFieldNumber = 1816;
-    private global::Weedwacker.Shared.Network.Proto.AdjustTrackingInfo adjustTrackingInfo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.AdjustTrackingInfo AdjustTrackingInfo {
-      get { return adjustTrackingInfo_; }
-      set {
-        adjustTrackingInfo_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_transfer" field.</summary>
-    public const int IsTransferFieldNumber = 908;
-    private bool isTransfer_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsTransfer {
-      get { return isTransfer_; }
-      set {
-        isTransfer_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "tag" field.</summary>
-    public const int TagFieldNumber = 1787;
-    private uint tag_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Tag {
-      get { return tag_; }
-      set {
-        tag_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_guest" field.</summary>
-    public const int IsGuestFieldNumber = 5;
-    private bool isGuest_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsGuest {
-      get { return isGuest_; }
-      set {
-        isGuest_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "environment_error_code" field.</summary>
-    public const int EnvironmentErrorCodeFieldNumber = 2026;
-    private pb::ByteString environmentErrorCode_ = pb::ByteString.Empty;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pb::ByteString EnvironmentErrorCode {
-      get { return environmentErrorCode_; }
-      set {
-        environmentErrorCode_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "online_id" field.</summary>
-    public const int OnlineIdFieldNumber = 903;
-    private string onlineId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string OnlineId {
-      get { return onlineId_; }
-      set {
-        onlineId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "is_editor" field.</summary>
-    public const int IsEditorFieldNumber = 8;
-    private bool isEditor_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsEditor {
-      get { return isEditor_; }
-      set {
-        isEditor_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "checksum_client_version" field.</summary>
-    public const int ChecksumClientVersionFieldNumber = 861;
-    private string checksumClientVersion_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ChecksumClientVersion {
-      get { return checksumClientVersion_; }
-      set {
-        checksumClientVersion_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "security_cmd_reply" field.</summary>
-    public const int SecurityCmdReplyFieldNumber = 1995;
-    private pb::ByteString securityCmdReply_ = pb::ByteString.Empty;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pb::ByteString SecurityCmdReply {
-      get { return securityCmdReply_; }
-      set {
-        securityCmdReply_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "security_library_version" field.</summary>
-    public const int SecurityLibraryVersionFieldNumber = 1213;
-    private string securityLibraryVersion_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string SecurityLibraryVersion {
-      get { return securityLibraryVersion_; }
-      set {
-        securityLibraryVersion_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "birthday" field.</summary>
-    public const int BirthdayFieldNumber = 1652;
-    private string birthday_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Birthday {
-      get { return birthday_; }
-      set {
-        birthday_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "device_uuid" field.</summary>
-    public const int DeviceUuidFieldNumber = 4;
+    public const int DeviceUuidFieldNumber = 5;
     private string deviceUuid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -511,32 +169,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "client_token" field.</summary>
-    public const int ClientTokenFieldNumber = 1546;
-    private uint clientToken_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ClientToken {
-      get { return clientToken_; }
-      set {
-        clientToken_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "sub_channel_id" field.</summary>
-    public const int SubChannelIdFieldNumber = 23;
-    private uint subChannelId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SubChannelId {
-      get { return subChannelId_; }
-      set {
-        subChannelId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "target_uid" field.</summary>
-    public const int TargetUidFieldNumber = 11;
+    public const int TargetUidFieldNumber = 10;
     private uint targetUid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -547,32 +181,32 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "device_info" field.</summary>
-    public const int DeviceInfoFieldNumber = 1;
-    private string deviceInfo_ = "";
+    /// <summary>Field number for the "extra_bin_data" field.</summary>
+    public const int ExtraBinDataFieldNumber = 2046;
+    private pb::ByteString extraBinData_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string DeviceInfo {
-      get { return deviceInfo_; }
+    public pb::ByteString ExtraBinData {
+      get { return extraBinData_; }
       set {
-        deviceInfo_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        extraBinData_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "client_verison_hash" field.</summary>
-    public const int ClientVerisonHashFieldNumber = 1707;
-    private string clientVerisonHash_ = "";
+    /// <summary>Field number for the "platform" field.</summary>
+    public const int PlatformFieldNumber = 4;
+    private string platform_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ClientVerisonHash {
-      get { return clientVerisonHash_; }
+    public string Platform {
+      get { return platform_; }
       set {
-        clientVerisonHash_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        platform_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     /// <summary>Field number for the "checksum" field.</summary>
-    public const int ChecksumFieldNumber = 1532;
+    public const int ChecksumFieldNumber = 1334;
     private string checksum_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -583,56 +217,332 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "platform_type" field.</summary>
-    public const int PlatformTypeFieldNumber = 14;
-    private uint platformType_;
+    /// <summary>Field number for the "channel_id" field.</summary>
+    public const int ChannelIdFieldNumber = 1565;
+    private uint channelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint PlatformType {
-      get { return platformType_; }
+    public uint ChannelId {
+      get { return channelId_; }
       set {
-        platformType_ = value;
+        channelId_ = value;
       }
     }
 
-    /// <summary>Field number for the "target_home_owner_uid" field.</summary>
-    public const int TargetHomeOwnerUidFieldNumber = 1864;
-    private uint targetHomeOwnerUid_;
+    /// <summary>Field number for the "client_verison_hash" field.</summary>
+    public const int ClientVerisonHashFieldNumber = 2040;
+    private string clientVerisonHash_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TargetHomeOwnerUid {
-      get { return targetHomeOwnerUid_; }
+    public string ClientVerisonHash {
+      get { return clientVerisonHash_; }
       set {
-        targetHomeOwnerUid_ = value;
+        clientVerisonHash_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "cloud_client_ip" field.</summary>
-    public const int CloudClientIpFieldNumber = 1335;
-    private uint cloudClientIp_;
+    /// <summary>Field number for the "language_type" field.</summary>
+    public const int LanguageTypeFieldNumber = 11;
+    private uint languageType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CloudClientIp {
-      get { return cloudClientIp_; }
+    public uint LanguageType {
+      get { return languageType_; }
       set {
-        cloudClientIp_ = value;
+        languageType_ = value;
       }
     }
 
-    /// <summary>Field number for the "gm_uid" field.</summary>
-    public const int GmUidFieldNumber = 612;
-    private uint gmUid_;
+    /// <summary>Field number for the "client_data_version" field.</summary>
+    public const int ClientDataVersionFieldNumber = 847;
+    private uint clientDataVersion_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GmUid {
-      get { return gmUid_; }
+    public uint ClientDataVersion {
+      get { return clientDataVersion_; }
       set {
-        gmUid_ = value;
+        clientDataVersion_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "account_type" field.</summary>
+    public const int AccountTypeFieldNumber = 7;
+    private uint accountType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint AccountType {
+      get { return accountType_; }
+      set {
+        accountType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "security_library_md5" field.</summary>
+    public const int SecurityLibraryMd5FieldNumber = 868;
+    private string securityLibraryMd5_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string SecurityLibraryMd5 {
+      get { return securityLibraryMd5_; }
+      set {
+        securityLibraryMd5_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "online_id" field.</summary>
+    public const int OnlineIdFieldNumber = 577;
+    private string onlineId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string OnlineId {
+      get { return onlineId_; }
+      set {
+        onlineId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_PMGFBMJNNCL" field.</summary>
+    public const int Unk3300PMGFBMJNNCLFieldNumber = 82;
+    private uint unk3300PMGFBMJNNCL_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300PMGFBMJNNCL {
+      get { return unk3300PMGFBMJNNCL_; }
+      set {
+        unk3300PMGFBMJNNCL_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "device_name" field.</summary>
+    public const int DeviceNameFieldNumber = 12;
+    private string deviceName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string DeviceName {
+      get { return deviceName_; }
+      set {
+        deviceName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "birthday" field.</summary>
+    public const int BirthdayFieldNumber = 875;
+    private string birthday_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Birthday {
+      get { return birthday_; }
+      set {
+        birthday_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "tag" field.</summary>
+    public const int TagFieldNumber = 525;
+    private uint tag_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Tag {
+      get { return tag_; }
+      set {
+        tag_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "account_uid" field.</summary>
+    public const int AccountUidFieldNumber = 14;
+    private string accountUid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string AccountUid {
+      get { return accountUid_; }
+      set {
+        accountUid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "device_info" field.</summary>
+    public const int DeviceInfoFieldNumber = 15;
+    private string deviceInfo_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string DeviceInfo {
+      get { return deviceInfo_; }
+      set {
+        deviceInfo_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_IADFJHNFKIB" field.</summary>
+    public const int Unk3300IADFJHNFKIBFieldNumber = 1458;
+    private uint unk3300IADFJHNFKIB_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300IADFJHNFKIB {
+      get { return unk3300IADFJHNFKIB_; }
+      set {
+        unk3300IADFJHNFKIB_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_editor" field.</summary>
+    public const int IsEditorFieldNumber = 1;
+    private bool isEditor_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsEditor {
+      get { return isEditor_; }
+      set {
+        isEditor_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "token" field.</summary>
+    public const int TokenFieldNumber = 8;
+    private string token_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Token {
+      get { return token_; }
+      set {
+        token_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "reg_platform" field.</summary>
+    public const int RegPlatformFieldNumber = 424;
+    private uint regPlatform_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint RegPlatform {
+      get { return regPlatform_; }
+      set {
+        regPlatform_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "checksum_client_version" field.</summary>
+    public const int ChecksumClientVersionFieldNumber = 581;
+    private string checksumClientVersion_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ChecksumClientVersion {
+      get { return checksumClientVersion_; }
+      set {
+        checksumClientVersion_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_OOBHAIIIPHH" field.</summary>
+    public const int Unk3300OOBHAIIIPHHFieldNumber = 85;
+    private uint unk3300OOBHAIIIPHH_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300OOBHAIIIPHH {
+      get { return unk3300OOBHAIIIPHH_; }
+      set {
+        unk3300OOBHAIIIPHH_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_NDLANBEIGEG" field.</summary>
+    public const int Unk3300NDLANBEIGEGFieldNumber = 1320;
+    private uint unk3300NDLANBEIGEG_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300NDLANBEIGEG {
+      get { return unk3300NDLANBEIGEG_; }
+      set {
+        unk3300NDLANBEIGEG_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "country_code" field.</summary>
+    public const int CountryCodeFieldNumber = 104;
+    private string countryCode_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string CountryCode {
+      get { return countryCode_; }
+      set {
+        countryCode_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_PIPLDEAPMMN" field.</summary>
+    public const int Unk3300PIPLDEAPMMNFieldNumber = 1790;
+    private uint unk3300PIPLDEAPMMN_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300PIPLDEAPMMN {
+      get { return unk3300PIPLDEAPMMN_; }
+      set {
+        unk3300PIPLDEAPMMN_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "tracking_io_info" field.</summary>
+    public const int TrackingIoInfoFieldNumber = 1713;
+    private global::Weedwacker.Shared.Network.Proto.TrackingIOInfo trackingIoInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.TrackingIOInfo TrackingIoInfo {
+      get { return trackingIoInfo_; }
+      set {
+        trackingIoInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_transfer" field.</summary>
+    public const int IsTransferFieldNumber = 624;
+    private bool isTransfer_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsTransfer {
+      get { return isTransfer_; }
+      set {
+        isTransfer_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "security_library_version" field.</summary>
+    public const int SecurityLibraryVersionFieldNumber = 828;
+    private string securityLibraryVersion_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string SecurityLibraryVersion {
+      get { return securityLibraryVersion_; }
+      set {
+        securityLibraryVersion_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "client_version" field.</summary>
+    public const int ClientVersionFieldNumber = 2;
+    private string clientVersion_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ClientVersion {
+      get { return clientVersion_; }
+      set {
+        clientVersion_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "is_guest" field.</summary>
+    public const int IsGuestFieldNumber = 13;
+    private bool isGuest_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsGuest {
+      get { return isGuest_; }
+      set {
+        isGuest_ = value;
       }
     }
 
     /// <summary>Field number for the "system_version" field.</summary>
-    public const int SystemVersionFieldNumber = 10;
+    public const int SystemVersionFieldNumber = 6;
     private string systemVersion_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -643,15 +553,111 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "platform" field.</summary>
-    public const int PlatformFieldNumber = 7;
-    private string platform_ = "";
+    /// <summary>Field number for the "target_home_owner_uid" field.</summary>
+    public const int TargetHomeOwnerUidFieldNumber = 899;
+    private uint targetHomeOwnerUid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Platform {
-      get { return platform_; }
+    public uint TargetHomeOwnerUid {
+      get { return targetHomeOwnerUid_; }
       set {
-        platform_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        targetHomeOwnerUid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "psn_id" field.</summary>
+    public const int PsnIdFieldNumber = 1146;
+    private string psnId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PsnId {
+      get { return psnId_; }
+      set {
+        psnId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "security_cmd_reply" field.</summary>
+    public const int SecurityCmdReplyFieldNumber = 874;
+    private pb::ByteString securityCmdReply_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pb::ByteString SecurityCmdReply {
+      get { return securityCmdReply_; }
+      set {
+        securityCmdReply_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_OFFHPAFIFGD" field.</summary>
+    public const int Unk3300OFFHPAFIFGDFieldNumber = 1028;
+    private uint unk3300OFFHPAFIFGD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300OFFHPAFIFGD {
+      get { return unk3300OFFHPAFIFGD_; }
+      set {
+        unk3300OFFHPAFIFGD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "login_rand" field.</summary>
+    public const int LoginRandFieldNumber = 9;
+    private ulong loginRand_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong LoginRand {
+      get { return loginRand_; }
+      set {
+        loginRand_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "adjust_tracking_info" field.</summary>
+    public const int AdjustTrackingInfoFieldNumber = 64;
+    private global::Weedwacker.Shared.Network.Proto.AdjustTrackingInfo adjustTrackingInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.AdjustTrackingInfo AdjustTrackingInfo {
+      get { return adjustTrackingInfo_; }
+      set {
+        adjustTrackingInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "environment_error_code" field.</summary>
+    public const int EnvironmentErrorCodeFieldNumber = 256;
+    private pb::ByteString environmentErrorCode_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pb::ByteString EnvironmentErrorCode {
+      get { return environmentErrorCode_; }
+      set {
+        environmentErrorCode_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "platform_type" field.</summary>
+    public const int PlatformTypeFieldNumber = 3;
+    private uint platformType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PlatformType {
+      get { return platformType_; }
+      set {
+        platformType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cps" field.</summary>
+    public const int CpsFieldNumber = 1983;
+    private string cps_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Cps {
+      get { return cps_; }
+      set {
+        cps_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -670,48 +676,48 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (LanguageType != other.LanguageType) return false;
-      if (RegPlatform != other.RegPlatform) return false;
-      if (!object.Equals(TrackingIoInfo, other.TrackingIoInfo)) return false;
-      if (AccountType != other.AccountType) return false;
-      if (Token != other.Token) return false;
-      if (ExtraBinData != other.ExtraBinData) return false;
-      if (ChannelId != other.ChannelId) return false;
-      if (ClientDataVersion != other.ClientDataVersion) return false;
-      if (AccountUid != other.AccountUid) return false;
-      if (ClientVersion != other.ClientVersion) return false;
-      if (SecurityLibraryMd5 != other.SecurityLibraryMd5) return false;
-      if (CountryCode != other.CountryCode) return false;
-      if (PsnId != other.PsnId) return false;
-      if (ClientPort != other.ClientPort) return false;
-      if (DeviceName != other.DeviceName) return false;
-      if (Cps != other.Cps) return false;
-      if (LoginRand != other.LoginRand) return false;
-      if (TargetHomeParam != other.TargetHomeParam) return false;
-      if (!object.Equals(AdjustTrackingInfo, other.AdjustTrackingInfo)) return false;
-      if (IsTransfer != other.IsTransfer) return false;
-      if (Tag != other.Tag) return false;
-      if (IsGuest != other.IsGuest) return false;
-      if (EnvironmentErrorCode != other.EnvironmentErrorCode) return false;
-      if (OnlineId != other.OnlineId) return false;
-      if (IsEditor != other.IsEditor) return false;
-      if (ChecksumClientVersion != other.ChecksumClientVersion) return false;
-      if (SecurityCmdReply != other.SecurityCmdReply) return false;
-      if (SecurityLibraryVersion != other.SecurityLibraryVersion) return false;
-      if (Birthday != other.Birthday) return false;
       if (DeviceUuid != other.DeviceUuid) return false;
-      if (ClientToken != other.ClientToken) return false;
-      if (SubChannelId != other.SubChannelId) return false;
       if (TargetUid != other.TargetUid) return false;
-      if (DeviceInfo != other.DeviceInfo) return false;
-      if (ClientVerisonHash != other.ClientVerisonHash) return false;
-      if (Checksum != other.Checksum) return false;
-      if (PlatformType != other.PlatformType) return false;
-      if (TargetHomeOwnerUid != other.TargetHomeOwnerUid) return false;
-      if (CloudClientIp != other.CloudClientIp) return false;
-      if (GmUid != other.GmUid) return false;
-      if (SystemVersion != other.SystemVersion) return false;
+      if (ExtraBinData != other.ExtraBinData) return false;
       if (Platform != other.Platform) return false;
+      if (Checksum != other.Checksum) return false;
+      if (ChannelId != other.ChannelId) return false;
+      if (ClientVerisonHash != other.ClientVerisonHash) return false;
+      if (LanguageType != other.LanguageType) return false;
+      if (ClientDataVersion != other.ClientDataVersion) return false;
+      if (AccountType != other.AccountType) return false;
+      if (SecurityLibraryMd5 != other.SecurityLibraryMd5) return false;
+      if (OnlineId != other.OnlineId) return false;
+      if (Unk3300PMGFBMJNNCL != other.Unk3300PMGFBMJNNCL) return false;
+      if (DeviceName != other.DeviceName) return false;
+      if (Birthday != other.Birthday) return false;
+      if (Tag != other.Tag) return false;
+      if (AccountUid != other.AccountUid) return false;
+      if (DeviceInfo != other.DeviceInfo) return false;
+      if (Unk3300IADFJHNFKIB != other.Unk3300IADFJHNFKIB) return false;
+      if (IsEditor != other.IsEditor) return false;
+      if (Token != other.Token) return false;
+      if (RegPlatform != other.RegPlatform) return false;
+      if (ChecksumClientVersion != other.ChecksumClientVersion) return false;
+      if (Unk3300OOBHAIIIPHH != other.Unk3300OOBHAIIIPHH) return false;
+      if (Unk3300NDLANBEIGEG != other.Unk3300NDLANBEIGEG) return false;
+      if (CountryCode != other.CountryCode) return false;
+      if (Unk3300PIPLDEAPMMN != other.Unk3300PIPLDEAPMMN) return false;
+      if (!object.Equals(TrackingIoInfo, other.TrackingIoInfo)) return false;
+      if (IsTransfer != other.IsTransfer) return false;
+      if (SecurityLibraryVersion != other.SecurityLibraryVersion) return false;
+      if (ClientVersion != other.ClientVersion) return false;
+      if (IsGuest != other.IsGuest) return false;
+      if (SystemVersion != other.SystemVersion) return false;
+      if (TargetHomeOwnerUid != other.TargetHomeOwnerUid) return false;
+      if (PsnId != other.PsnId) return false;
+      if (SecurityCmdReply != other.SecurityCmdReply) return false;
+      if (Unk3300OFFHPAFIFGD != other.Unk3300OFFHPAFIFGD) return false;
+      if (LoginRand != other.LoginRand) return false;
+      if (!object.Equals(AdjustTrackingInfo, other.AdjustTrackingInfo)) return false;
+      if (EnvironmentErrorCode != other.EnvironmentErrorCode) return false;
+      if (PlatformType != other.PlatformType) return false;
+      if (Cps != other.Cps) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -719,48 +725,48 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (LanguageType != 0) hash ^= LanguageType.GetHashCode();
-      if (RegPlatform != 0) hash ^= RegPlatform.GetHashCode();
-      if (trackingIoInfo_ != null) hash ^= TrackingIoInfo.GetHashCode();
-      if (AccountType != 0) hash ^= AccountType.GetHashCode();
-      if (Token.Length != 0) hash ^= Token.GetHashCode();
-      if (ExtraBinData.Length != 0) hash ^= ExtraBinData.GetHashCode();
-      if (ChannelId != 0) hash ^= ChannelId.GetHashCode();
-      if (ClientDataVersion != 0) hash ^= ClientDataVersion.GetHashCode();
-      if (AccountUid.Length != 0) hash ^= AccountUid.GetHashCode();
-      if (ClientVersion.Length != 0) hash ^= ClientVersion.GetHashCode();
-      if (SecurityLibraryMd5.Length != 0) hash ^= SecurityLibraryMd5.GetHashCode();
-      if (CountryCode.Length != 0) hash ^= CountryCode.GetHashCode();
-      if (PsnId.Length != 0) hash ^= PsnId.GetHashCode();
-      if (ClientPort != 0) hash ^= ClientPort.GetHashCode();
-      if (DeviceName.Length != 0) hash ^= DeviceName.GetHashCode();
-      if (Cps.Length != 0) hash ^= Cps.GetHashCode();
-      if (LoginRand != 0UL) hash ^= LoginRand.GetHashCode();
-      if (TargetHomeParam != 0) hash ^= TargetHomeParam.GetHashCode();
-      if (adjustTrackingInfo_ != null) hash ^= AdjustTrackingInfo.GetHashCode();
-      if (IsTransfer != false) hash ^= IsTransfer.GetHashCode();
-      if (Tag != 0) hash ^= Tag.GetHashCode();
-      if (IsGuest != false) hash ^= IsGuest.GetHashCode();
-      if (EnvironmentErrorCode.Length != 0) hash ^= EnvironmentErrorCode.GetHashCode();
-      if (OnlineId.Length != 0) hash ^= OnlineId.GetHashCode();
-      if (IsEditor != false) hash ^= IsEditor.GetHashCode();
-      if (ChecksumClientVersion.Length != 0) hash ^= ChecksumClientVersion.GetHashCode();
-      if (SecurityCmdReply.Length != 0) hash ^= SecurityCmdReply.GetHashCode();
-      if (SecurityLibraryVersion.Length != 0) hash ^= SecurityLibraryVersion.GetHashCode();
-      if (Birthday.Length != 0) hash ^= Birthday.GetHashCode();
       if (DeviceUuid.Length != 0) hash ^= DeviceUuid.GetHashCode();
-      if (ClientToken != 0) hash ^= ClientToken.GetHashCode();
-      if (SubChannelId != 0) hash ^= SubChannelId.GetHashCode();
       if (TargetUid != 0) hash ^= TargetUid.GetHashCode();
-      if (DeviceInfo.Length != 0) hash ^= DeviceInfo.GetHashCode();
-      if (ClientVerisonHash.Length != 0) hash ^= ClientVerisonHash.GetHashCode();
-      if (Checksum.Length != 0) hash ^= Checksum.GetHashCode();
-      if (PlatformType != 0) hash ^= PlatformType.GetHashCode();
-      if (TargetHomeOwnerUid != 0) hash ^= TargetHomeOwnerUid.GetHashCode();
-      if (CloudClientIp != 0) hash ^= CloudClientIp.GetHashCode();
-      if (GmUid != 0) hash ^= GmUid.GetHashCode();
-      if (SystemVersion.Length != 0) hash ^= SystemVersion.GetHashCode();
+      if (ExtraBinData.Length != 0) hash ^= ExtraBinData.GetHashCode();
       if (Platform.Length != 0) hash ^= Platform.GetHashCode();
+      if (Checksum.Length != 0) hash ^= Checksum.GetHashCode();
+      if (ChannelId != 0) hash ^= ChannelId.GetHashCode();
+      if (ClientVerisonHash.Length != 0) hash ^= ClientVerisonHash.GetHashCode();
+      if (LanguageType != 0) hash ^= LanguageType.GetHashCode();
+      if (ClientDataVersion != 0) hash ^= ClientDataVersion.GetHashCode();
+      if (AccountType != 0) hash ^= AccountType.GetHashCode();
+      if (SecurityLibraryMd5.Length != 0) hash ^= SecurityLibraryMd5.GetHashCode();
+      if (OnlineId.Length != 0) hash ^= OnlineId.GetHashCode();
+      if (Unk3300PMGFBMJNNCL != 0) hash ^= Unk3300PMGFBMJNNCL.GetHashCode();
+      if (DeviceName.Length != 0) hash ^= DeviceName.GetHashCode();
+      if (Birthday.Length != 0) hash ^= Birthday.GetHashCode();
+      if (Tag != 0) hash ^= Tag.GetHashCode();
+      if (AccountUid.Length != 0) hash ^= AccountUid.GetHashCode();
+      if (DeviceInfo.Length != 0) hash ^= DeviceInfo.GetHashCode();
+      if (Unk3300IADFJHNFKIB != 0) hash ^= Unk3300IADFJHNFKIB.GetHashCode();
+      if (IsEditor != false) hash ^= IsEditor.GetHashCode();
+      if (Token.Length != 0) hash ^= Token.GetHashCode();
+      if (RegPlatform != 0) hash ^= RegPlatform.GetHashCode();
+      if (ChecksumClientVersion.Length != 0) hash ^= ChecksumClientVersion.GetHashCode();
+      if (Unk3300OOBHAIIIPHH != 0) hash ^= Unk3300OOBHAIIIPHH.GetHashCode();
+      if (Unk3300NDLANBEIGEG != 0) hash ^= Unk3300NDLANBEIGEG.GetHashCode();
+      if (CountryCode.Length != 0) hash ^= CountryCode.GetHashCode();
+      if (Unk3300PIPLDEAPMMN != 0) hash ^= Unk3300PIPLDEAPMMN.GetHashCode();
+      if (trackingIoInfo_ != null) hash ^= TrackingIoInfo.GetHashCode();
+      if (IsTransfer != false) hash ^= IsTransfer.GetHashCode();
+      if (SecurityLibraryVersion.Length != 0) hash ^= SecurityLibraryVersion.GetHashCode();
+      if (ClientVersion.Length != 0) hash ^= ClientVersion.GetHashCode();
+      if (IsGuest != false) hash ^= IsGuest.GetHashCode();
+      if (SystemVersion.Length != 0) hash ^= SystemVersion.GetHashCode();
+      if (TargetHomeOwnerUid != 0) hash ^= TargetHomeOwnerUid.GetHashCode();
+      if (PsnId.Length != 0) hash ^= PsnId.GetHashCode();
+      if (SecurityCmdReply.Length != 0) hash ^= SecurityCmdReply.GetHashCode();
+      if (Unk3300OFFHPAFIFGD != 0) hash ^= Unk3300OFFHPAFIFGD.GetHashCode();
+      if (LoginRand != 0UL) hash ^= LoginRand.GetHashCode();
+      if (adjustTrackingInfo_ != null) hash ^= AdjustTrackingInfo.GetHashCode();
+      if (EnvironmentErrorCode.Length != 0) hash ^= EnvironmentErrorCode.GetHashCode();
+      if (PlatformType != 0) hash ^= PlatformType.GetHashCode();
+      if (Cps.Length != 0) hash ^= Cps.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -779,173 +785,173 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (DeviceInfo.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(DeviceInfo);
-      }
-      if (AccountUid.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(AccountUid);
-      }
-      if (LoginRand != 0UL) {
-        output.WriteRawTag(24);
-        output.WriteUInt64(LoginRand);
-      }
-      if (DeviceUuid.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(DeviceUuid);
-      }
-      if (IsGuest != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(IsGuest);
-      }
-      if (LanguageType != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(LanguageType);
-      }
-      if (Platform.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteString(Platform);
-      }
       if (IsEditor != false) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(8);
         output.WriteBool(IsEditor);
       }
-      if (DeviceName.Length != 0) {
-        output.WriteRawTag(74);
-        output.WriteString(DeviceName);
-      }
-      if (SystemVersion.Length != 0) {
-        output.WriteRawTag(82);
-        output.WriteString(SystemVersion);
-      }
-      if (TargetUid != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(TargetUid);
-      }
       if (ClientVersion.Length != 0) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(18);
         output.WriteString(ClientVersion);
       }
-      if (AccountType != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(AccountType);
-      }
       if (PlatformType != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(24);
         output.WriteUInt32(PlatformType);
       }
+      if (Platform.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Platform);
+      }
+      if (DeviceUuid.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(DeviceUuid);
+      }
+      if (SystemVersion.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(SystemVersion);
+      }
+      if (AccountType != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(AccountType);
+      }
       if (Token.Length != 0) {
-        output.WriteRawTag(122);
+        output.WriteRawTag(66);
         output.WriteString(Token);
       }
-      if (SubChannelId != 0) {
-        output.WriteRawTag(184, 1);
-        output.WriteUInt32(SubChannelId);
+      if (LoginRand != 0UL) {
+        output.WriteRawTag(72);
+        output.WriteUInt64(LoginRand);
       }
-      if (ClientPort != 0) {
-        output.WriteRawTag(248, 26);
-        output.WriteUInt32(ClientPort);
+      if (TargetUid != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(TargetUid);
       }
-      if (GmUid != 0) {
-        output.WriteRawTag(160, 38);
-        output.WriteUInt32(GmUid);
+      if (LanguageType != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(LanguageType);
       }
-      if (RegPlatform != 0) {
-        output.WriteRawTag(184, 38);
-        output.WriteUInt32(RegPlatform);
+      if (DeviceName.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteString(DeviceName);
       }
-      if (ClientDataVersion != 0) {
-        output.WriteRawTag(128, 43);
-        output.WriteUInt32(ClientDataVersion);
+      if (IsGuest != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsGuest);
       }
-      if (SecurityLibraryMd5.Length != 0) {
-        output.WriteRawTag(162, 48);
-        output.WriteString(SecurityLibraryMd5);
+      if (AccountUid.Length != 0) {
+        output.WriteRawTag(114);
+        output.WriteString(AccountUid);
       }
-      if (ChecksumClientVersion.Length != 0) {
-        output.WriteRawTag(234, 53);
-        output.WriteString(ChecksumClientVersion);
-      }
-      if (OnlineId.Length != 0) {
-        output.WriteRawTag(186, 56);
-        output.WriteString(OnlineId);
-      }
-      if (IsTransfer != false) {
-        output.WriteRawTag(224, 56);
-        output.WriteBool(IsTransfer);
-      }
-      if (TargetHomeParam != 0) {
-        output.WriteRawTag(192, 61);
-        output.WriteUInt32(TargetHomeParam);
-      }
-      if (Cps.Length != 0) {
-        output.WriteRawTag(218, 72);
-        output.WriteString(Cps);
-      }
-      if (SecurityLibraryVersion.Length != 0) {
-        output.WriteRawTag(234, 75);
-        output.WriteString(SecurityLibraryVersion);
-      }
-      if (PsnId.Length != 0) {
-        output.WriteRawTag(162, 79);
-        output.WriteString(PsnId);
-      }
-      if (ChannelId != 0) {
-        output.WriteRawTag(144, 82);
-        output.WriteUInt32(ChannelId);
-      }
-      if (CloudClientIp != 0) {
-        output.WriteRawTag(184, 83);
-        output.WriteUInt32(CloudClientIp);
-      }
-      if (ExtraBinData.Length != 0) {
-        output.WriteRawTag(146, 91);
-        output.WriteBytes(ExtraBinData);
-      }
-      if (Checksum.Length != 0) {
-        output.WriteRawTag(226, 95);
-        output.WriteString(Checksum);
-      }
-      if (ClientToken != 0) {
-        output.WriteRawTag(208, 96);
-        output.WriteUInt32(ClientToken);
-      }
-      if (Birthday.Length != 0) {
-        output.WriteRawTag(162, 103);
-        output.WriteString(Birthday);
-      }
-      if (trackingIoInfo_ != null) {
-        output.WriteRawTag(226, 103);
-        output.WriteMessage(TrackingIoInfo);
-      }
-      if (ClientVerisonHash.Length != 0) {
-        output.WriteRawTag(218, 106);
-        output.WriteString(ClientVerisonHash);
-      }
-      if (Tag != 0) {
-        output.WriteRawTag(216, 111);
-        output.WriteUInt32(Tag);
+      if (DeviceInfo.Length != 0) {
+        output.WriteRawTag(122);
+        output.WriteString(DeviceInfo);
       }
       if (adjustTrackingInfo_ != null) {
-        output.WriteRawTag(194, 113);
+        output.WriteRawTag(130, 4);
         output.WriteMessage(AdjustTrackingInfo);
       }
-      if (TargetHomeOwnerUid != 0) {
-        output.WriteRawTag(192, 116);
-        output.WriteUInt32(TargetHomeOwnerUid);
+      if (Unk3300PMGFBMJNNCL != 0) {
+        output.WriteRawTag(144, 5);
+        output.WriteUInt32(Unk3300PMGFBMJNNCL);
       }
-      if (SecurityCmdReply.Length != 0) {
-        output.WriteRawTag(218, 124);
-        output.WriteBytes(SecurityCmdReply);
+      if (Unk3300OOBHAIIIPHH != 0) {
+        output.WriteRawTag(168, 5);
+        output.WriteUInt32(Unk3300OOBHAIIIPHH);
       }
       if (CountryCode.Length != 0) {
-        output.WriteRawTag(130, 125);
+        output.WriteRawTag(194, 6);
         output.WriteString(CountryCode);
       }
       if (EnvironmentErrorCode.Length != 0) {
-        output.WriteRawTag(210, 126);
+        output.WriteRawTag(130, 16);
         output.WriteBytes(EnvironmentErrorCode);
+      }
+      if (RegPlatform != 0) {
+        output.WriteRawTag(192, 26);
+        output.WriteUInt32(RegPlatform);
+      }
+      if (Tag != 0) {
+        output.WriteRawTag(232, 32);
+        output.WriteUInt32(Tag);
+      }
+      if (OnlineId.Length != 0) {
+        output.WriteRawTag(138, 36);
+        output.WriteString(OnlineId);
+      }
+      if (ChecksumClientVersion.Length != 0) {
+        output.WriteRawTag(170, 36);
+        output.WriteString(ChecksumClientVersion);
+      }
+      if (IsTransfer != false) {
+        output.WriteRawTag(128, 39);
+        output.WriteBool(IsTransfer);
+      }
+      if (SecurityLibraryVersion.Length != 0) {
+        output.WriteRawTag(226, 51);
+        output.WriteString(SecurityLibraryVersion);
+      }
+      if (ClientDataVersion != 0) {
+        output.WriteRawTag(248, 52);
+        output.WriteUInt32(ClientDataVersion);
+      }
+      if (SecurityLibraryMd5.Length != 0) {
+        output.WriteRawTag(162, 54);
+        output.WriteString(SecurityLibraryMd5);
+      }
+      if (SecurityCmdReply.Length != 0) {
+        output.WriteRawTag(210, 54);
+        output.WriteBytes(SecurityCmdReply);
+      }
+      if (Birthday.Length != 0) {
+        output.WriteRawTag(218, 54);
+        output.WriteString(Birthday);
+      }
+      if (TargetHomeOwnerUid != 0) {
+        output.WriteRawTag(152, 56);
+        output.WriteUInt32(TargetHomeOwnerUid);
+      }
+      if (Unk3300OFFHPAFIFGD != 0) {
+        output.WriteRawTag(160, 64);
+        output.WriteUInt32(Unk3300OFFHPAFIFGD);
+      }
+      if (PsnId.Length != 0) {
+        output.WriteRawTag(210, 71);
+        output.WriteString(PsnId);
+      }
+      if (Unk3300NDLANBEIGEG != 0) {
+        output.WriteRawTag(192, 82);
+        output.WriteUInt32(Unk3300NDLANBEIGEG);
+      }
+      if (Checksum.Length != 0) {
+        output.WriteRawTag(178, 83);
+        output.WriteString(Checksum);
+      }
+      if (Unk3300IADFJHNFKIB != 0) {
+        output.WriteRawTag(144, 91);
+        output.WriteUInt32(Unk3300IADFJHNFKIB);
+      }
+      if (ChannelId != 0) {
+        output.WriteRawTag(232, 97);
+        output.WriteUInt32(ChannelId);
+      }
+      if (trackingIoInfo_ != null) {
+        output.WriteRawTag(138, 107);
+        output.WriteMessage(TrackingIoInfo);
+      }
+      if (Unk3300PIPLDEAPMMN != 0) {
+        output.WriteRawTag(240, 111);
+        output.WriteUInt32(Unk3300PIPLDEAPMMN);
+      }
+      if (Cps.Length != 0) {
+        output.WriteRawTag(250, 123);
+        output.WriteString(Cps);
+      }
+      if (ClientVerisonHash.Length != 0) {
+        output.WriteRawTag(194, 127);
+        output.WriteString(ClientVerisonHash);
+      }
+      if (ExtraBinData.Length != 0) {
+        output.WriteRawTag(242, 127);
+        output.WriteBytes(ExtraBinData);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -957,173 +963,173 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (DeviceInfo.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(DeviceInfo);
-      }
-      if (AccountUid.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(AccountUid);
-      }
-      if (LoginRand != 0UL) {
-        output.WriteRawTag(24);
-        output.WriteUInt64(LoginRand);
-      }
-      if (DeviceUuid.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(DeviceUuid);
-      }
-      if (IsGuest != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(IsGuest);
-      }
-      if (LanguageType != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(LanguageType);
-      }
-      if (Platform.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteString(Platform);
-      }
       if (IsEditor != false) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(8);
         output.WriteBool(IsEditor);
       }
-      if (DeviceName.Length != 0) {
-        output.WriteRawTag(74);
-        output.WriteString(DeviceName);
-      }
-      if (SystemVersion.Length != 0) {
-        output.WriteRawTag(82);
-        output.WriteString(SystemVersion);
-      }
-      if (TargetUid != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(TargetUid);
-      }
       if (ClientVersion.Length != 0) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(18);
         output.WriteString(ClientVersion);
       }
-      if (AccountType != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(AccountType);
-      }
       if (PlatformType != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(24);
         output.WriteUInt32(PlatformType);
       }
+      if (Platform.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Platform);
+      }
+      if (DeviceUuid.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(DeviceUuid);
+      }
+      if (SystemVersion.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(SystemVersion);
+      }
+      if (AccountType != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(AccountType);
+      }
       if (Token.Length != 0) {
-        output.WriteRawTag(122);
+        output.WriteRawTag(66);
         output.WriteString(Token);
       }
-      if (SubChannelId != 0) {
-        output.WriteRawTag(184, 1);
-        output.WriteUInt32(SubChannelId);
+      if (LoginRand != 0UL) {
+        output.WriteRawTag(72);
+        output.WriteUInt64(LoginRand);
       }
-      if (ClientPort != 0) {
-        output.WriteRawTag(248, 26);
-        output.WriteUInt32(ClientPort);
+      if (TargetUid != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(TargetUid);
       }
-      if (GmUid != 0) {
-        output.WriteRawTag(160, 38);
-        output.WriteUInt32(GmUid);
+      if (LanguageType != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(LanguageType);
       }
-      if (RegPlatform != 0) {
-        output.WriteRawTag(184, 38);
-        output.WriteUInt32(RegPlatform);
+      if (DeviceName.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteString(DeviceName);
       }
-      if (ClientDataVersion != 0) {
-        output.WriteRawTag(128, 43);
-        output.WriteUInt32(ClientDataVersion);
+      if (IsGuest != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsGuest);
       }
-      if (SecurityLibraryMd5.Length != 0) {
-        output.WriteRawTag(162, 48);
-        output.WriteString(SecurityLibraryMd5);
+      if (AccountUid.Length != 0) {
+        output.WriteRawTag(114);
+        output.WriteString(AccountUid);
       }
-      if (ChecksumClientVersion.Length != 0) {
-        output.WriteRawTag(234, 53);
-        output.WriteString(ChecksumClientVersion);
-      }
-      if (OnlineId.Length != 0) {
-        output.WriteRawTag(186, 56);
-        output.WriteString(OnlineId);
-      }
-      if (IsTransfer != false) {
-        output.WriteRawTag(224, 56);
-        output.WriteBool(IsTransfer);
-      }
-      if (TargetHomeParam != 0) {
-        output.WriteRawTag(192, 61);
-        output.WriteUInt32(TargetHomeParam);
-      }
-      if (Cps.Length != 0) {
-        output.WriteRawTag(218, 72);
-        output.WriteString(Cps);
-      }
-      if (SecurityLibraryVersion.Length != 0) {
-        output.WriteRawTag(234, 75);
-        output.WriteString(SecurityLibraryVersion);
-      }
-      if (PsnId.Length != 0) {
-        output.WriteRawTag(162, 79);
-        output.WriteString(PsnId);
-      }
-      if (ChannelId != 0) {
-        output.WriteRawTag(144, 82);
-        output.WriteUInt32(ChannelId);
-      }
-      if (CloudClientIp != 0) {
-        output.WriteRawTag(184, 83);
-        output.WriteUInt32(CloudClientIp);
-      }
-      if (ExtraBinData.Length != 0) {
-        output.WriteRawTag(146, 91);
-        output.WriteBytes(ExtraBinData);
-      }
-      if (Checksum.Length != 0) {
-        output.WriteRawTag(226, 95);
-        output.WriteString(Checksum);
-      }
-      if (ClientToken != 0) {
-        output.WriteRawTag(208, 96);
-        output.WriteUInt32(ClientToken);
-      }
-      if (Birthday.Length != 0) {
-        output.WriteRawTag(162, 103);
-        output.WriteString(Birthday);
-      }
-      if (trackingIoInfo_ != null) {
-        output.WriteRawTag(226, 103);
-        output.WriteMessage(TrackingIoInfo);
-      }
-      if (ClientVerisonHash.Length != 0) {
-        output.WriteRawTag(218, 106);
-        output.WriteString(ClientVerisonHash);
-      }
-      if (Tag != 0) {
-        output.WriteRawTag(216, 111);
-        output.WriteUInt32(Tag);
+      if (DeviceInfo.Length != 0) {
+        output.WriteRawTag(122);
+        output.WriteString(DeviceInfo);
       }
       if (adjustTrackingInfo_ != null) {
-        output.WriteRawTag(194, 113);
+        output.WriteRawTag(130, 4);
         output.WriteMessage(AdjustTrackingInfo);
       }
-      if (TargetHomeOwnerUid != 0) {
-        output.WriteRawTag(192, 116);
-        output.WriteUInt32(TargetHomeOwnerUid);
+      if (Unk3300PMGFBMJNNCL != 0) {
+        output.WriteRawTag(144, 5);
+        output.WriteUInt32(Unk3300PMGFBMJNNCL);
       }
-      if (SecurityCmdReply.Length != 0) {
-        output.WriteRawTag(218, 124);
-        output.WriteBytes(SecurityCmdReply);
+      if (Unk3300OOBHAIIIPHH != 0) {
+        output.WriteRawTag(168, 5);
+        output.WriteUInt32(Unk3300OOBHAIIIPHH);
       }
       if (CountryCode.Length != 0) {
-        output.WriteRawTag(130, 125);
+        output.WriteRawTag(194, 6);
         output.WriteString(CountryCode);
       }
       if (EnvironmentErrorCode.Length != 0) {
-        output.WriteRawTag(210, 126);
+        output.WriteRawTag(130, 16);
         output.WriteBytes(EnvironmentErrorCode);
+      }
+      if (RegPlatform != 0) {
+        output.WriteRawTag(192, 26);
+        output.WriteUInt32(RegPlatform);
+      }
+      if (Tag != 0) {
+        output.WriteRawTag(232, 32);
+        output.WriteUInt32(Tag);
+      }
+      if (OnlineId.Length != 0) {
+        output.WriteRawTag(138, 36);
+        output.WriteString(OnlineId);
+      }
+      if (ChecksumClientVersion.Length != 0) {
+        output.WriteRawTag(170, 36);
+        output.WriteString(ChecksumClientVersion);
+      }
+      if (IsTransfer != false) {
+        output.WriteRawTag(128, 39);
+        output.WriteBool(IsTransfer);
+      }
+      if (SecurityLibraryVersion.Length != 0) {
+        output.WriteRawTag(226, 51);
+        output.WriteString(SecurityLibraryVersion);
+      }
+      if (ClientDataVersion != 0) {
+        output.WriteRawTag(248, 52);
+        output.WriteUInt32(ClientDataVersion);
+      }
+      if (SecurityLibraryMd5.Length != 0) {
+        output.WriteRawTag(162, 54);
+        output.WriteString(SecurityLibraryMd5);
+      }
+      if (SecurityCmdReply.Length != 0) {
+        output.WriteRawTag(210, 54);
+        output.WriteBytes(SecurityCmdReply);
+      }
+      if (Birthday.Length != 0) {
+        output.WriteRawTag(218, 54);
+        output.WriteString(Birthday);
+      }
+      if (TargetHomeOwnerUid != 0) {
+        output.WriteRawTag(152, 56);
+        output.WriteUInt32(TargetHomeOwnerUid);
+      }
+      if (Unk3300OFFHPAFIFGD != 0) {
+        output.WriteRawTag(160, 64);
+        output.WriteUInt32(Unk3300OFFHPAFIFGD);
+      }
+      if (PsnId.Length != 0) {
+        output.WriteRawTag(210, 71);
+        output.WriteString(PsnId);
+      }
+      if (Unk3300NDLANBEIGEG != 0) {
+        output.WriteRawTag(192, 82);
+        output.WriteUInt32(Unk3300NDLANBEIGEG);
+      }
+      if (Checksum.Length != 0) {
+        output.WriteRawTag(178, 83);
+        output.WriteString(Checksum);
+      }
+      if (Unk3300IADFJHNFKIB != 0) {
+        output.WriteRawTag(144, 91);
+        output.WriteUInt32(Unk3300IADFJHNFKIB);
+      }
+      if (ChannelId != 0) {
+        output.WriteRawTag(232, 97);
+        output.WriteUInt32(ChannelId);
+      }
+      if (trackingIoInfo_ != null) {
+        output.WriteRawTag(138, 107);
+        output.WriteMessage(TrackingIoInfo);
+      }
+      if (Unk3300PIPLDEAPMMN != 0) {
+        output.WriteRawTag(240, 111);
+        output.WriteUInt32(Unk3300PIPLDEAPMMN);
+      }
+      if (Cps.Length != 0) {
+        output.WriteRawTag(250, 123);
+        output.WriteString(Cps);
+      }
+      if (ClientVerisonHash.Length != 0) {
+        output.WriteRawTag(194, 127);
+        output.WriteString(ClientVerisonHash);
+      }
+      if (ExtraBinData.Length != 0) {
+        output.WriteRawTag(242, 127);
+        output.WriteBytes(ExtraBinData);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -1135,131 +1141,131 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (LanguageType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LanguageType);
-      }
-      if (RegPlatform != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(RegPlatform);
-      }
-      if (trackingIoInfo_ != null) {
-        size += 2 + pb::CodedOutputStream.ComputeMessageSize(TrackingIoInfo);
-      }
-      if (AccountType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AccountType);
-      }
-      if (Token.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Token);
-      }
-      if (ExtraBinData.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeBytesSize(ExtraBinData);
-      }
-      if (ChannelId != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(ChannelId);
-      }
-      if (ClientDataVersion != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(ClientDataVersion);
-      }
-      if (AccountUid.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(AccountUid);
-      }
-      if (ClientVersion.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ClientVersion);
-      }
-      if (SecurityLibraryMd5.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeStringSize(SecurityLibraryMd5);
-      }
-      if (CountryCode.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeStringSize(CountryCode);
-      }
-      if (PsnId.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeStringSize(PsnId);
-      }
-      if (ClientPort != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(ClientPort);
-      }
-      if (DeviceName.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceName);
-      }
-      if (Cps.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeStringSize(Cps);
-      }
-      if (LoginRand != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(LoginRand);
-      }
-      if (TargetHomeParam != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(TargetHomeParam);
-      }
-      if (adjustTrackingInfo_ != null) {
-        size += 2 + pb::CodedOutputStream.ComputeMessageSize(AdjustTrackingInfo);
-      }
-      if (IsTransfer != false) {
-        size += 2 + 1;
-      }
-      if (Tag != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Tag);
-      }
-      if (IsGuest != false) {
-        size += 1 + 1;
-      }
-      if (EnvironmentErrorCode.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeBytesSize(EnvironmentErrorCode);
-      }
-      if (OnlineId.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeStringSize(OnlineId);
-      }
-      if (IsEditor != false) {
-        size += 1 + 1;
-      }
-      if (ChecksumClientVersion.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeStringSize(ChecksumClientVersion);
-      }
-      if (SecurityCmdReply.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeBytesSize(SecurityCmdReply);
-      }
-      if (SecurityLibraryVersion.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeStringSize(SecurityLibraryVersion);
-      }
-      if (Birthday.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeStringSize(Birthday);
-      }
       if (DeviceUuid.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceUuid);
-      }
-      if (ClientToken != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(ClientToken);
-      }
-      if (SubChannelId != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(SubChannelId);
       }
       if (TargetUid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetUid);
       }
-      if (DeviceInfo.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceInfo);
+      if (ExtraBinData.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeBytesSize(ExtraBinData);
       }
-      if (ClientVerisonHash.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeStringSize(ClientVerisonHash);
+      if (Platform.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Platform);
       }
       if (Checksum.Length != 0) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(Checksum);
       }
-      if (PlatformType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlatformType);
+      if (ChannelId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(ChannelId);
       }
-      if (TargetHomeOwnerUid != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(TargetHomeOwnerUid);
+      if (ClientVerisonHash.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(ClientVerisonHash);
       }
-      if (CloudClientIp != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(CloudClientIp);
+      if (LanguageType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LanguageType);
       }
-      if (GmUid != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(GmUid);
+      if (ClientDataVersion != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(ClientDataVersion);
+      }
+      if (AccountType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AccountType);
+      }
+      if (SecurityLibraryMd5.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(SecurityLibraryMd5);
+      }
+      if (OnlineId.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(OnlineId);
+      }
+      if (Unk3300PMGFBMJNNCL != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PMGFBMJNNCL);
+      }
+      if (DeviceName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceName);
+      }
+      if (Birthday.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Birthday);
+      }
+      if (Tag != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Tag);
+      }
+      if (AccountUid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(AccountUid);
+      }
+      if (DeviceInfo.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceInfo);
+      }
+      if (Unk3300IADFJHNFKIB != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300IADFJHNFKIB);
+      }
+      if (IsEditor != false) {
+        size += 1 + 1;
+      }
+      if (Token.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Token);
+      }
+      if (RegPlatform != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(RegPlatform);
+      }
+      if (ChecksumClientVersion.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(ChecksumClientVersion);
+      }
+      if (Unk3300OOBHAIIIPHH != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300OOBHAIIIPHH);
+      }
+      if (Unk3300NDLANBEIGEG != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NDLANBEIGEG);
+      }
+      if (CountryCode.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(CountryCode);
+      }
+      if (Unk3300PIPLDEAPMMN != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PIPLDEAPMMN);
+      }
+      if (trackingIoInfo_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(TrackingIoInfo);
+      }
+      if (IsTransfer != false) {
+        size += 2 + 1;
+      }
+      if (SecurityLibraryVersion.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(SecurityLibraryVersion);
+      }
+      if (ClientVersion.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ClientVersion);
+      }
+      if (IsGuest != false) {
+        size += 1 + 1;
       }
       if (SystemVersion.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(SystemVersion);
       }
-      if (Platform.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Platform);
+      if (TargetHomeOwnerUid != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(TargetHomeOwnerUid);
+      }
+      if (PsnId.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(PsnId);
+      }
+      if (SecurityCmdReply.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeBytesSize(SecurityCmdReply);
+      }
+      if (Unk3300OFFHPAFIFGD != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300OFFHPAFIFGD);
+      }
+      if (LoginRand != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(LoginRand);
+      }
+      if (adjustTrackingInfo_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(AdjustTrackingInfo);
+      }
+      if (EnvironmentErrorCode.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeBytesSize(EnvironmentErrorCode);
+      }
+      if (PlatformType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlatformType);
+      }
+      if (Cps.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Cps);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1273,11 +1279,86 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.DeviceUuid.Length != 0) {
+        DeviceUuid = other.DeviceUuid;
+      }
+      if (other.TargetUid != 0) {
+        TargetUid = other.TargetUid;
+      }
+      if (other.ExtraBinData.Length != 0) {
+        ExtraBinData = other.ExtraBinData;
+      }
+      if (other.Platform.Length != 0) {
+        Platform = other.Platform;
+      }
+      if (other.Checksum.Length != 0) {
+        Checksum = other.Checksum;
+      }
+      if (other.ChannelId != 0) {
+        ChannelId = other.ChannelId;
+      }
+      if (other.ClientVerisonHash.Length != 0) {
+        ClientVerisonHash = other.ClientVerisonHash;
+      }
       if (other.LanguageType != 0) {
         LanguageType = other.LanguageType;
       }
+      if (other.ClientDataVersion != 0) {
+        ClientDataVersion = other.ClientDataVersion;
+      }
+      if (other.AccountType != 0) {
+        AccountType = other.AccountType;
+      }
+      if (other.SecurityLibraryMd5.Length != 0) {
+        SecurityLibraryMd5 = other.SecurityLibraryMd5;
+      }
+      if (other.OnlineId.Length != 0) {
+        OnlineId = other.OnlineId;
+      }
+      if (other.Unk3300PMGFBMJNNCL != 0) {
+        Unk3300PMGFBMJNNCL = other.Unk3300PMGFBMJNNCL;
+      }
+      if (other.DeviceName.Length != 0) {
+        DeviceName = other.DeviceName;
+      }
+      if (other.Birthday.Length != 0) {
+        Birthday = other.Birthday;
+      }
+      if (other.Tag != 0) {
+        Tag = other.Tag;
+      }
+      if (other.AccountUid.Length != 0) {
+        AccountUid = other.AccountUid;
+      }
+      if (other.DeviceInfo.Length != 0) {
+        DeviceInfo = other.DeviceInfo;
+      }
+      if (other.Unk3300IADFJHNFKIB != 0) {
+        Unk3300IADFJHNFKIB = other.Unk3300IADFJHNFKIB;
+      }
+      if (other.IsEditor != false) {
+        IsEditor = other.IsEditor;
+      }
+      if (other.Token.Length != 0) {
+        Token = other.Token;
+      }
       if (other.RegPlatform != 0) {
         RegPlatform = other.RegPlatform;
+      }
+      if (other.ChecksumClientVersion.Length != 0) {
+        ChecksumClientVersion = other.ChecksumClientVersion;
+      }
+      if (other.Unk3300OOBHAIIIPHH != 0) {
+        Unk3300OOBHAIIIPHH = other.Unk3300OOBHAIIIPHH;
+      }
+      if (other.Unk3300NDLANBEIGEG != 0) {
+        Unk3300NDLANBEIGEG = other.Unk3300NDLANBEIGEG;
+      }
+      if (other.CountryCode.Length != 0) {
+        CountryCode = other.CountryCode;
+      }
+      if (other.Unk3300PIPLDEAPMMN != 0) {
+        Unk3300PIPLDEAPMMN = other.Unk3300PIPLDEAPMMN;
       }
       if (other.trackingIoInfo_ != null) {
         if (trackingIoInfo_ == null) {
@@ -1285,50 +1366,35 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         TrackingIoInfo.MergeFrom(other.TrackingIoInfo);
       }
-      if (other.AccountType != 0) {
-        AccountType = other.AccountType;
+      if (other.IsTransfer != false) {
+        IsTransfer = other.IsTransfer;
       }
-      if (other.Token.Length != 0) {
-        Token = other.Token;
-      }
-      if (other.ExtraBinData.Length != 0) {
-        ExtraBinData = other.ExtraBinData;
-      }
-      if (other.ChannelId != 0) {
-        ChannelId = other.ChannelId;
-      }
-      if (other.ClientDataVersion != 0) {
-        ClientDataVersion = other.ClientDataVersion;
-      }
-      if (other.AccountUid.Length != 0) {
-        AccountUid = other.AccountUid;
+      if (other.SecurityLibraryVersion.Length != 0) {
+        SecurityLibraryVersion = other.SecurityLibraryVersion;
       }
       if (other.ClientVersion.Length != 0) {
         ClientVersion = other.ClientVersion;
       }
-      if (other.SecurityLibraryMd5.Length != 0) {
-        SecurityLibraryMd5 = other.SecurityLibraryMd5;
+      if (other.IsGuest != false) {
+        IsGuest = other.IsGuest;
       }
-      if (other.CountryCode.Length != 0) {
-        CountryCode = other.CountryCode;
+      if (other.SystemVersion.Length != 0) {
+        SystemVersion = other.SystemVersion;
+      }
+      if (other.TargetHomeOwnerUid != 0) {
+        TargetHomeOwnerUid = other.TargetHomeOwnerUid;
       }
       if (other.PsnId.Length != 0) {
         PsnId = other.PsnId;
       }
-      if (other.ClientPort != 0) {
-        ClientPort = other.ClientPort;
+      if (other.SecurityCmdReply.Length != 0) {
+        SecurityCmdReply = other.SecurityCmdReply;
       }
-      if (other.DeviceName.Length != 0) {
-        DeviceName = other.DeviceName;
-      }
-      if (other.Cps.Length != 0) {
-        Cps = other.Cps;
+      if (other.Unk3300OFFHPAFIFGD != 0) {
+        Unk3300OFFHPAFIFGD = other.Unk3300OFFHPAFIFGD;
       }
       if (other.LoginRand != 0UL) {
         LoginRand = other.LoginRand;
-      }
-      if (other.TargetHomeParam != 0) {
-        TargetHomeParam = other.TargetHomeParam;
       }
       if (other.adjustTrackingInfo_ != null) {
         if (adjustTrackingInfo_ == null) {
@@ -1336,74 +1402,14 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         AdjustTrackingInfo.MergeFrom(other.AdjustTrackingInfo);
       }
-      if (other.IsTransfer != false) {
-        IsTransfer = other.IsTransfer;
-      }
-      if (other.Tag != 0) {
-        Tag = other.Tag;
-      }
-      if (other.IsGuest != false) {
-        IsGuest = other.IsGuest;
-      }
       if (other.EnvironmentErrorCode.Length != 0) {
         EnvironmentErrorCode = other.EnvironmentErrorCode;
-      }
-      if (other.OnlineId.Length != 0) {
-        OnlineId = other.OnlineId;
-      }
-      if (other.IsEditor != false) {
-        IsEditor = other.IsEditor;
-      }
-      if (other.ChecksumClientVersion.Length != 0) {
-        ChecksumClientVersion = other.ChecksumClientVersion;
-      }
-      if (other.SecurityCmdReply.Length != 0) {
-        SecurityCmdReply = other.SecurityCmdReply;
-      }
-      if (other.SecurityLibraryVersion.Length != 0) {
-        SecurityLibraryVersion = other.SecurityLibraryVersion;
-      }
-      if (other.Birthday.Length != 0) {
-        Birthday = other.Birthday;
-      }
-      if (other.DeviceUuid.Length != 0) {
-        DeviceUuid = other.DeviceUuid;
-      }
-      if (other.ClientToken != 0) {
-        ClientToken = other.ClientToken;
-      }
-      if (other.SubChannelId != 0) {
-        SubChannelId = other.SubChannelId;
-      }
-      if (other.TargetUid != 0) {
-        TargetUid = other.TargetUid;
-      }
-      if (other.DeviceInfo.Length != 0) {
-        DeviceInfo = other.DeviceInfo;
-      }
-      if (other.ClientVerisonHash.Length != 0) {
-        ClientVerisonHash = other.ClientVerisonHash;
-      }
-      if (other.Checksum.Length != 0) {
-        Checksum = other.Checksum;
       }
       if (other.PlatformType != 0) {
         PlatformType = other.PlatformType;
       }
-      if (other.TargetHomeOwnerUid != 0) {
-        TargetHomeOwnerUid = other.TargetHomeOwnerUid;
-      }
-      if (other.CloudClientIp != 0) {
-        CloudClientIp = other.CloudClientIp;
-      }
-      if (other.GmUid != 0) {
-        GmUid = other.GmUid;
-      }
-      if (other.SystemVersion.Length != 0) {
-        SystemVersion = other.SystemVersion;
-      }
-      if (other.Platform.Length != 0) {
-        Platform = other.Platform;
+      if (other.Cps.Length != 0) {
+        Cps = other.Cps;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1420,178 +1426,178 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            DeviceInfo = input.ReadString();
-            break;
-          }
-          case 18: {
-            AccountUid = input.ReadString();
-            break;
-          }
-          case 24: {
-            LoginRand = input.ReadUInt64();
-            break;
-          }
-          case 34: {
-            DeviceUuid = input.ReadString();
-            break;
-          }
-          case 40: {
-            IsGuest = input.ReadBool();
-            break;
-          }
-          case 48: {
-            LanguageType = input.ReadUInt32();
-            break;
-          }
-          case 58: {
-            Platform = input.ReadString();
-            break;
-          }
-          case 64: {
+          case 8: {
             IsEditor = input.ReadBool();
             break;
           }
-          case 74: {
-            DeviceName = input.ReadString();
-            break;
-          }
-          case 82: {
-            SystemVersion = input.ReadString();
-            break;
-          }
-          case 88: {
-            TargetUid = input.ReadUInt32();
-            break;
-          }
-          case 98: {
+          case 18: {
             ClientVersion = input.ReadString();
             break;
           }
-          case 104: {
-            AccountType = input.ReadUInt32();
-            break;
-          }
-          case 112: {
+          case 24: {
             PlatformType = input.ReadUInt32();
             break;
           }
-          case 122: {
+          case 34: {
+            Platform = input.ReadString();
+            break;
+          }
+          case 42: {
+            DeviceUuid = input.ReadString();
+            break;
+          }
+          case 50: {
+            SystemVersion = input.ReadString();
+            break;
+          }
+          case 56: {
+            AccountType = input.ReadUInt32();
+            break;
+          }
+          case 66: {
             Token = input.ReadString();
             break;
           }
-          case 184: {
-            SubChannelId = input.ReadUInt32();
+          case 72: {
+            LoginRand = input.ReadUInt64();
             break;
           }
-          case 3448: {
-            ClientPort = input.ReadUInt32();
+          case 80: {
+            TargetUid = input.ReadUInt32();
             break;
           }
-          case 4896: {
-            GmUid = input.ReadUInt32();
+          case 88: {
+            LanguageType = input.ReadUInt32();
             break;
           }
-          case 4920: {
-            RegPlatform = input.ReadUInt32();
+          case 98: {
+            DeviceName = input.ReadString();
             break;
           }
-          case 5504: {
-            ClientDataVersion = input.ReadUInt32();
+          case 104: {
+            IsGuest = input.ReadBool();
             break;
           }
-          case 6178: {
-            SecurityLibraryMd5 = input.ReadString();
+          case 114: {
+            AccountUid = input.ReadString();
             break;
           }
-          case 6890: {
-            ChecksumClientVersion = input.ReadString();
+          case 122: {
+            DeviceInfo = input.ReadString();
             break;
           }
-          case 7226: {
-            OnlineId = input.ReadString();
-            break;
-          }
-          case 7264: {
-            IsTransfer = input.ReadBool();
-            break;
-          }
-          case 7872: {
-            TargetHomeParam = input.ReadUInt32();
-            break;
-          }
-          case 9306: {
-            Cps = input.ReadString();
-            break;
-          }
-          case 9706: {
-            SecurityLibraryVersion = input.ReadString();
-            break;
-          }
-          case 10146: {
-            PsnId = input.ReadString();
-            break;
-          }
-          case 10512: {
-            ChannelId = input.ReadUInt32();
-            break;
-          }
-          case 10680: {
-            CloudClientIp = input.ReadUInt32();
-            break;
-          }
-          case 11666: {
-            ExtraBinData = input.ReadBytes();
-            break;
-          }
-          case 12258: {
-            Checksum = input.ReadString();
-            break;
-          }
-          case 12368: {
-            ClientToken = input.ReadUInt32();
-            break;
-          }
-          case 13218: {
-            Birthday = input.ReadString();
-            break;
-          }
-          case 13282: {
-            if (trackingIoInfo_ == null) {
-              TrackingIoInfo = new global::Weedwacker.Shared.Network.Proto.TrackingIOInfo();
-            }
-            input.ReadMessage(TrackingIoInfo);
-            break;
-          }
-          case 13658: {
-            ClientVerisonHash = input.ReadString();
-            break;
-          }
-          case 14296: {
-            Tag = input.ReadUInt32();
-            break;
-          }
-          case 14530: {
+          case 514: {
             if (adjustTrackingInfo_ == null) {
               AdjustTrackingInfo = new global::Weedwacker.Shared.Network.Proto.AdjustTrackingInfo();
             }
             input.ReadMessage(AdjustTrackingInfo);
             break;
           }
-          case 14912: {
-            TargetHomeOwnerUid = input.ReadUInt32();
+          case 656: {
+            Unk3300PMGFBMJNNCL = input.ReadUInt32();
             break;
           }
-          case 15962: {
-            SecurityCmdReply = input.ReadBytes();
+          case 680: {
+            Unk3300OOBHAIIIPHH = input.ReadUInt32();
             break;
           }
-          case 16002: {
+          case 834: {
             CountryCode = input.ReadString();
             break;
           }
-          case 16210: {
+          case 2050: {
             EnvironmentErrorCode = input.ReadBytes();
+            break;
+          }
+          case 3392: {
+            RegPlatform = input.ReadUInt32();
+            break;
+          }
+          case 4200: {
+            Tag = input.ReadUInt32();
+            break;
+          }
+          case 4618: {
+            OnlineId = input.ReadString();
+            break;
+          }
+          case 4650: {
+            ChecksumClientVersion = input.ReadString();
+            break;
+          }
+          case 4992: {
+            IsTransfer = input.ReadBool();
+            break;
+          }
+          case 6626: {
+            SecurityLibraryVersion = input.ReadString();
+            break;
+          }
+          case 6776: {
+            ClientDataVersion = input.ReadUInt32();
+            break;
+          }
+          case 6946: {
+            SecurityLibraryMd5 = input.ReadString();
+            break;
+          }
+          case 6994: {
+            SecurityCmdReply = input.ReadBytes();
+            break;
+          }
+          case 7002: {
+            Birthday = input.ReadString();
+            break;
+          }
+          case 7192: {
+            TargetHomeOwnerUid = input.ReadUInt32();
+            break;
+          }
+          case 8224: {
+            Unk3300OFFHPAFIFGD = input.ReadUInt32();
+            break;
+          }
+          case 9170: {
+            PsnId = input.ReadString();
+            break;
+          }
+          case 10560: {
+            Unk3300NDLANBEIGEG = input.ReadUInt32();
+            break;
+          }
+          case 10674: {
+            Checksum = input.ReadString();
+            break;
+          }
+          case 11664: {
+            Unk3300IADFJHNFKIB = input.ReadUInt32();
+            break;
+          }
+          case 12520: {
+            ChannelId = input.ReadUInt32();
+            break;
+          }
+          case 13706: {
+            if (trackingIoInfo_ == null) {
+              TrackingIoInfo = new global::Weedwacker.Shared.Network.Proto.TrackingIOInfo();
+            }
+            input.ReadMessage(TrackingIoInfo);
+            break;
+          }
+          case 14320: {
+            Unk3300PIPLDEAPMMN = input.ReadUInt32();
+            break;
+          }
+          case 15866: {
+            Cps = input.ReadString();
+            break;
+          }
+          case 16322: {
+            ClientVerisonHash = input.ReadString();
+            break;
+          }
+          case 16370: {
+            ExtraBinData = input.ReadBytes();
             break;
           }
         }
@@ -1609,178 +1615,178 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            DeviceInfo = input.ReadString();
-            break;
-          }
-          case 18: {
-            AccountUid = input.ReadString();
-            break;
-          }
-          case 24: {
-            LoginRand = input.ReadUInt64();
-            break;
-          }
-          case 34: {
-            DeviceUuid = input.ReadString();
-            break;
-          }
-          case 40: {
-            IsGuest = input.ReadBool();
-            break;
-          }
-          case 48: {
-            LanguageType = input.ReadUInt32();
-            break;
-          }
-          case 58: {
-            Platform = input.ReadString();
-            break;
-          }
-          case 64: {
+          case 8: {
             IsEditor = input.ReadBool();
             break;
           }
-          case 74: {
-            DeviceName = input.ReadString();
-            break;
-          }
-          case 82: {
-            SystemVersion = input.ReadString();
-            break;
-          }
-          case 88: {
-            TargetUid = input.ReadUInt32();
-            break;
-          }
-          case 98: {
+          case 18: {
             ClientVersion = input.ReadString();
             break;
           }
-          case 104: {
-            AccountType = input.ReadUInt32();
-            break;
-          }
-          case 112: {
+          case 24: {
             PlatformType = input.ReadUInt32();
             break;
           }
-          case 122: {
+          case 34: {
+            Platform = input.ReadString();
+            break;
+          }
+          case 42: {
+            DeviceUuid = input.ReadString();
+            break;
+          }
+          case 50: {
+            SystemVersion = input.ReadString();
+            break;
+          }
+          case 56: {
+            AccountType = input.ReadUInt32();
+            break;
+          }
+          case 66: {
             Token = input.ReadString();
             break;
           }
-          case 184: {
-            SubChannelId = input.ReadUInt32();
+          case 72: {
+            LoginRand = input.ReadUInt64();
             break;
           }
-          case 3448: {
-            ClientPort = input.ReadUInt32();
+          case 80: {
+            TargetUid = input.ReadUInt32();
             break;
           }
-          case 4896: {
-            GmUid = input.ReadUInt32();
+          case 88: {
+            LanguageType = input.ReadUInt32();
             break;
           }
-          case 4920: {
-            RegPlatform = input.ReadUInt32();
+          case 98: {
+            DeviceName = input.ReadString();
             break;
           }
-          case 5504: {
-            ClientDataVersion = input.ReadUInt32();
+          case 104: {
+            IsGuest = input.ReadBool();
             break;
           }
-          case 6178: {
-            SecurityLibraryMd5 = input.ReadString();
+          case 114: {
+            AccountUid = input.ReadString();
             break;
           }
-          case 6890: {
-            ChecksumClientVersion = input.ReadString();
+          case 122: {
+            DeviceInfo = input.ReadString();
             break;
           }
-          case 7226: {
-            OnlineId = input.ReadString();
-            break;
-          }
-          case 7264: {
-            IsTransfer = input.ReadBool();
-            break;
-          }
-          case 7872: {
-            TargetHomeParam = input.ReadUInt32();
-            break;
-          }
-          case 9306: {
-            Cps = input.ReadString();
-            break;
-          }
-          case 9706: {
-            SecurityLibraryVersion = input.ReadString();
-            break;
-          }
-          case 10146: {
-            PsnId = input.ReadString();
-            break;
-          }
-          case 10512: {
-            ChannelId = input.ReadUInt32();
-            break;
-          }
-          case 10680: {
-            CloudClientIp = input.ReadUInt32();
-            break;
-          }
-          case 11666: {
-            ExtraBinData = input.ReadBytes();
-            break;
-          }
-          case 12258: {
-            Checksum = input.ReadString();
-            break;
-          }
-          case 12368: {
-            ClientToken = input.ReadUInt32();
-            break;
-          }
-          case 13218: {
-            Birthday = input.ReadString();
-            break;
-          }
-          case 13282: {
-            if (trackingIoInfo_ == null) {
-              TrackingIoInfo = new global::Weedwacker.Shared.Network.Proto.TrackingIOInfo();
-            }
-            input.ReadMessage(TrackingIoInfo);
-            break;
-          }
-          case 13658: {
-            ClientVerisonHash = input.ReadString();
-            break;
-          }
-          case 14296: {
-            Tag = input.ReadUInt32();
-            break;
-          }
-          case 14530: {
+          case 514: {
             if (adjustTrackingInfo_ == null) {
               AdjustTrackingInfo = new global::Weedwacker.Shared.Network.Proto.AdjustTrackingInfo();
             }
             input.ReadMessage(AdjustTrackingInfo);
             break;
           }
-          case 14912: {
-            TargetHomeOwnerUid = input.ReadUInt32();
+          case 656: {
+            Unk3300PMGFBMJNNCL = input.ReadUInt32();
             break;
           }
-          case 15962: {
-            SecurityCmdReply = input.ReadBytes();
+          case 680: {
+            Unk3300OOBHAIIIPHH = input.ReadUInt32();
             break;
           }
-          case 16002: {
+          case 834: {
             CountryCode = input.ReadString();
             break;
           }
-          case 16210: {
+          case 2050: {
             EnvironmentErrorCode = input.ReadBytes();
+            break;
+          }
+          case 3392: {
+            RegPlatform = input.ReadUInt32();
+            break;
+          }
+          case 4200: {
+            Tag = input.ReadUInt32();
+            break;
+          }
+          case 4618: {
+            OnlineId = input.ReadString();
+            break;
+          }
+          case 4650: {
+            ChecksumClientVersion = input.ReadString();
+            break;
+          }
+          case 4992: {
+            IsTransfer = input.ReadBool();
+            break;
+          }
+          case 6626: {
+            SecurityLibraryVersion = input.ReadString();
+            break;
+          }
+          case 6776: {
+            ClientDataVersion = input.ReadUInt32();
+            break;
+          }
+          case 6946: {
+            SecurityLibraryMd5 = input.ReadString();
+            break;
+          }
+          case 6994: {
+            SecurityCmdReply = input.ReadBytes();
+            break;
+          }
+          case 7002: {
+            Birthday = input.ReadString();
+            break;
+          }
+          case 7192: {
+            TargetHomeOwnerUid = input.ReadUInt32();
+            break;
+          }
+          case 8224: {
+            Unk3300OFFHPAFIFGD = input.ReadUInt32();
+            break;
+          }
+          case 9170: {
+            PsnId = input.ReadString();
+            break;
+          }
+          case 10560: {
+            Unk3300NDLANBEIGEG = input.ReadUInt32();
+            break;
+          }
+          case 10674: {
+            Checksum = input.ReadString();
+            break;
+          }
+          case 11664: {
+            Unk3300IADFJHNFKIB = input.ReadUInt32();
+            break;
+          }
+          case 12520: {
+            ChannelId = input.ReadUInt32();
+            break;
+          }
+          case 13706: {
+            if (trackingIoInfo_ == null) {
+              TrackingIoInfo = new global::Weedwacker.Shared.Network.Proto.TrackingIOInfo();
+            }
+            input.ReadMessage(TrackingIoInfo);
+            break;
+          }
+          case 14320: {
+            Unk3300PIPLDEAPMMN = input.ReadUInt32();
+            break;
+          }
+          case 15866: {
+            Cps = input.ReadString();
+            break;
+          }
+          case 16322: {
+            ClientVerisonHash = input.ReadString();
+            break;
+          }
+          case 16370: {
+            ExtraBinData = input.ReadBytes();
             break;
           }
         }

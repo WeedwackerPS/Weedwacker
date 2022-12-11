@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static CharAmusementAvatarInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1DaGFyQW11c2VtZW50QXZhdGFySW5mby5wcm90byJTChdDaGFyQW11c2Vt",
-            "ZW50QXZhdGFySW5mbxILCgN1aWQYCyABKA0SEwoLcHVuaXNoX3RpbWUYByAB",
-            "KA0SFgoOYXZhdGFyX2lkX2xpc3QYCiADKA1CIqoCH1dlZWR3YWNrZXIuU2hh",
-            "cmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch1DaGFyQW11c2VtZW50QXZhdGFySW5mby5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90byJTChdDaGFyQW11c2VtZW50QXZhdGFySW5m",
+            "bxILCgN1aWQYDiABKA0SFgoOYXZhdGFyX2lkX2xpc3QYBCADKA0SEwoLcHVu",
+            "aXNoX3RpbWUYBSABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CharAmusementAvatarInfo), global::Weedwacker.Shared.Network.Proto.CharAmusementAvatarInfo.Parser, new[]{ "Uid", "PunishTime", "AvatarIdList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CharAmusementAvatarInfo), global::Weedwacker.Shared.Network.Proto.CharAmusementAvatarInfo.Parser, new[]{ "Uid", "AvatarIdList", "PunishTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,8 +73,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CharAmusementAvatarInfo(CharAmusementAvatarInfo other) : this() {
       uid_ = other.uid_;
-      punishTime_ = other.punishTime_;
       avatarIdList_ = other.avatarIdList_.Clone();
+      punishTime_ = other.punishTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,7 +85,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "uid" field.</summary>
-    public const int UidFieldNumber = 11;
+    public const int UidFieldNumber = 14;
     private uint uid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -96,8 +96,19 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "avatar_id_list" field.</summary>
+    public const int AvatarIdListFieldNumber = 4;
+    private static readonly pb::FieldCodec<uint> _repeated_avatarIdList_codec
+        = pb::FieldCodec.ForUInt32(34);
+    private readonly pbc::RepeatedField<uint> avatarIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> AvatarIdList {
+      get { return avatarIdList_; }
+    }
+
     /// <summary>Field number for the "punish_time" field.</summary>
-    public const int PunishTimeFieldNumber = 7;
+    public const int PunishTimeFieldNumber = 5;
     private uint punishTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -106,17 +117,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         punishTime_ = value;
       }
-    }
-
-    /// <summary>Field number for the "avatar_id_list" field.</summary>
-    public const int AvatarIdListFieldNumber = 10;
-    private static readonly pb::FieldCodec<uint> _repeated_avatarIdList_codec
-        = pb::FieldCodec.ForUInt32(82);
-    private readonly pbc::RepeatedField<uint> avatarIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> AvatarIdList {
-      get { return avatarIdList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -135,8 +135,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (Uid != other.Uid) return false;
-      if (PunishTime != other.PunishTime) return false;
       if(!avatarIdList_.Equals(other.avatarIdList_)) return false;
+      if (PunishTime != other.PunishTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -145,8 +145,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (Uid != 0) hash ^= Uid.GetHashCode();
-      if (PunishTime != 0) hash ^= PunishTime.GetHashCode();
       hash ^= avatarIdList_.GetHashCode();
+      if (PunishTime != 0) hash ^= PunishTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -165,13 +165,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      avatarIdList_.WriteTo(output, _repeated_avatarIdList_codec);
       if (PunishTime != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(40);
         output.WriteUInt32(PunishTime);
       }
-      avatarIdList_.WriteTo(output, _repeated_avatarIdList_codec);
       if (Uid != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(112);
         output.WriteUInt32(Uid);
       }
       if (_unknownFields != null) {
@@ -184,13 +184,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      avatarIdList_.WriteTo(ref output, _repeated_avatarIdList_codec);
       if (PunishTime != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(40);
         output.WriteUInt32(PunishTime);
       }
-      avatarIdList_.WriteTo(ref output, _repeated_avatarIdList_codec);
       if (Uid != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(112);
         output.WriteUInt32(Uid);
       }
       if (_unknownFields != null) {
@@ -206,10 +206,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (Uid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
       }
+      size += avatarIdList_.CalculateSize(_repeated_avatarIdList_codec);
       if (PunishTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PunishTime);
       }
-      size += avatarIdList_.CalculateSize(_repeated_avatarIdList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -225,10 +225,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.Uid != 0) {
         Uid = other.Uid;
       }
+      avatarIdList_.Add(other.avatarIdList_);
       if (other.PunishTime != 0) {
         PunishTime = other.PunishTime;
       }
-      avatarIdList_.Add(other.avatarIdList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -244,16 +244,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
-            PunishTime = input.ReadUInt32();
-            break;
-          }
-          case 82:
-          case 80: {
+          case 34:
+          case 32: {
             avatarIdList_.AddEntriesFrom(input, _repeated_avatarIdList_codec);
             break;
           }
-          case 88: {
+          case 40: {
+            PunishTime = input.ReadUInt32();
+            break;
+          }
+          case 112: {
             Uid = input.ReadUInt32();
             break;
           }
@@ -272,16 +272,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
-            PunishTime = input.ReadUInt32();
-            break;
-          }
-          case 82:
-          case 80: {
+          case 34:
+          case 32: {
             avatarIdList_.AddEntriesFrom(ref input, _repeated_avatarIdList_codec);
             break;
           }
-          case 88: {
+          case 40: {
+            PunishTime = input.ReadUInt32();
+            break;
+          }
+          case 112: {
             Uid = input.ReadUInt32();
             break;
           }

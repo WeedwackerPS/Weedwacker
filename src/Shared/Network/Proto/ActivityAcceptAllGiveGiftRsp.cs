@@ -24,12 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static ActivityAcceptAllGiveGiftRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJBY3Rpdml0eUFjY2VwdEFsbEdpdmVHaWZ0UnNwLnByb3RvGiJBY3Rpdml0",
-            "eUFjY2VwdEdpZnRSZXN1bHRJbmZvLnByb3RvIokBChxBY3Rpdml0eUFjY2Vw",
-            "dEFsbEdpdmVHaWZ0UnNwEkMKHGFjY2VwdF9naWZ0X3Jlc3VsdF9pbmZvX2xp",
-            "c3QYBSADKAsyHS5BY3Rpdml0eUFjY2VwdEdpZnRSZXN1bHRJbmZvEhMKC3Nj",
-            "aGVkdWxlX2lkGAogASgNEg8KB3JldGNvZGUYCSABKAVCIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiJBY3Rpdml0eUFjY2VwdEFsbEdpdmVHaWZ0UnNwLnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGiJBY3Rpdml0eUFjY2VwdEdpZnRS",
+            "ZXN1bHRJbmZvLnByb3RvIqkBChxBY3Rpdml0eUFjY2VwdEFsbEdpdmVHaWZ0",
+            "UnNwEmMKHGFjY2VwdF9naWZ0X3Jlc3VsdF9pbmZvX2xpc3QYByADKAsyPS5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkFjdGl2aXR5QWNjZXB0",
+            "R2lmdFJlc3VsdEluZm8SEwoLc2NoZWR1bGVfaWQYBiABKA0SDwoHcmV0Y29k",
+            "ZRgMIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ActivityAcceptGiftResultInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -41,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8132
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8771;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ActivityAcceptAllGiveGiftRsp : pb::IMessage<ActivityAcceptAllGiveGiftRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -92,9 +97,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "accept_gift_result_info_list" field.</summary>
-    public const int AcceptGiftResultInfoListFieldNumber = 5;
+    public const int AcceptGiftResultInfoListFieldNumber = 7;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ActivityAcceptGiftResultInfo> _repeated_acceptGiftResultInfoList_codec
-        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.ActivityAcceptGiftResultInfo.Parser);
+        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.ActivityAcceptGiftResultInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityAcceptGiftResultInfo> acceptGiftResultInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityAcceptGiftResultInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,7 +108,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "schedule_id" field.</summary>
-    public const int ScheduleIdFieldNumber = 10;
+    public const int ScheduleIdFieldNumber = 6;
     private uint scheduleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,7 +120,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 9;
+    public const int RetcodeFieldNumber = 12;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -172,14 +177,14 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (ScheduleId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(ScheduleId);
+      }
       acceptGiftResultInfoList_.WriteTo(output, _repeated_acceptGiftResultInfoList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(96);
         output.WriteInt32(Retcode);
-      }
-      if (ScheduleId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(ScheduleId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -191,14 +196,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ScheduleId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(ScheduleId);
+      }
       acceptGiftResultInfoList_.WriteTo(ref output, _repeated_acceptGiftResultInfoList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(96);
         output.WriteInt32(Retcode);
-      }
-      if (ScheduleId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(ScheduleId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -251,16 +256,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 42: {
+          case 48: {
+            ScheduleId = input.ReadUInt32();
+            break;
+          }
+          case 58: {
             acceptGiftResultInfoList_.AddEntriesFrom(input, _repeated_acceptGiftResultInfoList_codec);
             break;
           }
-          case 72: {
+          case 96: {
             Retcode = input.ReadInt32();
-            break;
-          }
-          case 80: {
-            ScheduleId = input.ReadUInt32();
             break;
           }
         }
@@ -278,16 +283,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 42: {
+          case 48: {
+            ScheduleId = input.ReadUInt32();
+            break;
+          }
+          case 58: {
             acceptGiftResultInfoList_.AddEntriesFrom(ref input, _repeated_acceptGiftResultInfoList_codec);
             break;
           }
-          case 72: {
+          case 96: {
             Retcode = input.ReadInt32();
-            break;
-          }
-          case 80: {
-            ScheduleId = input.ReadUInt32();
             break;
           }
         }

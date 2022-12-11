@@ -24,13 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static WidgetDoBagReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRXaWRnZXREb0JhZ1JlcS5wcm90bxoeV2lkZ2V0Q3JlYXRlTG9jYXRpb25J",
-            "bmZvLnByb3RvGhdXaWRnZXRDcmVhdG9ySW5mby5wcm90byKZAQoOV2lkZ2V0",
-            "RG9CYWdSZXESEwoLbWF0ZXJpYWxfaWQYCSABKA0SMwoNbG9jYXRpb25faW5m",
-            "bxjABiABKAsyGS5XaWRnZXRDcmVhdGVMb2NhdGlvbkluZm9IABIyChN3aWRn",
-            "ZXRfY3JlYXRvcl9pbmZvGNkLIAEoCzISLldpZGdldENyZWF0b3JJbmZvSABC",
-            "CQoHb3BfaW5mb0IiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
-            "b2IGcHJvdG8z"));
+            "ChRXaWRnZXREb0JhZ1JlcS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90bxoeV2lkZ2V0Q3JlYXRlTG9jYXRpb25JbmZvLnByb3RvGhdX",
+            "aWRnZXRDcmVhdG9ySW5mby5wcm90byLZAQoOV2lkZ2V0RG9CYWdSZXESEwoL",
+            "bWF0ZXJpYWxfaWQYCyABKA0SUwoNbG9jYXRpb25faW5mbxiyAyABKAsyOS5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLldpZGdldENyZWF0ZUxv",
+            "Y2F0aW9uSW5mb0gAElIKE3dpZGdldF9jcmVhdG9yX2luZm8YugogASgLMjIu",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5XaWRnZXRDcmVhdG9y",
+            "SW5mb0gAQgkKB29wX2luZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.WidgetCreateLocationInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.WidgetCreatorInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -42,10 +43,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4255
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4269;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class WidgetDoBagReq : pb::IMessage<WidgetDoBagReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -101,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "material_id" field.</summary>
-    public const int MaterialIdFieldNumber = 9;
+    public const int MaterialIdFieldNumber = 11;
     private uint materialId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -113,7 +118,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "location_info" field.</summary>
-    public const int LocationInfoFieldNumber = 832;
+    public const int LocationInfoFieldNumber = 434;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.WidgetCreateLocationInfo LocationInfo {
@@ -125,7 +130,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "widget_creator_info" field.</summary>
-    public const int WidgetCreatorInfoFieldNumber = 1497;
+    public const int WidgetCreatorInfoFieldNumber = 1338;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.WidgetCreatorInfo WidgetCreatorInfo {
@@ -140,8 +145,8 @@ namespace Weedwacker.Shared.Network.Proto {
     /// <summary>Enum of possible cases for the "op_info" oneof.</summary>
     public enum OpInfoOneofCase {
       None = 0,
-      LocationInfo = 832,
-      WidgetCreatorInfo = 1497,
+      LocationInfo = 434,
+      WidgetCreatorInfo = 1338,
     }
     private OpInfoOneofCase opInfoCase_ = OpInfoOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -206,15 +211,15 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (MaterialId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(88);
         output.WriteUInt32(MaterialId);
       }
       if (opInfoCase_ == OpInfoOneofCase.LocationInfo) {
-        output.WriteRawTag(130, 52);
+        output.WriteRawTag(146, 27);
         output.WriteMessage(LocationInfo);
       }
       if (opInfoCase_ == OpInfoOneofCase.WidgetCreatorInfo) {
-        output.WriteRawTag(202, 93);
+        output.WriteRawTag(210, 83);
         output.WriteMessage(WidgetCreatorInfo);
       }
       if (_unknownFields != null) {
@@ -228,15 +233,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (MaterialId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(88);
         output.WriteUInt32(MaterialId);
       }
       if (opInfoCase_ == OpInfoOneofCase.LocationInfo) {
-        output.WriteRawTag(130, 52);
+        output.WriteRawTag(146, 27);
         output.WriteMessage(LocationInfo);
       }
       if (opInfoCase_ == OpInfoOneofCase.WidgetCreatorInfo) {
-        output.WriteRawTag(202, 93);
+        output.WriteRawTag(210, 83);
         output.WriteMessage(WidgetCreatorInfo);
       }
       if (_unknownFields != null) {
@@ -303,11 +308,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 72: {
+          case 88: {
             MaterialId = input.ReadUInt32();
             break;
           }
-          case 6658: {
+          case 3474: {
             global::Weedwacker.Shared.Network.Proto.WidgetCreateLocationInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.WidgetCreateLocationInfo();
             if (opInfoCase_ == OpInfoOneofCase.LocationInfo) {
               subBuilder.MergeFrom(LocationInfo);
@@ -316,7 +321,7 @@ namespace Weedwacker.Shared.Network.Proto {
             LocationInfo = subBuilder;
             break;
           }
-          case 11978: {
+          case 10706: {
             global::Weedwacker.Shared.Network.Proto.WidgetCreatorInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.WidgetCreatorInfo();
             if (opInfoCase_ == OpInfoOneofCase.WidgetCreatorInfo) {
               subBuilder.MergeFrom(WidgetCreatorInfo);
@@ -340,11 +345,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 72: {
+          case 88: {
             MaterialId = input.ReadUInt32();
             break;
           }
-          case 6658: {
+          case 3474: {
             global::Weedwacker.Shared.Network.Proto.WidgetCreateLocationInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.WidgetCreateLocationInfo();
             if (opInfoCase_ == OpInfoOneofCase.LocationInfo) {
               subBuilder.MergeFrom(LocationInfo);
@@ -353,7 +358,7 @@ namespace Weedwacker.Shared.Network.Proto {
             LocationInfo = subBuilder;
             break;
           }
-          case 11978: {
+          case 10706: {
             global::Weedwacker.Shared.Network.Proto.WidgetCreatorInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.WidgetCreatorInfo();
             if (opInfoCase_ == OpInfoOneofCase.WidgetCreatorInfo) {
               subBuilder.MergeFrom(WidgetCreatorInfo);

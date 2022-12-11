@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static CustomDungeonUpdateNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9DdXN0b21EdW5nZW9uVXBkYXRlTm90aWZ5LnByb3RvGhhDdXN0b21EdW5n",
-            "ZW9uQnJpZWYucHJvdG8iRwoZQ3VzdG9tRHVuZ2VvblVwZGF0ZU5vdGlmeRIq",
-            "Cg1kdW5nZW9uX2JyaWVmGAwgASgLMhMuQ3VzdG9tRHVuZ2VvbkJyaWVmQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch9DdXN0b21EdW5nZW9uVXBkYXRlTm90aWZ5LnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvGhhDdXN0b21EdW5nZW9uQnJpZWYucHJv",
+            "dG8iZwoZQ3VzdG9tRHVuZ2VvblVwZGF0ZU5vdGlmeRJKCg1kdW5nZW9uX2Jy",
+            "aWVmGA8gASgLMjMuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5D",
+            "dXN0b21EdW5nZW9uQnJpZWZiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CustomDungeonBriefReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 6223
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 6230;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class CustomDungeonUpdateNotify : pb::IMessage<CustomDungeonUpdateNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "dungeon_brief" field.</summary>
-    public const int DungeonBriefFieldNumber = 12;
+    public const int DungeonBriefFieldNumber = 15;
     private global::Weedwacker.Shared.Network.Proto.CustomDungeonBrief dungeonBrief_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -142,7 +147,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (dungeonBrief_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(122);
         output.WriteMessage(DungeonBrief);
       }
       if (_unknownFields != null) {
@@ -156,7 +161,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (dungeonBrief_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(122);
         output.WriteMessage(DungeonBrief);
       }
       if (_unknownFields != null) {
@@ -205,7 +210,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 98: {
+          case 122: {
             if (dungeonBrief_ == null) {
               DungeonBrief = new global::Weedwacker.Shared.Network.Proto.CustomDungeonBrief();
             }
@@ -227,7 +232,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 98: {
+          case 122: {
             if (dungeonBrief_ == null) {
               DungeonBrief = new global::Weedwacker.Shared.Network.Proto.CustomDungeonBrief();
             }

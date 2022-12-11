@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static AvatarAddNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVBdmF0YXJBZGROb3RpZnkucHJvdG8aEEF2YXRhckluZm8ucHJvdG8iQgoP",
-            "QXZhdGFyQWRkTm90aWZ5EhsKBmF2YXRhchgNIAEoCzILLkF2YXRhckluZm8S",
-            "EgoKaXNfaW5fdGVhbRgMIAEoCEIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
-            "d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChVBdmF0YXJBZGROb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8aEEF2YXRhckluZm8ucHJvdG8iYgoPQXZhdGFyQWRkTm90",
+            "aWZ5EjsKBmF2YXRhchgBIAEoCzIrLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uQXZhdGFySW5mbxISCgppc19pbl90ZWFtGA8gASgIYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AvatarInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1769
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1757;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AvatarAddNotify : pb::IMessage<AvatarAddNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "avatar" field.</summary>
-    public const int AvatarFieldNumber = 13;
+    public const int AvatarFieldNumber = 1;
     private global::Weedwacker.Shared.Network.Proto.AvatarInfo avatar_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_in_team" field.</summary>
-    public const int IsInTeamFieldNumber = 12;
+    public const int IsInTeamFieldNumber = 15;
     private bool isInTeam_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,13 +161,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsInTeam != false) {
-        output.WriteRawTag(96);
-        output.WriteBool(IsInTeam);
-      }
       if (avatar_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(10);
         output.WriteMessage(Avatar);
+      }
+      if (IsInTeam != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsInTeam);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -174,13 +179,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsInTeam != false) {
-        output.WriteRawTag(96);
-        output.WriteBool(IsInTeam);
-      }
       if (avatar_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(10);
         output.WriteMessage(Avatar);
+      }
+      if (IsInTeam != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsInTeam);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -234,15 +239,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 96: {
-            IsInTeam = input.ReadBool();
-            break;
-          }
-          case 106: {
+          case 10: {
             if (avatar_ == null) {
               Avatar = new global::Weedwacker.Shared.Network.Proto.AvatarInfo();
             }
             input.ReadMessage(Avatar);
+            break;
+          }
+          case 120: {
+            IsInTeam = input.ReadBool();
             break;
           }
         }
@@ -260,15 +265,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 96: {
-            IsInTeam = input.ReadBool();
-            break;
-          }
-          case 106: {
+          case 10: {
             if (avatar_ == null) {
               Avatar = new global::Weedwacker.Shared.Network.Proto.AvatarInfo();
             }
             input.ReadMessage(Avatar);
+            break;
+          }
+          case 120: {
+            IsInTeam = input.ReadBool();
             break;
           }
         }

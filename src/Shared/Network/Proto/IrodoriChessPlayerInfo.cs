@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static IrodoriChessPlayerInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxJcm9kb3JpQ2hlc3NQbGF5ZXJJbmZvLnByb3RvIlQKFklyb2RvcmlDaGVz",
-            "c1BsYXllckluZm8SCwoDdWlkGAQgASgNEhcKD2J1aWxkaW5nX3BvaW50cxgJ",
-            "IAEoDRIUCgxzZXR0bGVfc2NvcmUYAyABKA1CIqoCH1dlZWR3YWNrZXIuU2hh",
-            "cmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChxJcm9kb3JpQ2hlc3NQbGF5ZXJJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvIlQKFklyb2RvcmlDaGVzc1BsYXllckluZm8S",
+            "FAoMc2V0dGxlX3Njb3JlGAsgASgNEgsKA3VpZBgKIAEoDRIXCg9idWlsZGlu",
+            "Z19wb2ludHMYCCABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.IrodoriChessPlayerInfo), global::Weedwacker.Shared.Network.Proto.IrodoriChessPlayerInfo.Parser, new[]{ "Uid", "BuildingPoints", "SettleScore" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.IrodoriChessPlayerInfo), global::Weedwacker.Shared.Network.Proto.IrodoriChessPlayerInfo.Parser, new[]{ "SettleScore", "Uid", "BuildingPoints" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,9 +72,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public IrodoriChessPlayerInfo(IrodoriChessPlayerInfo other) : this() {
+      settleScore_ = other.settleScore_;
       uid_ = other.uid_;
       buildingPoints_ = other.buildingPoints_;
-      settleScore_ = other.settleScore_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,8 +84,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new IrodoriChessPlayerInfo(this);
     }
 
+    /// <summary>Field number for the "settle_score" field.</summary>
+    public const int SettleScoreFieldNumber = 11;
+    private uint settleScore_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SettleScore {
+      get { return settleScore_; }
+      set {
+        settleScore_ = value;
+      }
+    }
+
     /// <summary>Field number for the "uid" field.</summary>
-    public const int UidFieldNumber = 4;
+    public const int UidFieldNumber = 10;
     private uint uid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -97,7 +109,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "building_points" field.</summary>
-    public const int BuildingPointsFieldNumber = 9;
+    public const int BuildingPointsFieldNumber = 8;
     private uint buildingPoints_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -105,18 +117,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return buildingPoints_; }
       set {
         buildingPoints_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "settle_score" field.</summary>
-    public const int SettleScoreFieldNumber = 3;
-    private uint settleScore_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SettleScore {
-      get { return settleScore_; }
-      set {
-        settleScore_ = value;
       }
     }
 
@@ -135,9 +135,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (SettleScore != other.SettleScore) return false;
       if (Uid != other.Uid) return false;
       if (BuildingPoints != other.BuildingPoints) return false;
-      if (SettleScore != other.SettleScore) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -145,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (SettleScore != 0) hash ^= SettleScore.GetHashCode();
       if (Uid != 0) hash ^= Uid.GetHashCode();
       if (BuildingPoints != 0) hash ^= BuildingPoints.GetHashCode();
-      if (SettleScore != 0) hash ^= SettleScore.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -166,17 +166,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (SettleScore != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(SettleScore);
+      if (BuildingPoints != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(BuildingPoints);
       }
       if (Uid != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(80);
         output.WriteUInt32(Uid);
       }
-      if (BuildingPoints != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(BuildingPoints);
+      if (SettleScore != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(SettleScore);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -188,17 +188,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (SettleScore != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(SettleScore);
+      if (BuildingPoints != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(BuildingPoints);
       }
       if (Uid != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(80);
         output.WriteUInt32(Uid);
       }
-      if (BuildingPoints != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(BuildingPoints);
+      if (SettleScore != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(SettleScore);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -210,14 +210,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (SettleScore != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SettleScore);
+      }
       if (Uid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
       }
       if (BuildingPoints != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BuildingPoints);
-      }
-      if (SettleScore != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SettleScore);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -231,14 +231,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.SettleScore != 0) {
+        SettleScore = other.SettleScore;
+      }
       if (other.Uid != 0) {
         Uid = other.Uid;
       }
       if (other.BuildingPoints != 0) {
         BuildingPoints = other.BuildingPoints;
-      }
-      if (other.SettleScore != 0) {
-        SettleScore = other.SettleScore;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -255,16 +255,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            SettleScore = input.ReadUInt32();
+          case 64: {
+            BuildingPoints = input.ReadUInt32();
             break;
           }
-          case 32: {
+          case 80: {
             Uid = input.ReadUInt32();
             break;
           }
-          case 72: {
-            BuildingPoints = input.ReadUInt32();
+          case 88: {
+            SettleScore = input.ReadUInt32();
             break;
           }
         }
@@ -282,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            SettleScore = input.ReadUInt32();
+          case 64: {
+            BuildingPoints = input.ReadUInt32();
             break;
           }
-          case 32: {
+          case 80: {
             Uid = input.ReadUInt32();
             break;
           }
-          case 72: {
-            BuildingPoints = input.ReadUInt32();
+          case 88: {
+            SettleScore = input.ReadUInt32();
             break;
           }
         }

@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static PushTipsDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJQdXNoVGlwc0RhdGEucHJvdG8iMwoMUHVzaFRpcHNEYXRhEhQKDHB1c2hf",
-            "dGlwc19pZBgNIAEoDRINCgVzdGF0ZRgEIAEoDUIiqgIfV2VlZHdhY2tlci5T",
-            "aGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChJQdXNoVGlwc0RhdGEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8iMwoMUHVzaFRpcHNEYXRhEhQKDHB1c2hfdGlwc19pZBgEIAEo",
+            "DRINCgVzdGF0ZRgHIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "push_tips_id" field.</summary>
-    public const int PushTipsIdFieldNumber = 13;
+    public const int PushTipsIdFieldNumber = 4;
     private uint pushTipsId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -95,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "state" field.</summary>
-    public const int StateFieldNumber = 4;
+    public const int StateFieldNumber = 7;
     private uint state_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -150,13 +150,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (State != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(State);
-      }
       if (PushTipsId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(32);
         output.WriteUInt32(PushTipsId);
+      }
+      if (State != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(State);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -168,13 +168,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (State != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(State);
-      }
       if (PushTipsId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(32);
         output.WriteUInt32(PushTipsId);
+      }
+      if (State != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(State);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -226,11 +226,11 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 32: {
-            State = input.ReadUInt32();
+            PushTipsId = input.ReadUInt32();
             break;
           }
-          case 104: {
-            PushTipsId = input.ReadUInt32();
+          case 56: {
+            State = input.ReadUInt32();
             break;
           }
         }
@@ -249,11 +249,11 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 32: {
-            State = input.ReadUInt32();
+            PushTipsId = input.ReadUInt32();
             break;
           }
-          case 104: {
-            PushTipsId = input.ReadUInt32();
+          case 56: {
+            State = input.ReadUInt32();
             break;
           }
         }

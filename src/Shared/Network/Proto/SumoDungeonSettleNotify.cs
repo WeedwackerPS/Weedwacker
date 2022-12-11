@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static SumoDungeonSettleNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1TdW1vRHVuZ2VvblNldHRsZU5vdGlmeS5wcm90byKoAQoXU3Vtb0R1bmdl",
-            "b25TZXR0bGVOb3RpZnkSEwoLZmluYWxfc2NvcmUYByABKA0SFQoNZGlmZmlj",
-            "dWx0eV9pZBgOIAEoDRIeChZraWxsX2VsaXRlX21vbnN0ZXJfbnVtGA8gASgN",
-            "EhAKCHN0YWdlX2lkGAwgASgNEhgKEGtpbGxfbW9uc3Rlcl9udW0YBCABKA0S",
-            "FQoNaXNfbmV3X3JlY29yZBgFIAEoCEIiqgIfV2VlZHdhY2tlci5TaGFyZWQu",
-            "TmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch1TdW1vRHVuZ2VvblNldHRsZU5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90byKoAQoXU3Vtb0R1bmdlb25TZXR0bGVOb3Rp",
+            "ZnkSFQoNaXNfbmV3X3JlY29yZBgEIAEoCBIYChBraWxsX21vbnN0ZXJfbnVt",
+            "GAwgASgNEhUKDWRpZmZpY3VsdHlfaWQYAyABKA0SEwoLZmluYWxfc2NvcmUY",
+            "AiABKA0SHgoWa2lsbF9lbGl0ZV9tb25zdGVyX251bRgPIAEoDRIQCghzdGFn",
+            "ZV9pZBgLIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SumoDungeonSettleNotify), global::Weedwacker.Shared.Network.Proto.SumoDungeonSettleNotify.Parser, new[]{ "FinalScore", "DifficultyId", "KillEliteMonsterNum", "StageId", "KillMonsterNum", "IsNewRecord" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SumoDungeonSettleNotify), global::Weedwacker.Shared.Network.Proto.SumoDungeonSettleNotify.Parser, new[]{ "IsNewRecord", "KillMonsterNum", "DifficultyId", "FinalScore", "KillEliteMonsterNum", "StageId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8291
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8434;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class SumoDungeonSettleNotify : pb::IMessage<SumoDungeonSettleNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,12 +83,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SumoDungeonSettleNotify(SumoDungeonSettleNotify other) : this() {
-      finalScore_ = other.finalScore_;
+      isNewRecord_ = other.isNewRecord_;
+      killMonsterNum_ = other.killMonsterNum_;
       difficultyId_ = other.difficultyId_;
+      finalScore_ = other.finalScore_;
       killEliteMonsterNum_ = other.killEliteMonsterNum_;
       stageId_ = other.stageId_;
-      killMonsterNum_ = other.killMonsterNum_;
-      isNewRecord_ = other.isNewRecord_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,20 +98,32 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SumoDungeonSettleNotify(this);
     }
 
-    /// <summary>Field number for the "final_score" field.</summary>
-    public const int FinalScoreFieldNumber = 7;
-    private uint finalScore_;
+    /// <summary>Field number for the "is_new_record" field.</summary>
+    public const int IsNewRecordFieldNumber = 4;
+    private bool isNewRecord_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FinalScore {
-      get { return finalScore_; }
+    public bool IsNewRecord {
+      get { return isNewRecord_; }
       set {
-        finalScore_ = value;
+        isNewRecord_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "kill_monster_num" field.</summary>
+    public const int KillMonsterNumFieldNumber = 12;
+    private uint killMonsterNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint KillMonsterNum {
+      get { return killMonsterNum_; }
+      set {
+        killMonsterNum_ = value;
       }
     }
 
     /// <summary>Field number for the "difficulty_id" field.</summary>
-    public const int DifficultyIdFieldNumber = 14;
+    public const int DifficultyIdFieldNumber = 3;
     private uint difficultyId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,6 +131,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return difficultyId_; }
       set {
         difficultyId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "final_score" field.</summary>
+    public const int FinalScoreFieldNumber = 2;
+    private uint finalScore_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint FinalScore {
+      get { return finalScore_; }
+      set {
+        finalScore_ = value;
       }
     }
 
@@ -131,7 +159,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "stage_id" field.</summary>
-    public const int StageIdFieldNumber = 12;
+    public const int StageIdFieldNumber = 11;
     private uint stageId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -139,30 +167,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return stageId_; }
       set {
         stageId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "kill_monster_num" field.</summary>
-    public const int KillMonsterNumFieldNumber = 4;
-    private uint killMonsterNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint KillMonsterNum {
-      get { return killMonsterNum_; }
-      set {
-        killMonsterNum_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_new_record" field.</summary>
-    public const int IsNewRecordFieldNumber = 5;
-    private bool isNewRecord_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsNewRecord {
-      get { return isNewRecord_; }
-      set {
-        isNewRecord_ = value;
       }
     }
 
@@ -181,12 +185,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (FinalScore != other.FinalScore) return false;
+      if (IsNewRecord != other.IsNewRecord) return false;
+      if (KillMonsterNum != other.KillMonsterNum) return false;
       if (DifficultyId != other.DifficultyId) return false;
+      if (FinalScore != other.FinalScore) return false;
       if (KillEliteMonsterNum != other.KillEliteMonsterNum) return false;
       if (StageId != other.StageId) return false;
-      if (KillMonsterNum != other.KillMonsterNum) return false;
-      if (IsNewRecord != other.IsNewRecord) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -194,12 +198,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (FinalScore != 0) hash ^= FinalScore.GetHashCode();
+      if (IsNewRecord != false) hash ^= IsNewRecord.GetHashCode();
+      if (KillMonsterNum != 0) hash ^= KillMonsterNum.GetHashCode();
       if (DifficultyId != 0) hash ^= DifficultyId.GetHashCode();
+      if (FinalScore != 0) hash ^= FinalScore.GetHashCode();
       if (KillEliteMonsterNum != 0) hash ^= KillEliteMonsterNum.GetHashCode();
       if (StageId != 0) hash ^= StageId.GetHashCode();
-      if (KillMonsterNum != 0) hash ^= KillMonsterNum.GetHashCode();
-      if (IsNewRecord != false) hash ^= IsNewRecord.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -218,25 +222,25 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (KillMonsterNum != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(KillMonsterNum);
-      }
-      if (IsNewRecord != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(IsNewRecord);
-      }
       if (FinalScore != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(16);
         output.WriteUInt32(FinalScore);
       }
+      if (DifficultyId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(DifficultyId);
+      }
+      if (IsNewRecord != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(IsNewRecord);
+      }
       if (StageId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(88);
         output.WriteUInt32(StageId);
       }
-      if (DifficultyId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(DifficultyId);
+      if (KillMonsterNum != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(KillMonsterNum);
       }
       if (KillEliteMonsterNum != 0) {
         output.WriteRawTag(120);
@@ -252,25 +256,25 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (KillMonsterNum != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(KillMonsterNum);
-      }
-      if (IsNewRecord != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(IsNewRecord);
-      }
       if (FinalScore != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(16);
         output.WriteUInt32(FinalScore);
       }
+      if (DifficultyId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(DifficultyId);
+      }
+      if (IsNewRecord != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(IsNewRecord);
+      }
       if (StageId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(88);
         output.WriteUInt32(StageId);
       }
-      if (DifficultyId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(DifficultyId);
+      if (KillMonsterNum != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(KillMonsterNum);
       }
       if (KillEliteMonsterNum != 0) {
         output.WriteRawTag(120);
@@ -286,23 +290,23 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (FinalScore != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinalScore);
+      if (IsNewRecord != false) {
+        size += 1 + 1;
+      }
+      if (KillMonsterNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(KillMonsterNum);
       }
       if (DifficultyId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DifficultyId);
+      }
+      if (FinalScore != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinalScore);
       }
       if (KillEliteMonsterNum != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(KillEliteMonsterNum);
       }
       if (StageId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
-      }
-      if (KillMonsterNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(KillMonsterNum);
-      }
-      if (IsNewRecord != false) {
-        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -316,23 +320,23 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.FinalScore != 0) {
-        FinalScore = other.FinalScore;
+      if (other.IsNewRecord != false) {
+        IsNewRecord = other.IsNewRecord;
+      }
+      if (other.KillMonsterNum != 0) {
+        KillMonsterNum = other.KillMonsterNum;
       }
       if (other.DifficultyId != 0) {
         DifficultyId = other.DifficultyId;
+      }
+      if (other.FinalScore != 0) {
+        FinalScore = other.FinalScore;
       }
       if (other.KillEliteMonsterNum != 0) {
         KillEliteMonsterNum = other.KillEliteMonsterNum;
       }
       if (other.StageId != 0) {
         StageId = other.StageId;
-      }
-      if (other.KillMonsterNum != 0) {
-        KillMonsterNum = other.KillMonsterNum;
-      }
-      if (other.IsNewRecord != false) {
-        IsNewRecord = other.IsNewRecord;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -349,24 +353,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            KillMonsterNum = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            IsNewRecord = input.ReadBool();
-            break;
-          }
-          case 56: {
+          case 16: {
             FinalScore = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 24: {
+            DifficultyId = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            IsNewRecord = input.ReadBool();
+            break;
+          }
+          case 88: {
             StageId = input.ReadUInt32();
             break;
           }
-          case 112: {
-            DifficultyId = input.ReadUInt32();
+          case 96: {
+            KillMonsterNum = input.ReadUInt32();
             break;
           }
           case 120: {
@@ -388,24 +392,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            KillMonsterNum = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            IsNewRecord = input.ReadBool();
-            break;
-          }
-          case 56: {
+          case 16: {
             FinalScore = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 24: {
+            DifficultyId = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            IsNewRecord = input.ReadBool();
+            break;
+          }
+          case 88: {
             StageId = input.ReadUInt32();
             break;
           }
-          case 112: {
-            DifficultyId = input.ReadUInt32();
+          case 96: {
+            KillMonsterNum = input.ReadUInt32();
             break;
           }
           case 120: {

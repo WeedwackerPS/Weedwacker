@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static ParentQuestRandomInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtQYXJlbnRRdWVzdFJhbmRvbUluZm8ucHJvdG8iVgoVUGFyZW50UXVlc3RS",
-            "YW5kb21JbmZvEhMKC2ZhY3Rvcl9saXN0GAEgAygNEhMKC3RlbXBsYXRlX2lk",
-            "GAggASgNEhMKC2VudHJhbmNlX2lkGAIgASgNQiKqAh9XZWVkd2Fja2VyLlNo",
-            "YXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChtQYXJlbnRRdWVzdFJhbmRvbUluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8iVgoVUGFyZW50UXVlc3RSYW5kb21JbmZvEhMK",
+            "C2ZhY3Rvcl9saXN0GAEgAygNEhMKC2VudHJhbmNlX2lkGAggASgNEhMKC3Rl",
+            "bXBsYXRlX2lkGA8gASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ParentQuestRandomInfo), global::Weedwacker.Shared.Network.Proto.ParentQuestRandomInfo.Parser, new[]{ "FactorList", "TemplateId", "EntranceId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ParentQuestRandomInfo), global::Weedwacker.Shared.Network.Proto.ParentQuestRandomInfo.Parser, new[]{ "FactorList", "EntranceId", "TemplateId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,8 +73,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ParentQuestRandomInfo(ParentQuestRandomInfo other) : this() {
       factorList_ = other.factorList_.Clone();
-      templateId_ = other.templateId_;
       entranceId_ = other.entranceId_;
+      templateId_ = other.templateId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -95,20 +95,8 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return factorList_; }
     }
 
-    /// <summary>Field number for the "template_id" field.</summary>
-    public const int TemplateIdFieldNumber = 8;
-    private uint templateId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TemplateId {
-      get { return templateId_; }
-      set {
-        templateId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "entrance_id" field.</summary>
-    public const int EntranceIdFieldNumber = 2;
+    public const int EntranceIdFieldNumber = 8;
     private uint entranceId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -116,6 +104,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return entranceId_; }
       set {
         entranceId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "template_id" field.</summary>
+    public const int TemplateIdFieldNumber = 15;
+    private uint templateId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TemplateId {
+      get { return templateId_; }
+      set {
+        templateId_ = value;
       }
     }
 
@@ -135,8 +135,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if(!factorList_.Equals(other.factorList_)) return false;
-      if (TemplateId != other.TemplateId) return false;
       if (EntranceId != other.EntranceId) return false;
+      if (TemplateId != other.TemplateId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -145,8 +145,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= factorList_.GetHashCode();
-      if (TemplateId != 0) hash ^= TemplateId.GetHashCode();
       if (EntranceId != 0) hash ^= EntranceId.GetHashCode();
+      if (TemplateId != 0) hash ^= TemplateId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -167,11 +167,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #else
       factorList_.WriteTo(output, _repeated_factorList_codec);
       if (EntranceId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(64);
         output.WriteUInt32(EntranceId);
       }
       if (TemplateId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(120);
         output.WriteUInt32(TemplateId);
       }
       if (_unknownFields != null) {
@@ -186,11 +186,11 @@ namespace Weedwacker.Shared.Network.Proto {
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       factorList_.WriteTo(ref output, _repeated_factorList_codec);
       if (EntranceId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(64);
         output.WriteUInt32(EntranceId);
       }
       if (TemplateId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(120);
         output.WriteUInt32(TemplateId);
       }
       if (_unknownFields != null) {
@@ -204,11 +204,11 @@ namespace Weedwacker.Shared.Network.Proto {
     public int CalculateSize() {
       int size = 0;
       size += factorList_.CalculateSize(_repeated_factorList_codec);
-      if (TemplateId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TemplateId);
-      }
       if (EntranceId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntranceId);
+      }
+      if (TemplateId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TemplateId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -223,11 +223,11 @@ namespace Weedwacker.Shared.Network.Proto {
         return;
       }
       factorList_.Add(other.factorList_);
-      if (other.TemplateId != 0) {
-        TemplateId = other.TemplateId;
-      }
       if (other.EntranceId != 0) {
         EntranceId = other.EntranceId;
+      }
+      if (other.TemplateId != 0) {
+        TemplateId = other.TemplateId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -249,11 +249,11 @@ namespace Weedwacker.Shared.Network.Proto {
             factorList_.AddEntriesFrom(input, _repeated_factorList_codec);
             break;
           }
-          case 16: {
+          case 64: {
             EntranceId = input.ReadUInt32();
             break;
           }
-          case 64: {
+          case 120: {
             TemplateId = input.ReadUInt32();
             break;
           }
@@ -277,11 +277,11 @@ namespace Weedwacker.Shared.Network.Proto {
             factorList_.AddEntriesFrom(ref input, _repeated_factorList_codec);
             break;
           }
-          case 16: {
+          case 64: {
             EntranceId = input.ReadUInt32();
             break;
           }
-          case 64: {
+          case 120: {
             TemplateId = input.ReadUInt32();
             break;
           }

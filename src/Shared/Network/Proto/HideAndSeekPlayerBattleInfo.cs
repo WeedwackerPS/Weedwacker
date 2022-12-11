@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static HideAndSeekPlayerBattleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFIaWRlQW5kU2Vla1BsYXllckJhdHRsZUluZm8ucHJvdG8iagobSGlkZUFu",
-            "ZFNlZWtQbGF5ZXJCYXR0bGVJbmZvEhIKCmNvc3R1bWVfaWQYAyABKA0SEgoK",
-            "c2tpbGxfbGlzdBgPIAMoDRIQCghpc19yZWFkeRgMIAEoCBIRCglhdmF0YXJf",
-            "aWQYBiABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9i",
-            "BnByb3RvMw=="));
+            "CiFIaWRlQW5kU2Vla1BsYXllckJhdHRsZUluZm8ucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iagobSGlkZUFuZFNlZWtQbGF5ZXJC",
+            "YXR0bGVJbmZvEhAKCGlzX3JlYWR5GAwgASgIEhIKCnNraWxsX2xpc3QYCyAD",
+            "KA0SEQoJYXZhdGFyX2lkGA8gASgNEhIKCmNvc3R1bWVfaWQYBCABKA1iBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HideAndSeekPlayerBattleInfo), global::Weedwacker.Shared.Network.Proto.HideAndSeekPlayerBattleInfo.Parser, new[]{ "CostumeId", "SkillList", "IsReady", "AvatarId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HideAndSeekPlayerBattleInfo), global::Weedwacker.Shared.Network.Proto.HideAndSeekPlayerBattleInfo.Parser, new[]{ "IsReady", "SkillList", "AvatarId", "CostumeId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,10 +73,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HideAndSeekPlayerBattleInfo(HideAndSeekPlayerBattleInfo other) : this() {
-      costumeId_ = other.costumeId_;
-      skillList_ = other.skillList_.Clone();
       isReady_ = other.isReady_;
+      skillList_ = other.skillList_.Clone();
       avatarId_ = other.avatarId_;
+      costumeId_ = other.costumeId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,29 +84,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HideAndSeekPlayerBattleInfo Clone() {
       return new HideAndSeekPlayerBattleInfo(this);
-    }
-
-    /// <summary>Field number for the "costume_id" field.</summary>
-    public const int CostumeIdFieldNumber = 3;
-    private uint costumeId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CostumeId {
-      get { return costumeId_; }
-      set {
-        costumeId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "skill_list" field.</summary>
-    public const int SkillListFieldNumber = 15;
-    private static readonly pb::FieldCodec<uint> _repeated_skillList_codec
-        = pb::FieldCodec.ForUInt32(122);
-    private readonly pbc::RepeatedField<uint> skillList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> SkillList {
-      get { return skillList_; }
     }
 
     /// <summary>Field number for the "is_ready" field.</summary>
@@ -121,8 +98,19 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "skill_list" field.</summary>
+    public const int SkillListFieldNumber = 11;
+    private static readonly pb::FieldCodec<uint> _repeated_skillList_codec
+        = pb::FieldCodec.ForUInt32(90);
+    private readonly pbc::RepeatedField<uint> skillList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> SkillList {
+      get { return skillList_; }
+    }
+
     /// <summary>Field number for the "avatar_id" field.</summary>
-    public const int AvatarIdFieldNumber = 6;
+    public const int AvatarIdFieldNumber = 15;
     private uint avatarId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -130,6 +118,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return avatarId_; }
       set {
         avatarId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "costume_id" field.</summary>
+    public const int CostumeIdFieldNumber = 4;
+    private uint costumeId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CostumeId {
+      get { return costumeId_; }
+      set {
+        costumeId_ = value;
       }
     }
 
@@ -148,10 +148,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CostumeId != other.CostumeId) return false;
-      if(!skillList_.Equals(other.skillList_)) return false;
       if (IsReady != other.IsReady) return false;
+      if(!skillList_.Equals(other.skillList_)) return false;
       if (AvatarId != other.AvatarId) return false;
+      if (CostumeId != other.CostumeId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -159,10 +159,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CostumeId != 0) hash ^= CostumeId.GetHashCode();
-      hash ^= skillList_.GetHashCode();
       if (IsReady != false) hash ^= IsReady.GetHashCode();
+      hash ^= skillList_.GetHashCode();
       if (AvatarId != 0) hash ^= AvatarId.GetHashCode();
+      if (CostumeId != 0) hash ^= CostumeId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -182,18 +182,18 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (CostumeId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteUInt32(CostumeId);
       }
-      if (AvatarId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(AvatarId);
-      }
+      skillList_.WriteTo(output, _repeated_skillList_codec);
       if (IsReady != false) {
         output.WriteRawTag(96);
         output.WriteBool(IsReady);
       }
-      skillList_.WriteTo(output, _repeated_skillList_codec);
+      if (AvatarId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(AvatarId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -205,18 +205,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (CostumeId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteUInt32(CostumeId);
       }
-      if (AvatarId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(AvatarId);
-      }
+      skillList_.WriteTo(ref output, _repeated_skillList_codec);
       if (IsReady != false) {
         output.WriteRawTag(96);
         output.WriteBool(IsReady);
       }
-      skillList_.WriteTo(ref output, _repeated_skillList_codec);
+      if (AvatarId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(AvatarId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -227,15 +227,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CostumeId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CostumeId);
-      }
-      size += skillList_.CalculateSize(_repeated_skillList_codec);
       if (IsReady != false) {
         size += 1 + 1;
       }
+      size += skillList_.CalculateSize(_repeated_skillList_codec);
       if (AvatarId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AvatarId);
+      }
+      if (CostumeId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CostumeId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -249,15 +249,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.CostumeId != 0) {
-        CostumeId = other.CostumeId;
-      }
-      skillList_.Add(other.skillList_);
       if (other.IsReady != false) {
         IsReady = other.IsReady;
       }
+      skillList_.Add(other.skillList_);
       if (other.AvatarId != 0) {
         AvatarId = other.AvatarId;
+      }
+      if (other.CostumeId != 0) {
+        CostumeId = other.CostumeId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -274,21 +274,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
+          case 32: {
             CostumeId = input.ReadUInt32();
             break;
           }
-          case 48: {
-            AvatarId = input.ReadUInt32();
+          case 90:
+          case 88: {
+            skillList_.AddEntriesFrom(input, _repeated_skillList_codec);
             break;
           }
           case 96: {
             IsReady = input.ReadBool();
             break;
           }
-          case 122:
           case 120: {
-            skillList_.AddEntriesFrom(input, _repeated_skillList_codec);
+            AvatarId = input.ReadUInt32();
             break;
           }
         }
@@ -306,21 +306,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
+          case 32: {
             CostumeId = input.ReadUInt32();
             break;
           }
-          case 48: {
-            AvatarId = input.ReadUInt32();
+          case 90:
+          case 88: {
+            skillList_.AddEntriesFrom(ref input, _repeated_skillList_codec);
             break;
           }
           case 96: {
             IsReady = input.ReadBool();
             break;
           }
-          case 122:
           case 120: {
-            skillList_.AddEntriesFrom(ref input, _repeated_skillList_codec);
+            AvatarId = input.ReadUInt32();
             break;
           }
         }

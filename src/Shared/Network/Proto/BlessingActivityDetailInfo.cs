@@ -24,20 +24,20 @@ namespace Weedwacker.Shared.Network.Proto {
     static BlessingActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBCbGVzc2luZ0FjdGl2aXR5RGV0YWlsSW5mby5wcm90byLHAgoaQmxlc3Np",
-            "bmdBY3Rpdml0eURldGFpbEluZm8SGQoRY3VyX2RheV9zY2FuX3R5cGUYCSAB",
-            "KA0SGQoRaXNfY29udGVudF9jbG9zZWQYCyABKAgSPwoLcGljX251bV9tYXAY",
-            "DyADKAsyKi5CbGVzc2luZ0FjdGl2aXR5RGV0YWlsSW5mby5QaWNOdW1NYXBF",
-            "bnRyeRIaChJjb250ZW50X2Nsb3NlX3RpbWUYAiABKA0SGAoQY3VyX2RheV9z",
-            "Y2FuX251bRgEIAEoDRIZChFyZWRlZW1fcmV3YXJkX251bRgBIAEoDRIUCgxp",
-            "c19hY3RpdmF0ZWQYDSABKAgSGQoRbmV4dF9yZWZyZXNoX3RpbWUYBiABKA0a",
-            "MAoOUGljTnVtTWFwRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgN",
-            "OgI4AUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJv",
-            "dG8z"));
+            "CiBCbGVzc2luZ0FjdGl2aXR5RGV0YWlsSW5mby5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byLrAgoaQmxlc3NpbmdBY3Rpdml0eURl",
+            "dGFpbEluZm8SGAoQY3VyX2RheV9zY2FuX251bRgKIAEoDRIaChJjb250ZW50",
+            "X2Nsb3NlX3RpbWUYCCABKA0SGwoTVW5rMzMwMF9KTEFESEVLSlBCUBgBIAEo",
+            "DRIZChFuZXh0X3JlZnJlc2hfdGltZRgGIAEoDRIUCgxpc19hY3RpdmF0ZWQY",
+            "BSABKAgSGwoTVW5rMzMwMF9JTk9ITEVMQk9BTRgHIAEoDRIZChFpc19jb250",
+            "ZW50X2Nsb3NlZBgCIAEoCBJfCgtwaWNfbnVtX21hcBgLIAMoCzJKLldlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQmxlc3NpbmdBY3Rpdml0eURl",
+            "dGFpbEluZm8uUGljTnVtTWFwRW50cnkaMAoOUGljTnVtTWFwRW50cnkSCwoD",
+            "a2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BlessingActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.BlessingActivityDetailInfo.Parser, new[]{ "CurDayScanType", "IsContentClosed", "PicNumMap", "ContentCloseTime", "CurDayScanNum", "RedeemRewardNum", "IsActivated", "NextRefreshTime" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BlessingActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.BlessingActivityDetailInfo.Parser, new[]{ "CurDayScanNum", "ContentCloseTime", "Unk3300JLADHEKJPBP", "NextRefreshTime", "IsActivated", "Unk3300INOHLELBOAM", "IsContentClosed", "PicNumMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -78,14 +78,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BlessingActivityDetailInfo(BlessingActivityDetailInfo other) : this() {
-      curDayScanType_ = other.curDayScanType_;
+      curDayScanNum_ = other.curDayScanNum_;
+      contentCloseTime_ = other.contentCloseTime_;
+      unk3300JLADHEKJPBP_ = other.unk3300JLADHEKJPBP_;
+      nextRefreshTime_ = other.nextRefreshTime_;
+      isActivated_ = other.isActivated_;
+      unk3300INOHLELBOAM_ = other.unk3300INOHLELBOAM_;
       isContentClosed_ = other.isContentClosed_;
       picNumMap_ = other.picNumMap_.Clone();
-      contentCloseTime_ = other.contentCloseTime_;
-      curDayScanNum_ = other.curDayScanNum_;
-      redeemRewardNum_ = other.redeemRewardNum_;
-      isActivated_ = other.isActivated_;
-      nextRefreshTime_ = other.nextRefreshTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -95,55 +95,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new BlessingActivityDetailInfo(this);
     }
 
-    /// <summary>Field number for the "cur_day_scan_type" field.</summary>
-    public const int CurDayScanTypeFieldNumber = 9;
-    private uint curDayScanType_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurDayScanType {
-      get { return curDayScanType_; }
-      set {
-        curDayScanType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_content_closed" field.</summary>
-    public const int IsContentClosedFieldNumber = 11;
-    private bool isContentClosed_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsContentClosed {
-      get { return isContentClosed_; }
-      set {
-        isContentClosed_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "pic_num_map" field.</summary>
-    public const int PicNumMapFieldNumber = 15;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_picNumMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 122);
-    private readonly pbc::MapField<uint, uint> picNumMap_ = new pbc::MapField<uint, uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> PicNumMap {
-      get { return picNumMap_; }
-    }
-
-    /// <summary>Field number for the "content_close_time" field.</summary>
-    public const int ContentCloseTimeFieldNumber = 2;
-    private uint contentCloseTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ContentCloseTime {
-      get { return contentCloseTime_; }
-      set {
-        contentCloseTime_ = value;
-      }
-    }
-
     /// <summary>Field number for the "cur_day_scan_num" field.</summary>
-    public const int CurDayScanNumFieldNumber = 4;
+    public const int CurDayScanNumFieldNumber = 10;
     private uint curDayScanNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -154,27 +107,27 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "redeem_reward_num" field.</summary>
-    public const int RedeemRewardNumFieldNumber = 1;
-    private uint redeemRewardNum_;
+    /// <summary>Field number for the "content_close_time" field.</summary>
+    public const int ContentCloseTimeFieldNumber = 8;
+    private uint contentCloseTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RedeemRewardNum {
-      get { return redeemRewardNum_; }
+    public uint ContentCloseTime {
+      get { return contentCloseTime_; }
       set {
-        redeemRewardNum_ = value;
+        contentCloseTime_ = value;
       }
     }
 
-    /// <summary>Field number for the "is_activated" field.</summary>
-    public const int IsActivatedFieldNumber = 13;
-    private bool isActivated_;
+    /// <summary>Field number for the "Unk3300_JLADHEKJPBP" field.</summary>
+    public const int Unk3300JLADHEKJPBPFieldNumber = 1;
+    private uint unk3300JLADHEKJPBP_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsActivated {
-      get { return isActivated_; }
+    public uint Unk3300JLADHEKJPBP {
+      get { return unk3300JLADHEKJPBP_; }
       set {
-        isActivated_ = value;
+        unk3300JLADHEKJPBP_ = value;
       }
     }
 
@@ -188,6 +141,53 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         nextRefreshTime_ = value;
       }
+    }
+
+    /// <summary>Field number for the "is_activated" field.</summary>
+    public const int IsActivatedFieldNumber = 5;
+    private bool isActivated_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsActivated {
+      get { return isActivated_; }
+      set {
+        isActivated_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_INOHLELBOAM" field.</summary>
+    public const int Unk3300INOHLELBOAMFieldNumber = 7;
+    private uint unk3300INOHLELBOAM_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300INOHLELBOAM {
+      get { return unk3300INOHLELBOAM_; }
+      set {
+        unk3300INOHLELBOAM_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_content_closed" field.</summary>
+    public const int IsContentClosedFieldNumber = 2;
+    private bool isContentClosed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsContentClosed {
+      get { return isContentClosed_; }
+      set {
+        isContentClosed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "pic_num_map" field.</summary>
+    public const int PicNumMapFieldNumber = 11;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_picNumMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 90);
+    private readonly pbc::MapField<uint, uint> picNumMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> PicNumMap {
+      get { return picNumMap_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -205,14 +205,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CurDayScanType != other.CurDayScanType) return false;
+      if (CurDayScanNum != other.CurDayScanNum) return false;
+      if (ContentCloseTime != other.ContentCloseTime) return false;
+      if (Unk3300JLADHEKJPBP != other.Unk3300JLADHEKJPBP) return false;
+      if (NextRefreshTime != other.NextRefreshTime) return false;
+      if (IsActivated != other.IsActivated) return false;
+      if (Unk3300INOHLELBOAM != other.Unk3300INOHLELBOAM) return false;
       if (IsContentClosed != other.IsContentClosed) return false;
       if (!PicNumMap.Equals(other.PicNumMap)) return false;
-      if (ContentCloseTime != other.ContentCloseTime) return false;
-      if (CurDayScanNum != other.CurDayScanNum) return false;
-      if (RedeemRewardNum != other.RedeemRewardNum) return false;
-      if (IsActivated != other.IsActivated) return false;
-      if (NextRefreshTime != other.NextRefreshTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -220,14 +220,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CurDayScanType != 0) hash ^= CurDayScanType.GetHashCode();
+      if (CurDayScanNum != 0) hash ^= CurDayScanNum.GetHashCode();
+      if (ContentCloseTime != 0) hash ^= ContentCloseTime.GetHashCode();
+      if (Unk3300JLADHEKJPBP != 0) hash ^= Unk3300JLADHEKJPBP.GetHashCode();
+      if (NextRefreshTime != 0) hash ^= NextRefreshTime.GetHashCode();
+      if (IsActivated != false) hash ^= IsActivated.GetHashCode();
+      if (Unk3300INOHLELBOAM != 0) hash ^= Unk3300INOHLELBOAM.GetHashCode();
       if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
       hash ^= PicNumMap.GetHashCode();
-      if (ContentCloseTime != 0) hash ^= ContentCloseTime.GetHashCode();
-      if (CurDayScanNum != 0) hash ^= CurDayScanNum.GetHashCode();
-      if (RedeemRewardNum != 0) hash ^= RedeemRewardNum.GetHashCode();
-      if (IsActivated != false) hash ^= IsActivated.GetHashCode();
-      if (NextRefreshTime != 0) hash ^= NextRefreshTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -246,33 +246,33 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (RedeemRewardNum != 0) {
+      if (Unk3300JLADHEKJPBP != 0) {
         output.WriteRawTag(8);
-        output.WriteUInt32(RedeemRewardNum);
+        output.WriteUInt32(Unk3300JLADHEKJPBP);
       }
-      if (ContentCloseTime != 0) {
+      if (IsContentClosed != false) {
         output.WriteRawTag(16);
-        output.WriteUInt32(ContentCloseTime);
+        output.WriteBool(IsContentClosed);
       }
-      if (CurDayScanNum != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(CurDayScanNum);
+      if (IsActivated != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(IsActivated);
       }
       if (NextRefreshTime != 0) {
         output.WriteRawTag(48);
         output.WriteUInt32(NextRefreshTime);
       }
-      if (CurDayScanType != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(CurDayScanType);
+      if (Unk3300INOHLELBOAM != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300INOHLELBOAM);
       }
-      if (IsContentClosed != false) {
-        output.WriteRawTag(88);
-        output.WriteBool(IsContentClosed);
+      if (ContentCloseTime != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(ContentCloseTime);
       }
-      if (IsActivated != false) {
-        output.WriteRawTag(104);
-        output.WriteBool(IsActivated);
+      if (CurDayScanNum != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(CurDayScanNum);
       }
       picNumMap_.WriteTo(output, _map_picNumMap_codec);
       if (_unknownFields != null) {
@@ -285,33 +285,33 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (RedeemRewardNum != 0) {
+      if (Unk3300JLADHEKJPBP != 0) {
         output.WriteRawTag(8);
-        output.WriteUInt32(RedeemRewardNum);
+        output.WriteUInt32(Unk3300JLADHEKJPBP);
       }
-      if (ContentCloseTime != 0) {
+      if (IsContentClosed != false) {
         output.WriteRawTag(16);
-        output.WriteUInt32(ContentCloseTime);
+        output.WriteBool(IsContentClosed);
       }
-      if (CurDayScanNum != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(CurDayScanNum);
+      if (IsActivated != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(IsActivated);
       }
       if (NextRefreshTime != 0) {
         output.WriteRawTag(48);
         output.WriteUInt32(NextRefreshTime);
       }
-      if (CurDayScanType != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(CurDayScanType);
+      if (Unk3300INOHLELBOAM != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300INOHLELBOAM);
       }
-      if (IsContentClosed != false) {
-        output.WriteRawTag(88);
-        output.WriteBool(IsContentClosed);
+      if (ContentCloseTime != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(ContentCloseTime);
       }
-      if (IsActivated != false) {
-        output.WriteRawTag(104);
-        output.WriteBool(IsActivated);
+      if (CurDayScanNum != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(CurDayScanNum);
       }
       picNumMap_.WriteTo(ref output, _map_picNumMap_codec);
       if (_unknownFields != null) {
@@ -324,28 +324,28 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CurDayScanType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurDayScanType);
+      if (CurDayScanNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurDayScanNum);
+      }
+      if (ContentCloseTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ContentCloseTime);
+      }
+      if (Unk3300JLADHEKJPBP != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300JLADHEKJPBP);
+      }
+      if (NextRefreshTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextRefreshTime);
+      }
+      if (IsActivated != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300INOHLELBOAM != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300INOHLELBOAM);
       }
       if (IsContentClosed != false) {
         size += 1 + 1;
       }
       size += picNumMap_.CalculateSize(_map_picNumMap_codec);
-      if (ContentCloseTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ContentCloseTime);
-      }
-      if (CurDayScanNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurDayScanNum);
-      }
-      if (RedeemRewardNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RedeemRewardNum);
-      }
-      if (IsActivated != false) {
-        size += 1 + 1;
-      }
-      if (NextRefreshTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextRefreshTime);
-      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -358,28 +358,28 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.CurDayScanType != 0) {
-        CurDayScanType = other.CurDayScanType;
+      if (other.CurDayScanNum != 0) {
+        CurDayScanNum = other.CurDayScanNum;
+      }
+      if (other.ContentCloseTime != 0) {
+        ContentCloseTime = other.ContentCloseTime;
+      }
+      if (other.Unk3300JLADHEKJPBP != 0) {
+        Unk3300JLADHEKJPBP = other.Unk3300JLADHEKJPBP;
+      }
+      if (other.NextRefreshTime != 0) {
+        NextRefreshTime = other.NextRefreshTime;
+      }
+      if (other.IsActivated != false) {
+        IsActivated = other.IsActivated;
+      }
+      if (other.Unk3300INOHLELBOAM != 0) {
+        Unk3300INOHLELBOAM = other.Unk3300INOHLELBOAM;
       }
       if (other.IsContentClosed != false) {
         IsContentClosed = other.IsContentClosed;
       }
       picNumMap_.Add(other.picNumMap_);
-      if (other.ContentCloseTime != 0) {
-        ContentCloseTime = other.ContentCloseTime;
-      }
-      if (other.CurDayScanNum != 0) {
-        CurDayScanNum = other.CurDayScanNum;
-      }
-      if (other.RedeemRewardNum != 0) {
-        RedeemRewardNum = other.RedeemRewardNum;
-      }
-      if (other.IsActivated != false) {
-        IsActivated = other.IsActivated;
-      }
-      if (other.NextRefreshTime != 0) {
-        NextRefreshTime = other.NextRefreshTime;
-      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -396,34 +396,34 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            RedeemRewardNum = input.ReadUInt32();
+            Unk3300JLADHEKJPBP = input.ReadUInt32();
             break;
           }
           case 16: {
-            ContentCloseTime = input.ReadUInt32();
+            IsContentClosed = input.ReadBool();
             break;
           }
-          case 32: {
-            CurDayScanNum = input.ReadUInt32();
+          case 40: {
+            IsActivated = input.ReadBool();
             break;
           }
           case 48: {
             NextRefreshTime = input.ReadUInt32();
             break;
           }
-          case 72: {
-            CurDayScanType = input.ReadUInt32();
+          case 56: {
+            Unk3300INOHLELBOAM = input.ReadUInt32();
             break;
           }
-          case 88: {
-            IsContentClosed = input.ReadBool();
+          case 64: {
+            ContentCloseTime = input.ReadUInt32();
             break;
           }
-          case 104: {
-            IsActivated = input.ReadBool();
+          case 80: {
+            CurDayScanNum = input.ReadUInt32();
             break;
           }
-          case 122: {
+          case 90: {
             picNumMap_.AddEntriesFrom(input, _map_picNumMap_codec);
             break;
           }
@@ -443,34 +443,34 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            RedeemRewardNum = input.ReadUInt32();
+            Unk3300JLADHEKJPBP = input.ReadUInt32();
             break;
           }
           case 16: {
-            ContentCloseTime = input.ReadUInt32();
+            IsContentClosed = input.ReadBool();
             break;
           }
-          case 32: {
-            CurDayScanNum = input.ReadUInt32();
+          case 40: {
+            IsActivated = input.ReadBool();
             break;
           }
           case 48: {
             NextRefreshTime = input.ReadUInt32();
             break;
           }
-          case 72: {
-            CurDayScanType = input.ReadUInt32();
+          case 56: {
+            Unk3300INOHLELBOAM = input.ReadUInt32();
             break;
           }
-          case 88: {
-            IsContentClosed = input.ReadBool();
+          case 64: {
+            ContentCloseTime = input.ReadUInt32();
             break;
           }
-          case 104: {
-            IsActivated = input.ReadBool();
+          case 80: {
+            CurDayScanNum = input.ReadUInt32();
             break;
           }
-          case 122: {
+          case 90: {
             picNumMap_.AddEntriesFrom(ref input, _map_picNumMap_codec);
             break;
           }

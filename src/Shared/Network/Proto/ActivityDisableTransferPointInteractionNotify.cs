@@ -25,10 +25,11 @@ namespace Weedwacker.Shared.Network.Proto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjNBY3Rpdml0eURpc2FibGVUcmFuc2ZlclBvaW50SW50ZXJhY3Rpb25Ob3Rp",
-            "ZnkucHJvdG8aEFVpbnQzMlBhaXIucHJvdG8iagotQWN0aXZpdHlEaXNhYmxl",
-            "VHJhbnNmZXJQb2ludEludGVyYWN0aW9uTm90aWZ5EhIKCmlzX2Rpc2FibGUY",
-            "CiABKAgSJQoQc2NlbmVfcG9pbnRfcGFpchgFIAEoCzILLlVpbnQzMlBhaXJC",
-            "IqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aEFVp",
+            "bnQzMlBhaXIucHJvdG8iigEKLUFjdGl2aXR5RGlzYWJsZVRyYW5zZmVyUG9p",
+            "bnRJbnRlcmFjdGlvbk5vdGlmeRISCgppc19kaXNhYmxlGA0gASgIEkUKEHNj",
+            "ZW5lX3BvaW50X3BhaXIYCyABKAsyKy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLlVpbnQzMlBhaXJiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.Uint32PairReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8982
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8029;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ActivityDisableTransferPointInteractionNotify : pb::IMessage<ActivityDisableTransferPointInteractionNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_disable" field.</summary>
-    public const int IsDisableFieldNumber = 10;
+    public const int IsDisableFieldNumber = 13;
     private bool isDisable_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +107,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "scene_point_pair" field.</summary>
-    public const int ScenePointPairFieldNumber = 5;
+    public const int ScenePointPairFieldNumber = 11;
     private global::Weedwacker.Shared.Network.Proto.Uint32Pair scenePointPair_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -158,11 +163,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (scenePointPair_ != null) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(90);
         output.WriteMessage(ScenePointPair);
       }
       if (IsDisable != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(104);
         output.WriteBool(IsDisable);
       }
       if (_unknownFields != null) {
@@ -176,11 +181,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (scenePointPair_ != null) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(90);
         output.WriteMessage(ScenePointPair);
       }
       if (IsDisable != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(104);
         output.WriteBool(IsDisable);
       }
       if (_unknownFields != null) {
@@ -235,14 +240,14 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 42: {
+          case 90: {
             if (scenePointPair_ == null) {
               ScenePointPair = new global::Weedwacker.Shared.Network.Proto.Uint32Pair();
             }
             input.ReadMessage(ScenePointPair);
             break;
           }
-          case 80: {
+          case 104: {
             IsDisable = input.ReadBool();
             break;
           }
@@ -261,14 +266,14 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 42: {
+          case 90: {
             if (scenePointPair_ == null) {
               ScenePointPair = new global::Weedwacker.Shared.Network.Proto.Uint32Pair();
             }
             input.ReadMessage(ScenePointPair);
             break;
           }
-          case 80: {
+          case 104: {
             IsDisable = input.ReadBool();
             break;
           }

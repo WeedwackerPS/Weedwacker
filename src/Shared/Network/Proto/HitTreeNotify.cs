@@ -24,14 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static HitTreeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChNIaXRUcmVlTm90aWZ5LnByb3RvGgxWZWN0b3IucHJvdG8iWAoNSGl0VHJl",
-            "ZU5vdGlmeRIRCgl0cmVlX3R5cGUYCyABKA0SGQoIdHJlZV9wb3MYAiABKAsy",
-            "By5WZWN0b3ISGQoIZHJvcF9wb3MYCCABKAsyBy5WZWN0b3JCIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChNIaXRUcmVlTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvGgxWZWN0b3IucHJvdG8imAEKDUhpdFRyZWVOb3RpZnkSEQoJ",
+            "dHJlZV90eXBlGAggASgNEjkKCGRyb3BfcG9zGAwgASgLMicuV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90by5WZWN0b3ISOQoIdHJlZV9wb3MYDyAB",
+            "KAsyJy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlZlY3RvcmIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HitTreeNotify), global::Weedwacker.Shared.Network.Proto.HitTreeNotify.Parser, new[]{ "TreeType", "TreePos", "DropPos" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HitTreeNotify), global::Weedwacker.Shared.Network.Proto.HitTreeNotify.Parser, new[]{ "TreeType", "DropPos", "TreePos" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3019
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3018;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class HitTreeNotify : pb::IMessage<HitTreeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,8 +85,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HitTreeNotify(HitTreeNotify other) : this() {
       treeType_ = other.treeType_;
-      treePos_ = other.treePos_ != null ? other.treePos_.Clone() : null;
       dropPos_ = other.dropPos_ != null ? other.dropPos_.Clone() : null;
+      treePos_ = other.treePos_ != null ? other.treePos_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "tree_type" field.</summary>
-    public const int TreeTypeFieldNumber = 11;
+    public const int TreeTypeFieldNumber = 8;
     private uint treeType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,20 +108,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "tree_pos" field.</summary>
-    public const int TreePosFieldNumber = 2;
-    private global::Weedwacker.Shared.Network.Proto.Vector treePos_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector TreePos {
-      get { return treePos_; }
-      set {
-        treePos_ = value;
-      }
-    }
-
     /// <summary>Field number for the "drop_pos" field.</summary>
-    public const int DropPosFieldNumber = 8;
+    public const int DropPosFieldNumber = 12;
     private global::Weedwacker.Shared.Network.Proto.Vector dropPos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,6 +117,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return dropPos_; }
       set {
         dropPos_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "tree_pos" field.</summary>
+    public const int TreePosFieldNumber = 15;
+    private global::Weedwacker.Shared.Network.Proto.Vector treePos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector TreePos {
+      get { return treePos_; }
+      set {
+        treePos_ = value;
       }
     }
 
@@ -142,8 +148,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (TreeType != other.TreeType) return false;
-      if (!object.Equals(TreePos, other.TreePos)) return false;
       if (!object.Equals(DropPos, other.DropPos)) return false;
+      if (!object.Equals(TreePos, other.TreePos)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -152,8 +158,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (TreeType != 0) hash ^= TreeType.GetHashCode();
-      if (treePos_ != null) hash ^= TreePos.GetHashCode();
       if (dropPos_ != null) hash ^= DropPos.GetHashCode();
+      if (treePos_ != null) hash ^= TreePos.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,17 +178,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (treePos_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(TreePos);
+      if (TreeType != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(TreeType);
       }
       if (dropPos_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(98);
         output.WriteMessage(DropPos);
       }
-      if (TreeType != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(TreeType);
+      if (treePos_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(TreePos);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -194,17 +200,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (treePos_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(TreePos);
+      if (TreeType != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(TreeType);
       }
       if (dropPos_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(98);
         output.WriteMessage(DropPos);
       }
-      if (TreeType != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(TreeType);
+      if (treePos_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(TreePos);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -219,11 +225,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (TreeType != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TreeType);
       }
-      if (treePos_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(TreePos);
-      }
       if (dropPos_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(DropPos);
+      }
+      if (treePos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(TreePos);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -240,17 +246,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.TreeType != 0) {
         TreeType = other.TreeType;
       }
-      if (other.treePos_ != null) {
-        if (treePos_ == null) {
-          TreePos = new global::Weedwacker.Shared.Network.Proto.Vector();
-        }
-        TreePos.MergeFrom(other.TreePos);
-      }
       if (other.dropPos_ != null) {
         if (dropPos_ == null) {
           DropPos = new global::Weedwacker.Shared.Network.Proto.Vector();
         }
         DropPos.MergeFrom(other.DropPos);
+      }
+      if (other.treePos_ != null) {
+        if (treePos_ == null) {
+          TreePos = new global::Weedwacker.Shared.Network.Proto.Vector();
+        }
+        TreePos.MergeFrom(other.TreePos);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -267,22 +273,22 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
-            if (treePos_ == null) {
-              TreePos = new global::Weedwacker.Shared.Network.Proto.Vector();
-            }
-            input.ReadMessage(TreePos);
+          case 64: {
+            TreeType = input.ReadUInt32();
             break;
           }
-          case 66: {
+          case 98: {
             if (dropPos_ == null) {
               DropPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(DropPos);
             break;
           }
-          case 88: {
-            TreeType = input.ReadUInt32();
+          case 122: {
+            if (treePos_ == null) {
+              TreePos = new global::Weedwacker.Shared.Network.Proto.Vector();
+            }
+            input.ReadMessage(TreePos);
             break;
           }
         }
@@ -300,22 +306,22 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
-            if (treePos_ == null) {
-              TreePos = new global::Weedwacker.Shared.Network.Proto.Vector();
-            }
-            input.ReadMessage(TreePos);
+          case 64: {
+            TreeType = input.ReadUInt32();
             break;
           }
-          case 66: {
+          case 98: {
             if (dropPos_ == null) {
               DropPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(DropPos);
             break;
           }
-          case 88: {
-            TreeType = input.ReadUInt32();
+          case 122: {
+            if (treePos_ == null) {
+              TreePos = new global::Weedwacker.Shared.Network.Proto.Vector();
+            }
+            input.ReadMessage(TreePos);
             break;
           }
         }

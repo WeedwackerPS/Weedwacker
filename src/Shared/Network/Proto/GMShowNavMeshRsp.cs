@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static GMShowNavMeshRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZHTVNob3dOYXZNZXNoUnNwLnByb3RvGhNQQk5hdk1lc2hUaWxlLnByb3Rv",
-            "IkIKEEdNU2hvd05hdk1lc2hSc3ASHQoFdGlsZXMYCyADKAsyDi5QQk5hdk1l",
-            "c2hUaWxlEg8KB3JldGNvZGUYBSABKAVCIqoCH1dlZWR3YWNrZXIuU2hhcmVk",
-            "Lk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChZHTVNob3dOYXZNZXNoUnNwLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvGhNQQk5hdk1lc2hUaWxlLnByb3RvImIKEEdNU2hvd05h",
+            "dk1lc2hSc3ASDwoHcmV0Y29kZRgBIAEoBRI9CgV0aWxlcxgKIAMoCzIuLldl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uUEJOYXZNZXNoVGlsZWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.PBNavMeshTileReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GMShowNavMeshRsp), global::Weedwacker.Shared.Network.Proto.GMShowNavMeshRsp.Parser, new[]{ "Tiles", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GMShowNavMeshRsp), global::Weedwacker.Shared.Network.Proto.GMShowNavMeshRsp.Parser, new[]{ "Retcode", "Tiles" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2400
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2304;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GMShowNavMeshRsp : pb::IMessage<GMShowNavMeshRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GMShowNavMeshRsp(GMShowNavMeshRsp other) : this() {
-      tiles_ = other.tiles_.Clone();
       retcode_ = other.retcode_;
+      tiles_ = other.tiles_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,19 +93,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GMShowNavMeshRsp(this);
     }
 
-    /// <summary>Field number for the "tiles" field.</summary>
-    public const int TilesFieldNumber = 11;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.PBNavMeshTile> _repeated_tiles_codec
-        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.PBNavMeshTile.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PBNavMeshTile> tiles_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PBNavMeshTile>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PBNavMeshTile> Tiles {
-      get { return tiles_; }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 5;
+    public const int RetcodeFieldNumber = 1;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,6 +103,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         retcode_ = value;
       }
+    }
+
+    /// <summary>Field number for the "tiles" field.</summary>
+    public const int TilesFieldNumber = 10;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.PBNavMeshTile> _repeated_tiles_codec
+        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.PBNavMeshTile.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PBNavMeshTile> tiles_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PBNavMeshTile>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PBNavMeshTile> Tiles {
+      get { return tiles_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -126,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!tiles_.Equals(other.tiles_)) return false;
       if (Retcode != other.Retcode) return false;
+      if(!tiles_.Equals(other.tiles_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -135,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= tiles_.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      hash ^= tiles_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -156,7 +161,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Retcode != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(8);
         output.WriteInt32(Retcode);
       }
       tiles_.WriteTo(output, _repeated_tiles_codec);
@@ -171,7 +176,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Retcode != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(8);
         output.WriteInt32(Retcode);
       }
       tiles_.WriteTo(ref output, _repeated_tiles_codec);
@@ -185,10 +190,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += tiles_.CalculateSize(_repeated_tiles_codec);
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
+      size += tiles_.CalculateSize(_repeated_tiles_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -201,10 +206,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      tiles_.Add(other.tiles_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
+      tiles_.Add(other.tiles_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -220,11 +225,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
+          case 8: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 90: {
+          case 82: {
             tiles_.AddEntriesFrom(input, _repeated_tiles_codec);
             break;
           }
@@ -243,11 +248,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
+          case 8: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 90: {
+          case 82: {
             tiles_.AddEntriesFrom(ref input, _repeated_tiles_codec);
             break;
           }

@@ -24,10 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomePreChangeEditModeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFIb21lUHJlQ2hhbmdlRWRpdE1vZGVOb3RpZnkucHJvdG8iOQobSG9tZVBy",
-            "ZUNoYW5nZUVkaXRNb2RlTm90aWZ5EhoKEmlzX2VudGVyX2VkaXRfbW9kZRgP",
-            "IAEoCEIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJv",
-            "dG8z"));
+            "CiFIb21lUHJlQ2hhbmdlRWRpdE1vZGVOb3RpZnkucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iOQobSG9tZVByZUNoYW5nZUVkaXRN",
+            "b2RlTm90aWZ5EhoKEmlzX2VudGVyX2VkaXRfbW9kZRgKIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +38,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4639
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4720;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class HomePreChangeEditModeNotify : pb::IMessage<HomePreChangeEditModeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,7 +91,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_enter_edit_mode" field.</summary>
-    public const int IsEnterEditModeFieldNumber = 15;
+    public const int IsEnterEditModeFieldNumber = 10;
     private bool isEnterEditMode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -142,7 +145,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (IsEnterEditMode != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(80);
         output.WriteBool(IsEnterEditMode);
       }
       if (_unknownFields != null) {
@@ -156,7 +159,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (IsEnterEditMode != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(80);
         output.WriteBool(IsEnterEditMode);
       }
       if (_unknownFields != null) {
@@ -202,7 +205,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 120: {
+          case 80: {
             IsEnterEditMode = input.ReadBool();
             break;
           }
@@ -221,7 +224,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 120: {
+          case 80: {
             IsEnterEditMode = input.ReadBool();
             break;
           }

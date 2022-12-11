@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static RogueDiaryProgressReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhSb2d1ZURpYXJ5UHJvZ3Jlc3MucHJvdG8igwEKElJvZ3VlRGlhcnlQcm9n",
-            "cmVzcxISCgpkaWZmaWN1bHR5GAcgASgNEhoKEm9wdGlvbmFsX2NhcmRfbGlz",
-            "dBgEIAMoDRIYChBpc19lbnRlcl9kdW5nZW9uGAkgASgIEhAKCHN0YWdlX2lk",
-            "GAwgASgNEhEKCWN1cl9yb3VuZBgDIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFy",
-            "ZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChhSb2d1ZURpYXJ5UHJvZ3Jlc3MucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8igwEKElJvZ3VlRGlhcnlQcm9ncmVzcxISCgpkaWZm",
+            "aWN1bHR5GAogASgNEhgKEGlzX2VudGVyX2R1bmdlb24YAyABKAgSEAoIc3Rh",
+            "Z2VfaWQYBiABKA0SGgoSb3B0aW9uYWxfY2FyZF9saXN0GAUgAygNEhEKCWN1",
+            "cl9yb3VuZBgEIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RogueDiaryProgress), global::Weedwacker.Shared.Network.Proto.RogueDiaryProgress.Parser, new[]{ "Difficulty", "OptionalCardList", "IsEnterDungeon", "StageId", "CurRound" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RogueDiaryProgress), global::Weedwacker.Shared.Network.Proto.RogueDiaryProgress.Parser, new[]{ "Difficulty", "IsEnterDungeon", "StageId", "OptionalCardList", "CurRound" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,9 +74,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RogueDiaryProgress(RogueDiaryProgress other) : this() {
       difficulty_ = other.difficulty_;
-      optionalCardList_ = other.optionalCardList_.Clone();
       isEnterDungeon_ = other.isEnterDungeon_;
       stageId_ = other.stageId_;
+      optionalCardList_ = other.optionalCardList_.Clone();
       curRound_ = other.curRound_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -88,7 +88,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "difficulty" field.</summary>
-    public const int DifficultyFieldNumber = 7;
+    public const int DifficultyFieldNumber = 10;
     private uint difficulty_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -99,19 +99,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "optional_card_list" field.</summary>
-    public const int OptionalCardListFieldNumber = 4;
-    private static readonly pb::FieldCodec<uint> _repeated_optionalCardList_codec
-        = pb::FieldCodec.ForUInt32(34);
-    private readonly pbc::RepeatedField<uint> optionalCardList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> OptionalCardList {
-      get { return optionalCardList_; }
-    }
-
     /// <summary>Field number for the "is_enter_dungeon" field.</summary>
-    public const int IsEnterDungeonFieldNumber = 9;
+    public const int IsEnterDungeonFieldNumber = 3;
     private bool isEnterDungeon_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,7 +112,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "stage_id" field.</summary>
-    public const int StageIdFieldNumber = 12;
+    public const int StageIdFieldNumber = 6;
     private uint stageId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -134,8 +123,19 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "optional_card_list" field.</summary>
+    public const int OptionalCardListFieldNumber = 5;
+    private static readonly pb::FieldCodec<uint> _repeated_optionalCardList_codec
+        = pb::FieldCodec.ForUInt32(42);
+    private readonly pbc::RepeatedField<uint> optionalCardList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> OptionalCardList {
+      get { return optionalCardList_; }
+    }
+
     /// <summary>Field number for the "cur_round" field.</summary>
-    public const int CurRoundFieldNumber = 3;
+    public const int CurRoundFieldNumber = 4;
     private uint curRound_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -162,9 +162,9 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (Difficulty != other.Difficulty) return false;
-      if(!optionalCardList_.Equals(other.optionalCardList_)) return false;
       if (IsEnterDungeon != other.IsEnterDungeon) return false;
       if (StageId != other.StageId) return false;
+      if(!optionalCardList_.Equals(other.optionalCardList_)) return false;
       if (CurRound != other.CurRound) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -174,9 +174,9 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (Difficulty != 0) hash ^= Difficulty.GetHashCode();
-      hash ^= optionalCardList_.GetHashCode();
       if (IsEnterDungeon != false) hash ^= IsEnterDungeon.GetHashCode();
       if (StageId != 0) hash ^= StageId.GetHashCode();
+      hash ^= optionalCardList_.GetHashCode();
       if (CurRound != 0) hash ^= CurRound.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -196,22 +196,22 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CurRound != 0) {
+      if (IsEnterDungeon != false) {
         output.WriteRawTag(24);
+        output.WriteBool(IsEnterDungeon);
+      }
+      if (CurRound != 0) {
+        output.WriteRawTag(32);
         output.WriteUInt32(CurRound);
       }
       optionalCardList_.WriteTo(output, _repeated_optionalCardList_codec);
-      if (Difficulty != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(Difficulty);
-      }
-      if (IsEnterDungeon != false) {
-        output.WriteRawTag(72);
-        output.WriteBool(IsEnterDungeon);
-      }
       if (StageId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(48);
         output.WriteUInt32(StageId);
+      }
+      if (Difficulty != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Difficulty);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -223,22 +223,22 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CurRound != 0) {
+      if (IsEnterDungeon != false) {
         output.WriteRawTag(24);
+        output.WriteBool(IsEnterDungeon);
+      }
+      if (CurRound != 0) {
+        output.WriteRawTag(32);
         output.WriteUInt32(CurRound);
       }
       optionalCardList_.WriteTo(ref output, _repeated_optionalCardList_codec);
-      if (Difficulty != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(Difficulty);
-      }
-      if (IsEnterDungeon != false) {
-        output.WriteRawTag(72);
-        output.WriteBool(IsEnterDungeon);
-      }
       if (StageId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(48);
         output.WriteUInt32(StageId);
+      }
+      if (Difficulty != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Difficulty);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -253,13 +253,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (Difficulty != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Difficulty);
       }
-      size += optionalCardList_.CalculateSize(_repeated_optionalCardList_codec);
       if (IsEnterDungeon != false) {
         size += 1 + 1;
       }
       if (StageId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
       }
+      size += optionalCardList_.CalculateSize(_repeated_optionalCardList_codec);
       if (CurRound != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurRound);
       }
@@ -278,13 +278,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.Difficulty != 0) {
         Difficulty = other.Difficulty;
       }
-      optionalCardList_.Add(other.optionalCardList_);
       if (other.IsEnterDungeon != false) {
         IsEnterDungeon = other.IsEnterDungeon;
       }
       if (other.StageId != 0) {
         StageId = other.StageId;
       }
+      optionalCardList_.Add(other.optionalCardList_);
       if (other.CurRound != 0) {
         CurRound = other.CurRound;
       }
@@ -304,24 +304,24 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 24: {
-            CurRound = input.ReadUInt32();
-            break;
-          }
-          case 34:
-          case 32: {
-            optionalCardList_.AddEntriesFrom(input, _repeated_optionalCardList_codec);
-            break;
-          }
-          case 56: {
-            Difficulty = input.ReadUInt32();
-            break;
-          }
-          case 72: {
             IsEnterDungeon = input.ReadBool();
             break;
           }
-          case 96: {
+          case 32: {
+            CurRound = input.ReadUInt32();
+            break;
+          }
+          case 42:
+          case 40: {
+            optionalCardList_.AddEntriesFrom(input, _repeated_optionalCardList_codec);
+            break;
+          }
+          case 48: {
             StageId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            Difficulty = input.ReadUInt32();
             break;
           }
         }
@@ -340,24 +340,24 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 24: {
-            CurRound = input.ReadUInt32();
-            break;
-          }
-          case 34:
-          case 32: {
-            optionalCardList_.AddEntriesFrom(ref input, _repeated_optionalCardList_codec);
-            break;
-          }
-          case 56: {
-            Difficulty = input.ReadUInt32();
-            break;
-          }
-          case 72: {
             IsEnterDungeon = input.ReadBool();
             break;
           }
-          case 96: {
+          case 32: {
+            CurRound = input.ReadUInt32();
+            break;
+          }
+          case 42:
+          case 40: {
+            optionalCardList_.AddEntriesFrom(ref input, _repeated_optionalCardList_codec);
+            break;
+          }
+          case 48: {
             StageId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            Difficulty = input.ReadUInt32();
             break;
           }
         }

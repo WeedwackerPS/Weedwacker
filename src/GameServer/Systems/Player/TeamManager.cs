@@ -1,6 +1,9 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
+using System.Collections.Generic;
+using Vim.Math3d;
 using Weedwacker.GameServer.Database;
 using Weedwacker.GameServer.Enums;
+using Weedwacker.GameServer.Packet;
 using Weedwacker.GameServer.Packet.Send;
 using Weedwacker.GameServer.Systems.Ability;
 using Weedwacker.GameServer.Systems.Avatar;
@@ -160,7 +163,7 @@ namespace Weedwacker.GameServer.Systems.Player
                 return GameServer.Configuration.Server.GameOptions.AvatarLimits.SinglePlayerTeam;
         }
 
-        public async Task UpdateTeamEntities()
+        public async Task UpdateTeamEntitiesAsync()
         {
             AvatarEntity currentEntity = GetCurrentAvatarEntity();
             int prevSelectedAvatarIndex = -1;
@@ -252,8 +255,32 @@ namespace Weedwacker.GameServer.Systems.Player
 
             // Replace the old team with the new one
             teamInfo = new TeamInfo(newTeamAvatars, teamInfo.TeamName, teamInfo.IsTowerTeam);
+
+            if (Teams.ContainsKey(teamId))
+            {
+                Teams[teamId] = teamInfo;
+            }
+            else
+            {
+                Teams.Add(teamId, teamInfo);
+            }
+
+
             await Owner.SendPacketAsync(new PacketAvatarTeamUpdateNotify(Owner));
+
+            if (teamId == GetTeamId(GetCurrentTeamInfo()))
+            {
+                await UpdateTeamEntitiesAsync();
+            }
+            else
+            {
+                await Owner.SendPacketAsync(new PacketAvatarTeamUpdateNotify(Owner));
+            }
+
+
+
         }
+
 
         public async Task SetupMpTeamAsync(List<ulong> list)
         {
@@ -279,6 +306,7 @@ namespace Weedwacker.GameServer.Systems.Player
             // Replace the old MpTeam with the new one
             MpTeam = new TeamInfo(newTeam, MpTeam.TeamName, false);
         }
+
         public bool SetTeamName(int teamId, string teamName)
         {
             if (Teams.TryGetValue(teamId, out TeamInfo teamInfo))
@@ -371,6 +399,24 @@ namespace Weedwacker.GameServer.Systems.Player
                     await Owner.Scene.AddEntityAsync(replacement);
                 }
             }
+        }
+
+        internal async Task SetCurrentTeam(uint teamId)
+        {
+            if (Owner.IsInMultiplayer())
+            {
+                return;
+            }
+
+            // Get team
+            TeamInfo teamInfo = Teams.GetValueOrDefault((int)teamId);
+            if (teamInfo == null || teamInfo.AvatarInfo.Count == 0)
+            {
+                return;
+            }
+
+            // Set
+            SetCurrentTeamId((int)teamId);
         }
     }
 }

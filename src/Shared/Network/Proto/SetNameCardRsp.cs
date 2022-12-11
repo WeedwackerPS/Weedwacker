@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static SetNameCardRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRTZXROYW1lQ2FyZFJzcC5wcm90byI3Cg5TZXROYW1lQ2FyZFJzcBIUCgxu",
-            "YW1lX2NhcmRfaWQYCyABKA0SDwoHcmV0Y29kZRgMIAEoBUIiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChRTZXROYW1lQ2FyZFJzcC5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90byI3Cg5TZXROYW1lQ2FyZFJzcBIUCgxuYW1lX2NhcmRfaWQY",
+            "CSABKA0SDwoHcmV0Y29kZRgEIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -38,10 +38,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4093
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4007;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class SetNameCardRsp : pb::IMessage<SetNameCardRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "name_card_id" field.</summary>
-    public const int NameCardIdFieldNumber = 11;
+    public const int NameCardIdFieldNumber = 9;
     private uint nameCardId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,7 +105,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 12;
+    public const int RetcodeFieldNumber = 4;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,13 +160,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (NameCardId != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(NameCardId);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(32);
         output.WriteInt32(Retcode);
+      }
+      if (NameCardId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(NameCardId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -174,13 +178,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (NameCardId != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(NameCardId);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(32);
         output.WriteInt32(Retcode);
+      }
+      if (NameCardId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(NameCardId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -231,12 +235,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 88: {
-            NameCardId = input.ReadUInt32();
+          case 32: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 96: {
-            Retcode = input.ReadInt32();
+          case 72: {
+            NameCardId = input.ReadUInt32();
             break;
           }
         }
@@ -254,12 +258,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 88: {
-            NameCardId = input.ReadUInt32();
+          case 32: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 96: {
-            Retcode = input.ReadInt32();
+          case 72: {
+            NameCardId = input.ReadUInt32();
             break;
           }
         }

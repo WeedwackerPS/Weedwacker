@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static BonusActivityInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdCb251c0FjdGl2aXR5SW5mby5wcm90byI9ChFCb251c0FjdGl2aXR5SW5m",
-            "bxIZChFib251c19hY3Rpdml0eV9pZBgGIAEoDRINCgVzdGF0ZRgDIAEoDUIi",
-            "qgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChdCb251c0FjdGl2aXR5SW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90byI9ChFCb251c0FjdGl2aXR5SW5mbxIZChFib251c19h",
+            "Y3Rpdml0eV9pZBgOIAEoDRINCgVzdGF0ZRgIIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "bonus_activity_id" field.</summary>
-    public const int BonusActivityIdFieldNumber = 6;
+    public const int BonusActivityIdFieldNumber = 14;
     private uint bonusActivityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -95,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "state" field.</summary>
-    public const int StateFieldNumber = 3;
+    public const int StateFieldNumber = 8;
     private uint state_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -151,11 +151,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (State != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(64);
         output.WriteUInt32(State);
       }
       if (BonusActivityId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(112);
         output.WriteUInt32(BonusActivityId);
       }
       if (_unknownFields != null) {
@@ -169,11 +169,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (State != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(64);
         output.WriteUInt32(State);
       }
       if (BonusActivityId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(112);
         output.WriteUInt32(BonusActivityId);
       }
       if (_unknownFields != null) {
@@ -225,11 +225,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
+          case 64: {
             State = input.ReadUInt32();
             break;
           }
-          case 48: {
+          case 112: {
             BonusActivityId = input.ReadUInt32();
             break;
           }
@@ -248,11 +248,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
+          case 64: {
             State = input.ReadUInt32();
             break;
           }
-          case 48: {
+          case 112: {
             BonusActivityId = input.ReadUInt32();
             break;
           }

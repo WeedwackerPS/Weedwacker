@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static TowerMonthlyBriefReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdUb3dlck1vbnRobHlCcmllZi5wcm90byJ8ChFUb3dlck1vbnRobHlCcmll",
-            "ZhIZChF0b3dlcl9zY2hlZHVsZV9pZBgPIAEoDRIYChBiZXN0X2Zsb29yX2lu",
-            "ZGV4GAYgASgNEhgKEGJlc3RfbGV2ZWxfaW5kZXgYAyABKA0SGAoQdG90YWxf",
-            "c3Rhcl9jb3VudBgMIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
-            "ay5Qcm90b2IGcHJvdG8z"));
+            "ChdUb3dlck1vbnRobHlCcmllZi5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90byKFAQoRVG93ZXJNb250aGx5QnJpZWYSGwoTVW5rMzMw",
+            "MF9BSUZIUEhER0VJRRgDIAEoDRIbChNVbmszMzAwX0NQTk9MS0FLSEVKGAYg",
+            "ASgNEhsKE1VuazMzMDBfTEVNT01GTEhCTEEYCSABKA0SGQoRdG93ZXJfc2No",
+            "ZWR1bGVfaWQYDSABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TowerMonthlyBrief), global::Weedwacker.Shared.Network.Proto.TowerMonthlyBrief.Parser, new[]{ "TowerScheduleId", "BestFloorIndex", "BestLevelIndex", "TotalStarCount" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TowerMonthlyBrief), global::Weedwacker.Shared.Network.Proto.TowerMonthlyBrief.Parser, new[]{ "Unk3300AIFHPHDGEIE", "Unk3300CPNOLKAKHEJ", "Unk3300LEMOMFLHBLA", "TowerScheduleId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,10 +73,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TowerMonthlyBrief(TowerMonthlyBrief other) : this() {
+      unk3300AIFHPHDGEIE_ = other.unk3300AIFHPHDGEIE_;
+      unk3300CPNOLKAKHEJ_ = other.unk3300CPNOLKAKHEJ_;
+      unk3300LEMOMFLHBLA_ = other.unk3300LEMOMFLHBLA_;
       towerScheduleId_ = other.towerScheduleId_;
-      bestFloorIndex_ = other.bestFloorIndex_;
-      bestLevelIndex_ = other.bestLevelIndex_;
-      totalStarCount_ = other.totalStarCount_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,8 +86,44 @@ namespace Weedwacker.Shared.Network.Proto {
       return new TowerMonthlyBrief(this);
     }
 
+    /// <summary>Field number for the "Unk3300_AIFHPHDGEIE" field.</summary>
+    public const int Unk3300AIFHPHDGEIEFieldNumber = 3;
+    private uint unk3300AIFHPHDGEIE_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300AIFHPHDGEIE {
+      get { return unk3300AIFHPHDGEIE_; }
+      set {
+        unk3300AIFHPHDGEIE_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_CPNOLKAKHEJ" field.</summary>
+    public const int Unk3300CPNOLKAKHEJFieldNumber = 6;
+    private uint unk3300CPNOLKAKHEJ_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300CPNOLKAKHEJ {
+      get { return unk3300CPNOLKAKHEJ_; }
+      set {
+        unk3300CPNOLKAKHEJ_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_LEMOMFLHBLA" field.</summary>
+    public const int Unk3300LEMOMFLHBLAFieldNumber = 9;
+    private uint unk3300LEMOMFLHBLA_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300LEMOMFLHBLA {
+      get { return unk3300LEMOMFLHBLA_; }
+      set {
+        unk3300LEMOMFLHBLA_ = value;
+      }
+    }
+
     /// <summary>Field number for the "tower_schedule_id" field.</summary>
-    public const int TowerScheduleIdFieldNumber = 15;
+    public const int TowerScheduleIdFieldNumber = 13;
     private uint towerScheduleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -95,42 +131,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return towerScheduleId_; }
       set {
         towerScheduleId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "best_floor_index" field.</summary>
-    public const int BestFloorIndexFieldNumber = 6;
-    private uint bestFloorIndex_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint BestFloorIndex {
-      get { return bestFloorIndex_; }
-      set {
-        bestFloorIndex_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "best_level_index" field.</summary>
-    public const int BestLevelIndexFieldNumber = 3;
-    private uint bestLevelIndex_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint BestLevelIndex {
-      get { return bestLevelIndex_; }
-      set {
-        bestLevelIndex_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "total_star_count" field.</summary>
-    public const int TotalStarCountFieldNumber = 12;
-    private uint totalStarCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TotalStarCount {
-      get { return totalStarCount_; }
-      set {
-        totalStarCount_ = value;
       }
     }
 
@@ -149,10 +149,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Unk3300AIFHPHDGEIE != other.Unk3300AIFHPHDGEIE) return false;
+      if (Unk3300CPNOLKAKHEJ != other.Unk3300CPNOLKAKHEJ) return false;
+      if (Unk3300LEMOMFLHBLA != other.Unk3300LEMOMFLHBLA) return false;
       if (TowerScheduleId != other.TowerScheduleId) return false;
-      if (BestFloorIndex != other.BestFloorIndex) return false;
-      if (BestLevelIndex != other.BestLevelIndex) return false;
-      if (TotalStarCount != other.TotalStarCount) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -160,10 +160,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (Unk3300AIFHPHDGEIE != 0) hash ^= Unk3300AIFHPHDGEIE.GetHashCode();
+      if (Unk3300CPNOLKAKHEJ != 0) hash ^= Unk3300CPNOLKAKHEJ.GetHashCode();
+      if (Unk3300LEMOMFLHBLA != 0) hash ^= Unk3300LEMOMFLHBLA.GetHashCode();
       if (TowerScheduleId != 0) hash ^= TowerScheduleId.GetHashCode();
-      if (BestFloorIndex != 0) hash ^= BestFloorIndex.GetHashCode();
-      if (BestLevelIndex != 0) hash ^= BestLevelIndex.GetHashCode();
-      if (TotalStarCount != 0) hash ^= TotalStarCount.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -182,20 +182,20 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (BestLevelIndex != 0) {
+      if (Unk3300AIFHPHDGEIE != 0) {
         output.WriteRawTag(24);
-        output.WriteUInt32(BestLevelIndex);
+        output.WriteUInt32(Unk3300AIFHPHDGEIE);
       }
-      if (BestFloorIndex != 0) {
+      if (Unk3300CPNOLKAKHEJ != 0) {
         output.WriteRawTag(48);
-        output.WriteUInt32(BestFloorIndex);
+        output.WriteUInt32(Unk3300CPNOLKAKHEJ);
       }
-      if (TotalStarCount != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(TotalStarCount);
+      if (Unk3300LEMOMFLHBLA != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Unk3300LEMOMFLHBLA);
       }
       if (TowerScheduleId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(104);
         output.WriteUInt32(TowerScheduleId);
       }
       if (_unknownFields != null) {
@@ -208,20 +208,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (BestLevelIndex != 0) {
+      if (Unk3300AIFHPHDGEIE != 0) {
         output.WriteRawTag(24);
-        output.WriteUInt32(BestLevelIndex);
+        output.WriteUInt32(Unk3300AIFHPHDGEIE);
       }
-      if (BestFloorIndex != 0) {
+      if (Unk3300CPNOLKAKHEJ != 0) {
         output.WriteRawTag(48);
-        output.WriteUInt32(BestFloorIndex);
+        output.WriteUInt32(Unk3300CPNOLKAKHEJ);
       }
-      if (TotalStarCount != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(TotalStarCount);
+      if (Unk3300LEMOMFLHBLA != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Unk3300LEMOMFLHBLA);
       }
       if (TowerScheduleId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(104);
         output.WriteUInt32(TowerScheduleId);
       }
       if (_unknownFields != null) {
@@ -234,17 +234,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (Unk3300AIFHPHDGEIE != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300AIFHPHDGEIE);
+      }
+      if (Unk3300CPNOLKAKHEJ != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300CPNOLKAKHEJ);
+      }
+      if (Unk3300LEMOMFLHBLA != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LEMOMFLHBLA);
+      }
       if (TowerScheduleId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TowerScheduleId);
-      }
-      if (BestFloorIndex != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BestFloorIndex);
-      }
-      if (BestLevelIndex != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BestLevelIndex);
-      }
-      if (TotalStarCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalStarCount);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -258,17 +258,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.Unk3300AIFHPHDGEIE != 0) {
+        Unk3300AIFHPHDGEIE = other.Unk3300AIFHPHDGEIE;
+      }
+      if (other.Unk3300CPNOLKAKHEJ != 0) {
+        Unk3300CPNOLKAKHEJ = other.Unk3300CPNOLKAKHEJ;
+      }
+      if (other.Unk3300LEMOMFLHBLA != 0) {
+        Unk3300LEMOMFLHBLA = other.Unk3300LEMOMFLHBLA;
+      }
       if (other.TowerScheduleId != 0) {
         TowerScheduleId = other.TowerScheduleId;
-      }
-      if (other.BestFloorIndex != 0) {
-        BestFloorIndex = other.BestFloorIndex;
-      }
-      if (other.BestLevelIndex != 0) {
-        BestLevelIndex = other.BestLevelIndex;
-      }
-      if (other.TotalStarCount != 0) {
-        TotalStarCount = other.TotalStarCount;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -286,18 +286,18 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 24: {
-            BestLevelIndex = input.ReadUInt32();
+            Unk3300AIFHPHDGEIE = input.ReadUInt32();
             break;
           }
           case 48: {
-            BestFloorIndex = input.ReadUInt32();
+            Unk3300CPNOLKAKHEJ = input.ReadUInt32();
             break;
           }
-          case 96: {
-            TotalStarCount = input.ReadUInt32();
+          case 72: {
+            Unk3300LEMOMFLHBLA = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 104: {
             TowerScheduleId = input.ReadUInt32();
             break;
           }
@@ -317,18 +317,18 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 24: {
-            BestLevelIndex = input.ReadUInt32();
+            Unk3300AIFHPHDGEIE = input.ReadUInt32();
             break;
           }
           case 48: {
-            BestFloorIndex = input.ReadUInt32();
+            Unk3300CPNOLKAKHEJ = input.ReadUInt32();
             break;
           }
-          case 96: {
-            TotalStarCount = input.ReadUInt32();
+          case 72: {
+            Unk3300LEMOMFLHBLA = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 104: {
             TowerScheduleId = input.ReadUInt32();
             break;
           }

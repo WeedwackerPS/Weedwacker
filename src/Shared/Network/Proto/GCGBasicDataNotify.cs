@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGBasicDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhHQ0dCYXNpY0RhdGFOb3RpZnkucHJvdG8iUQoSR0NHQmFzaWNEYXRhTm90",
-            "aWZ5Eg0KBWxldmVsGAkgASgNEgsKA2V4cBgEIAEoDRIfChdsZXZlbF9yZXdh",
-            "cmRfdGFrZW5fbGlzdBgMIAMoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
-            "d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChhHQ0dCYXNpY0RhdGFOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8iUQoSR0NHQmFzaWNEYXRhTm90aWZ5Eg0KBWxldmVs",
+            "GAYgASgNEgsKA2V4cBgEIAEoDRIfChdsZXZlbF9yZXdhcmRfdGFrZW5fbGlz",
+            "dBgOIAMoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 7319
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 7739;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GCGBasicDataNotify : pb::IMessage<GCGBasicDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "level" field.</summary>
-    public const int LevelFieldNumber = 9;
+    public const int LevelFieldNumber = 6;
     private uint level_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,9 +118,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "level_reward_taken_list" field.</summary>
-    public const int LevelRewardTakenListFieldNumber = 12;
+    public const int LevelRewardTakenListFieldNumber = 14;
     private static readonly pb::FieldCodec<uint> _repeated_levelRewardTakenList_codec
-        = pb::FieldCodec.ForUInt32(98);
+        = pb::FieldCodec.ForUInt32(114);
     private readonly pbc::RepeatedField<uint> levelRewardTakenList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -175,7 +179,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteUInt32(Exp);
       }
       if (Level != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(48);
         output.WriteUInt32(Level);
       }
       levelRewardTakenList_.WriteTo(output, _repeated_levelRewardTakenList_codec);
@@ -194,7 +198,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteUInt32(Exp);
       }
       if (Level != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(48);
         output.WriteUInt32(Level);
       }
       levelRewardTakenList_.WriteTo(ref output, _repeated_levelRewardTakenList_codec);
@@ -253,12 +257,12 @@ namespace Weedwacker.Shared.Network.Proto {
             Exp = input.ReadUInt32();
             break;
           }
-          case 72: {
+          case 48: {
             Level = input.ReadUInt32();
             break;
           }
-          case 98:
-          case 96: {
+          case 114:
+          case 112: {
             levelRewardTakenList_.AddEntriesFrom(input, _repeated_levelRewardTakenList_codec);
             break;
           }
@@ -281,12 +285,12 @@ namespace Weedwacker.Shared.Network.Proto {
             Exp = input.ReadUInt32();
             break;
           }
-          case 72: {
+          case 48: {
             Level = input.ReadUInt32();
             break;
           }
-          case 98:
-          case 96: {
+          case 114:
+          case 112: {
             levelRewardTakenList_.AddEntriesFrom(ref input, _repeated_levelRewardTakenList_codec);
             break;
           }

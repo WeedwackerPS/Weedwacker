@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static EffigyActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5FZmZpZ3lBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aFUVmZmlneURhaWx5",
-            "SW5mby5wcm90byKVAQoYRWZmaWd5QWN0aXZpdHlEZXRhaWxJbmZvEhEKCWN1",
-            "cl9zY29yZRgFIAEoDRIpCg9kYWlseV9pbmZvX2xpc3QYDiADKAsyEC5FZmZp",
-            "Z3lEYWlseUluZm8SGgoSbGFzdF9kaWZmaWN1bHR5X2lkGAkgASgNEh8KF3Rh",
-            "a2VuX3Jld2FyZF9pbmRleF9saXN0GAIgAygNQiKqAh9XZWVkd2Fja2VyLlNo",
-            "YXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch5FZmZpZ3lBY3Rpdml0eURldGFpbEluZm8ucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aFUVmZmlneURhaWx5SW5mby5wcm90byK1",
+            "AQoYRWZmaWd5QWN0aXZpdHlEZXRhaWxJbmZvEhoKEmxhc3RfZGlmZmljdWx0",
+            "eV9pZBgIIAEoDRIfChd0YWtlbl9yZXdhcmRfaW5kZXhfbGlzdBgNIAMoDRIR",
+            "CgljdXJfc2NvcmUYBSABKA0SSQoPZGFpbHlfaW5mb19saXN0GAQgAygLMjAu",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5FZmZpZ3lEYWlseUlu",
+            "Zm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.EffigyDailyInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EffigyActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.EffigyActivityDetailInfo.Parser, new[]{ "CurScore", "DailyInfoList", "LastDifficultyId", "TakenRewardIndexList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EffigyActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.EffigyActivityDetailInfo.Parser, new[]{ "LastDifficultyId", "TakenRewardIndexList", "CurScore", "DailyInfoList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,10 +75,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EffigyActivityDetailInfo(EffigyActivityDetailInfo other) : this() {
-      curScore_ = other.curScore_;
-      dailyInfoList_ = other.dailyInfoList_.Clone();
       lastDifficultyId_ = other.lastDifficultyId_;
       takenRewardIndexList_ = other.takenRewardIndexList_.Clone();
+      curScore_ = other.curScore_;
+      dailyInfoList_ = other.dailyInfoList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,6 +86,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EffigyActivityDetailInfo Clone() {
       return new EffigyActivityDetailInfo(this);
+    }
+
+    /// <summary>Field number for the "last_difficulty_id" field.</summary>
+    public const int LastDifficultyIdFieldNumber = 8;
+    private uint lastDifficultyId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LastDifficultyId {
+      get { return lastDifficultyId_; }
+      set {
+        lastDifficultyId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "taken_reward_index_list" field.</summary>
+    public const int TakenRewardIndexListFieldNumber = 13;
+    private static readonly pb::FieldCodec<uint> _repeated_takenRewardIndexList_codec
+        = pb::FieldCodec.ForUInt32(106);
+    private readonly pbc::RepeatedField<uint> takenRewardIndexList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> TakenRewardIndexList {
+      get { return takenRewardIndexList_; }
     }
 
     /// <summary>Field number for the "cur_score" field.</summary>
@@ -100,37 +124,14 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "daily_info_list" field.</summary>
-    public const int DailyInfoListFieldNumber = 14;
+    public const int DailyInfoListFieldNumber = 4;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.EffigyDailyInfo> _repeated_dailyInfoList_codec
-        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.EffigyDailyInfo.Parser);
+        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.EffigyDailyInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EffigyDailyInfo> dailyInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EffigyDailyInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EffigyDailyInfo> DailyInfoList {
       get { return dailyInfoList_; }
-    }
-
-    /// <summary>Field number for the "last_difficulty_id" field.</summary>
-    public const int LastDifficultyIdFieldNumber = 9;
-    private uint lastDifficultyId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint LastDifficultyId {
-      get { return lastDifficultyId_; }
-      set {
-        lastDifficultyId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "taken_reward_index_list" field.</summary>
-    public const int TakenRewardIndexListFieldNumber = 2;
-    private static readonly pb::FieldCodec<uint> _repeated_takenRewardIndexList_codec
-        = pb::FieldCodec.ForUInt32(18);
-    private readonly pbc::RepeatedField<uint> takenRewardIndexList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> TakenRewardIndexList {
-      get { return takenRewardIndexList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -148,10 +149,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CurScore != other.CurScore) return false;
-      if(!dailyInfoList_.Equals(other.dailyInfoList_)) return false;
       if (LastDifficultyId != other.LastDifficultyId) return false;
       if(!takenRewardIndexList_.Equals(other.takenRewardIndexList_)) return false;
+      if (CurScore != other.CurScore) return false;
+      if(!dailyInfoList_.Equals(other.dailyInfoList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -159,10 +160,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CurScore != 0) hash ^= CurScore.GetHashCode();
-      hash ^= dailyInfoList_.GetHashCode();
       if (LastDifficultyId != 0) hash ^= LastDifficultyId.GetHashCode();
       hash ^= takenRewardIndexList_.GetHashCode();
+      if (CurScore != 0) hash ^= CurScore.GetHashCode();
+      hash ^= dailyInfoList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -181,16 +182,16 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      takenRewardIndexList_.WriteTo(output, _repeated_takenRewardIndexList_codec);
+      dailyInfoList_.WriteTo(output, _repeated_dailyInfoList_codec);
       if (CurScore != 0) {
         output.WriteRawTag(40);
         output.WriteUInt32(CurScore);
       }
       if (LastDifficultyId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(64);
         output.WriteUInt32(LastDifficultyId);
       }
-      dailyInfoList_.WriteTo(output, _repeated_dailyInfoList_codec);
+      takenRewardIndexList_.WriteTo(output, _repeated_takenRewardIndexList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -201,16 +202,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      takenRewardIndexList_.WriteTo(ref output, _repeated_takenRewardIndexList_codec);
+      dailyInfoList_.WriteTo(ref output, _repeated_dailyInfoList_codec);
       if (CurScore != 0) {
         output.WriteRawTag(40);
         output.WriteUInt32(CurScore);
       }
       if (LastDifficultyId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(64);
         output.WriteUInt32(LastDifficultyId);
       }
-      dailyInfoList_.WriteTo(ref output, _repeated_dailyInfoList_codec);
+      takenRewardIndexList_.WriteTo(ref output, _repeated_takenRewardIndexList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -221,14 +222,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CurScore != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurScore);
-      }
-      size += dailyInfoList_.CalculateSize(_repeated_dailyInfoList_codec);
       if (LastDifficultyId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LastDifficultyId);
       }
       size += takenRewardIndexList_.CalculateSize(_repeated_takenRewardIndexList_codec);
+      if (CurScore != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurScore);
+      }
+      size += dailyInfoList_.CalculateSize(_repeated_dailyInfoList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -241,14 +242,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.CurScore != 0) {
-        CurScore = other.CurScore;
-      }
-      dailyInfoList_.Add(other.dailyInfoList_);
       if (other.LastDifficultyId != 0) {
         LastDifficultyId = other.LastDifficultyId;
       }
       takenRewardIndexList_.Add(other.takenRewardIndexList_);
+      if (other.CurScore != 0) {
+        CurScore = other.CurScore;
+      }
+      dailyInfoList_.Add(other.dailyInfoList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -264,21 +265,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18:
-          case 16: {
-            takenRewardIndexList_.AddEntriesFrom(input, _repeated_takenRewardIndexList_codec);
+          case 34: {
+            dailyInfoList_.AddEntriesFrom(input, _repeated_dailyInfoList_codec);
             break;
           }
           case 40: {
             CurScore = input.ReadUInt32();
             break;
           }
-          case 72: {
+          case 64: {
             LastDifficultyId = input.ReadUInt32();
             break;
           }
-          case 114: {
-            dailyInfoList_.AddEntriesFrom(input, _repeated_dailyInfoList_codec);
+          case 106:
+          case 104: {
+            takenRewardIndexList_.AddEntriesFrom(input, _repeated_takenRewardIndexList_codec);
             break;
           }
         }
@@ -296,21 +297,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18:
-          case 16: {
-            takenRewardIndexList_.AddEntriesFrom(ref input, _repeated_takenRewardIndexList_codec);
+          case 34: {
+            dailyInfoList_.AddEntriesFrom(ref input, _repeated_dailyInfoList_codec);
             break;
           }
           case 40: {
             CurScore = input.ReadUInt32();
             break;
           }
-          case 72: {
+          case 64: {
             LastDifficultyId = input.ReadUInt32();
             break;
           }
-          case 114: {
-            dailyInfoList_.AddEntriesFrom(ref input, _repeated_dailyInfoList_codec);
+          case 106:
+          case 104: {
+            takenRewardIndexList_.AddEntriesFrom(ref input, _repeated_takenRewardIndexList_codec);
             break;
           }
         }

@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static NpcTalkRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChBOcGNUYWxrUnNwLnByb3RvIlwKCk5wY1RhbGtSc3ASEwoLY3VyX3RhbGtf",
-            "aWQYCSABKA0SFQoNbnBjX2VudGl0eV9pZBgGIAEoDRIPCgdyZXRjb2RlGAMg",
-            "ASgFEhEKCWVudGl0eV9pZBgNIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQu",
-            "TmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChBOcGNUYWxrUnNwLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvIlwKCk5wY1RhbGtSc3ASDwoHcmV0Y29kZRgLIAEoBRITCgtjdXJf",
+            "dGFsa19pZBgMIAEoDRIVCg1ucGNfZW50aXR5X2lkGAQgASgNEhEKCWVudGl0",
+            "eV9pZBgCIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.NpcTalkRsp), global::Weedwacker.Shared.Network.Proto.NpcTalkRsp.Parser, new[]{ "CurTalkId", "NpcEntityId", "Retcode", "EntityId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.NpcTalkRsp), global::Weedwacker.Shared.Network.Proto.NpcTalkRsp.Parser, new[]{ "Retcode", "CurTalkId", "NpcEntityId", "EntityId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 598
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 530;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class NpcTalkRsp : pb::IMessage<NpcTalkRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,9 +81,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public NpcTalkRsp(NpcTalkRsp other) : this() {
+      retcode_ = other.retcode_;
       curTalkId_ = other.curTalkId_;
       npcEntityId_ = other.npcEntityId_;
-      retcode_ = other.retcode_;
       entityId_ = other.entityId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -90,8 +94,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new NpcTalkRsp(this);
     }
 
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 11;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
     /// <summary>Field number for the "cur_talk_id" field.</summary>
-    public const int CurTalkIdFieldNumber = 9;
+    public const int CurTalkIdFieldNumber = 12;
     private uint curTalkId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,7 +119,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "npc_entity_id" field.</summary>
-    public const int NpcEntityIdFieldNumber = 6;
+    public const int NpcEntityIdFieldNumber = 4;
     private uint npcEntityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,20 +130,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 3;
-    private int retcode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
-      }
-    }
-
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 13;
+    public const int EntityIdFieldNumber = 2;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -153,9 +157,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Retcode != other.Retcode) return false;
       if (CurTalkId != other.CurTalkId) return false;
       if (NpcEntityId != other.NpcEntityId) return false;
-      if (Retcode != other.Retcode) return false;
       if (EntityId != other.EntityId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -164,9 +168,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (CurTalkId != 0) hash ^= CurTalkId.GetHashCode();
       if (NpcEntityId != 0) hash ^= NpcEntityId.GetHashCode();
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (EntityId != 0) hash ^= EntityId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -186,21 +190,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Retcode != 0) {
-        output.WriteRawTag(24);
-        output.WriteInt32(Retcode);
+      if (EntityId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(EntityId);
       }
       if (NpcEntityId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(32);
         output.WriteUInt32(NpcEntityId);
       }
-      if (CurTalkId != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(CurTalkId);
+      if (Retcode != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(Retcode);
       }
-      if (EntityId != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(EntityId);
+      if (CurTalkId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(CurTalkId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -212,21 +216,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Retcode != 0) {
-        output.WriteRawTag(24);
-        output.WriteInt32(Retcode);
+      if (EntityId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(EntityId);
       }
       if (NpcEntityId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(32);
         output.WriteUInt32(NpcEntityId);
       }
-      if (CurTalkId != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(CurTalkId);
+      if (Retcode != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(Retcode);
       }
-      if (EntityId != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(EntityId);
+      if (CurTalkId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(CurTalkId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -238,14 +242,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
       if (CurTalkId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurTalkId);
       }
       if (NpcEntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NpcEntityId);
-      }
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (EntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
@@ -262,14 +266,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
       if (other.CurTalkId != 0) {
         CurTalkId = other.CurTalkId;
       }
       if (other.NpcEntityId != 0) {
         NpcEntityId = other.NpcEntityId;
-      }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
       }
       if (other.EntityId != 0) {
         EntityId = other.EntityId;
@@ -289,20 +293,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            Retcode = input.ReadInt32();
+          case 16: {
+            EntityId = input.ReadUInt32();
             break;
           }
-          case 48: {
+          case 32: {
             NpcEntityId = input.ReadUInt32();
             break;
           }
-          case 72: {
-            CurTalkId = input.ReadUInt32();
+          case 88: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 104: {
-            EntityId = input.ReadUInt32();
+          case 96: {
+            CurTalkId = input.ReadUInt32();
             break;
           }
         }
@@ -320,20 +324,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            Retcode = input.ReadInt32();
+          case 16: {
+            EntityId = input.ReadUInt32();
             break;
           }
-          case 48: {
+          case 32: {
             NpcEntityId = input.ReadUInt32();
             break;
           }
-          case 72: {
-            CurTalkId = input.ReadUInt32();
+          case 88: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 104: {
-            EntityId = input.ReadUInt32();
+          case 96: {
+            CurTalkId = input.ReadUInt32();
             break;
           }
         }

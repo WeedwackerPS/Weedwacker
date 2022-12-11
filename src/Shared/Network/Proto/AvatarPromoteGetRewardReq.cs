@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static AvatarPromoteGetRewardReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9BdmF0YXJQcm9tb3RlR2V0UmV3YXJkUmVxLnByb3RvIkcKGUF2YXRhclBy",
-            "b21vdGVHZXRSZXdhcmRSZXESEwoLYXZhdGFyX2d1aWQYByABKAQSFQoNcHJv",
-            "bW90ZV9sZXZlbBgMIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
-            "ay5Qcm90b2IGcHJvdG8z"));
+            "Ch9BdmF0YXJQcm9tb3RlR2V0UmV3YXJkUmVxLnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvIkcKGUF2YXRhclByb21vdGVHZXRSZXdh",
+            "cmRSZXESEwoLYXZhdGFyX2d1aWQYBCABKAQSFQoNcHJvbW90ZV9sZXZlbBgF",
+            "IAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1696
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1684;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class AvatarPromoteGetRewardReq : pb::IMessage<AvatarPromoteGetRewardReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "avatar_guid" field.</summary>
-    public const int AvatarGuidFieldNumber = 7;
+    public const int AvatarGuidFieldNumber = 4;
     private ulong avatarGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "promote_level" field.</summary>
-    public const int PromoteLevelFieldNumber = 12;
+    public const int PromoteLevelFieldNumber = 5;
     private uint promoteLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -158,11 +162,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (AvatarGuid != 0UL) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(32);
         output.WriteUInt64(AvatarGuid);
       }
       if (PromoteLevel != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(40);
         output.WriteUInt32(PromoteLevel);
       }
       if (_unknownFields != null) {
@@ -176,11 +180,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (AvatarGuid != 0UL) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(32);
         output.WriteUInt64(AvatarGuid);
       }
       if (PromoteLevel != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(40);
         output.WriteUInt32(PromoteLevel);
       }
       if (_unknownFields != null) {
@@ -232,11 +236,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
+          case 32: {
             AvatarGuid = input.ReadUInt64();
             break;
           }
-          case 96: {
+          case 40: {
             PromoteLevel = input.ReadUInt32();
             break;
           }
@@ -255,11 +259,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
+          case 32: {
             AvatarGuid = input.ReadUInt64();
             break;
           }
-          case 96: {
+          case 40: {
             PromoteLevel = input.ReadUInt32();
             break;
           }

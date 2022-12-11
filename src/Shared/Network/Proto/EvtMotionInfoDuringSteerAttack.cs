@@ -24,15 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static EvtMotionInfoDuringSteerAttackReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiRFdnRNb3Rpb25JbmZvRHVyaW5nU3RlZXJBdHRhY2sucHJvdG8aDFZlY3Rv",
-            "ci5wcm90byJ/Ch5FdnRNb3Rpb25JbmZvRHVyaW5nU3RlZXJBdHRhY2sSGQoI",
-            "ZmFjZV9kaXIYBCABKAsyBy5WZWN0b3ISGQoIdmVsb2NpdHkYAyABKAsyBy5W",
-            "ZWN0b3ISFAoDcG9zGAEgASgLMgcuVmVjdG9yEhEKCWVudGl0eV9pZBgGIAEo",
-            "DUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiRFdnRNb3Rpb25JbmZvRHVyaW5nU3RlZXJBdHRhY2sucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aDFZlY3Rvci5wcm90byLfAQoe",
+            "RXZ0TW90aW9uSW5mb0R1cmluZ1N0ZWVyQXR0YWNrEjkKCGZhY2VfZGlyGA8g",
+            "ASgLMicuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5WZWN0b3IS",
+            "NAoDcG9zGAggASgLMicuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
+            "by5WZWN0b3ISEQoJZW50aXR5X2lkGAQgASgNEjkKCHZlbG9jaXR5GA4gASgL",
+            "MicuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5WZWN0b3JiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EvtMotionInfoDuringSteerAttack), global::Weedwacker.Shared.Network.Proto.EvtMotionInfoDuringSteerAttack.Parser, new[]{ "FaceDir", "Velocity", "Pos", "EntityId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EvtMotionInfoDuringSteerAttack), global::Weedwacker.Shared.Network.Proto.EvtMotionInfoDuringSteerAttack.Parser, new[]{ "FaceDir", "Pos", "EntityId", "Velocity" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,9 +77,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EvtMotionInfoDuringSteerAttack(EvtMotionInfoDuringSteerAttack other) : this() {
       faceDir_ = other.faceDir_ != null ? other.faceDir_.Clone() : null;
-      velocity_ = other.velocity_ != null ? other.velocity_.Clone() : null;
       pos_ = other.pos_ != null ? other.pos_.Clone() : null;
       entityId_ = other.entityId_;
+      velocity_ = other.velocity_ != null ? other.velocity_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,7 +90,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "face_dir" field.</summary>
-    public const int FaceDirFieldNumber = 4;
+    public const int FaceDirFieldNumber = 15;
     private global::Weedwacker.Shared.Network.Proto.Vector faceDir_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -98,20 +101,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "velocity" field.</summary>
-    public const int VelocityFieldNumber = 3;
-    private global::Weedwacker.Shared.Network.Proto.Vector velocity_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector Velocity {
-      get { return velocity_; }
-      set {
-        velocity_ = value;
-      }
-    }
-
     /// <summary>Field number for the "pos" field.</summary>
-    public const int PosFieldNumber = 1;
+    public const int PosFieldNumber = 8;
     private global::Weedwacker.Shared.Network.Proto.Vector pos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,7 +114,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 6;
+    public const int EntityIdFieldNumber = 4;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -131,6 +122,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return entityId_; }
       set {
         entityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "velocity" field.</summary>
+    public const int VelocityFieldNumber = 14;
+    private global::Weedwacker.Shared.Network.Proto.Vector velocity_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector Velocity {
+      get { return velocity_; }
+      set {
+        velocity_ = value;
       }
     }
 
@@ -150,9 +153,9 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (!object.Equals(FaceDir, other.FaceDir)) return false;
-      if (!object.Equals(Velocity, other.Velocity)) return false;
       if (!object.Equals(Pos, other.Pos)) return false;
       if (EntityId != other.EntityId) return false;
+      if (!object.Equals(Velocity, other.Velocity)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -161,9 +164,9 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (faceDir_ != null) hash ^= FaceDir.GetHashCode();
-      if (velocity_ != null) hash ^= Velocity.GetHashCode();
       if (pos_ != null) hash ^= Pos.GetHashCode();
       if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      if (velocity_ != null) hash ^= Velocity.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -182,21 +185,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (EntityId != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(EntityId);
+      }
       if (pos_ != null) {
-        output.WriteRawTag(10);
+        output.WriteRawTag(66);
         output.WriteMessage(Pos);
       }
       if (velocity_ != null) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(114);
         output.WriteMessage(Velocity);
       }
       if (faceDir_ != null) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(122);
         output.WriteMessage(FaceDir);
-      }
-      if (EntityId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(EntityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -208,21 +211,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (EntityId != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(EntityId);
+      }
       if (pos_ != null) {
-        output.WriteRawTag(10);
+        output.WriteRawTag(66);
         output.WriteMessage(Pos);
       }
       if (velocity_ != null) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(114);
         output.WriteMessage(Velocity);
       }
       if (faceDir_ != null) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(122);
         output.WriteMessage(FaceDir);
-      }
-      if (EntityId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(EntityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -237,14 +240,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (faceDir_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(FaceDir);
       }
-      if (velocity_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Velocity);
-      }
       if (pos_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pos);
       }
       if (EntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
+      }
+      if (velocity_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Velocity);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -264,12 +267,6 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         FaceDir.MergeFrom(other.FaceDir);
       }
-      if (other.velocity_ != null) {
-        if (velocity_ == null) {
-          Velocity = new global::Weedwacker.Shared.Network.Proto.Vector();
-        }
-        Velocity.MergeFrom(other.Velocity);
-      }
       if (other.pos_ != null) {
         if (pos_ == null) {
           Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
@@ -278,6 +275,12 @@ namespace Weedwacker.Shared.Network.Proto {
       }
       if (other.EntityId != 0) {
         EntityId = other.EntityId;
+      }
+      if (other.velocity_ != null) {
+        if (velocity_ == null) {
+          Velocity = new global::Weedwacker.Shared.Network.Proto.Vector();
+        }
+        Velocity.MergeFrom(other.Velocity);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -294,29 +297,29 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 32: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 66: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Pos);
             break;
           }
-          case 26: {
+          case 114: {
             if (velocity_ == null) {
               Velocity = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Velocity);
             break;
           }
-          case 34: {
+          case 122: {
             if (faceDir_ == null) {
               FaceDir = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(FaceDir);
-            break;
-          }
-          case 48: {
-            EntityId = input.ReadUInt32();
             break;
           }
         }
@@ -334,29 +337,29 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
+          case 32: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 66: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Pos);
             break;
           }
-          case 26: {
+          case 114: {
             if (velocity_ == null) {
               Velocity = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Velocity);
             break;
           }
-          case 34: {
+          case 122: {
             if (faceDir_ == null) {
               FaceDir = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(FaceDir);
-            break;
-          }
-          case 48: {
-            EntityId = input.ReadUInt32();
             break;
           }
         }

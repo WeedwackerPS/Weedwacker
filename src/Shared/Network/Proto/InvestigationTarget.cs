@@ -24,18 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static InvestigationTargetReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlJbnZlc3RpZ2F0aW9uVGFyZ2V0LnByb3RvIvUBChNJbnZlc3RpZ2F0aW9u",
-            "VGFyZ2V0EhAKCHF1ZXN0X2lkGA8gASgNEikKBXN0YXRlGAIgASgOMhouSW52",
-            "ZXN0aWdhdGlvblRhcmdldC5TdGF0ZRIQCghwcm9ncmVzcxgIIAEoDRIWCg50",
-            "b3RhbF9wcm9ncmVzcxgHIAEoDRIYChBpbnZlc3RpZ2F0aW9uX2lkGAMgASgN",
-            "Il0KBVN0YXRlEhEKDVNUQVRFX0lOVkFMSUQQABIVChFTVEFURV9JTl9QUk9H",
-            "UkVTUxABEhIKDlNUQVRFX0NPTVBMRVRFEAISFgoSU1RBVEVfUkVXQVJEX1RB",
-            "S0VOEANCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "ChlJbnZlc3RpZ2F0aW9uVGFyZ2V0LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvIpUCChNJbnZlc3RpZ2F0aW9uVGFyZ2V0EhgKEGlu",
+            "dmVzdGlnYXRpb25faWQYCCABKA0SEAoIcXVlc3RfaWQYBiABKA0SSQoFc3Rh",
+            "dGUYAiABKA4yOi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLklu",
+            "dmVzdGlnYXRpb25UYXJnZXQuU3RhdGUSFgoOdG90YWxfcHJvZ3Jlc3MYBSAB",
+            "KA0SEAoIcHJvZ3Jlc3MYDyABKA0iXQoFU3RhdGUSEQoNU1RBVEVfSU5WQUxJ",
+            "RBAAEhUKEVNUQVRFX0lOX1BST0dSRVNTEAESEgoOU1RBVEVfQ09NUExFVEUQ",
+            "AhIWChJTVEFURV9SRVdBUkRfVEFLRU4QA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InvestigationTarget), global::Weedwacker.Shared.Network.Proto.InvestigationTarget.Parser, new[]{ "QuestId", "State", "Progress", "TotalProgress", "InvestigationId" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.InvestigationTarget.Types.State) }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InvestigationTarget), global::Weedwacker.Shared.Network.Proto.InvestigationTarget.Parser, new[]{ "InvestigationId", "QuestId", "State", "TotalProgress", "Progress" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.InvestigationTarget.Types.State) }, null, null)
           }));
     }
     #endregion
@@ -76,11 +76,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InvestigationTarget(InvestigationTarget other) : this() {
+      investigationId_ = other.investigationId_;
       questId_ = other.questId_;
       state_ = other.state_;
-      progress_ = other.progress_;
       totalProgress_ = other.totalProgress_;
-      investigationId_ = other.investigationId_;
+      progress_ = other.progress_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,8 +90,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new InvestigationTarget(this);
     }
 
+    /// <summary>Field number for the "investigation_id" field.</summary>
+    public const int InvestigationIdFieldNumber = 8;
+    private uint investigationId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint InvestigationId {
+      get { return investigationId_; }
+      set {
+        investigationId_ = value;
+      }
+    }
+
     /// <summary>Field number for the "quest_id" field.</summary>
-    public const int QuestIdFieldNumber = 15;
+    public const int QuestIdFieldNumber = 6;
     private uint questId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,20 +126,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "progress" field.</summary>
-    public const int ProgressFieldNumber = 8;
-    private uint progress_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Progress {
-      get { return progress_; }
-      set {
-        progress_ = value;
-      }
-    }
-
     /// <summary>Field number for the "total_progress" field.</summary>
-    public const int TotalProgressFieldNumber = 7;
+    public const int TotalProgressFieldNumber = 5;
     private uint totalProgress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -138,15 +138,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "investigation_id" field.</summary>
-    public const int InvestigationIdFieldNumber = 3;
-    private uint investigationId_;
+    /// <summary>Field number for the "progress" field.</summary>
+    public const int ProgressFieldNumber = 15;
+    private uint progress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint InvestigationId {
-      get { return investigationId_; }
+    public uint Progress {
+      get { return progress_; }
       set {
-        investigationId_ = value;
+        progress_ = value;
       }
     }
 
@@ -165,11 +165,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (InvestigationId != other.InvestigationId) return false;
       if (QuestId != other.QuestId) return false;
       if (State != other.State) return false;
-      if (Progress != other.Progress) return false;
       if (TotalProgress != other.TotalProgress) return false;
-      if (InvestigationId != other.InvestigationId) return false;
+      if (Progress != other.Progress) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -177,11 +177,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (InvestigationId != 0) hash ^= InvestigationId.GetHashCode();
       if (QuestId != 0) hash ^= QuestId.GetHashCode();
       if (State != global::Weedwacker.Shared.Network.Proto.InvestigationTarget.Types.State.Invalid) hash ^= State.GetHashCode();
-      if (Progress != 0) hash ^= Progress.GetHashCode();
       if (TotalProgress != 0) hash ^= TotalProgress.GetHashCode();
-      if (InvestigationId != 0) hash ^= InvestigationId.GetHashCode();
+      if (Progress != 0) hash ^= Progress.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -204,21 +204,21 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(16);
         output.WriteEnum((int) State);
       }
-      if (InvestigationId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(InvestigationId);
-      }
       if (TotalProgress != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(40);
         output.WriteUInt32(TotalProgress);
       }
-      if (Progress != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(Progress);
-      }
       if (QuestId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(48);
         output.WriteUInt32(QuestId);
+      }
+      if (InvestigationId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(InvestigationId);
+      }
+      if (Progress != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Progress);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -234,21 +234,21 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(16);
         output.WriteEnum((int) State);
       }
-      if (InvestigationId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(InvestigationId);
-      }
       if (TotalProgress != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(40);
         output.WriteUInt32(TotalProgress);
       }
-      if (Progress != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(Progress);
-      }
       if (QuestId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(48);
         output.WriteUInt32(QuestId);
+      }
+      if (InvestigationId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(InvestigationId);
+      }
+      if (Progress != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Progress);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -260,20 +260,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (InvestigationId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(InvestigationId);
+      }
       if (QuestId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(QuestId);
       }
       if (State != global::Weedwacker.Shared.Network.Proto.InvestigationTarget.Types.State.Invalid) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
       }
-      if (Progress != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Progress);
-      }
       if (TotalProgress != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalProgress);
       }
-      if (InvestigationId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(InvestigationId);
+      if (Progress != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Progress);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -287,20 +287,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.InvestigationId != 0) {
+        InvestigationId = other.InvestigationId;
+      }
       if (other.QuestId != 0) {
         QuestId = other.QuestId;
       }
       if (other.State != global::Weedwacker.Shared.Network.Proto.InvestigationTarget.Types.State.Invalid) {
         State = other.State;
       }
-      if (other.Progress != 0) {
-        Progress = other.Progress;
-      }
       if (other.TotalProgress != 0) {
         TotalProgress = other.TotalProgress;
       }
-      if (other.InvestigationId != 0) {
-        InvestigationId = other.InvestigationId;
+      if (other.Progress != 0) {
+        Progress = other.Progress;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -321,20 +321,20 @@ namespace Weedwacker.Shared.Network.Proto {
             State = (global::Weedwacker.Shared.Network.Proto.InvestigationTarget.Types.State) input.ReadEnum();
             break;
           }
-          case 24: {
-            InvestigationId = input.ReadUInt32();
-            break;
-          }
-          case 56: {
+          case 40: {
             TotalProgress = input.ReadUInt32();
             break;
           }
+          case 48: {
+            QuestId = input.ReadUInt32();
+            break;
+          }
           case 64: {
-            Progress = input.ReadUInt32();
+            InvestigationId = input.ReadUInt32();
             break;
           }
           case 120: {
-            QuestId = input.ReadUInt32();
+            Progress = input.ReadUInt32();
             break;
           }
         }
@@ -356,20 +356,20 @@ namespace Weedwacker.Shared.Network.Proto {
             State = (global::Weedwacker.Shared.Network.Proto.InvestigationTarget.Types.State) input.ReadEnum();
             break;
           }
-          case 24: {
-            InvestigationId = input.ReadUInt32();
-            break;
-          }
-          case 56: {
+          case 40: {
             TotalProgress = input.ReadUInt32();
             break;
           }
+          case 48: {
+            QuestId = input.ReadUInt32();
+            break;
+          }
           case 64: {
-            Progress = input.ReadUInt32();
+            InvestigationId = input.ReadUInt32();
             break;
           }
           case 120: {
-            QuestId = input.ReadUInt32();
+            Progress = input.ReadUInt32();
             break;
           }
         }

@@ -24,14 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static SetCodexPushtipsReadReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1TZXRDb2RleFB1c2h0aXBzUmVhZFJlcS5wcm90byI8ChdTZXRDb2RleFB1",
-            "c2h0aXBzUmVhZFJlcRIPCgd0eXBlX2lkGAIgASgNEhAKCGNvZGV4X2lkGA4g",
-            "ASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90",
-            "bzM="));
+            "Ch1TZXRDb2RleFB1c2h0aXBzUmVhZFJlcS5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90byI8ChdTZXRDb2RleFB1c2h0aXBzUmVhZFJl",
+            "cRIQCghjb2RleF9pZBgIIAEoDRIPCgd0eXBlX2lkGAMgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SetCodexPushtipsReadReq), global::Weedwacker.Shared.Network.Proto.SetCodexPushtipsReadReq.Parser, new[]{ "TypeId", "CodexId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SetCodexPushtipsReadReq), global::Weedwacker.Shared.Network.Proto.SetCodexPushtipsReadReq.Parser, new[]{ "CodexId", "TypeId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +38,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4208
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4209;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class SetCodexPushtipsReadReq : pb::IMessage<SetCodexPushtipsReadReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +81,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SetCodexPushtipsReadReq(SetCodexPushtipsReadReq other) : this() {
-      typeId_ = other.typeId_;
       codexId_ = other.codexId_;
+      typeId_ = other.typeId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,20 +92,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SetCodexPushtipsReadReq(this);
     }
 
-    /// <summary>Field number for the "type_id" field.</summary>
-    public const int TypeIdFieldNumber = 2;
-    private uint typeId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TypeId {
-      get { return typeId_; }
-      set {
-        typeId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "codex_id" field.</summary>
-    public const int CodexIdFieldNumber = 14;
+    public const int CodexIdFieldNumber = 8;
     private uint codexId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,6 +101,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return codexId_; }
       set {
         codexId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "type_id" field.</summary>
+    public const int TypeIdFieldNumber = 3;
+    private uint typeId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TypeId {
+      get { return typeId_; }
+      set {
+        typeId_ = value;
       }
     }
 
@@ -128,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (TypeId != other.TypeId) return false;
       if (CodexId != other.CodexId) return false;
+      if (TypeId != other.TypeId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -137,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (TypeId != 0) hash ^= TypeId.GetHashCode();
       if (CodexId != 0) hash ^= CodexId.GetHashCode();
+      if (TypeId != 0) hash ^= TypeId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -158,11 +161,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (TypeId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(24);
         output.WriteUInt32(TypeId);
       }
       if (CodexId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(64);
         output.WriteUInt32(CodexId);
       }
       if (_unknownFields != null) {
@@ -176,11 +179,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (TypeId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(24);
         output.WriteUInt32(TypeId);
       }
       if (CodexId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(64);
         output.WriteUInt32(CodexId);
       }
       if (_unknownFields != null) {
@@ -193,11 +196,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (TypeId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TypeId);
-      }
       if (CodexId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CodexId);
+      }
+      if (TypeId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TypeId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -211,11 +214,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.TypeId != 0) {
-        TypeId = other.TypeId;
-      }
       if (other.CodexId != 0) {
         CodexId = other.CodexId;
+      }
+      if (other.TypeId != 0) {
+        TypeId = other.TypeId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -232,11 +235,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
+          case 24: {
             TypeId = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 64: {
             CodexId = input.ReadUInt32();
             break;
           }
@@ -255,11 +258,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
+          case 24: {
             TypeId = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 64: {
             CodexId = input.ReadUInt32();
             break;
           }

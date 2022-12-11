@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static TowerTeamSelectReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhUb3dlclRlYW1TZWxlY3RSZXEucHJvdG8aD1Rvd2VyVGVhbS5wcm90byJL",
-            "ChJUb3dlclRlYW1TZWxlY3RSZXESIwoPdG93ZXJfdGVhbV9saXN0GAsgAygL",
-            "MgouVG93ZXJUZWFtEhAKCGZsb29yX2lkGAogASgNQiKqAh9XZWVkd2Fja2Vy",
-            "LlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChhUb3dlclRlYW1TZWxlY3RSZXEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aD1Rvd2VyVGVhbS5wcm90byJrChJUb3dlclRlYW1T",
+            "ZWxlY3RSZXESQwoPdG93ZXJfdGVhbV9saXN0GAUgAygLMiouV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90by5Ub3dlclRlYW0SEAoIZmxvb3JfaWQY",
+            "CiABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.TowerTeamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2421
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2443;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class TowerTeamSelectReq : pb::IMessage<TowerTeamSelectReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,9 +95,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "tower_team_list" field.</summary>
-    public const int TowerTeamListFieldNumber = 11;
+    public const int TowerTeamListFieldNumber = 5;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.TowerTeam> _repeated_towerTeamList_codec
-        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.TowerTeam.Parser);
+        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.TowerTeam.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TowerTeam> towerTeamList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TowerTeam>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,11 +161,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      towerTeamList_.WriteTo(output, _repeated_towerTeamList_codec);
       if (FloorId != 0) {
         output.WriteRawTag(80);
         output.WriteUInt32(FloorId);
       }
-      towerTeamList_.WriteTo(output, _repeated_towerTeamList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -171,11 +176,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      towerTeamList_.WriteTo(ref output, _repeated_towerTeamList_codec);
       if (FloorId != 0) {
         output.WriteRawTag(80);
         output.WriteUInt32(FloorId);
       }
-      towerTeamList_.WriteTo(ref output, _repeated_towerTeamList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -221,12 +226,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 80: {
-            FloorId = input.ReadUInt32();
+          case 42: {
+            towerTeamList_.AddEntriesFrom(input, _repeated_towerTeamList_codec);
             break;
           }
-          case 90: {
-            towerTeamList_.AddEntriesFrom(input, _repeated_towerTeamList_codec);
+          case 80: {
+            FloorId = input.ReadUInt32();
             break;
           }
         }
@@ -244,12 +249,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 80: {
-            FloorId = input.ReadUInt32();
+          case 42: {
+            towerTeamList_.AddEntriesFrom(ref input, _repeated_towerTeamList_codec);
             break;
           }
-          case 90: {
-            towerTeamList_.AddEntriesFrom(ref input, _repeated_towerTeamList_codec);
+          case 80: {
+            FloorId = input.ReadUInt32();
             break;
           }
         }

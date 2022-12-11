@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static ActivityShopSheetInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtBY3Rpdml0eVNob3BTaGVldEluZm8ucHJvdG8iTwoVQWN0aXZpdHlTaG9w",
-            "U2hlZXRJbmZvEhAKCGVuZF90aW1lGAEgASgNEhIKCmJlZ2luX3RpbWUYDCAB",
-            "KA0SEAoIc2hlZXRfaWQYAiABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
-            "dHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChtBY3Rpdml0eVNob3BTaGVldEluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8iTwoVQWN0aXZpdHlTaG9wU2hlZXRJbmZvEhIK",
+            "CmJlZ2luX3RpbWUYASABKA0SEAoIZW5kX3RpbWUYBiABKA0SEAoIc2hlZXRf",
+            "aWQYDyABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ActivityShopSheetInfo), global::Weedwacker.Shared.Network.Proto.ActivityShopSheetInfo.Parser, new[]{ "EndTime", "BeginTime", "SheetId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ActivityShopSheetInfo), global::Weedwacker.Shared.Network.Proto.ActivityShopSheetInfo.Parser, new[]{ "BeginTime", "EndTime", "SheetId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +72,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ActivityShopSheetInfo(ActivityShopSheetInfo other) : this() {
-      endTime_ = other.endTime_;
       beginTime_ = other.beginTime_;
+      endTime_ = other.endTime_;
       sheetId_ = other.sheetId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -84,20 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ActivityShopSheetInfo(this);
     }
 
-    /// <summary>Field number for the "end_time" field.</summary>
-    public const int EndTimeFieldNumber = 1;
-    private uint endTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EndTime {
-      get { return endTime_; }
-      set {
-        endTime_ = value;
-      }
-    }
-
     /// <summary>Field number for the "begin_time" field.</summary>
-    public const int BeginTimeFieldNumber = 12;
+    public const int BeginTimeFieldNumber = 1;
     private uint beginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -108,8 +96,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "end_time" field.</summary>
+    public const int EndTimeFieldNumber = 6;
+    private uint endTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EndTime {
+      get { return endTime_; }
+      set {
+        endTime_ = value;
+      }
+    }
+
     /// <summary>Field number for the "sheet_id" field.</summary>
-    public const int SheetIdFieldNumber = 2;
+    public const int SheetIdFieldNumber = 15;
     private uint sheetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -135,8 +135,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (EndTime != other.EndTime) return false;
       if (BeginTime != other.BeginTime) return false;
+      if (EndTime != other.EndTime) return false;
       if (SheetId != other.SheetId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -145,8 +145,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (EndTime != 0) hash ^= EndTime.GetHashCode();
       if (BeginTime != 0) hash ^= BeginTime.GetHashCode();
+      if (EndTime != 0) hash ^= EndTime.GetHashCode();
       if (SheetId != 0) hash ^= SheetId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -166,17 +166,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (EndTime != 0) {
+      if (BeginTime != 0) {
         output.WriteRawTag(8);
+        output.WriteUInt32(BeginTime);
+      }
+      if (EndTime != 0) {
+        output.WriteRawTag(48);
         output.WriteUInt32(EndTime);
       }
       if (SheetId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(120);
         output.WriteUInt32(SheetId);
-      }
-      if (BeginTime != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(BeginTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -188,17 +188,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (EndTime != 0) {
+      if (BeginTime != 0) {
         output.WriteRawTag(8);
+        output.WriteUInt32(BeginTime);
+      }
+      if (EndTime != 0) {
+        output.WriteRawTag(48);
         output.WriteUInt32(EndTime);
       }
       if (SheetId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(120);
         output.WriteUInt32(SheetId);
-      }
-      if (BeginTime != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(BeginTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -210,11 +210,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (EndTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
-      }
       if (BeginTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BeginTime);
+      }
+      if (EndTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
       }
       if (SheetId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SheetId);
@@ -231,11 +231,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.EndTime != 0) {
-        EndTime = other.EndTime;
-      }
       if (other.BeginTime != 0) {
         BeginTime = other.BeginTime;
+      }
+      if (other.EndTime != 0) {
+        EndTime = other.EndTime;
       }
       if (other.SheetId != 0) {
         SheetId = other.SheetId;
@@ -256,15 +256,15 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
+            BeginTime = input.ReadUInt32();
+            break;
+          }
+          case 48: {
             EndTime = input.ReadUInt32();
             break;
           }
-          case 16: {
+          case 120: {
             SheetId = input.ReadUInt32();
-            break;
-          }
-          case 96: {
-            BeginTime = input.ReadUInt32();
             break;
           }
         }
@@ -283,15 +283,15 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
+            BeginTime = input.ReadUInt32();
+            break;
+          }
+          case 48: {
             EndTime = input.ReadUInt32();
             break;
           }
-          case 16: {
+          case 120: {
             SheetId = input.ReadUInt32();
-            break;
-          }
-          case 96: {
-            BeginTime = input.ReadUInt32();
             break;
           }
         }

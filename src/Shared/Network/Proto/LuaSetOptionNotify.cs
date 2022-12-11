@@ -24,12 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static LuaSetOptionNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhMdWFTZXRPcHRpb25Ob3RpZnkucHJvdG8isAEKEkx1YVNldE9wdGlvbk5v",
-            "dGlmeRIVCg1sdWFfc2V0X3BhcmFtGAggASgJEjYKC29wdGlvbl90eXBlGAog",
-            "ASgOMiEuTHVhU2V0T3B0aW9uTm90aWZ5Lkx1YU9wdGlvblR5cGUiSwoNTHVh",
-            "T3B0aW9uVHlwZRIYChRMVUFfT1BUSU9OX1RZUEVfTk9ORRAAEiAKHExVQV9P",
-            "UFRJT05fVFlQRV9QTEFZRVJfSU5QVVQQAUIiqgIfV2VlZHdhY2tlci5TaGFy",
-            "ZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChhMdWFTZXRPcHRpb25Ob3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8i0AEKEkx1YVNldE9wdGlvbk5vdGlmeRIVCg1sdWFf",
+            "c2V0X3BhcmFtGAEgASgJElYKC29wdGlvbl90eXBlGAcgASgOMkEuV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5MdWFTZXRPcHRpb25Ob3RpZnku",
+            "THVhT3B0aW9uVHlwZSJLCg1MdWFPcHRpb25UeXBlEhgKFExVQV9PUFRJT05f",
+            "VFlQRV9OT05FEAASIAocTFVBX09QVElPTl9UWVBFX1BMQVlFUl9JTlBVVBAB",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -41,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 316
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 323;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class LuaSetOptionNotify : pb::IMessage<LuaSetOptionNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,7 +96,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "lua_set_param" field.</summary>
-    public const int LuaSetParamFieldNumber = 8;
+    public const int LuaSetParamFieldNumber = 1;
     private string luaSetParam_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,7 +108,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "option_type" field.</summary>
-    public const int OptionTypeFieldNumber = 10;
+    public const int OptionTypeFieldNumber = 7;
     private global::Weedwacker.Shared.Network.Proto.LuaSetOptionNotify.Types.LuaOptionType optionType_ = global::Weedwacker.Shared.Network.Proto.LuaSetOptionNotify.Types.LuaOptionType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -159,11 +164,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (LuaSetParam.Length != 0) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(10);
         output.WriteString(LuaSetParam);
       }
       if (OptionType != global::Weedwacker.Shared.Network.Proto.LuaSetOptionNotify.Types.LuaOptionType.None) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(56);
         output.WriteEnum((int) OptionType);
       }
       if (_unknownFields != null) {
@@ -177,11 +182,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (LuaSetParam.Length != 0) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(10);
         output.WriteString(LuaSetParam);
       }
       if (OptionType != global::Weedwacker.Shared.Network.Proto.LuaSetOptionNotify.Types.LuaOptionType.None) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(56);
         output.WriteEnum((int) OptionType);
       }
       if (_unknownFields != null) {
@@ -233,11 +238,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 66: {
+          case 10: {
             LuaSetParam = input.ReadString();
             break;
           }
-          case 80: {
+          case 56: {
             OptionType = (global::Weedwacker.Shared.Network.Proto.LuaSetOptionNotify.Types.LuaOptionType) input.ReadEnum();
             break;
           }
@@ -256,11 +261,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 66: {
+          case 10: {
             LuaSetParam = input.ReadString();
             break;
           }
-          case 80: {
+          case 56: {
             OptionType = (global::Weedwacker.Shared.Network.Proto.LuaSetOptionNotify.Types.LuaOptionType) input.ReadEnum();
             break;
           }

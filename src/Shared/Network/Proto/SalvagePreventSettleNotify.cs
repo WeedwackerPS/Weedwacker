@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static SalvagePreventSettleNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBTYWx2YWdlUHJldmVudFNldHRsZU5vdGlmeS5wcm90bxoeU2FsdmFnZVBy",
-            "ZXZlbnRTZXR0bGVJbmZvLnByb3RvImAKGlNhbHZhZ2VQcmV2ZW50U2V0dGxl",
-            "Tm90aWZ5EhIKCmdhbGxlcnlfaWQYDSABKA0SLgoLc2V0dGxlX2luZm8YDCAB",
-            "KAsyGS5TYWx2YWdlUHJldmVudFNldHRsZUluZm9CIqoCH1dlZWR3YWNrZXIu",
-            "U2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiBTYWx2YWdlUHJldmVudFNldHRsZU5vdGlmeS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90bxoeU2FsdmFnZVByZXZlbnRTZXR0bGVJ",
+            "bmZvLnByb3RvIoABChpTYWx2YWdlUHJldmVudFNldHRsZU5vdGlmeRISCgpn",
+            "YWxsZXJ5X2lkGA0gASgNEk4KC3NldHRsZV9pbmZvGAsgASgLMjkuV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5TYWx2YWdlUHJldmVudFNldHRs",
+            "ZUluZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.SalvagePreventSettleInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8231
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8435;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class SalvagePreventSettleNotify : pb::IMessage<SalvagePreventSettleNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -102,7 +107,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "settle_info" field.</summary>
-    public const int SettleInfoFieldNumber = 12;
+    public const int SettleInfoFieldNumber = 11;
     private global::Weedwacker.Shared.Network.Proto.SalvagePreventSettleInfo settleInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -158,7 +163,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (settleInfo_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(90);
         output.WriteMessage(SettleInfo);
       }
       if (GalleryId != 0) {
@@ -176,7 +181,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (settleInfo_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(90);
         output.WriteMessage(SettleInfo);
       }
       if (GalleryId != 0) {
@@ -235,7 +240,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 98: {
+          case 90: {
             if (settleInfo_ == null) {
               SettleInfo = new global::Weedwacker.Shared.Network.Proto.SalvagePreventSettleInfo();
             }
@@ -261,7 +266,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 98: {
+          case 90: {
             if (settleInfo_ == null) {
               SettleInfo = new global::Weedwacker.Shared.Network.Proto.SalvagePreventSettleInfo();
             }

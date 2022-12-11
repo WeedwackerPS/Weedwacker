@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static AranaraCollectionSuiteReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxBcmFuYXJhQ29sbGVjdGlvblN1aXRlLnByb3RvGhxBcmFuYXJhQ29sbGVj",
-            "dGlvblN0YXRlLnByb3RvItsBChZBcmFuYXJhQ29sbGVjdGlvblN1aXRlElIK",
-            "F2NvbGxlY3Rpb25faWRfc3RhdGVfbWFwGAYgAygLMjEuQXJhbmFyYUNvbGxl",
-            "Y3Rpb25TdWl0ZS5Db2xsZWN0aW9uSWRTdGF0ZU1hcEVudHJ5EhcKD2NvbGxl",
-            "Y3Rpb25fdHlwZRgMIAEoDRpUChlDb2xsZWN0aW9uSWRTdGF0ZU1hcEVudHJ5",
-            "EgsKA2tleRgBIAEoDRImCgV2YWx1ZRgCIAEoDjIXLkFyYW5hcmFDb2xsZWN0",
-            "aW9uU3RhdGU6AjgBQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
-            "b3RvYgZwcm90bzM="));
+            "ChxBcmFuYXJhQ29sbGVjdGlvblN1aXRlLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhxBcmFuYXJhQ29sbGVjdGlvblN0YXRlLnBy",
+            "b3RvIpsCChZBcmFuYXJhQ29sbGVjdGlvblN1aXRlEnIKF2NvbGxlY3Rpb25f",
+            "aWRfc3RhdGVfbWFwGAUgAygLMlEuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90by5BcmFuYXJhQ29sbGVjdGlvblN1aXRlLkNvbGxlY3Rpb25JZFN0",
+            "YXRlTWFwRW50cnkSFwoPY29sbGVjdGlvbl90eXBlGAwgASgNGnQKGUNvbGxl",
+            "Y3Rpb25JZFN0YXRlTWFwRW50cnkSCwoDa2V5GAEgASgNEkYKBXZhbHVlGAIg",
+            "ASgOMjcuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5BcmFuYXJh",
+            "Q29sbGVjdGlvblN0YXRlOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AranaraCollectionStateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -88,9 +89,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "collection_id_state_map" field.</summary>
-    public const int CollectionIdStateMapFieldNumber = 6;
+    public const int CollectionIdStateMapFieldNumber = 5;
     private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.AranaraCollectionState>.Codec _map_collectionIdStateMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.AranaraCollectionState>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForEnum(16, x => (int) x, x => (global::Weedwacker.Shared.Network.Proto.AranaraCollectionState) x, global::Weedwacker.Shared.Network.Proto.AranaraCollectionState.None), 50);
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.AranaraCollectionState>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForEnum(16, x => (int) x, x => (global::Weedwacker.Shared.Network.Proto.AranaraCollectionState) x, global::Weedwacker.Shared.Network.Proto.AranaraCollectionState.None), 42);
     private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.AranaraCollectionState> collectionIdStateMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.AranaraCollectionState>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -219,7 +220,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 50: {
+          case 42: {
             collectionIdStateMap_.AddEntriesFrom(input, _map_collectionIdStateMap_codec);
             break;
           }
@@ -242,7 +243,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 50: {
+          case 42: {
             collectionIdStateMap_.AddEntriesFrom(ref input, _map_collectionIdStateMap_codec);
             break;
           }

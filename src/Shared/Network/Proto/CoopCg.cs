@@ -24,13 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static CoopCgReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgxDb29wQ2cucHJvdG8iJwoGQ29vcENnEhEKCWlzX3VubG9jaxgOIAEoCBIK",
-            "CgJpZBgIIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
-            "b2IGcHJvdG8z"));
+            "CgxDb29wQ2cucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
+            "dG8iJwoGQ29vcENnEgoKAmlkGAUgASgNEhEKCWlzX3VubG9jaxgHIAEoCGIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CoopCg), global::Weedwacker.Shared.Network.Proto.CoopCg.Parser, new[]{ "IsUnlock", "Id" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CoopCg), global::Weedwacker.Shared.Network.Proto.CoopCg.Parser, new[]{ "Id", "IsUnlock" }, null, null, null, null)
           }));
     }
     #endregion
@@ -71,8 +71,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CoopCg(CoopCg other) : this() {
-      isUnlock_ = other.isUnlock_;
       id_ = other.id_;
+      isUnlock_ = other.isUnlock_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -82,20 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new CoopCg(this);
     }
 
-    /// <summary>Field number for the "is_unlock" field.</summary>
-    public const int IsUnlockFieldNumber = 14;
-    private bool isUnlock_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsUnlock {
-      get { return isUnlock_; }
-      set {
-        isUnlock_ = value;
-      }
-    }
-
     /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 8;
+    public const int IdFieldNumber = 5;
     private uint id_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,6 +91,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return id_; }
       set {
         id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_unlock" field.</summary>
+    public const int IsUnlockFieldNumber = 7;
+    private bool isUnlock_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsUnlock {
+      get { return isUnlock_; }
+      set {
+        isUnlock_ = value;
       }
     }
 
@@ -121,8 +121,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsUnlock != other.IsUnlock) return false;
       if (Id != other.Id) return false;
+      if (IsUnlock != other.IsUnlock) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -130,8 +130,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsUnlock != false) hash ^= IsUnlock.GetHashCode();
       if (Id != 0) hash ^= Id.GetHashCode();
+      if (IsUnlock != false) hash ^= IsUnlock.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -151,11 +151,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Id != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(40);
         output.WriteUInt32(Id);
       }
       if (IsUnlock != false) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(56);
         output.WriteBool(IsUnlock);
       }
       if (_unknownFields != null) {
@@ -169,11 +169,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Id != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(40);
         output.WriteUInt32(Id);
       }
       if (IsUnlock != false) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(56);
         output.WriteBool(IsUnlock);
       }
       if (_unknownFields != null) {
@@ -186,11 +186,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsUnlock != false) {
-        size += 1 + 1;
-      }
       if (Id != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Id);
+      }
+      if (IsUnlock != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -204,11 +204,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsUnlock != false) {
-        IsUnlock = other.IsUnlock;
-      }
       if (other.Id != 0) {
         Id = other.Id;
+      }
+      if (other.IsUnlock != false) {
+        IsUnlock = other.IsUnlock;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -225,11 +225,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 64: {
+          case 40: {
             Id = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 56: {
             IsUnlock = input.ReadBool();
             break;
           }
@@ -248,11 +248,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 64: {
+          case 40: {
             Id = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 56: {
             IsUnlock = input.ReadBool();
             break;
           }

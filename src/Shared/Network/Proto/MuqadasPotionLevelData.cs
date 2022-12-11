@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static MuqadasPotionLevelDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxNdXFhZGFzUG90aW9uTGV2ZWxEYXRhLnByb3RvIk4KFk11cWFkYXNQb3Rp",
-            "b25MZXZlbERhdGESEAoIbGV2ZWxfaWQYDyABKA0SEQoJbWF4X3Njb3JlGAkg",
-            "ASgNEg8KB2lzX29wZW4YCiABKAhCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
-            "dHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChxNdXFhZGFzUG90aW9uTGV2ZWxEYXRhLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvIk4KFk11cWFkYXNQb3Rpb25MZXZlbERhdGES",
+            "DwoHaXNfb3BlbhgBIAEoCBIQCghsZXZlbF9pZBgCIAEoDRIRCgltYXhfc2Nv",
+            "cmUYCSABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MuqadasPotionLevelData), global::Weedwacker.Shared.Network.Proto.MuqadasPotionLevelData.Parser, new[]{ "LevelId", "MaxScore", "IsOpen" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MuqadasPotionLevelData), global::Weedwacker.Shared.Network.Proto.MuqadasPotionLevelData.Parser, new[]{ "IsOpen", "LevelId", "MaxScore" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,9 +72,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MuqadasPotionLevelData(MuqadasPotionLevelData other) : this() {
+      isOpen_ = other.isOpen_;
       levelId_ = other.levelId_;
       maxScore_ = other.maxScore_;
-      isOpen_ = other.isOpen_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,8 +84,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new MuqadasPotionLevelData(this);
     }
 
+    /// <summary>Field number for the "is_open" field.</summary>
+    public const int IsOpenFieldNumber = 1;
+    private bool isOpen_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsOpen {
+      get { return isOpen_; }
+      set {
+        isOpen_ = value;
+      }
+    }
+
     /// <summary>Field number for the "level_id" field.</summary>
-    public const int LevelIdFieldNumber = 15;
+    public const int LevelIdFieldNumber = 2;
     private uint levelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -108,18 +120,6 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_open" field.</summary>
-    public const int IsOpenFieldNumber = 10;
-    private bool isOpen_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsOpen {
-      get { return isOpen_; }
-      set {
-        isOpen_ = value;
-      }
-    }
-
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -135,9 +135,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (IsOpen != other.IsOpen) return false;
       if (LevelId != other.LevelId) return false;
       if (MaxScore != other.MaxScore) return false;
-      if (IsOpen != other.IsOpen) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -145,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (IsOpen != false) hash ^= IsOpen.GetHashCode();
       if (LevelId != 0) hash ^= LevelId.GetHashCode();
       if (MaxScore != 0) hash ^= MaxScore.GetHashCode();
-      if (IsOpen != false) hash ^= IsOpen.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -166,17 +166,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (MaxScore != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(MaxScore);
-      }
       if (IsOpen != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(8);
         output.WriteBool(IsOpen);
       }
       if (LevelId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(16);
         output.WriteUInt32(LevelId);
+      }
+      if (MaxScore != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(MaxScore);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -188,17 +188,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (MaxScore != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(MaxScore);
-      }
       if (IsOpen != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(8);
         output.WriteBool(IsOpen);
       }
       if (LevelId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(16);
         output.WriteUInt32(LevelId);
+      }
+      if (MaxScore != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(MaxScore);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -210,14 +210,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (IsOpen != false) {
+        size += 1 + 1;
+      }
       if (LevelId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
       }
       if (MaxScore != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxScore);
-      }
-      if (IsOpen != false) {
-        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -231,14 +231,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.IsOpen != false) {
+        IsOpen = other.IsOpen;
+      }
       if (other.LevelId != 0) {
         LevelId = other.LevelId;
       }
       if (other.MaxScore != 0) {
         MaxScore = other.MaxScore;
-      }
-      if (other.IsOpen != false) {
-        IsOpen = other.IsOpen;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -255,16 +255,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 72: {
-            MaxScore = input.ReadUInt32();
-            break;
-          }
-          case 80: {
+          case 8: {
             IsOpen = input.ReadBool();
             break;
           }
-          case 120: {
+          case 16: {
             LevelId = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            MaxScore = input.ReadUInt32();
             break;
           }
         }
@@ -282,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 72: {
-            MaxScore = input.ReadUInt32();
-            break;
-          }
-          case 80: {
+          case 8: {
             IsOpen = input.ReadBool();
             break;
           }
-          case 120: {
+          case 16: {
             LevelId = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            MaxScore = input.ReadUInt32();
             break;
           }
         }

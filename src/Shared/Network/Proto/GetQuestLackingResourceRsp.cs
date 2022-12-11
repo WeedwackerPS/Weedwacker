@@ -24,20 +24,22 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetQuestLackingResourceRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBHZXRRdWVzdExhY2tpbmdSZXNvdXJjZVJzcC5wcm90byLxAgoaR2V0UXVl",
-            "c3RMYWNraW5nUmVzb3VyY2VSc3ASEAoIcXVlc3RfaWQYBCABKA0SDwoHcmV0",
-            "Y29kZRgLIAEoBRIXCg9sYWNrZWRfbnBjX2xpc3QYCCADKA0SGQoRbGFja2Vk",
-            "X3BsYWNlX2xpc3QYBSADKA0SRQoObGFja2VkX25wY19tYXAYCiADKAsyLS5H",
-            "ZXRRdWVzdExhY2tpbmdSZXNvdXJjZVJzcC5MYWNrZWROcGNNYXBFbnRyeRJJ",
-            "ChBsYWNrZWRfcGxhY2VfbWFwGAIgAygLMi8uR2V0UXVlc3RMYWNraW5nUmVz",
-            "b3VyY2VSc3AuTGFja2VkUGxhY2VNYXBFbnRyeRozChFMYWNrZWROcGNNYXBF",
-            "bnRyeRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiABKA06AjgBGjUKE0xhY2tl",
-            "ZFBsYWNlTWFwRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4",
-            "AUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiBHZXRRdWVzdExhY2tpbmdSZXNvdXJjZVJzcC5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byKxAwoaR2V0UXVlc3RMYWNraW5nUmVz",
+            "b3VyY2VSc3ASaQoQbGFja2VkX3BsYWNlX21hcBgCIAMoCzJPLldlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uR2V0UXVlc3RMYWNraW5nUmVzb3Vy",
+            "Y2VSc3AuTGFja2VkUGxhY2VNYXBFbnRyeRJlCg5sYWNrZWRfbnBjX21hcBgH",
+            "IAMoCzJNLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uR2V0UXVl",
+            "c3RMYWNraW5nUmVzb3VyY2VSc3AuTGFja2VkTnBjTWFwRW50cnkSGQoRbGFj",
+            "a2VkX3BsYWNlX2xpc3QYCyADKA0SEAoIcXVlc3RfaWQYAyABKA0SDwoHcmV0",
+            "Y29kZRgGIAEoBRIXCg9sYWNrZWRfbnBjX2xpc3QYDiADKA0aNQoTTGFja2Vk",
+            "UGxhY2VNYXBFbnRyeRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiABKA06AjgB",
+            "GjMKEUxhY2tlZE5wY01hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgC",
+            "IAEoDToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetQuestLackingResourceRsp), global::Weedwacker.Shared.Network.Proto.GetQuestLackingResourceRsp.Parser, new[]{ "QuestId", "Retcode", "LackedNpcList", "LackedPlaceList", "LackedNpcMap", "LackedPlaceMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetQuestLackingResourceRsp), global::Weedwacker.Shared.Network.Proto.GetQuestLackingResourceRsp.Parser, new[]{ "LackedPlaceMap", "LackedNpcMap", "LackedPlaceList", "QuestId", "Retcode", "LackedNpcList" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
           }));
     }
     #endregion
@@ -45,9 +47,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 458
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 424;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GetQuestLackingResourceRsp : pb::IMessage<GetQuestLackingResourceRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -83,12 +89,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetQuestLackingResourceRsp(GetQuestLackingResourceRsp other) : this() {
+      lackedPlaceMap_ = other.lackedPlaceMap_.Clone();
+      lackedNpcMap_ = other.lackedNpcMap_.Clone();
+      lackedPlaceList_ = other.lackedPlaceList_.Clone();
       questId_ = other.questId_;
       retcode_ = other.retcode_;
       lackedNpcList_ = other.lackedNpcList_.Clone();
-      lackedPlaceList_ = other.lackedPlaceList_.Clone();
-      lackedNpcMap_ = other.lackedNpcMap_.Clone();
-      lackedPlaceMap_ = other.lackedPlaceMap_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -96,63 +102,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetQuestLackingResourceRsp Clone() {
       return new GetQuestLackingResourceRsp(this);
-    }
-
-    /// <summary>Field number for the "quest_id" field.</summary>
-    public const int QuestIdFieldNumber = 4;
-    private uint questId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint QuestId {
-      get { return questId_; }
-      set {
-        questId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 11;
-    private int retcode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "lacked_npc_list" field.</summary>
-    public const int LackedNpcListFieldNumber = 8;
-    private static readonly pb::FieldCodec<uint> _repeated_lackedNpcList_codec
-        = pb::FieldCodec.ForUInt32(66);
-    private readonly pbc::RepeatedField<uint> lackedNpcList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> LackedNpcList {
-      get { return lackedNpcList_; }
-    }
-
-    /// <summary>Field number for the "lacked_place_list" field.</summary>
-    public const int LackedPlaceListFieldNumber = 5;
-    private static readonly pb::FieldCodec<uint> _repeated_lackedPlaceList_codec
-        = pb::FieldCodec.ForUInt32(42);
-    private readonly pbc::RepeatedField<uint> lackedPlaceList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> LackedPlaceList {
-      get { return lackedPlaceList_; }
-    }
-
-    /// <summary>Field number for the "lacked_npc_map" field.</summary>
-    public const int LackedNpcMapFieldNumber = 10;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_lackedNpcMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 82);
-    private readonly pbc::MapField<uint, uint> lackedNpcMap_ = new pbc::MapField<uint, uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> LackedNpcMap {
-      get { return lackedNpcMap_; }
     }
 
     /// <summary>Field number for the "lacked_place_map" field.</summary>
@@ -164,6 +113,63 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::MapField<uint, uint> LackedPlaceMap {
       get { return lackedPlaceMap_; }
+    }
+
+    /// <summary>Field number for the "lacked_npc_map" field.</summary>
+    public const int LackedNpcMapFieldNumber = 7;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_lackedNpcMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 58);
+    private readonly pbc::MapField<uint, uint> lackedNpcMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> LackedNpcMap {
+      get { return lackedNpcMap_; }
+    }
+
+    /// <summary>Field number for the "lacked_place_list" field.</summary>
+    public const int LackedPlaceListFieldNumber = 11;
+    private static readonly pb::FieldCodec<uint> _repeated_lackedPlaceList_codec
+        = pb::FieldCodec.ForUInt32(90);
+    private readonly pbc::RepeatedField<uint> lackedPlaceList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> LackedPlaceList {
+      get { return lackedPlaceList_; }
+    }
+
+    /// <summary>Field number for the "quest_id" field.</summary>
+    public const int QuestIdFieldNumber = 3;
+    private uint questId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint QuestId {
+      get { return questId_; }
+      set {
+        questId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 6;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "lacked_npc_list" field.</summary>
+    public const int LackedNpcListFieldNumber = 14;
+    private static readonly pb::FieldCodec<uint> _repeated_lackedNpcList_codec
+        = pb::FieldCodec.ForUInt32(114);
+    private readonly pbc::RepeatedField<uint> lackedNpcList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> LackedNpcList {
+      get { return lackedNpcList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -181,12 +187,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (!LackedPlaceMap.Equals(other.LackedPlaceMap)) return false;
+      if (!LackedNpcMap.Equals(other.LackedNpcMap)) return false;
+      if(!lackedPlaceList_.Equals(other.lackedPlaceList_)) return false;
       if (QuestId != other.QuestId) return false;
       if (Retcode != other.Retcode) return false;
       if(!lackedNpcList_.Equals(other.lackedNpcList_)) return false;
-      if(!lackedPlaceList_.Equals(other.lackedPlaceList_)) return false;
-      if (!LackedNpcMap.Equals(other.LackedNpcMap)) return false;
-      if (!LackedPlaceMap.Equals(other.LackedPlaceMap)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -194,12 +200,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      hash ^= LackedPlaceMap.GetHashCode();
+      hash ^= LackedNpcMap.GetHashCode();
+      hash ^= lackedPlaceList_.GetHashCode();
       if (QuestId != 0) hash ^= QuestId.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
       hash ^= lackedNpcList_.GetHashCode();
-      hash ^= lackedPlaceList_.GetHashCode();
-      hash ^= LackedNpcMap.GetHashCode();
-      hash ^= LackedPlaceMap.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -220,16 +226,16 @@ namespace Weedwacker.Shared.Network.Proto {
     #else
       lackedPlaceMap_.WriteTo(output, _map_lackedPlaceMap_codec);
       if (QuestId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(24);
         output.WriteUInt32(QuestId);
       }
-      lackedPlaceList_.WriteTo(output, _repeated_lackedPlaceList_codec);
-      lackedNpcList_.WriteTo(output, _repeated_lackedNpcList_codec);
-      lackedNpcMap_.WriteTo(output, _map_lackedNpcMap_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(48);
         output.WriteInt32(Retcode);
       }
+      lackedNpcMap_.WriteTo(output, _map_lackedNpcMap_codec);
+      lackedPlaceList_.WriteTo(output, _repeated_lackedPlaceList_codec);
+      lackedNpcList_.WriteTo(output, _repeated_lackedNpcList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -242,16 +248,16 @@ namespace Weedwacker.Shared.Network.Proto {
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       lackedPlaceMap_.WriteTo(ref output, _map_lackedPlaceMap_codec);
       if (QuestId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(24);
         output.WriteUInt32(QuestId);
       }
-      lackedPlaceList_.WriteTo(ref output, _repeated_lackedPlaceList_codec);
-      lackedNpcList_.WriteTo(ref output, _repeated_lackedNpcList_codec);
-      lackedNpcMap_.WriteTo(ref output, _map_lackedNpcMap_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(48);
         output.WriteInt32(Retcode);
       }
+      lackedNpcMap_.WriteTo(ref output, _map_lackedNpcMap_codec);
+      lackedPlaceList_.WriteTo(ref output, _repeated_lackedPlaceList_codec);
+      lackedNpcList_.WriteTo(ref output, _repeated_lackedNpcList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -262,6 +268,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += lackedPlaceMap_.CalculateSize(_map_lackedPlaceMap_codec);
+      size += lackedNpcMap_.CalculateSize(_map_lackedNpcMap_codec);
+      size += lackedPlaceList_.CalculateSize(_repeated_lackedPlaceList_codec);
       if (QuestId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(QuestId);
       }
@@ -269,9 +278,6 @@ namespace Weedwacker.Shared.Network.Proto {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       size += lackedNpcList_.CalculateSize(_repeated_lackedNpcList_codec);
-      size += lackedPlaceList_.CalculateSize(_repeated_lackedPlaceList_codec);
-      size += lackedNpcMap_.CalculateSize(_map_lackedNpcMap_codec);
-      size += lackedPlaceMap_.CalculateSize(_map_lackedPlaceMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -284,6 +290,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      lackedPlaceMap_.Add(other.lackedPlaceMap_);
+      lackedNpcMap_.Add(other.lackedNpcMap_);
+      lackedPlaceList_.Add(other.lackedPlaceList_);
       if (other.QuestId != 0) {
         QuestId = other.QuestId;
       }
@@ -291,9 +300,6 @@ namespace Weedwacker.Shared.Network.Proto {
         Retcode = other.Retcode;
       }
       lackedNpcList_.Add(other.lackedNpcList_);
-      lackedPlaceList_.Add(other.lackedPlaceList_);
-      lackedNpcMap_.Add(other.lackedNpcMap_);
-      lackedPlaceMap_.Add(other.lackedPlaceMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -313,26 +319,26 @@ namespace Weedwacker.Shared.Network.Proto {
             lackedPlaceMap_.AddEntriesFrom(input, _map_lackedPlaceMap_codec);
             break;
           }
-          case 32: {
+          case 24: {
             QuestId = input.ReadUInt32();
             break;
           }
-          case 42:
-          case 40: {
-            lackedPlaceList_.AddEntriesFrom(input, _repeated_lackedPlaceList_codec);
+          case 48: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 66:
-          case 64: {
-            lackedNpcList_.AddEntriesFrom(input, _repeated_lackedNpcList_codec);
-            break;
-          }
-          case 82: {
+          case 58: {
             lackedNpcMap_.AddEntriesFrom(input, _map_lackedNpcMap_codec);
             break;
           }
+          case 90:
           case 88: {
-            Retcode = input.ReadInt32();
+            lackedPlaceList_.AddEntriesFrom(input, _repeated_lackedPlaceList_codec);
+            break;
+          }
+          case 114:
+          case 112: {
+            lackedNpcList_.AddEntriesFrom(input, _repeated_lackedNpcList_codec);
             break;
           }
         }
@@ -354,26 +360,26 @@ namespace Weedwacker.Shared.Network.Proto {
             lackedPlaceMap_.AddEntriesFrom(ref input, _map_lackedPlaceMap_codec);
             break;
           }
-          case 32: {
+          case 24: {
             QuestId = input.ReadUInt32();
             break;
           }
-          case 42:
-          case 40: {
-            lackedPlaceList_.AddEntriesFrom(ref input, _repeated_lackedPlaceList_codec);
+          case 48: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 66:
-          case 64: {
-            lackedNpcList_.AddEntriesFrom(ref input, _repeated_lackedNpcList_codec);
-            break;
-          }
-          case 82: {
+          case 58: {
             lackedNpcMap_.AddEntriesFrom(ref input, _map_lackedNpcMap_codec);
             break;
           }
+          case 90:
           case 88: {
-            Retcode = input.ReadInt32();
+            lackedPlaceList_.AddEntriesFrom(ref input, _repeated_lackedPlaceList_codec);
+            break;
+          }
+          case 114:
+          case 112: {
+            lackedNpcList_.AddEntriesFrom(ref input, _repeated_lackedNpcList_codec);
             break;
           }
         }

@@ -24,17 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static AchievementReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChFBY2hpZXZlbWVudC5wcm90byLpAQoLQWNoaWV2ZW1lbnQSGAoQZmluaXNo",
-            "X3RpbWVzdGFtcBgLIAEoDRIjCgZzdGF0dXMYDSABKA4yEy5BY2hpZXZlbWVu",
-            "dC5TdGF0dXMSFAoMY3VyX3Byb2dyZXNzGAwgASgNEgoKAmlkGA4gASgNEhYK",
-            "DnRvdGFsX3Byb2dyZXNzGAggASgNImEKBlN0YXR1cxISCg5TVEFUVVNfSU5W",
-            "QUxJRBAAEhUKEVNUQVRVU19VTkZJTklTSEVEEAESEwoPU1RBVFVTX0ZJTklT",
-            "SEVEEAISFwoTU1RBVFVTX1JFV0FSRF9UQUtFThADQiKqAh9XZWVkd2Fja2Vy",
-            "LlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChFBY2hpZXZlbWVudC5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90byKJAgoLQWNoaWV2ZW1lbnQSGAoQZmluaXNoX3RpbWVzdGFtcBgI",
+            "IAEoDRIUCgxjdXJfcHJvZ3Jlc3MYCyABKA0SFgoOdG90YWxfcHJvZ3Jlc3MY",
+            "BiABKA0SCgoCaWQYDiABKA0SQwoGc3RhdHVzGA8gASgOMjMuV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90by5BY2hpZXZlbWVudC5TdGF0dXMiYQoG",
+            "U3RhdHVzEhIKDlNUQVRVU19JTlZBTElEEAASFQoRU1RBVFVTX1VORklOSVNI",
+            "RUQQARITCg9TVEFUVVNfRklOSVNIRUQQAhIXChNTVEFUVVNfUkVXQVJEX1RB",
+            "S0VOEANiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.Achievement), global::Weedwacker.Shared.Network.Proto.Achievement.Parser, new[]{ "FinishTimestamp", "Status", "CurProgress", "Id", "TotalProgress" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.Achievement.Types.Status) }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.Achievement), global::Weedwacker.Shared.Network.Proto.Achievement.Parser, new[]{ "FinishTimestamp", "CurProgress", "TotalProgress", "Id", "Status" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.Achievement.Types.Status) }, null, null)
           }));
     }
     #endregion
@@ -76,10 +77,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Achievement(Achievement other) : this() {
       finishTimestamp_ = other.finishTimestamp_;
-      status_ = other.status_;
       curProgress_ = other.curProgress_;
-      id_ = other.id_;
       totalProgress_ = other.totalProgress_;
+      id_ = other.id_;
+      status_ = other.status_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,7 +91,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "finish_timestamp" field.</summary>
-    public const int FinishTimestampFieldNumber = 11;
+    public const int FinishTimestampFieldNumber = 8;
     private uint finishTimestamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,20 +102,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "status" field.</summary>
-    public const int StatusFieldNumber = 13;
-    private global::Weedwacker.Shared.Network.Proto.Achievement.Types.Status status_ = global::Weedwacker.Shared.Network.Proto.Achievement.Types.Status.Invalid;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Achievement.Types.Status Status {
-      get { return status_; }
-      set {
-        status_ = value;
-      }
-    }
-
     /// <summary>Field number for the "cur_progress" field.</summary>
-    public const int CurProgressFieldNumber = 12;
+    public const int CurProgressFieldNumber = 11;
     private uint curProgress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,6 +111,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return curProgress_; }
       set {
         curProgress_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "total_progress" field.</summary>
+    public const int TotalProgressFieldNumber = 6;
+    private uint totalProgress_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TotalProgress {
+      get { return totalProgress_; }
+      set {
+        totalProgress_ = value;
       }
     }
 
@@ -137,15 +138,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "total_progress" field.</summary>
-    public const int TotalProgressFieldNumber = 8;
-    private uint totalProgress_;
+    /// <summary>Field number for the "status" field.</summary>
+    public const int StatusFieldNumber = 15;
+    private global::Weedwacker.Shared.Network.Proto.Achievement.Types.Status status_ = global::Weedwacker.Shared.Network.Proto.Achievement.Types.Status.Invalid;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TotalProgress {
-      get { return totalProgress_; }
+    public global::Weedwacker.Shared.Network.Proto.Achievement.Types.Status Status {
+      get { return status_; }
       set {
-        totalProgress_ = value;
+        status_ = value;
       }
     }
 
@@ -165,10 +166,10 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (FinishTimestamp != other.FinishTimestamp) return false;
-      if (Status != other.Status) return false;
       if (CurProgress != other.CurProgress) return false;
-      if (Id != other.Id) return false;
       if (TotalProgress != other.TotalProgress) return false;
+      if (Id != other.Id) return false;
+      if (Status != other.Status) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -177,10 +178,10 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (FinishTimestamp != 0) hash ^= FinishTimestamp.GetHashCode();
-      if (Status != global::Weedwacker.Shared.Network.Proto.Achievement.Types.Status.Invalid) hash ^= Status.GetHashCode();
       if (CurProgress != 0) hash ^= CurProgress.GetHashCode();
-      if (Id != 0) hash ^= Id.GetHashCode();
       if (TotalProgress != 0) hash ^= TotalProgress.GetHashCode();
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (Status != global::Weedwacker.Shared.Network.Proto.Achievement.Types.Status.Invalid) hash ^= Status.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -200,24 +201,24 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (TotalProgress != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(48);
         output.WriteUInt32(TotalProgress);
       }
       if (FinishTimestamp != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(64);
         output.WriteUInt32(FinishTimestamp);
       }
       if (CurProgress != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(88);
         output.WriteUInt32(CurProgress);
-      }
-      if (Status != global::Weedwacker.Shared.Network.Proto.Achievement.Types.Status.Invalid) {
-        output.WriteRawTag(104);
-        output.WriteEnum((int) Status);
       }
       if (Id != 0) {
         output.WriteRawTag(112);
         output.WriteUInt32(Id);
+      }
+      if (Status != global::Weedwacker.Shared.Network.Proto.Achievement.Types.Status.Invalid) {
+        output.WriteRawTag(120);
+        output.WriteEnum((int) Status);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -230,24 +231,24 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (TotalProgress != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(48);
         output.WriteUInt32(TotalProgress);
       }
       if (FinishTimestamp != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(64);
         output.WriteUInt32(FinishTimestamp);
       }
       if (CurProgress != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(88);
         output.WriteUInt32(CurProgress);
-      }
-      if (Status != global::Weedwacker.Shared.Network.Proto.Achievement.Types.Status.Invalid) {
-        output.WriteRawTag(104);
-        output.WriteEnum((int) Status);
       }
       if (Id != 0) {
         output.WriteRawTag(112);
         output.WriteUInt32(Id);
+      }
+      if (Status != global::Weedwacker.Shared.Network.Proto.Achievement.Types.Status.Invalid) {
+        output.WriteRawTag(120);
+        output.WriteEnum((int) Status);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -262,17 +263,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (FinishTimestamp != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinishTimestamp);
       }
-      if (Status != global::Weedwacker.Shared.Network.Proto.Achievement.Types.Status.Invalid) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
-      }
       if (CurProgress != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurProgress);
+      }
+      if (TotalProgress != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalProgress);
       }
       if (Id != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Id);
       }
-      if (TotalProgress != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalProgress);
+      if (Status != global::Weedwacker.Shared.Network.Proto.Achievement.Types.Status.Invalid) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -289,17 +290,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.FinishTimestamp != 0) {
         FinishTimestamp = other.FinishTimestamp;
       }
-      if (other.Status != global::Weedwacker.Shared.Network.Proto.Achievement.Types.Status.Invalid) {
-        Status = other.Status;
-      }
       if (other.CurProgress != 0) {
         CurProgress = other.CurProgress;
+      }
+      if (other.TotalProgress != 0) {
+        TotalProgress = other.TotalProgress;
       }
       if (other.Id != 0) {
         Id = other.Id;
       }
-      if (other.TotalProgress != 0) {
-        TotalProgress = other.TotalProgress;
+      if (other.Status != global::Weedwacker.Shared.Network.Proto.Achievement.Types.Status.Invalid) {
+        Status = other.Status;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -316,24 +317,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 64: {
+          case 48: {
             TotalProgress = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 64: {
             FinishTimestamp = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 88: {
             CurProgress = input.ReadUInt32();
-            break;
-          }
-          case 104: {
-            Status = (global::Weedwacker.Shared.Network.Proto.Achievement.Types.Status) input.ReadEnum();
             break;
           }
           case 112: {
             Id = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            Status = (global::Weedwacker.Shared.Network.Proto.Achievement.Types.Status) input.ReadEnum();
             break;
           }
         }
@@ -351,24 +352,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 64: {
+          case 48: {
             TotalProgress = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 64: {
             FinishTimestamp = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 88: {
             CurProgress = input.ReadUInt32();
-            break;
-          }
-          case 104: {
-            Status = (global::Weedwacker.Shared.Network.Proto.Achievement.Types.Status) input.ReadEnum();
             break;
           }
           case 112: {
             Id = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            Status = (global::Weedwacker.Shared.Network.Proto.Achievement.Types.Status) input.ReadEnum();
             break;
           }
         }

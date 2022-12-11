@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static CrystalLinkTeamInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlDcnlzdGFsTGlua1RlYW1JbmZvLnByb3RvGhtDcnlzdGFsTGlua0F2YXRh",
-            "ckluZm8ucHJvdG8aGUNyeXN0YWxMaW5rQnVmZkluZm8ucHJvdG8idQoTQ3J5",
-            "c3RhbExpbmtUZWFtSW5mbxIsCg5idWZmX2luZm9fbGlzdBgCIAMoCzIULkNy",
-            "eXN0YWxMaW5rQnVmZkluZm8SMAoQYXZhdGFyX2luZm9fbGlzdBgLIAMoCzIW",
-            "LkNyeXN0YWxMaW5rQXZhdGFySW5mb0IiqgIfV2VlZHdhY2tlci5TaGFyZWQu",
-            "TmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChlDcnlzdGFsTGlua1RlYW1JbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvGhtDcnlzdGFsTGlua0F2YXRhckluZm8ucHJvdG8a",
+            "GUNyeXN0YWxMaW5rQnVmZkluZm8ucHJvdG8itQEKE0NyeXN0YWxMaW5rVGVh",
+            "bUluZm8SUAoQYXZhdGFyX2luZm9fbGlzdBgOIAMoCzI2LldlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8uQ3J5c3RhbExpbmtBdmF0YXJJbmZvEkwK",
+            "DmJ1ZmZfaW5mb19saXN0GAwgAygLMjQuV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5DcnlzdGFsTGlua0J1ZmZJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CrystalLinkAvatarInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CrystalLinkBuffInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CrystalLinkTeamInfo), global::Weedwacker.Shared.Network.Proto.CrystalLinkTeamInfo.Parser, new[]{ "BuffInfoList", "AvatarInfoList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CrystalLinkTeamInfo), global::Weedwacker.Shared.Network.Proto.CrystalLinkTeamInfo.Parser, new[]{ "AvatarInfoList", "BuffInfoList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,8 +75,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CrystalLinkTeamInfo(CrystalLinkTeamInfo other) : this() {
-      buffInfoList_ = other.buffInfoList_.Clone();
       avatarInfoList_ = other.avatarInfoList_.Clone();
+      buffInfoList_ = other.buffInfoList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,26 +86,26 @@ namespace Weedwacker.Shared.Network.Proto {
       return new CrystalLinkTeamInfo(this);
     }
 
-    /// <summary>Field number for the "buff_info_list" field.</summary>
-    public const int BuffInfoListFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.CrystalLinkBuffInfo> _repeated_buffInfoList_codec
-        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.CrystalLinkBuffInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CrystalLinkBuffInfo> buffInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CrystalLinkBuffInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CrystalLinkBuffInfo> BuffInfoList {
-      get { return buffInfoList_; }
-    }
-
     /// <summary>Field number for the "avatar_info_list" field.</summary>
-    public const int AvatarInfoListFieldNumber = 11;
+    public const int AvatarInfoListFieldNumber = 14;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.CrystalLinkAvatarInfo> _repeated_avatarInfoList_codec
-        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.CrystalLinkAvatarInfo.Parser);
+        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.CrystalLinkAvatarInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CrystalLinkAvatarInfo> avatarInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CrystalLinkAvatarInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CrystalLinkAvatarInfo> AvatarInfoList {
       get { return avatarInfoList_; }
+    }
+
+    /// <summary>Field number for the "buff_info_list" field.</summary>
+    public const int BuffInfoListFieldNumber = 12;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.CrystalLinkBuffInfo> _repeated_buffInfoList_codec
+        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.CrystalLinkBuffInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CrystalLinkBuffInfo> buffInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CrystalLinkBuffInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CrystalLinkBuffInfo> BuffInfoList {
+      get { return buffInfoList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,8 +123,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!buffInfoList_.Equals(other.buffInfoList_)) return false;
       if(!avatarInfoList_.Equals(other.avatarInfoList_)) return false;
+      if(!buffInfoList_.Equals(other.buffInfoList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -131,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= buffInfoList_.GetHashCode();
       hash ^= avatarInfoList_.GetHashCode();
+      hash ^= buffInfoList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -175,8 +176,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += buffInfoList_.CalculateSize(_repeated_buffInfoList_codec);
       size += avatarInfoList_.CalculateSize(_repeated_avatarInfoList_codec);
+      size += buffInfoList_.CalculateSize(_repeated_buffInfoList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -189,8 +190,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      buffInfoList_.Add(other.buffInfoList_);
       avatarInfoList_.Add(other.avatarInfoList_);
+      buffInfoList_.Add(other.buffInfoList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -206,11 +207,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
+          case 98: {
             buffInfoList_.AddEntriesFrom(input, _repeated_buffInfoList_codec);
             break;
           }
-          case 90: {
+          case 114: {
             avatarInfoList_.AddEntriesFrom(input, _repeated_avatarInfoList_codec);
             break;
           }
@@ -229,11 +230,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
+          case 98: {
             buffInfoList_.AddEntriesFrom(ref input, _repeated_buffInfoList_codec);
             break;
           }
-          case 90: {
+          case 114: {
             avatarInfoList_.AddEntriesFrom(ref input, _repeated_avatarInfoList_codec);
             break;
           }

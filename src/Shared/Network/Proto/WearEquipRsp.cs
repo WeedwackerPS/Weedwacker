@@ -24,10 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static WearEquipRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJXZWFyRXF1aXBSc3AucHJvdG8iSAoMV2VhckVxdWlwUnNwEg8KB3JldGNv",
-            "ZGUYBSABKAUSEgoKZXF1aXBfZ3VpZBgBIAEoBBITCgthdmF0YXJfZ3VpZBgH",
-            "IAEoBEIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJv",
-            "dG8z"));
+            "ChJXZWFyRXF1aXBSc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8iSAoMV2VhckVxdWlwUnNwEg8KB3JldGNvZGUYAyABKAUSEgoK",
+            "ZXF1aXBfZ3VpZBgBIAEoBBITCgthdmF0YXJfZ3VpZBgOIAEoBGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +38,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 681
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 625;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class WearEquipRsp : pb::IMessage<WearEquipRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 5;
+    public const int RetcodeFieldNumber = 3;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,7 +117,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "avatar_guid" field.</summary>
-    public const int AvatarGuidFieldNumber = 7;
+    public const int AvatarGuidFieldNumber = 14;
     private ulong avatarGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -176,11 +179,11 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteUInt64(EquipGuid);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(24);
         output.WriteInt32(Retcode);
       }
       if (AvatarGuid != 0UL) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(112);
         output.WriteUInt64(AvatarGuid);
       }
       if (_unknownFields != null) {
@@ -198,11 +201,11 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteUInt64(EquipGuid);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(24);
         output.WriteInt32(Retcode);
       }
       if (AvatarGuid != 0UL) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(112);
         output.WriteUInt64(AvatarGuid);
       }
       if (_unknownFields != null) {
@@ -264,11 +267,11 @@ namespace Weedwacker.Shared.Network.Proto {
             EquipGuid = input.ReadUInt64();
             break;
           }
-          case 40: {
+          case 24: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 56: {
+          case 112: {
             AvatarGuid = input.ReadUInt64();
             break;
           }
@@ -291,11 +294,11 @@ namespace Weedwacker.Shared.Network.Proto {
             EquipGuid = input.ReadUInt64();
             break;
           }
-          case 40: {
+          case 24: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 56: {
+          case 112: {
             AvatarGuid = input.ReadUInt64();
             break;
           }

@@ -24,15 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static ResinCardDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChNSZXNpbkNhcmREYXRhLnByb3RvInMKDVJlc2luQ2FyZERhdGESGgoScmVt",
-            "YWluX3Jld2FyZF9kYXlzGAMgASgNEhMKC2V4cGlyZV90aW1lGAwgASgNEh4K",
-            "Fmxhc3RfZGFpbHlfcmV3YXJkX3RpbWUYAiABKA0SEQoJY29uZmlnX2lkGAcg",
-            "ASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90",
-            "bzM="));
+            "ChNSZXNpbkNhcmREYXRhLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvInMKDVJlc2luQ2FyZERhdGESHgoWbGFzdF9kYWlseV9yZXdh",
+            "cmRfdGltZRgKIAEoDRIRCgljb25maWdfaWQYAiABKA0SEwoLZXhwaXJlX3Rp",
+            "bWUYDSABKA0SGgoScmVtYWluX3Jld2FyZF9kYXlzGAsgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ResinCardData), global::Weedwacker.Shared.Network.Proto.ResinCardData.Parser, new[]{ "RemainRewardDays", "ExpireTime", "LastDailyRewardTime", "ConfigId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ResinCardData), global::Weedwacker.Shared.Network.Proto.ResinCardData.Parser, new[]{ "LastDailyRewardTime", "ConfigId", "ExpireTime", "RemainRewardDays" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,10 +72,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ResinCardData(ResinCardData other) : this() {
-      remainRewardDays_ = other.remainRewardDays_;
-      expireTime_ = other.expireTime_;
       lastDailyRewardTime_ = other.lastDailyRewardTime_;
       configId_ = other.configId_;
+      expireTime_ = other.expireTime_;
+      remainRewardDays_ = other.remainRewardDays_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,32 +85,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ResinCardData(this);
     }
 
-    /// <summary>Field number for the "remain_reward_days" field.</summary>
-    public const int RemainRewardDaysFieldNumber = 3;
-    private uint remainRewardDays_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RemainRewardDays {
-      get { return remainRewardDays_; }
-      set {
-        remainRewardDays_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "expire_time" field.</summary>
-    public const int ExpireTimeFieldNumber = 12;
-    private uint expireTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ExpireTime {
-      get { return expireTime_; }
-      set {
-        expireTime_ = value;
-      }
-    }
-
     /// <summary>Field number for the "last_daily_reward_time" field.</summary>
-    public const int LastDailyRewardTimeFieldNumber = 2;
+    public const int LastDailyRewardTimeFieldNumber = 10;
     private uint lastDailyRewardTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,7 +98,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "config_id" field.</summary>
-    public const int ConfigIdFieldNumber = 7;
+    public const int ConfigIdFieldNumber = 2;
     private uint configId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -131,6 +106,30 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return configId_; }
       set {
         configId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "expire_time" field.</summary>
+    public const int ExpireTimeFieldNumber = 13;
+    private uint expireTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ExpireTime {
+      get { return expireTime_; }
+      set {
+        expireTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "remain_reward_days" field.</summary>
+    public const int RemainRewardDaysFieldNumber = 11;
+    private uint remainRewardDays_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint RemainRewardDays {
+      get { return remainRewardDays_; }
+      set {
+        remainRewardDays_ = value;
       }
     }
 
@@ -149,10 +148,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (RemainRewardDays != other.RemainRewardDays) return false;
-      if (ExpireTime != other.ExpireTime) return false;
       if (LastDailyRewardTime != other.LastDailyRewardTime) return false;
       if (ConfigId != other.ConfigId) return false;
+      if (ExpireTime != other.ExpireTime) return false;
+      if (RemainRewardDays != other.RemainRewardDays) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -160,10 +159,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (RemainRewardDays != 0) hash ^= RemainRewardDays.GetHashCode();
-      if (ExpireTime != 0) hash ^= ExpireTime.GetHashCode();
       if (LastDailyRewardTime != 0) hash ^= LastDailyRewardTime.GetHashCode();
       if (ConfigId != 0) hash ^= ConfigId.GetHashCode();
+      if (ExpireTime != 0) hash ^= ExpireTime.GetHashCode();
+      if (RemainRewardDays != 0) hash ^= RemainRewardDays.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -182,20 +181,20 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (LastDailyRewardTime != 0) {
+      if (ConfigId != 0) {
         output.WriteRawTag(16);
+        output.WriteUInt32(ConfigId);
+      }
+      if (LastDailyRewardTime != 0) {
+        output.WriteRawTag(80);
         output.WriteUInt32(LastDailyRewardTime);
       }
       if (RemainRewardDays != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(88);
         output.WriteUInt32(RemainRewardDays);
       }
-      if (ConfigId != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(ConfigId);
-      }
       if (ExpireTime != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(104);
         output.WriteUInt32(ExpireTime);
       }
       if (_unknownFields != null) {
@@ -208,20 +207,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (LastDailyRewardTime != 0) {
+      if (ConfigId != 0) {
         output.WriteRawTag(16);
+        output.WriteUInt32(ConfigId);
+      }
+      if (LastDailyRewardTime != 0) {
+        output.WriteRawTag(80);
         output.WriteUInt32(LastDailyRewardTime);
       }
       if (RemainRewardDays != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(88);
         output.WriteUInt32(RemainRewardDays);
       }
-      if (ConfigId != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(ConfigId);
-      }
       if (ExpireTime != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(104);
         output.WriteUInt32(ExpireTime);
       }
       if (_unknownFields != null) {
@@ -234,17 +233,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (RemainRewardDays != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RemainRewardDays);
-      }
-      if (ExpireTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ExpireTime);
-      }
       if (LastDailyRewardTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LastDailyRewardTime);
       }
       if (ConfigId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConfigId);
+      }
+      if (ExpireTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ExpireTime);
+      }
+      if (RemainRewardDays != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RemainRewardDays);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -258,17 +257,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.RemainRewardDays != 0) {
-        RemainRewardDays = other.RemainRewardDays;
-      }
-      if (other.ExpireTime != 0) {
-        ExpireTime = other.ExpireTime;
-      }
       if (other.LastDailyRewardTime != 0) {
         LastDailyRewardTime = other.LastDailyRewardTime;
       }
       if (other.ConfigId != 0) {
         ConfigId = other.ConfigId;
+      }
+      if (other.ExpireTime != 0) {
+        ExpireTime = other.ExpireTime;
+      }
+      if (other.RemainRewardDays != 0) {
+        RemainRewardDays = other.RemainRewardDays;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -286,18 +285,18 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 16: {
-            LastDailyRewardTime = input.ReadUInt32();
-            break;
-          }
-          case 24: {
-            RemainRewardDays = input.ReadUInt32();
-            break;
-          }
-          case 56: {
             ConfigId = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 80: {
+            LastDailyRewardTime = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            RemainRewardDays = input.ReadUInt32();
+            break;
+          }
+          case 104: {
             ExpireTime = input.ReadUInt32();
             break;
           }
@@ -317,18 +316,18 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 16: {
-            LastDailyRewardTime = input.ReadUInt32();
-            break;
-          }
-          case 24: {
-            RemainRewardDays = input.ReadUInt32();
-            break;
-          }
-          case 56: {
             ConfigId = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 80: {
+            LastDailyRewardTime = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            RemainRewardDays = input.ReadUInt32();
+            break;
+          }
+          case 104: {
             ExpireTime = input.ReadUInt32();
             break;
           }

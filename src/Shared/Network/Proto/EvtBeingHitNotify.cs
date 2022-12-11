@@ -24,15 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static EvtBeingHitNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdFdnRCZWluZ0hpdE5vdGlmeS5wcm90bxoVRXZ0QmVpbmdIaXRJbmZvLnBy",
-            "b3RvGhFGb3J3YXJkVHlwZS5wcm90byJhChFFdnRCZWluZ0hpdE5vdGlmeRIi",
-            "Cgxmb3J3YXJkX3R5cGUYBiABKA4yDC5Gb3J3YXJkVHlwZRIoCg5iZWluZ19o",
-            "aXRfaW5mbxgDIAEoCzIQLkV2dEJlaW5nSGl0SW5mb0IiqgIfV2VlZHdhY2tl",
-            "ci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChdFdnRCZWluZ0hpdE5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxoVRXZ0QmVpbmdIaXRJbmZvLnByb3RvGhFGb3J3YXJk",
+            "VHlwZS5wcm90byKhAQoRRXZ0QmVpbmdIaXROb3RpZnkSSAoOYmVpbmdfaGl0",
+            "X2luZm8YDCABKAsyMC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
+            "LkV2dEJlaW5nSGl0SW5mbxJCCgxmb3J3YXJkX3R5cGUYCyABKA4yLC5XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkZvcndhcmRUeXBlYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.EvtBeingHitInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ForwardTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EvtBeingHitNotify), global::Weedwacker.Shared.Network.Proto.EvtBeingHitNotify.Parser, new[]{ "ForwardType", "BeingHitInfo" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EvtBeingHitNotify), global::Weedwacker.Shared.Network.Proto.EvtBeingHitNotify.Parser, new[]{ "BeingHitInfo", "ForwardType" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,10 +42,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 372
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 379;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class EvtBeingHitNotify : pb::IMessage<EvtBeingHitNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,8 +85,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EvtBeingHitNotify(EvtBeingHitNotify other) : this() {
-      forwardType_ = other.forwardType_;
       beingHitInfo_ = other.beingHitInfo_ != null ? other.beingHitInfo_.Clone() : null;
+      forwardType_ = other.forwardType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,20 +96,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new EvtBeingHitNotify(this);
     }
 
-    /// <summary>Field number for the "forward_type" field.</summary>
-    public const int ForwardTypeFieldNumber = 6;
-    private global::Weedwacker.Shared.Network.Proto.ForwardType forwardType_ = global::Weedwacker.Shared.Network.Proto.ForwardType.Local;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.ForwardType ForwardType {
-      get { return forwardType_; }
-      set {
-        forwardType_ = value;
-      }
-    }
-
     /// <summary>Field number for the "being_hit_info" field.</summary>
-    public const int BeingHitInfoFieldNumber = 3;
+    public const int BeingHitInfoFieldNumber = 12;
     private global::Weedwacker.Shared.Network.Proto.EvtBeingHitInfo beingHitInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -111,6 +105,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return beingHitInfo_; }
       set {
         beingHitInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "forward_type" field.</summary>
+    public const int ForwardTypeFieldNumber = 11;
+    private global::Weedwacker.Shared.Network.Proto.ForwardType forwardType_ = global::Weedwacker.Shared.Network.Proto.ForwardType.Local;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.ForwardType ForwardType {
+      get { return forwardType_; }
+      set {
+        forwardType_ = value;
       }
     }
 
@@ -129,8 +135,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (ForwardType != other.ForwardType) return false;
       if (!object.Equals(BeingHitInfo, other.BeingHitInfo)) return false;
+      if (ForwardType != other.ForwardType) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -138,8 +144,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) hash ^= ForwardType.GetHashCode();
       if (beingHitInfo_ != null) hash ^= BeingHitInfo.GetHashCode();
+      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) hash ^= ForwardType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -158,13 +164,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (beingHitInfo_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(BeingHitInfo);
-      }
       if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(88);
         output.WriteEnum((int) ForwardType);
+      }
+      if (beingHitInfo_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(BeingHitInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -176,13 +182,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (beingHitInfo_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(BeingHitInfo);
-      }
       if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(88);
         output.WriteEnum((int) ForwardType);
+      }
+      if (beingHitInfo_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(BeingHitInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -194,11 +200,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ForwardType);
-      }
       if (beingHitInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(BeingHitInfo);
+      }
+      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ForwardType);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -212,14 +218,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
-        ForwardType = other.ForwardType;
-      }
       if (other.beingHitInfo_ != null) {
         if (beingHitInfo_ == null) {
           BeingHitInfo = new global::Weedwacker.Shared.Network.Proto.EvtBeingHitInfo();
         }
         BeingHitInfo.MergeFrom(other.BeingHitInfo);
+      }
+      if (other.ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
+        ForwardType = other.ForwardType;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -236,15 +242,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
+          case 88: {
+            ForwardType = (global::Weedwacker.Shared.Network.Proto.ForwardType) input.ReadEnum();
+            break;
+          }
+          case 98: {
             if (beingHitInfo_ == null) {
               BeingHitInfo = new global::Weedwacker.Shared.Network.Proto.EvtBeingHitInfo();
             }
             input.ReadMessage(BeingHitInfo);
-            break;
-          }
-          case 48: {
-            ForwardType = (global::Weedwacker.Shared.Network.Proto.ForwardType) input.ReadEnum();
             break;
           }
         }
@@ -262,15 +268,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
+          case 88: {
+            ForwardType = (global::Weedwacker.Shared.Network.Proto.ForwardType) input.ReadEnum();
+            break;
+          }
+          case 98: {
             if (beingHitInfo_ == null) {
               BeingHitInfo = new global::Weedwacker.Shared.Network.Proto.EvtBeingHitInfo();
             }
             input.ReadMessage(BeingHitInfo);
-            break;
-          }
-          case 48: {
-            ForwardType = (global::Weedwacker.Shared.Network.Proto.ForwardType) input.ReadEnum();
             break;
           }
         }

@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static LaunchFireworksReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhMYXVuY2hGaXJld29ya3NSZXEucHJvdG8aH0ZpcmV3b3Jrc0xhdW5jaFNj",
-            "aGVtZURhdGEucHJvdG8iRQoSTGF1bmNoRmlyZXdvcmtzUmVxEi8KC3NjaGVt",
-            "ZV9kYXRhGA0gASgLMhouRmlyZXdvcmtzTGF1bmNoU2NoZW1lRGF0YUIiqgIf",
-            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChhMYXVuY2hGaXJld29ya3NSZXEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aH0ZpcmV3b3Jrc0xhdW5jaFNjaGVtZURhdGEucHJv",
+            "dG8iZQoSTGF1bmNoRmlyZXdvcmtzUmVxEk8KC3NjaGVtZV9kYXRhGAggASgL",
+            "MjouV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5GaXJld29ya3NM",
+            "YXVuY2hTY2hlbWVEYXRhYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FireworksLaunchSchemeDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 6090
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5977;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class LaunchFireworksReq : pb::IMessage<LaunchFireworksReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "scheme_data" field.</summary>
-    public const int SchemeDataFieldNumber = 13;
+    public const int SchemeDataFieldNumber = 8;
     private global::Weedwacker.Shared.Network.Proto.FireworksLaunchSchemeData schemeData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -143,7 +148,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (schemeData_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(66);
         output.WriteMessage(SchemeData);
       }
       if (_unknownFields != null) {
@@ -157,7 +162,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (schemeData_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(66);
         output.WriteMessage(SchemeData);
       }
       if (_unknownFields != null) {
@@ -206,7 +211,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 106: {
+          case 66: {
             if (schemeData_ == null) {
               SchemeData = new global::Weedwacker.Shared.Network.Proto.FireworksLaunchSchemeData();
             }
@@ -228,7 +233,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 106: {
+          case 66: {
             if (schemeData_ == null) {
               SchemeData = new global::Weedwacker.Shared.Network.Proto.FireworksLaunchSchemeData();
             }

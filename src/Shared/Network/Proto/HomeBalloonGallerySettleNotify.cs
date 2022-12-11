@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeBalloonGallerySettleNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiRIb21lQmFsbG9vbkdhbGxlcnlTZXR0bGVOb3RpZnkucHJvdG8aHkJhbGxv",
-            "b25HYWxsZXJ5U2V0dGxlSW5mby5wcm90byKJAQoeSG9tZUJhbGxvb25HYWxs",
-            "ZXJ5U2V0dGxlTm90aWZ5EhIKCmdhbGxlcnlfaWQYASABKA0SLgoLc2V0dGxl",
-            "X2luZm8YBSABKAsyGS5CYWxsb29uR2FsbGVyeVNldHRsZUluZm8SDAoEcmFu",
-            "axgGIAEoDRIVCg1pc19uZXdfcmVjb3JkGAQgASgIQiKqAh9XZWVkd2Fja2Vy",
-            "LlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiRIb21lQmFsbG9vbkdhbGxlcnlTZXR0bGVOb3RpZnkucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aHkJhbGxvb25HYWxsZXJ5U2V0",
+            "dGxlSW5mby5wcm90byKpAQoeSG9tZUJhbGxvb25HYWxsZXJ5U2V0dGxlTm90",
+            "aWZ5EhIKCmdhbGxlcnlfaWQYCCABKA0SDAoEcmFuaxgNIAEoDRJOCgtzZXR0",
+            "bGVfaW5mbxgFIAEoCzI5LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
+            "dG8uQmFsbG9vbkdhbGxlcnlTZXR0bGVJbmZvEhUKDWlzX25ld19yZWNvcmQY",
+            "CSABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.BalloonGallerySettleInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeBalloonGallerySettleNotify), global::Weedwacker.Shared.Network.Proto.HomeBalloonGallerySettleNotify.Parser, new[]{ "GalleryId", "SettleInfo", "Rank", "IsNewRecord" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeBalloonGallerySettleNotify), global::Weedwacker.Shared.Network.Proto.HomeBalloonGallerySettleNotify.Parser, new[]{ "GalleryId", "Rank", "SettleInfo", "IsNewRecord" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4811
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4604;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class HomeBalloonGallerySettleNotify : pb::IMessage<HomeBalloonGallerySettleNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,8 +85,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeBalloonGallerySettleNotify(HomeBalloonGallerySettleNotify other) : this() {
       galleryId_ = other.galleryId_;
-      settleInfo_ = other.settleInfo_ != null ? other.settleInfo_.Clone() : null;
       rank_ = other.rank_;
+      settleInfo_ = other.settleInfo_ != null ? other.settleInfo_.Clone() : null;
       isNewRecord_ = other.isNewRecord_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -93,7 +98,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "gallery_id" field.</summary>
-    public const int GalleryIdFieldNumber = 1;
+    public const int GalleryIdFieldNumber = 8;
     private uint galleryId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,6 +106,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return galleryId_; }
       set {
         galleryId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "rank" field.</summary>
+    public const int RankFieldNumber = 13;
+    private uint rank_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Rank {
+      get { return rank_; }
+      set {
+        rank_ = value;
       }
     }
 
@@ -116,20 +133,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "rank" field.</summary>
-    public const int RankFieldNumber = 6;
-    private uint rank_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Rank {
-      get { return rank_; }
-      set {
-        rank_ = value;
-      }
-    }
-
     /// <summary>Field number for the "is_new_record" field.</summary>
-    public const int IsNewRecordFieldNumber = 4;
+    public const int IsNewRecordFieldNumber = 9;
     private bool isNewRecord_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,8 +161,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (GalleryId != other.GalleryId) return false;
-      if (!object.Equals(SettleInfo, other.SettleInfo)) return false;
       if (Rank != other.Rank) return false;
+      if (!object.Equals(SettleInfo, other.SettleInfo)) return false;
       if (IsNewRecord != other.IsNewRecord) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -167,8 +172,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (GalleryId != 0) hash ^= GalleryId.GetHashCode();
-      if (settleInfo_ != null) hash ^= SettleInfo.GetHashCode();
       if (Rank != 0) hash ^= Rank.GetHashCode();
+      if (settleInfo_ != null) hash ^= SettleInfo.GetHashCode();
       if (IsNewRecord != false) hash ^= IsNewRecord.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -188,20 +193,20 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (GalleryId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(GalleryId);
-      }
-      if (IsNewRecord != false) {
-        output.WriteRawTag(32);
-        output.WriteBool(IsNewRecord);
-      }
       if (settleInfo_ != null) {
         output.WriteRawTag(42);
         output.WriteMessage(SettleInfo);
       }
+      if (GalleryId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(GalleryId);
+      }
+      if (IsNewRecord != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(IsNewRecord);
+      }
       if (Rank != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(104);
         output.WriteUInt32(Rank);
       }
       if (_unknownFields != null) {
@@ -214,20 +219,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (GalleryId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(GalleryId);
-      }
-      if (IsNewRecord != false) {
-        output.WriteRawTag(32);
-        output.WriteBool(IsNewRecord);
-      }
       if (settleInfo_ != null) {
         output.WriteRawTag(42);
         output.WriteMessage(SettleInfo);
       }
+      if (GalleryId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(GalleryId);
+      }
+      if (IsNewRecord != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(IsNewRecord);
+      }
       if (Rank != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(104);
         output.WriteUInt32(Rank);
       }
       if (_unknownFields != null) {
@@ -243,11 +248,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (GalleryId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GalleryId);
       }
-      if (settleInfo_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SettleInfo);
-      }
       if (Rank != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Rank);
+      }
+      if (settleInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SettleInfo);
       }
       if (IsNewRecord != false) {
         size += 1 + 1;
@@ -267,14 +272,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.GalleryId != 0) {
         GalleryId = other.GalleryId;
       }
+      if (other.Rank != 0) {
+        Rank = other.Rank;
+      }
       if (other.settleInfo_ != null) {
         if (settleInfo_ == null) {
           SettleInfo = new global::Weedwacker.Shared.Network.Proto.BalloonGallerySettleInfo();
         }
         SettleInfo.MergeFrom(other.SettleInfo);
-      }
-      if (other.Rank != 0) {
-        Rank = other.Rank;
       }
       if (other.IsNewRecord != false) {
         IsNewRecord = other.IsNewRecord;
@@ -294,14 +299,6 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            GalleryId = input.ReadUInt32();
-            break;
-          }
-          case 32: {
-            IsNewRecord = input.ReadBool();
-            break;
-          }
           case 42: {
             if (settleInfo_ == null) {
               SettleInfo = new global::Weedwacker.Shared.Network.Proto.BalloonGallerySettleInfo();
@@ -309,7 +306,15 @@ namespace Weedwacker.Shared.Network.Proto {
             input.ReadMessage(SettleInfo);
             break;
           }
-          case 48: {
+          case 64: {
+            GalleryId = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            IsNewRecord = input.ReadBool();
+            break;
+          }
+          case 104: {
             Rank = input.ReadUInt32();
             break;
           }
@@ -328,14 +333,6 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            GalleryId = input.ReadUInt32();
-            break;
-          }
-          case 32: {
-            IsNewRecord = input.ReadBool();
-            break;
-          }
           case 42: {
             if (settleInfo_ == null) {
               SettleInfo = new global::Weedwacker.Shared.Network.Proto.BalloonGallerySettleInfo();
@@ -343,7 +340,15 @@ namespace Weedwacker.Shared.Network.Proto {
             input.ReadMessage(SettleInfo);
             break;
           }
-          case 48: {
+          case 64: {
+            GalleryId = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            IsNewRecord = input.ReadBool();
+            break;
+          }
+          case 104: {
             Rank = input.ReadUInt32();
             break;
           }

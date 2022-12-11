@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeSetBlueprintFriendOptionRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVIb21lU2V0Qmx1ZXByaW50RnJpZW5kT3B0aW9uUnNwLnByb3RvIlAKH0hv",
-            "bWVTZXRCbHVlcHJpbnRGcmllbmRPcHRpb25Sc3ASHAoUaXNfYWxsb3dfZnJp",
-            "ZW5kX2NvcHkYAiABKAgSDwoHcmV0Y29kZRgMIAEoBUIiqgIfV2VlZHdhY2tl",
-            "ci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiVIb21lU2V0Qmx1ZXByaW50RnJpZW5kT3B0aW9uUnNwLnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIlAKH0hvbWVTZXRCbHVlcHJp",
+            "bnRGcmllbmRPcHRpb25Sc3ASHAoUaXNfYWxsb3dfZnJpZW5kX2NvcHkYDiAB",
+            "KAgSDwoHcmV0Y29kZRgNIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4604
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4615;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class HomeSetBlueprintFriendOptionRsp : pb::IMessage<HomeSetBlueprintFriendOptionRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_allow_friend_copy" field.</summary>
-    public const int IsAllowFriendCopyFieldNumber = 2;
+    public const int IsAllowFriendCopyFieldNumber = 14;
     private bool isAllowFriendCopy_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,7 +105,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 12;
+    public const int RetcodeFieldNumber = 13;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,13 +160,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsAllowFriendCopy != false) {
-        output.WriteRawTag(16);
-        output.WriteBool(IsAllowFriendCopy);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(104);
         output.WriteInt32(Retcode);
+      }
+      if (IsAllowFriendCopy != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(IsAllowFriendCopy);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -174,13 +178,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsAllowFriendCopy != false) {
-        output.WriteRawTag(16);
-        output.WriteBool(IsAllowFriendCopy);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(104);
         output.WriteInt32(Retcode);
+      }
+      if (IsAllowFriendCopy != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(IsAllowFriendCopy);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -231,12 +235,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            IsAllowFriendCopy = input.ReadBool();
+          case 104: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 96: {
-            Retcode = input.ReadInt32();
+          case 112: {
+            IsAllowFriendCopy = input.ReadBool();
             break;
           }
         }
@@ -254,12 +258,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            IsAllowFriendCopy = input.ReadBool();
+          case 104: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 96: {
-            Retcode = input.ReadInt32();
+          case 112: {
+            IsAllowFriendCopy = input.ReadBool();
             break;
           }
         }

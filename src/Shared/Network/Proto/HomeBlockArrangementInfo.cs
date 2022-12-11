@@ -24,31 +24,38 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeBlockArrangementInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5Ib21lQmxvY2tBcnJhbmdlbWVudEluZm8ucHJvdG8aFEhvbWVBbmltYWxE",
-            "YXRhLnByb3RvGhlIb21lQmxvY2tEb3RQYXR0ZXJuLnByb3RvGhhIb21lQmxv",
-            "Y2tGaWVsZERhdGEucHJvdG8aIkhvbWVGdXJuaXR1cmVDdXN0b21TdWl0ZURh",
-            "dGEucHJvdG8aF0hvbWVGdXJuaXR1cmVEYXRhLnByb3RvGhxIb21lRnVybml0",
-            "dXJlR3JvdXBEYXRhLnByb3RvGhxIb21lRnVybml0dXJlU3VpdGVEYXRhLnBy",
-            "b3RvGhFIb21lTnBjRGF0YS5wcm90bxoWV2Vla2VuZERqaW5uSW5mby5wcm90",
-            "byLUBAoYSG9tZUJsb2NrQXJyYW5nZW1lbnRJbmZvEhMKC2lzX3VubG9ja2Vk",
-            "GAEgASgIEhUKDWNvbWZvcnRfdmFsdWUYAiABKA0SKwoSZGVwbG95X2FuaW1h",
-            "bF9saXN0GAQgAygLMg8uSG9tZUFuaW1hbERhdGESNQoUZnVybml0dXJlX2dy",
-            "b3VwX2xpc3QYBSADKAsyFy5Ib21lRnVybml0dXJlR3JvdXBEYXRhEjIKF3dl",
-            "ZWtlbmRfZGppbm5faW5mb19saXN0GA0gAygLMhEuV2Vla2VuZERqaW5uSW5m",
-            "bxI1ChRmdXJuaXR1cmVfc3VpdGVfbGlzdBgPIAMoCzIXLkhvbWVGdXJuaXR1",
-            "cmVTdWl0ZURhdGESJwoKZmllbGRfbGlzdBgDIAMoCzITLkhvbWVCbG9ja0Zp",
-            "ZWxkRGF0YRIlCg9kZXBsb3lfbnBjX2xpc3QYCyADKAsyDC5Ib21lTnBjRGF0",
-            "YRIuChBkb3RfcGF0dGVybl9saXN0GAcgAygLMhQuSG9tZUJsb2NrRG90UGF0",
-            "dGVybhI1ChlwZXJzaXN0ZW50X2Z1cm5pdHVyZV9saXN0GAkgAygLMhIuSG9t",
-            "ZUZ1cm5pdHVyZURhdGESMAoUZGVwbG95X2Z1cm5pdXJlX2xpc3QYDCADKAsy",
-            "Ei5Ib21lRnVybml0dXJlRGF0YRIQCghibG9ja19pZBgGIAEoDRJCChtmdXJu",
-            "aXR1cmVfY3VzdG9tX3N1aXRlX2xpc3QYDiADKAsyHS5Ib21lRnVybml0dXJl",
-            "Q3VzdG9tU3VpdGVEYXRhQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
-            "LlByb3RvYgZwcm90bzM="));
+            "Ch5Ib21lQmxvY2tBcnJhbmdlbWVudEluZm8ucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aFEhvbWVBbmltYWxEYXRhLnByb3RvGhlI",
+            "b21lQmxvY2tEb3RQYXR0ZXJuLnByb3RvGhhIb21lQmxvY2tGaWVsZERhdGEu",
+            "cHJvdG8aIkhvbWVGdXJuaXR1cmVDdXN0b21TdWl0ZURhdGEucHJvdG8aF0hv",
+            "bWVGdXJuaXR1cmVEYXRhLnByb3RvGhxIb21lRnVybml0dXJlR3JvdXBEYXRh",
+            "LnByb3RvGhxIb21lRnVybml0dXJlU3VpdGVEYXRhLnByb3RvGhFIb21lTnBj",
+            "RGF0YS5wcm90bxoWV2Vla2VuZERqaW5uSW5mby5wcm90byKNBwoYSG9tZUJs",
+            "b2NrQXJyYW5nZW1lbnRJbmZvEk8KE1VuazMzMDBfR01NQUlESUpPSk0YCiAD",
+            "KAsyMi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkhvbWVGdXJu",
+            "aXR1cmVEYXRhEksKEmRlcGxveV9hbmltYWxfbGlzdBgHIAMoCzIvLldlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uSG9tZUFuaW1hbERhdGESVQoU",
+            "ZnVybml0dXJlX3N1aXRlX2xpc3QYAyADKAsyNy5XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvLkhvbWVGdXJuaXR1cmVTdWl0ZURhdGESUgoXd2Vl",
+            "a2VuZF9kamlubl9pbmZvX2xpc3QYBSADKAsyMS5XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvLldlZWtlbmREamlubkluZm8SEAoIYmxvY2tfaWQY",
+            "DiABKA0STgoQZG90X3BhdHRlcm5fbGlzdBgGIAMoCzI0LldlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8uSG9tZUJsb2NrRG90UGF0dGVybhITCgtp",
+            "c191bmxvY2tlZBgPIAEoCBJFCg9kZXBsb3lfbnBjX2xpc3QYASADKAsyLC5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkhvbWVOcGNEYXRhElUK",
+            "FGZ1cm5pdHVyZV9ncm91cF9saXN0GAggAygLMjcuV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90by5Ib21lRnVybml0dXJlR3JvdXBEYXRhEkcKCmZp",
+            "ZWxkX2xpc3QYDSADKAsyMy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
+            "b3RvLkhvbWVCbG9ja0ZpZWxkRGF0YRIVCg1jb21mb3J0X3ZhbHVlGAkgASgN",
+            "Ek8KE1VuazMzMDBfREVJRUNKQ0FGTE4YDCADKAsyMi5XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvLkhvbWVGdXJuaXR1cmVEYXRhEmIKG2Z1cm5p",
+            "dHVyZV9jdXN0b21fc3VpdGVfbGlzdBgEIAMoCzI9LldlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8uSG9tZUZ1cm5pdHVyZUN1c3RvbVN1aXRlRGF0",
+            "YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HomeAnimalDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.HomeBlockDotPatternReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.HomeBlockFieldDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.HomeFurnitureCustomSuiteDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.HomeFurnitureDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.HomeFurnitureGroupDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.HomeFurnitureSuiteDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.HomeNpcDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.WeekendDjinnInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeBlockArrangementInfo), global::Weedwacker.Shared.Network.Proto.HomeBlockArrangementInfo.Parser, new[]{ "IsUnlocked", "ComfortValue", "DeployAnimalList", "FurnitureGroupList", "WeekendDjinnInfoList", "FurnitureSuiteList", "FieldList", "DeployNpcList", "DotPatternList", "PersistentFurnitureList", "DeployFurniureList", "BlockId", "FurnitureCustomSuiteList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeBlockArrangementInfo), global::Weedwacker.Shared.Network.Proto.HomeBlockArrangementInfo.Parser, new[]{ "Unk3300GMMAIDIJOJM", "DeployAnimalList", "FurnitureSuiteList", "WeekendDjinnInfoList", "BlockId", "DotPatternList", "IsUnlocked", "DeployNpcList", "FurnitureGroupList", "FieldList", "ComfortValue", "Unk3300DEIECJCAFLN", "FurnitureCustomSuiteList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -89,18 +96,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeBlockArrangementInfo(HomeBlockArrangementInfo other) : this() {
-      isUnlocked_ = other.isUnlocked_;
-      comfortValue_ = other.comfortValue_;
+      unk3300GMMAIDIJOJM_ = other.unk3300GMMAIDIJOJM_.Clone();
       deployAnimalList_ = other.deployAnimalList_.Clone();
-      furnitureGroupList_ = other.furnitureGroupList_.Clone();
-      weekendDjinnInfoList_ = other.weekendDjinnInfoList_.Clone();
       furnitureSuiteList_ = other.furnitureSuiteList_.Clone();
-      fieldList_ = other.fieldList_.Clone();
-      deployNpcList_ = other.deployNpcList_.Clone();
-      dotPatternList_ = other.dotPatternList_.Clone();
-      persistentFurnitureList_ = other.persistentFurnitureList_.Clone();
-      deployFurniureList_ = other.deployFurniureList_.Clone();
+      weekendDjinnInfoList_ = other.weekendDjinnInfoList_.Clone();
       blockId_ = other.blockId_;
+      dotPatternList_ = other.dotPatternList_.Clone();
+      isUnlocked_ = other.isUnlocked_;
+      deployNpcList_ = other.deployNpcList_.Clone();
+      furnitureGroupList_ = other.furnitureGroupList_.Clone();
+      fieldList_ = other.fieldList_.Clone();
+      comfortValue_ = other.comfortValue_;
+      unk3300DEIECJCAFLN_ = other.unk3300DEIECJCAFLN_.Clone();
       furnitureCustomSuiteList_ = other.furnitureCustomSuiteList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -111,34 +118,21 @@ namespace Weedwacker.Shared.Network.Proto {
       return new HomeBlockArrangementInfo(this);
     }
 
-    /// <summary>Field number for the "is_unlocked" field.</summary>
-    public const int IsUnlockedFieldNumber = 1;
-    private bool isUnlocked_;
+    /// <summary>Field number for the "Unk3300_GMMAIDIJOJM" field.</summary>
+    public const int Unk3300GMMAIDIJOJMFieldNumber = 10;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> _repeated_unk3300GMMAIDIJOJM_codec
+        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.HomeFurnitureData.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> unk3300GMMAIDIJOJM_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsUnlocked {
-      get { return isUnlocked_; }
-      set {
-        isUnlocked_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "comfort_value" field.</summary>
-    public const int ComfortValueFieldNumber = 2;
-    private uint comfortValue_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ComfortValue {
-      get { return comfortValue_; }
-      set {
-        comfortValue_ = value;
-      }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> Unk3300GMMAIDIJOJM {
+      get { return unk3300GMMAIDIJOJM_; }
     }
 
     /// <summary>Field number for the "deploy_animal_list" field.</summary>
-    public const int DeployAnimalListFieldNumber = 4;
+    public const int DeployAnimalListFieldNumber = 7;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeAnimalData> _repeated_deployAnimalList_codec
-        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.HomeAnimalData.Parser);
+        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.HomeAnimalData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeAnimalData> deployAnimalList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeAnimalData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -146,32 +140,10 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return deployAnimalList_; }
     }
 
-    /// <summary>Field number for the "furniture_group_list" field.</summary>
-    public const int FurnitureGroupListFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeFurnitureGroupData> _repeated_furnitureGroupList_codec
-        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.HomeFurnitureGroupData.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureGroupData> furnitureGroupList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureGroupData>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureGroupData> FurnitureGroupList {
-      get { return furnitureGroupList_; }
-    }
-
-    /// <summary>Field number for the "weekend_djinn_info_list" field.</summary>
-    public const int WeekendDjinnInfoListFieldNumber = 13;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.WeekendDjinnInfo> _repeated_weekendDjinnInfoList_codec
-        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.WeekendDjinnInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WeekendDjinnInfo> weekendDjinnInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WeekendDjinnInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WeekendDjinnInfo> WeekendDjinnInfoList {
-      get { return weekendDjinnInfoList_; }
-    }
-
     /// <summary>Field number for the "furniture_suite_list" field.</summary>
-    public const int FurnitureSuiteListFieldNumber = 15;
+    public const int FurnitureSuiteListFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeFurnitureSuiteData> _repeated_furnitureSuiteList_codec
-        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.HomeFurnitureSuiteData.Parser);
+        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.HomeFurnitureSuiteData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureSuiteData> furnitureSuiteList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureSuiteData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -179,63 +151,19 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return furnitureSuiteList_; }
     }
 
-    /// <summary>Field number for the "field_list" field.</summary>
-    public const int FieldListFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeBlockFieldData> _repeated_fieldList_codec
-        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.HomeBlockFieldData.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeBlockFieldData> fieldList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeBlockFieldData>();
+    /// <summary>Field number for the "weekend_djinn_info_list" field.</summary>
+    public const int WeekendDjinnInfoListFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.WeekendDjinnInfo> _repeated_weekendDjinnInfoList_codec
+        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.WeekendDjinnInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WeekendDjinnInfo> weekendDjinnInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WeekendDjinnInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeBlockFieldData> FieldList {
-      get { return fieldList_; }
-    }
-
-    /// <summary>Field number for the "deploy_npc_list" field.</summary>
-    public const int DeployNpcListFieldNumber = 11;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeNpcData> _repeated_deployNpcList_codec
-        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.HomeNpcData.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeNpcData> deployNpcList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeNpcData>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeNpcData> DeployNpcList {
-      get { return deployNpcList_; }
-    }
-
-    /// <summary>Field number for the "dot_pattern_list" field.</summary>
-    public const int DotPatternListFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeBlockDotPattern> _repeated_dotPatternList_codec
-        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.HomeBlockDotPattern.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeBlockDotPattern> dotPatternList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeBlockDotPattern>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeBlockDotPattern> DotPatternList {
-      get { return dotPatternList_; }
-    }
-
-    /// <summary>Field number for the "persistent_furniture_list" field.</summary>
-    public const int PersistentFurnitureListFieldNumber = 9;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> _repeated_persistentFurnitureList_codec
-        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.HomeFurnitureData.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> persistentFurnitureList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> PersistentFurnitureList {
-      get { return persistentFurnitureList_; }
-    }
-
-    /// <summary>Field number for the "deploy_furniure_list" field.</summary>
-    public const int DeployFurniureListFieldNumber = 12;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> _repeated_deployFurniureList_codec
-        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.HomeFurnitureData.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> deployFurniureList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> DeployFurniureList {
-      get { return deployFurniureList_; }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WeekendDjinnInfo> WeekendDjinnInfoList {
+      get { return weekendDjinnInfoList_; }
     }
 
     /// <summary>Field number for the "block_id" field.</summary>
-    public const int BlockIdFieldNumber = 6;
+    public const int BlockIdFieldNumber = 14;
     private uint blockId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -246,10 +174,89 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "dot_pattern_list" field.</summary>
+    public const int DotPatternListFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeBlockDotPattern> _repeated_dotPatternList_codec
+        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.HomeBlockDotPattern.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeBlockDotPattern> dotPatternList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeBlockDotPattern>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeBlockDotPattern> DotPatternList {
+      get { return dotPatternList_; }
+    }
+
+    /// <summary>Field number for the "is_unlocked" field.</summary>
+    public const int IsUnlockedFieldNumber = 15;
+    private bool isUnlocked_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsUnlocked {
+      get { return isUnlocked_; }
+      set {
+        isUnlocked_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "deploy_npc_list" field.</summary>
+    public const int DeployNpcListFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeNpcData> _repeated_deployNpcList_codec
+        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.HomeNpcData.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeNpcData> deployNpcList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeNpcData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeNpcData> DeployNpcList {
+      get { return deployNpcList_; }
+    }
+
+    /// <summary>Field number for the "furniture_group_list" field.</summary>
+    public const int FurnitureGroupListFieldNumber = 8;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeFurnitureGroupData> _repeated_furnitureGroupList_codec
+        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.HomeFurnitureGroupData.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureGroupData> furnitureGroupList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureGroupData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureGroupData> FurnitureGroupList {
+      get { return furnitureGroupList_; }
+    }
+
+    /// <summary>Field number for the "field_list" field.</summary>
+    public const int FieldListFieldNumber = 13;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeBlockFieldData> _repeated_fieldList_codec
+        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.HomeBlockFieldData.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeBlockFieldData> fieldList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeBlockFieldData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeBlockFieldData> FieldList {
+      get { return fieldList_; }
+    }
+
+    /// <summary>Field number for the "comfort_value" field.</summary>
+    public const int ComfortValueFieldNumber = 9;
+    private uint comfortValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ComfortValue {
+      get { return comfortValue_; }
+      set {
+        comfortValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_DEIECJCAFLN" field.</summary>
+    public const int Unk3300DEIECJCAFLNFieldNumber = 12;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> _repeated_unk3300DEIECJCAFLN_codec
+        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.HomeFurnitureData.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> unk3300DEIECJCAFLN_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureData> Unk3300DEIECJCAFLN {
+      get { return unk3300DEIECJCAFLN_; }
+    }
+
     /// <summary>Field number for the "furniture_custom_suite_list" field.</summary>
-    public const int FurnitureCustomSuiteListFieldNumber = 14;
+    public const int FurnitureCustomSuiteListFieldNumber = 4;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeFurnitureCustomSuiteData> _repeated_furnitureCustomSuiteList_codec
-        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.HomeFurnitureCustomSuiteData.Parser);
+        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.HomeFurnitureCustomSuiteData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureCustomSuiteData> furnitureCustomSuiteList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeFurnitureCustomSuiteData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -272,18 +279,18 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsUnlocked != other.IsUnlocked) return false;
-      if (ComfortValue != other.ComfortValue) return false;
+      if(!unk3300GMMAIDIJOJM_.Equals(other.unk3300GMMAIDIJOJM_)) return false;
       if(!deployAnimalList_.Equals(other.deployAnimalList_)) return false;
-      if(!furnitureGroupList_.Equals(other.furnitureGroupList_)) return false;
-      if(!weekendDjinnInfoList_.Equals(other.weekendDjinnInfoList_)) return false;
       if(!furnitureSuiteList_.Equals(other.furnitureSuiteList_)) return false;
-      if(!fieldList_.Equals(other.fieldList_)) return false;
-      if(!deployNpcList_.Equals(other.deployNpcList_)) return false;
-      if(!dotPatternList_.Equals(other.dotPatternList_)) return false;
-      if(!persistentFurnitureList_.Equals(other.persistentFurnitureList_)) return false;
-      if(!deployFurniureList_.Equals(other.deployFurniureList_)) return false;
+      if(!weekendDjinnInfoList_.Equals(other.weekendDjinnInfoList_)) return false;
       if (BlockId != other.BlockId) return false;
+      if(!dotPatternList_.Equals(other.dotPatternList_)) return false;
+      if (IsUnlocked != other.IsUnlocked) return false;
+      if(!deployNpcList_.Equals(other.deployNpcList_)) return false;
+      if(!furnitureGroupList_.Equals(other.furnitureGroupList_)) return false;
+      if(!fieldList_.Equals(other.fieldList_)) return false;
+      if (ComfortValue != other.ComfortValue) return false;
+      if(!unk3300DEIECJCAFLN_.Equals(other.unk3300DEIECJCAFLN_)) return false;
       if(!furnitureCustomSuiteList_.Equals(other.furnitureCustomSuiteList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -292,18 +299,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsUnlocked != false) hash ^= IsUnlocked.GetHashCode();
-      if (ComfortValue != 0) hash ^= ComfortValue.GetHashCode();
+      hash ^= unk3300GMMAIDIJOJM_.GetHashCode();
       hash ^= deployAnimalList_.GetHashCode();
-      hash ^= furnitureGroupList_.GetHashCode();
-      hash ^= weekendDjinnInfoList_.GetHashCode();
       hash ^= furnitureSuiteList_.GetHashCode();
-      hash ^= fieldList_.GetHashCode();
-      hash ^= deployNpcList_.GetHashCode();
-      hash ^= dotPatternList_.GetHashCode();
-      hash ^= persistentFurnitureList_.GetHashCode();
-      hash ^= deployFurniureList_.GetHashCode();
+      hash ^= weekendDjinnInfoList_.GetHashCode();
       if (BlockId != 0) hash ^= BlockId.GetHashCode();
+      hash ^= dotPatternList_.GetHashCode();
+      if (IsUnlocked != false) hash ^= IsUnlocked.GetHashCode();
+      hash ^= deployNpcList_.GetHashCode();
+      hash ^= furnitureGroupList_.GetHashCode();
+      hash ^= fieldList_.GetHashCode();
+      if (ComfortValue != 0) hash ^= ComfortValue.GetHashCode();
+      hash ^= unk3300DEIECJCAFLN_.GetHashCode();
       hash ^= furnitureCustomSuiteList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -323,28 +330,28 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsUnlocked != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(IsUnlocked);
-      }
-      if (ComfortValue != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(ComfortValue);
-      }
-      fieldList_.WriteTo(output, _repeated_fieldList_codec);
+      deployNpcList_.WriteTo(output, _repeated_deployNpcList_codec);
+      furnitureSuiteList_.WriteTo(output, _repeated_furnitureSuiteList_codec);
+      furnitureCustomSuiteList_.WriteTo(output, _repeated_furnitureCustomSuiteList_codec);
+      weekendDjinnInfoList_.WriteTo(output, _repeated_weekendDjinnInfoList_codec);
+      dotPatternList_.WriteTo(output, _repeated_dotPatternList_codec);
       deployAnimalList_.WriteTo(output, _repeated_deployAnimalList_codec);
       furnitureGroupList_.WriteTo(output, _repeated_furnitureGroupList_codec);
+      if (ComfortValue != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(ComfortValue);
+      }
+      unk3300GMMAIDIJOJM_.WriteTo(output, _repeated_unk3300GMMAIDIJOJM_codec);
+      unk3300DEIECJCAFLN_.WriteTo(output, _repeated_unk3300DEIECJCAFLN_codec);
+      fieldList_.WriteTo(output, _repeated_fieldList_codec);
       if (BlockId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(112);
         output.WriteUInt32(BlockId);
       }
-      dotPatternList_.WriteTo(output, _repeated_dotPatternList_codec);
-      persistentFurnitureList_.WriteTo(output, _repeated_persistentFurnitureList_codec);
-      deployNpcList_.WriteTo(output, _repeated_deployNpcList_codec);
-      deployFurniureList_.WriteTo(output, _repeated_deployFurniureList_codec);
-      weekendDjinnInfoList_.WriteTo(output, _repeated_weekendDjinnInfoList_codec);
-      furnitureCustomSuiteList_.WriteTo(output, _repeated_furnitureCustomSuiteList_codec);
-      furnitureSuiteList_.WriteTo(output, _repeated_furnitureSuiteList_codec);
+      if (IsUnlocked != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsUnlocked);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -355,28 +362,28 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsUnlocked != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(IsUnlocked);
-      }
-      if (ComfortValue != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(ComfortValue);
-      }
-      fieldList_.WriteTo(ref output, _repeated_fieldList_codec);
+      deployNpcList_.WriteTo(ref output, _repeated_deployNpcList_codec);
+      furnitureSuiteList_.WriteTo(ref output, _repeated_furnitureSuiteList_codec);
+      furnitureCustomSuiteList_.WriteTo(ref output, _repeated_furnitureCustomSuiteList_codec);
+      weekendDjinnInfoList_.WriteTo(ref output, _repeated_weekendDjinnInfoList_codec);
+      dotPatternList_.WriteTo(ref output, _repeated_dotPatternList_codec);
       deployAnimalList_.WriteTo(ref output, _repeated_deployAnimalList_codec);
       furnitureGroupList_.WriteTo(ref output, _repeated_furnitureGroupList_codec);
+      if (ComfortValue != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(ComfortValue);
+      }
+      unk3300GMMAIDIJOJM_.WriteTo(ref output, _repeated_unk3300GMMAIDIJOJM_codec);
+      unk3300DEIECJCAFLN_.WriteTo(ref output, _repeated_unk3300DEIECJCAFLN_codec);
+      fieldList_.WriteTo(ref output, _repeated_fieldList_codec);
       if (BlockId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(112);
         output.WriteUInt32(BlockId);
       }
-      dotPatternList_.WriteTo(ref output, _repeated_dotPatternList_codec);
-      persistentFurnitureList_.WriteTo(ref output, _repeated_persistentFurnitureList_codec);
-      deployNpcList_.WriteTo(ref output, _repeated_deployNpcList_codec);
-      deployFurniureList_.WriteTo(ref output, _repeated_deployFurniureList_codec);
-      weekendDjinnInfoList_.WriteTo(ref output, _repeated_weekendDjinnInfoList_codec);
-      furnitureCustomSuiteList_.WriteTo(ref output, _repeated_furnitureCustomSuiteList_codec);
-      furnitureSuiteList_.WriteTo(ref output, _repeated_furnitureSuiteList_codec);
+      if (IsUnlocked != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsUnlocked);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -387,24 +394,24 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsUnlocked != false) {
-        size += 1 + 1;
-      }
-      if (ComfortValue != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ComfortValue);
-      }
+      size += unk3300GMMAIDIJOJM_.CalculateSize(_repeated_unk3300GMMAIDIJOJM_codec);
       size += deployAnimalList_.CalculateSize(_repeated_deployAnimalList_codec);
-      size += furnitureGroupList_.CalculateSize(_repeated_furnitureGroupList_codec);
-      size += weekendDjinnInfoList_.CalculateSize(_repeated_weekendDjinnInfoList_codec);
       size += furnitureSuiteList_.CalculateSize(_repeated_furnitureSuiteList_codec);
-      size += fieldList_.CalculateSize(_repeated_fieldList_codec);
-      size += deployNpcList_.CalculateSize(_repeated_deployNpcList_codec);
-      size += dotPatternList_.CalculateSize(_repeated_dotPatternList_codec);
-      size += persistentFurnitureList_.CalculateSize(_repeated_persistentFurnitureList_codec);
-      size += deployFurniureList_.CalculateSize(_repeated_deployFurniureList_codec);
+      size += weekendDjinnInfoList_.CalculateSize(_repeated_weekendDjinnInfoList_codec);
       if (BlockId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BlockId);
       }
+      size += dotPatternList_.CalculateSize(_repeated_dotPatternList_codec);
+      if (IsUnlocked != false) {
+        size += 1 + 1;
+      }
+      size += deployNpcList_.CalculateSize(_repeated_deployNpcList_codec);
+      size += furnitureGroupList_.CalculateSize(_repeated_furnitureGroupList_codec);
+      size += fieldList_.CalculateSize(_repeated_fieldList_codec);
+      if (ComfortValue != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ComfortValue);
+      }
+      size += unk3300DEIECJCAFLN_.CalculateSize(_repeated_unk3300DEIECJCAFLN_codec);
       size += furnitureCustomSuiteList_.CalculateSize(_repeated_furnitureCustomSuiteList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -418,24 +425,24 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsUnlocked != false) {
-        IsUnlocked = other.IsUnlocked;
-      }
-      if (other.ComfortValue != 0) {
-        ComfortValue = other.ComfortValue;
-      }
+      unk3300GMMAIDIJOJM_.Add(other.unk3300GMMAIDIJOJM_);
       deployAnimalList_.Add(other.deployAnimalList_);
-      furnitureGroupList_.Add(other.furnitureGroupList_);
-      weekendDjinnInfoList_.Add(other.weekendDjinnInfoList_);
       furnitureSuiteList_.Add(other.furnitureSuiteList_);
-      fieldList_.Add(other.fieldList_);
-      deployNpcList_.Add(other.deployNpcList_);
-      dotPatternList_.Add(other.dotPatternList_);
-      persistentFurnitureList_.Add(other.persistentFurnitureList_);
-      deployFurniureList_.Add(other.deployFurniureList_);
+      weekendDjinnInfoList_.Add(other.weekendDjinnInfoList_);
       if (other.BlockId != 0) {
         BlockId = other.BlockId;
       }
+      dotPatternList_.Add(other.dotPatternList_);
+      if (other.IsUnlocked != false) {
+        IsUnlocked = other.IsUnlocked;
+      }
+      deployNpcList_.Add(other.deployNpcList_);
+      furnitureGroupList_.Add(other.furnitureGroupList_);
+      fieldList_.Add(other.fieldList_);
+      if (other.ComfortValue != 0) {
+        ComfortValue = other.ComfortValue;
+      }
+      unk3300DEIECJCAFLN_.Add(other.unk3300DEIECJCAFLN_);
       furnitureCustomSuiteList_.Add(other.furnitureCustomSuiteList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -452,56 +459,56 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            IsUnlocked = input.ReadBool();
-            break;
-          }
-          case 16: {
-            ComfortValue = input.ReadUInt32();
-            break;
-          }
-          case 26: {
-            fieldList_.AddEntriesFrom(input, _repeated_fieldList_codec);
-            break;
-          }
-          case 34: {
-            deployAnimalList_.AddEntriesFrom(input, _repeated_deployAnimalList_codec);
-            break;
-          }
-          case 42: {
-            furnitureGroupList_.AddEntriesFrom(input, _repeated_furnitureGroupList_codec);
-            break;
-          }
-          case 48: {
-            BlockId = input.ReadUInt32();
-            break;
-          }
-          case 58: {
-            dotPatternList_.AddEntriesFrom(input, _repeated_dotPatternList_codec);
-            break;
-          }
-          case 74: {
-            persistentFurnitureList_.AddEntriesFrom(input, _repeated_persistentFurnitureList_codec);
-            break;
-          }
-          case 90: {
+          case 10: {
             deployNpcList_.AddEntriesFrom(input, _repeated_deployNpcList_codec);
             break;
           }
-          case 98: {
-            deployFurniureList_.AddEntriesFrom(input, _repeated_deployFurniureList_codec);
+          case 26: {
+            furnitureSuiteList_.AddEntriesFrom(input, _repeated_furnitureSuiteList_codec);
             break;
           }
-          case 106: {
-            weekendDjinnInfoList_.AddEntriesFrom(input, _repeated_weekendDjinnInfoList_codec);
-            break;
-          }
-          case 114: {
+          case 34: {
             furnitureCustomSuiteList_.AddEntriesFrom(input, _repeated_furnitureCustomSuiteList_codec);
             break;
           }
-          case 122: {
-            furnitureSuiteList_.AddEntriesFrom(input, _repeated_furnitureSuiteList_codec);
+          case 42: {
+            weekendDjinnInfoList_.AddEntriesFrom(input, _repeated_weekendDjinnInfoList_codec);
+            break;
+          }
+          case 50: {
+            dotPatternList_.AddEntriesFrom(input, _repeated_dotPatternList_codec);
+            break;
+          }
+          case 58: {
+            deployAnimalList_.AddEntriesFrom(input, _repeated_deployAnimalList_codec);
+            break;
+          }
+          case 66: {
+            furnitureGroupList_.AddEntriesFrom(input, _repeated_furnitureGroupList_codec);
+            break;
+          }
+          case 72: {
+            ComfortValue = input.ReadUInt32();
+            break;
+          }
+          case 82: {
+            unk3300GMMAIDIJOJM_.AddEntriesFrom(input, _repeated_unk3300GMMAIDIJOJM_codec);
+            break;
+          }
+          case 98: {
+            unk3300DEIECJCAFLN_.AddEntriesFrom(input, _repeated_unk3300DEIECJCAFLN_codec);
+            break;
+          }
+          case 106: {
+            fieldList_.AddEntriesFrom(input, _repeated_fieldList_codec);
+            break;
+          }
+          case 112: {
+            BlockId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            IsUnlocked = input.ReadBool();
             break;
           }
         }
@@ -519,56 +526,56 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            IsUnlocked = input.ReadBool();
-            break;
-          }
-          case 16: {
-            ComfortValue = input.ReadUInt32();
-            break;
-          }
-          case 26: {
-            fieldList_.AddEntriesFrom(ref input, _repeated_fieldList_codec);
-            break;
-          }
-          case 34: {
-            deployAnimalList_.AddEntriesFrom(ref input, _repeated_deployAnimalList_codec);
-            break;
-          }
-          case 42: {
-            furnitureGroupList_.AddEntriesFrom(ref input, _repeated_furnitureGroupList_codec);
-            break;
-          }
-          case 48: {
-            BlockId = input.ReadUInt32();
-            break;
-          }
-          case 58: {
-            dotPatternList_.AddEntriesFrom(ref input, _repeated_dotPatternList_codec);
-            break;
-          }
-          case 74: {
-            persistentFurnitureList_.AddEntriesFrom(ref input, _repeated_persistentFurnitureList_codec);
-            break;
-          }
-          case 90: {
+          case 10: {
             deployNpcList_.AddEntriesFrom(ref input, _repeated_deployNpcList_codec);
             break;
           }
-          case 98: {
-            deployFurniureList_.AddEntriesFrom(ref input, _repeated_deployFurniureList_codec);
+          case 26: {
+            furnitureSuiteList_.AddEntriesFrom(ref input, _repeated_furnitureSuiteList_codec);
             break;
           }
-          case 106: {
-            weekendDjinnInfoList_.AddEntriesFrom(ref input, _repeated_weekendDjinnInfoList_codec);
-            break;
-          }
-          case 114: {
+          case 34: {
             furnitureCustomSuiteList_.AddEntriesFrom(ref input, _repeated_furnitureCustomSuiteList_codec);
             break;
           }
-          case 122: {
-            furnitureSuiteList_.AddEntriesFrom(ref input, _repeated_furnitureSuiteList_codec);
+          case 42: {
+            weekendDjinnInfoList_.AddEntriesFrom(ref input, _repeated_weekendDjinnInfoList_codec);
+            break;
+          }
+          case 50: {
+            dotPatternList_.AddEntriesFrom(ref input, _repeated_dotPatternList_codec);
+            break;
+          }
+          case 58: {
+            deployAnimalList_.AddEntriesFrom(ref input, _repeated_deployAnimalList_codec);
+            break;
+          }
+          case 66: {
+            furnitureGroupList_.AddEntriesFrom(ref input, _repeated_furnitureGroupList_codec);
+            break;
+          }
+          case 72: {
+            ComfortValue = input.ReadUInt32();
+            break;
+          }
+          case 82: {
+            unk3300GMMAIDIJOJM_.AddEntriesFrom(ref input, _repeated_unk3300GMMAIDIJOJM_codec);
+            break;
+          }
+          case 98: {
+            unk3300DEIECJCAFLN_.AddEntriesFrom(ref input, _repeated_unk3300DEIECJCAFLN_codec);
+            break;
+          }
+          case 106: {
+            fieldList_.AddEntriesFrom(ref input, _repeated_fieldList_codec);
+            break;
+          }
+          case 112: {
+            BlockId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            IsUnlocked = input.ReadBool();
             break;
           }
         }

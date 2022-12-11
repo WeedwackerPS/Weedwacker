@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeUpdatePictureFrameInfoRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNIb21lVXBkYXRlUGljdHVyZUZyYW1lSW5mb1JzcC5wcm90bxoaSG9tZVBp",
-            "Y3R1cmVGcmFtZUluZm8ucHJvdG8iYwodSG9tZVVwZGF0ZVBpY3R1cmVGcmFt",
-            "ZUluZm9Sc3ASDwoHcmV0Y29kZRgNIAEoBRIxChJwaWN0dXJlX2ZyYW1lX2lu",
-            "Zm8YDiABKAsyFS5Ib21lUGljdHVyZUZyYW1lSW5mb0IiqgIfV2VlZHdhY2tl",
-            "ci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiNIb21lVXBkYXRlUGljdHVyZUZyYW1lSW5mb1JzcC5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxoaSG9tZVBpY3R1cmVGcmFtZUlu",
+            "Zm8ucHJvdG8igwEKHUhvbWVVcGRhdGVQaWN0dXJlRnJhbWVJbmZvUnNwElEK",
+            "EnBpY3R1cmVfZnJhbWVfaW5mbxgGIAEoCzI1LldlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8uSG9tZVBpY3R1cmVGcmFtZUluZm8SDwoHcmV0Y29k",
+            "ZRgJIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HomePictureFrameInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeUpdatePictureFrameInfoRsp), global::Weedwacker.Shared.Network.Proto.HomeUpdatePictureFrameInfoRsp.Parser, new[]{ "Retcode", "PictureFrameInfo" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeUpdatePictureFrameInfoRsp), global::Weedwacker.Shared.Network.Proto.HomeUpdatePictureFrameInfoRsp.Parser, new[]{ "PictureFrameInfo", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4641
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4468;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class HomeUpdatePictureFrameInfoRsp : pb::IMessage<HomeUpdatePictureFrameInfoRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeUpdatePictureFrameInfoRsp(HomeUpdatePictureFrameInfoRsp other) : this() {
-      retcode_ = other.retcode_;
       pictureFrameInfo_ = other.pictureFrameInfo_ != null ? other.pictureFrameInfo_.Clone() : null;
+      retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,20 +94,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new HomeUpdatePictureFrameInfoRsp(this);
     }
 
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 13;
-    private int retcode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
-      }
-    }
-
     /// <summary>Field number for the "picture_frame_info" field.</summary>
-    public const int PictureFrameInfoFieldNumber = 14;
+    public const int PictureFrameInfoFieldNumber = 6;
     private global::Weedwacker.Shared.Network.Proto.HomePictureFrameInfo pictureFrameInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,6 +103,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return pictureFrameInfo_; }
       set {
         pictureFrameInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 9;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
       }
     }
 
@@ -128,8 +133,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Retcode != other.Retcode) return false;
       if (!object.Equals(PictureFrameInfo, other.PictureFrameInfo)) return false;
+      if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -137,8 +142,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (pictureFrameInfo_ != null) hash ^= PictureFrameInfo.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -157,13 +162,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Retcode != 0) {
-        output.WriteRawTag(104);
-        output.WriteInt32(Retcode);
-      }
       if (pictureFrameInfo_ != null) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(50);
         output.WriteMessage(PictureFrameInfo);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -175,13 +180,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Retcode != 0) {
-        output.WriteRawTag(104);
-        output.WriteInt32(Retcode);
-      }
       if (pictureFrameInfo_ != null) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(50);
         output.WriteMessage(PictureFrameInfo);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -193,11 +198,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
       if (pictureFrameInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(PictureFrameInfo);
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -211,14 +216,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
-      }
       if (other.pictureFrameInfo_ != null) {
         if (pictureFrameInfo_ == null) {
           PictureFrameInfo = new global::Weedwacker.Shared.Network.Proto.HomePictureFrameInfo();
         }
         PictureFrameInfo.MergeFrom(other.PictureFrameInfo);
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -235,15 +240,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 104: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 114: {
+          case 50: {
             if (pictureFrameInfo_ == null) {
               PictureFrameInfo = new global::Weedwacker.Shared.Network.Proto.HomePictureFrameInfo();
             }
             input.ReadMessage(PictureFrameInfo);
+            break;
+          }
+          case 72: {
+            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -261,15 +266,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 104: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 114: {
+          case 50: {
             if (pictureFrameInfo_ == null) {
               PictureFrameInfo = new global::Weedwacker.Shared.Network.Proto.HomePictureFrameInfo();
             }
             input.ReadMessage(PictureFrameInfo);
+            break;
+          }
+          case 72: {
+            Retcode = input.ReadInt32();
             break;
           }
         }

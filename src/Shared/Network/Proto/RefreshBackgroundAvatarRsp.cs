@@ -24,12 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static RefreshBackgroundAvatarRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBSZWZyZXNoQmFja2dyb3VuZEF2YXRhclJzcC5wcm90byKtAQoaUmVmcmVz",
-            "aEJhY2tncm91bmRBdmF0YXJSc3ASSAoQaHBfZnVsbF90aW1lX21hcBgPIAMo",
-            "CzIuLlJlZnJlc2hCYWNrZ3JvdW5kQXZhdGFyUnNwLkhwRnVsbFRpbWVNYXBF",
-            "bnRyeRIPCgdyZXRjb2RlGAMgASgFGjQKEkhwRnVsbFRpbWVNYXBFbnRyeRIL",
-            "CgNrZXkYASABKAQSDQoFdmFsdWUYAiABKA06AjgBQiKqAh9XZWVkd2Fja2Vy",
-            "LlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiBSZWZyZXNoQmFja2dyb3VuZEF2YXRhclJzcC5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byLNAQoaUmVmcmVzaEJhY2tncm91bmRB",
+            "dmF0YXJSc3ASaAoQaHBfZnVsbF90aW1lX21hcBgEIAMoCzJOLldlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uUmVmcmVzaEJhY2tncm91bmRBdmF0",
+            "YXJSc3AuSHBGdWxsVGltZU1hcEVudHJ5Eg8KB3JldGNvZGUYCyABKAUaNAoS",
+            "SHBGdWxsVGltZU1hcEVudHJ5EgsKA2tleRgBIAEoBBINCgV2YWx1ZRgCIAEo",
+            "DToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -41,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1800
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1744;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class RefreshBackgroundAvatarRsp : pb::IMessage<RefreshBackgroundAvatarRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,9 +96,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "hp_full_time_map" field.</summary>
-    public const int HpFullTimeMapFieldNumber = 15;
+    public const int HpFullTimeMapFieldNumber = 4;
     private static readonly pbc::MapField<ulong, uint>.Codec _map_hpFullTimeMap_codec
-        = new pbc::MapField<ulong, uint>.Codec(pb::FieldCodec.ForUInt64(8, 0UL), pb::FieldCodec.ForUInt32(16, 0), 122);
+        = new pbc::MapField<ulong, uint>.Codec(pb::FieldCodec.ForUInt64(8, 0UL), pb::FieldCodec.ForUInt32(16, 0), 34);
     private readonly pbc::MapField<ulong, uint> hpFullTimeMap_ = new pbc::MapField<ulong, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +107,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 3;
+    public const int RetcodeFieldNumber = 11;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,11 +162,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      hpFullTimeMap_.WriteTo(output, _map_hpFullTimeMap_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(88);
         output.WriteInt32(Retcode);
       }
-      hpFullTimeMap_.WriteTo(output, _map_hpFullTimeMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -172,11 +177,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      hpFullTimeMap_.WriteTo(ref output, _map_hpFullTimeMap_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(88);
         output.WriteInt32(Retcode);
       }
-      hpFullTimeMap_.WriteTo(ref output, _map_hpFullTimeMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -222,12 +227,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            Retcode = input.ReadInt32();
+          case 34: {
+            hpFullTimeMap_.AddEntriesFrom(input, _map_hpFullTimeMap_codec);
             break;
           }
-          case 122: {
-            hpFullTimeMap_.AddEntriesFrom(input, _map_hpFullTimeMap_codec);
+          case 88: {
+            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -245,12 +250,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            Retcode = input.ReadInt32();
+          case 34: {
+            hpFullTimeMap_.AddEntriesFrom(ref input, _map_hpFullTimeMap_codec);
             break;
           }
-          case 122: {
-            hpFullTimeMap_.AddEntriesFrom(ref input, _map_hpFullTimeMap_codec);
+          case 88: {
+            Retcode = input.ReadInt32();
             break;
           }
         }

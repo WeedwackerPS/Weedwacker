@@ -24,12 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static GachaActivityTakeRewardRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBHYWNoYUFjdGl2aXR5VGFrZVJld2FyZFJzcC5wcm90byKmAQoaR2FjaGFB",
-            "Y3Rpdml0eVRha2VSZXdhcmRSc3ASQwoNcm9ib3RfbnVtX21hcBgDIAMoCzIs",
-            "LkdhY2hhQWN0aXZpdHlUYWtlUmV3YXJkUnNwLlJvYm90TnVtTWFwRW50cnkS",
-            "DwoHcmV0Y29kZRgNIAEoBRoyChBSb2JvdE51bU1hcEVudHJ5EgsKA2tleRgB",
-            "IAEoDRINCgV2YWx1ZRgCIAEoDToCOAFCIqoCH1dlZWR3YWNrZXIuU2hhcmVk",
-            "Lk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiBHYWNoYUFjdGl2aXR5VGFrZVJld2FyZFJzcC5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byLGAQoaR2FjaGFBY3Rpdml0eVRha2VS",
+            "ZXdhcmRSc3ASYwoNcm9ib3RfbnVtX21hcBgKIAMoCzJMLldlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8uR2FjaGFBY3Rpdml0eVRha2VSZXdhcmRS",
+            "c3AuUm9ib3ROdW1NYXBFbnRyeRIPCgdyZXRjb2RlGAggASgFGjIKEFJvYm90",
+            "TnVtTWFwRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -41,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8768
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8354;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GachaActivityTakeRewardRsp : pb::IMessage<GachaActivityTakeRewardRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,9 +96,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "robot_num_map" field.</summary>
-    public const int RobotNumMapFieldNumber = 3;
+    public const int RobotNumMapFieldNumber = 10;
     private static readonly pbc::MapField<uint, uint>.Codec _map_robotNumMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 26);
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 82);
     private readonly pbc::MapField<uint, uint> robotNumMap_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +107,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 13;
+    public const int RetcodeFieldNumber = 8;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,11 +162,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      robotNumMap_.WriteTo(output, _map_robotNumMap_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(64);
         output.WriteInt32(Retcode);
       }
+      robotNumMap_.WriteTo(output, _map_robotNumMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -172,11 +177,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      robotNumMap_.WriteTo(ref output, _map_robotNumMap_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(64);
         output.WriteInt32(Retcode);
       }
+      robotNumMap_.WriteTo(ref output, _map_robotNumMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -222,12 +227,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
-            robotNumMap_.AddEntriesFrom(input, _map_robotNumMap_codec);
+          case 64: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 104: {
-            Retcode = input.ReadInt32();
+          case 82: {
+            robotNumMap_.AddEntriesFrom(input, _map_robotNumMap_codec);
             break;
           }
         }
@@ -245,12 +250,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
-            robotNumMap_.AddEntriesFrom(ref input, _map_robotNumMap_codec);
+          case 64: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 104: {
-            Retcode = input.ReadInt32();
+          case 82: {
+            robotNumMap_.AddEntriesFrom(ref input, _map_robotNumMap_codec);
             break;
           }
         }

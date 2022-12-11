@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static ProudSkillUpgradeReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpQcm91ZFNraWxsVXBncmFkZVJlcS5wcm90byJiChRQcm91ZFNraWxsVXBn",
-            "cmFkZVJlcRITCgthdmF0YXJfZ3VpZBgFIAEoBBIdChVvbGRfcHJvdWRfc2tp",
-            "bGxfbGV2ZWwYBCABKA0SFgoOcHJvdWRfc2tpbGxfaWQYDiABKA1CIqoCH1dl",
-            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChpQcm91ZFNraWxsVXBncmFkZVJlcS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90byJiChRQcm91ZFNraWxsVXBncmFkZVJlcRITCgth",
+            "dmF0YXJfZ3VpZBgNIAEoBBIdChVvbGRfcHJvdWRfc2tpbGxfbGV2ZWwYAyAB",
+            "KA0SFgoOcHJvdWRfc2tpbGxfaWQYAiABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1073
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1078;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class ProudSkillUpgradeReq : pb::IMessage<ProudSkillUpgradeReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "avatar_guid" field.</summary>
-    public const int AvatarGuidFieldNumber = 5;
+    public const int AvatarGuidFieldNumber = 13;
     private ulong avatarGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,7 +107,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "old_proud_skill_level" field.</summary>
-    public const int OldProudSkillLevelFieldNumber = 4;
+    public const int OldProudSkillLevelFieldNumber = 3;
     private uint oldProudSkillLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,7 +119,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "proud_skill_id" field.</summary>
-    public const int ProudSkillIdFieldNumber = 14;
+    public const int ProudSkillIdFieldNumber = 2;
     private uint proudSkillId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -172,17 +176,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (ProudSkillId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(ProudSkillId);
+      }
       if (OldProudSkillLevel != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(24);
         output.WriteUInt32(OldProudSkillLevel);
       }
       if (AvatarGuid != 0UL) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(104);
         output.WriteUInt64(AvatarGuid);
-      }
-      if (ProudSkillId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(ProudSkillId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -194,17 +198,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ProudSkillId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(ProudSkillId);
+      }
       if (OldProudSkillLevel != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(24);
         output.WriteUInt32(OldProudSkillLevel);
       }
       if (AvatarGuid != 0UL) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(104);
         output.WriteUInt64(AvatarGuid);
-      }
-      if (ProudSkillId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(ProudSkillId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -261,16 +265,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
+          case 16: {
+            ProudSkillId = input.ReadUInt32();
+            break;
+          }
+          case 24: {
             OldProudSkillLevel = input.ReadUInt32();
             break;
           }
-          case 40: {
+          case 104: {
             AvatarGuid = input.ReadUInt64();
-            break;
-          }
-          case 112: {
-            ProudSkillId = input.ReadUInt32();
             break;
           }
         }
@@ -288,16 +292,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
+          case 16: {
+            ProudSkillId = input.ReadUInt32();
+            break;
+          }
+          case 24: {
             OldProudSkillLevel = input.ReadUInt32();
             break;
           }
-          case 40: {
+          case 104: {
             AvatarGuid = input.ReadUInt64();
-            break;
-          }
-          case 112: {
-            ProudSkillId = input.ReadUInt32();
             break;
           }
         }

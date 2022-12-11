@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static FinishedParentQuestUpdateNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVGaW5pc2hlZFBhcmVudFF1ZXN0VXBkYXRlTm90aWZ5LnByb3RvGhFQYXJl",
-            "bnRRdWVzdC5wcm90byJKCh9GaW5pc2hlZFBhcmVudFF1ZXN0VXBkYXRlTm90",
-            "aWZ5EicKEXBhcmVudF9xdWVzdF9saXN0GAkgAygLMgwuUGFyZW50UXVlc3RC",
-            "IqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiVGaW5pc2hlZFBhcmVudFF1ZXN0VXBkYXRlTm90aWZ5LnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGhFQYXJlbnRRdWVzdC5wcm90",
+            "byJqCh9GaW5pc2hlZFBhcmVudFF1ZXN0VXBkYXRlTm90aWZ5EkcKEXBhcmVu",
+            "dF9xdWVzdF9saXN0GAMgAygLMiwuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90by5QYXJlbnRRdWVzdGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ParentQuestReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 407
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 500;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class FinishedParentQuestUpdateNotify : pb::IMessage<FinishedParentQuestUpdateNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "parent_quest_list" field.</summary>
-    public const int ParentQuestListFieldNumber = 9;
+    public const int ParentQuestListFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ParentQuest> _repeated_parentQuestList_codec
-        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.ParentQuest.Parser);
+        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.ParentQuest.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ParentQuest> parentQuestList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ParentQuest>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -191,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 74: {
+          case 26: {
             parentQuestList_.AddEntriesFrom(input, _repeated_parentQuestList_codec);
             break;
           }
@@ -210,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 74: {
+          case 26: {
             parentQuestList_.AddEntriesFrom(ref input, _repeated_parentQuestList_codec);
             break;
           }

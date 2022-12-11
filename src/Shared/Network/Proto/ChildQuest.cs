@@ -24,13 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static ChildQuestReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChBDaGlsZFF1ZXN0LnByb3RvIkYKCkNoaWxkUXVlc3QSFwoPcXVlc3RfY29u",
-            "ZmlnX2lkGAggASgNEg0KBXN0YXRlGAQgASgNEhAKCHF1ZXN0X2lkGA8gASgN",
-            "QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChBDaGlsZFF1ZXN0LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvIkYKCkNoaWxkUXVlc3QSDQoFc3RhdGUYDyABKA0SFwoPcXVlc3Rf",
+            "Y29uZmlnX2lkGAkgASgNEhAKCHF1ZXN0X2lkGA0gASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChildQuest), global::Weedwacker.Shared.Network.Proto.ChildQuest.Parser, new[]{ "QuestConfigId", "State", "QuestId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChildQuest), global::Weedwacker.Shared.Network.Proto.ChildQuest.Parser, new[]{ "State", "QuestConfigId", "QuestId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -71,8 +71,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChildQuest(ChildQuest other) : this() {
-      questConfigId_ = other.questConfigId_;
       state_ = other.state_;
+      questConfigId_ = other.questConfigId_;
       questId_ = other.questId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -83,20 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ChildQuest(this);
     }
 
-    /// <summary>Field number for the "quest_config_id" field.</summary>
-    public const int QuestConfigIdFieldNumber = 8;
-    private uint questConfigId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint QuestConfigId {
-      get { return questConfigId_; }
-      set {
-        questConfigId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "state" field.</summary>
-    public const int StateFieldNumber = 4;
+    public const int StateFieldNumber = 15;
     private uint state_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -107,8 +95,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "quest_config_id" field.</summary>
+    public const int QuestConfigIdFieldNumber = 9;
+    private uint questConfigId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint QuestConfigId {
+      get { return questConfigId_; }
+      set {
+        questConfigId_ = value;
+      }
+    }
+
     /// <summary>Field number for the "quest_id" field.</summary>
-    public const int QuestIdFieldNumber = 15;
+    public const int QuestIdFieldNumber = 13;
     private uint questId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -134,8 +134,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (QuestConfigId != other.QuestConfigId) return false;
       if (State != other.State) return false;
+      if (QuestConfigId != other.QuestConfigId) return false;
       if (QuestId != other.QuestId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -144,8 +144,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (QuestConfigId != 0) hash ^= QuestConfigId.GetHashCode();
       if (State != 0) hash ^= State.GetHashCode();
+      if (QuestConfigId != 0) hash ^= QuestConfigId.GetHashCode();
       if (QuestId != 0) hash ^= QuestId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -165,17 +165,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (State != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(State);
-      }
       if (QuestConfigId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(72);
         output.WriteUInt32(QuestConfigId);
       }
       if (QuestId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(104);
         output.WriteUInt32(QuestId);
+      }
+      if (State != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(State);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -187,17 +187,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (State != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(State);
-      }
       if (QuestConfigId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(72);
         output.WriteUInt32(QuestConfigId);
       }
       if (QuestId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(104);
         output.WriteUInt32(QuestId);
+      }
+      if (State != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(State);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -209,11 +209,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (QuestConfigId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(QuestConfigId);
-      }
       if (State != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(State);
+      }
+      if (QuestConfigId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(QuestConfigId);
       }
       if (QuestId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(QuestId);
@@ -230,11 +230,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.QuestConfigId != 0) {
-        QuestConfigId = other.QuestConfigId;
-      }
       if (other.State != 0) {
         State = other.State;
+      }
+      if (other.QuestConfigId != 0) {
+        QuestConfigId = other.QuestConfigId;
       }
       if (other.QuestId != 0) {
         QuestId = other.QuestId;
@@ -254,16 +254,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            State = input.ReadUInt32();
-            break;
-          }
-          case 64: {
+          case 72: {
             QuestConfigId = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 104: {
             QuestId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            State = input.ReadUInt32();
             break;
           }
         }
@@ -281,16 +281,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            State = input.ReadUInt32();
-            break;
-          }
-          case 64: {
+          case 72: {
             QuestConfigId = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 104: {
             QuestId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            State = input.ReadUInt32();
             break;
           }
         }

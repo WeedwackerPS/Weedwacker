@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static AsterProgressDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1Bc3RlclByb2dyZXNzRGV0YWlsSW5mby5wcm90byJEChdBc3RlclByb2dy",
-            "ZXNzRGV0YWlsSW5mbxIaChJsYXN0X2F1dG9fYWRkX3RpbWUYAyABKA0SDQoF",
-            "Y291bnQYASABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
-            "dG9iBnByb3RvMw=="));
+            "Ch1Bc3RlclByb2dyZXNzRGV0YWlsSW5mby5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90byJEChdBc3RlclByb2dyZXNzRGV0YWlsSW5m",
+            "bxINCgVjb3VudBgEIAEoDRIaChJsYXN0X2F1dG9fYWRkX3RpbWUYASABKA1i",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AsterProgressDetailInfo), global::Weedwacker.Shared.Network.Proto.AsterProgressDetailInfo.Parser, new[]{ "LastAutoAddTime", "Count" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AsterProgressDetailInfo), global::Weedwacker.Shared.Network.Proto.AsterProgressDetailInfo.Parser, new[]{ "Count", "LastAutoAddTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +72,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AsterProgressDetailInfo(AsterProgressDetailInfo other) : this() {
-      lastAutoAddTime_ = other.lastAutoAddTime_;
       count_ = other.count_;
+      lastAutoAddTime_ = other.lastAutoAddTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -83,20 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AsterProgressDetailInfo(this);
     }
 
-    /// <summary>Field number for the "last_auto_add_time" field.</summary>
-    public const int LastAutoAddTimeFieldNumber = 3;
-    private uint lastAutoAddTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint LastAutoAddTime {
-      get { return lastAutoAddTime_; }
-      set {
-        lastAutoAddTime_ = value;
-      }
-    }
-
     /// <summary>Field number for the "count" field.</summary>
-    public const int CountFieldNumber = 1;
+    public const int CountFieldNumber = 4;
     private uint count_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,6 +92,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return count_; }
       set {
         count_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "last_auto_add_time" field.</summary>
+    public const int LastAutoAddTimeFieldNumber = 1;
+    private uint lastAutoAddTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LastAutoAddTime {
+      get { return lastAutoAddTime_; }
+      set {
+        lastAutoAddTime_ = value;
       }
     }
 
@@ -122,8 +122,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (LastAutoAddTime != other.LastAutoAddTime) return false;
       if (Count != other.Count) return false;
+      if (LastAutoAddTime != other.LastAutoAddTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -131,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (LastAutoAddTime != 0) hash ^= LastAutoAddTime.GetHashCode();
       if (Count != 0) hash ^= Count.GetHashCode();
+      if (LastAutoAddTime != 0) hash ^= LastAutoAddTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -151,13 +151,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Count != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(Count);
-      }
       if (LastAutoAddTime != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(8);
         output.WriteUInt32(LastAutoAddTime);
+      }
+      if (Count != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Count);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -169,13 +169,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Count != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(Count);
-      }
       if (LastAutoAddTime != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(8);
         output.WriteUInt32(LastAutoAddTime);
+      }
+      if (Count != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Count);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -187,11 +187,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (LastAutoAddTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LastAutoAddTime);
-      }
       if (Count != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Count);
+      }
+      if (LastAutoAddTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LastAutoAddTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -205,11 +205,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.LastAutoAddTime != 0) {
-        LastAutoAddTime = other.LastAutoAddTime;
-      }
       if (other.Count != 0) {
         Count = other.Count;
+      }
+      if (other.LastAutoAddTime != 0) {
+        LastAutoAddTime = other.LastAutoAddTime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -227,11 +227,11 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Count = input.ReadUInt32();
+            LastAutoAddTime = input.ReadUInt32();
             break;
           }
-          case 24: {
-            LastAutoAddTime = input.ReadUInt32();
+          case 32: {
+            Count = input.ReadUInt32();
             break;
           }
         }
@@ -250,11 +250,11 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            Count = input.ReadUInt32();
+            LastAutoAddTime = input.ReadUInt32();
             break;
           }
-          case 24: {
-            LastAutoAddTime = input.ReadUInt32();
+          case 32: {
+            Count = input.ReadUInt32();
             break;
           }
         }

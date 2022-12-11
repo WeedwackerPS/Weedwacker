@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlayerOfferingDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhQbGF5ZXJPZmZlcmluZ0RhdGEucHJvdG8ijgEKElBsYXllck9mZmVyaW5n",
-            "RGF0YRITCgtvZmZlcmluZ19pZBgBIAEoDRIZChFpc19maXJzdF9pbnRlcmFj",
-            "dBgPIAEoCBINCgVsZXZlbBgMIAEoDRIfChd0YWtlbl9sZXZlbF9yZXdhcmRf",
-            "bGlzdBgIIAMoDRIYChBpc19uZXdfbWF4X2xldmVsGAYgASgIQiKqAh9XZWVk",
-            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChhQbGF5ZXJPZmZlcmluZ0RhdGEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8ijgEKElBsYXllck9mZmVyaW5nRGF0YRINCgVsZXZl",
+            "bBgIIAEoDRITCgtvZmZlcmluZ19pZBgDIAEoDRIYChBpc19uZXdfbWF4X2xl",
+            "dmVsGA4gASgIEhkKEWlzX2ZpcnN0X2ludGVyYWN0GAkgASgIEh8KF3Rha2Vu",
+            "X2xldmVsX3Jld2FyZF9saXN0GAIgAygNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerOfferingData), global::Weedwacker.Shared.Network.Proto.PlayerOfferingData.Parser, new[]{ "OfferingId", "IsFirstInteract", "Level", "TakenLevelRewardList", "IsNewMaxLevel" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerOfferingData), global::Weedwacker.Shared.Network.Proto.PlayerOfferingData.Parser, new[]{ "Level", "OfferingId", "IsNewMaxLevel", "IsFirstInteract", "TakenLevelRewardList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,11 +73,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlayerOfferingData(PlayerOfferingData other) : this() {
-      offeringId_ = other.offeringId_;
-      isFirstInteract_ = other.isFirstInteract_;
       level_ = other.level_;
-      takenLevelRewardList_ = other.takenLevelRewardList_.Clone();
+      offeringId_ = other.offeringId_;
       isNewMaxLevel_ = other.isNewMaxLevel_;
+      isFirstInteract_ = other.isFirstInteract_;
+      takenLevelRewardList_ = other.takenLevelRewardList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,32 +87,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PlayerOfferingData(this);
     }
 
-    /// <summary>Field number for the "offering_id" field.</summary>
-    public const int OfferingIdFieldNumber = 1;
-    private uint offeringId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint OfferingId {
-      get { return offeringId_; }
-      set {
-        offeringId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_first_interact" field.</summary>
-    public const int IsFirstInteractFieldNumber = 15;
-    private bool isFirstInteract_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsFirstInteract {
-      get { return isFirstInteract_; }
-      set {
-        isFirstInteract_ = value;
-      }
-    }
-
     /// <summary>Field number for the "level" field.</summary>
-    public const int LevelFieldNumber = 12;
+    public const int LevelFieldNumber = 8;
     private uint level_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,19 +99,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "taken_level_reward_list" field.</summary>
-    public const int TakenLevelRewardListFieldNumber = 8;
-    private static readonly pb::FieldCodec<uint> _repeated_takenLevelRewardList_codec
-        = pb::FieldCodec.ForUInt32(66);
-    private readonly pbc::RepeatedField<uint> takenLevelRewardList_ = new pbc::RepeatedField<uint>();
+    /// <summary>Field number for the "offering_id" field.</summary>
+    public const int OfferingIdFieldNumber = 3;
+    private uint offeringId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> TakenLevelRewardList {
-      get { return takenLevelRewardList_; }
+    public uint OfferingId {
+      get { return offeringId_; }
+      set {
+        offeringId_ = value;
+      }
     }
 
     /// <summary>Field number for the "is_new_max_level" field.</summary>
-    public const int IsNewMaxLevelFieldNumber = 6;
+    public const int IsNewMaxLevelFieldNumber = 14;
     private bool isNewMaxLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -144,6 +121,29 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         isNewMaxLevel_ = value;
       }
+    }
+
+    /// <summary>Field number for the "is_first_interact" field.</summary>
+    public const int IsFirstInteractFieldNumber = 9;
+    private bool isFirstInteract_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsFirstInteract {
+      get { return isFirstInteract_; }
+      set {
+        isFirstInteract_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "taken_level_reward_list" field.</summary>
+    public const int TakenLevelRewardListFieldNumber = 2;
+    private static readonly pb::FieldCodec<uint> _repeated_takenLevelRewardList_codec
+        = pb::FieldCodec.ForUInt32(18);
+    private readonly pbc::RepeatedField<uint> takenLevelRewardList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> TakenLevelRewardList {
+      get { return takenLevelRewardList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -161,11 +161,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (OfferingId != other.OfferingId) return false;
-      if (IsFirstInteract != other.IsFirstInteract) return false;
       if (Level != other.Level) return false;
-      if(!takenLevelRewardList_.Equals(other.takenLevelRewardList_)) return false;
+      if (OfferingId != other.OfferingId) return false;
       if (IsNewMaxLevel != other.IsNewMaxLevel) return false;
+      if (IsFirstInteract != other.IsFirstInteract) return false;
+      if(!takenLevelRewardList_.Equals(other.takenLevelRewardList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -173,11 +173,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (OfferingId != 0) hash ^= OfferingId.GetHashCode();
-      if (IsFirstInteract != false) hash ^= IsFirstInteract.GetHashCode();
       if (Level != 0) hash ^= Level.GetHashCode();
-      hash ^= takenLevelRewardList_.GetHashCode();
+      if (OfferingId != 0) hash ^= OfferingId.GetHashCode();
       if (IsNewMaxLevel != false) hash ^= IsNewMaxLevel.GetHashCode();
+      if (IsFirstInteract != false) hash ^= IsFirstInteract.GetHashCode();
+      hash ^= takenLevelRewardList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -196,22 +196,22 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      takenLevelRewardList_.WriteTo(output, _repeated_takenLevelRewardList_codec);
       if (OfferingId != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(24);
         output.WriteUInt32(OfferingId);
       }
-      if (IsNewMaxLevel != false) {
-        output.WriteRawTag(48);
-        output.WriteBool(IsNewMaxLevel);
-      }
-      takenLevelRewardList_.WriteTo(output, _repeated_takenLevelRewardList_codec);
       if (Level != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(64);
         output.WriteUInt32(Level);
       }
       if (IsFirstInteract != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(72);
         output.WriteBool(IsFirstInteract);
+      }
+      if (IsNewMaxLevel != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(IsNewMaxLevel);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -223,22 +223,22 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      takenLevelRewardList_.WriteTo(ref output, _repeated_takenLevelRewardList_codec);
       if (OfferingId != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(24);
         output.WriteUInt32(OfferingId);
       }
-      if (IsNewMaxLevel != false) {
-        output.WriteRawTag(48);
-        output.WriteBool(IsNewMaxLevel);
-      }
-      takenLevelRewardList_.WriteTo(ref output, _repeated_takenLevelRewardList_codec);
       if (Level != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(64);
         output.WriteUInt32(Level);
       }
       if (IsFirstInteract != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(72);
         output.WriteBool(IsFirstInteract);
+      }
+      if (IsNewMaxLevel != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(IsNewMaxLevel);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -250,19 +250,19 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (Level != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Level);
+      }
       if (OfferingId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OfferingId);
+      }
+      if (IsNewMaxLevel != false) {
+        size += 1 + 1;
       }
       if (IsFirstInteract != false) {
         size += 1 + 1;
       }
-      if (Level != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Level);
-      }
       size += takenLevelRewardList_.CalculateSize(_repeated_takenLevelRewardList_codec);
-      if (IsNewMaxLevel != false) {
-        size += 1 + 1;
-      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -275,19 +275,19 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.Level != 0) {
+        Level = other.Level;
+      }
       if (other.OfferingId != 0) {
         OfferingId = other.OfferingId;
+      }
+      if (other.IsNewMaxLevel != false) {
+        IsNewMaxLevel = other.IsNewMaxLevel;
       }
       if (other.IsFirstInteract != false) {
         IsFirstInteract = other.IsFirstInteract;
       }
-      if (other.Level != 0) {
-        Level = other.Level;
-      }
       takenLevelRewardList_.Add(other.takenLevelRewardList_);
-      if (other.IsNewMaxLevel != false) {
-        IsNewMaxLevel = other.IsNewMaxLevel;
-      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -303,25 +303,25 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            OfferingId = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            IsNewMaxLevel = input.ReadBool();
-            break;
-          }
-          case 66:
-          case 64: {
+          case 18:
+          case 16: {
             takenLevelRewardList_.AddEntriesFrom(input, _repeated_takenLevelRewardList_codec);
             break;
           }
-          case 96: {
+          case 24: {
+            OfferingId = input.ReadUInt32();
+            break;
+          }
+          case 64: {
             Level = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 72: {
             IsFirstInteract = input.ReadBool();
+            break;
+          }
+          case 112: {
+            IsNewMaxLevel = input.ReadBool();
             break;
           }
         }
@@ -339,25 +339,25 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            OfferingId = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            IsNewMaxLevel = input.ReadBool();
-            break;
-          }
-          case 66:
-          case 64: {
+          case 18:
+          case 16: {
             takenLevelRewardList_.AddEntriesFrom(ref input, _repeated_takenLevelRewardList_codec);
             break;
           }
-          case 96: {
+          case 24: {
+            OfferingId = input.ReadUInt32();
+            break;
+          }
+          case 64: {
             Level = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 72: {
             IsFirstInteract = input.ReadBool();
+            break;
+          }
+          case 112: {
+            IsNewMaxLevel = input.ReadBool();
             break;
           }
         }

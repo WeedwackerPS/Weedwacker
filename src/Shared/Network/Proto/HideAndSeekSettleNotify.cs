@@ -24,22 +24,24 @@ namespace Weedwacker.Shared.Network.Proto {
     static HideAndSeekSettleNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1IaWRlQW5kU2Vla1NldHRsZU5vdGlmeS5wcm90bxobRXhoaWJpdGlvbkRp",
-            "c3BsYXlJbmZvLnByb3RvGhtIaWRlQW5kU2Vla1NldHRsZUluZm8ucHJvdG8i",
-            "/gIKF0hpZGVBbmRTZWVrU2V0dGxlTm90aWZ5EhEKCWNvc3RfdGltZRgCIAEo",
-            "DRIwChBzZXR0bGVfaW5mb19saXN0GAggAygLMhYuSGlkZUFuZFNlZWtTZXR0",
-            "bGVJbmZvEhMKC3dpbm5lcl9saXN0GA8gAygNEjUKBnJlYXNvbhgEIAEoDjIl",
-            "LkhpZGVBbmRTZWVrU2V0dGxlTm90aWZ5LlNldHRsZVJlYXNvbhISCgpwbGF5",
-            "X2luZGV4GA0gASgNEhcKD2lzX3JlY29yZF9zY29yZRgGIAEoCBIqCgpzY29y",
-            "ZV9saXN0GAkgAygLMhYuRXhoaWJpdGlvbkRpc3BsYXlJbmZvEhIKCnN0YWdl",
-            "X3R5cGUYDiABKA0iZQoMU2V0dGxlUmVhc29uEhoKFlNFVFRMRV9SRUFTT05f",
-            "VElNRV9PVVQQABIaChZTRVRUTEVfUkVBU09OX1BMQVlfRU5EEAESHQoZU0VU",
-            "VExFX1JFQVNPTl9QTEFZRVJfUVVJVBACQiKqAh9XZWVkd2Fja2VyLlNoYXJl",
-            "ZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch1IaWRlQW5kU2Vla1NldHRsZU5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxobRXhoaWJpdGlvbkRpc3BsYXlJbmZvLnBy",
+            "b3RvGhtIaWRlQW5kU2Vla1NldHRsZUluZm8ucHJvdG8i3gMKF0hpZGVBbmRT",
+            "ZWVrU2V0dGxlTm90aWZ5EhIKCnBsYXlfaW5kZXgYBiABKA0SSgoKc2NvcmVf",
+            "bGlzdBgLIAMoCzI2LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8u",
+            "RXhoaWJpdGlvbkRpc3BsYXlJbmZvElUKBnJlYXNvbhgBIAEoDjJFLldlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uSGlkZUFuZFNlZWtTZXR0bGVO",
+            "b3RpZnkuU2V0dGxlUmVhc29uEhMKC3dpbm5lcl9saXN0GAIgAygNEhEKCWNv",
+            "c3RfdGltZRgPIAEoDRISCgpzdGFnZV90eXBlGAcgASgNEhcKD2lzX3JlY29y",
+            "ZF9zY29yZRgFIAEoCBJQChBzZXR0bGVfaW5mb19saXN0GAQgAygLMjYuV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5IaWRlQW5kU2Vla1NldHRs",
+            "ZUluZm8iZQoMU2V0dGxlUmVhc29uEhoKFlNFVFRMRV9SRUFTT05fVElNRV9P",
+            "VVQQABIaChZTRVRUTEVfUkVBU09OX1BMQVlfRU5EEAESHQoZU0VUVExFX1JF",
+            "QVNPTl9QTEFZRVJfUVVJVBACYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleNotify), global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleNotify.Parser, new[]{ "CostTime", "SettleInfoList", "WinnerList", "Reason", "PlayIndex", "IsRecordScore", "ScoreList", "StageType" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleNotify.Types.SettleReason) }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleNotify), global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleNotify.Parser, new[]{ "PlayIndex", "ScoreList", "Reason", "WinnerList", "CostTime", "StageType", "IsRecordScore", "SettleInfoList" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleNotify.Types.SettleReason) }, null, null)
           }));
     }
     #endregion
@@ -47,9 +49,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5317
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5391;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class HideAndSeekSettleNotify : pb::IMessage<HideAndSeekSettleNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -85,14 +91,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HideAndSeekSettleNotify(HideAndSeekSettleNotify other) : this() {
-      costTime_ = other.costTime_;
-      settleInfoList_ = other.settleInfoList_.Clone();
-      winnerList_ = other.winnerList_.Clone();
-      reason_ = other.reason_;
       playIndex_ = other.playIndex_;
-      isRecordScore_ = other.isRecordScore_;
       scoreList_ = other.scoreList_.Clone();
+      reason_ = other.reason_;
+      winnerList_ = other.winnerList_.Clone();
+      costTime_ = other.costTime_;
       stageType_ = other.stageType_;
+      isRecordScore_ = other.isRecordScore_;
+      settleInfoList_ = other.settleInfoList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -102,54 +108,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new HideAndSeekSettleNotify(this);
     }
 
-    /// <summary>Field number for the "cost_time" field.</summary>
-    public const int CostTimeFieldNumber = 2;
-    private uint costTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CostTime {
-      get { return costTime_; }
-      set {
-        costTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "settle_info_list" field.</summary>
-    public const int SettleInfoListFieldNumber = 8;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleInfo> _repeated_settleInfoList_codec
-        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleInfo> settleInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleInfo> SettleInfoList {
-      get { return settleInfoList_; }
-    }
-
-    /// <summary>Field number for the "winner_list" field.</summary>
-    public const int WinnerListFieldNumber = 15;
-    private static readonly pb::FieldCodec<uint> _repeated_winnerList_codec
-        = pb::FieldCodec.ForUInt32(122);
-    private readonly pbc::RepeatedField<uint> winnerList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> WinnerList {
-      get { return winnerList_; }
-    }
-
-    /// <summary>Field number for the "reason" field.</summary>
-    public const int ReasonFieldNumber = 4;
-    private global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleNotify.Types.SettleReason reason_ = global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleNotify.Types.SettleReason.TimeOut;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleNotify.Types.SettleReason Reason {
-      get { return reason_; }
-      set {
-        reason_ = value;
-      }
-    }
-
     /// <summary>Field number for the "play_index" field.</summary>
-    public const int PlayIndexFieldNumber = 13;
+    public const int PlayIndexFieldNumber = 6;
     private uint playIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -160,8 +120,66 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "score_list" field.</summary>
+    public const int ScoreListFieldNumber = 11;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo> _repeated_scoreList_codec
+        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo> scoreList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo> ScoreList {
+      get { return scoreList_; }
+    }
+
+    /// <summary>Field number for the "reason" field.</summary>
+    public const int ReasonFieldNumber = 1;
+    private global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleNotify.Types.SettleReason reason_ = global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleNotify.Types.SettleReason.TimeOut;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleNotify.Types.SettleReason Reason {
+      get { return reason_; }
+      set {
+        reason_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "winner_list" field.</summary>
+    public const int WinnerListFieldNumber = 2;
+    private static readonly pb::FieldCodec<uint> _repeated_winnerList_codec
+        = pb::FieldCodec.ForUInt32(18);
+    private readonly pbc::RepeatedField<uint> winnerList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> WinnerList {
+      get { return winnerList_; }
+    }
+
+    /// <summary>Field number for the "cost_time" field.</summary>
+    public const int CostTimeFieldNumber = 15;
+    private uint costTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CostTime {
+      get { return costTime_; }
+      set {
+        costTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "stage_type" field.</summary>
+    public const int StageTypeFieldNumber = 7;
+    private uint stageType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint StageType {
+      get { return stageType_; }
+      set {
+        stageType_ = value;
+      }
+    }
+
     /// <summary>Field number for the "is_record_score" field.</summary>
-    public const int IsRecordScoreFieldNumber = 6;
+    public const int IsRecordScoreFieldNumber = 5;
     private bool isRecordScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -172,27 +190,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "score_list" field.</summary>
-    public const int ScoreListFieldNumber = 9;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo> _repeated_scoreList_codec
-        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo> scoreList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo>();
+    /// <summary>Field number for the "settle_info_list" field.</summary>
+    public const int SettleInfoListFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleInfo> _repeated_settleInfoList_codec
+        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleInfo> settleInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ExhibitionDisplayInfo> ScoreList {
-      get { return scoreList_; }
-    }
-
-    /// <summary>Field number for the "stage_type" field.</summary>
-    public const int StageTypeFieldNumber = 14;
-    private uint stageType_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint StageType {
-      get { return stageType_; }
-      set {
-        stageType_ = value;
-      }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleInfo> SettleInfoList {
+      get { return settleInfoList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -210,14 +216,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CostTime != other.CostTime) return false;
-      if(!settleInfoList_.Equals(other.settleInfoList_)) return false;
-      if(!winnerList_.Equals(other.winnerList_)) return false;
-      if (Reason != other.Reason) return false;
       if (PlayIndex != other.PlayIndex) return false;
-      if (IsRecordScore != other.IsRecordScore) return false;
       if(!scoreList_.Equals(other.scoreList_)) return false;
+      if (Reason != other.Reason) return false;
+      if(!winnerList_.Equals(other.winnerList_)) return false;
+      if (CostTime != other.CostTime) return false;
       if (StageType != other.StageType) return false;
+      if (IsRecordScore != other.IsRecordScore) return false;
+      if(!settleInfoList_.Equals(other.settleInfoList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -225,14 +231,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CostTime != 0) hash ^= CostTime.GetHashCode();
-      hash ^= settleInfoList_.GetHashCode();
-      hash ^= winnerList_.GetHashCode();
-      if (Reason != global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleNotify.Types.SettleReason.TimeOut) hash ^= Reason.GetHashCode();
       if (PlayIndex != 0) hash ^= PlayIndex.GetHashCode();
-      if (IsRecordScore != false) hash ^= IsRecordScore.GetHashCode();
       hash ^= scoreList_.GetHashCode();
+      if (Reason != global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleNotify.Types.SettleReason.TimeOut) hash ^= Reason.GetHashCode();
+      hash ^= winnerList_.GetHashCode();
+      if (CostTime != 0) hash ^= CostTime.GetHashCode();
       if (StageType != 0) hash ^= StageType.GetHashCode();
+      if (IsRecordScore != false) hash ^= IsRecordScore.GetHashCode();
+      hash ^= settleInfoList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -251,29 +257,29 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CostTime != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(CostTime);
-      }
       if (Reason != global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleNotify.Types.SettleReason.TimeOut) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(8);
         output.WriteEnum((int) Reason);
       }
+      winnerList_.WriteTo(output, _repeated_winnerList_codec);
+      settleInfoList_.WriteTo(output, _repeated_settleInfoList_codec);
       if (IsRecordScore != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(40);
         output.WriteBool(IsRecordScore);
       }
-      settleInfoList_.WriteTo(output, _repeated_settleInfoList_codec);
-      scoreList_.WriteTo(output, _repeated_scoreList_codec);
       if (PlayIndex != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(48);
         output.WriteUInt32(PlayIndex);
       }
       if (StageType != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(56);
         output.WriteUInt32(StageType);
       }
-      winnerList_.WriteTo(output, _repeated_winnerList_codec);
+      scoreList_.WriteTo(output, _repeated_scoreList_codec);
+      if (CostTime != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(CostTime);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -284,29 +290,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CostTime != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(CostTime);
-      }
       if (Reason != global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleNotify.Types.SettleReason.TimeOut) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(8);
         output.WriteEnum((int) Reason);
       }
+      winnerList_.WriteTo(ref output, _repeated_winnerList_codec);
+      settleInfoList_.WriteTo(ref output, _repeated_settleInfoList_codec);
       if (IsRecordScore != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(40);
         output.WriteBool(IsRecordScore);
       }
-      settleInfoList_.WriteTo(ref output, _repeated_settleInfoList_codec);
-      scoreList_.WriteTo(ref output, _repeated_scoreList_codec);
       if (PlayIndex != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(48);
         output.WriteUInt32(PlayIndex);
       }
       if (StageType != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(56);
         output.WriteUInt32(StageType);
       }
-      winnerList_.WriteTo(ref output, _repeated_winnerList_codec);
+      scoreList_.WriteTo(ref output, _repeated_scoreList_codec);
+      if (CostTime != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(CostTime);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -317,24 +323,24 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CostTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CostTime);
+      if (PlayIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayIndex);
       }
-      size += settleInfoList_.CalculateSize(_repeated_settleInfoList_codec);
-      size += winnerList_.CalculateSize(_repeated_winnerList_codec);
+      size += scoreList_.CalculateSize(_repeated_scoreList_codec);
       if (Reason != global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleNotify.Types.SettleReason.TimeOut) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
       }
-      if (PlayIndex != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayIndex);
+      size += winnerList_.CalculateSize(_repeated_winnerList_codec);
+      if (CostTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CostTime);
+      }
+      if (StageType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageType);
       }
       if (IsRecordScore != false) {
         size += 1 + 1;
       }
-      size += scoreList_.CalculateSize(_repeated_scoreList_codec);
-      if (StageType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageType);
-      }
+      size += settleInfoList_.CalculateSize(_repeated_settleInfoList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -347,24 +353,24 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.CostTime != 0) {
-        CostTime = other.CostTime;
+      if (other.PlayIndex != 0) {
+        PlayIndex = other.PlayIndex;
       }
-      settleInfoList_.Add(other.settleInfoList_);
-      winnerList_.Add(other.winnerList_);
+      scoreList_.Add(other.scoreList_);
       if (other.Reason != global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleNotify.Types.SettleReason.TimeOut) {
         Reason = other.Reason;
       }
-      if (other.PlayIndex != 0) {
-        PlayIndex = other.PlayIndex;
+      winnerList_.Add(other.winnerList_);
+      if (other.CostTime != 0) {
+        CostTime = other.CostTime;
+      }
+      if (other.StageType != 0) {
+        StageType = other.StageType;
       }
       if (other.IsRecordScore != false) {
         IsRecordScore = other.IsRecordScore;
       }
-      scoreList_.Add(other.scoreList_);
-      if (other.StageType != 0) {
-        StageType = other.StageType;
-      }
+      settleInfoList_.Add(other.settleInfoList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -380,37 +386,37 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            CostTime = input.ReadUInt32();
-            break;
-          }
-          case 32: {
+          case 8: {
             Reason = (global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleNotify.Types.SettleReason) input.ReadEnum();
             break;
           }
-          case 48: {
-            IsRecordScore = input.ReadBool();
+          case 18:
+          case 16: {
+            winnerList_.AddEntriesFrom(input, _repeated_winnerList_codec);
             break;
           }
-          case 66: {
+          case 34: {
             settleInfoList_.AddEntriesFrom(input, _repeated_settleInfoList_codec);
             break;
           }
-          case 74: {
-            scoreList_.AddEntriesFrom(input, _repeated_scoreList_codec);
+          case 40: {
+            IsRecordScore = input.ReadBool();
             break;
           }
-          case 104: {
+          case 48: {
             PlayIndex = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 56: {
             StageType = input.ReadUInt32();
             break;
           }
-          case 122:
+          case 90: {
+            scoreList_.AddEntriesFrom(input, _repeated_scoreList_codec);
+            break;
+          }
           case 120: {
-            winnerList_.AddEntriesFrom(input, _repeated_winnerList_codec);
+            CostTime = input.ReadUInt32();
             break;
           }
         }
@@ -428,37 +434,37 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            CostTime = input.ReadUInt32();
-            break;
-          }
-          case 32: {
+          case 8: {
             Reason = (global::Weedwacker.Shared.Network.Proto.HideAndSeekSettleNotify.Types.SettleReason) input.ReadEnum();
             break;
           }
-          case 48: {
-            IsRecordScore = input.ReadBool();
+          case 18:
+          case 16: {
+            winnerList_.AddEntriesFrom(ref input, _repeated_winnerList_codec);
             break;
           }
-          case 66: {
+          case 34: {
             settleInfoList_.AddEntriesFrom(ref input, _repeated_settleInfoList_codec);
             break;
           }
-          case 74: {
-            scoreList_.AddEntriesFrom(ref input, _repeated_scoreList_codec);
+          case 40: {
+            IsRecordScore = input.ReadBool();
             break;
           }
-          case 104: {
+          case 48: {
             PlayIndex = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 56: {
             StageType = input.ReadUInt32();
             break;
           }
-          case 122:
+          case 90: {
+            scoreList_.AddEntriesFrom(ref input, _repeated_scoreList_codec);
+            break;
+          }
           case 120: {
-            winnerList_.AddEntriesFrom(ref input, _repeated_winnerList_codec);
+            CostTime = input.ReadUInt32();
             break;
           }
         }

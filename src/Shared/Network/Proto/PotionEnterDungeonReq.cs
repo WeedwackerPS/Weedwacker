@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static PotionEnterDungeonReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtQb3Rpb25FbnRlckR1bmdlb25SZXEucHJvdG8aFlBvdGlvbkF2YXRhcklu",
-            "Zm8ucHJvdG8ijwEKFVBvdGlvbkVudGVyRHVuZ2VvblJlcRIUCgxidWZmX2lk",
-            "X2xpc3QYDyADKA0SEAoIbGV2ZWxfaWQYBSABKA0SKwoQYXZhdGFyX2luZm9f",
-            "bGlzdBgOIAMoCzIRLlBvdGlvbkF2YXRhckluZm8SDwoHbW9kZV9pZBgCIAEo",
-            "DRIQCghzdGFnZV9pZBgNIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
-            "d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChtQb3Rpb25FbnRlckR1bmdlb25SZXEucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aFlBvdGlvbkF2YXRhckluZm8ucHJvdG8irwEK",
+            "FVBvdGlvbkVudGVyRHVuZ2VvblJlcRIQCghsZXZlbF9pZBgGIAEoDRJLChBh",
+            "dmF0YXJfaW5mb19saXN0GA8gAygLMjEuV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5Qb3Rpb25BdmF0YXJJbmZvEg8KB21vZGVfaWQYCiABKA0S",
+            "FAoMYnVmZl9pZF9saXN0GAkgAygNEhAKCHN0YWdlX2lkGAIgASgNYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.PotionAvatarInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PotionEnterDungeonReq), global::Weedwacker.Shared.Network.Proto.PotionEnterDungeonReq.Parser, new[]{ "BuffIdList", "LevelId", "AvatarInfoList", "ModeId", "StageId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PotionEnterDungeonReq), global::Weedwacker.Shared.Network.Proto.PotionEnterDungeonReq.Parser, new[]{ "LevelId", "AvatarInfoList", "ModeId", "BuffIdList", "StageId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,10 +42,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8261
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8945;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class PotionEnterDungeonReq : pb::IMessage<PotionEnterDungeonReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,10 +85,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PotionEnterDungeonReq(PotionEnterDungeonReq other) : this() {
-      buffIdList_ = other.buffIdList_.Clone();
       levelId_ = other.levelId_;
       avatarInfoList_ = other.avatarInfoList_.Clone();
       modeId_ = other.modeId_;
+      buffIdList_ = other.buffIdList_.Clone();
       stageId_ = other.stageId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -94,19 +99,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PotionEnterDungeonReq(this);
     }
 
-    /// <summary>Field number for the "buff_id_list" field.</summary>
-    public const int BuffIdListFieldNumber = 15;
-    private static readonly pb::FieldCodec<uint> _repeated_buffIdList_codec
-        = pb::FieldCodec.ForUInt32(122);
-    private readonly pbc::RepeatedField<uint> buffIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> BuffIdList {
-      get { return buffIdList_; }
-    }
-
     /// <summary>Field number for the "level_id" field.</summary>
-    public const int LevelIdFieldNumber = 5;
+    public const int LevelIdFieldNumber = 6;
     private uint levelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -118,9 +112,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "avatar_info_list" field.</summary>
-    public const int AvatarInfoListFieldNumber = 14;
+    public const int AvatarInfoListFieldNumber = 15;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.PotionAvatarInfo> _repeated_avatarInfoList_codec
-        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.PotionAvatarInfo.Parser);
+        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.PotionAvatarInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PotionAvatarInfo> avatarInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PotionAvatarInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -129,7 +123,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "mode_id" field.</summary>
-    public const int ModeIdFieldNumber = 2;
+    public const int ModeIdFieldNumber = 10;
     private uint modeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -140,8 +134,19 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "buff_id_list" field.</summary>
+    public const int BuffIdListFieldNumber = 9;
+    private static readonly pb::FieldCodec<uint> _repeated_buffIdList_codec
+        = pb::FieldCodec.ForUInt32(74);
+    private readonly pbc::RepeatedField<uint> buffIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> BuffIdList {
+      get { return buffIdList_; }
+    }
+
     /// <summary>Field number for the "stage_id" field.</summary>
-    public const int StageIdFieldNumber = 13;
+    public const int StageIdFieldNumber = 2;
     private uint stageId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -167,10 +172,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!buffIdList_.Equals(other.buffIdList_)) return false;
       if (LevelId != other.LevelId) return false;
       if(!avatarInfoList_.Equals(other.avatarInfoList_)) return false;
       if (ModeId != other.ModeId) return false;
+      if(!buffIdList_.Equals(other.buffIdList_)) return false;
       if (StageId != other.StageId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -179,10 +184,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= buffIdList_.GetHashCode();
       if (LevelId != 0) hash ^= LevelId.GetHashCode();
       hash ^= avatarInfoList_.GetHashCode();
       if (ModeId != 0) hash ^= ModeId.GetHashCode();
+      hash ^= buffIdList_.GetHashCode();
       if (StageId != 0) hash ^= StageId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -202,20 +207,20 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ModeId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(ModeId);
-      }
-      if (LevelId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(LevelId);
-      }
       if (StageId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(16);
         output.WriteUInt32(StageId);
       }
-      avatarInfoList_.WriteTo(output, _repeated_avatarInfoList_codec);
+      if (LevelId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(LevelId);
+      }
       buffIdList_.WriteTo(output, _repeated_buffIdList_codec);
+      if (ModeId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(ModeId);
+      }
+      avatarInfoList_.WriteTo(output, _repeated_avatarInfoList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -226,20 +231,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ModeId != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(ModeId);
-      }
-      if (LevelId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(LevelId);
-      }
       if (StageId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(16);
         output.WriteUInt32(StageId);
       }
-      avatarInfoList_.WriteTo(ref output, _repeated_avatarInfoList_codec);
+      if (LevelId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(LevelId);
+      }
       buffIdList_.WriteTo(ref output, _repeated_buffIdList_codec);
+      if (ModeId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(ModeId);
+      }
+      avatarInfoList_.WriteTo(ref output, _repeated_avatarInfoList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -250,7 +255,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += buffIdList_.CalculateSize(_repeated_buffIdList_codec);
       if (LevelId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
       }
@@ -258,6 +262,7 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ModeId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ModeId);
       }
+      size += buffIdList_.CalculateSize(_repeated_buffIdList_codec);
       if (StageId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
       }
@@ -273,7 +278,6 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      buffIdList_.Add(other.buffIdList_);
       if (other.LevelId != 0) {
         LevelId = other.LevelId;
       }
@@ -281,6 +285,7 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.ModeId != 0) {
         ModeId = other.ModeId;
       }
+      buffIdList_.Add(other.buffIdList_);
       if (other.StageId != 0) {
         StageId = other.StageId;
       }
@@ -300,24 +305,24 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 16: {
-            ModeId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            LevelId = input.ReadUInt32();
-            break;
-          }
-          case 104: {
             StageId = input.ReadUInt32();
             break;
           }
-          case 114: {
-            avatarInfoList_.AddEntriesFrom(input, _repeated_avatarInfoList_codec);
+          case 48: {
+            LevelId = input.ReadUInt32();
             break;
           }
-          case 122:
-          case 120: {
+          case 74:
+          case 72: {
             buffIdList_.AddEntriesFrom(input, _repeated_buffIdList_codec);
+            break;
+          }
+          case 80: {
+            ModeId = input.ReadUInt32();
+            break;
+          }
+          case 122: {
+            avatarInfoList_.AddEntriesFrom(input, _repeated_avatarInfoList_codec);
             break;
           }
         }
@@ -336,24 +341,24 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 16: {
-            ModeId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            LevelId = input.ReadUInt32();
-            break;
-          }
-          case 104: {
             StageId = input.ReadUInt32();
             break;
           }
-          case 114: {
-            avatarInfoList_.AddEntriesFrom(ref input, _repeated_avatarInfoList_codec);
+          case 48: {
+            LevelId = input.ReadUInt32();
             break;
           }
-          case 122:
-          case 120: {
+          case 74:
+          case 72: {
             buffIdList_.AddEntriesFrom(ref input, _repeated_buffIdList_codec);
+            break;
+          }
+          case 80: {
+            ModeId = input.ReadUInt32();
+            break;
+          }
+          case 122: {
+            avatarInfoList_.AddEntriesFrom(ref input, _repeated_avatarInfoList_codec);
             break;
           }
         }

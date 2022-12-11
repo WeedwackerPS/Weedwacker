@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGOperationRedrawReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhHQ0dPcGVyYXRpb25SZWRyYXcucHJvdG8iJwoSR0NHT3BlcmF0aW9uUmVk",
-            "cmF3EhEKCWNhcmRfbGlzdBgCIAMoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQu",
-            "TmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChhHQ0dPcGVyYXRpb25SZWRyYXcucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8iJwoSR0NHT3BlcmF0aW9uUmVkcmF3EhEKCWNhcmRf",
+            "bGlzdBgHIAMoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,9 +82,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "card_list" field.</summary>
-    public const int CardListFieldNumber = 2;
+    public const int CardListFieldNumber = 7;
     private static readonly pb::FieldCodec<uint> _repeated_cardList_codec
-        = pb::FieldCodec.ForUInt32(18);
+        = pb::FieldCodec.ForUInt32(58);
     private readonly pbc::RepeatedField<uint> cardList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -185,8 +185,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18:
-          case 16: {
+          case 58:
+          case 56: {
             cardList_.AddEntriesFrom(input, _repeated_cardList_codec);
             break;
           }
@@ -205,8 +205,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18:
-          case 16: {
+          case 58:
+          case 56: {
             cardList_.AddEntriesFrom(ref input, _repeated_cardList_codec);
             break;
           }

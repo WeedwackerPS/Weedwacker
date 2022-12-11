@@ -24,17 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static SignInInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChBTaWduSW5JbmZvLnByb3RvGhBTaWduSW5EYXRhLnByb3RvIucBCgpTaWdu",
-            "SW5JbmZvEhkKEWlzX2NvbmRfc2F0aXNmaWVkGAcgASgIEhcKD3Jld2FyZF9k",
-            "YXlfbGlzdBgPIAMoDRIlChBzaWduaW5fZGF0YV9saXN0GAwgAygLMgsuU2ln",
-            "bkluRGF0YRIRCgljb25maWdfaWQYCCABKA0SFQoNc2lnbl9pbl9jb3VudBgC",
-            "IAEoDRITCgtzY2hlZHVsZV9pZBgDIAEoDRIQCghlbmRfdGltZRgNIAEoDRIZ",
-            "ChFsYXN0X3NpZ25faW5fdGltZRgGIAEoDRISCgpiZWdpbl90aW1lGAUgASgN",
-            "QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChBTaWduSW5JbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvGhBTaWduSW5EYXRhLnByb3RvIo8CCgpTaWduSW5JbmZvEhkKEWlz",
+            "X2NvbmRfc2F0aXNmaWVkGAEgASgIEkUKEHNpZ25pbl9kYXRhX2xpc3QYCiAD",
+            "KAsyKy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlNpZ25JbkRh",
+            "dGESGwoTVW5rMzMwMF9NTkpFTElES01DRhgFIAEoDRITCgtzY2hlZHVsZV9p",
+            "ZBgHIAEoDRIbChNVbmszMzAwX05GTk9LQk5CTEdFGAMgASgNEhcKD3Jld2Fy",
+            "ZF9kYXlfbGlzdBgEIAMoDRISCgpiZWdpbl90aW1lGAYgASgNEhEKCWNvbmZp",
+            "Z19pZBgJIAEoDRIQCghlbmRfdGltZRgIIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.SignInDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SignInInfo), global::Weedwacker.Shared.Network.Proto.SignInInfo.Parser, new[]{ "IsCondSatisfied", "RewardDayList", "SigninDataList", "ConfigId", "SignInCount", "ScheduleId", "EndTime", "LastSignInTime", "BeginTime" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SignInInfo), global::Weedwacker.Shared.Network.Proto.SignInInfo.Parser, new[]{ "IsCondSatisfied", "SigninDataList", "Unk3300MNJELIDKMCF", "ScheduleId", "Unk3300NFNOKBNBLGE", "RewardDayList", "BeginTime", "ConfigId", "EndTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -76,14 +77,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SignInInfo(SignInInfo other) : this() {
       isCondSatisfied_ = other.isCondSatisfied_;
-      rewardDayList_ = other.rewardDayList_.Clone();
       signinDataList_ = other.signinDataList_.Clone();
-      configId_ = other.configId_;
-      signInCount_ = other.signInCount_;
+      unk3300MNJELIDKMCF_ = other.unk3300MNJELIDKMCF_;
       scheduleId_ = other.scheduleId_;
-      endTime_ = other.endTime_;
-      lastSignInTime_ = other.lastSignInTime_;
+      unk3300NFNOKBNBLGE_ = other.unk3300NFNOKBNBLGE_;
+      rewardDayList_ = other.rewardDayList_.Clone();
       beginTime_ = other.beginTime_;
+      configId_ = other.configId_;
+      endTime_ = other.endTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_cond_satisfied" field.</summary>
-    public const int IsCondSatisfiedFieldNumber = 7;
+    public const int IsCondSatisfiedFieldNumber = 1;
     private bool isCondSatisfied_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -105,21 +106,10 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "reward_day_list" field.</summary>
-    public const int RewardDayListFieldNumber = 15;
-    private static readonly pb::FieldCodec<uint> _repeated_rewardDayList_codec
-        = pb::FieldCodec.ForUInt32(122);
-    private readonly pbc::RepeatedField<uint> rewardDayList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> RewardDayList {
-      get { return rewardDayList_; }
-    }
-
     /// <summary>Field number for the "signin_data_list" field.</summary>
-    public const int SigninDataListFieldNumber = 12;
+    public const int SigninDataListFieldNumber = 10;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.SignInData> _repeated_signinDataList_codec
-        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.SignInData.Parser);
+        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.SignInData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SignInData> signinDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SignInData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -127,32 +117,20 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return signinDataList_; }
     }
 
-    /// <summary>Field number for the "config_id" field.</summary>
-    public const int ConfigIdFieldNumber = 8;
-    private uint configId_;
+    /// <summary>Field number for the "Unk3300_MNJELIDKMCF" field.</summary>
+    public const int Unk3300MNJELIDKMCFFieldNumber = 5;
+    private uint unk3300MNJELIDKMCF_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ConfigId {
-      get { return configId_; }
+    public uint Unk3300MNJELIDKMCF {
+      get { return unk3300MNJELIDKMCF_; }
       set {
-        configId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "sign_in_count" field.</summary>
-    public const int SignInCountFieldNumber = 2;
-    private uint signInCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SignInCount {
-      get { return signInCount_; }
-      set {
-        signInCount_ = value;
+        unk3300MNJELIDKMCF_ = value;
       }
     }
 
     /// <summary>Field number for the "schedule_id" field.</summary>
-    public const int ScheduleIdFieldNumber = 3;
+    public const int ScheduleIdFieldNumber = 7;
     private uint scheduleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -163,32 +141,31 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "end_time" field.</summary>
-    public const int EndTimeFieldNumber = 13;
-    private uint endTime_;
+    /// <summary>Field number for the "Unk3300_NFNOKBNBLGE" field.</summary>
+    public const int Unk3300NFNOKBNBLGEFieldNumber = 3;
+    private uint unk3300NFNOKBNBLGE_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EndTime {
-      get { return endTime_; }
+    public uint Unk3300NFNOKBNBLGE {
+      get { return unk3300NFNOKBNBLGE_; }
       set {
-        endTime_ = value;
+        unk3300NFNOKBNBLGE_ = value;
       }
     }
 
-    /// <summary>Field number for the "last_sign_in_time" field.</summary>
-    public const int LastSignInTimeFieldNumber = 6;
-    private uint lastSignInTime_;
+    /// <summary>Field number for the "reward_day_list" field.</summary>
+    public const int RewardDayListFieldNumber = 4;
+    private static readonly pb::FieldCodec<uint> _repeated_rewardDayList_codec
+        = pb::FieldCodec.ForUInt32(34);
+    private readonly pbc::RepeatedField<uint> rewardDayList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint LastSignInTime {
-      get { return lastSignInTime_; }
-      set {
-        lastSignInTime_ = value;
-      }
+    public pbc::RepeatedField<uint> RewardDayList {
+      get { return rewardDayList_; }
     }
 
     /// <summary>Field number for the "begin_time" field.</summary>
-    public const int BeginTimeFieldNumber = 5;
+    public const int BeginTimeFieldNumber = 6;
     private uint beginTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -196,6 +173,30 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return beginTime_; }
       set {
         beginTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "config_id" field.</summary>
+    public const int ConfigIdFieldNumber = 9;
+    private uint configId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ConfigId {
+      get { return configId_; }
+      set {
+        configId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "end_time" field.</summary>
+    public const int EndTimeFieldNumber = 8;
+    private uint endTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EndTime {
+      get { return endTime_; }
+      set {
+        endTime_ = value;
       }
     }
 
@@ -215,14 +216,14 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (IsCondSatisfied != other.IsCondSatisfied) return false;
-      if(!rewardDayList_.Equals(other.rewardDayList_)) return false;
       if(!signinDataList_.Equals(other.signinDataList_)) return false;
-      if (ConfigId != other.ConfigId) return false;
-      if (SignInCount != other.SignInCount) return false;
+      if (Unk3300MNJELIDKMCF != other.Unk3300MNJELIDKMCF) return false;
       if (ScheduleId != other.ScheduleId) return false;
-      if (EndTime != other.EndTime) return false;
-      if (LastSignInTime != other.LastSignInTime) return false;
+      if (Unk3300NFNOKBNBLGE != other.Unk3300NFNOKBNBLGE) return false;
+      if(!rewardDayList_.Equals(other.rewardDayList_)) return false;
       if (BeginTime != other.BeginTime) return false;
+      if (ConfigId != other.ConfigId) return false;
+      if (EndTime != other.EndTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -231,14 +232,14 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (IsCondSatisfied != false) hash ^= IsCondSatisfied.GetHashCode();
-      hash ^= rewardDayList_.GetHashCode();
       hash ^= signinDataList_.GetHashCode();
-      if (ConfigId != 0) hash ^= ConfigId.GetHashCode();
-      if (SignInCount != 0) hash ^= SignInCount.GetHashCode();
+      if (Unk3300MNJELIDKMCF != 0) hash ^= Unk3300MNJELIDKMCF.GetHashCode();
       if (ScheduleId != 0) hash ^= ScheduleId.GetHashCode();
-      if (EndTime != 0) hash ^= EndTime.GetHashCode();
-      if (LastSignInTime != 0) hash ^= LastSignInTime.GetHashCode();
+      if (Unk3300NFNOKBNBLGE != 0) hash ^= Unk3300NFNOKBNBLGE.GetHashCode();
+      hash ^= rewardDayList_.GetHashCode();
       if (BeginTime != 0) hash ^= BeginTime.GetHashCode();
+      if (ConfigId != 0) hash ^= ConfigId.GetHashCode();
+      if (EndTime != 0) hash ^= EndTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -257,36 +258,36 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (SignInCount != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(SignInCount);
-      }
-      if (ScheduleId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(ScheduleId);
-      }
-      if (BeginTime != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(BeginTime);
-      }
-      if (LastSignInTime != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(LastSignInTime);
-      }
       if (IsCondSatisfied != false) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(8);
         output.WriteBool(IsCondSatisfied);
       }
-      if (ConfigId != 0) {
+      if (Unk3300NFNOKBNBLGE != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300NFNOKBNBLGE);
+      }
+      rewardDayList_.WriteTo(output, _repeated_rewardDayList_codec);
+      if (Unk3300MNJELIDKMCF != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300MNJELIDKMCF);
+      }
+      if (BeginTime != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(BeginTime);
+      }
+      if (ScheduleId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(ScheduleId);
+      }
+      if (EndTime != 0) {
         output.WriteRawTag(64);
+        output.WriteUInt32(EndTime);
+      }
+      if (ConfigId != 0) {
+        output.WriteRawTag(72);
         output.WriteUInt32(ConfigId);
       }
       signinDataList_.WriteTo(output, _repeated_signinDataList_codec);
-      if (EndTime != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(EndTime);
-      }
-      rewardDayList_.WriteTo(output, _repeated_rewardDayList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -297,36 +298,36 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (SignInCount != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(SignInCount);
-      }
-      if (ScheduleId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(ScheduleId);
-      }
-      if (BeginTime != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(BeginTime);
-      }
-      if (LastSignInTime != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(LastSignInTime);
-      }
       if (IsCondSatisfied != false) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(8);
         output.WriteBool(IsCondSatisfied);
       }
-      if (ConfigId != 0) {
+      if (Unk3300NFNOKBNBLGE != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300NFNOKBNBLGE);
+      }
+      rewardDayList_.WriteTo(ref output, _repeated_rewardDayList_codec);
+      if (Unk3300MNJELIDKMCF != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300MNJELIDKMCF);
+      }
+      if (BeginTime != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(BeginTime);
+      }
+      if (ScheduleId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(ScheduleId);
+      }
+      if (EndTime != 0) {
         output.WriteRawTag(64);
+        output.WriteUInt32(EndTime);
+      }
+      if (ConfigId != 0) {
+        output.WriteRawTag(72);
         output.WriteUInt32(ConfigId);
       }
       signinDataList_.WriteTo(ref output, _repeated_signinDataList_codec);
-      if (EndTime != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(EndTime);
-      }
-      rewardDayList_.WriteTo(ref output, _repeated_rewardDayList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -340,25 +341,25 @@ namespace Weedwacker.Shared.Network.Proto {
       if (IsCondSatisfied != false) {
         size += 1 + 1;
       }
-      size += rewardDayList_.CalculateSize(_repeated_rewardDayList_codec);
       size += signinDataList_.CalculateSize(_repeated_signinDataList_codec);
-      if (ConfigId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConfigId);
-      }
-      if (SignInCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SignInCount);
+      if (Unk3300MNJELIDKMCF != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300MNJELIDKMCF);
       }
       if (ScheduleId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScheduleId);
       }
-      if (EndTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
+      if (Unk3300NFNOKBNBLGE != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NFNOKBNBLGE);
       }
-      if (LastSignInTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LastSignInTime);
-      }
+      size += rewardDayList_.CalculateSize(_repeated_rewardDayList_codec);
       if (BeginTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BeginTime);
+      }
+      if (ConfigId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConfigId);
+      }
+      if (EndTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -375,25 +376,25 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.IsCondSatisfied != false) {
         IsCondSatisfied = other.IsCondSatisfied;
       }
-      rewardDayList_.Add(other.rewardDayList_);
       signinDataList_.Add(other.signinDataList_);
-      if (other.ConfigId != 0) {
-        ConfigId = other.ConfigId;
-      }
-      if (other.SignInCount != 0) {
-        SignInCount = other.SignInCount;
+      if (other.Unk3300MNJELIDKMCF != 0) {
+        Unk3300MNJELIDKMCF = other.Unk3300MNJELIDKMCF;
       }
       if (other.ScheduleId != 0) {
         ScheduleId = other.ScheduleId;
       }
-      if (other.EndTime != 0) {
-        EndTime = other.EndTime;
+      if (other.Unk3300NFNOKBNBLGE != 0) {
+        Unk3300NFNOKBNBLGE = other.Unk3300NFNOKBNBLGE;
       }
-      if (other.LastSignInTime != 0) {
-        LastSignInTime = other.LastSignInTime;
-      }
+      rewardDayList_.Add(other.rewardDayList_);
       if (other.BeginTime != 0) {
         BeginTime = other.BeginTime;
+      }
+      if (other.ConfigId != 0) {
+        ConfigId = other.ConfigId;
+      }
+      if (other.EndTime != 0) {
+        EndTime = other.EndTime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -410,41 +411,41 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            SignInCount = input.ReadUInt32();
-            break;
-          }
-          case 24: {
-            ScheduleId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            BeginTime = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            LastSignInTime = input.ReadUInt32();
-            break;
-          }
-          case 56: {
+          case 8: {
             IsCondSatisfied = input.ReadBool();
             break;
           }
+          case 24: {
+            Unk3300NFNOKBNBLGE = input.ReadUInt32();
+            break;
+          }
+          case 34:
+          case 32: {
+            rewardDayList_.AddEntriesFrom(input, _repeated_rewardDayList_codec);
+            break;
+          }
+          case 40: {
+            Unk3300MNJELIDKMCF = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            BeginTime = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            ScheduleId = input.ReadUInt32();
+            break;
+          }
           case 64: {
-            ConfigId = input.ReadUInt32();
-            break;
-          }
-          case 98: {
-            signinDataList_.AddEntriesFrom(input, _repeated_signinDataList_codec);
-            break;
-          }
-          case 104: {
             EndTime = input.ReadUInt32();
             break;
           }
-          case 122:
-          case 120: {
-            rewardDayList_.AddEntriesFrom(input, _repeated_rewardDayList_codec);
+          case 72: {
+            ConfigId = input.ReadUInt32();
+            break;
+          }
+          case 82: {
+            signinDataList_.AddEntriesFrom(input, _repeated_signinDataList_codec);
             break;
           }
         }
@@ -462,41 +463,41 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            SignInCount = input.ReadUInt32();
-            break;
-          }
-          case 24: {
-            ScheduleId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            BeginTime = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            LastSignInTime = input.ReadUInt32();
-            break;
-          }
-          case 56: {
+          case 8: {
             IsCondSatisfied = input.ReadBool();
             break;
           }
+          case 24: {
+            Unk3300NFNOKBNBLGE = input.ReadUInt32();
+            break;
+          }
+          case 34:
+          case 32: {
+            rewardDayList_.AddEntriesFrom(ref input, _repeated_rewardDayList_codec);
+            break;
+          }
+          case 40: {
+            Unk3300MNJELIDKMCF = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            BeginTime = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            ScheduleId = input.ReadUInt32();
+            break;
+          }
           case 64: {
-            ConfigId = input.ReadUInt32();
-            break;
-          }
-          case 98: {
-            signinDataList_.AddEntriesFrom(ref input, _repeated_signinDataList_codec);
-            break;
-          }
-          case 104: {
             EndTime = input.ReadUInt32();
             break;
           }
-          case 122:
-          case 120: {
-            rewardDayList_.AddEntriesFrom(ref input, _repeated_rewardDayList_codec);
+          case 72: {
+            ConfigId = input.ReadUInt32();
+            break;
+          }
+          case 82: {
+            signinDataList_.AddEntriesFrom(ref input, _repeated_signinDataList_codec);
             break;
           }
         }

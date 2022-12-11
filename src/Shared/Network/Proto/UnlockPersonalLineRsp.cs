@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static UnlockPersonalLineRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtVbmxvY2tQZXJzb25hbExpbmVSc3AucHJvdG8icgoVVW5sb2NrUGVyc29u",
-            "YWxMaW5lUnNwEg8KB3JldGNvZGUYBCABKAUSGAoQcGVyc29uYWxfbGluZV9p",
-            "ZBgKIAEoDRIPCgVsZXZlbBgLIAEoDUgAEhQKCmNoYXB0ZXJfaWQYBiABKA1I",
-            "AEIHCgVwYXJhbUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
-            "b2IGcHJvdG8z"));
+            "ChtVbmxvY2tQZXJzb25hbExpbmVSc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8icgoVVW5sb2NrUGVyc29uYWxMaW5lUnNwEhgK",
+            "EHBlcnNvbmFsX2xpbmVfaWQYBCABKA0SDwoHcmV0Y29kZRgMIAEoBRIPCgVs",
+            "ZXZlbBgKIAEoDUgAEhQKCmNoYXB0ZXJfaWQYAyABKA1IAEIHCgVwYXJhbWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.UnlockPersonalLineRsp), global::Weedwacker.Shared.Network.Proto.UnlockPersonalLineRsp.Parser, new[]{ "Retcode", "PersonalLineId", "Level", "ChapterId" }, new[]{ "Param" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.UnlockPersonalLineRsp), global::Weedwacker.Shared.Network.Proto.UnlockPersonalLineRsp.Parser, new[]{ "PersonalLineId", "Retcode", "Level", "ChapterId" }, new[]{ "Param" }, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 491
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 421;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class UnlockPersonalLineRsp : pb::IMessage<UnlockPersonalLineRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UnlockPersonalLineRsp(UnlockPersonalLineRsp other) : this() {
-      retcode_ = other.retcode_;
       personalLineId_ = other.personalLineId_;
+      retcode_ = other.retcode_;
       switch (other.ParamCase) {
         case ParamOneofCase.Level:
           Level = other.Level;
@@ -98,20 +102,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new UnlockPersonalLineRsp(this);
     }
 
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 4;
-    private int retcode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
-      }
-    }
-
     /// <summary>Field number for the "personal_line_id" field.</summary>
-    public const int PersonalLineIdFieldNumber = 10;
+    public const int PersonalLineIdFieldNumber = 4;
     private uint personalLineId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,8 +114,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 12;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
     /// <summary>Field number for the "level" field.</summary>
-    public const int LevelFieldNumber = 11;
+    public const int LevelFieldNumber = 10;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint Level {
@@ -135,7 +139,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "chapter_id" field.</summary>
-    public const int ChapterIdFieldNumber = 6;
+    public const int ChapterIdFieldNumber = 3;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint ChapterId {
@@ -150,8 +154,8 @@ namespace Weedwacker.Shared.Network.Proto {
     /// <summary>Enum of possible cases for the "param" oneof.</summary>
     public enum ParamOneofCase {
       None = 0,
-      Level = 11,
-      ChapterId = 6,
+      Level = 10,
+      ChapterId = 3,
     }
     private ParamOneofCase paramCase_ = ParamOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -182,8 +186,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Retcode != other.Retcode) return false;
       if (PersonalLineId != other.PersonalLineId) return false;
+      if (Retcode != other.Retcode) return false;
       if (Level != other.Level) return false;
       if (ChapterId != other.ChapterId) return false;
       if (ParamCase != other.ParamCase) return false;
@@ -194,8 +198,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (PersonalLineId != 0) hash ^= PersonalLineId.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (paramCase_ == ParamOneofCase.Level) hash ^= Level.GetHashCode();
       if (paramCase_ == ParamOneofCase.ChapterId) hash ^= ChapterId.GetHashCode();
       hash ^= (int) paramCase_;
@@ -217,21 +221,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Retcode != 0) {
-        output.WriteRawTag(32);
-        output.WriteInt32(Retcode);
-      }
       if (paramCase_ == ParamOneofCase.ChapterId) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(24);
         output.WriteUInt32(ChapterId);
       }
       if (PersonalLineId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(32);
         output.WriteUInt32(PersonalLineId);
       }
       if (paramCase_ == ParamOneofCase.Level) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(80);
         output.WriteUInt32(Level);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -243,21 +247,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Retcode != 0) {
-        output.WriteRawTag(32);
-        output.WriteInt32(Retcode);
-      }
       if (paramCase_ == ParamOneofCase.ChapterId) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(24);
         output.WriteUInt32(ChapterId);
       }
       if (PersonalLineId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(32);
         output.WriteUInt32(PersonalLineId);
       }
       if (paramCase_ == ParamOneofCase.Level) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(80);
         output.WriteUInt32(Level);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -269,11 +273,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
       if (PersonalLineId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PersonalLineId);
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (paramCase_ == ParamOneofCase.Level) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Level);
@@ -293,11 +297,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
-      }
       if (other.PersonalLineId != 0) {
         PersonalLineId = other.PersonalLineId;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
       }
       switch (other.ParamCase) {
         case ParamOneofCase.Level:
@@ -323,20 +327,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 48: {
+          case 24: {
             ChapterId = input.ReadUInt32();
             break;
           }
-          case 80: {
+          case 32: {
             PersonalLineId = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 80: {
             Level = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -354,20 +358,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 48: {
+          case 24: {
             ChapterId = input.ReadUInt32();
             break;
           }
-          case 80: {
+          case 32: {
             PersonalLineId = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 80: {
             Level = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            Retcode = input.ReadInt32();
             break;
           }
         }

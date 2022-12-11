@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGSkillPreviewTokenChangeInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiRHQ0dTa2lsbFByZXZpZXdUb2tlbkNoYW5nZUluZm8ucHJvdG8aHkdDR1Nr",
-            "aWxsUHJldmlld1Rva2VuSW5mby5wcm90byJWCh5HQ0dTa2lsbFByZXZpZXdU",
-            "b2tlbkNoYW5nZUluZm8SNAoRdG9rZW5fY2hhbmdlX2xpc3QYDiADKAsyGS5H",
-            "Q0dTa2lsbFByZXZpZXdUb2tlbkluZm9CIqoCH1dlZWR3YWNrZXIuU2hhcmVk",
-            "Lk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiRHQ0dTa2lsbFByZXZpZXdUb2tlbkNoYW5nZUluZm8ucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aHkdDR1NraWxsUHJldmlld1Rv",
+            "a2VuSW5mby5wcm90byJ2Ch5HQ0dTa2lsbFByZXZpZXdUb2tlbkNoYW5nZUlu",
+            "Zm8SVAoRdG9rZW5fY2hhbmdlX2xpc3QYCiADKAsyOS5XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvLkdDR1NraWxsUHJldmlld1Rva2VuSW5mb2IG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewTokenInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,9 +85,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "token_change_list" field.</summary>
-    public const int TokenChangeListFieldNumber = 14;
+    public const int TokenChangeListFieldNumber = 10;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewTokenInfo> _repeated_tokenChangeList_codec
-        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewTokenInfo.Parser);
+        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewTokenInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewTokenInfo> tokenChangeList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGSkillPreviewTokenInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -187,7 +188,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 114: {
+          case 82: {
             tokenChangeList_.AddEntriesFrom(input, _repeated_tokenChangeList_codec);
             break;
           }
@@ -206,7 +207,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 114: {
+          case 82: {
             tokenChangeList_.AddEntriesFrom(ref input, _repeated_tokenChangeList_codec);
             break;
           }

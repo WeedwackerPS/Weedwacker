@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static PotionDungeonAvatarReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlQb3Rpb25EdW5nZW9uQXZhdGFyLnByb3RvIjwKE1BvdGlvbkR1bmdlb25B",
-            "dmF0YXISEwoLYXZhdGFyX2d1aWQYCCABKAQSEAoIaXNfdHJpYWwYAiABKAhC",
-            "IqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChlQb3Rpb25EdW5nZW9uQXZhdGFyLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvIjwKE1BvdGlvbkR1bmdlb25BdmF0YXISEwoLYXZh",
+            "dGFyX2d1aWQYDiABKAQSEAoIaXNfdHJpYWwYASABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "avatar_guid" field.</summary>
-    public const int AvatarGuidFieldNumber = 8;
+    public const int AvatarGuidFieldNumber = 14;
     private ulong avatarGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -95,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_trial" field.</summary>
-    public const int IsTrialFieldNumber = 2;
+    public const int IsTrialFieldNumber = 1;
     private bool isTrial_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -151,11 +151,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (IsTrial != false) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(8);
         output.WriteBool(IsTrial);
       }
       if (AvatarGuid != 0UL) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(112);
         output.WriteUInt64(AvatarGuid);
       }
       if (_unknownFields != null) {
@@ -169,11 +169,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (IsTrial != false) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(8);
         output.WriteBool(IsTrial);
       }
       if (AvatarGuid != 0UL) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(112);
         output.WriteUInt64(AvatarGuid);
       }
       if (_unknownFields != null) {
@@ -225,11 +225,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
+          case 8: {
             IsTrial = input.ReadBool();
             break;
           }
-          case 64: {
+          case 112: {
             AvatarGuid = input.ReadUInt64();
             break;
           }
@@ -248,11 +248,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
+          case 8: {
             IsTrial = input.ReadBool();
             break;
           }
-          case 64: {
+          case 112: {
             AvatarGuid = input.ReadUInt64();
             break;
           }

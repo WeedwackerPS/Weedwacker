@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static GroupLinkBundleReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVHcm91cExpbmtCdW5kbGUucHJvdG8aDFZlY3Rvci5wcm90byKLAQoPR3Jv",
-            "dXBMaW5rQnVuZGxlEhcKBmNlbnRlchgEIAEoCzIHLlZlY3RvchIUCgxpc19h",
-            "Y3RpdmF0ZWQYDCABKAgSEQoJYnVuZGxlX2lkGAMgASgNEhQKDGlzX3Nob3df",
-            "bWFyaxgOIAEoCBIQCghzY2VuZV9pZBgFIAEoDRIOCgZyYWRpdXMYASABKA1C",
-            "IqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChVHcm91cExpbmtCdW5kbGUucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8aDFZlY3Rvci5wcm90byKrAQoPR3JvdXBMaW5rQnVuZGxl",
+            "EhEKCWJ1bmRsZV9pZBgBIAEoDRI3CgZjZW50ZXIYDCABKAsyJy5XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlZlY3RvchIUCgxpc19zaG93X21h",
+            "cmsYCyABKAgSEAoIc2NlbmVfaWQYAiABKA0SFAoMaXNfYWN0aXZhdGVkGAog",
+            "ASgIEg4KBnJhZGl1cxgEIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GroupLinkBundle), global::Weedwacker.Shared.Network.Proto.GroupLinkBundle.Parser, new[]{ "Center", "IsActivated", "BundleId", "IsShowMark", "SceneId", "Radius" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GroupLinkBundle), global::Weedwacker.Shared.Network.Proto.GroupLinkBundle.Parser, new[]{ "BundleId", "Center", "IsShowMark", "SceneId", "IsActivated", "Radius" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,11 +74,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GroupLinkBundle(GroupLinkBundle other) : this() {
-      center_ = other.center_ != null ? other.center_.Clone() : null;
-      isActivated_ = other.isActivated_;
       bundleId_ = other.bundleId_;
+      center_ = other.center_ != null ? other.center_.Clone() : null;
       isShowMark_ = other.isShowMark_;
       sceneId_ = other.sceneId_;
+      isActivated_ = other.isActivated_;
       radius_ = other.radius_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -88,32 +89,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GroupLinkBundle(this);
     }
 
-    /// <summary>Field number for the "center" field.</summary>
-    public const int CenterFieldNumber = 4;
-    private global::Weedwacker.Shared.Network.Proto.Vector center_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector Center {
-      get { return center_; }
-      set {
-        center_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_activated" field.</summary>
-    public const int IsActivatedFieldNumber = 12;
-    private bool isActivated_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsActivated {
-      get { return isActivated_; }
-      set {
-        isActivated_ = value;
-      }
-    }
-
     /// <summary>Field number for the "bundle_id" field.</summary>
-    public const int BundleIdFieldNumber = 3;
+    public const int BundleIdFieldNumber = 1;
     private uint bundleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -124,8 +101,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "center" field.</summary>
+    public const int CenterFieldNumber = 12;
+    private global::Weedwacker.Shared.Network.Proto.Vector center_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector Center {
+      get { return center_; }
+      set {
+        center_ = value;
+      }
+    }
+
     /// <summary>Field number for the "is_show_mark" field.</summary>
-    public const int IsShowMarkFieldNumber = 14;
+    public const int IsShowMarkFieldNumber = 11;
     private bool isShowMark_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -137,7 +126,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "scene_id" field.</summary>
-    public const int SceneIdFieldNumber = 5;
+    public const int SceneIdFieldNumber = 2;
     private uint sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -148,8 +137,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "is_activated" field.</summary>
+    public const int IsActivatedFieldNumber = 10;
+    private bool isActivated_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsActivated {
+      get { return isActivated_; }
+      set {
+        isActivated_ = value;
+      }
+    }
+
     /// <summary>Field number for the "radius" field.</summary>
-    public const int RadiusFieldNumber = 1;
+    public const int RadiusFieldNumber = 4;
     private uint radius_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -175,11 +176,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(Center, other.Center)) return false;
-      if (IsActivated != other.IsActivated) return false;
       if (BundleId != other.BundleId) return false;
+      if (!object.Equals(Center, other.Center)) return false;
       if (IsShowMark != other.IsShowMark) return false;
       if (SceneId != other.SceneId) return false;
+      if (IsActivated != other.IsActivated) return false;
       if (Radius != other.Radius) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -188,11 +189,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (center_ != null) hash ^= Center.GetHashCode();
-      if (IsActivated != false) hash ^= IsActivated.GetHashCode();
       if (BundleId != 0) hash ^= BundleId.GetHashCode();
+      if (center_ != null) hash ^= Center.GetHashCode();
       if (IsShowMark != false) hash ^= IsShowMark.GetHashCode();
       if (SceneId != 0) hash ^= SceneId.GetHashCode();
+      if (IsActivated != false) hash ^= IsActivated.GetHashCode();
       if (Radius != 0) hash ^= Radius.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -212,29 +213,29 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Radius != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(Radius);
-      }
       if (BundleId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(8);
         output.WriteUInt32(BundleId);
       }
-      if (center_ != null) {
-        output.WriteRawTag(34);
-        output.WriteMessage(Center);
-      }
       if (SceneId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(16);
         output.WriteUInt32(SceneId);
       }
+      if (Radius != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Radius);
+      }
       if (IsActivated != false) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(80);
         output.WriteBool(IsActivated);
       }
       if (IsShowMark != false) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(88);
         output.WriteBool(IsShowMark);
+      }
+      if (center_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(Center);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -246,29 +247,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Radius != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(Radius);
-      }
       if (BundleId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(8);
         output.WriteUInt32(BundleId);
       }
-      if (center_ != null) {
-        output.WriteRawTag(34);
-        output.WriteMessage(Center);
-      }
       if (SceneId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(16);
         output.WriteUInt32(SceneId);
       }
+      if (Radius != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Radius);
+      }
       if (IsActivated != false) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(80);
         output.WriteBool(IsActivated);
       }
       if (IsShowMark != false) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(88);
         output.WriteBool(IsShowMark);
+      }
+      if (center_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(Center);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -280,20 +281,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (center_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Center);
-      }
-      if (IsActivated != false) {
-        size += 1 + 1;
-      }
       if (BundleId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BundleId);
+      }
+      if (center_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Center);
       }
       if (IsShowMark != false) {
         size += 1 + 1;
       }
       if (SceneId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
+      }
+      if (IsActivated != false) {
+        size += 1 + 1;
       }
       if (Radius != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Radius);
@@ -310,23 +311,23 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.BundleId != 0) {
+        BundleId = other.BundleId;
+      }
       if (other.center_ != null) {
         if (center_ == null) {
           Center = new global::Weedwacker.Shared.Network.Proto.Vector();
         }
         Center.MergeFrom(other.Center);
       }
-      if (other.IsActivated != false) {
-        IsActivated = other.IsActivated;
-      }
-      if (other.BundleId != 0) {
-        BundleId = other.BundleId;
-      }
       if (other.IsShowMark != false) {
         IsShowMark = other.IsShowMark;
       }
       if (other.SceneId != 0) {
         SceneId = other.SceneId;
+      }
+      if (other.IsActivated != false) {
+        IsActivated = other.IsActivated;
       }
       if (other.Radius != 0) {
         Radius = other.Radius;
@@ -347,30 +348,30 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Radius = input.ReadUInt32();
-            break;
-          }
-          case 24: {
             BundleId = input.ReadUInt32();
             break;
           }
-          case 34: {
+          case 16: {
+            SceneId = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            Radius = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            IsActivated = input.ReadBool();
+            break;
+          }
+          case 88: {
+            IsShowMark = input.ReadBool();
+            break;
+          }
+          case 98: {
             if (center_ == null) {
               Center = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Center);
-            break;
-          }
-          case 40: {
-            SceneId = input.ReadUInt32();
-            break;
-          }
-          case 96: {
-            IsActivated = input.ReadBool();
-            break;
-          }
-          case 112: {
-            IsShowMark = input.ReadBool();
             break;
           }
         }
@@ -389,30 +390,30 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            Radius = input.ReadUInt32();
-            break;
-          }
-          case 24: {
             BundleId = input.ReadUInt32();
             break;
           }
-          case 34: {
+          case 16: {
+            SceneId = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            Radius = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            IsActivated = input.ReadBool();
+            break;
+          }
+          case 88: {
+            IsShowMark = input.ReadBool();
+            break;
+          }
+          case 98: {
             if (center_ == null) {
               Center = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Center);
-            break;
-          }
-          case 40: {
-            SceneId = input.ReadUInt32();
-            break;
-          }
-          case 96: {
-            IsActivated = input.ReadBool();
-            break;
-          }
-          case 112: {
-            IsShowMark = input.ReadBool();
             break;
           }
         }

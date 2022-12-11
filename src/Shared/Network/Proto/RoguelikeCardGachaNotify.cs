@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static RoguelikeCardGachaNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5Sb2d1ZWxpa2VDYXJkR2FjaGFOb3RpZnkucHJvdG8iRQoYUm9ndWVsaWtl",
-            "Q2FyZEdhY2hhTm90aWZ5EhEKCWNhcmRfbGlzdBgKIAMoDRIWCg5pc19jYW5f",
-            "cmVmcmVzaBgLIAEoCEIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
-            "cm90b2IGcHJvdG8z"));
+            "Ch5Sb2d1ZWxpa2VDYXJkR2FjaGFOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8iRQoYUm9ndWVsaWtlQ2FyZEdhY2hhTm90",
+            "aWZ5EhYKDmlzX2Nhbl9yZWZyZXNoGAcgASgIEhEKCWNhcmRfbGlzdBgPIAMo",
+            "DWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RoguelikeCardGachaNotify), global::Weedwacker.Shared.Network.Proto.RoguelikeCardGachaNotify.Parser, new[]{ "CardList", "IsCanRefresh" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RoguelikeCardGachaNotify), global::Weedwacker.Shared.Network.Proto.RoguelikeCardGachaNotify.Parser, new[]{ "IsCanRefresh", "CardList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8925
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8057;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class RoguelikeCardGachaNotify : pb::IMessage<RoguelikeCardGachaNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +81,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RoguelikeCardGachaNotify(RoguelikeCardGachaNotify other) : this() {
-      cardList_ = other.cardList_.Clone();
       isCanRefresh_ = other.isCanRefresh_;
+      cardList_ = other.cardList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,19 +92,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new RoguelikeCardGachaNotify(this);
     }
 
-    /// <summary>Field number for the "card_list" field.</summary>
-    public const int CardListFieldNumber = 10;
-    private static readonly pb::FieldCodec<uint> _repeated_cardList_codec
-        = pb::FieldCodec.ForUInt32(82);
-    private readonly pbc::RepeatedField<uint> cardList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> CardList {
-      get { return cardList_; }
-    }
-
     /// <summary>Field number for the "is_can_refresh" field.</summary>
-    public const int IsCanRefreshFieldNumber = 11;
+    public const int IsCanRefreshFieldNumber = 7;
     private bool isCanRefresh_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,6 +102,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         isCanRefresh_ = value;
       }
+    }
+
+    /// <summary>Field number for the "card_list" field.</summary>
+    public const int CardListFieldNumber = 15;
+    private static readonly pb::FieldCodec<uint> _repeated_cardList_codec
+        = pb::FieldCodec.ForUInt32(122);
+    private readonly pbc::RepeatedField<uint> cardList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> CardList {
+      get { return cardList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -126,8 +130,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!cardList_.Equals(other.cardList_)) return false;
       if (IsCanRefresh != other.IsCanRefresh) return false;
+      if(!cardList_.Equals(other.cardList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -135,8 +139,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= cardList_.GetHashCode();
       if (IsCanRefresh != false) hash ^= IsCanRefresh.GetHashCode();
+      hash ^= cardList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -155,11 +159,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      cardList_.WriteTo(output, _repeated_cardList_codec);
       if (IsCanRefresh != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(56);
         output.WriteBool(IsCanRefresh);
       }
+      cardList_.WriteTo(output, _repeated_cardList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -170,11 +174,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      cardList_.WriteTo(ref output, _repeated_cardList_codec);
       if (IsCanRefresh != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(56);
         output.WriteBool(IsCanRefresh);
       }
+      cardList_.WriteTo(ref output, _repeated_cardList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -185,10 +189,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += cardList_.CalculateSize(_repeated_cardList_codec);
       if (IsCanRefresh != false) {
         size += 1 + 1;
       }
+      size += cardList_.CalculateSize(_repeated_cardList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -201,10 +205,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      cardList_.Add(other.cardList_);
       if (other.IsCanRefresh != false) {
         IsCanRefresh = other.IsCanRefresh;
       }
+      cardList_.Add(other.cardList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -220,13 +224,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 82:
-          case 80: {
-            cardList_.AddEntriesFrom(input, _repeated_cardList_codec);
+          case 56: {
+            IsCanRefresh = input.ReadBool();
             break;
           }
-          case 88: {
-            IsCanRefresh = input.ReadBool();
+          case 122:
+          case 120: {
+            cardList_.AddEntriesFrom(input, _repeated_cardList_codec);
             break;
           }
         }
@@ -244,13 +248,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 82:
-          case 80: {
-            cardList_.AddEntriesFrom(ref input, _repeated_cardList_codec);
+          case 56: {
+            IsCanRefresh = input.ReadBool();
             break;
           }
-          case 88: {
-            IsCanRefresh = input.ReadBool();
+          case 122:
+          case 120: {
+            cardList_.AddEntriesFrom(ref input, _repeated_cardList_codec);
             break;
           }
         }

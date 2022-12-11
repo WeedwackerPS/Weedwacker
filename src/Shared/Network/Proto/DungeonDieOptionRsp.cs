@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static DungeonDieOptionRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlEdW5nZW9uRGllT3B0aW9uUnNwLnByb3RvGhVQbGF5ZXJEaWVPcHRpb24u",
-            "cHJvdG8iYgoTRHVuZ2VvbkRpZU9wdGlvblJzcBIPCgdyZXRjb2RlGAUgASgF",
-            "EhQKDHJldml2ZV9jb3VudBgKIAEoDRIkCgpkaWVfb3B0aW9uGAYgASgOMhAu",
-            "UGxheWVyRGllT3B0aW9uQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
-            "LlByb3RvYgZwcm90bzM="));
+            "ChlEdW5nZW9uRGllT3B0aW9uUnNwLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvGhVQbGF5ZXJEaWVPcHRpb24ucHJvdG8iggEKE0R1",
+            "bmdlb25EaWVPcHRpb25Sc3ASFAoMcmV2aXZlX2NvdW50GAIgASgNEkQKCmRp",
+            "ZV9vcHRpb24YByABKA4yMC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
+            "b3RvLlBsYXllckRpZU9wdGlvbhIPCgdyZXRjb2RlGA0gASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.PlayerDieOptionReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DungeonDieOptionRsp), global::Weedwacker.Shared.Network.Proto.DungeonDieOptionRsp.Parser, new[]{ "Retcode", "ReviveCount", "DieOption" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DungeonDieOptionRsp), global::Weedwacker.Shared.Network.Proto.DungeonDieOptionRsp.Parser, new[]{ "ReviveCount", "DieOption", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 948
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 948;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class DungeonDieOptionRsp : pb::IMessage<DungeonDieOptionRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +82,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DungeonDieOptionRsp(DungeonDieOptionRsp other) : this() {
-      retcode_ = other.retcode_;
       reviveCount_ = other.reviveCount_;
       dieOption_ = other.dieOption_;
+      retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,20 +94,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new DungeonDieOptionRsp(this);
     }
 
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 5;
-    private int retcode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
-      }
-    }
-
     /// <summary>Field number for the "revive_count" field.</summary>
-    public const int ReviveCountFieldNumber = 10;
+    public const int ReviveCountFieldNumber = 2;
     private uint reviveCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,7 +107,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "die_option" field.</summary>
-    public const int DieOptionFieldNumber = 6;
+    public const int DieOptionFieldNumber = 7;
     private global::Weedwacker.Shared.Network.Proto.PlayerDieOption dieOption_ = global::Weedwacker.Shared.Network.Proto.PlayerDieOption.OptNone;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,6 +115,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return dieOption_; }
       set {
         dieOption_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 13;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
       }
     }
 
@@ -141,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Retcode != other.Retcode) return false;
       if (ReviveCount != other.ReviveCount) return false;
       if (DieOption != other.DieOption) return false;
+      if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,9 +155,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (ReviveCount != 0) hash ^= ReviveCount.GetHashCode();
       if (DieOption != global::Weedwacker.Shared.Network.Proto.PlayerDieOption.OptNone) hash ^= DieOption.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,17 +176,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Retcode != 0) {
-        output.WriteRawTag(40);
-        output.WriteInt32(Retcode);
+      if (ReviveCount != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(ReviveCount);
       }
       if (DieOption != global::Weedwacker.Shared.Network.Proto.PlayerDieOption.OptNone) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteEnum((int) DieOption);
       }
-      if (ReviveCount != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(ReviveCount);
+      if (Retcode != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -194,17 +198,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Retcode != 0) {
-        output.WriteRawTag(40);
-        output.WriteInt32(Retcode);
+      if (ReviveCount != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(ReviveCount);
       }
       if (DieOption != global::Weedwacker.Shared.Network.Proto.PlayerDieOption.OptNone) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteEnum((int) DieOption);
       }
-      if (ReviveCount != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(ReviveCount);
+      if (Retcode != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -216,14 +220,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
       if (ReviveCount != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ReviveCount);
       }
       if (DieOption != global::Weedwacker.Shared.Network.Proto.PlayerDieOption.OptNone) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) DieOption);
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -237,14 +241,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
-      }
       if (other.ReviveCount != 0) {
         ReviveCount = other.ReviveCount;
       }
       if (other.DieOption != global::Weedwacker.Shared.Network.Proto.PlayerDieOption.OptNone) {
         DieOption = other.DieOption;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -261,16 +265,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
-            Retcode = input.ReadInt32();
+          case 16: {
+            ReviveCount = input.ReadUInt32();
             break;
           }
-          case 48: {
+          case 56: {
             DieOption = (global::Weedwacker.Shared.Network.Proto.PlayerDieOption) input.ReadEnum();
             break;
           }
-          case 80: {
-            ReviveCount = input.ReadUInt32();
+          case 104: {
+            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -288,16 +292,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
-            Retcode = input.ReadInt32();
+          case 16: {
+            ReviveCount = input.ReadUInt32();
             break;
           }
-          case 48: {
+          case 56: {
             DieOption = (global::Weedwacker.Shared.Network.Proto.PlayerDieOption) input.ReadEnum();
             break;
           }
-          case 80: {
-            ReviveCount = input.ReadUInt32();
+          case 104: {
+            Retcode = input.ReadInt32();
             break;
           }
         }

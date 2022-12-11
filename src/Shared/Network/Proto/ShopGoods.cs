@@ -24,23 +24,24 @@ namespace Weedwacker.Shared.Network.Proto {
     static ShopGoodsReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg9TaG9wR29vZHMucHJvdG8aD0l0ZW1QYXJhbS5wcm90byLRAwoJU2hvcEdv",
-            "b2RzEhoKEWRpc2NvdW50X2VuZF90aW1lGIICIAEoDRIRCgltaW5fbGV2ZWwY",
-            "CCABKA0SEAoIZW5kX3RpbWUYCyABKA0SIgoOY29zdF9pdGVtX2xpc3QYAyAD",
-            "KAsyCi5JdGVtUGFyYW0SGwoSc2Vjb25kYXJ5X3NoZWV0X2lkGL4CIAEoDRIN",
-            "CgVoY29pbhgBIAEoDRINCgVtY29pbhgOIAEoDRIUCgtkaXNjb3VudF9pZBjO",
-            "DyABKA0SFQoMc2luZ2xlX2xpbWl0GPcBIAEoDRIQCghnb29kc19pZBgNIAEo",
-            "DRIZChFuZXh0X3JlZnJlc2hfdGltZRgHIAEoDRIRCgltYXhfbGV2ZWwYBCAB",
-            "KA0SFAoMZGlzYWJsZV90eXBlGAYgASgNEhwKE2Rpc2NvdW50X2JlZ2luX3Rp",
-            "bWUYvgQgASgNEhkKEXByZV9nb29kc19pZF9saXN0GAIgAygNEhIKCmJlZ2lu",
-            "X3RpbWUYBSABKA0SDQoFc2NvaW4YDyABKA0SEgoKYm91Z2h0X251bRgKIAEo",
-            "DRIRCglidXlfbGltaXQYDCABKA0SHgoKZ29vZHNfaXRlbRgJIAEoCzIKLkl0",
-            "ZW1QYXJhbUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IG",
-            "cHJvdG8z"));
+            "Cg9TaG9wR29vZHMucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8aD0l0ZW1QYXJhbS5wcm90byKiBAoJU2hvcEdvb2RzEhEKCGdvb2Rz",
+            "X2lkGOsHIAEoDRI+Cgpnb29kc19pdGVtGA8gASgLMiouV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90by5JdGVtUGFyYW0SQgoOY29zdF9pdGVtX2xp",
+            "c3QYByADKAsyKi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkl0",
+            "ZW1QYXJhbRISCgpib3VnaHRfbnVtGA4gASgNEhkKEXByZV9nb29kc19pZF9s",
+            "aXN0GAkgAygNEg0KBXNjb2luGAUgASgNEhEKCWJ1eV9saW1pdBgLIAEoDRIN",
+            "CgVoY29pbhgGIAEoDRIQCghlbmRfdGltZRgDIAEoDRIZChFuZXh0X3JlZnJl",
+            "c2hfdGltZRgKIAEoDRIRCgltaW5fbGV2ZWwYDSABKA0SEgoJbWF4X2xldmVs",
+            "GI0IIAEoDRINCgVtY29pbhgIIAEoDRIVCgxkaXNhYmxlX3R5cGUYiQYgASgN",
+            "EhoKEnNlY29uZGFyeV9zaGVldF9pZBgCIAEoDRIbChNVbmszMzAwX0NFT01I",
+            "Qk5EQU9QGAEgASgNEhwKE1VuazMzMDBfTUlDUEdKQ0lBUEUY6g0gASgNEhwK",
+            "E1VuazMzMDBfTkpDUEFKQkNFUEgY+QMgASgNEhIKCmJlZ2luX3RpbWUYDCAB",
+            "KA0SGwoTVW5rMzMwMF9PT0RDQ09BSUdISRgEIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ItemParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ShopGoods), global::Weedwacker.Shared.Network.Proto.ShopGoods.Parser, new[]{ "DiscountEndTime", "MinLevel", "EndTime", "CostItemList", "SecondarySheetId", "Hcoin", "Mcoin", "DiscountId", "SingleLimit", "GoodsId", "NextRefreshTime", "MaxLevel", "DisableType", "DiscountBeginTime", "PreGoodsIdList", "BeginTime", "Scoin", "BoughtNum", "BuyLimit", "GoodsItem" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ShopGoods), global::Weedwacker.Shared.Network.Proto.ShopGoods.Parser, new[]{ "GoodsId", "GoodsItem", "CostItemList", "BoughtNum", "PreGoodsIdList", "Scoin", "BuyLimit", "Hcoin", "EndTime", "NextRefreshTime", "MinLevel", "MaxLevel", "Mcoin", "DisableType", "SecondarySheetId", "Unk3300CEOMHBNDAOP", "Unk3300MICPGJCIAPE", "Unk3300NJCPAJBCEPH", "BeginTime", "Unk3300OODCCOAIGHI" }, null, null, null, null)
           }));
     }
     #endregion
@@ -81,26 +82,26 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ShopGoods(ShopGoods other) : this() {
-      discountEndTime_ = other.discountEndTime_;
-      minLevel_ = other.minLevel_;
-      endTime_ = other.endTime_;
-      costItemList_ = other.costItemList_.Clone();
-      secondarySheetId_ = other.secondarySheetId_;
-      hcoin_ = other.hcoin_;
-      mcoin_ = other.mcoin_;
-      discountId_ = other.discountId_;
-      singleLimit_ = other.singleLimit_;
       goodsId_ = other.goodsId_;
-      nextRefreshTime_ = other.nextRefreshTime_;
-      maxLevel_ = other.maxLevel_;
-      disableType_ = other.disableType_;
-      discountBeginTime_ = other.discountBeginTime_;
-      preGoodsIdList_ = other.preGoodsIdList_.Clone();
-      beginTime_ = other.beginTime_;
-      scoin_ = other.scoin_;
-      boughtNum_ = other.boughtNum_;
-      buyLimit_ = other.buyLimit_;
       goodsItem_ = other.goodsItem_ != null ? other.goodsItem_.Clone() : null;
+      costItemList_ = other.costItemList_.Clone();
+      boughtNum_ = other.boughtNum_;
+      preGoodsIdList_ = other.preGoodsIdList_.Clone();
+      scoin_ = other.scoin_;
+      buyLimit_ = other.buyLimit_;
+      hcoin_ = other.hcoin_;
+      endTime_ = other.endTime_;
+      nextRefreshTime_ = other.nextRefreshTime_;
+      minLevel_ = other.minLevel_;
+      maxLevel_ = other.maxLevel_;
+      mcoin_ = other.mcoin_;
+      disableType_ = other.disableType_;
+      secondarySheetId_ = other.secondarySheetId_;
+      unk3300CEOMHBNDAOP_ = other.unk3300CEOMHBNDAOP_;
+      unk3300MICPGJCIAPE_ = other.unk3300MICPGJCIAPE_;
+      unk3300NJCPAJBCEPH_ = other.unk3300NJCPAJBCEPH_;
+      beginTime_ = other.beginTime_;
+      unk3300OODCCOAIGHI_ = other.unk3300OODCCOAIGHI_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -110,116 +111,12 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ShopGoods(this);
     }
 
-    /// <summary>Field number for the "discount_end_time" field.</summary>
-    public const int DiscountEndTimeFieldNumber = 258;
-    private uint discountEndTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DiscountEndTime {
-      get { return discountEndTime_; }
-      set {
-        discountEndTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "min_level" field.</summary>
-    public const int MinLevelFieldNumber = 8;
-    private uint minLevel_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MinLevel {
-      get { return minLevel_; }
-      set {
-        minLevel_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "end_time" field.</summary>
-    public const int EndTimeFieldNumber = 11;
-    private uint endTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EndTime {
-      get { return endTime_; }
-      set {
-        endTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "cost_item_list" field.</summary>
-    public const int CostItemListFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_costItemList_codec
-        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> costItemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> CostItemList {
-      get { return costItemList_; }
-    }
-
-    /// <summary>Field number for the "secondary_sheet_id" field.</summary>
-    public const int SecondarySheetIdFieldNumber = 318;
-    private uint secondarySheetId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SecondarySheetId {
-      get { return secondarySheetId_; }
-      set {
-        secondarySheetId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "hcoin" field.</summary>
-    public const int HcoinFieldNumber = 1;
-    private uint hcoin_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Hcoin {
-      get { return hcoin_; }
-      set {
-        hcoin_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "mcoin" field.</summary>
-    public const int McoinFieldNumber = 14;
-    private uint mcoin_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Mcoin {
-      get { return mcoin_; }
-      set {
-        mcoin_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "discount_id" field.</summary>
-    public const int DiscountIdFieldNumber = 1998;
-    private uint discountId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DiscountId {
-      get { return discountId_; }
-      set {
-        discountId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "single_limit" field.</summary>
-    public const int SingleLimitFieldNumber = 247;
-    private uint singleLimit_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SingleLimit {
-      get { return singleLimit_; }
-      set {
-        singleLimit_ = value;
-      }
-    }
-
     /// <summary>Field number for the "goods_id" field.</summary>
-    public const int GoodsIdFieldNumber = 13;
+    public const int GoodsIdFieldNumber = 1003;
     private uint goodsId_;
+    /// <summary>
+    /// Unk3300_PBMKNPCNBCK
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint GoodsId {
@@ -229,91 +126,31 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "next_refresh_time" field.</summary>
-    public const int NextRefreshTimeFieldNumber = 7;
-    private uint nextRefreshTime_;
+    /// <summary>Field number for the "goods_item" field.</summary>
+    public const int GoodsItemFieldNumber = 15;
+    private global::Weedwacker.Shared.Network.Proto.ItemParam goodsItem_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint NextRefreshTime {
-      get { return nextRefreshTime_; }
+    public global::Weedwacker.Shared.Network.Proto.ItemParam GoodsItem {
+      get { return goodsItem_; }
       set {
-        nextRefreshTime_ = value;
+        goodsItem_ = value;
       }
     }
 
-    /// <summary>Field number for the "max_level" field.</summary>
-    public const int MaxLevelFieldNumber = 4;
-    private uint maxLevel_;
+    /// <summary>Field number for the "cost_item_list" field.</summary>
+    public const int CostItemListFieldNumber = 7;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_costItemList_codec
+        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> costItemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MaxLevel {
-      get { return maxLevel_; }
-      set {
-        maxLevel_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "disable_type" field.</summary>
-    public const int DisableTypeFieldNumber = 6;
-    private uint disableType_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DisableType {
-      get { return disableType_; }
-      set {
-        disableType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "discount_begin_time" field.</summary>
-    public const int DiscountBeginTimeFieldNumber = 574;
-    private uint discountBeginTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DiscountBeginTime {
-      get { return discountBeginTime_; }
-      set {
-        discountBeginTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "pre_goods_id_list" field.</summary>
-    public const int PreGoodsIdListFieldNumber = 2;
-    private static readonly pb::FieldCodec<uint> _repeated_preGoodsIdList_codec
-        = pb::FieldCodec.ForUInt32(18);
-    private readonly pbc::RepeatedField<uint> preGoodsIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> PreGoodsIdList {
-      get { return preGoodsIdList_; }
-    }
-
-    /// <summary>Field number for the "begin_time" field.</summary>
-    public const int BeginTimeFieldNumber = 5;
-    private uint beginTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint BeginTime {
-      get { return beginTime_; }
-      set {
-        beginTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "scoin" field.</summary>
-    public const int ScoinFieldNumber = 15;
-    private uint scoin_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Scoin {
-      get { return scoin_; }
-      set {
-        scoin_ = value;
-      }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> CostItemList {
+      get { return costItemList_; }
     }
 
     /// <summary>Field number for the "bought_num" field.</summary>
-    public const int BoughtNumFieldNumber = 10;
+    public const int BoughtNumFieldNumber = 14;
     private uint boughtNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -324,9 +161,38 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "pre_goods_id_list" field.</summary>
+    public const int PreGoodsIdListFieldNumber = 9;
+    private static readonly pb::FieldCodec<uint> _repeated_preGoodsIdList_codec
+        = pb::FieldCodec.ForUInt32(74);
+    private readonly pbc::RepeatedField<uint> preGoodsIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> PreGoodsIdList {
+      get { return preGoodsIdList_; }
+    }
+
+    /// <summary>Field number for the "scoin" field.</summary>
+    public const int ScoinFieldNumber = 5;
+    private uint scoin_;
+    /// <summary>
+    /// Unk3300_DFEDKIOCOBL
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Scoin {
+      get { return scoin_; }
+      set {
+        scoin_ = value;
+      }
+    }
+
     /// <summary>Field number for the "buy_limit" field.</summary>
-    public const int BuyLimitFieldNumber = 12;
+    public const int BuyLimitFieldNumber = 11;
     private uint buyLimit_;
+    /// <summary>
+    /// Unk3300_NMOPAGJFHOO
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint BuyLimit {
@@ -336,15 +202,174 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "goods_item" field.</summary>
-    public const int GoodsItemFieldNumber = 9;
-    private global::Weedwacker.Shared.Network.Proto.ItemParam goodsItem_;
+    /// <summary>Field number for the "hcoin" field.</summary>
+    public const int HcoinFieldNumber = 6;
+    private uint hcoin_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.ItemParam GoodsItem {
-      get { return goodsItem_; }
+    public uint Hcoin {
+      get { return hcoin_; }
       set {
-        goodsItem_ = value;
+        hcoin_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "end_time" field.</summary>
+    public const int EndTimeFieldNumber = 3;
+    private uint endTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EndTime {
+      get { return endTime_; }
+      set {
+        endTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "next_refresh_time" field.</summary>
+    public const int NextRefreshTimeFieldNumber = 10;
+    private uint nextRefreshTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint NextRefreshTime {
+      get { return nextRefreshTime_; }
+      set {
+        nextRefreshTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "min_level" field.</summary>
+    public const int MinLevelFieldNumber = 13;
+    private uint minLevel_;
+    /// <summary>
+    /// Unk3300_DBJCMMBHBNI
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MinLevel {
+      get { return minLevel_; }
+      set {
+        minLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "max_level" field.</summary>
+    public const int MaxLevelFieldNumber = 1037;
+    private uint maxLevel_;
+    /// <summary>
+    /// Unk3300_OMKIFIMDGDN
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MaxLevel {
+      get { return maxLevel_; }
+      set {
+        maxLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mcoin" field.</summary>
+    public const int McoinFieldNumber = 8;
+    private uint mcoin_;
+    /// <summary>
+    /// Unk3300_EHKFICBACKC
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Mcoin {
+      get { return mcoin_; }
+      set {
+        mcoin_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "disable_type" field.</summary>
+    public const int DisableTypeFieldNumber = 777;
+    private uint disableType_;
+    /// <summary>
+    /// Unk3300_MBGOMHNBHMG
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint DisableType {
+      get { return disableType_; }
+      set {
+        disableType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "secondary_sheet_id" field.</summary>
+    public const int SecondarySheetIdFieldNumber = 2;
+    private uint secondarySheetId_;
+    /// <summary>
+    /// Unk3300_KKKNKNOLICI
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SecondarySheetId {
+      get { return secondarySheetId_; }
+      set {
+        secondarySheetId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_CEOMHBNDAOP" field.</summary>
+    public const int Unk3300CEOMHBNDAOPFieldNumber = 1;
+    private uint unk3300CEOMHBNDAOP_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300CEOMHBNDAOP {
+      get { return unk3300CEOMHBNDAOP_; }
+      set {
+        unk3300CEOMHBNDAOP_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_MICPGJCIAPE" field.</summary>
+    public const int Unk3300MICPGJCIAPEFieldNumber = 1770;
+    private uint unk3300MICPGJCIAPE_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300MICPGJCIAPE {
+      get { return unk3300MICPGJCIAPE_; }
+      set {
+        unk3300MICPGJCIAPE_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_NJCPAJBCEPH" field.</summary>
+    public const int Unk3300NJCPAJBCEPHFieldNumber = 505;
+    private uint unk3300NJCPAJBCEPH_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300NJCPAJBCEPH {
+      get { return unk3300NJCPAJBCEPH_; }
+      set {
+        unk3300NJCPAJBCEPH_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "begin_time" field.</summary>
+    public const int BeginTimeFieldNumber = 12;
+    private uint beginTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint BeginTime {
+      get { return beginTime_; }
+      set {
+        beginTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_OODCCOAIGHI" field.</summary>
+    public const int Unk3300OODCCOAIGHIFieldNumber = 4;
+    private uint unk3300OODCCOAIGHI_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300OODCCOAIGHI {
+      get { return unk3300OODCCOAIGHI_; }
+      set {
+        unk3300OODCCOAIGHI_ = value;
       }
     }
 
@@ -363,26 +388,26 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (DiscountEndTime != other.DiscountEndTime) return false;
-      if (MinLevel != other.MinLevel) return false;
-      if (EndTime != other.EndTime) return false;
-      if(!costItemList_.Equals(other.costItemList_)) return false;
-      if (SecondarySheetId != other.SecondarySheetId) return false;
-      if (Hcoin != other.Hcoin) return false;
-      if (Mcoin != other.Mcoin) return false;
-      if (DiscountId != other.DiscountId) return false;
-      if (SingleLimit != other.SingleLimit) return false;
       if (GoodsId != other.GoodsId) return false;
-      if (NextRefreshTime != other.NextRefreshTime) return false;
-      if (MaxLevel != other.MaxLevel) return false;
-      if (DisableType != other.DisableType) return false;
-      if (DiscountBeginTime != other.DiscountBeginTime) return false;
-      if(!preGoodsIdList_.Equals(other.preGoodsIdList_)) return false;
-      if (BeginTime != other.BeginTime) return false;
-      if (Scoin != other.Scoin) return false;
-      if (BoughtNum != other.BoughtNum) return false;
-      if (BuyLimit != other.BuyLimit) return false;
       if (!object.Equals(GoodsItem, other.GoodsItem)) return false;
+      if(!costItemList_.Equals(other.costItemList_)) return false;
+      if (BoughtNum != other.BoughtNum) return false;
+      if(!preGoodsIdList_.Equals(other.preGoodsIdList_)) return false;
+      if (Scoin != other.Scoin) return false;
+      if (BuyLimit != other.BuyLimit) return false;
+      if (Hcoin != other.Hcoin) return false;
+      if (EndTime != other.EndTime) return false;
+      if (NextRefreshTime != other.NextRefreshTime) return false;
+      if (MinLevel != other.MinLevel) return false;
+      if (MaxLevel != other.MaxLevel) return false;
+      if (Mcoin != other.Mcoin) return false;
+      if (DisableType != other.DisableType) return false;
+      if (SecondarySheetId != other.SecondarySheetId) return false;
+      if (Unk3300CEOMHBNDAOP != other.Unk3300CEOMHBNDAOP) return false;
+      if (Unk3300MICPGJCIAPE != other.Unk3300MICPGJCIAPE) return false;
+      if (Unk3300NJCPAJBCEPH != other.Unk3300NJCPAJBCEPH) return false;
+      if (BeginTime != other.BeginTime) return false;
+      if (Unk3300OODCCOAIGHI != other.Unk3300OODCCOAIGHI) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -390,26 +415,26 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (DiscountEndTime != 0) hash ^= DiscountEndTime.GetHashCode();
-      if (MinLevel != 0) hash ^= MinLevel.GetHashCode();
-      if (EndTime != 0) hash ^= EndTime.GetHashCode();
-      hash ^= costItemList_.GetHashCode();
-      if (SecondarySheetId != 0) hash ^= SecondarySheetId.GetHashCode();
-      if (Hcoin != 0) hash ^= Hcoin.GetHashCode();
-      if (Mcoin != 0) hash ^= Mcoin.GetHashCode();
-      if (DiscountId != 0) hash ^= DiscountId.GetHashCode();
-      if (SingleLimit != 0) hash ^= SingleLimit.GetHashCode();
       if (GoodsId != 0) hash ^= GoodsId.GetHashCode();
-      if (NextRefreshTime != 0) hash ^= NextRefreshTime.GetHashCode();
-      if (MaxLevel != 0) hash ^= MaxLevel.GetHashCode();
-      if (DisableType != 0) hash ^= DisableType.GetHashCode();
-      if (DiscountBeginTime != 0) hash ^= DiscountBeginTime.GetHashCode();
-      hash ^= preGoodsIdList_.GetHashCode();
-      if (BeginTime != 0) hash ^= BeginTime.GetHashCode();
-      if (Scoin != 0) hash ^= Scoin.GetHashCode();
-      if (BoughtNum != 0) hash ^= BoughtNum.GetHashCode();
-      if (BuyLimit != 0) hash ^= BuyLimit.GetHashCode();
       if (goodsItem_ != null) hash ^= GoodsItem.GetHashCode();
+      hash ^= costItemList_.GetHashCode();
+      if (BoughtNum != 0) hash ^= BoughtNum.GetHashCode();
+      hash ^= preGoodsIdList_.GetHashCode();
+      if (Scoin != 0) hash ^= Scoin.GetHashCode();
+      if (BuyLimit != 0) hash ^= BuyLimit.GetHashCode();
+      if (Hcoin != 0) hash ^= Hcoin.GetHashCode();
+      if (EndTime != 0) hash ^= EndTime.GetHashCode();
+      if (NextRefreshTime != 0) hash ^= NextRefreshTime.GetHashCode();
+      if (MinLevel != 0) hash ^= MinLevel.GetHashCode();
+      if (MaxLevel != 0) hash ^= MaxLevel.GetHashCode();
+      if (Mcoin != 0) hash ^= Mcoin.GetHashCode();
+      if (DisableType != 0) hash ^= DisableType.GetHashCode();
+      if (SecondarySheetId != 0) hash ^= SecondarySheetId.GetHashCode();
+      if (Unk3300CEOMHBNDAOP != 0) hash ^= Unk3300CEOMHBNDAOP.GetHashCode();
+      if (Unk3300MICPGJCIAPE != 0) hash ^= Unk3300MICPGJCIAPE.GetHashCode();
+      if (Unk3300NJCPAJBCEPH != 0) hash ^= Unk3300NJCPAJBCEPH.GetHashCode();
+      if (BeginTime != 0) hash ^= BeginTime.GetHashCode();
+      if (Unk3300OODCCOAIGHI != 0) hash ^= Unk3300OODCCOAIGHI.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -428,79 +453,79 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Hcoin != 0) {
+      if (Unk3300CEOMHBNDAOP != 0) {
         output.WriteRawTag(8);
-        output.WriteUInt32(Hcoin);
-      }
-      preGoodsIdList_.WriteTo(output, _repeated_preGoodsIdList_codec);
-      costItemList_.WriteTo(output, _repeated_costItemList_codec);
-      if (MaxLevel != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(MaxLevel);
-      }
-      if (BeginTime != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(BeginTime);
-      }
-      if (DisableType != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(DisableType);
-      }
-      if (NextRefreshTime != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(NextRefreshTime);
-      }
-      if (MinLevel != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(MinLevel);
-      }
-      if (goodsItem_ != null) {
-        output.WriteRawTag(74);
-        output.WriteMessage(GoodsItem);
-      }
-      if (BoughtNum != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(BoughtNum);
-      }
-      if (EndTime != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(EndTime);
-      }
-      if (BuyLimit != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(BuyLimit);
-      }
-      if (GoodsId != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(GoodsId);
-      }
-      if (Mcoin != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(Mcoin);
-      }
-      if (Scoin != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(Scoin);
-      }
-      if (SingleLimit != 0) {
-        output.WriteRawTag(184, 15);
-        output.WriteUInt32(SingleLimit);
-      }
-      if (DiscountEndTime != 0) {
-        output.WriteRawTag(144, 16);
-        output.WriteUInt32(DiscountEndTime);
+        output.WriteUInt32(Unk3300CEOMHBNDAOP);
       }
       if (SecondarySheetId != 0) {
-        output.WriteRawTag(240, 19);
+        output.WriteRawTag(16);
         output.WriteUInt32(SecondarySheetId);
       }
-      if (DiscountBeginTime != 0) {
-        output.WriteRawTag(240, 35);
-        output.WriteUInt32(DiscountBeginTime);
+      if (EndTime != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(EndTime);
       }
-      if (DiscountId != 0) {
-        output.WriteRawTag(240, 124);
-        output.WriteUInt32(DiscountId);
+      if (Unk3300OODCCOAIGHI != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300OODCCOAIGHI);
+      }
+      if (Scoin != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Scoin);
+      }
+      if (Hcoin != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Hcoin);
+      }
+      costItemList_.WriteTo(output, _repeated_costItemList_codec);
+      if (Mcoin != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Mcoin);
+      }
+      preGoodsIdList_.WriteTo(output, _repeated_preGoodsIdList_codec);
+      if (NextRefreshTime != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(NextRefreshTime);
+      }
+      if (BuyLimit != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(BuyLimit);
+      }
+      if (BeginTime != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(BeginTime);
+      }
+      if (MinLevel != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(MinLevel);
+      }
+      if (BoughtNum != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(BoughtNum);
+      }
+      if (goodsItem_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(GoodsItem);
+      }
+      if (Unk3300NJCPAJBCEPH != 0) {
+        output.WriteRawTag(200, 31);
+        output.WriteUInt32(Unk3300NJCPAJBCEPH);
+      }
+      if (DisableType != 0) {
+        output.WriteRawTag(200, 48);
+        output.WriteUInt32(DisableType);
+      }
+      if (GoodsId != 0) {
+        output.WriteRawTag(216, 62);
+        output.WriteUInt32(GoodsId);
+      }
+      if (MaxLevel != 0) {
+        output.WriteRawTag(232, 64);
+        output.WriteUInt32(MaxLevel);
+      }
+      if (Unk3300MICPGJCIAPE != 0) {
+        output.WriteRawTag(208, 110);
+        output.WriteUInt32(Unk3300MICPGJCIAPE);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -512,79 +537,79 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Hcoin != 0) {
+      if (Unk3300CEOMHBNDAOP != 0) {
         output.WriteRawTag(8);
-        output.WriteUInt32(Hcoin);
-      }
-      preGoodsIdList_.WriteTo(ref output, _repeated_preGoodsIdList_codec);
-      costItemList_.WriteTo(ref output, _repeated_costItemList_codec);
-      if (MaxLevel != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(MaxLevel);
-      }
-      if (BeginTime != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(BeginTime);
-      }
-      if (DisableType != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(DisableType);
-      }
-      if (NextRefreshTime != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(NextRefreshTime);
-      }
-      if (MinLevel != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(MinLevel);
-      }
-      if (goodsItem_ != null) {
-        output.WriteRawTag(74);
-        output.WriteMessage(GoodsItem);
-      }
-      if (BoughtNum != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(BoughtNum);
-      }
-      if (EndTime != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(EndTime);
-      }
-      if (BuyLimit != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(BuyLimit);
-      }
-      if (GoodsId != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(GoodsId);
-      }
-      if (Mcoin != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(Mcoin);
-      }
-      if (Scoin != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(Scoin);
-      }
-      if (SingleLimit != 0) {
-        output.WriteRawTag(184, 15);
-        output.WriteUInt32(SingleLimit);
-      }
-      if (DiscountEndTime != 0) {
-        output.WriteRawTag(144, 16);
-        output.WriteUInt32(DiscountEndTime);
+        output.WriteUInt32(Unk3300CEOMHBNDAOP);
       }
       if (SecondarySheetId != 0) {
-        output.WriteRawTag(240, 19);
+        output.WriteRawTag(16);
         output.WriteUInt32(SecondarySheetId);
       }
-      if (DiscountBeginTime != 0) {
-        output.WriteRawTag(240, 35);
-        output.WriteUInt32(DiscountBeginTime);
+      if (EndTime != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(EndTime);
       }
-      if (DiscountId != 0) {
-        output.WriteRawTag(240, 124);
-        output.WriteUInt32(DiscountId);
+      if (Unk3300OODCCOAIGHI != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300OODCCOAIGHI);
+      }
+      if (Scoin != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Scoin);
+      }
+      if (Hcoin != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Hcoin);
+      }
+      costItemList_.WriteTo(ref output, _repeated_costItemList_codec);
+      if (Mcoin != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Mcoin);
+      }
+      preGoodsIdList_.WriteTo(ref output, _repeated_preGoodsIdList_codec);
+      if (NextRefreshTime != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(NextRefreshTime);
+      }
+      if (BuyLimit != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(BuyLimit);
+      }
+      if (BeginTime != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(BeginTime);
+      }
+      if (MinLevel != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(MinLevel);
+      }
+      if (BoughtNum != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(BoughtNum);
+      }
+      if (goodsItem_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(GoodsItem);
+      }
+      if (Unk3300NJCPAJBCEPH != 0) {
+        output.WriteRawTag(200, 31);
+        output.WriteUInt32(Unk3300NJCPAJBCEPH);
+      }
+      if (DisableType != 0) {
+        output.WriteRawTag(200, 48);
+        output.WriteUInt32(DisableType);
+      }
+      if (GoodsId != 0) {
+        output.WriteRawTag(216, 62);
+        output.WriteUInt32(GoodsId);
+      }
+      if (MaxLevel != 0) {
+        output.WriteRawTag(232, 64);
+        output.WriteUInt32(MaxLevel);
+      }
+      if (Unk3300MICPGJCIAPE != 0) {
+        output.WriteRawTag(208, 110);
+        output.WriteUInt32(Unk3300MICPGJCIAPE);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -596,61 +621,61 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (DiscountEndTime != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(DiscountEndTime);
+      if (GoodsId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(GoodsId);
       }
-      if (MinLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MinLevel);
-      }
-      if (EndTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
+      if (goodsItem_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(GoodsItem);
       }
       size += costItemList_.CalculateSize(_repeated_costItemList_codec);
-      if (SecondarySheetId != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(SecondarySheetId);
-      }
-      if (Hcoin != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Hcoin);
-      }
-      if (Mcoin != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Mcoin);
-      }
-      if (DiscountId != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(DiscountId);
-      }
-      if (SingleLimit != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(SingleLimit);
-      }
-      if (GoodsId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GoodsId);
-      }
-      if (NextRefreshTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextRefreshTime);
-      }
-      if (MaxLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxLevel);
-      }
-      if (DisableType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DisableType);
-      }
-      if (DiscountBeginTime != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(DiscountBeginTime);
-      }
-      size += preGoodsIdList_.CalculateSize(_repeated_preGoodsIdList_codec);
-      if (BeginTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BeginTime);
-      }
-      if (Scoin != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Scoin);
-      }
       if (BoughtNum != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BoughtNum);
+      }
+      size += preGoodsIdList_.CalculateSize(_repeated_preGoodsIdList_codec);
+      if (Scoin != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Scoin);
       }
       if (BuyLimit != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BuyLimit);
       }
-      if (goodsItem_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(GoodsItem);
+      if (Hcoin != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Hcoin);
+      }
+      if (EndTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
+      }
+      if (NextRefreshTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextRefreshTime);
+      }
+      if (MinLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MinLevel);
+      }
+      if (MaxLevel != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(MaxLevel);
+      }
+      if (Mcoin != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Mcoin);
+      }
+      if (DisableType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(DisableType);
+      }
+      if (SecondarySheetId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SecondarySheetId);
+      }
+      if (Unk3300CEOMHBNDAOP != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300CEOMHBNDAOP);
+      }
+      if (Unk3300MICPGJCIAPE != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300MICPGJCIAPE);
+      }
+      if (Unk3300NJCPAJBCEPH != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NJCPAJBCEPH);
+      }
+      if (BeginTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BeginTime);
+      }
+      if (Unk3300OODCCOAIGHI != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300OODCCOAIGHI);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -664,64 +689,64 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.DiscountEndTime != 0) {
-        DiscountEndTime = other.DiscountEndTime;
-      }
-      if (other.MinLevel != 0) {
-        MinLevel = other.MinLevel;
-      }
-      if (other.EndTime != 0) {
-        EndTime = other.EndTime;
-      }
-      costItemList_.Add(other.costItemList_);
-      if (other.SecondarySheetId != 0) {
-        SecondarySheetId = other.SecondarySheetId;
-      }
-      if (other.Hcoin != 0) {
-        Hcoin = other.Hcoin;
-      }
-      if (other.Mcoin != 0) {
-        Mcoin = other.Mcoin;
-      }
-      if (other.DiscountId != 0) {
-        DiscountId = other.DiscountId;
-      }
-      if (other.SingleLimit != 0) {
-        SingleLimit = other.SingleLimit;
-      }
       if (other.GoodsId != 0) {
         GoodsId = other.GoodsId;
-      }
-      if (other.NextRefreshTime != 0) {
-        NextRefreshTime = other.NextRefreshTime;
-      }
-      if (other.MaxLevel != 0) {
-        MaxLevel = other.MaxLevel;
-      }
-      if (other.DisableType != 0) {
-        DisableType = other.DisableType;
-      }
-      if (other.DiscountBeginTime != 0) {
-        DiscountBeginTime = other.DiscountBeginTime;
-      }
-      preGoodsIdList_.Add(other.preGoodsIdList_);
-      if (other.BeginTime != 0) {
-        BeginTime = other.BeginTime;
-      }
-      if (other.Scoin != 0) {
-        Scoin = other.Scoin;
-      }
-      if (other.BoughtNum != 0) {
-        BoughtNum = other.BoughtNum;
-      }
-      if (other.BuyLimit != 0) {
-        BuyLimit = other.BuyLimit;
       }
       if (other.goodsItem_ != null) {
         if (goodsItem_ == null) {
           GoodsItem = new global::Weedwacker.Shared.Network.Proto.ItemParam();
         }
         GoodsItem.MergeFrom(other.GoodsItem);
+      }
+      costItemList_.Add(other.costItemList_);
+      if (other.BoughtNum != 0) {
+        BoughtNum = other.BoughtNum;
+      }
+      preGoodsIdList_.Add(other.preGoodsIdList_);
+      if (other.Scoin != 0) {
+        Scoin = other.Scoin;
+      }
+      if (other.BuyLimit != 0) {
+        BuyLimit = other.BuyLimit;
+      }
+      if (other.Hcoin != 0) {
+        Hcoin = other.Hcoin;
+      }
+      if (other.EndTime != 0) {
+        EndTime = other.EndTime;
+      }
+      if (other.NextRefreshTime != 0) {
+        NextRefreshTime = other.NextRefreshTime;
+      }
+      if (other.MinLevel != 0) {
+        MinLevel = other.MinLevel;
+      }
+      if (other.MaxLevel != 0) {
+        MaxLevel = other.MaxLevel;
+      }
+      if (other.Mcoin != 0) {
+        Mcoin = other.Mcoin;
+      }
+      if (other.DisableType != 0) {
+        DisableType = other.DisableType;
+      }
+      if (other.SecondarySheetId != 0) {
+        SecondarySheetId = other.SecondarySheetId;
+      }
+      if (other.Unk3300CEOMHBNDAOP != 0) {
+        Unk3300CEOMHBNDAOP = other.Unk3300CEOMHBNDAOP;
+      }
+      if (other.Unk3300MICPGJCIAPE != 0) {
+        Unk3300MICPGJCIAPE = other.Unk3300MICPGJCIAPE;
+      }
+      if (other.Unk3300NJCPAJBCEPH != 0) {
+        Unk3300NJCPAJBCEPH = other.Unk3300NJCPAJBCEPH;
+      }
+      if (other.BeginTime != 0) {
+        BeginTime = other.BeginTime;
+      }
+      if (other.Unk3300OODCCOAIGHI != 0) {
+        Unk3300OODCCOAIGHI = other.Unk3300OODCCOAIGHI;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -739,87 +764,87 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Hcoin = input.ReadUInt32();
+            Unk3300CEOMHBNDAOP = input.ReadUInt32();
             break;
           }
-          case 18:
           case 16: {
-            preGoodsIdList_.AddEntriesFrom(input, _repeated_preGoodsIdList_codec);
+            SecondarySheetId = input.ReadUInt32();
             break;
           }
-          case 26: {
-            costItemList_.AddEntriesFrom(input, _repeated_costItemList_codec);
+          case 24: {
+            EndTime = input.ReadUInt32();
             break;
           }
           case 32: {
-            MaxLevel = input.ReadUInt32();
+            Unk3300OODCCOAIGHI = input.ReadUInt32();
             break;
           }
           case 40: {
-            BeginTime = input.ReadUInt32();
+            Scoin = input.ReadUInt32();
             break;
           }
           case 48: {
-            DisableType = input.ReadUInt32();
+            Hcoin = input.ReadUInt32();
             break;
           }
-          case 56: {
-            NextRefreshTime = input.ReadUInt32();
+          case 58: {
+            costItemList_.AddEntriesFrom(input, _repeated_costItemList_codec);
             break;
           }
           case 64: {
+            Mcoin = input.ReadUInt32();
+            break;
+          }
+          case 74:
+          case 72: {
+            preGoodsIdList_.AddEntriesFrom(input, _repeated_preGoodsIdList_codec);
+            break;
+          }
+          case 80: {
+            NextRefreshTime = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            BuyLimit = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            BeginTime = input.ReadUInt32();
+            break;
+          }
+          case 104: {
             MinLevel = input.ReadUInt32();
             break;
           }
-          case 74: {
+          case 112: {
+            BoughtNum = input.ReadUInt32();
+            break;
+          }
+          case 122: {
             if (goodsItem_ == null) {
               GoodsItem = new global::Weedwacker.Shared.Network.Proto.ItemParam();
             }
             input.ReadMessage(GoodsItem);
             break;
           }
-          case 80: {
-            BoughtNum = input.ReadUInt32();
+          case 4040: {
+            Unk3300NJCPAJBCEPH = input.ReadUInt32();
             break;
           }
-          case 88: {
-            EndTime = input.ReadUInt32();
+          case 6216: {
+            DisableType = input.ReadUInt32();
             break;
           }
-          case 96: {
-            BuyLimit = input.ReadUInt32();
-            break;
-          }
-          case 104: {
+          case 8024: {
             GoodsId = input.ReadUInt32();
             break;
           }
-          case 112: {
-            Mcoin = input.ReadUInt32();
+          case 8296: {
+            MaxLevel = input.ReadUInt32();
             break;
           }
-          case 120: {
-            Scoin = input.ReadUInt32();
-            break;
-          }
-          case 1976: {
-            SingleLimit = input.ReadUInt32();
-            break;
-          }
-          case 2064: {
-            DiscountEndTime = input.ReadUInt32();
-            break;
-          }
-          case 2544: {
-            SecondarySheetId = input.ReadUInt32();
-            break;
-          }
-          case 4592: {
-            DiscountBeginTime = input.ReadUInt32();
-            break;
-          }
-          case 15984: {
-            DiscountId = input.ReadUInt32();
+          case 14160: {
+            Unk3300MICPGJCIAPE = input.ReadUInt32();
             break;
           }
         }
@@ -838,87 +863,87 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            Hcoin = input.ReadUInt32();
+            Unk3300CEOMHBNDAOP = input.ReadUInt32();
             break;
           }
-          case 18:
           case 16: {
-            preGoodsIdList_.AddEntriesFrom(ref input, _repeated_preGoodsIdList_codec);
+            SecondarySheetId = input.ReadUInt32();
             break;
           }
-          case 26: {
-            costItemList_.AddEntriesFrom(ref input, _repeated_costItemList_codec);
+          case 24: {
+            EndTime = input.ReadUInt32();
             break;
           }
           case 32: {
-            MaxLevel = input.ReadUInt32();
+            Unk3300OODCCOAIGHI = input.ReadUInt32();
             break;
           }
           case 40: {
-            BeginTime = input.ReadUInt32();
+            Scoin = input.ReadUInt32();
             break;
           }
           case 48: {
-            DisableType = input.ReadUInt32();
+            Hcoin = input.ReadUInt32();
             break;
           }
-          case 56: {
-            NextRefreshTime = input.ReadUInt32();
+          case 58: {
+            costItemList_.AddEntriesFrom(ref input, _repeated_costItemList_codec);
             break;
           }
           case 64: {
+            Mcoin = input.ReadUInt32();
+            break;
+          }
+          case 74:
+          case 72: {
+            preGoodsIdList_.AddEntriesFrom(ref input, _repeated_preGoodsIdList_codec);
+            break;
+          }
+          case 80: {
+            NextRefreshTime = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            BuyLimit = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            BeginTime = input.ReadUInt32();
+            break;
+          }
+          case 104: {
             MinLevel = input.ReadUInt32();
             break;
           }
-          case 74: {
+          case 112: {
+            BoughtNum = input.ReadUInt32();
+            break;
+          }
+          case 122: {
             if (goodsItem_ == null) {
               GoodsItem = new global::Weedwacker.Shared.Network.Proto.ItemParam();
             }
             input.ReadMessage(GoodsItem);
             break;
           }
-          case 80: {
-            BoughtNum = input.ReadUInt32();
+          case 4040: {
+            Unk3300NJCPAJBCEPH = input.ReadUInt32();
             break;
           }
-          case 88: {
-            EndTime = input.ReadUInt32();
+          case 6216: {
+            DisableType = input.ReadUInt32();
             break;
           }
-          case 96: {
-            BuyLimit = input.ReadUInt32();
-            break;
-          }
-          case 104: {
+          case 8024: {
             GoodsId = input.ReadUInt32();
             break;
           }
-          case 112: {
-            Mcoin = input.ReadUInt32();
+          case 8296: {
+            MaxLevel = input.ReadUInt32();
             break;
           }
-          case 120: {
-            Scoin = input.ReadUInt32();
-            break;
-          }
-          case 1976: {
-            SingleLimit = input.ReadUInt32();
-            break;
-          }
-          case 2064: {
-            DiscountEndTime = input.ReadUInt32();
-            break;
-          }
-          case 2544: {
-            SecondarySheetId = input.ReadUInt32();
-            break;
-          }
-          case 4592: {
-            DiscountBeginTime = input.ReadUInt32();
-            break;
-          }
-          case 15984: {
-            DiscountId = input.ReadUInt32();
+          case 14160: {
+            Unk3300MICPGJCIAPE = input.ReadUInt32();
             break;
           }
         }

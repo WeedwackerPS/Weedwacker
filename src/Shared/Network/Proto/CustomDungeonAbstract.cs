@@ -24,18 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static CustomDungeonAbstractReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtDdXN0b21EdW5nZW9uQWJzdHJhY3QucHJvdG8ihwIKFUN1c3RvbUR1bmdl",
-            "b25BYnN0cmFjdBJMChRicmlja19zdGF0aXN0aWNzX21hcBgMIAMoCzIuLkN1",
-            "c3RvbUR1bmdlb25BYnN0cmFjdC5Ccmlja1N0YXRpc3RpY3NNYXBFbnRyeRIa",
-            "ChJmaXJzdF9wdWJsaXNoX3RpbWUYAyABKA0SFgoOdG90YWxfY29pbl9udW0Y",
-            "DyABKA0SGQoRbGFzdF9wdWJsaXNoX3RpbWUYBiABKA0SFgoOZmluaXNoX3Jv",
-            "b21faWQYByABKA0aOQoXQnJpY2tTdGF0aXN0aWNzTWFwRW50cnkSCwoDa2V5",
-            "GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AUIiqgIfV2VlZHdhY2tlci5TaGFy",
-            "ZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChtDdXN0b21EdW5nZW9uQWJzdHJhY3QucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8isQIKFUN1c3RvbUR1bmdlb25BYnN0cmFjdBIb",
+            "ChNVbmszMzAwX0VKR0JIR0hMRlBJGAcgASgNEhkKEWxhc3RfcHVibGlzaF90",
+            "aW1lGAwgASgNEmwKFGJyaWNrX3N0YXRpc3RpY3NfbWFwGAIgAygLMk4uV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5DdXN0b21EdW5nZW9uQWJz",
+            "dHJhY3QuQnJpY2tTdGF0aXN0aWNzTWFwRW50cnkSGgoSZmlyc3RfcHVibGlz",
+            "aF90aW1lGAggASgNEhsKE1VuazMzMDBfSlBGSUhLRUNMTUYYBCABKA0aOQoX",
+            "QnJpY2tTdGF0aXN0aWNzTWFwRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVl",
+            "GAIgASgNOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CustomDungeonAbstract), global::Weedwacker.Shared.Network.Proto.CustomDungeonAbstract.Parser, new[]{ "BrickStatisticsMap", "FirstPublishTime", "TotalCoinNum", "LastPublishTime", "FinishRoomId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CustomDungeonAbstract), global::Weedwacker.Shared.Network.Proto.CustomDungeonAbstract.Parser, new[]{ "Unk3300EJGBHGHLFPI", "LastPublishTime", "BrickStatisticsMap", "FirstPublishTime", "Unk3300JPFIHKECLMF" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -76,11 +77,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CustomDungeonAbstract(CustomDungeonAbstract other) : this() {
+      unk3300EJGBHGHLFPI_ = other.unk3300EJGBHGHLFPI_;
+      lastPublishTime_ = other.lastPublishTime_;
       brickStatisticsMap_ = other.brickStatisticsMap_.Clone();
       firstPublishTime_ = other.firstPublishTime_;
-      totalCoinNum_ = other.totalCoinNum_;
-      lastPublishTime_ = other.lastPublishTime_;
-      finishRoomId_ = other.finishRoomId_;
+      unk3300JPFIHKECLMF_ = other.unk3300JPFIHKECLMF_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,43 +91,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new CustomDungeonAbstract(this);
     }
 
-    /// <summary>Field number for the "brick_statistics_map" field.</summary>
-    public const int BrickStatisticsMapFieldNumber = 12;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_brickStatisticsMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 98);
-    private readonly pbc::MapField<uint, uint> brickStatisticsMap_ = new pbc::MapField<uint, uint>();
+    /// <summary>Field number for the "Unk3300_EJGBHGHLFPI" field.</summary>
+    public const int Unk3300EJGBHGHLFPIFieldNumber = 7;
+    private uint unk3300EJGBHGHLFPI_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> BrickStatisticsMap {
-      get { return brickStatisticsMap_; }
-    }
-
-    /// <summary>Field number for the "first_publish_time" field.</summary>
-    public const int FirstPublishTimeFieldNumber = 3;
-    private uint firstPublishTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FirstPublishTime {
-      get { return firstPublishTime_; }
+    public uint Unk3300EJGBHGHLFPI {
+      get { return unk3300EJGBHGHLFPI_; }
       set {
-        firstPublishTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "total_coin_num" field.</summary>
-    public const int TotalCoinNumFieldNumber = 15;
-    private uint totalCoinNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TotalCoinNum {
-      get { return totalCoinNum_; }
-      set {
-        totalCoinNum_ = value;
+        unk3300EJGBHGHLFPI_ = value;
       }
     }
 
     /// <summary>Field number for the "last_publish_time" field.</summary>
-    public const int LastPublishTimeFieldNumber = 6;
+    public const int LastPublishTimeFieldNumber = 12;
     private uint lastPublishTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -137,15 +115,38 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "finish_room_id" field.</summary>
-    public const int FinishRoomIdFieldNumber = 7;
-    private uint finishRoomId_;
+    /// <summary>Field number for the "brick_statistics_map" field.</summary>
+    public const int BrickStatisticsMapFieldNumber = 2;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_brickStatisticsMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 18);
+    private readonly pbc::MapField<uint, uint> brickStatisticsMap_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FinishRoomId {
-      get { return finishRoomId_; }
+    public pbc::MapField<uint, uint> BrickStatisticsMap {
+      get { return brickStatisticsMap_; }
+    }
+
+    /// <summary>Field number for the "first_publish_time" field.</summary>
+    public const int FirstPublishTimeFieldNumber = 8;
+    private uint firstPublishTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint FirstPublishTime {
+      get { return firstPublishTime_; }
       set {
-        finishRoomId_ = value;
+        firstPublishTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_JPFIHKECLMF" field.</summary>
+    public const int Unk3300JPFIHKECLMFFieldNumber = 4;
+    private uint unk3300JPFIHKECLMF_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300JPFIHKECLMF {
+      get { return unk3300JPFIHKECLMF_; }
+      set {
+        unk3300JPFIHKECLMF_ = value;
       }
     }
 
@@ -164,11 +165,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Unk3300EJGBHGHLFPI != other.Unk3300EJGBHGHLFPI) return false;
+      if (LastPublishTime != other.LastPublishTime) return false;
       if (!BrickStatisticsMap.Equals(other.BrickStatisticsMap)) return false;
       if (FirstPublishTime != other.FirstPublishTime) return false;
-      if (TotalCoinNum != other.TotalCoinNum) return false;
-      if (LastPublishTime != other.LastPublishTime) return false;
-      if (FinishRoomId != other.FinishRoomId) return false;
+      if (Unk3300JPFIHKECLMF != other.Unk3300JPFIHKECLMF) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -176,11 +177,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (Unk3300EJGBHGHLFPI != 0) hash ^= Unk3300EJGBHGHLFPI.GetHashCode();
+      if (LastPublishTime != 0) hash ^= LastPublishTime.GetHashCode();
       hash ^= BrickStatisticsMap.GetHashCode();
       if (FirstPublishTime != 0) hash ^= FirstPublishTime.GetHashCode();
-      if (TotalCoinNum != 0) hash ^= TotalCoinNum.GetHashCode();
-      if (LastPublishTime != 0) hash ^= LastPublishTime.GetHashCode();
-      if (FinishRoomId != 0) hash ^= FinishRoomId.GetHashCode();
+      if (Unk3300JPFIHKECLMF != 0) hash ^= Unk3300JPFIHKECLMF.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -199,22 +200,22 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      brickStatisticsMap_.WriteTo(output, _map_brickStatisticsMap_codec);
+      if (Unk3300JPFIHKECLMF != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300JPFIHKECLMF);
+      }
+      if (Unk3300EJGBHGHLFPI != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300EJGBHGHLFPI);
+      }
       if (FirstPublishTime != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(64);
         output.WriteUInt32(FirstPublishTime);
       }
       if (LastPublishTime != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(96);
         output.WriteUInt32(LastPublishTime);
-      }
-      if (FinishRoomId != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(FinishRoomId);
-      }
-      brickStatisticsMap_.WriteTo(output, _map_brickStatisticsMap_codec);
-      if (TotalCoinNum != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(TotalCoinNum);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -226,22 +227,22 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      brickStatisticsMap_.WriteTo(ref output, _map_brickStatisticsMap_codec);
+      if (Unk3300JPFIHKECLMF != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300JPFIHKECLMF);
+      }
+      if (Unk3300EJGBHGHLFPI != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300EJGBHGHLFPI);
+      }
       if (FirstPublishTime != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(64);
         output.WriteUInt32(FirstPublishTime);
       }
       if (LastPublishTime != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(96);
         output.WriteUInt32(LastPublishTime);
-      }
-      if (FinishRoomId != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(FinishRoomId);
-      }
-      brickStatisticsMap_.WriteTo(ref output, _map_brickStatisticsMap_codec);
-      if (TotalCoinNum != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(TotalCoinNum);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -253,18 +254,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += brickStatisticsMap_.CalculateSize(_map_brickStatisticsMap_codec);
-      if (FirstPublishTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FirstPublishTime);
-      }
-      if (TotalCoinNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalCoinNum);
+      if (Unk3300EJGBHGHLFPI != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300EJGBHGHLFPI);
       }
       if (LastPublishTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LastPublishTime);
       }
-      if (FinishRoomId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinishRoomId);
+      size += brickStatisticsMap_.CalculateSize(_map_brickStatisticsMap_codec);
+      if (FirstPublishTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FirstPublishTime);
+      }
+      if (Unk3300JPFIHKECLMF != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300JPFIHKECLMF);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -278,18 +279,18 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      brickStatisticsMap_.Add(other.brickStatisticsMap_);
-      if (other.FirstPublishTime != 0) {
-        FirstPublishTime = other.FirstPublishTime;
-      }
-      if (other.TotalCoinNum != 0) {
-        TotalCoinNum = other.TotalCoinNum;
+      if (other.Unk3300EJGBHGHLFPI != 0) {
+        Unk3300EJGBHGHLFPI = other.Unk3300EJGBHGHLFPI;
       }
       if (other.LastPublishTime != 0) {
         LastPublishTime = other.LastPublishTime;
       }
-      if (other.FinishRoomId != 0) {
-        FinishRoomId = other.FinishRoomId;
+      brickStatisticsMap_.Add(other.brickStatisticsMap_);
+      if (other.FirstPublishTime != 0) {
+        FirstPublishTime = other.FirstPublishTime;
+      }
+      if (other.Unk3300JPFIHKECLMF != 0) {
+        Unk3300JPFIHKECLMF = other.Unk3300JPFIHKECLMF;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -306,24 +307,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            FirstPublishTime = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            LastPublishTime = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            FinishRoomId = input.ReadUInt32();
-            break;
-          }
-          case 98: {
+          case 18: {
             brickStatisticsMap_.AddEntriesFrom(input, _map_brickStatisticsMap_codec);
             break;
           }
-          case 120: {
-            TotalCoinNum = input.ReadUInt32();
+          case 32: {
+            Unk3300JPFIHKECLMF = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            Unk3300EJGBHGHLFPI = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            FirstPublishTime = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            LastPublishTime = input.ReadUInt32();
             break;
           }
         }
@@ -341,24 +342,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            FirstPublishTime = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            LastPublishTime = input.ReadUInt32();
-            break;
-          }
-          case 56: {
-            FinishRoomId = input.ReadUInt32();
-            break;
-          }
-          case 98: {
+          case 18: {
             brickStatisticsMap_.AddEntriesFrom(ref input, _map_brickStatisticsMap_codec);
             break;
           }
-          case 120: {
-            TotalCoinNum = input.ReadUInt32();
+          case 32: {
+            Unk3300JPFIHKECLMF = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            Unk3300EJGBHGHLFPI = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            FirstPublishTime = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            LastPublishTime = input.ReadUInt32();
             break;
           }
         }

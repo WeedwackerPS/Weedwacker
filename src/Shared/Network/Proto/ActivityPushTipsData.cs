@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static ActivityPushTipsDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpBY3Rpdml0eVB1c2hUaXBzRGF0YS5wcm90bxobQWN0aXZpdHlQdXNoVGlw",
-            "c1N0YXRlLnByb3RvIlwKFEFjdGl2aXR5UHVzaFRpcHNEYXRhEiUKBXN0YXRl",
-            "GAogASgOMhYuQWN0aXZpdHlQdXNoVGlwc1N0YXRlEh0KFWFjdGl2aXR5X3B1",
-            "c2hfdGlwc19pZBgEIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
-            "ay5Qcm90b2IGcHJvdG8z"));
+            "ChpBY3Rpdml0eVB1c2hUaXBzRGF0YS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxobQWN0aXZpdHlQdXNoVGlwc1N0YXRlLnByb3Rv",
+            "InwKFEFjdGl2aXR5UHVzaFRpcHNEYXRhEh0KFWFjdGl2aXR5X3B1c2hfdGlw",
+            "c19pZBgOIAEoDRJFCgVzdGF0ZRgDIAEoDjI2LldlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8uQWN0aXZpdHlQdXNoVGlwc1N0YXRlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ActivityPushTipsStateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ActivityPushTipsData), global::Weedwacker.Shared.Network.Proto.ActivityPushTipsData.Parser, new[]{ "State", "ActivityPushTipsId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ActivityPushTipsData), global::Weedwacker.Shared.Network.Proto.ActivityPushTipsData.Parser, new[]{ "ActivityPushTipsId", "State" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,8 +73,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ActivityPushTipsData(ActivityPushTipsData other) : this() {
-      state_ = other.state_;
       activityPushTipsId_ = other.activityPushTipsId_;
+      state_ = other.state_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,20 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ActivityPushTipsData(this);
     }
 
-    /// <summary>Field number for the "state" field.</summary>
-    public const int StateFieldNumber = 10;
-    private global::Weedwacker.Shared.Network.Proto.ActivityPushTipsState state_ = global::Weedwacker.Shared.Network.Proto.ActivityPushTipsState.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.ActivityPushTipsState State {
-      get { return state_; }
-      set {
-        state_ = value;
-      }
-    }
-
     /// <summary>Field number for the "activity_push_tips_id" field.</summary>
-    public const int ActivityPushTipsIdFieldNumber = 4;
+    public const int ActivityPushTipsIdFieldNumber = 14;
     private uint activityPushTipsId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -105,6 +93,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return activityPushTipsId_; }
       set {
         activityPushTipsId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "state" field.</summary>
+    public const int StateFieldNumber = 3;
+    private global::Weedwacker.Shared.Network.Proto.ActivityPushTipsState state_ = global::Weedwacker.Shared.Network.Proto.ActivityPushTipsState.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.ActivityPushTipsState State {
+      get { return state_; }
+      set {
+        state_ = value;
       }
     }
 
@@ -123,8 +123,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (State != other.State) return false;
       if (ActivityPushTipsId != other.ActivityPushTipsId) return false;
+      if (State != other.State) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -132,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (State != global::Weedwacker.Shared.Network.Proto.ActivityPushTipsState.None) hash ^= State.GetHashCode();
       if (ActivityPushTipsId != 0) hash ^= ActivityPushTipsId.GetHashCode();
+      if (State != global::Weedwacker.Shared.Network.Proto.ActivityPushTipsState.None) hash ^= State.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -152,13 +152,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ActivityPushTipsId != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(ActivityPushTipsId);
-      }
       if (State != global::Weedwacker.Shared.Network.Proto.ActivityPushTipsState.None) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(24);
         output.WriteEnum((int) State);
+      }
+      if (ActivityPushTipsId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(ActivityPushTipsId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -170,13 +170,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ActivityPushTipsId != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(ActivityPushTipsId);
-      }
       if (State != global::Weedwacker.Shared.Network.Proto.ActivityPushTipsState.None) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(24);
         output.WriteEnum((int) State);
+      }
+      if (ActivityPushTipsId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(ActivityPushTipsId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -188,11 +188,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (State != global::Weedwacker.Shared.Network.Proto.ActivityPushTipsState.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
-      }
       if (ActivityPushTipsId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ActivityPushTipsId);
+      }
+      if (State != global::Weedwacker.Shared.Network.Proto.ActivityPushTipsState.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -206,11 +206,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.State != global::Weedwacker.Shared.Network.Proto.ActivityPushTipsState.None) {
-        State = other.State;
-      }
       if (other.ActivityPushTipsId != 0) {
         ActivityPushTipsId = other.ActivityPushTipsId;
+      }
+      if (other.State != global::Weedwacker.Shared.Network.Proto.ActivityPushTipsState.None) {
+        State = other.State;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -227,12 +227,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            ActivityPushTipsId = input.ReadUInt32();
+          case 24: {
+            State = (global::Weedwacker.Shared.Network.Proto.ActivityPushTipsState) input.ReadEnum();
             break;
           }
-          case 80: {
-            State = (global::Weedwacker.Shared.Network.Proto.ActivityPushTipsState) input.ReadEnum();
+          case 112: {
+            ActivityPushTipsId = input.ReadUInt32();
             break;
           }
         }
@@ -250,12 +250,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            ActivityPushTipsId = input.ReadUInt32();
+          case 24: {
+            State = (global::Weedwacker.Shared.Network.Proto.ActivityPushTipsState) input.ReadEnum();
             break;
           }
-          case 80: {
-            State = (global::Weedwacker.Shared.Network.Proto.ActivityPushTipsState) input.ReadEnum();
+          case 112: {
+            ActivityPushTipsId = input.ReadUInt32();
             break;
           }
         }

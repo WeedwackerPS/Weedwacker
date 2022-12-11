@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static GroupLinkAllNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhHcm91cExpbmtBbGxOb3RpZnkucHJvdG8aFUdyb3VwTGlua0J1bmRsZS5w",
-            "cm90byI7ChJHcm91cExpbmtBbGxOb3RpZnkSJQoLYnVuZGxlX2xpc3QYBSAD",
-            "KAsyEC5Hcm91cExpbmtCdW5kbGVCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
-            "dHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChhHcm91cExpbmtBbGxOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aFUdyb3VwTGlua0J1bmRsZS5wcm90byJbChJHcm91",
+            "cExpbmtBbGxOb3RpZnkSRQoLYnVuZGxlX2xpc3QYCSADKAsyMC5XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkdyb3VwTGlua0J1bmRsZWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GroupLinkBundleReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5776
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5792;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GroupLinkAllNotify : pb::IMessage<GroupLinkAllNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "bundle_list" field.</summary>
-    public const int BundleListFieldNumber = 5;
+    public const int BundleListFieldNumber = 9;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GroupLinkBundle> _repeated_bundleList_codec
-        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.GroupLinkBundle.Parser);
+        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.GroupLinkBundle.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GroupLinkBundle> bundleList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GroupLinkBundle>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -191,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 42: {
+          case 74: {
             bundleList_.AddEntriesFrom(input, _repeated_bundleList_codec);
             break;
           }
@@ -210,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 42: {
+          case 74: {
             bundleList_.AddEntriesFrom(ref input, _repeated_bundleList_codec);
             break;
           }

@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static FungusTrainingPoolPreviewDetailReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVGdW5ndXNUcmFpbmluZ1Bvb2xQcmV2aWV3RGV0YWlsLnByb3RvGihGdW5n",
-            "dXNUcmFpbmluZ01vbnN0ZXJQcmV2aWV3RGV0YWlsLnByb3RvInwKH0Z1bmd1",
-            "c1RyYWluaW5nUG9vbFByZXZpZXdEZXRhaWwSDwoHcG9vbF9pZBgIIAEoDRJI",
-            "Chttb25zdGVyX3ByZXZpZXdfZGV0YWlsX2xpc3QYBiADKAsyIy5GdW5ndXNU",
-            "cmFpbmluZ01vbnN0ZXJQcmV2aWV3RGV0YWlsQiKqAh9XZWVkd2Fja2VyLlNo",
-            "YXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiVGdW5ndXNUcmFpbmluZ1Bvb2xQcmV2aWV3RGV0YWlsLnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGihGdW5ndXNUcmFpbmluZ01v",
+            "bnN0ZXJQcmV2aWV3RGV0YWlsLnByb3RvIpwBCh9GdW5ndXNUcmFpbmluZ1Bv",
+            "b2xQcmV2aWV3RGV0YWlsEmgKG21vbnN0ZXJfcHJldmlld19kZXRhaWxfbGlz",
+            "dBgKIAMoCzJDLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uRnVu",
+            "Z3VzVHJhaW5pbmdNb25zdGVyUHJldmlld0RldGFpbBIPCgdwb29sX2lkGAgg",
+            "ASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FungusTrainingMonsterPreviewDetailReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FungusTrainingPoolPreviewDetail), global::Weedwacker.Shared.Network.Proto.FungusTrainingPoolPreviewDetail.Parser, new[]{ "PoolId", "MonsterPreviewDetailList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FungusTrainingPoolPreviewDetail), global::Weedwacker.Shared.Network.Proto.FungusTrainingPoolPreviewDetail.Parser, new[]{ "MonsterPreviewDetailList", "PoolId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,8 +75,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FungusTrainingPoolPreviewDetail(FungusTrainingPoolPreviewDetail other) : this() {
-      poolId_ = other.poolId_;
       monsterPreviewDetailList_ = other.monsterPreviewDetailList_.Clone();
+      poolId_ = other.poolId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -83,6 +84,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FungusTrainingPoolPreviewDetail Clone() {
       return new FungusTrainingPoolPreviewDetail(this);
+    }
+
+    /// <summary>Field number for the "monster_preview_detail_list" field.</summary>
+    public const int MonsterPreviewDetailListFieldNumber = 10;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.FungusTrainingMonsterPreviewDetail> _repeated_monsterPreviewDetailList_codec
+        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.FungusTrainingMonsterPreviewDetail.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FungusTrainingMonsterPreviewDetail> monsterPreviewDetailList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FungusTrainingMonsterPreviewDetail>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FungusTrainingMonsterPreviewDetail> MonsterPreviewDetailList {
+      get { return monsterPreviewDetailList_; }
     }
 
     /// <summary>Field number for the "pool_id" field.</summary>
@@ -95,17 +107,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         poolId_ = value;
       }
-    }
-
-    /// <summary>Field number for the "monster_preview_detail_list" field.</summary>
-    public const int MonsterPreviewDetailListFieldNumber = 6;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.FungusTrainingMonsterPreviewDetail> _repeated_monsterPreviewDetailList_codec
-        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.FungusTrainingMonsterPreviewDetail.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FungusTrainingMonsterPreviewDetail> monsterPreviewDetailList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FungusTrainingMonsterPreviewDetail>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FungusTrainingMonsterPreviewDetail> MonsterPreviewDetailList {
-      get { return monsterPreviewDetailList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,8 +124,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (PoolId != other.PoolId) return false;
       if(!monsterPreviewDetailList_.Equals(other.monsterPreviewDetailList_)) return false;
+      if (PoolId != other.PoolId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -132,8 +133,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (PoolId != 0) hash ^= PoolId.GetHashCode();
       hash ^= monsterPreviewDetailList_.GetHashCode();
+      if (PoolId != 0) hash ^= PoolId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -152,11 +153,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      monsterPreviewDetailList_.WriteTo(output, _repeated_monsterPreviewDetailList_codec);
       if (PoolId != 0) {
         output.WriteRawTag(64);
         output.WriteUInt32(PoolId);
       }
+      monsterPreviewDetailList_.WriteTo(output, _repeated_monsterPreviewDetailList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -167,11 +168,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      monsterPreviewDetailList_.WriteTo(ref output, _repeated_monsterPreviewDetailList_codec);
       if (PoolId != 0) {
         output.WriteRawTag(64);
         output.WriteUInt32(PoolId);
       }
+      monsterPreviewDetailList_.WriteTo(ref output, _repeated_monsterPreviewDetailList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -182,10 +183,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += monsterPreviewDetailList_.CalculateSize(_repeated_monsterPreviewDetailList_codec);
       if (PoolId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PoolId);
       }
-      size += monsterPreviewDetailList_.CalculateSize(_repeated_monsterPreviewDetailList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -198,10 +199,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      monsterPreviewDetailList_.Add(other.monsterPreviewDetailList_);
       if (other.PoolId != 0) {
         PoolId = other.PoolId;
       }
-      monsterPreviewDetailList_.Add(other.monsterPreviewDetailList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -217,12 +218,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 50: {
-            monsterPreviewDetailList_.AddEntriesFrom(input, _repeated_monsterPreviewDetailList_codec);
-            break;
-          }
           case 64: {
             PoolId = input.ReadUInt32();
+            break;
+          }
+          case 82: {
+            monsterPreviewDetailList_.AddEntriesFrom(input, _repeated_monsterPreviewDetailList_codec);
             break;
           }
         }
@@ -240,12 +241,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 50: {
-            monsterPreviewDetailList_.AddEntriesFrom(ref input, _repeated_monsterPreviewDetailList_codec);
-            break;
-          }
           case 64: {
             PoolId = input.ReadUInt32();
+            break;
+          }
+          case 82: {
+            monsterPreviewDetailList_.AddEntriesFrom(ref input, _repeated_monsterPreviewDetailList_codec);
             break;
           }
         }

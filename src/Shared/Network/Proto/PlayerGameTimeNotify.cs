@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlayerGameTimeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpQbGF5ZXJHYW1lVGltZU5vdGlmeS5wcm90byJHChRQbGF5ZXJHYW1lVGlt",
-            "ZU5vdGlmeRILCgN1aWQYByABKA0SEQoJZ2FtZV90aW1lGAMgASgNEg8KB2lz",
-            "X2hvbWUYDSABKAhCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
-            "dG9iBnByb3RvMw=="));
+            "ChpQbGF5ZXJHYW1lVGltZU5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90byJHChRQbGF5ZXJHYW1lVGltZU5vdGlmeRILCgN1",
+            "aWQYDyABKA0SDwoHaXNfaG9tZRgKIAEoCBIRCglnYW1lX3RpbWUYBCABKA1i",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerGameTimeNotify), global::Weedwacker.Shared.Network.Proto.PlayerGameTimeNotify.Parser, new[]{ "Uid", "GameTime", "IsHome" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerGameTimeNotify), global::Weedwacker.Shared.Network.Proto.PlayerGameTimeNotify.Parser, new[]{ "Uid", "IsHome", "GameTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 131
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 127;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class PlayerGameTimeNotify : pb::IMessage<PlayerGameTimeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,8 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlayerGameTimeNotify(PlayerGameTimeNotify other) : this() {
       uid_ = other.uid_;
-      gameTime_ = other.gameTime_;
       isHome_ = other.isHome_;
+      gameTime_ = other.gameTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "uid" field.</summary>
-    public const int UidFieldNumber = 7;
+    public const int UidFieldNumber = 15;
     private uint uid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,20 +106,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "game_time" field.</summary>
-    public const int GameTimeFieldNumber = 3;
-    private uint gameTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GameTime {
-      get { return gameTime_; }
-      set {
-        gameTime_ = value;
-      }
-    }
-
     /// <summary>Field number for the "is_home" field.</summary>
-    public const int IsHomeFieldNumber = 13;
+    public const int IsHomeFieldNumber = 10;
     private bool isHome_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,6 +115,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return isHome_; }
       set {
         isHome_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "game_time" field.</summary>
+    public const int GameTimeFieldNumber = 4;
+    private uint gameTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GameTime {
+      get { return gameTime_; }
+      set {
+        gameTime_ = value;
       }
     }
 
@@ -142,8 +146,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (Uid != other.Uid) return false;
-      if (GameTime != other.GameTime) return false;
       if (IsHome != other.IsHome) return false;
+      if (GameTime != other.GameTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -152,8 +156,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (Uid != 0) hash ^= Uid.GetHashCode();
-      if (GameTime != 0) hash ^= GameTime.GetHashCode();
       if (IsHome != false) hash ^= IsHome.GetHashCode();
+      if (GameTime != 0) hash ^= GameTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -173,16 +177,16 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (GameTime != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteUInt32(GameTime);
       }
-      if (Uid != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(Uid);
-      }
       if (IsHome != false) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(80);
         output.WriteBool(IsHome);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Uid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -195,16 +199,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (GameTime != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteUInt32(GameTime);
       }
-      if (Uid != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(Uid);
-      }
       if (IsHome != false) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(80);
         output.WriteBool(IsHome);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Uid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -219,11 +223,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (Uid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
       }
-      if (GameTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GameTime);
-      }
       if (IsHome != false) {
         size += 1 + 1;
+      }
+      if (GameTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GameTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -240,11 +244,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.Uid != 0) {
         Uid = other.Uid;
       }
-      if (other.GameTime != 0) {
-        GameTime = other.GameTime;
-      }
       if (other.IsHome != false) {
         IsHome = other.IsHome;
+      }
+      if (other.GameTime != 0) {
+        GameTime = other.GameTime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -261,16 +265,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
+          case 32: {
             GameTime = input.ReadUInt32();
             break;
           }
-          case 56: {
-            Uid = input.ReadUInt32();
+          case 80: {
+            IsHome = input.ReadBool();
             break;
           }
-          case 104: {
-            IsHome = input.ReadBool();
+          case 120: {
+            Uid = input.ReadUInt32();
             break;
           }
         }
@@ -288,16 +292,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
+          case 32: {
             GameTime = input.ReadUInt32();
             break;
           }
-          case 56: {
-            Uid = input.ReadUInt32();
+          case 80: {
+            IsHome = input.ReadBool();
             break;
           }
-          case 104: {
-            IsHome = input.ReadBool();
+          case 120: {
+            Uid = input.ReadUInt32();
             break;
           }
         }

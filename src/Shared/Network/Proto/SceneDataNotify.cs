@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVTY2VuZURhdGFOb3RpZnkucHJvdG8iTAoPU2NlbmVEYXRhTm90aWZ5Eh4K",
-            "FmxldmVsX2NvbmZpZ19uYW1lX2xpc3QYDyADKAkSGQoRc2NlbmVfdGFnX2lk",
-            "X2xpc3QYCCADKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
-            "dG9iBnByb3RvMw=="));
+            "ChVTY2VuZURhdGFOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8iTAoPU2NlbmVEYXRhTm90aWZ5EhkKEXNjZW5lX3RhZ19p",
+            "ZF9saXN0GAMgAygNEh4KFmxldmVsX2NvbmZpZ19uYW1lX2xpc3QYBiADKAli",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneDataNotify), global::Weedwacker.Shared.Network.Proto.SceneDataNotify.Parser, new[]{ "LevelConfigNameList", "SceneTagIdList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneDataNotify), global::Weedwacker.Shared.Network.Proto.SceneDataNotify.Parser, new[]{ "SceneTagIdList", "LevelConfigNameList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3203
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3368;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class SceneDataNotify : pb::IMessage<SceneDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +81,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SceneDataNotify(SceneDataNotify other) : this() {
-      levelConfigNameList_ = other.levelConfigNameList_.Clone();
       sceneTagIdList_ = other.sceneTagIdList_.Clone();
+      levelConfigNameList_ = other.levelConfigNameList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,26 +92,26 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SceneDataNotify(this);
     }
 
-    /// <summary>Field number for the "level_config_name_list" field.</summary>
-    public const int LevelConfigNameListFieldNumber = 15;
-    private static readonly pb::FieldCodec<string> _repeated_levelConfigNameList_codec
-        = pb::FieldCodec.ForString(122);
-    private readonly pbc::RepeatedField<string> levelConfigNameList_ = new pbc::RepeatedField<string>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<string> LevelConfigNameList {
-      get { return levelConfigNameList_; }
-    }
-
     /// <summary>Field number for the "scene_tag_id_list" field.</summary>
-    public const int SceneTagIdListFieldNumber = 8;
+    public const int SceneTagIdListFieldNumber = 3;
     private static readonly pb::FieldCodec<uint> _repeated_sceneTagIdList_codec
-        = pb::FieldCodec.ForUInt32(66);
+        = pb::FieldCodec.ForUInt32(26);
     private readonly pbc::RepeatedField<uint> sceneTagIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<uint> SceneTagIdList {
       get { return sceneTagIdList_; }
+    }
+
+    /// <summary>Field number for the "level_config_name_list" field.</summary>
+    public const int LevelConfigNameListFieldNumber = 6;
+    private static readonly pb::FieldCodec<string> _repeated_levelConfigNameList_codec
+        = pb::FieldCodec.ForString(50);
+    private readonly pbc::RepeatedField<string> levelConfigNameList_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> LevelConfigNameList {
+      get { return levelConfigNameList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -125,8 +129,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!levelConfigNameList_.Equals(other.levelConfigNameList_)) return false;
       if(!sceneTagIdList_.Equals(other.sceneTagIdList_)) return false;
+      if(!levelConfigNameList_.Equals(other.levelConfigNameList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -134,8 +138,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= levelConfigNameList_.GetHashCode();
       hash ^= sceneTagIdList_.GetHashCode();
+      hash ^= levelConfigNameList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -178,8 +182,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += levelConfigNameList_.CalculateSize(_repeated_levelConfigNameList_codec);
       size += sceneTagIdList_.CalculateSize(_repeated_sceneTagIdList_codec);
+      size += levelConfigNameList_.CalculateSize(_repeated_levelConfigNameList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -192,8 +196,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      levelConfigNameList_.Add(other.levelConfigNameList_);
       sceneTagIdList_.Add(other.sceneTagIdList_);
+      levelConfigNameList_.Add(other.levelConfigNameList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -209,12 +213,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 66:
-          case 64: {
+          case 26:
+          case 24: {
             sceneTagIdList_.AddEntriesFrom(input, _repeated_sceneTagIdList_codec);
             break;
           }
-          case 122: {
+          case 50: {
             levelConfigNameList_.AddEntriesFrom(input, _repeated_levelConfigNameList_codec);
             break;
           }
@@ -233,12 +237,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 66:
-          case 64: {
+          case 26:
+          case 24: {
             sceneTagIdList_.AddEntriesFrom(ref input, _repeated_sceneTagIdList_codec);
             break;
           }
-          case 122: {
+          case 50: {
             levelConfigNameList_.AddEntriesFrom(ref input, _repeated_levelConfigNameList_codec);
             break;
           }

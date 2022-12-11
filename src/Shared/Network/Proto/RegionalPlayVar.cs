@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static RegionalPlayVarReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVSZWdpb25hbFBsYXlWYXIucHJvdG8iVQoPUmVnaW9uYWxQbGF5VmFyEgwK",
-            "BHR5cGUYDyABKA0SEQoJbWF4X3ZhbHVlGAsgASgCEg0KBXZhbHVlGAMgASgC",
-            "EhIKCmJhc2VfdmFsdWUYCiABKAJCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
-            "dHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChVSZWdpb25hbFBsYXlWYXIucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8iaAoPUmVnaW9uYWxQbGF5VmFyEgwKBHR5cGUYBSABKA0S",
+            "GwoTVW5rMzMwMF9GT0JNSEhOSVBQSBgEIAEoAhIbChNVbmszMzAwX1BJREhG",
+            "QUJLSUpOGAMgASgCEg0KBXZhbHVlGAIgASgCYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RegionalPlayVar), global::Weedwacker.Shared.Network.Proto.RegionalPlayVar.Parser, new[]{ "Type", "MaxValue", "Value", "BaseValue" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RegionalPlayVar), global::Weedwacker.Shared.Network.Proto.RegionalPlayVar.Parser, new[]{ "Type", "Unk3300FOBMHHNIPPH", "Unk3300PIDHFABKIJN", "Value" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,9 +73,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RegionalPlayVar(RegionalPlayVar other) : this() {
       type_ = other.type_;
-      maxValue_ = other.maxValue_;
+      unk3300FOBMHHNIPPH_ = other.unk3300FOBMHHNIPPH_;
+      unk3300PIDHFABKIJN_ = other.unk3300PIDHFABKIJN_;
       value_ = other.value_;
-      baseValue_ = other.baseValue_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,7 +86,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "type" field.</summary>
-    public const int TypeFieldNumber = 15;
+    public const int TypeFieldNumber = 5;
     private uint type_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -97,20 +97,32 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "max_value" field.</summary>
-    public const int MaxValueFieldNumber = 11;
-    private float maxValue_;
+    /// <summary>Field number for the "Unk3300_FOBMHHNIPPH" field.</summary>
+    public const int Unk3300FOBMHHNIPPHFieldNumber = 4;
+    private float unk3300FOBMHHNIPPH_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float MaxValue {
-      get { return maxValue_; }
+    public float Unk3300FOBMHHNIPPH {
+      get { return unk3300FOBMHHNIPPH_; }
       set {
-        maxValue_ = value;
+        unk3300FOBMHHNIPPH_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_PIDHFABKIJN" field.</summary>
+    public const int Unk3300PIDHFABKIJNFieldNumber = 3;
+    private float unk3300PIDHFABKIJN_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float Unk3300PIDHFABKIJN {
+      get { return unk3300PIDHFABKIJN_; }
+      set {
+        unk3300PIDHFABKIJN_ = value;
       }
     }
 
     /// <summary>Field number for the "value" field.</summary>
-    public const int ValueFieldNumber = 3;
+    public const int ValueFieldNumber = 2;
     private float value_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -118,18 +130,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return value_; }
       set {
         value_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "base_value" field.</summary>
-    public const int BaseValueFieldNumber = 10;
-    private float baseValue_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float BaseValue {
-      get { return baseValue_; }
-      set {
-        baseValue_ = value;
       }
     }
 
@@ -149,9 +149,9 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (Type != other.Type) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(MaxValue, other.MaxValue)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Unk3300FOBMHHNIPPH, other.Unk3300FOBMHHNIPPH)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Unk3300PIDHFABKIJN, other.Unk3300PIDHFABKIJN)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Value, other.Value)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(BaseValue, other.BaseValue)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -160,9 +160,9 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (Type != 0) hash ^= Type.GetHashCode();
-      if (MaxValue != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(MaxValue);
+      if (Unk3300FOBMHHNIPPH != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Unk3300FOBMHHNIPPH);
+      if (Unk3300PIDHFABKIJN != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Unk3300PIDHFABKIJN);
       if (Value != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Value);
-      if (BaseValue != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(BaseValue);
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -182,19 +182,19 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Value != 0F) {
-        output.WriteRawTag(29);
+        output.WriteRawTag(21);
         output.WriteFloat(Value);
       }
-      if (BaseValue != 0F) {
-        output.WriteRawTag(85);
-        output.WriteFloat(BaseValue);
+      if (Unk3300PIDHFABKIJN != 0F) {
+        output.WriteRawTag(29);
+        output.WriteFloat(Unk3300PIDHFABKIJN);
       }
-      if (MaxValue != 0F) {
-        output.WriteRawTag(93);
-        output.WriteFloat(MaxValue);
+      if (Unk3300FOBMHHNIPPH != 0F) {
+        output.WriteRawTag(37);
+        output.WriteFloat(Unk3300FOBMHHNIPPH);
       }
       if (Type != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(40);
         output.WriteUInt32(Type);
       }
       if (_unknownFields != null) {
@@ -208,19 +208,19 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Value != 0F) {
-        output.WriteRawTag(29);
+        output.WriteRawTag(21);
         output.WriteFloat(Value);
       }
-      if (BaseValue != 0F) {
-        output.WriteRawTag(85);
-        output.WriteFloat(BaseValue);
+      if (Unk3300PIDHFABKIJN != 0F) {
+        output.WriteRawTag(29);
+        output.WriteFloat(Unk3300PIDHFABKIJN);
       }
-      if (MaxValue != 0F) {
-        output.WriteRawTag(93);
-        output.WriteFloat(MaxValue);
+      if (Unk3300FOBMHHNIPPH != 0F) {
+        output.WriteRawTag(37);
+        output.WriteFloat(Unk3300FOBMHHNIPPH);
       }
       if (Type != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(40);
         output.WriteUInt32(Type);
       }
       if (_unknownFields != null) {
@@ -236,13 +236,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (Type != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Type);
       }
-      if (MaxValue != 0F) {
+      if (Unk3300FOBMHHNIPPH != 0F) {
+        size += 1 + 4;
+      }
+      if (Unk3300PIDHFABKIJN != 0F) {
         size += 1 + 4;
       }
       if (Value != 0F) {
-        size += 1 + 4;
-      }
-      if (BaseValue != 0F) {
         size += 1 + 4;
       }
       if (_unknownFields != null) {
@@ -260,14 +260,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.Type != 0) {
         Type = other.Type;
       }
-      if (other.MaxValue != 0F) {
-        MaxValue = other.MaxValue;
+      if (other.Unk3300FOBMHHNIPPH != 0F) {
+        Unk3300FOBMHHNIPPH = other.Unk3300FOBMHHNIPPH;
+      }
+      if (other.Unk3300PIDHFABKIJN != 0F) {
+        Unk3300PIDHFABKIJN = other.Unk3300PIDHFABKIJN;
       }
       if (other.Value != 0F) {
         Value = other.Value;
-      }
-      if (other.BaseValue != 0F) {
-        BaseValue = other.BaseValue;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -284,19 +284,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 29: {
+          case 21: {
             Value = input.ReadFloat();
             break;
           }
-          case 85: {
-            BaseValue = input.ReadFloat();
+          case 29: {
+            Unk3300PIDHFABKIJN = input.ReadFloat();
             break;
           }
-          case 93: {
-            MaxValue = input.ReadFloat();
+          case 37: {
+            Unk3300FOBMHHNIPPH = input.ReadFloat();
             break;
           }
-          case 120: {
+          case 40: {
             Type = input.ReadUInt32();
             break;
           }
@@ -315,19 +315,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 29: {
+          case 21: {
             Value = input.ReadFloat();
             break;
           }
-          case 85: {
-            BaseValue = input.ReadFloat();
+          case 29: {
+            Unk3300PIDHFABKIJN = input.ReadFloat();
             break;
           }
-          case 93: {
-            MaxValue = input.ReadFloat();
+          case 37: {
+            Unk3300FOBMHHNIPPH = input.ReadFloat();
             break;
           }
-          case 120: {
+          case 40: {
             Type = input.ReadUInt32();
             break;
           }

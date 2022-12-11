@@ -24,22 +24,24 @@ namespace Weedwacker.Shared.Network.Proto {
     static DungeonPlayerDieNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxEdW5nZW9uUGxheWVyRGllTm90aWZ5LnByb3RvGhNQbGF5ZXJEaWVUeXBl",
-            "LnByb3RvGhlTdHJlbmd0aGVuUG9pbnREYXRhLnByb3RvIvUCChZEdW5nZW9u",
-            "UGxheWVyRGllTm90aWZ5ElYKGXN0cmVuZ3RoZW5fcG9pbnRfZGF0YV9tYXAY",
-            "DyADKAsyMy5EdW5nZW9uUGxheWVyRGllTm90aWZ5LlN0cmVuZ3RoZW5Qb2lu",
-            "dERhdGFNYXBFbnRyeRIRCgl3YWl0X3RpbWUYASABKA0SEgoKZHVuZ2Vvbl9p",
-            "ZBgJIAEoDRIaChJtdXJkZXJlcl9lbnRpdHlfaWQYDSABKA0SIAoIZGllX3R5",
-            "cGUYAyABKA4yDi5QbGF5ZXJEaWVUeXBlEhQKDHJldml2ZV9jb3VudBgGIAEo",
-            "DRIUCgptb25zdGVyX2lkGAQgASgNSAASEwoJZ2FkZ2V0X2lkGAggASgNSAAa",
-            "UwobU3RyZW5ndGhlblBvaW50RGF0YU1hcEVudHJ5EgsKA2tleRgBIAEoDRIj",
-            "CgV2YWx1ZRgCIAEoCzIULlN0cmVuZ3RoZW5Qb2ludERhdGE6AjgBQggKBmVu",
-            "dGl0eUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJv",
-            "dG8z"));
+            "ChxEdW5nZW9uUGxheWVyRGllTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhNQbGF5ZXJEaWVUeXBlLnByb3RvGhlTdHJl",
+            "bmd0aGVuUG9pbnREYXRhLnByb3RvItUDChZEdW5nZW9uUGxheWVyRGllTm90",
+            "aWZ5EnYKGXN0cmVuZ3RoZW5fcG9pbnRfZGF0YV9tYXAYByADKAsyUy5XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkR1bmdlb25QbGF5ZXJEaWVO",
+            "b3RpZnkuU3RyZW5ndGhlblBvaW50RGF0YU1hcEVudHJ5EkAKCGRpZV90eXBl",
+            "GAggASgOMi4uV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5QbGF5",
+            "ZXJEaWVUeXBlEhQKDHJldml2ZV9jb3VudBgDIAEoDRIRCgl3YWl0X3RpbWUY",
+            "BCABKA0SEgoKZHVuZ2Vvbl9pZBgGIAEoDRIaChJtdXJkZXJlcl9lbnRpdHlf",
+            "aWQYCyABKA0SFAoKbW9uc3Rlcl9pZBgKIAEoDUgAEhMKCWdhZGdldF9pZBgO",
+            "IAEoDUgAGnMKG1N0cmVuZ3RoZW5Qb2ludERhdGFNYXBFbnRyeRILCgNrZXkY",
+            "ASABKA0SQwoFdmFsdWUYAiABKAsyNC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLlN0cmVuZ3RoZW5Qb2ludERhdGE6AjgBQggKBmVudGl0eWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.PlayerDieTypeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.StrengthenPointDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DungeonPlayerDieNotify), global::Weedwacker.Shared.Network.Proto.DungeonPlayerDieNotify.Parser, new[]{ "StrengthenPointDataMap", "WaitTime", "DungeonId", "MurdererEntityId", "DieType", "ReviveCount", "MonsterId", "GadgetId" }, new[]{ "Entity" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DungeonPlayerDieNotify), global::Weedwacker.Shared.Network.Proto.DungeonPlayerDieNotify.Parser, new[]{ "StrengthenPointDataMap", "DieType", "ReviveCount", "WaitTime", "DungeonId", "MurdererEntityId", "MonsterId", "GadgetId" }, new[]{ "Entity" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -47,9 +49,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 931
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 927;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class DungeonPlayerDieNotify : pb::IMessage<DungeonPlayerDieNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -86,11 +92,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DungeonPlayerDieNotify(DungeonPlayerDieNotify other) : this() {
       strengthenPointDataMap_ = other.strengthenPointDataMap_.Clone();
+      dieType_ = other.dieType_;
+      reviveCount_ = other.reviveCount_;
       waitTime_ = other.waitTime_;
       dungeonId_ = other.dungeonId_;
       murdererEntityId_ = other.murdererEntityId_;
-      dieType_ = other.dieType_;
-      reviveCount_ = other.reviveCount_;
       switch (other.EntityCase) {
         case EntityOneofCase.MonsterId:
           MonsterId = other.MonsterId;
@@ -110,9 +116,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "strengthen_point_data_map" field.</summary>
-    public const int StrengthenPointDataMapFieldNumber = 15;
+    public const int StrengthenPointDataMapFieldNumber = 7;
     private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.StrengthenPointData>.Codec _map_strengthenPointDataMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.StrengthenPointData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.StrengthenPointData.Parser), 122);
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.StrengthenPointData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.StrengthenPointData.Parser), 58);
     private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.StrengthenPointData> strengthenPointDataMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.StrengthenPointData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -120,44 +126,8 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return strengthenPointDataMap_; }
     }
 
-    /// <summary>Field number for the "wait_time" field.</summary>
-    public const int WaitTimeFieldNumber = 1;
-    private uint waitTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint WaitTime {
-      get { return waitTime_; }
-      set {
-        waitTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "dungeon_id" field.</summary>
-    public const int DungeonIdFieldNumber = 9;
-    private uint dungeonId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DungeonId {
-      get { return dungeonId_; }
-      set {
-        dungeonId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "murderer_entity_id" field.</summary>
-    public const int MurdererEntityIdFieldNumber = 13;
-    private uint murdererEntityId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MurdererEntityId {
-      get { return murdererEntityId_; }
-      set {
-        murdererEntityId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "die_type" field.</summary>
-    public const int DieTypeFieldNumber = 3;
+    public const int DieTypeFieldNumber = 8;
     private global::Weedwacker.Shared.Network.Proto.PlayerDieType dieType_ = global::Weedwacker.Shared.Network.Proto.PlayerDieType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -169,7 +139,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "revive_count" field.</summary>
-    public const int ReviveCountFieldNumber = 6;
+    public const int ReviveCountFieldNumber = 3;
     private uint reviveCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -180,8 +150,44 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "wait_time" field.</summary>
+    public const int WaitTimeFieldNumber = 4;
+    private uint waitTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint WaitTime {
+      get { return waitTime_; }
+      set {
+        waitTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dungeon_id" field.</summary>
+    public const int DungeonIdFieldNumber = 6;
+    private uint dungeonId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint DungeonId {
+      get { return dungeonId_; }
+      set {
+        dungeonId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "murderer_entity_id" field.</summary>
+    public const int MurdererEntityIdFieldNumber = 11;
+    private uint murdererEntityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MurdererEntityId {
+      get { return murdererEntityId_; }
+      set {
+        murdererEntityId_ = value;
+      }
+    }
+
     /// <summary>Field number for the "monster_id" field.</summary>
-    public const int MonsterIdFieldNumber = 4;
+    public const int MonsterIdFieldNumber = 10;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint MonsterId {
@@ -193,7 +199,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "gadget_id" field.</summary>
-    public const int GadgetIdFieldNumber = 8;
+    public const int GadgetIdFieldNumber = 14;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint GadgetId {
@@ -208,8 +214,8 @@ namespace Weedwacker.Shared.Network.Proto {
     /// <summary>Enum of possible cases for the "entity" oneof.</summary>
     public enum EntityOneofCase {
       None = 0,
-      MonsterId = 4,
-      GadgetId = 8,
+      MonsterId = 10,
+      GadgetId = 14,
     }
     private EntityOneofCase entityCase_ = EntityOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -241,11 +247,11 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (!StrengthenPointDataMap.Equals(other.StrengthenPointDataMap)) return false;
+      if (DieType != other.DieType) return false;
+      if (ReviveCount != other.ReviveCount) return false;
       if (WaitTime != other.WaitTime) return false;
       if (DungeonId != other.DungeonId) return false;
       if (MurdererEntityId != other.MurdererEntityId) return false;
-      if (DieType != other.DieType) return false;
-      if (ReviveCount != other.ReviveCount) return false;
       if (MonsterId != other.MonsterId) return false;
       if (GadgetId != other.GadgetId) return false;
       if (EntityCase != other.EntityCase) return false;
@@ -257,11 +263,11 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= StrengthenPointDataMap.GetHashCode();
+      if (DieType != global::Weedwacker.Shared.Network.Proto.PlayerDieType.None) hash ^= DieType.GetHashCode();
+      if (ReviveCount != 0) hash ^= ReviveCount.GetHashCode();
       if (WaitTime != 0) hash ^= WaitTime.GetHashCode();
       if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
       if (MurdererEntityId != 0) hash ^= MurdererEntityId.GetHashCode();
-      if (DieType != global::Weedwacker.Shared.Network.Proto.PlayerDieType.None) hash ^= DieType.GetHashCode();
-      if (ReviveCount != 0) hash ^= ReviveCount.GetHashCode();
       if (entityCase_ == EntityOneofCase.MonsterId) hash ^= MonsterId.GetHashCode();
       if (entityCase_ == EntityOneofCase.GadgetId) hash ^= GadgetId.GetHashCode();
       hash ^= (int) entityCase_;
@@ -283,35 +289,35 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (ReviveCount != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(ReviveCount);
+      }
       if (WaitTime != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(32);
         output.WriteUInt32(WaitTime);
       }
+      if (DungeonId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(DungeonId);
+      }
+      strengthenPointDataMap_.WriteTo(output, _map_strengthenPointDataMap_codec);
       if (DieType != global::Weedwacker.Shared.Network.Proto.PlayerDieType.None) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(64);
         output.WriteEnum((int) DieType);
       }
       if (entityCase_ == EntityOneofCase.MonsterId) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(80);
         output.WriteUInt32(MonsterId);
       }
-      if (ReviveCount != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(ReviveCount);
-      }
-      if (entityCase_ == EntityOneofCase.GadgetId) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(GadgetId);
-      }
-      if (DungeonId != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(DungeonId);
-      }
       if (MurdererEntityId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(88);
         output.WriteUInt32(MurdererEntityId);
       }
-      strengthenPointDataMap_.WriteTo(output, _map_strengthenPointDataMap_codec);
+      if (entityCase_ == EntityOneofCase.GadgetId) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(GadgetId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -322,35 +328,35 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ReviveCount != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(ReviveCount);
+      }
       if (WaitTime != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(32);
         output.WriteUInt32(WaitTime);
       }
+      if (DungeonId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(DungeonId);
+      }
+      strengthenPointDataMap_.WriteTo(ref output, _map_strengthenPointDataMap_codec);
       if (DieType != global::Weedwacker.Shared.Network.Proto.PlayerDieType.None) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(64);
         output.WriteEnum((int) DieType);
       }
       if (entityCase_ == EntityOneofCase.MonsterId) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(80);
         output.WriteUInt32(MonsterId);
       }
-      if (ReviveCount != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(ReviveCount);
-      }
-      if (entityCase_ == EntityOneofCase.GadgetId) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(GadgetId);
-      }
-      if (DungeonId != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(DungeonId);
-      }
       if (MurdererEntityId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(88);
         output.WriteUInt32(MurdererEntityId);
       }
-      strengthenPointDataMap_.WriteTo(ref output, _map_strengthenPointDataMap_codec);
+      if (entityCase_ == EntityOneofCase.GadgetId) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(GadgetId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -362,6 +368,12 @@ namespace Weedwacker.Shared.Network.Proto {
     public int CalculateSize() {
       int size = 0;
       size += strengthenPointDataMap_.CalculateSize(_map_strengthenPointDataMap_codec);
+      if (DieType != global::Weedwacker.Shared.Network.Proto.PlayerDieType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) DieType);
+      }
+      if (ReviveCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ReviveCount);
+      }
       if (WaitTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WaitTime);
       }
@@ -370,12 +382,6 @@ namespace Weedwacker.Shared.Network.Proto {
       }
       if (MurdererEntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MurdererEntityId);
-      }
-      if (DieType != global::Weedwacker.Shared.Network.Proto.PlayerDieType.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) DieType);
-      }
-      if (ReviveCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ReviveCount);
       }
       if (entityCase_ == EntityOneofCase.MonsterId) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MonsterId);
@@ -396,6 +402,12 @@ namespace Weedwacker.Shared.Network.Proto {
         return;
       }
       strengthenPointDataMap_.Add(other.strengthenPointDataMap_);
+      if (other.DieType != global::Weedwacker.Shared.Network.Proto.PlayerDieType.None) {
+        DieType = other.DieType;
+      }
+      if (other.ReviveCount != 0) {
+        ReviveCount = other.ReviveCount;
+      }
       if (other.WaitTime != 0) {
         WaitTime = other.WaitTime;
       }
@@ -404,12 +416,6 @@ namespace Weedwacker.Shared.Network.Proto {
       }
       if (other.MurdererEntityId != 0) {
         MurdererEntityId = other.MurdererEntityId;
-      }
-      if (other.DieType != global::Weedwacker.Shared.Network.Proto.PlayerDieType.None) {
-        DieType = other.DieType;
-      }
-      if (other.ReviveCount != 0) {
-        ReviveCount = other.ReviveCount;
       }
       switch (other.EntityCase) {
         case EntityOneofCase.MonsterId:
@@ -435,36 +441,36 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            WaitTime = input.ReadUInt32();
-            break;
-          }
           case 24: {
-            DieType = (global::Weedwacker.Shared.Network.Proto.PlayerDieType) input.ReadEnum();
-            break;
-          }
-          case 32: {
-            MonsterId = input.ReadUInt32();
-            break;
-          }
-          case 48: {
             ReviveCount = input.ReadUInt32();
             break;
           }
-          case 64: {
-            GadgetId = input.ReadUInt32();
+          case 32: {
+            WaitTime = input.ReadUInt32();
             break;
           }
-          case 72: {
+          case 48: {
             DungeonId = input.ReadUInt32();
             break;
           }
-          case 104: {
+          case 58: {
+            strengthenPointDataMap_.AddEntriesFrom(input, _map_strengthenPointDataMap_codec);
+            break;
+          }
+          case 64: {
+            DieType = (global::Weedwacker.Shared.Network.Proto.PlayerDieType) input.ReadEnum();
+            break;
+          }
+          case 80: {
+            MonsterId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
             MurdererEntityId = input.ReadUInt32();
             break;
           }
-          case 122: {
-            strengthenPointDataMap_.AddEntriesFrom(input, _map_strengthenPointDataMap_codec);
+          case 112: {
+            GadgetId = input.ReadUInt32();
             break;
           }
         }
@@ -482,36 +488,36 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            WaitTime = input.ReadUInt32();
-            break;
-          }
           case 24: {
-            DieType = (global::Weedwacker.Shared.Network.Proto.PlayerDieType) input.ReadEnum();
-            break;
-          }
-          case 32: {
-            MonsterId = input.ReadUInt32();
-            break;
-          }
-          case 48: {
             ReviveCount = input.ReadUInt32();
             break;
           }
-          case 64: {
-            GadgetId = input.ReadUInt32();
+          case 32: {
+            WaitTime = input.ReadUInt32();
             break;
           }
-          case 72: {
+          case 48: {
             DungeonId = input.ReadUInt32();
             break;
           }
-          case 104: {
+          case 58: {
+            strengthenPointDataMap_.AddEntriesFrom(ref input, _map_strengthenPointDataMap_codec);
+            break;
+          }
+          case 64: {
+            DieType = (global::Weedwacker.Shared.Network.Proto.PlayerDieType) input.ReadEnum();
+            break;
+          }
+          case 80: {
+            MonsterId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
             MurdererEntityId = input.ReadUInt32();
             break;
           }
-          case 122: {
-            strengthenPointDataMap_.AddEntriesFrom(ref input, _map_strengthenPointDataMap_codec);
+          case 112: {
+            GadgetId = input.ReadUInt32();
             break;
           }
         }

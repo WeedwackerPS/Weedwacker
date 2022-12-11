@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneGalleryEffigyChallengeV2InfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CidTY2VuZUdhbGxlcnlFZmZpZ3lDaGFsbGVuZ2VWMkluZm8ucHJvdG8irwEK",
-            "IVNjZW5lR2FsbGVyeUVmZmlneUNoYWxsZW5nZVYySW5mbxIaChJraWxsZWRf",
-            "bW9uc3Rlcl9jbnQYCiABKA0SHQoVdG90YWxfdGFyZ2V0X2tpbGxfY250GA8g",
-            "ASgNEhgKEHNjZW5lX3N0YXJ0X3RpbWUYDiABKA0SGQoRdF9yZW1haW5fdXNl",
-            "X3RpbWUYBiABKA0SGgoSYm9zc192aW9sZW50X2xldmVsGAkgASgNQiKqAh9X",
-            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CidTY2VuZUdhbGxlcnlFZmZpZ3lDaGFsbGVuZ2VWMkluZm8ucHJvdG8SH1dl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8itAEKIVNjZW5lR2FsbGVy",
+            "eUVmZmlneUNoYWxsZW5nZVYySW5mbxIbChNVbmszMzAwX01JQ1BDS0lPRUpB",
+            "GAEgASgNEhsKE1VuazMzMDBfQk1QQ0tHSkFHUEUYCCABKA0SGwoTVW5rMzMw",
+            "MF9FT0dBUEJPRkhPUBgCIAEoDRIbChNVbmszMzAwX01CSEJOSVBFUE5KGAcg",
+            "ASgNEhsKE1VuazMzMDBfQUlFRUdJQk1PRkgYCyABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneGalleryEffigyChallengeV2Info), global::Weedwacker.Shared.Network.Proto.SceneGalleryEffigyChallengeV2Info.Parser, new[]{ "KilledMonsterCnt", "TotalTargetKillCnt", "SceneStartTime", "TRemainUseTime", "BossViolentLevel" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneGalleryEffigyChallengeV2Info), global::Weedwacker.Shared.Network.Proto.SceneGalleryEffigyChallengeV2Info.Parser, new[]{ "Unk3300MICPCKIOEJA", "Unk3300BMPCKGJAGPE", "Unk3300EOGAPBOFHOP", "Unk3300MBHBNIPEPNJ", "Unk3300AIEEGIBMOFH" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,11 +74,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SceneGalleryEffigyChallengeV2Info(SceneGalleryEffigyChallengeV2Info other) : this() {
-      killedMonsterCnt_ = other.killedMonsterCnt_;
-      totalTargetKillCnt_ = other.totalTargetKillCnt_;
-      sceneStartTime_ = other.sceneStartTime_;
-      tRemainUseTime_ = other.tRemainUseTime_;
-      bossViolentLevel_ = other.bossViolentLevel_;
+      unk3300MICPCKIOEJA_ = other.unk3300MICPCKIOEJA_;
+      unk3300BMPCKGJAGPE_ = other.unk3300BMPCKGJAGPE_;
+      unk3300EOGAPBOFHOP_ = other.unk3300EOGAPBOFHOP_;
+      unk3300MBHBNIPEPNJ_ = other.unk3300MBHBNIPEPNJ_;
+      unk3300AIEEGIBMOFH_ = other.unk3300AIEEGIBMOFH_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,63 +88,63 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SceneGalleryEffigyChallengeV2Info(this);
     }
 
-    /// <summary>Field number for the "killed_monster_cnt" field.</summary>
-    public const int KilledMonsterCntFieldNumber = 10;
-    private uint killedMonsterCnt_;
+    /// <summary>Field number for the "Unk3300_MICPCKIOEJA" field.</summary>
+    public const int Unk3300MICPCKIOEJAFieldNumber = 1;
+    private uint unk3300MICPCKIOEJA_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint KilledMonsterCnt {
-      get { return killedMonsterCnt_; }
+    public uint Unk3300MICPCKIOEJA {
+      get { return unk3300MICPCKIOEJA_; }
       set {
-        killedMonsterCnt_ = value;
+        unk3300MICPCKIOEJA_ = value;
       }
     }
 
-    /// <summary>Field number for the "total_target_kill_cnt" field.</summary>
-    public const int TotalTargetKillCntFieldNumber = 15;
-    private uint totalTargetKillCnt_;
+    /// <summary>Field number for the "Unk3300_BMPCKGJAGPE" field.</summary>
+    public const int Unk3300BMPCKGJAGPEFieldNumber = 8;
+    private uint unk3300BMPCKGJAGPE_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TotalTargetKillCnt {
-      get { return totalTargetKillCnt_; }
+    public uint Unk3300BMPCKGJAGPE {
+      get { return unk3300BMPCKGJAGPE_; }
       set {
-        totalTargetKillCnt_ = value;
+        unk3300BMPCKGJAGPE_ = value;
       }
     }
 
-    /// <summary>Field number for the "scene_start_time" field.</summary>
-    public const int SceneStartTimeFieldNumber = 14;
-    private uint sceneStartTime_;
+    /// <summary>Field number for the "Unk3300_EOGAPBOFHOP" field.</summary>
+    public const int Unk3300EOGAPBOFHOPFieldNumber = 2;
+    private uint unk3300EOGAPBOFHOP_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SceneStartTime {
-      get { return sceneStartTime_; }
+    public uint Unk3300EOGAPBOFHOP {
+      get { return unk3300EOGAPBOFHOP_; }
       set {
-        sceneStartTime_ = value;
+        unk3300EOGAPBOFHOP_ = value;
       }
     }
 
-    /// <summary>Field number for the "t_remain_use_time" field.</summary>
-    public const int TRemainUseTimeFieldNumber = 6;
-    private uint tRemainUseTime_;
+    /// <summary>Field number for the "Unk3300_MBHBNIPEPNJ" field.</summary>
+    public const int Unk3300MBHBNIPEPNJFieldNumber = 7;
+    private uint unk3300MBHBNIPEPNJ_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TRemainUseTime {
-      get { return tRemainUseTime_; }
+    public uint Unk3300MBHBNIPEPNJ {
+      get { return unk3300MBHBNIPEPNJ_; }
       set {
-        tRemainUseTime_ = value;
+        unk3300MBHBNIPEPNJ_ = value;
       }
     }
 
-    /// <summary>Field number for the "boss_violent_level" field.</summary>
-    public const int BossViolentLevelFieldNumber = 9;
-    private uint bossViolentLevel_;
+    /// <summary>Field number for the "Unk3300_AIEEGIBMOFH" field.</summary>
+    public const int Unk3300AIEEGIBMOFHFieldNumber = 11;
+    private uint unk3300AIEEGIBMOFH_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint BossViolentLevel {
-      get { return bossViolentLevel_; }
+    public uint Unk3300AIEEGIBMOFH {
+      get { return unk3300AIEEGIBMOFH_; }
       set {
-        bossViolentLevel_ = value;
+        unk3300AIEEGIBMOFH_ = value;
       }
     }
 
@@ -163,11 +163,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (KilledMonsterCnt != other.KilledMonsterCnt) return false;
-      if (TotalTargetKillCnt != other.TotalTargetKillCnt) return false;
-      if (SceneStartTime != other.SceneStartTime) return false;
-      if (TRemainUseTime != other.TRemainUseTime) return false;
-      if (BossViolentLevel != other.BossViolentLevel) return false;
+      if (Unk3300MICPCKIOEJA != other.Unk3300MICPCKIOEJA) return false;
+      if (Unk3300BMPCKGJAGPE != other.Unk3300BMPCKGJAGPE) return false;
+      if (Unk3300EOGAPBOFHOP != other.Unk3300EOGAPBOFHOP) return false;
+      if (Unk3300MBHBNIPEPNJ != other.Unk3300MBHBNIPEPNJ) return false;
+      if (Unk3300AIEEGIBMOFH != other.Unk3300AIEEGIBMOFH) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -175,11 +175,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (KilledMonsterCnt != 0) hash ^= KilledMonsterCnt.GetHashCode();
-      if (TotalTargetKillCnt != 0) hash ^= TotalTargetKillCnt.GetHashCode();
-      if (SceneStartTime != 0) hash ^= SceneStartTime.GetHashCode();
-      if (TRemainUseTime != 0) hash ^= TRemainUseTime.GetHashCode();
-      if (BossViolentLevel != 0) hash ^= BossViolentLevel.GetHashCode();
+      if (Unk3300MICPCKIOEJA != 0) hash ^= Unk3300MICPCKIOEJA.GetHashCode();
+      if (Unk3300BMPCKGJAGPE != 0) hash ^= Unk3300BMPCKGJAGPE.GetHashCode();
+      if (Unk3300EOGAPBOFHOP != 0) hash ^= Unk3300EOGAPBOFHOP.GetHashCode();
+      if (Unk3300MBHBNIPEPNJ != 0) hash ^= Unk3300MBHBNIPEPNJ.GetHashCode();
+      if (Unk3300AIEEGIBMOFH != 0) hash ^= Unk3300AIEEGIBMOFH.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -198,25 +198,25 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (TRemainUseTime != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(TRemainUseTime);
+      if (Unk3300MICPCKIOEJA != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300MICPCKIOEJA);
       }
-      if (BossViolentLevel != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(BossViolentLevel);
+      if (Unk3300EOGAPBOFHOP != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300EOGAPBOFHOP);
       }
-      if (KilledMonsterCnt != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(KilledMonsterCnt);
+      if (Unk3300MBHBNIPEPNJ != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300MBHBNIPEPNJ);
       }
-      if (SceneStartTime != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(SceneStartTime);
+      if (Unk3300BMPCKGJAGPE != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300BMPCKGJAGPE);
       }
-      if (TotalTargetKillCnt != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(TotalTargetKillCnt);
+      if (Unk3300AIEEGIBMOFH != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Unk3300AIEEGIBMOFH);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -228,25 +228,25 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (TRemainUseTime != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(TRemainUseTime);
+      if (Unk3300MICPCKIOEJA != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300MICPCKIOEJA);
       }
-      if (BossViolentLevel != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(BossViolentLevel);
+      if (Unk3300EOGAPBOFHOP != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300EOGAPBOFHOP);
       }
-      if (KilledMonsterCnt != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(KilledMonsterCnt);
+      if (Unk3300MBHBNIPEPNJ != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300MBHBNIPEPNJ);
       }
-      if (SceneStartTime != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(SceneStartTime);
+      if (Unk3300BMPCKGJAGPE != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300BMPCKGJAGPE);
       }
-      if (TotalTargetKillCnt != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(TotalTargetKillCnt);
+      if (Unk3300AIEEGIBMOFH != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Unk3300AIEEGIBMOFH);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -258,20 +258,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (KilledMonsterCnt != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(KilledMonsterCnt);
+      if (Unk3300MICPCKIOEJA != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300MICPCKIOEJA);
       }
-      if (TotalTargetKillCnt != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalTargetKillCnt);
+      if (Unk3300BMPCKGJAGPE != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300BMPCKGJAGPE);
       }
-      if (SceneStartTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneStartTime);
+      if (Unk3300EOGAPBOFHOP != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300EOGAPBOFHOP);
       }
-      if (TRemainUseTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TRemainUseTime);
+      if (Unk3300MBHBNIPEPNJ != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300MBHBNIPEPNJ);
       }
-      if (BossViolentLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BossViolentLevel);
+      if (Unk3300AIEEGIBMOFH != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300AIEEGIBMOFH);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -285,20 +285,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.KilledMonsterCnt != 0) {
-        KilledMonsterCnt = other.KilledMonsterCnt;
+      if (other.Unk3300MICPCKIOEJA != 0) {
+        Unk3300MICPCKIOEJA = other.Unk3300MICPCKIOEJA;
       }
-      if (other.TotalTargetKillCnt != 0) {
-        TotalTargetKillCnt = other.TotalTargetKillCnt;
+      if (other.Unk3300BMPCKGJAGPE != 0) {
+        Unk3300BMPCKGJAGPE = other.Unk3300BMPCKGJAGPE;
       }
-      if (other.SceneStartTime != 0) {
-        SceneStartTime = other.SceneStartTime;
+      if (other.Unk3300EOGAPBOFHOP != 0) {
+        Unk3300EOGAPBOFHOP = other.Unk3300EOGAPBOFHOP;
       }
-      if (other.TRemainUseTime != 0) {
-        TRemainUseTime = other.TRemainUseTime;
+      if (other.Unk3300MBHBNIPEPNJ != 0) {
+        Unk3300MBHBNIPEPNJ = other.Unk3300MBHBNIPEPNJ;
       }
-      if (other.BossViolentLevel != 0) {
-        BossViolentLevel = other.BossViolentLevel;
+      if (other.Unk3300AIEEGIBMOFH != 0) {
+        Unk3300AIEEGIBMOFH = other.Unk3300AIEEGIBMOFH;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -315,24 +315,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
-            TRemainUseTime = input.ReadUInt32();
+          case 8: {
+            Unk3300MICPCKIOEJA = input.ReadUInt32();
             break;
           }
-          case 72: {
-            BossViolentLevel = input.ReadUInt32();
+          case 16: {
+            Unk3300EOGAPBOFHOP = input.ReadUInt32();
             break;
           }
-          case 80: {
-            KilledMonsterCnt = input.ReadUInt32();
+          case 56: {
+            Unk3300MBHBNIPEPNJ = input.ReadUInt32();
             break;
           }
-          case 112: {
-            SceneStartTime = input.ReadUInt32();
+          case 64: {
+            Unk3300BMPCKGJAGPE = input.ReadUInt32();
             break;
           }
-          case 120: {
-            TotalTargetKillCnt = input.ReadUInt32();
+          case 88: {
+            Unk3300AIEEGIBMOFH = input.ReadUInt32();
             break;
           }
         }
@@ -350,24 +350,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
-            TRemainUseTime = input.ReadUInt32();
+          case 8: {
+            Unk3300MICPCKIOEJA = input.ReadUInt32();
             break;
           }
-          case 72: {
-            BossViolentLevel = input.ReadUInt32();
+          case 16: {
+            Unk3300EOGAPBOFHOP = input.ReadUInt32();
             break;
           }
-          case 80: {
-            KilledMonsterCnt = input.ReadUInt32();
+          case 56: {
+            Unk3300MBHBNIPEPNJ = input.ReadUInt32();
             break;
           }
-          case 112: {
-            SceneStartTime = input.ReadUInt32();
+          case 64: {
+            Unk3300BMPCKGJAGPE = input.ReadUInt32();
             break;
           }
-          case 120: {
-            TotalTargetKillCnt = input.ReadUInt32();
+          case 88: {
+            Unk3300AIEEGIBMOFH = input.ReadUInt32();
             break;
           }
         }

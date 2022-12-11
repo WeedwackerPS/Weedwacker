@@ -24,17 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static BuoyantCombatGallerySettleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiRCdW95YW50Q29tYmF0R2FsbGVyeVNldHRsZUluZm8ucHJvdG8i1QEKHkJ1",
-            "b3lhbnRDb21iYXRHYWxsZXJ5U2V0dGxlSW5mbxIVCg1nYWxsZXJ5X2xldmVs",
-            "GAwgASgNEhMKC2ZpbmFsX3Njb3JlGA8gASgNEhoKEmtpbGxfbW9uc3Rlcl9j",
-            "b3VudBgJIAEoDRIZChFraWxsX3RhcmdldF9jb3VudBgBIAEoDRIiChpraWxs",
-            "X3NwZWNpYWxfbW9uc3Rlcl9jb3VudBgEIAEoDRISCgpnYWxsZXJ5X2lkGAIg",
-            "ASgNEhgKEGdhbGxlcnlfbXVsdGlwbGUYCyABKA1CIqoCH1dlZWR3YWNrZXIu",
-            "U2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiRCdW95YW50Q29tYmF0R2FsbGVyeVNldHRsZUluZm8ucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8i2gEKHkJ1b3lhbnRDb21iYXRH",
+            "YWxsZXJ5U2V0dGxlSW5mbxIVCg1nYWxsZXJ5X2xldmVsGAsgASgNEhoKEmtp",
+            "bGxfbW9uc3Rlcl9jb3VudBgBIAEoDRIiChpraWxsX3NwZWNpYWxfbW9uc3Rl",
+            "cl9jb3VudBgJIAEoDRIbChNVbmszMzAwX0hMRkhMUEVLT01MGAcgASgNEhIK",
+            "CmdhbGxlcnlfaWQYAiABKA0SGwoTVW5rMzMwMF9LUENKQk9PR0VNRxgKIAEo",
+            "DRITCgtmaW5hbF9zY29yZRgMIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BuoyantCombatGallerySettleInfo), global::Weedwacker.Shared.Network.Proto.BuoyantCombatGallerySettleInfo.Parser, new[]{ "GalleryLevel", "FinalScore", "KillMonsterCount", "KillTargetCount", "KillSpecialMonsterCount", "GalleryId", "GalleryMultiple" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BuoyantCombatGallerySettleInfo), global::Weedwacker.Shared.Network.Proto.BuoyantCombatGallerySettleInfo.Parser, new[]{ "GalleryLevel", "KillMonsterCount", "KillSpecialMonsterCount", "Unk3300HLFHLPEKOML", "GalleryId", "Unk3300KPCJBOOGEMG", "FinalScore" }, null, null, null, null)
           }));
     }
     #endregion
@@ -76,12 +76,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BuoyantCombatGallerySettleInfo(BuoyantCombatGallerySettleInfo other) : this() {
       galleryLevel_ = other.galleryLevel_;
-      finalScore_ = other.finalScore_;
       killMonsterCount_ = other.killMonsterCount_;
-      killTargetCount_ = other.killTargetCount_;
       killSpecialMonsterCount_ = other.killSpecialMonsterCount_;
+      unk3300HLFHLPEKOML_ = other.unk3300HLFHLPEKOML_;
       galleryId_ = other.galleryId_;
-      galleryMultiple_ = other.galleryMultiple_;
+      unk3300KPCJBOOGEMG_ = other.unk3300KPCJBOOGEMG_;
+      finalScore_ = other.finalScore_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,7 +92,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "gallery_level" field.</summary>
-    public const int GalleryLevelFieldNumber = 12;
+    public const int GalleryLevelFieldNumber = 11;
     private uint galleryLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,20 +103,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "final_score" field.</summary>
-    public const int FinalScoreFieldNumber = 15;
-    private uint finalScore_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FinalScore {
-      get { return finalScore_; }
-      set {
-        finalScore_ = value;
-      }
-    }
-
     /// <summary>Field number for the "kill_monster_count" field.</summary>
-    public const int KillMonsterCountFieldNumber = 9;
+    public const int KillMonsterCountFieldNumber = 1;
     private uint killMonsterCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -127,20 +115,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "kill_target_count" field.</summary>
-    public const int KillTargetCountFieldNumber = 1;
-    private uint killTargetCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint KillTargetCount {
-      get { return killTargetCount_; }
-      set {
-        killTargetCount_ = value;
-      }
-    }
-
     /// <summary>Field number for the "kill_special_monster_count" field.</summary>
-    public const int KillSpecialMonsterCountFieldNumber = 4;
+    public const int KillSpecialMonsterCountFieldNumber = 9;
     private uint killSpecialMonsterCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -148,6 +124,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return killSpecialMonsterCount_; }
       set {
         killSpecialMonsterCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_HLFHLPEKOML" field.</summary>
+    public const int Unk3300HLFHLPEKOMLFieldNumber = 7;
+    private uint unk3300HLFHLPEKOML_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300HLFHLPEKOML {
+      get { return unk3300HLFHLPEKOML_; }
+      set {
+        unk3300HLFHLPEKOML_ = value;
       }
     }
 
@@ -163,15 +151,27 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "gallery_multiple" field.</summary>
-    public const int GalleryMultipleFieldNumber = 11;
-    private uint galleryMultiple_;
+    /// <summary>Field number for the "Unk3300_KPCJBOOGEMG" field.</summary>
+    public const int Unk3300KPCJBOOGEMGFieldNumber = 10;
+    private uint unk3300KPCJBOOGEMG_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GalleryMultiple {
-      get { return galleryMultiple_; }
+    public uint Unk3300KPCJBOOGEMG {
+      get { return unk3300KPCJBOOGEMG_; }
       set {
-        galleryMultiple_ = value;
+        unk3300KPCJBOOGEMG_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "final_score" field.</summary>
+    public const int FinalScoreFieldNumber = 12;
+    private uint finalScore_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint FinalScore {
+      get { return finalScore_; }
+      set {
+        finalScore_ = value;
       }
     }
 
@@ -191,12 +191,12 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (GalleryLevel != other.GalleryLevel) return false;
-      if (FinalScore != other.FinalScore) return false;
       if (KillMonsterCount != other.KillMonsterCount) return false;
-      if (KillTargetCount != other.KillTargetCount) return false;
       if (KillSpecialMonsterCount != other.KillSpecialMonsterCount) return false;
+      if (Unk3300HLFHLPEKOML != other.Unk3300HLFHLPEKOML) return false;
       if (GalleryId != other.GalleryId) return false;
-      if (GalleryMultiple != other.GalleryMultiple) return false;
+      if (Unk3300KPCJBOOGEMG != other.Unk3300KPCJBOOGEMG) return false;
+      if (FinalScore != other.FinalScore) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -205,12 +205,12 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (GalleryLevel != 0) hash ^= GalleryLevel.GetHashCode();
-      if (FinalScore != 0) hash ^= FinalScore.GetHashCode();
       if (KillMonsterCount != 0) hash ^= KillMonsterCount.GetHashCode();
-      if (KillTargetCount != 0) hash ^= KillTargetCount.GetHashCode();
       if (KillSpecialMonsterCount != 0) hash ^= KillSpecialMonsterCount.GetHashCode();
+      if (Unk3300HLFHLPEKOML != 0) hash ^= Unk3300HLFHLPEKOML.GetHashCode();
       if (GalleryId != 0) hash ^= GalleryId.GetHashCode();
-      if (GalleryMultiple != 0) hash ^= GalleryMultiple.GetHashCode();
+      if (Unk3300KPCJBOOGEMG != 0) hash ^= Unk3300KPCJBOOGEMG.GetHashCode();
+      if (FinalScore != 0) hash ^= FinalScore.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -229,32 +229,32 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (KillTargetCount != 0) {
+      if (KillMonsterCount != 0) {
         output.WriteRawTag(8);
-        output.WriteUInt32(KillTargetCount);
+        output.WriteUInt32(KillMonsterCount);
       }
       if (GalleryId != 0) {
         output.WriteRawTag(16);
         output.WriteUInt32(GalleryId);
       }
+      if (Unk3300HLFHLPEKOML != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300HLFHLPEKOML);
+      }
       if (KillSpecialMonsterCount != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(72);
         output.WriteUInt32(KillSpecialMonsterCount);
       }
-      if (KillMonsterCount != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(KillMonsterCount);
-      }
-      if (GalleryMultiple != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(GalleryMultiple);
+      if (Unk3300KPCJBOOGEMG != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300KPCJBOOGEMG);
       }
       if (GalleryLevel != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(88);
         output.WriteUInt32(GalleryLevel);
       }
       if (FinalScore != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(96);
         output.WriteUInt32(FinalScore);
       }
       if (_unknownFields != null) {
@@ -267,32 +267,32 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (KillTargetCount != 0) {
+      if (KillMonsterCount != 0) {
         output.WriteRawTag(8);
-        output.WriteUInt32(KillTargetCount);
+        output.WriteUInt32(KillMonsterCount);
       }
       if (GalleryId != 0) {
         output.WriteRawTag(16);
         output.WriteUInt32(GalleryId);
       }
+      if (Unk3300HLFHLPEKOML != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300HLFHLPEKOML);
+      }
       if (KillSpecialMonsterCount != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(72);
         output.WriteUInt32(KillSpecialMonsterCount);
       }
-      if (KillMonsterCount != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(KillMonsterCount);
-      }
-      if (GalleryMultiple != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(GalleryMultiple);
+      if (Unk3300KPCJBOOGEMG != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300KPCJBOOGEMG);
       }
       if (GalleryLevel != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(88);
         output.WriteUInt32(GalleryLevel);
       }
       if (FinalScore != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(96);
         output.WriteUInt32(FinalScore);
       }
       if (_unknownFields != null) {
@@ -308,23 +308,23 @@ namespace Weedwacker.Shared.Network.Proto {
       if (GalleryLevel != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GalleryLevel);
       }
-      if (FinalScore != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinalScore);
-      }
       if (KillMonsterCount != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(KillMonsterCount);
-      }
-      if (KillTargetCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(KillTargetCount);
       }
       if (KillSpecialMonsterCount != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(KillSpecialMonsterCount);
       }
+      if (Unk3300HLFHLPEKOML != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300HLFHLPEKOML);
+      }
       if (GalleryId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GalleryId);
       }
-      if (GalleryMultiple != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GalleryMultiple);
+      if (Unk3300KPCJBOOGEMG != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300KPCJBOOGEMG);
+      }
+      if (FinalScore != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinalScore);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -341,23 +341,23 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.GalleryLevel != 0) {
         GalleryLevel = other.GalleryLevel;
       }
-      if (other.FinalScore != 0) {
-        FinalScore = other.FinalScore;
-      }
       if (other.KillMonsterCount != 0) {
         KillMonsterCount = other.KillMonsterCount;
-      }
-      if (other.KillTargetCount != 0) {
-        KillTargetCount = other.KillTargetCount;
       }
       if (other.KillSpecialMonsterCount != 0) {
         KillSpecialMonsterCount = other.KillSpecialMonsterCount;
       }
+      if (other.Unk3300HLFHLPEKOML != 0) {
+        Unk3300HLFHLPEKOML = other.Unk3300HLFHLPEKOML;
+      }
       if (other.GalleryId != 0) {
         GalleryId = other.GalleryId;
       }
-      if (other.GalleryMultiple != 0) {
-        GalleryMultiple = other.GalleryMultiple;
+      if (other.Unk3300KPCJBOOGEMG != 0) {
+        Unk3300KPCJBOOGEMG = other.Unk3300KPCJBOOGEMG;
+      }
+      if (other.FinalScore != 0) {
+        FinalScore = other.FinalScore;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -375,30 +375,30 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            KillTargetCount = input.ReadUInt32();
+            KillMonsterCount = input.ReadUInt32();
             break;
           }
           case 16: {
             GalleryId = input.ReadUInt32();
             break;
           }
-          case 32: {
-            KillSpecialMonsterCount = input.ReadUInt32();
+          case 56: {
+            Unk3300HLFHLPEKOML = input.ReadUInt32();
             break;
           }
           case 72: {
-            KillMonsterCount = input.ReadUInt32();
+            KillSpecialMonsterCount = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            Unk3300KPCJBOOGEMG = input.ReadUInt32();
             break;
           }
           case 88: {
-            GalleryMultiple = input.ReadUInt32();
-            break;
-          }
-          case 96: {
             GalleryLevel = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 96: {
             FinalScore = input.ReadUInt32();
             break;
           }
@@ -418,30 +418,30 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            KillTargetCount = input.ReadUInt32();
+            KillMonsterCount = input.ReadUInt32();
             break;
           }
           case 16: {
             GalleryId = input.ReadUInt32();
             break;
           }
-          case 32: {
-            KillSpecialMonsterCount = input.ReadUInt32();
+          case 56: {
+            Unk3300HLFHLPEKOML = input.ReadUInt32();
             break;
           }
           case 72: {
-            KillMonsterCount = input.ReadUInt32();
+            KillSpecialMonsterCount = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            Unk3300KPCJBOOGEMG = input.ReadUInt32();
             break;
           }
           case 88: {
-            GalleryMultiple = input.ReadUInt32();
-            break;
-          }
-          case 96: {
             GalleryLevel = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 96: {
             FinalScore = input.ReadUInt32();
             break;
           }

@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlayerTimeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZQbGF5ZXJUaW1lTm90aWZ5LnByb3RvIk8KEFBsYXllclRpbWVOb3RpZnkS",
-            "EwoLc2VydmVyX3RpbWUYBSABKAQSEwoLcGxheWVyX3RpbWUYCyABKAQSEQoJ",
-            "aXNfcGF1c2VkGA4gASgIQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
-            "LlByb3RvYgZwcm90bzM="));
+            "ChZQbGF5ZXJUaW1lTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvIk8KEFBsYXllclRpbWVOb3RpZnkSEQoJaXNfcGF1c2Vk",
+            "GAwgASgIEhMKC3BsYXllcl90aW1lGAsgASgEEhMKC3NlcnZlcl90aW1lGAUg",
+            "ASgEYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerTimeNotify), global::Weedwacker.Shared.Network.Proto.PlayerTimeNotify.Parser, new[]{ "ServerTime", "PlayerTime", "IsPaused" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerTimeNotify), global::Weedwacker.Shared.Network.Proto.PlayerTimeNotify.Parser, new[]{ "IsPaused", "PlayerTime", "ServerTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 191
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 121;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class PlayerTimeNotify : pb::IMessage<PlayerTimeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,9 +81,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlayerTimeNotify(PlayerTimeNotify other) : this() {
-      serverTime_ = other.serverTime_;
-      playerTime_ = other.playerTime_;
       isPaused_ = other.isPaused_;
+      playerTime_ = other.playerTime_;
+      serverTime_ = other.serverTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,15 +93,15 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PlayerTimeNotify(this);
     }
 
-    /// <summary>Field number for the "server_time" field.</summary>
-    public const int ServerTimeFieldNumber = 5;
-    private ulong serverTime_;
+    /// <summary>Field number for the "is_paused" field.</summary>
+    public const int IsPausedFieldNumber = 12;
+    private bool isPaused_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong ServerTime {
-      get { return serverTime_; }
+    public bool IsPaused {
+      get { return isPaused_; }
       set {
-        serverTime_ = value;
+        isPaused_ = value;
       }
     }
 
@@ -113,15 +117,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_paused" field.</summary>
-    public const int IsPausedFieldNumber = 14;
-    private bool isPaused_;
+    /// <summary>Field number for the "server_time" field.</summary>
+    public const int ServerTimeFieldNumber = 5;
+    private ulong serverTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsPaused {
-      get { return isPaused_; }
+    public ulong ServerTime {
+      get { return serverTime_; }
       set {
-        isPaused_ = value;
+        serverTime_ = value;
       }
     }
 
@@ -140,9 +144,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (ServerTime != other.ServerTime) return false;
-      if (PlayerTime != other.PlayerTime) return false;
       if (IsPaused != other.IsPaused) return false;
+      if (PlayerTime != other.PlayerTime) return false;
+      if (ServerTime != other.ServerTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,9 +154,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (ServerTime != 0UL) hash ^= ServerTime.GetHashCode();
-      if (PlayerTime != 0UL) hash ^= PlayerTime.GetHashCode();
       if (IsPaused != false) hash ^= IsPaused.GetHashCode();
+      if (PlayerTime != 0UL) hash ^= PlayerTime.GetHashCode();
+      if (ServerTime != 0UL) hash ^= ServerTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -180,7 +184,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteUInt64(PlayerTime);
       }
       if (IsPaused != false) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(96);
         output.WriteBool(IsPaused);
       }
       if (_unknownFields != null) {
@@ -202,7 +206,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteUInt64(PlayerTime);
       }
       if (IsPaused != false) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(96);
         output.WriteBool(IsPaused);
       }
       if (_unknownFields != null) {
@@ -215,14 +219,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (ServerTime != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(ServerTime);
+      if (IsPaused != false) {
+        size += 1 + 1;
       }
       if (PlayerTime != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(PlayerTime);
       }
-      if (IsPaused != false) {
-        size += 1 + 1;
+      if (ServerTime != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(ServerTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -236,14 +240,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.ServerTime != 0UL) {
-        ServerTime = other.ServerTime;
+      if (other.IsPaused != false) {
+        IsPaused = other.IsPaused;
       }
       if (other.PlayerTime != 0UL) {
         PlayerTime = other.PlayerTime;
       }
-      if (other.IsPaused != false) {
-        IsPaused = other.IsPaused;
+      if (other.ServerTime != 0UL) {
+        ServerTime = other.ServerTime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -268,7 +272,7 @@ namespace Weedwacker.Shared.Network.Proto {
             PlayerTime = input.ReadUInt64();
             break;
           }
-          case 112: {
+          case 96: {
             IsPaused = input.ReadBool();
             break;
           }
@@ -295,7 +299,7 @@ namespace Weedwacker.Shared.Network.Proto {
             PlayerTime = input.ReadUInt64();
             break;
           }
-          case 112: {
+          case 96: {
             IsPaused = input.ReadBool();
             break;
           }

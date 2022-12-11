@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static CityReputationHuntInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxDaXR5UmVwdXRhdGlvbkh1bnRJbmZvLnByb3RvIloKFkNpdHlSZXB1dGF0",
-            "aW9uSHVudEluZm8SDwoHaXNfb3BlbhgGIAEoCBIbChNjdXJfd2Vla19maW5p",
-            "c2hfbnVtGA8gASgNEhIKCmhhc19yZXdhcmQYBSABKAhCIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChxDaXR5UmVwdXRhdGlvbkh1bnRJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvIloKFkNpdHlSZXB1dGF0aW9uSHVudEluZm8S",
+            "GwoTY3VyX3dlZWtfZmluaXNoX251bRgBIAEoDRIPCgdpc19vcGVuGAcgASgI",
+            "EhIKCmhhc19yZXdhcmQYDyABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CityReputationHuntInfo), global::Weedwacker.Shared.Network.Proto.CityReputationHuntInfo.Parser, new[]{ "IsOpen", "CurWeekFinishNum", "HasReward" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CityReputationHuntInfo), global::Weedwacker.Shared.Network.Proto.CityReputationHuntInfo.Parser, new[]{ "CurWeekFinishNum", "IsOpen", "HasReward" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +72,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CityReputationHuntInfo(CityReputationHuntInfo other) : this() {
-      isOpen_ = other.isOpen_;
       curWeekFinishNum_ = other.curWeekFinishNum_;
+      isOpen_ = other.isOpen_;
       hasReward_ = other.hasReward_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -84,20 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new CityReputationHuntInfo(this);
     }
 
-    /// <summary>Field number for the "is_open" field.</summary>
-    public const int IsOpenFieldNumber = 6;
-    private bool isOpen_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsOpen {
-      get { return isOpen_; }
-      set {
-        isOpen_ = value;
-      }
-    }
-
     /// <summary>Field number for the "cur_week_finish_num" field.</summary>
-    public const int CurWeekFinishNumFieldNumber = 15;
+    public const int CurWeekFinishNumFieldNumber = 1;
     private uint curWeekFinishNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -108,8 +96,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "is_open" field.</summary>
+    public const int IsOpenFieldNumber = 7;
+    private bool isOpen_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsOpen {
+      get { return isOpen_; }
+      set {
+        isOpen_ = value;
+      }
+    }
+
     /// <summary>Field number for the "has_reward" field.</summary>
-    public const int HasRewardFieldNumber = 5;
+    public const int HasRewardFieldNumber = 15;
     private bool hasReward_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -135,8 +135,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsOpen != other.IsOpen) return false;
       if (CurWeekFinishNum != other.CurWeekFinishNum) return false;
+      if (IsOpen != other.IsOpen) return false;
       if (HasReward != other.HasReward) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -145,8 +145,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsOpen != false) hash ^= IsOpen.GetHashCode();
       if (CurWeekFinishNum != 0) hash ^= CurWeekFinishNum.GetHashCode();
+      if (IsOpen != false) hash ^= IsOpen.GetHashCode();
       if (HasReward != false) hash ^= HasReward.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -166,17 +166,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (HasReward != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(HasReward);
+      if (CurWeekFinishNum != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(CurWeekFinishNum);
       }
       if (IsOpen != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteBool(IsOpen);
       }
-      if (CurWeekFinishNum != 0) {
+      if (HasReward != false) {
         output.WriteRawTag(120);
-        output.WriteUInt32(CurWeekFinishNum);
+        output.WriteBool(HasReward);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -188,17 +188,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (HasReward != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(HasReward);
+      if (CurWeekFinishNum != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(CurWeekFinishNum);
       }
       if (IsOpen != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteBool(IsOpen);
       }
-      if (CurWeekFinishNum != 0) {
+      if (HasReward != false) {
         output.WriteRawTag(120);
-        output.WriteUInt32(CurWeekFinishNum);
+        output.WriteBool(HasReward);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -210,11 +210,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsOpen != false) {
-        size += 1 + 1;
-      }
       if (CurWeekFinishNum != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurWeekFinishNum);
+      }
+      if (IsOpen != false) {
+        size += 1 + 1;
       }
       if (HasReward != false) {
         size += 1 + 1;
@@ -231,11 +231,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsOpen != false) {
-        IsOpen = other.IsOpen;
-      }
       if (other.CurWeekFinishNum != 0) {
         CurWeekFinishNum = other.CurWeekFinishNum;
+      }
+      if (other.IsOpen != false) {
+        IsOpen = other.IsOpen;
       }
       if (other.HasReward != false) {
         HasReward = other.HasReward;
@@ -255,16 +255,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
-            HasReward = input.ReadBool();
+          case 8: {
+            CurWeekFinishNum = input.ReadUInt32();
             break;
           }
-          case 48: {
+          case 56: {
             IsOpen = input.ReadBool();
             break;
           }
           case 120: {
-            CurWeekFinishNum = input.ReadUInt32();
+            HasReward = input.ReadBool();
             break;
           }
         }
@@ -282,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
-            HasReward = input.ReadBool();
+          case 8: {
+            CurWeekFinishNum = input.ReadUInt32();
             break;
           }
-          case 48: {
+          case 56: {
             IsOpen = input.ReadBool();
             break;
           }
           case 120: {
-            CurWeekFinishNum = input.ReadUInt32();
+            HasReward = input.ReadBool();
             break;
           }
         }

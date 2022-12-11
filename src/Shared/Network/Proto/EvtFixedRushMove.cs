@@ -24,17 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static EvtFixedRushMoveReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZFdnRGaXhlZFJ1c2hNb3ZlLnByb3RvGgxWZWN0b3IucHJvdG8i0wEKEEV2",
-            "dEZpeGVkUnVzaE1vdmUSEQoJZW50aXR5X2lkGA8gASgNEg0KBXNwZWVkGAMg",
-            "ASgCEhoKEm5lZWRfc2V0X2lzX2luX2FpchgHIAEoCBIeChZhbmltYXRvcl9z",
-            "dGF0ZV9pZF9saXN0GAIgAygNEhsKCnRhcmdldF9wb3MYCSABKAsyBy5WZWN0",
-            "b3ISKQohY2hlY2tfYW5pbWF0b3Jfc3RhdGVfb25fZXhpdF9vbmx5GAYgASgI",
-            "EhkKEW92ZXJyaWRlX2NvbGxpZGVyGA0gASgJQiKqAh9XZWVkd2Fja2VyLlNo",
-            "YXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChZFdnRGaXhlZFJ1c2hNb3ZlLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvGgxWZWN0b3IucHJvdG8i5gEKEEV2dEZpeGVkUnVzaE1v",
+            "dmUSEQoJZW50aXR5X2lkGA0gASgNEhkKEW92ZXJyaWRlX2NvbGxpZGVyGAcg",
+            "ASgJEjsKCnRhcmdldF9wb3MYDiABKAsyJy5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLlZlY3RvchIbChNVbmszMzAwX0JHT0xQTEhHR1BPGAgg",
+            "ASgIEh4KFmFuaW1hdG9yX3N0YXRlX2lkX2xpc3QYCSADKA0SGwoTVW5rMzMw",
+            "MF9CS0VFTENHT0xMThgMIAEoCBINCgVzcGVlZBgKIAEoAmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EvtFixedRushMove), global::Weedwacker.Shared.Network.Proto.EvtFixedRushMove.Parser, new[]{ "EntityId", "Speed", "NeedSetIsInAir", "AnimatorStateIdList", "TargetPos", "CheckAnimatorStateOnExitOnly", "OverrideCollider" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EvtFixedRushMove), global::Weedwacker.Shared.Network.Proto.EvtFixedRushMove.Parser, new[]{ "EntityId", "OverrideCollider", "TargetPos", "Unk3300BGOLPLHGGPO", "AnimatorStateIdList", "Unk3300BKEELCGOLLN", "Speed" }, null, null, null, null)
           }));
     }
     #endregion
@@ -76,12 +76,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EvtFixedRushMove(EvtFixedRushMove other) : this() {
       entityId_ = other.entityId_;
-      speed_ = other.speed_;
-      needSetIsInAir_ = other.needSetIsInAir_;
-      animatorStateIdList_ = other.animatorStateIdList_.Clone();
-      targetPos_ = other.targetPos_ != null ? other.targetPos_.Clone() : null;
-      checkAnimatorStateOnExitOnly_ = other.checkAnimatorStateOnExitOnly_;
       overrideCollider_ = other.overrideCollider_;
+      targetPos_ = other.targetPos_ != null ? other.targetPos_.Clone() : null;
+      unk3300BGOLPLHGGPO_ = other.unk3300BGOLPLHGGPO_;
+      animatorStateIdList_ = other.animatorStateIdList_.Clone();
+      unk3300BKEELCGOLLN_ = other.unk3300BKEELCGOLLN_;
+      speed_ = other.speed_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,7 +92,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 15;
+    public const int EntityIdFieldNumber = 13;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,43 +103,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "speed" field.</summary>
-    public const int SpeedFieldNumber = 3;
-    private float speed_;
+    /// <summary>Field number for the "override_collider" field.</summary>
+    public const int OverrideColliderFieldNumber = 7;
+    private string overrideCollider_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float Speed {
-      get { return speed_; }
+    public string OverrideCollider {
+      get { return overrideCollider_; }
       set {
-        speed_ = value;
+        overrideCollider_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
-    }
-
-    /// <summary>Field number for the "need_set_is_in_air" field.</summary>
-    public const int NeedSetIsInAirFieldNumber = 7;
-    private bool needSetIsInAir_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool NeedSetIsInAir {
-      get { return needSetIsInAir_; }
-      set {
-        needSetIsInAir_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "animator_state_id_list" field.</summary>
-    public const int AnimatorStateIdListFieldNumber = 2;
-    private static readonly pb::FieldCodec<uint> _repeated_animatorStateIdList_codec
-        = pb::FieldCodec.ForUInt32(18);
-    private readonly pbc::RepeatedField<uint> animatorStateIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> AnimatorStateIdList {
-      get { return animatorStateIdList_; }
     }
 
     /// <summary>Field number for the "target_pos" field.</summary>
-    public const int TargetPosFieldNumber = 9;
+    public const int TargetPosFieldNumber = 14;
     private global::Weedwacker.Shared.Network.Proto.Vector targetPos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -150,27 +127,50 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "check_animator_state_on_exit_only" field.</summary>
-    public const int CheckAnimatorStateOnExitOnlyFieldNumber = 6;
-    private bool checkAnimatorStateOnExitOnly_;
+    /// <summary>Field number for the "Unk3300_BGOLPLHGGPO" field.</summary>
+    public const int Unk3300BGOLPLHGGPOFieldNumber = 8;
+    private bool unk3300BGOLPLHGGPO_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool CheckAnimatorStateOnExitOnly {
-      get { return checkAnimatorStateOnExitOnly_; }
+    public bool Unk3300BGOLPLHGGPO {
+      get { return unk3300BGOLPLHGGPO_; }
       set {
-        checkAnimatorStateOnExitOnly_ = value;
+        unk3300BGOLPLHGGPO_ = value;
       }
     }
 
-    /// <summary>Field number for the "override_collider" field.</summary>
-    public const int OverrideColliderFieldNumber = 13;
-    private string overrideCollider_ = "";
+    /// <summary>Field number for the "animator_state_id_list" field.</summary>
+    public const int AnimatorStateIdListFieldNumber = 9;
+    private static readonly pb::FieldCodec<uint> _repeated_animatorStateIdList_codec
+        = pb::FieldCodec.ForUInt32(74);
+    private readonly pbc::RepeatedField<uint> animatorStateIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string OverrideCollider {
-      get { return overrideCollider_; }
+    public pbc::RepeatedField<uint> AnimatorStateIdList {
+      get { return animatorStateIdList_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_BKEELCGOLLN" field.</summary>
+    public const int Unk3300BKEELCGOLLNFieldNumber = 12;
+    private bool unk3300BKEELCGOLLN_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300BKEELCGOLLN {
+      get { return unk3300BKEELCGOLLN_; }
       set {
-        overrideCollider_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        unk3300BKEELCGOLLN_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "speed" field.</summary>
+    public const int SpeedFieldNumber = 10;
+    private float speed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float Speed {
+      get { return speed_; }
+      set {
+        speed_ = value;
       }
     }
 
@@ -190,12 +190,12 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (EntityId != other.EntityId) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Speed, other.Speed)) return false;
-      if (NeedSetIsInAir != other.NeedSetIsInAir) return false;
-      if(!animatorStateIdList_.Equals(other.animatorStateIdList_)) return false;
-      if (!object.Equals(TargetPos, other.TargetPos)) return false;
-      if (CheckAnimatorStateOnExitOnly != other.CheckAnimatorStateOnExitOnly) return false;
       if (OverrideCollider != other.OverrideCollider) return false;
+      if (!object.Equals(TargetPos, other.TargetPos)) return false;
+      if (Unk3300BGOLPLHGGPO != other.Unk3300BGOLPLHGGPO) return false;
+      if(!animatorStateIdList_.Equals(other.animatorStateIdList_)) return false;
+      if (Unk3300BKEELCGOLLN != other.Unk3300BKEELCGOLLN) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Speed, other.Speed)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -204,12 +204,12 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (EntityId != 0) hash ^= EntityId.GetHashCode();
-      if (Speed != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Speed);
-      if (NeedSetIsInAir != false) hash ^= NeedSetIsInAir.GetHashCode();
-      hash ^= animatorStateIdList_.GetHashCode();
-      if (targetPos_ != null) hash ^= TargetPos.GetHashCode();
-      if (CheckAnimatorStateOnExitOnly != false) hash ^= CheckAnimatorStateOnExitOnly.GetHashCode();
       if (OverrideCollider.Length != 0) hash ^= OverrideCollider.GetHashCode();
+      if (targetPos_ != null) hash ^= TargetPos.GetHashCode();
+      if (Unk3300BGOLPLHGGPO != false) hash ^= Unk3300BGOLPLHGGPO.GetHashCode();
+      hash ^= animatorStateIdList_.GetHashCode();
+      if (Unk3300BKEELCGOLLN != false) hash ^= Unk3300BKEELCGOLLN.GetHashCode();
+      if (Speed != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Speed);
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -228,30 +228,30 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      animatorStateIdList_.WriteTo(output, _repeated_animatorStateIdList_codec);
-      if (Speed != 0F) {
-        output.WriteRawTag(29);
-        output.WriteFloat(Speed);
-      }
-      if (CheckAnimatorStateOnExitOnly != false) {
-        output.WriteRawTag(48);
-        output.WriteBool(CheckAnimatorStateOnExitOnly);
-      }
-      if (NeedSetIsInAir != false) {
-        output.WriteRawTag(56);
-        output.WriteBool(NeedSetIsInAir);
-      }
-      if (targetPos_ != null) {
-        output.WriteRawTag(74);
-        output.WriteMessage(TargetPos);
-      }
       if (OverrideCollider.Length != 0) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(58);
         output.WriteString(OverrideCollider);
       }
+      if (Unk3300BGOLPLHGGPO != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(Unk3300BGOLPLHGGPO);
+      }
+      animatorStateIdList_.WriteTo(output, _repeated_animatorStateIdList_codec);
+      if (Speed != 0F) {
+        output.WriteRawTag(85);
+        output.WriteFloat(Speed);
+      }
+      if (Unk3300BKEELCGOLLN != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(Unk3300BKEELCGOLLN);
+      }
       if (EntityId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(104);
         output.WriteUInt32(EntityId);
+      }
+      if (targetPos_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(TargetPos);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -263,30 +263,30 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      animatorStateIdList_.WriteTo(ref output, _repeated_animatorStateIdList_codec);
-      if (Speed != 0F) {
-        output.WriteRawTag(29);
-        output.WriteFloat(Speed);
-      }
-      if (CheckAnimatorStateOnExitOnly != false) {
-        output.WriteRawTag(48);
-        output.WriteBool(CheckAnimatorStateOnExitOnly);
-      }
-      if (NeedSetIsInAir != false) {
-        output.WriteRawTag(56);
-        output.WriteBool(NeedSetIsInAir);
-      }
-      if (targetPos_ != null) {
-        output.WriteRawTag(74);
-        output.WriteMessage(TargetPos);
-      }
       if (OverrideCollider.Length != 0) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(58);
         output.WriteString(OverrideCollider);
       }
+      if (Unk3300BGOLPLHGGPO != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(Unk3300BGOLPLHGGPO);
+      }
+      animatorStateIdList_.WriteTo(ref output, _repeated_animatorStateIdList_codec);
+      if (Speed != 0F) {
+        output.WriteRawTag(85);
+        output.WriteFloat(Speed);
+      }
+      if (Unk3300BKEELCGOLLN != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(Unk3300BKEELCGOLLN);
+      }
       if (EntityId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(104);
         output.WriteUInt32(EntityId);
+      }
+      if (targetPos_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(TargetPos);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -301,21 +301,21 @@ namespace Weedwacker.Shared.Network.Proto {
       if (EntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
       }
-      if (Speed != 0F) {
-        size += 1 + 4;
+      if (OverrideCollider.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(OverrideCollider);
       }
-      if (NeedSetIsInAir != false) {
-        size += 1 + 1;
-      }
-      size += animatorStateIdList_.CalculateSize(_repeated_animatorStateIdList_codec);
       if (targetPos_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(TargetPos);
       }
-      if (CheckAnimatorStateOnExitOnly != false) {
+      if (Unk3300BGOLPLHGGPO != false) {
         size += 1 + 1;
       }
-      if (OverrideCollider.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(OverrideCollider);
+      size += animatorStateIdList_.CalculateSize(_repeated_animatorStateIdList_codec);
+      if (Unk3300BKEELCGOLLN != false) {
+        size += 1 + 1;
+      }
+      if (Speed != 0F) {
+        size += 1 + 4;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -332,24 +332,24 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.EntityId != 0) {
         EntityId = other.EntityId;
       }
-      if (other.Speed != 0F) {
-        Speed = other.Speed;
+      if (other.OverrideCollider.Length != 0) {
+        OverrideCollider = other.OverrideCollider;
       }
-      if (other.NeedSetIsInAir != false) {
-        NeedSetIsInAir = other.NeedSetIsInAir;
-      }
-      animatorStateIdList_.Add(other.animatorStateIdList_);
       if (other.targetPos_ != null) {
         if (targetPos_ == null) {
           TargetPos = new global::Weedwacker.Shared.Network.Proto.Vector();
         }
         TargetPos.MergeFrom(other.TargetPos);
       }
-      if (other.CheckAnimatorStateOnExitOnly != false) {
-        CheckAnimatorStateOnExitOnly = other.CheckAnimatorStateOnExitOnly;
+      if (other.Unk3300BGOLPLHGGPO != false) {
+        Unk3300BGOLPLHGGPO = other.Unk3300BGOLPLHGGPO;
       }
-      if (other.OverrideCollider.Length != 0) {
-        OverrideCollider = other.OverrideCollider;
+      animatorStateIdList_.Add(other.animatorStateIdList_);
+      if (other.Unk3300BKEELCGOLLN != false) {
+        Unk3300BKEELCGOLLN = other.Unk3300BKEELCGOLLN;
+      }
+      if (other.Speed != 0F) {
+        Speed = other.Speed;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -366,36 +366,36 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18:
-          case 16: {
+          case 58: {
+            OverrideCollider = input.ReadString();
+            break;
+          }
+          case 64: {
+            Unk3300BGOLPLHGGPO = input.ReadBool();
+            break;
+          }
+          case 74:
+          case 72: {
             animatorStateIdList_.AddEntriesFrom(input, _repeated_animatorStateIdList_codec);
             break;
           }
-          case 29: {
+          case 85: {
             Speed = input.ReadFloat();
             break;
           }
-          case 48: {
-            CheckAnimatorStateOnExitOnly = input.ReadBool();
+          case 96: {
+            Unk3300BKEELCGOLLN = input.ReadBool();
             break;
           }
-          case 56: {
-            NeedSetIsInAir = input.ReadBool();
+          case 104: {
+            EntityId = input.ReadUInt32();
             break;
           }
-          case 74: {
+          case 114: {
             if (targetPos_ == null) {
               TargetPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(TargetPos);
-            break;
-          }
-          case 106: {
-            OverrideCollider = input.ReadString();
-            break;
-          }
-          case 120: {
-            EntityId = input.ReadUInt32();
             break;
           }
         }
@@ -413,36 +413,36 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18:
-          case 16: {
+          case 58: {
+            OverrideCollider = input.ReadString();
+            break;
+          }
+          case 64: {
+            Unk3300BGOLPLHGGPO = input.ReadBool();
+            break;
+          }
+          case 74:
+          case 72: {
             animatorStateIdList_.AddEntriesFrom(ref input, _repeated_animatorStateIdList_codec);
             break;
           }
-          case 29: {
+          case 85: {
             Speed = input.ReadFloat();
             break;
           }
-          case 48: {
-            CheckAnimatorStateOnExitOnly = input.ReadBool();
+          case 96: {
+            Unk3300BKEELCGOLLN = input.ReadBool();
             break;
           }
-          case 56: {
-            NeedSetIsInAir = input.ReadBool();
+          case 104: {
+            EntityId = input.ReadUInt32();
             break;
           }
-          case 74: {
+          case 114: {
             if (targetPos_ == null) {
               TargetPos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(TargetPos);
-            break;
-          }
-          case 106: {
-            OverrideCollider = input.ReadString();
-            break;
-          }
-          case 120: {
-            EntityId = input.ReadUInt32();
             break;
           }
         }

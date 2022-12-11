@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGDuelChallengeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZHQ0dEdWVsQ2hhbGxlbmdlLnByb3RvIlYKEEdDR0R1ZWxDaGFsbGVuZ2US",
-            "FgoOdG90YWxfcHJvZ3Jlc3MYByABKA0SFAoMY2hhbGxlbmdlX2lkGAogASgN",
-            "EhQKDGN1cl9wcm9ncmVzcxgMIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQu",
-            "TmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChZHQ0dEdWVsQ2hhbGxlbmdlLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvIlYKEEdDR0R1ZWxDaGFsbGVuZ2USFAoMY2hhbGxlbmdl",
+            "X2lkGAwgASgNEhQKDGN1cl9wcm9ncmVzcxgCIAEoDRIWCg50b3RhbF9wcm9n",
+            "cmVzcxgEIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGDuelChallenge), global::Weedwacker.Shared.Network.Proto.GCGDuelChallenge.Parser, new[]{ "TotalProgress", "ChallengeId", "CurProgress" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGDuelChallenge), global::Weedwacker.Shared.Network.Proto.GCGDuelChallenge.Parser, new[]{ "ChallengeId", "CurProgress", "TotalProgress" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,9 +72,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGDuelChallenge(GCGDuelChallenge other) : this() {
-      totalProgress_ = other.totalProgress_;
       challengeId_ = other.challengeId_;
       curProgress_ = other.curProgress_;
+      totalProgress_ = other.totalProgress_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,20 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GCGDuelChallenge(this);
     }
 
-    /// <summary>Field number for the "total_progress" field.</summary>
-    public const int TotalProgressFieldNumber = 7;
-    private uint totalProgress_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TotalProgress {
-      get { return totalProgress_; }
-      set {
-        totalProgress_ = value;
-      }
-    }
-
     /// <summary>Field number for the "challenge_id" field.</summary>
-    public const int ChallengeIdFieldNumber = 10;
+    public const int ChallengeIdFieldNumber = 12;
     private uint challengeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "cur_progress" field.</summary>
-    public const int CurProgressFieldNumber = 12;
+    public const int CurProgressFieldNumber = 2;
     private uint curProgress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -117,6 +105,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return curProgress_; }
       set {
         curProgress_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "total_progress" field.</summary>
+    public const int TotalProgressFieldNumber = 4;
+    private uint totalProgress_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TotalProgress {
+      get { return totalProgress_; }
+      set {
+        totalProgress_ = value;
       }
     }
 
@@ -135,9 +135,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (TotalProgress != other.TotalProgress) return false;
       if (ChallengeId != other.ChallengeId) return false;
       if (CurProgress != other.CurProgress) return false;
+      if (TotalProgress != other.TotalProgress) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -145,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (TotalProgress != 0) hash ^= TotalProgress.GetHashCode();
       if (ChallengeId != 0) hash ^= ChallengeId.GetHashCode();
       if (CurProgress != 0) hash ^= CurProgress.GetHashCode();
+      if (TotalProgress != 0) hash ^= TotalProgress.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -166,17 +166,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (CurProgress != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(CurProgress);
+      }
       if (TotalProgress != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(32);
         output.WriteUInt32(TotalProgress);
       }
       if (ChallengeId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(ChallengeId);
-      }
-      if (CurProgress != 0) {
         output.WriteRawTag(96);
-        output.WriteUInt32(CurProgress);
+        output.WriteUInt32(ChallengeId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -188,17 +188,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (CurProgress != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(CurProgress);
+      }
       if (TotalProgress != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(32);
         output.WriteUInt32(TotalProgress);
       }
       if (ChallengeId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(ChallengeId);
-      }
-      if (CurProgress != 0) {
         output.WriteRawTag(96);
-        output.WriteUInt32(CurProgress);
+        output.WriteUInt32(ChallengeId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -210,14 +210,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (TotalProgress != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalProgress);
-      }
       if (ChallengeId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeId);
       }
       if (CurProgress != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurProgress);
+      }
+      if (TotalProgress != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalProgress);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -231,14 +231,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.TotalProgress != 0) {
-        TotalProgress = other.TotalProgress;
-      }
       if (other.ChallengeId != 0) {
         ChallengeId = other.ChallengeId;
       }
       if (other.CurProgress != 0) {
         CurProgress = other.CurProgress;
+      }
+      if (other.TotalProgress != 0) {
+        TotalProgress = other.TotalProgress;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -255,16 +255,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
+          case 16: {
+            CurProgress = input.ReadUInt32();
+            break;
+          }
+          case 32: {
             TotalProgress = input.ReadUInt32();
             break;
           }
-          case 80: {
-            ChallengeId = input.ReadUInt32();
-            break;
-          }
           case 96: {
-            CurProgress = input.ReadUInt32();
+            ChallengeId = input.ReadUInt32();
             break;
           }
         }
@@ -282,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
+          case 16: {
+            CurProgress = input.ReadUInt32();
+            break;
+          }
+          case 32: {
             TotalProgress = input.ReadUInt32();
             break;
           }
-          case 80: {
-            ChallengeId = input.ReadUInt32();
-            break;
-          }
           case 96: {
-            CurProgress = input.ReadUInt32();
+            ChallengeId = input.ReadUInt32();
             break;
           }
         }

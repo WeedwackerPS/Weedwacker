@@ -24,12 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static BlessingRedeemRewardRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1CbGVzc2luZ1JlZGVlbVJld2FyZFJzcC5wcm90byKaAQoXQmxlc3NpbmdS",
-            "ZWRlZW1SZXdhcmRSc3ASPAoLcGljX251bV9tYXAYDCADKAsyJy5CbGVzc2lu",
-            "Z1JlZGVlbVJld2FyZFJzcC5QaWNOdW1NYXBFbnRyeRIPCgdyZXRjb2RlGA8g",
-            "ASgFGjAKDlBpY051bU1hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgC",
-            "IAEoDToCOAFCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9i",
-            "BnByb3RvMw=="));
+            "Ch1CbGVzc2luZ1JlZGVlbVJld2FyZFJzcC5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90byK6AQoXQmxlc3NpbmdSZWRlZW1SZXdhcmRS",
+            "c3ASXAoLcGljX251bV9tYXAYCiADKAsyRy5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLkJsZXNzaW5nUmVkZWVtUmV3YXJkUnNwLlBpY051bU1h",
+            "cEVudHJ5Eg8KB3JldGNvZGUYCyABKAUaMAoOUGljTnVtTWFwRW50cnkSCwoD",
+            "a2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -41,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2098
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2013;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class BlessingRedeemRewardRsp : pb::IMessage<BlessingRedeemRewardRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,9 +95,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "pic_num_map" field.</summary>
-    public const int PicNumMapFieldNumber = 12;
+    public const int PicNumMapFieldNumber = 10;
     private static readonly pbc::MapField<uint, uint>.Codec _map_picNumMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 98);
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 82);
     private readonly pbc::MapField<uint, uint> picNumMap_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 15;
+    public const int RetcodeFieldNumber = 11;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -159,7 +163,7 @@ namespace Weedwacker.Shared.Network.Proto {
     #else
       picNumMap_.WriteTo(output, _map_picNumMap_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(88);
         output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
@@ -174,7 +178,7 @@ namespace Weedwacker.Shared.Network.Proto {
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       picNumMap_.WriteTo(ref output, _map_picNumMap_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(88);
         output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
@@ -222,11 +226,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 98: {
+          case 82: {
             picNumMap_.AddEntriesFrom(input, _map_picNumMap_codec);
             break;
           }
-          case 120: {
+          case 88: {
             Retcode = input.ReadInt32();
             break;
           }
@@ -245,11 +249,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 98: {
+          case 82: {
             picNumMap_.AddEntriesFrom(ref input, _map_picNumMap_codec);
             break;
           }
-          case 120: {
+          case 88: {
             Retcode = input.ReadInt32();
             break;
           }

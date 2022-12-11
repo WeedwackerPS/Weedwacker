@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static TowerEnterLevelRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhUb3dlckVudGVyTGV2ZWxSc3AucHJvdG8iaAoSVG93ZXJFbnRlckxldmVs",
-            "UnNwEhoKEnRvd2VyX2J1ZmZfaWRfbGlzdBgKIAMoDRIPCgdyZXRjb2RlGAEg",
-            "ASgFEhMKC2xldmVsX2luZGV4GA4gASgNEhAKCGZsb29yX2lkGAUgASgNQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChhUb3dlckVudGVyTGV2ZWxSc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8iaAoSVG93ZXJFbnRlckxldmVsUnNwEhoKEnRvd2Vy",
+            "X2J1ZmZfaWRfbGlzdBgFIAMoDRITCgtsZXZlbF9pbmRleBgDIAEoDRIQCghm",
+            "bG9vcl9pZBgLIAEoDRIPCgdyZXRjb2RlGA4gASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TowerEnterLevelRsp), global::Weedwacker.Shared.Network.Proto.TowerEnterLevelRsp.Parser, new[]{ "TowerBuffIdList", "Retcode", "LevelIndex", "FloorId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TowerEnterLevelRsp), global::Weedwacker.Shared.Network.Proto.TowerEnterLevelRsp.Parser, new[]{ "TowerBuffIdList", "LevelIndex", "FloorId", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2475
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2439;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class TowerEnterLevelRsp : pb::IMessage<TowerEnterLevelRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +82,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TowerEnterLevelRsp(TowerEnterLevelRsp other) : this() {
       towerBuffIdList_ = other.towerBuffIdList_.Clone();
-      retcode_ = other.retcode_;
       levelIndex_ = other.levelIndex_;
       floorId_ = other.floorId_;
+      retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,9 +95,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "tower_buff_id_list" field.</summary>
-    public const int TowerBuffIdListFieldNumber = 10;
+    public const int TowerBuffIdListFieldNumber = 5;
     private static readonly pb::FieldCodec<uint> _repeated_towerBuffIdList_codec
-        = pb::FieldCodec.ForUInt32(82);
+        = pb::FieldCodec.ForUInt32(42);
     private readonly pbc::RepeatedField<uint> towerBuffIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,20 +105,8 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return towerBuffIdList_; }
     }
 
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 1;
-    private int retcode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
-      }
-    }
-
     /// <summary>Field number for the "level_index" field.</summary>
-    public const int LevelIndexFieldNumber = 14;
+    public const int LevelIndexFieldNumber = 3;
     private uint levelIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -126,7 +118,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "floor_id" field.</summary>
-    public const int FloorIdFieldNumber = 5;
+    public const int FloorIdFieldNumber = 11;
     private uint floorId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -134,6 +126,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return floorId_; }
       set {
         floorId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 14;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
       }
     }
 
@@ -153,9 +157,9 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if(!towerBuffIdList_.Equals(other.towerBuffIdList_)) return false;
-      if (Retcode != other.Retcode) return false;
       if (LevelIndex != other.LevelIndex) return false;
       if (FloorId != other.FloorId) return false;
+      if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -164,9 +168,9 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= towerBuffIdList_.GetHashCode();
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (LevelIndex != 0) hash ^= LevelIndex.GetHashCode();
       if (FloorId != 0) hash ^= FloorId.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -185,18 +189,18 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Retcode != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(Retcode);
-      }
-      if (FloorId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(FloorId);
+      if (LevelIndex != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(LevelIndex);
       }
       towerBuffIdList_.WriteTo(output, _repeated_towerBuffIdList_codec);
-      if (LevelIndex != 0) {
+      if (FloorId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(FloorId);
+      }
+      if (Retcode != 0) {
         output.WriteRawTag(112);
-        output.WriteUInt32(LevelIndex);
+        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -208,18 +212,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Retcode != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(Retcode);
-      }
-      if (FloorId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(FloorId);
+      if (LevelIndex != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(LevelIndex);
       }
       towerBuffIdList_.WriteTo(ref output, _repeated_towerBuffIdList_codec);
-      if (LevelIndex != 0) {
+      if (FloorId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(FloorId);
+      }
+      if (Retcode != 0) {
         output.WriteRawTag(112);
-        output.WriteUInt32(LevelIndex);
+        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -232,14 +236,14 @@ namespace Weedwacker.Shared.Network.Proto {
     public int CalculateSize() {
       int size = 0;
       size += towerBuffIdList_.CalculateSize(_repeated_towerBuffIdList_codec);
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
       if (LevelIndex != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelIndex);
       }
       if (FloorId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FloorId);
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -254,14 +258,14 @@ namespace Weedwacker.Shared.Network.Proto {
         return;
       }
       towerBuffIdList_.Add(other.towerBuffIdList_);
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
-      }
       if (other.LevelIndex != 0) {
         LevelIndex = other.LevelIndex;
       }
       if (other.FloorId != 0) {
         FloorId = other.FloorId;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -278,21 +282,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            Retcode = input.ReadInt32();
+          case 24: {
+            LevelIndex = input.ReadUInt32();
             break;
           }
+          case 42:
           case 40: {
-            FloorId = input.ReadUInt32();
-            break;
-          }
-          case 82:
-          case 80: {
             towerBuffIdList_.AddEntriesFrom(input, _repeated_towerBuffIdList_codec);
             break;
           }
+          case 88: {
+            FloorId = input.ReadUInt32();
+            break;
+          }
           case 112: {
-            LevelIndex = input.ReadUInt32();
+            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -310,21 +314,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            Retcode = input.ReadInt32();
+          case 24: {
+            LevelIndex = input.ReadUInt32();
             break;
           }
+          case 42:
           case 40: {
-            FloorId = input.ReadUInt32();
-            break;
-          }
-          case 82:
-          case 80: {
             towerBuffIdList_.AddEntriesFrom(ref input, _repeated_towerBuffIdList_codec);
             break;
           }
+          case 88: {
+            FloorId = input.ReadUInt32();
+            break;
+          }
           case 112: {
-            LevelIndex = input.ReadUInt32();
+            Retcode = input.ReadInt32();
             break;
           }
         }

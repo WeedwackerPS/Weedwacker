@@ -24,21 +24,22 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetPlayerTokenReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdHZXRQbGF5ZXJUb2tlblJlcS5wcm90byKkAwoRR2V0UGxheWVyVG9rZW5S",
-            "ZXESFQoNYWNjb3VudF90b2tlbhgKIAEoCRITCgthY2NvdW50X3VpZBgLIAEo",
-            "CRISCgpwc25fcmVnaW9uGAQgASgJEhEKCW9ubGluZV9pZBgHIAEoCRISCgpj",
-            "aGFubmVsX2lkGA8gASgNEhMKC2FjY291bnRfZXh0GAkgASgJEhQKDGNvdW50",
-            "cnlfY29kZRgFIAEoCRIYCg9jbGllbnRfcmFuZF9rZXkY+AUgASgJEhAKCGlz",
-            "X2d1ZXN0GAYgASgIEhEKCGJpcnRoZGF5GLYNIAEoCRIWCg5zdWJfY2hhbm5l",
-            "bF9pZBgIIAEoDRIVCg1wbGF0Zm9ybV90eXBlGAwgASgNEhUKDWNsaWVudF9p",
-            "cF9zdHIYAyABKAkSDgoGcHNuX2lkGA0gASgJEhQKDGFjY291bnRfdHlwZRgB",
-            "IAEoDRIbChJtaW5vcnNfcmVnX21pbl9hZ2UY4wcgASgNEhcKD2Nsb3VkX2Ns",
-            "aWVudF9pcBgOIAEoDRIPCgZrZXlfaWQY+w0gASgNEgsKA3VpZBgCIAEoDUIi",
-            "qgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChdHZXRQbGF5ZXJUb2tlblJlcS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90byLOAwoRR2V0UGxheWVyVG9rZW5SZXESCwoDdWlkGAog",
+            "ASgNEhwKE1VuazMzMDBfRElMTU9QUExQRU0Yxw0gASgNEhUKDXBsYXRmb3Jt",
+            "X3R5cGUYAiABKA0SEAoIaXNfZ3Vlc3QYDiABKAgSEQoJb25saW5lX2lkGAwg",
+            "ASgJEhQKDGFjY291bnRfdHlwZRgGIAEoDRISCgpjaGFubmVsX2lkGAggASgN",
+            "EhgKD2NsaWVudF9yYW5kX2tleRiQAyABKAkSGwoTVW5rMzMwMF9QSE5PSENL",
+            "SUhJQRgDIAEoCRINCgRsYW5nGIwMIAEoDRIbChNVbmszMzAwX1BLT05BT0lE",
+            "TkZLGA0gASgJEhsKE1VuazMzMDBfUE1HRkJNSk5OQ0wYASABKA0SDgoGcHNu",
+            "X2lkGAUgASgJEg8KBmtleV9pZBiXCSABKA0SEwoLYWNjb3VudF91aWQYBCAB",
+            "KAkSFQoNY2xpZW50X2lwX3N0chgPIAEoCRIVCg1hY2NvdW50X3Rva2VuGAkg",
+            "ASgJEhQKDGNvdW50cnlfY29kZRgLIAEoCRIRCghiaXJ0aGRheRikAiABKAkS",
+            "GwoTVW5rMzMwMF9JQURGSkhORktJQhgHIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetPlayerTokenReq), global::Weedwacker.Shared.Network.Proto.GetPlayerTokenReq.Parser, new[]{ "AccountToken", "AccountUid", "PsnRegion", "OnlineId", "ChannelId", "AccountExt", "CountryCode", "ClientRandKey", "IsGuest", "Birthday", "SubChannelId", "PlatformType", "ClientIpStr", "PsnId", "AccountType", "MinorsRegMinAge", "CloudClientIp", "KeyId", "Uid" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetPlayerTokenReq), global::Weedwacker.Shared.Network.Proto.GetPlayerTokenReq.Parser, new[]{ "Uid", "Unk3300DILMOPPLPEM", "PlatformType", "IsGuest", "OnlineId", "AccountType", "ChannelId", "ClientRandKey", "Unk3300PHNOHCKIHIA", "Lang", "Unk3300PKONAOIDNFK", "Unk3300PMGFBMJNNCL", "PsnId", "KeyId", "AccountUid", "ClientIpStr", "AccountToken", "CountryCode", "Birthday", "Unk3300IADFJHNFKIB" }, null, null, null, null)
           }));
     }
     #endregion
@@ -46,10 +47,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 172
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 179;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class GetPlayerTokenReq : pb::IMessage<GetPlayerTokenReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -85,25 +90,26 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetPlayerTokenReq(GetPlayerTokenReq other) : this() {
-      accountToken_ = other.accountToken_;
-      accountUid_ = other.accountUid_;
-      psnRegion_ = other.psnRegion_;
-      onlineId_ = other.onlineId_;
-      channelId_ = other.channelId_;
-      accountExt_ = other.accountExt_;
-      countryCode_ = other.countryCode_;
-      clientRandKey_ = other.clientRandKey_;
-      isGuest_ = other.isGuest_;
-      birthday_ = other.birthday_;
-      subChannelId_ = other.subChannelId_;
-      platformType_ = other.platformType_;
-      clientIpStr_ = other.clientIpStr_;
-      psnId_ = other.psnId_;
-      accountType_ = other.accountType_;
-      minorsRegMinAge_ = other.minorsRegMinAge_;
-      cloudClientIp_ = other.cloudClientIp_;
-      keyId_ = other.keyId_;
       uid_ = other.uid_;
+      unk3300DILMOPPLPEM_ = other.unk3300DILMOPPLPEM_;
+      platformType_ = other.platformType_;
+      isGuest_ = other.isGuest_;
+      onlineId_ = other.onlineId_;
+      accountType_ = other.accountType_;
+      channelId_ = other.channelId_;
+      clientRandKey_ = other.clientRandKey_;
+      unk3300PHNOHCKIHIA_ = other.unk3300PHNOHCKIHIA_;
+      lang_ = other.lang_;
+      unk3300PKONAOIDNFK_ = other.unk3300PKONAOIDNFK_;
+      unk3300PMGFBMJNNCL_ = other.unk3300PMGFBMJNNCL_;
+      psnId_ = other.psnId_;
+      keyId_ = other.keyId_;
+      accountUid_ = other.accountUid_;
+      clientIpStr_ = other.clientIpStr_;
+      accountToken_ = other.accountToken_;
+      countryCode_ = other.countryCode_;
+      birthday_ = other.birthday_;
+      unk3300IADFJHNFKIB_ = other.unk3300IADFJHNFKIB_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -113,140 +119,32 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GetPlayerTokenReq(this);
     }
 
-    /// <summary>Field number for the "account_token" field.</summary>
-    public const int AccountTokenFieldNumber = 10;
-    private string accountToken_ = "";
+    /// <summary>Field number for the "uid" field.</summary>
+    public const int UidFieldNumber = 10;
+    private uint uid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string AccountToken {
-      get { return accountToken_; }
+    public uint Uid {
+      get { return uid_; }
       set {
-        accountToken_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        uid_ = value;
       }
     }
 
-    /// <summary>Field number for the "account_uid" field.</summary>
-    public const int AccountUidFieldNumber = 11;
-    private string accountUid_ = "";
+    /// <summary>Field number for the "Unk3300_DILMOPPLPEM" field.</summary>
+    public const int Unk3300DILMOPPLPEMFieldNumber = 1735;
+    private uint unk3300DILMOPPLPEM_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string AccountUid {
-      get { return accountUid_; }
+    public uint Unk3300DILMOPPLPEM {
+      get { return unk3300DILMOPPLPEM_; }
       set {
-        accountUid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "psn_region" field.</summary>
-    public const int PsnRegionFieldNumber = 4;
-    private string psnRegion_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string PsnRegion {
-      get { return psnRegion_; }
-      set {
-        psnRegion_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "online_id" field.</summary>
-    public const int OnlineIdFieldNumber = 7;
-    private string onlineId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string OnlineId {
-      get { return onlineId_; }
-      set {
-        onlineId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "channel_id" field.</summary>
-    public const int ChannelIdFieldNumber = 15;
-    private uint channelId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ChannelId {
-      get { return channelId_; }
-      set {
-        channelId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "account_ext" field.</summary>
-    public const int AccountExtFieldNumber = 9;
-    private string accountExt_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string AccountExt {
-      get { return accountExt_; }
-      set {
-        accountExt_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "country_code" field.</summary>
-    public const int CountryCodeFieldNumber = 5;
-    private string countryCode_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string CountryCode {
-      get { return countryCode_; }
-      set {
-        countryCode_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "client_rand_key" field.</summary>
-    public const int ClientRandKeyFieldNumber = 760;
-    private string clientRandKey_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ClientRandKey {
-      get { return clientRandKey_; }
-      set {
-        clientRandKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "is_guest" field.</summary>
-    public const int IsGuestFieldNumber = 6;
-    private bool isGuest_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsGuest {
-      get { return isGuest_; }
-      set {
-        isGuest_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "birthday" field.</summary>
-    public const int BirthdayFieldNumber = 1718;
-    private string birthday_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Birthday {
-      get { return birthday_; }
-      set {
-        birthday_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "sub_channel_id" field.</summary>
-    public const int SubChannelIdFieldNumber = 8;
-    private uint subChannelId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SubChannelId {
-      get { return subChannelId_; }
-      set {
-        subChannelId_ = value;
+        unk3300DILMOPPLPEM_ = value;
       }
     }
 
     /// <summary>Field number for the "platform_type" field.</summary>
-    public const int PlatformTypeFieldNumber = 12;
+    public const int PlatformTypeFieldNumber = 2;
     private uint platformType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -257,32 +155,32 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "client_ip_str" field.</summary>
-    public const int ClientIpStrFieldNumber = 3;
-    private string clientIpStr_ = "";
+    /// <summary>Field number for the "is_guest" field.</summary>
+    public const int IsGuestFieldNumber = 14;
+    private bool isGuest_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string ClientIpStr {
-      get { return clientIpStr_; }
+    public bool IsGuest {
+      get { return isGuest_; }
       set {
-        clientIpStr_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        isGuest_ = value;
       }
     }
 
-    /// <summary>Field number for the "psn_id" field.</summary>
-    public const int PsnIdFieldNumber = 13;
-    private string psnId_ = "";
+    /// <summary>Field number for the "online_id" field.</summary>
+    public const int OnlineIdFieldNumber = 12;
+    private string onlineId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string PsnId {
-      get { return psnId_; }
+    public string OnlineId {
+      get { return onlineId_; }
       set {
-        psnId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        onlineId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     /// <summary>Field number for the "account_type" field.</summary>
-    public const int AccountTypeFieldNumber = 1;
+    public const int AccountTypeFieldNumber = 6;
     private uint accountType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -293,32 +191,92 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "minors_reg_min_age" field.</summary>
-    public const int MinorsRegMinAgeFieldNumber = 995;
-    private uint minorsRegMinAge_;
+    /// <summary>Field number for the "channel_id" field.</summary>
+    public const int ChannelIdFieldNumber = 8;
+    private uint channelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MinorsRegMinAge {
-      get { return minorsRegMinAge_; }
+    public uint ChannelId {
+      get { return channelId_; }
       set {
-        minorsRegMinAge_ = value;
+        channelId_ = value;
       }
     }
 
-    /// <summary>Field number for the "cloud_client_ip" field.</summary>
-    public const int CloudClientIpFieldNumber = 14;
-    private uint cloudClientIp_;
+    /// <summary>Field number for the "client_rand_key" field.</summary>
+    public const int ClientRandKeyFieldNumber = 400;
+    private string clientRandKey_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CloudClientIp {
-      get { return cloudClientIp_; }
+    public string ClientRandKey {
+      get { return clientRandKey_; }
       set {
-        cloudClientIp_ = value;
+        clientRandKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_PHNOHCKIHIA" field.</summary>
+    public const int Unk3300PHNOHCKIHIAFieldNumber = 3;
+    private string unk3300PHNOHCKIHIA_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Unk3300PHNOHCKIHIA {
+      get { return unk3300PHNOHCKIHIA_; }
+      set {
+        unk3300PHNOHCKIHIA_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "lang" field.</summary>
+    public const int LangFieldNumber = 1548;
+    private uint lang_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Lang {
+      get { return lang_; }
+      set {
+        lang_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_PKONAOIDNFK" field.</summary>
+    public const int Unk3300PKONAOIDNFKFieldNumber = 13;
+    private string unk3300PKONAOIDNFK_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Unk3300PKONAOIDNFK {
+      get { return unk3300PKONAOIDNFK_; }
+      set {
+        unk3300PKONAOIDNFK_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_PMGFBMJNNCL" field.</summary>
+    public const int Unk3300PMGFBMJNNCLFieldNumber = 1;
+    private uint unk3300PMGFBMJNNCL_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300PMGFBMJNNCL {
+      get { return unk3300PMGFBMJNNCL_; }
+      set {
+        unk3300PMGFBMJNNCL_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "psn_id" field.</summary>
+    public const int PsnIdFieldNumber = 5;
+    private string psnId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PsnId {
+      get { return psnId_; }
+      set {
+        psnId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     /// <summary>Field number for the "key_id" field.</summary>
-    public const int KeyIdFieldNumber = 1787;
+    public const int KeyIdFieldNumber = 1175;
     private uint keyId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -329,15 +287,75 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "uid" field.</summary>
-    public const int UidFieldNumber = 2;
-    private uint uid_;
+    /// <summary>Field number for the "account_uid" field.</summary>
+    public const int AccountUidFieldNumber = 4;
+    private string accountUid_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Uid {
-      get { return uid_; }
+    public string AccountUid {
+      get { return accountUid_; }
       set {
-        uid_ = value;
+        accountUid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "client_ip_str" field.</summary>
+    public const int ClientIpStrFieldNumber = 15;
+    private string clientIpStr_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ClientIpStr {
+      get { return clientIpStr_; }
+      set {
+        clientIpStr_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "account_token" field.</summary>
+    public const int AccountTokenFieldNumber = 9;
+    private string accountToken_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string AccountToken {
+      get { return accountToken_; }
+      set {
+        accountToken_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "country_code" field.</summary>
+    public const int CountryCodeFieldNumber = 11;
+    private string countryCode_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string CountryCode {
+      get { return countryCode_; }
+      set {
+        countryCode_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "birthday" field.</summary>
+    public const int BirthdayFieldNumber = 292;
+    private string birthday_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Birthday {
+      get { return birthday_; }
+      set {
+        birthday_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_IADFJHNFKIB" field.</summary>
+    public const int Unk3300IADFJHNFKIBFieldNumber = 7;
+    private uint unk3300IADFJHNFKIB_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300IADFJHNFKIB {
+      get { return unk3300IADFJHNFKIB_; }
+      set {
+        unk3300IADFJHNFKIB_ = value;
       }
     }
 
@@ -356,25 +374,26 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (AccountToken != other.AccountToken) return false;
-      if (AccountUid != other.AccountUid) return false;
-      if (PsnRegion != other.PsnRegion) return false;
-      if (OnlineId != other.OnlineId) return false;
-      if (ChannelId != other.ChannelId) return false;
-      if (AccountExt != other.AccountExt) return false;
-      if (CountryCode != other.CountryCode) return false;
-      if (ClientRandKey != other.ClientRandKey) return false;
-      if (IsGuest != other.IsGuest) return false;
-      if (Birthday != other.Birthday) return false;
-      if (SubChannelId != other.SubChannelId) return false;
-      if (PlatformType != other.PlatformType) return false;
-      if (ClientIpStr != other.ClientIpStr) return false;
-      if (PsnId != other.PsnId) return false;
-      if (AccountType != other.AccountType) return false;
-      if (MinorsRegMinAge != other.MinorsRegMinAge) return false;
-      if (CloudClientIp != other.CloudClientIp) return false;
-      if (KeyId != other.KeyId) return false;
       if (Uid != other.Uid) return false;
+      if (Unk3300DILMOPPLPEM != other.Unk3300DILMOPPLPEM) return false;
+      if (PlatformType != other.PlatformType) return false;
+      if (IsGuest != other.IsGuest) return false;
+      if (OnlineId != other.OnlineId) return false;
+      if (AccountType != other.AccountType) return false;
+      if (ChannelId != other.ChannelId) return false;
+      if (ClientRandKey != other.ClientRandKey) return false;
+      if (Unk3300PHNOHCKIHIA != other.Unk3300PHNOHCKIHIA) return false;
+      if (Lang != other.Lang) return false;
+      if (Unk3300PKONAOIDNFK != other.Unk3300PKONAOIDNFK) return false;
+      if (Unk3300PMGFBMJNNCL != other.Unk3300PMGFBMJNNCL) return false;
+      if (PsnId != other.PsnId) return false;
+      if (KeyId != other.KeyId) return false;
+      if (AccountUid != other.AccountUid) return false;
+      if (ClientIpStr != other.ClientIpStr) return false;
+      if (AccountToken != other.AccountToken) return false;
+      if (CountryCode != other.CountryCode) return false;
+      if (Birthday != other.Birthday) return false;
+      if (Unk3300IADFJHNFKIB != other.Unk3300IADFJHNFKIB) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -382,25 +401,26 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (AccountToken.Length != 0) hash ^= AccountToken.GetHashCode();
-      if (AccountUid.Length != 0) hash ^= AccountUid.GetHashCode();
-      if (PsnRegion.Length != 0) hash ^= PsnRegion.GetHashCode();
-      if (OnlineId.Length != 0) hash ^= OnlineId.GetHashCode();
-      if (ChannelId != 0) hash ^= ChannelId.GetHashCode();
-      if (AccountExt.Length != 0) hash ^= AccountExt.GetHashCode();
-      if (CountryCode.Length != 0) hash ^= CountryCode.GetHashCode();
-      if (ClientRandKey.Length != 0) hash ^= ClientRandKey.GetHashCode();
-      if (IsGuest != false) hash ^= IsGuest.GetHashCode();
-      if (Birthday.Length != 0) hash ^= Birthday.GetHashCode();
-      if (SubChannelId != 0) hash ^= SubChannelId.GetHashCode();
-      if (PlatformType != 0) hash ^= PlatformType.GetHashCode();
-      if (ClientIpStr.Length != 0) hash ^= ClientIpStr.GetHashCode();
-      if (PsnId.Length != 0) hash ^= PsnId.GetHashCode();
-      if (AccountType != 0) hash ^= AccountType.GetHashCode();
-      if (MinorsRegMinAge != 0) hash ^= MinorsRegMinAge.GetHashCode();
-      if (CloudClientIp != 0) hash ^= CloudClientIp.GetHashCode();
-      if (KeyId != 0) hash ^= KeyId.GetHashCode();
       if (Uid != 0) hash ^= Uid.GetHashCode();
+      if (Unk3300DILMOPPLPEM != 0) hash ^= Unk3300DILMOPPLPEM.GetHashCode();
+      if (PlatformType != 0) hash ^= PlatformType.GetHashCode();
+      if (IsGuest != false) hash ^= IsGuest.GetHashCode();
+      if (OnlineId.Length != 0) hash ^= OnlineId.GetHashCode();
+      if (AccountType != 0) hash ^= AccountType.GetHashCode();
+      if (ChannelId != 0) hash ^= ChannelId.GetHashCode();
+      if (ClientRandKey.Length != 0) hash ^= ClientRandKey.GetHashCode();
+      if (Unk3300PHNOHCKIHIA.Length != 0) hash ^= Unk3300PHNOHCKIHIA.GetHashCode();
+      if (Lang != 0) hash ^= Lang.GetHashCode();
+      if (Unk3300PKONAOIDNFK.Length != 0) hash ^= Unk3300PKONAOIDNFK.GetHashCode();
+      if (Unk3300PMGFBMJNNCL != 0) hash ^= Unk3300PMGFBMJNNCL.GetHashCode();
+      if (PsnId.Length != 0) hash ^= PsnId.GetHashCode();
+      if (KeyId != 0) hash ^= KeyId.GetHashCode();
+      if (AccountUid.Length != 0) hash ^= AccountUid.GetHashCode();
+      if (ClientIpStr.Length != 0) hash ^= ClientIpStr.GetHashCode();
+      if (AccountToken.Length != 0) hash ^= AccountToken.GetHashCode();
+      if (CountryCode.Length != 0) hash ^= CountryCode.GetHashCode();
+      if (Birthday.Length != 0) hash ^= Birthday.GetHashCode();
+      if (Unk3300IADFJHNFKIB != 0) hash ^= Unk3300IADFJHNFKIB.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -419,81 +439,85 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (AccountType != 0) {
+      if (Unk3300PMGFBMJNNCL != 0) {
         output.WriteRawTag(8);
-        output.WriteUInt32(AccountType);
-      }
-      if (Uid != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(Uid);
-      }
-      if (ClientIpStr.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(ClientIpStr);
-      }
-      if (PsnRegion.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(PsnRegion);
-      }
-      if (CountryCode.Length != 0) {
-        output.WriteRawTag(42);
-        output.WriteString(CountryCode);
-      }
-      if (IsGuest != false) {
-        output.WriteRawTag(48);
-        output.WriteBool(IsGuest);
-      }
-      if (OnlineId.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteString(OnlineId);
-      }
-      if (SubChannelId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(SubChannelId);
-      }
-      if (AccountExt.Length != 0) {
-        output.WriteRawTag(74);
-        output.WriteString(AccountExt);
-      }
-      if (AccountToken.Length != 0) {
-        output.WriteRawTag(82);
-        output.WriteString(AccountToken);
-      }
-      if (AccountUid.Length != 0) {
-        output.WriteRawTag(90);
-        output.WriteString(AccountUid);
+        output.WriteUInt32(Unk3300PMGFBMJNNCL);
       }
       if (PlatformType != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(16);
         output.WriteUInt32(PlatformType);
       }
+      if (Unk3300PHNOHCKIHIA.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Unk3300PHNOHCKIHIA);
+      }
+      if (AccountUid.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(AccountUid);
+      }
       if (PsnId.Length != 0) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(42);
         output.WriteString(PsnId);
       }
-      if (CloudClientIp != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(CloudClientIp);
+      if (AccountType != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(AccountType);
+      }
+      if (Unk3300IADFJHNFKIB != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300IADFJHNFKIB);
       }
       if (ChannelId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(64);
         output.WriteUInt32(ChannelId);
       }
-      if (ClientRandKey.Length != 0) {
-        output.WriteRawTag(194, 47);
-        output.WriteString(ClientRandKey);
+      if (AccountToken.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(AccountToken);
       }
-      if (MinorsRegMinAge != 0) {
-        output.WriteRawTag(152, 62);
-        output.WriteUInt32(MinorsRegMinAge);
+      if (Uid != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Uid);
+      }
+      if (CountryCode.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(CountryCode);
+      }
+      if (OnlineId.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteString(OnlineId);
+      }
+      if (Unk3300PKONAOIDNFK.Length != 0) {
+        output.WriteRawTag(106);
+        output.WriteString(Unk3300PKONAOIDNFK);
+      }
+      if (IsGuest != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(IsGuest);
+      }
+      if (ClientIpStr.Length != 0) {
+        output.WriteRawTag(122);
+        output.WriteString(ClientIpStr);
       }
       if (Birthday.Length != 0) {
-        output.WriteRawTag(178, 107);
+        output.WriteRawTag(162, 18);
         output.WriteString(Birthday);
       }
+      if (ClientRandKey.Length != 0) {
+        output.WriteRawTag(130, 25);
+        output.WriteString(ClientRandKey);
+      }
       if (KeyId != 0) {
-        output.WriteRawTag(216, 111);
+        output.WriteRawTag(184, 73);
         output.WriteUInt32(KeyId);
+      }
+      if (Lang != 0) {
+        output.WriteRawTag(224, 96);
+        output.WriteUInt32(Lang);
+      }
+      if (Unk3300DILMOPPLPEM != 0) {
+        output.WriteRawTag(184, 108);
+        output.WriteUInt32(Unk3300DILMOPPLPEM);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -505,81 +529,85 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (AccountType != 0) {
+      if (Unk3300PMGFBMJNNCL != 0) {
         output.WriteRawTag(8);
-        output.WriteUInt32(AccountType);
-      }
-      if (Uid != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(Uid);
-      }
-      if (ClientIpStr.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(ClientIpStr);
-      }
-      if (PsnRegion.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(PsnRegion);
-      }
-      if (CountryCode.Length != 0) {
-        output.WriteRawTag(42);
-        output.WriteString(CountryCode);
-      }
-      if (IsGuest != false) {
-        output.WriteRawTag(48);
-        output.WriteBool(IsGuest);
-      }
-      if (OnlineId.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteString(OnlineId);
-      }
-      if (SubChannelId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(SubChannelId);
-      }
-      if (AccountExt.Length != 0) {
-        output.WriteRawTag(74);
-        output.WriteString(AccountExt);
-      }
-      if (AccountToken.Length != 0) {
-        output.WriteRawTag(82);
-        output.WriteString(AccountToken);
-      }
-      if (AccountUid.Length != 0) {
-        output.WriteRawTag(90);
-        output.WriteString(AccountUid);
+        output.WriteUInt32(Unk3300PMGFBMJNNCL);
       }
       if (PlatformType != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(16);
         output.WriteUInt32(PlatformType);
       }
+      if (Unk3300PHNOHCKIHIA.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Unk3300PHNOHCKIHIA);
+      }
+      if (AccountUid.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(AccountUid);
+      }
       if (PsnId.Length != 0) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(42);
         output.WriteString(PsnId);
       }
-      if (CloudClientIp != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(CloudClientIp);
+      if (AccountType != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(AccountType);
+      }
+      if (Unk3300IADFJHNFKIB != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300IADFJHNFKIB);
       }
       if (ChannelId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(64);
         output.WriteUInt32(ChannelId);
       }
-      if (ClientRandKey.Length != 0) {
-        output.WriteRawTag(194, 47);
-        output.WriteString(ClientRandKey);
+      if (AccountToken.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(AccountToken);
       }
-      if (MinorsRegMinAge != 0) {
-        output.WriteRawTag(152, 62);
-        output.WriteUInt32(MinorsRegMinAge);
+      if (Uid != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Uid);
+      }
+      if (CountryCode.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(CountryCode);
+      }
+      if (OnlineId.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteString(OnlineId);
+      }
+      if (Unk3300PKONAOIDNFK.Length != 0) {
+        output.WriteRawTag(106);
+        output.WriteString(Unk3300PKONAOIDNFK);
+      }
+      if (IsGuest != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(IsGuest);
+      }
+      if (ClientIpStr.Length != 0) {
+        output.WriteRawTag(122);
+        output.WriteString(ClientIpStr);
       }
       if (Birthday.Length != 0) {
-        output.WriteRawTag(178, 107);
+        output.WriteRawTag(162, 18);
         output.WriteString(Birthday);
       }
+      if (ClientRandKey.Length != 0) {
+        output.WriteRawTag(130, 25);
+        output.WriteString(ClientRandKey);
+      }
       if (KeyId != 0) {
-        output.WriteRawTag(216, 111);
+        output.WriteRawTag(184, 73);
         output.WriteUInt32(KeyId);
+      }
+      if (Lang != 0) {
+        output.WriteRawTag(224, 96);
+        output.WriteUInt32(Lang);
+      }
+      if (Unk3300DILMOPPLPEM != 0) {
+        output.WriteRawTag(184, 108);
+        output.WriteUInt32(Unk3300DILMOPPLPEM);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -591,62 +619,65 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (AccountToken.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(AccountToken);
+      if (Uid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
       }
-      if (AccountUid.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(AccountUid);
-      }
-      if (PsnRegion.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(PsnRegion);
-      }
-      if (OnlineId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(OnlineId);
-      }
-      if (ChannelId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChannelId);
-      }
-      if (AccountExt.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(AccountExt);
-      }
-      if (CountryCode.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(CountryCode);
-      }
-      if (ClientRandKey.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeStringSize(ClientRandKey);
-      }
-      if (IsGuest != false) {
-        size += 1 + 1;
-      }
-      if (Birthday.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeStringSize(Birthday);
-      }
-      if (SubChannelId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SubChannelId);
+      if (Unk3300DILMOPPLPEM != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DILMOPPLPEM);
       }
       if (PlatformType != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlatformType);
       }
-      if (ClientIpStr.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ClientIpStr);
+      if (IsGuest != false) {
+        size += 1 + 1;
       }
-      if (PsnId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(PsnId);
+      if (OnlineId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(OnlineId);
       }
       if (AccountType != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AccountType);
       }
-      if (MinorsRegMinAge != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(MinorsRegMinAge);
+      if (ChannelId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChannelId);
       }
-      if (CloudClientIp != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CloudClientIp);
+      if (ClientRandKey.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(ClientRandKey);
+      }
+      if (Unk3300PHNOHCKIHIA.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Unk3300PHNOHCKIHIA);
+      }
+      if (Lang != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Lang);
+      }
+      if (Unk3300PKONAOIDNFK.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Unk3300PKONAOIDNFK);
+      }
+      if (Unk3300PMGFBMJNNCL != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PMGFBMJNNCL);
+      }
+      if (PsnId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PsnId);
       }
       if (KeyId != 0) {
         size += 2 + pb::CodedOutputStream.ComputeUInt32Size(KeyId);
       }
-      if (Uid != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
+      if (AccountUid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(AccountUid);
+      }
+      if (ClientIpStr.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ClientIpStr);
+      }
+      if (AccountToken.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(AccountToken);
+      }
+      if (CountryCode.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(CountryCode);
+      }
+      if (Birthday.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Birthday);
+      }
+      if (Unk3300IADFJHNFKIB != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300IADFJHNFKIB);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -660,62 +691,65 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.AccountToken.Length != 0) {
-        AccountToken = other.AccountToken;
+      if (other.Uid != 0) {
+        Uid = other.Uid;
       }
-      if (other.AccountUid.Length != 0) {
-        AccountUid = other.AccountUid;
-      }
-      if (other.PsnRegion.Length != 0) {
-        PsnRegion = other.PsnRegion;
-      }
-      if (other.OnlineId.Length != 0) {
-        OnlineId = other.OnlineId;
-      }
-      if (other.ChannelId != 0) {
-        ChannelId = other.ChannelId;
-      }
-      if (other.AccountExt.Length != 0) {
-        AccountExt = other.AccountExt;
-      }
-      if (other.CountryCode.Length != 0) {
-        CountryCode = other.CountryCode;
-      }
-      if (other.ClientRandKey.Length != 0) {
-        ClientRandKey = other.ClientRandKey;
-      }
-      if (other.IsGuest != false) {
-        IsGuest = other.IsGuest;
-      }
-      if (other.Birthday.Length != 0) {
-        Birthday = other.Birthday;
-      }
-      if (other.SubChannelId != 0) {
-        SubChannelId = other.SubChannelId;
+      if (other.Unk3300DILMOPPLPEM != 0) {
+        Unk3300DILMOPPLPEM = other.Unk3300DILMOPPLPEM;
       }
       if (other.PlatformType != 0) {
         PlatformType = other.PlatformType;
       }
-      if (other.ClientIpStr.Length != 0) {
-        ClientIpStr = other.ClientIpStr;
+      if (other.IsGuest != false) {
+        IsGuest = other.IsGuest;
       }
-      if (other.PsnId.Length != 0) {
-        PsnId = other.PsnId;
+      if (other.OnlineId.Length != 0) {
+        OnlineId = other.OnlineId;
       }
       if (other.AccountType != 0) {
         AccountType = other.AccountType;
       }
-      if (other.MinorsRegMinAge != 0) {
-        MinorsRegMinAge = other.MinorsRegMinAge;
+      if (other.ChannelId != 0) {
+        ChannelId = other.ChannelId;
       }
-      if (other.CloudClientIp != 0) {
-        CloudClientIp = other.CloudClientIp;
+      if (other.ClientRandKey.Length != 0) {
+        ClientRandKey = other.ClientRandKey;
+      }
+      if (other.Unk3300PHNOHCKIHIA.Length != 0) {
+        Unk3300PHNOHCKIHIA = other.Unk3300PHNOHCKIHIA;
+      }
+      if (other.Lang != 0) {
+        Lang = other.Lang;
+      }
+      if (other.Unk3300PKONAOIDNFK.Length != 0) {
+        Unk3300PKONAOIDNFK = other.Unk3300PKONAOIDNFK;
+      }
+      if (other.Unk3300PMGFBMJNNCL != 0) {
+        Unk3300PMGFBMJNNCL = other.Unk3300PMGFBMJNNCL;
+      }
+      if (other.PsnId.Length != 0) {
+        PsnId = other.PsnId;
       }
       if (other.KeyId != 0) {
         KeyId = other.KeyId;
       }
-      if (other.Uid != 0) {
-        Uid = other.Uid;
+      if (other.AccountUid.Length != 0) {
+        AccountUid = other.AccountUid;
+      }
+      if (other.ClientIpStr.Length != 0) {
+        ClientIpStr = other.ClientIpStr;
+      }
+      if (other.AccountToken.Length != 0) {
+        AccountToken = other.AccountToken;
+      }
+      if (other.CountryCode.Length != 0) {
+        CountryCode = other.CountryCode;
+      }
+      if (other.Birthday.Length != 0) {
+        Birthday = other.Birthday;
+      }
+      if (other.Unk3300IADFJHNFKIB != 0) {
+        Unk3300IADFJHNFKIB = other.Unk3300IADFJHNFKIB;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -733,79 +767,83 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            AccountType = input.ReadUInt32();
+            Unk3300PMGFBMJNNCL = input.ReadUInt32();
             break;
           }
           case 16: {
-            Uid = input.ReadUInt32();
-            break;
-          }
-          case 26: {
-            ClientIpStr = input.ReadString();
-            break;
-          }
-          case 34: {
-            PsnRegion = input.ReadString();
-            break;
-          }
-          case 42: {
-            CountryCode = input.ReadString();
-            break;
-          }
-          case 48: {
-            IsGuest = input.ReadBool();
-            break;
-          }
-          case 58: {
-            OnlineId = input.ReadString();
-            break;
-          }
-          case 64: {
-            SubChannelId = input.ReadUInt32();
-            break;
-          }
-          case 74: {
-            AccountExt = input.ReadString();
-            break;
-          }
-          case 82: {
-            AccountToken = input.ReadString();
-            break;
-          }
-          case 90: {
-            AccountUid = input.ReadString();
-            break;
-          }
-          case 96: {
             PlatformType = input.ReadUInt32();
             break;
           }
-          case 106: {
+          case 26: {
+            Unk3300PHNOHCKIHIA = input.ReadString();
+            break;
+          }
+          case 34: {
+            AccountUid = input.ReadString();
+            break;
+          }
+          case 42: {
             PsnId = input.ReadString();
             break;
           }
-          case 112: {
-            CloudClientIp = input.ReadUInt32();
+          case 48: {
+            AccountType = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 56: {
+            Unk3300IADFJHNFKIB = input.ReadUInt32();
+            break;
+          }
+          case 64: {
             ChannelId = input.ReadUInt32();
             break;
           }
-          case 6082: {
-            ClientRandKey = input.ReadString();
+          case 74: {
+            AccountToken = input.ReadString();
             break;
           }
-          case 7960: {
-            MinorsRegMinAge = input.ReadUInt32();
+          case 80: {
+            Uid = input.ReadUInt32();
             break;
           }
-          case 13746: {
+          case 90: {
+            CountryCode = input.ReadString();
+            break;
+          }
+          case 98: {
+            OnlineId = input.ReadString();
+            break;
+          }
+          case 106: {
+            Unk3300PKONAOIDNFK = input.ReadString();
+            break;
+          }
+          case 112: {
+            IsGuest = input.ReadBool();
+            break;
+          }
+          case 122: {
+            ClientIpStr = input.ReadString();
+            break;
+          }
+          case 2338: {
             Birthday = input.ReadString();
             break;
           }
-          case 14296: {
+          case 3202: {
+            ClientRandKey = input.ReadString();
+            break;
+          }
+          case 9400: {
             KeyId = input.ReadUInt32();
+            break;
+          }
+          case 12384: {
+            Lang = input.ReadUInt32();
+            break;
+          }
+          case 13880: {
+            Unk3300DILMOPPLPEM = input.ReadUInt32();
             break;
           }
         }
@@ -824,79 +862,83 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            AccountType = input.ReadUInt32();
+            Unk3300PMGFBMJNNCL = input.ReadUInt32();
             break;
           }
           case 16: {
-            Uid = input.ReadUInt32();
-            break;
-          }
-          case 26: {
-            ClientIpStr = input.ReadString();
-            break;
-          }
-          case 34: {
-            PsnRegion = input.ReadString();
-            break;
-          }
-          case 42: {
-            CountryCode = input.ReadString();
-            break;
-          }
-          case 48: {
-            IsGuest = input.ReadBool();
-            break;
-          }
-          case 58: {
-            OnlineId = input.ReadString();
-            break;
-          }
-          case 64: {
-            SubChannelId = input.ReadUInt32();
-            break;
-          }
-          case 74: {
-            AccountExt = input.ReadString();
-            break;
-          }
-          case 82: {
-            AccountToken = input.ReadString();
-            break;
-          }
-          case 90: {
-            AccountUid = input.ReadString();
-            break;
-          }
-          case 96: {
             PlatformType = input.ReadUInt32();
             break;
           }
-          case 106: {
+          case 26: {
+            Unk3300PHNOHCKIHIA = input.ReadString();
+            break;
+          }
+          case 34: {
+            AccountUid = input.ReadString();
+            break;
+          }
+          case 42: {
             PsnId = input.ReadString();
             break;
           }
-          case 112: {
-            CloudClientIp = input.ReadUInt32();
+          case 48: {
+            AccountType = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 56: {
+            Unk3300IADFJHNFKIB = input.ReadUInt32();
+            break;
+          }
+          case 64: {
             ChannelId = input.ReadUInt32();
             break;
           }
-          case 6082: {
-            ClientRandKey = input.ReadString();
+          case 74: {
+            AccountToken = input.ReadString();
             break;
           }
-          case 7960: {
-            MinorsRegMinAge = input.ReadUInt32();
+          case 80: {
+            Uid = input.ReadUInt32();
             break;
           }
-          case 13746: {
+          case 90: {
+            CountryCode = input.ReadString();
+            break;
+          }
+          case 98: {
+            OnlineId = input.ReadString();
+            break;
+          }
+          case 106: {
+            Unk3300PKONAOIDNFK = input.ReadString();
+            break;
+          }
+          case 112: {
+            IsGuest = input.ReadBool();
+            break;
+          }
+          case 122: {
+            ClientIpStr = input.ReadString();
+            break;
+          }
+          case 2338: {
             Birthday = input.ReadString();
             break;
           }
-          case 14296: {
+          case 3202: {
+            ClientRandKey = input.ReadString();
+            break;
+          }
+          case 9400: {
             KeyId = input.ReadUInt32();
+            break;
+          }
+          case 12384: {
+            Lang = input.ReadUInt32();
+            break;
+          }
+          case 13880: {
+            Unk3300DILMOPPLPEM = input.ReadUInt32();
             break;
           }
         }

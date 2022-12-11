@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static VintageHuntingFirstStageSettleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CihWaW50YWdlSHVudGluZ0ZpcnN0U3RhZ2VTZXR0bGVJbmZvLnByb3RvIm0K",
-            "IlZpbnRhZ2VIdW50aW5nRmlyc3RTdGFnZVNldHRsZUluZm8SEQoJZWxpdGVf",
-            "Y250GAogASgNEhEKCXRpbWlkX2NudBgCIAEoDRISCgpicnV0YWxfY250GAYg",
-            "ASgNEg0KBXNjb3JlGA4gASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
-            "b3JrLlByb3RvYgZwcm90bzM="));
+            "CihWaW50YWdlSHVudGluZ0ZpcnN0U3RhZ2VTZXR0bGVJbmZvLnByb3RvEh9X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIooBCiJWaW50YWdlSHVu",
+            "dGluZ0ZpcnN0U3RhZ2VTZXR0bGVJbmZvEhsKE1VuazMzMDBfSElLQURIQkxQ",
+            "RUIYAiABKA0SDQoFc2NvcmUYASABKA0SGwoTVW5rMzMwMF9OSUxHTkhPUEdM",
+            "RBgDIAEoDRIbChNVbmszMzAwX0lQQUpMS09CREtDGAsgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.VintageHuntingFirstStageSettleInfo), global::Weedwacker.Shared.Network.Proto.VintageHuntingFirstStageSettleInfo.Parser, new[]{ "EliteCnt", "TimidCnt", "BrutalCnt", "Score" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.VintageHuntingFirstStageSettleInfo), global::Weedwacker.Shared.Network.Proto.VintageHuntingFirstStageSettleInfo.Parser, new[]{ "Unk3300HIKADHBLPEB", "Score", "Unk3300NILGNHOPGLD", "Unk3300IPAJLKOBDKC" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,10 +73,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public VintageHuntingFirstStageSettleInfo(VintageHuntingFirstStageSettleInfo other) : this() {
-      eliteCnt_ = other.eliteCnt_;
-      timidCnt_ = other.timidCnt_;
-      brutalCnt_ = other.brutalCnt_;
+      unk3300HIKADHBLPEB_ = other.unk3300HIKADHBLPEB_;
       score_ = other.score_;
+      unk3300NILGNHOPGLD_ = other.unk3300NILGNHOPGLD_;
+      unk3300IPAJLKOBDKC_ = other.unk3300IPAJLKOBDKC_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,44 +86,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new VintageHuntingFirstStageSettleInfo(this);
     }
 
-    /// <summary>Field number for the "elite_cnt" field.</summary>
-    public const int EliteCntFieldNumber = 10;
-    private uint eliteCnt_;
+    /// <summary>Field number for the "Unk3300_HIKADHBLPEB" field.</summary>
+    public const int Unk3300HIKADHBLPEBFieldNumber = 2;
+    private uint unk3300HIKADHBLPEB_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EliteCnt {
-      get { return eliteCnt_; }
+    public uint Unk3300HIKADHBLPEB {
+      get { return unk3300HIKADHBLPEB_; }
       set {
-        eliteCnt_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "timid_cnt" field.</summary>
-    public const int TimidCntFieldNumber = 2;
-    private uint timidCnt_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TimidCnt {
-      get { return timidCnt_; }
-      set {
-        timidCnt_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "brutal_cnt" field.</summary>
-    public const int BrutalCntFieldNumber = 6;
-    private uint brutalCnt_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint BrutalCnt {
-      get { return brutalCnt_; }
-      set {
-        brutalCnt_ = value;
+        unk3300HIKADHBLPEB_ = value;
       }
     }
 
     /// <summary>Field number for the "score" field.</summary>
-    public const int ScoreFieldNumber = 14;
+    public const int ScoreFieldNumber = 1;
     private uint score_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -131,6 +107,30 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return score_; }
       set {
         score_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_NILGNHOPGLD" field.</summary>
+    public const int Unk3300NILGNHOPGLDFieldNumber = 3;
+    private uint unk3300NILGNHOPGLD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300NILGNHOPGLD {
+      get { return unk3300NILGNHOPGLD_; }
+      set {
+        unk3300NILGNHOPGLD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_IPAJLKOBDKC" field.</summary>
+    public const int Unk3300IPAJLKOBDKCFieldNumber = 11;
+    private uint unk3300IPAJLKOBDKC_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300IPAJLKOBDKC {
+      get { return unk3300IPAJLKOBDKC_; }
+      set {
+        unk3300IPAJLKOBDKC_ = value;
       }
     }
 
@@ -149,10 +149,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (EliteCnt != other.EliteCnt) return false;
-      if (TimidCnt != other.TimidCnt) return false;
-      if (BrutalCnt != other.BrutalCnt) return false;
+      if (Unk3300HIKADHBLPEB != other.Unk3300HIKADHBLPEB) return false;
       if (Score != other.Score) return false;
+      if (Unk3300NILGNHOPGLD != other.Unk3300NILGNHOPGLD) return false;
+      if (Unk3300IPAJLKOBDKC != other.Unk3300IPAJLKOBDKC) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -160,10 +160,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (EliteCnt != 0) hash ^= EliteCnt.GetHashCode();
-      if (TimidCnt != 0) hash ^= TimidCnt.GetHashCode();
-      if (BrutalCnt != 0) hash ^= BrutalCnt.GetHashCode();
+      if (Unk3300HIKADHBLPEB != 0) hash ^= Unk3300HIKADHBLPEB.GetHashCode();
       if (Score != 0) hash ^= Score.GetHashCode();
+      if (Unk3300NILGNHOPGLD != 0) hash ^= Unk3300NILGNHOPGLD.GetHashCode();
+      if (Unk3300IPAJLKOBDKC != 0) hash ^= Unk3300IPAJLKOBDKC.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -182,21 +182,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (TimidCnt != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(TimidCnt);
-      }
-      if (BrutalCnt != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(BrutalCnt);
-      }
-      if (EliteCnt != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(EliteCnt);
-      }
       if (Score != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(8);
         output.WriteUInt32(Score);
+      }
+      if (Unk3300HIKADHBLPEB != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300HIKADHBLPEB);
+      }
+      if (Unk3300NILGNHOPGLD != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300NILGNHOPGLD);
+      }
+      if (Unk3300IPAJLKOBDKC != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Unk3300IPAJLKOBDKC);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -208,21 +208,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (TimidCnt != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(TimidCnt);
-      }
-      if (BrutalCnt != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(BrutalCnt);
-      }
-      if (EliteCnt != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(EliteCnt);
-      }
       if (Score != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(8);
         output.WriteUInt32(Score);
+      }
+      if (Unk3300HIKADHBLPEB != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300HIKADHBLPEB);
+      }
+      if (Unk3300NILGNHOPGLD != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300NILGNHOPGLD);
+      }
+      if (Unk3300IPAJLKOBDKC != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Unk3300IPAJLKOBDKC);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -234,17 +234,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (EliteCnt != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EliteCnt);
-      }
-      if (TimidCnt != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TimidCnt);
-      }
-      if (BrutalCnt != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BrutalCnt);
+      if (Unk3300HIKADHBLPEB != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300HIKADHBLPEB);
       }
       if (Score != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Score);
+      }
+      if (Unk3300NILGNHOPGLD != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NILGNHOPGLD);
+      }
+      if (Unk3300IPAJLKOBDKC != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300IPAJLKOBDKC);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -258,17 +258,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.EliteCnt != 0) {
-        EliteCnt = other.EliteCnt;
-      }
-      if (other.TimidCnt != 0) {
-        TimidCnt = other.TimidCnt;
-      }
-      if (other.BrutalCnt != 0) {
-        BrutalCnt = other.BrutalCnt;
+      if (other.Unk3300HIKADHBLPEB != 0) {
+        Unk3300HIKADHBLPEB = other.Unk3300HIKADHBLPEB;
       }
       if (other.Score != 0) {
         Score = other.Score;
+      }
+      if (other.Unk3300NILGNHOPGLD != 0) {
+        Unk3300NILGNHOPGLD = other.Unk3300NILGNHOPGLD;
+      }
+      if (other.Unk3300IPAJLKOBDKC != 0) {
+        Unk3300IPAJLKOBDKC = other.Unk3300IPAJLKOBDKC;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -285,20 +285,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            TimidCnt = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            BrutalCnt = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            EliteCnt = input.ReadUInt32();
-            break;
-          }
-          case 112: {
+          case 8: {
             Score = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            Unk3300HIKADHBLPEB = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            Unk3300NILGNHOPGLD = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            Unk3300IPAJLKOBDKC = input.ReadUInt32();
             break;
           }
         }
@@ -316,20 +316,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            TimidCnt = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            BrutalCnt = input.ReadUInt32();
-            break;
-          }
-          case 80: {
-            EliteCnt = input.ReadUInt32();
-            break;
-          }
-          case 112: {
+          case 8: {
             Score = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            Unk3300HIKADHBLPEB = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            Unk3300NILGNHOPGLD = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            Unk3300IPAJLKOBDKC = input.ReadUInt32();
             break;
           }
         }

@@ -24,19 +24,22 @@ namespace Weedwacker.Shared.Network.Proto {
     static AbilityInvokeEntryReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhBYmlsaXR5SW52b2tlRW50cnkucHJvdG8aG0FiaWxpdHlJbnZva2VBcmd1",
-            "bWVudC5wcm90bxocQWJpbGl0eUludm9rZUVudHJ5SGVhZC5wcm90bxoRRm9y",
-            "d2FyZFR5cGUucHJvdG8i+AEKEkFiaWxpdHlJbnZva2VFbnRyeRItCg1hcmd1",
-            "bWVudF90eXBlGAEgASgOMhYuQWJpbGl0eUludm9rZUFyZ3VtZW50EiUKBGhl",
-            "YWQYAiABKAsyFy5BYmlsaXR5SW52b2tlRW50cnlIZWFkEhQKDGZvcndhcmRf",
-            "cGVlchgEIAEoDRIQCghldmVudF9pZBgMIAEoDRIiCgxmb3J3YXJkX3R5cGUY",
-            "AyABKA4yDC5Gb3J3YXJkVHlwZRIUCgxhYmlsaXR5X2RhdGEYDyABKAwSFwoP",
-            "dG90YWxfdGlja190aW1lGA4gASgBEhEKCWVudGl0eV9pZBgJIAEoDUIiqgIf",
-            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChhBYmlsaXR5SW52b2tlRW50cnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aG0FiaWxpdHlJbnZva2VBcmd1bWVudC5wcm90bxoc",
+            "QWJpbGl0eUludm9rZUVudHJ5SGVhZC5wcm90bxoRRm9yd2FyZFR5cGUucHJv",
+            "dG8i8AIKEkFiaWxpdHlJbnZva2VFbnRyeRJCCgxmb3J3YXJkX3R5cGUYCSAB",
+            "KA4yLC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkZvcndhcmRU",
+            "eXBlEhAKCGV2ZW50X2lkGA0gASgNEhEKCWVudGl0eV9pZBgHIAEoDRIUCgxm",
+            "b3J3YXJkX3BlZXIYDiABKA0SFwoPdG90YWxfdGlja190aW1lGAogASgBEkUK",
+            "BGhlYWQYAyABKAsyNy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
+            "LkFiaWxpdHlJbnZva2VFbnRyeUhlYWQSFAoMYWJpbGl0eV9kYXRhGAIgASgM",
+            "Ek0KDWFyZ3VtZW50X3R5cGUYCCABKA4yNi5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLkFiaWxpdHlJbnZva2VBcmd1bWVudBIWCg5pc19pZ25v",
+            "cmVfYXV0aBgMIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AbilityInvokeArgumentReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntryHeadReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ForwardTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry), global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry.Parser, new[]{ "ArgumentType", "Head", "ForwardPeer", "EventId", "ForwardType", "AbilityData", "TotalTickTime", "EntityId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry), global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntry.Parser, new[]{ "ForwardType", "EventId", "EntityId", "ForwardPeer", "TotalTickTime", "Head", "AbilityData", "ArgumentType", "IsIgnoreAuth" }, null, null, null, null)
           }));
     }
     #endregion
@@ -77,14 +80,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AbilityInvokeEntry(AbilityInvokeEntry other) : this() {
-      argumentType_ = other.argumentType_;
-      head_ = other.head_ != null ? other.head_.Clone() : null;
-      forwardPeer_ = other.forwardPeer_;
-      eventId_ = other.eventId_;
       forwardType_ = other.forwardType_;
-      abilityData_ = other.abilityData_;
-      totalTickTime_ = other.totalTickTime_;
+      eventId_ = other.eventId_;
       entityId_ = other.entityId_;
+      forwardPeer_ = other.forwardPeer_;
+      totalTickTime_ = other.totalTickTime_;
+      head_ = other.head_ != null ? other.head_.Clone() : null;
+      abilityData_ = other.abilityData_;
+      argumentType_ = other.argumentType_;
+      isIgnoreAuth_ = other.isIgnoreAuth_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,56 +98,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AbilityInvokeEntry(this);
     }
 
-    /// <summary>Field number for the "argument_type" field.</summary>
-    public const int ArgumentTypeFieldNumber = 1;
-    private global::Weedwacker.Shared.Network.Proto.AbilityInvokeArgument argumentType_ = global::Weedwacker.Shared.Network.Proto.AbilityInvokeArgument.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.AbilityInvokeArgument ArgumentType {
-      get { return argumentType_; }
-      set {
-        argumentType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "head" field.</summary>
-    public const int HeadFieldNumber = 2;
-    private global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntryHead head_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntryHead Head {
-      get { return head_; }
-      set {
-        head_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "forward_peer" field.</summary>
-    public const int ForwardPeerFieldNumber = 4;
-    private uint forwardPeer_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ForwardPeer {
-      get { return forwardPeer_; }
-      set {
-        forwardPeer_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "event_id" field.</summary>
-    public const int EventIdFieldNumber = 12;
-    private uint eventId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EventId {
-      get { return eventId_; }
-      set {
-        eventId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "forward_type" field.</summary>
-    public const int ForwardTypeFieldNumber = 3;
+    public const int ForwardTypeFieldNumber = 9;
     private global::Weedwacker.Shared.Network.Proto.ForwardType forwardType_ = global::Weedwacker.Shared.Network.Proto.ForwardType.Local;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -154,20 +110,44 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "ability_data" field.</summary>
-    public const int AbilityDataFieldNumber = 15;
-    private pb::ByteString abilityData_ = pb::ByteString.Empty;
+    /// <summary>Field number for the "event_id" field.</summary>
+    public const int EventIdFieldNumber = 13;
+    private uint eventId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pb::ByteString AbilityData {
-      get { return abilityData_; }
+    public uint EventId {
+      get { return eventId_; }
       set {
-        abilityData_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        eventId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "entity_id" field.</summary>
+    public const int EntityIdFieldNumber = 7;
+    private uint entityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EntityId {
+      get { return entityId_; }
+      set {
+        entityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "forward_peer" field.</summary>
+    public const int ForwardPeerFieldNumber = 14;
+    private uint forwardPeer_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ForwardPeer {
+      get { return forwardPeer_; }
+      set {
+        forwardPeer_ = value;
       }
     }
 
     /// <summary>Field number for the "total_tick_time" field.</summary>
-    public const int TotalTickTimeFieldNumber = 14;
+    public const int TotalTickTimeFieldNumber = 10;
     private double totalTickTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -178,15 +158,51 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 9;
-    private uint entityId_;
+    /// <summary>Field number for the "head" field.</summary>
+    public const int HeadFieldNumber = 3;
+    private global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntryHead head_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EntityId {
-      get { return entityId_; }
+    public global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntryHead Head {
+      get { return head_; }
       set {
-        entityId_ = value;
+        head_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ability_data" field.</summary>
+    public const int AbilityDataFieldNumber = 2;
+    private pb::ByteString abilityData_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pb::ByteString AbilityData {
+      get { return abilityData_; }
+      set {
+        abilityData_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "argument_type" field.</summary>
+    public const int ArgumentTypeFieldNumber = 8;
+    private global::Weedwacker.Shared.Network.Proto.AbilityInvokeArgument argumentType_ = global::Weedwacker.Shared.Network.Proto.AbilityInvokeArgument.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.AbilityInvokeArgument ArgumentType {
+      get { return argumentType_; }
+      set {
+        argumentType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_ignore_auth" field.</summary>
+    public const int IsIgnoreAuthFieldNumber = 12;
+    private bool isIgnoreAuth_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsIgnoreAuth {
+      get { return isIgnoreAuth_; }
+      set {
+        isIgnoreAuth_ = value;
       }
     }
 
@@ -205,14 +221,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (ArgumentType != other.ArgumentType) return false;
-      if (!object.Equals(Head, other.Head)) return false;
-      if (ForwardPeer != other.ForwardPeer) return false;
-      if (EventId != other.EventId) return false;
       if (ForwardType != other.ForwardType) return false;
-      if (AbilityData != other.AbilityData) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(TotalTickTime, other.TotalTickTime)) return false;
+      if (EventId != other.EventId) return false;
       if (EntityId != other.EntityId) return false;
+      if (ForwardPeer != other.ForwardPeer) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(TotalTickTime, other.TotalTickTime)) return false;
+      if (!object.Equals(Head, other.Head)) return false;
+      if (AbilityData != other.AbilityData) return false;
+      if (ArgumentType != other.ArgumentType) return false;
+      if (IsIgnoreAuth != other.IsIgnoreAuth) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -220,14 +237,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (ArgumentType != global::Weedwacker.Shared.Network.Proto.AbilityInvokeArgument.None) hash ^= ArgumentType.GetHashCode();
-      if (head_ != null) hash ^= Head.GetHashCode();
-      if (ForwardPeer != 0) hash ^= ForwardPeer.GetHashCode();
-      if (EventId != 0) hash ^= EventId.GetHashCode();
       if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) hash ^= ForwardType.GetHashCode();
-      if (AbilityData.Length != 0) hash ^= AbilityData.GetHashCode();
-      if (TotalTickTime != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(TotalTickTime);
+      if (EventId != 0) hash ^= EventId.GetHashCode();
       if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      if (ForwardPeer != 0) hash ^= ForwardPeer.GetHashCode();
+      if (TotalTickTime != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(TotalTickTime);
+      if (head_ != null) hash ^= Head.GetHashCode();
+      if (AbilityData.Length != 0) hash ^= AbilityData.GetHashCode();
+      if (ArgumentType != global::Weedwacker.Shared.Network.Proto.AbilityInvokeArgument.None) hash ^= ArgumentType.GetHashCode();
+      if (IsIgnoreAuth != false) hash ^= IsIgnoreAuth.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -246,37 +264,41 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ArgumentType != global::Weedwacker.Shared.Network.Proto.AbilityInvokeArgument.None) {
-        output.WriteRawTag(8);
-        output.WriteEnum((int) ArgumentType);
+      if (AbilityData.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteBytes(AbilityData);
       }
       if (head_ != null) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(26);
         output.WriteMessage(Head);
       }
-      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
-        output.WriteRawTag(24);
-        output.WriteEnum((int) ForwardType);
-      }
-      if (ForwardPeer != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(ForwardPeer);
-      }
       if (EntityId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(56);
         output.WriteUInt32(EntityId);
       }
-      if (EventId != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(EventId);
+      if (ArgumentType != global::Weedwacker.Shared.Network.Proto.AbilityInvokeArgument.None) {
+        output.WriteRawTag(64);
+        output.WriteEnum((int) ArgumentType);
+      }
+      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
+        output.WriteRawTag(72);
+        output.WriteEnum((int) ForwardType);
       }
       if (TotalTickTime != 0D) {
-        output.WriteRawTag(113);
+        output.WriteRawTag(81);
         output.WriteDouble(TotalTickTime);
       }
-      if (AbilityData.Length != 0) {
-        output.WriteRawTag(122);
-        output.WriteBytes(AbilityData);
+      if (IsIgnoreAuth != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(IsIgnoreAuth);
+      }
+      if (EventId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(EventId);
+      }
+      if (ForwardPeer != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(ForwardPeer);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -288,37 +310,41 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ArgumentType != global::Weedwacker.Shared.Network.Proto.AbilityInvokeArgument.None) {
-        output.WriteRawTag(8);
-        output.WriteEnum((int) ArgumentType);
+      if (AbilityData.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteBytes(AbilityData);
       }
       if (head_ != null) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(26);
         output.WriteMessage(Head);
       }
-      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
-        output.WriteRawTag(24);
-        output.WriteEnum((int) ForwardType);
-      }
-      if (ForwardPeer != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(ForwardPeer);
-      }
       if (EntityId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(56);
         output.WriteUInt32(EntityId);
       }
-      if (EventId != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(EventId);
+      if (ArgumentType != global::Weedwacker.Shared.Network.Proto.AbilityInvokeArgument.None) {
+        output.WriteRawTag(64);
+        output.WriteEnum((int) ArgumentType);
+      }
+      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
+        output.WriteRawTag(72);
+        output.WriteEnum((int) ForwardType);
       }
       if (TotalTickTime != 0D) {
-        output.WriteRawTag(113);
+        output.WriteRawTag(81);
         output.WriteDouble(TotalTickTime);
       }
-      if (AbilityData.Length != 0) {
-        output.WriteRawTag(122);
-        output.WriteBytes(AbilityData);
+      if (IsIgnoreAuth != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(IsIgnoreAuth);
+      }
+      if (EventId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(EventId);
+      }
+      if (ForwardPeer != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(ForwardPeer);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -330,29 +356,32 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (ArgumentType != global::Weedwacker.Shared.Network.Proto.AbilityInvokeArgument.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ArgumentType);
-      }
-      if (head_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Head);
-      }
-      if (ForwardPeer != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ForwardPeer);
+      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ForwardType);
       }
       if (EventId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EventId);
       }
-      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ForwardType);
+      if (EntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
       }
-      if (AbilityData.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeBytesSize(AbilityData);
+      if (ForwardPeer != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ForwardPeer);
       }
       if (TotalTickTime != 0D) {
         size += 1 + 8;
       }
-      if (EntityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
+      if (head_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Head);
+      }
+      if (AbilityData.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(AbilityData);
+      }
+      if (ArgumentType != global::Weedwacker.Shared.Network.Proto.AbilityInvokeArgument.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ArgumentType);
+      }
+      if (IsIgnoreAuth != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -366,8 +395,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.ArgumentType != global::Weedwacker.Shared.Network.Proto.AbilityInvokeArgument.None) {
-        ArgumentType = other.ArgumentType;
+      if (other.ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
+        ForwardType = other.ForwardType;
+      }
+      if (other.EventId != 0) {
+        EventId = other.EventId;
+      }
+      if (other.EntityId != 0) {
+        EntityId = other.EntityId;
+      }
+      if (other.ForwardPeer != 0) {
+        ForwardPeer = other.ForwardPeer;
+      }
+      if (other.TotalTickTime != 0D) {
+        TotalTickTime = other.TotalTickTime;
       }
       if (other.head_ != null) {
         if (head_ == null) {
@@ -375,23 +416,14 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         Head.MergeFrom(other.Head);
       }
-      if (other.ForwardPeer != 0) {
-        ForwardPeer = other.ForwardPeer;
-      }
-      if (other.EventId != 0) {
-        EventId = other.EventId;
-      }
-      if (other.ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
-        ForwardType = other.ForwardType;
-      }
       if (other.AbilityData.Length != 0) {
         AbilityData = other.AbilityData;
       }
-      if (other.TotalTickTime != 0D) {
-        TotalTickTime = other.TotalTickTime;
+      if (other.ArgumentType != global::Weedwacker.Shared.Network.Proto.AbilityInvokeArgument.None) {
+        ArgumentType = other.ArgumentType;
       }
-      if (other.EntityId != 0) {
-        EntityId = other.EntityId;
+      if (other.IsIgnoreAuth != false) {
+        IsIgnoreAuth = other.IsIgnoreAuth;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -408,39 +440,43 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            ArgumentType = (global::Weedwacker.Shared.Network.Proto.AbilityInvokeArgument) input.ReadEnum();
+          case 18: {
+            AbilityData = input.ReadBytes();
             break;
           }
-          case 18: {
+          case 26: {
             if (head_ == null) {
               Head = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntryHead();
             }
             input.ReadMessage(Head);
             break;
           }
-          case 24: {
-            ForwardType = (global::Weedwacker.Shared.Network.Proto.ForwardType) input.ReadEnum();
-            break;
-          }
-          case 32: {
-            ForwardPeer = input.ReadUInt32();
-            break;
-          }
-          case 72: {
+          case 56: {
             EntityId = input.ReadUInt32();
             break;
           }
-          case 96: {
-            EventId = input.ReadUInt32();
+          case 64: {
+            ArgumentType = (global::Weedwacker.Shared.Network.Proto.AbilityInvokeArgument) input.ReadEnum();
             break;
           }
-          case 113: {
+          case 72: {
+            ForwardType = (global::Weedwacker.Shared.Network.Proto.ForwardType) input.ReadEnum();
+            break;
+          }
+          case 81: {
             TotalTickTime = input.ReadDouble();
             break;
           }
-          case 122: {
-            AbilityData = input.ReadBytes();
+          case 96: {
+            IsIgnoreAuth = input.ReadBool();
+            break;
+          }
+          case 104: {
+            EventId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            ForwardPeer = input.ReadUInt32();
             break;
           }
         }
@@ -458,39 +494,43 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            ArgumentType = (global::Weedwacker.Shared.Network.Proto.AbilityInvokeArgument) input.ReadEnum();
+          case 18: {
+            AbilityData = input.ReadBytes();
             break;
           }
-          case 18: {
+          case 26: {
             if (head_ == null) {
               Head = new global::Weedwacker.Shared.Network.Proto.AbilityInvokeEntryHead();
             }
             input.ReadMessage(Head);
             break;
           }
-          case 24: {
-            ForwardType = (global::Weedwacker.Shared.Network.Proto.ForwardType) input.ReadEnum();
-            break;
-          }
-          case 32: {
-            ForwardPeer = input.ReadUInt32();
-            break;
-          }
-          case 72: {
+          case 56: {
             EntityId = input.ReadUInt32();
             break;
           }
-          case 96: {
-            EventId = input.ReadUInt32();
+          case 64: {
+            ArgumentType = (global::Weedwacker.Shared.Network.Proto.AbilityInvokeArgument) input.ReadEnum();
             break;
           }
-          case 113: {
+          case 72: {
+            ForwardType = (global::Weedwacker.Shared.Network.Proto.ForwardType) input.ReadEnum();
+            break;
+          }
+          case 81: {
             TotalTickTime = input.ReadDouble();
             break;
           }
-          case 122: {
-            AbilityData = input.ReadBytes();
+          case 96: {
+            IsIgnoreAuth = input.ReadBool();
+            break;
+          }
+          case 104: {
+            EventId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            ForwardPeer = input.ReadUInt32();
             break;
           }
         }

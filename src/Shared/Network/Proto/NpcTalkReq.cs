@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static NpcTalkReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChBOcGNUYWxrUmVxLnByb3RvIkcKCk5wY1RhbGtSZXESEQoJZW50aXR5X2lk",
-            "GAggASgNEhUKDW5wY19lbnRpdHlfaWQYCSABKA0SDwoHdGFsa19pZBgHIAEo",
-            "DUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChBOcGNUYWxrUmVxLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvIkcKCk5wY1RhbGtSZXESEQoJZW50aXR5X2lkGA4gASgNEhUKDW5w",
+            "Y19lbnRpdHlfaWQYCyABKA0SDwoHdGFsa19pZBgMIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -38,10 +38,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 572
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 579;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class NpcTalkReq : pb::IMessage<NpcTalkReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 8;
+    public const int EntityIdFieldNumber = 14;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "npc_entity_id" field.</summary>
-    public const int NpcEntityIdFieldNumber = 9;
+    public const int NpcEntityIdFieldNumber = 11;
     private uint npcEntityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,7 +118,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "talk_id" field.</summary>
-    public const int TalkIdFieldNumber = 7;
+    public const int TalkIdFieldNumber = 12;
     private uint talkId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -171,17 +175,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (NpcEntityId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(NpcEntityId);
+      }
       if (TalkId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(96);
         output.WriteUInt32(TalkId);
       }
       if (EntityId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(112);
         output.WriteUInt32(EntityId);
-      }
-      if (NpcEntityId != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(NpcEntityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -193,17 +197,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (NpcEntityId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(NpcEntityId);
+      }
       if (TalkId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(96);
         output.WriteUInt32(TalkId);
       }
       if (EntityId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(112);
         output.WriteUInt32(EntityId);
-      }
-      if (NpcEntityId != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(NpcEntityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -260,16 +264,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
+          case 88: {
+            NpcEntityId = input.ReadUInt32();
+            break;
+          }
+          case 96: {
             TalkId = input.ReadUInt32();
             break;
           }
-          case 64: {
+          case 112: {
             EntityId = input.ReadUInt32();
-            break;
-          }
-          case 72: {
-            NpcEntityId = input.ReadUInt32();
             break;
           }
         }
@@ -287,16 +291,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
+          case 88: {
+            NpcEntityId = input.ReadUInt32();
+            break;
+          }
+          case 96: {
             TalkId = input.ReadUInt32();
             break;
           }
-          case 64: {
+          case 112: {
             EntityId = input.ReadUInt32();
-            break;
-          }
-          case 72: {
-            NpcEntityId = input.ReadUInt32();
             break;
           }
         }

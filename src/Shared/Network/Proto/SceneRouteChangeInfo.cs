@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneRouteChangeInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpTY2VuZVJvdXRlQ2hhbmdlSW5mby5wcm90bxoaUm91dGVQb2ludENoYW5n",
-            "ZUluZm8ucHJvdG8idQoUU2NlbmVSb3V0ZUNoYW5nZUluZm8SEgoKaXNfZm9y",
-            "d2FyZBgMIAEoCBIQCghyb3V0ZV9pZBgPIAEoDRIMCgR0eXBlGAQgASgNEikK",
-            "CnBvaW50X2xpc3QYASADKAsyFS5Sb3V0ZVBvaW50Q2hhbmdlSW5mb0IiqgIf",
-            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChpTY2VuZVJvdXRlQ2hhbmdlSW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxoaUm91dGVQb2ludENoYW5nZUluZm8ucHJvdG8i",
+            "lQEKFFNjZW5lUm91dGVDaGFuZ2VJbmZvEhIKCmlzX2ZvcndhcmQYDyABKAgS",
+            "DAoEdHlwZRgLIAEoDRJJCgpwb2ludF9saXN0GAogAygLMjUuV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90by5Sb3V0ZVBvaW50Q2hhbmdlSW5mbxIQ",
+            "Cghyb3V0ZV9pZBgMIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.RoutePointChangeInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneRouteChangeInfo), global::Weedwacker.Shared.Network.Proto.SceneRouteChangeInfo.Parser, new[]{ "IsForward", "RouteId", "Type", "PointList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneRouteChangeInfo), global::Weedwacker.Shared.Network.Proto.SceneRouteChangeInfo.Parser, new[]{ "IsForward", "Type", "PointList", "RouteId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,9 +75,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SceneRouteChangeInfo(SceneRouteChangeInfo other) : this() {
       isForward_ = other.isForward_;
-      routeId_ = other.routeId_;
       type_ = other.type_;
       pointList_ = other.pointList_.Clone();
+      routeId_ = other.routeId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,7 +88,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_forward" field.</summary>
-    public const int IsForwardFieldNumber = 12;
+    public const int IsForwardFieldNumber = 15;
     private bool isForward_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -98,20 +99,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "route_id" field.</summary>
-    public const int RouteIdFieldNumber = 15;
-    private uint routeId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RouteId {
-      get { return routeId_; }
-      set {
-        routeId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "type" field.</summary>
-    public const int TypeFieldNumber = 4;
+    public const int TypeFieldNumber = 11;
     private uint type_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,14 +112,26 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "point_list" field.</summary>
-    public const int PointListFieldNumber = 1;
+    public const int PointListFieldNumber = 10;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.RoutePointChangeInfo> _repeated_pointList_codec
-        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.RoutePointChangeInfo.Parser);
+        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.RoutePointChangeInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RoutePointChangeInfo> pointList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RoutePointChangeInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RoutePointChangeInfo> PointList {
       get { return pointList_; }
+    }
+
+    /// <summary>Field number for the "route_id" field.</summary>
+    public const int RouteIdFieldNumber = 12;
+    private uint routeId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint RouteId {
+      get { return routeId_; }
+      set {
+        routeId_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -149,9 +150,9 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (IsForward != other.IsForward) return false;
-      if (RouteId != other.RouteId) return false;
       if (Type != other.Type) return false;
       if(!pointList_.Equals(other.pointList_)) return false;
+      if (RouteId != other.RouteId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -160,9 +161,9 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (IsForward != false) hash ^= IsForward.GetHashCode();
-      if (RouteId != 0) hash ^= RouteId.GetHashCode();
       if (Type != 0) hash ^= Type.GetHashCode();
       hash ^= pointList_.GetHashCode();
+      if (RouteId != 0) hash ^= RouteId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -183,16 +184,16 @@ namespace Weedwacker.Shared.Network.Proto {
     #else
       pointList_.WriteTo(output, _repeated_pointList_codec);
       if (Type != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(88);
         output.WriteUInt32(Type);
       }
-      if (IsForward != false) {
-        output.WriteRawTag(96);
-        output.WriteBool(IsForward);
-      }
       if (RouteId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(96);
         output.WriteUInt32(RouteId);
+      }
+      if (IsForward != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsForward);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -206,16 +207,16 @@ namespace Weedwacker.Shared.Network.Proto {
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       pointList_.WriteTo(ref output, _repeated_pointList_codec);
       if (Type != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(88);
         output.WriteUInt32(Type);
       }
-      if (IsForward != false) {
-        output.WriteRawTag(96);
-        output.WriteBool(IsForward);
-      }
       if (RouteId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(96);
         output.WriteUInt32(RouteId);
+      }
+      if (IsForward != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsForward);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -230,13 +231,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (IsForward != false) {
         size += 1 + 1;
       }
-      if (RouteId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RouteId);
-      }
       if (Type != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Type);
       }
       size += pointList_.CalculateSize(_repeated_pointList_codec);
+      if (RouteId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RouteId);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -252,13 +253,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.IsForward != false) {
         IsForward = other.IsForward;
       }
-      if (other.RouteId != 0) {
-        RouteId = other.RouteId;
-      }
       if (other.Type != 0) {
         Type = other.Type;
       }
       pointList_.Add(other.pointList_);
+      if (other.RouteId != 0) {
+        RouteId = other.RouteId;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -274,20 +275,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 82: {
             pointList_.AddEntriesFrom(input, _repeated_pointList_codec);
             break;
           }
-          case 32: {
+          case 88: {
             Type = input.ReadUInt32();
             break;
           }
           case 96: {
-            IsForward = input.ReadBool();
+            RouteId = input.ReadUInt32();
             break;
           }
           case 120: {
-            RouteId = input.ReadUInt32();
+            IsForward = input.ReadBool();
             break;
           }
         }
@@ -305,20 +306,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
+          case 82: {
             pointList_.AddEntriesFrom(ref input, _repeated_pointList_codec);
             break;
           }
-          case 32: {
+          case 88: {
             Type = input.ReadUInt32();
             break;
           }
           case 96: {
-            IsForward = input.ReadBool();
+            RouteId = input.ReadUInt32();
             break;
           }
           case 120: {
-            RouteId = input.ReadUInt32();
+            IsForward = input.ReadBool();
             break;
           }
         }

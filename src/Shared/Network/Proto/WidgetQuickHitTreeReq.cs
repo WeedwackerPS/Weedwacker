@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static WidgetQuickHitTreeReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtXaWRnZXRRdWlja0hpdFRyZWVSZXEucHJvdG8aEUhpdFRyZWVJbmZvLnBy",
-            "b3RvIkEKFVdpZGdldFF1aWNrSGl0VHJlZVJlcRIoChJoaXRfdHJlZV9pbmZv",
-            "X2xpc3QYBSADKAsyDC5IaXRUcmVlSW5mb0IiqgIfV2VlZHdhY2tlci5TaGFy",
-            "ZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChtXaWRnZXRRdWlja0hpdFRyZWVSZXEucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aEUhpdFRyZWVJbmZvLnByb3RvImEKFVdpZGdl",
+            "dFF1aWNrSGl0VHJlZVJlcRJIChJoaXRfdHJlZV9pbmZvX2xpc3QYBCADKAsy",
+            "LC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkhpdFRyZWVJbmZv",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HitTreeInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3345
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3068;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class WidgetQuickHitTreeReq : pb::IMessage<WidgetQuickHitTreeReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +94,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "hit_tree_info_list" field.</summary>
-    public const int HitTreeInfoListFieldNumber = 5;
+    public const int HitTreeInfoListFieldNumber = 4;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HitTreeInfo> _repeated_hitTreeInfoList_codec
-        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.HitTreeInfo.Parser);
+        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.HitTreeInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HitTreeInfo> hitTreeInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HitTreeInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -192,7 +197,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 42: {
+          case 34: {
             hitTreeInfoList_.AddEntriesFrom(input, _repeated_hitTreeInfoList_codec);
             break;
           }
@@ -211,7 +216,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 42: {
+          case 34: {
             hitTreeInfoList_.AddEntriesFrom(ref input, _repeated_hitTreeInfoList_codec);
             break;
           }

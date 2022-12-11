@@ -24,17 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static LunaRiteHintPointRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpMdW5hUml0ZUhpbnRQb2ludFJzcC5wcm90bxoXTHVuYVJpdGVIaW50UG9p",
-            "bnQucHJvdG8aHEx1bmFSaXRlSGludFN0YXR1c1R5cGUucHJvdG8ijgEKFEx1",
-            "bmFSaXRlSGludFBvaW50UnNwEiwKC2hpbnRfc3RhdHVzGAQgASgOMhcuTHVu",
-            "YVJpdGVIaW50U3RhdHVzVHlwZRIPCgdhcmVhX2lkGAUgASgNEg8KB3JldGNv",
-            "ZGUYDSABKAUSJgoKaGludF9wb2ludBgJIAMoCzISLkx1bmFSaXRlSGludFBv",
-            "aW50QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90",
-            "bzM="));
+            "ChpMdW5hUml0ZUhpbnRQb2ludFJzcC5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxoXTHVuYVJpdGVIaW50UG9pbnQucHJvdG8aHEx1",
+            "bmFSaXRlSGludFN0YXR1c1R5cGUucHJvdG8izgEKFEx1bmFSaXRlSGludFBv",
+            "aW50UnNwEg8KB2FyZWFfaWQYCSABKA0SRgoKaGludF9wb2ludBgLIAMoCzIy",
+            "LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uTHVuYVJpdGVIaW50",
+            "UG9pbnQSTAoLaGludF9zdGF0dXMYBSABKA4yNy5XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvLkx1bmFSaXRlSGludFN0YXR1c1R5cGUSDwoHcmV0",
+            "Y29kZRgGIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.LunaRiteHintPointReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.LunaRiteHintStatusTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.LunaRiteHintPointRsp), global::Weedwacker.Shared.Network.Proto.LunaRiteHintPointRsp.Parser, new[]{ "HintStatus", "AreaId", "Retcode", "HintPoint" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.LunaRiteHintPointRsp), global::Weedwacker.Shared.Network.Proto.LunaRiteHintPointRsp.Parser, new[]{ "AreaId", "HintPoint", "HintStatus", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -42,10 +43,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8765
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8394;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class LunaRiteHintPointRsp : pb::IMessage<LunaRiteHintPointRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -81,10 +86,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LunaRiteHintPointRsp(LunaRiteHintPointRsp other) : this() {
-      hintStatus_ = other.hintStatus_;
       areaId_ = other.areaId_;
-      retcode_ = other.retcode_;
       hintPoint_ = other.hintPoint_.Clone();
+      hintStatus_ = other.hintStatus_;
+      retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,20 +99,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new LunaRiteHintPointRsp(this);
     }
 
-    /// <summary>Field number for the "hint_status" field.</summary>
-    public const int HintStatusFieldNumber = 4;
-    private global::Weedwacker.Shared.Network.Proto.LunaRiteHintStatusType hintStatus_ = global::Weedwacker.Shared.Network.Proto.LunaRiteHintStatusType.Default;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.LunaRiteHintStatusType HintStatus {
-      get { return hintStatus_; }
-      set {
-        hintStatus_ = value;
-      }
-    }
-
     /// <summary>Field number for the "area_id" field.</summary>
-    public const int AreaIdFieldNumber = 5;
+    public const int AreaIdFieldNumber = 9;
     private uint areaId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -118,8 +111,31 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "hint_point" field.</summary>
+    public const int HintPointFieldNumber = 11;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.LunaRiteHintPoint> _repeated_hintPoint_codec
+        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.LunaRiteHintPoint.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.LunaRiteHintPoint> hintPoint_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.LunaRiteHintPoint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.LunaRiteHintPoint> HintPoint {
+      get { return hintPoint_; }
+    }
+
+    /// <summary>Field number for the "hint_status" field.</summary>
+    public const int HintStatusFieldNumber = 5;
+    private global::Weedwacker.Shared.Network.Proto.LunaRiteHintStatusType hintStatus_ = global::Weedwacker.Shared.Network.Proto.LunaRiteHintStatusType.Default;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.LunaRiteHintStatusType HintStatus {
+      get { return hintStatus_; }
+      set {
+        hintStatus_ = value;
+      }
+    }
+
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 13;
+    public const int RetcodeFieldNumber = 6;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -128,17 +144,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         retcode_ = value;
       }
-    }
-
-    /// <summary>Field number for the "hint_point" field.</summary>
-    public const int HintPointFieldNumber = 9;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.LunaRiteHintPoint> _repeated_hintPoint_codec
-        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.LunaRiteHintPoint.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.LunaRiteHintPoint> hintPoint_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.LunaRiteHintPoint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.LunaRiteHintPoint> HintPoint {
-      get { return hintPoint_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -156,10 +161,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (HintStatus != other.HintStatus) return false;
       if (AreaId != other.AreaId) return false;
-      if (Retcode != other.Retcode) return false;
       if(!hintPoint_.Equals(other.hintPoint_)) return false;
+      if (HintStatus != other.HintStatus) return false;
+      if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -167,10 +172,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (HintStatus != global::Weedwacker.Shared.Network.Proto.LunaRiteHintStatusType.Default) hash ^= HintStatus.GetHashCode();
       if (AreaId != 0) hash ^= AreaId.GetHashCode();
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       hash ^= hintPoint_.GetHashCode();
+      if (HintStatus != global::Weedwacker.Shared.Network.Proto.LunaRiteHintStatusType.Default) hash ^= HintStatus.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -190,18 +195,18 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (HintStatus != global::Weedwacker.Shared.Network.Proto.LunaRiteHintStatusType.Default) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteEnum((int) HintStatus);
       }
+      if (Retcode != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(Retcode);
+      }
       if (AreaId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(72);
         output.WriteUInt32(AreaId);
       }
       hintPoint_.WriteTo(output, _repeated_hintPoint_codec);
-      if (Retcode != 0) {
-        output.WriteRawTag(104);
-        output.WriteInt32(Retcode);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -213,18 +218,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (HintStatus != global::Weedwacker.Shared.Network.Proto.LunaRiteHintStatusType.Default) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteEnum((int) HintStatus);
       }
+      if (Retcode != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(Retcode);
+      }
       if (AreaId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(72);
         output.WriteUInt32(AreaId);
       }
       hintPoint_.WriteTo(ref output, _repeated_hintPoint_codec);
-      if (Retcode != 0) {
-        output.WriteRawTag(104);
-        output.WriteInt32(Retcode);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -235,16 +240,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (HintStatus != global::Weedwacker.Shared.Network.Proto.LunaRiteHintStatusType.Default) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) HintStatus);
-      }
       if (AreaId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AreaId);
+      }
+      size += hintPoint_.CalculateSize(_repeated_hintPoint_codec);
+      if (HintStatus != global::Weedwacker.Shared.Network.Proto.LunaRiteHintStatusType.Default) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) HintStatus);
       }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
-      size += hintPoint_.CalculateSize(_repeated_hintPoint_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -257,16 +262,16 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.HintStatus != global::Weedwacker.Shared.Network.Proto.LunaRiteHintStatusType.Default) {
-        HintStatus = other.HintStatus;
-      }
       if (other.AreaId != 0) {
         AreaId = other.AreaId;
+      }
+      hintPoint_.Add(other.hintPoint_);
+      if (other.HintStatus != global::Weedwacker.Shared.Network.Proto.LunaRiteHintStatusType.Default) {
+        HintStatus = other.HintStatus;
       }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      hintPoint_.Add(other.hintPoint_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -282,20 +287,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
+          case 40: {
             HintStatus = (global::Weedwacker.Shared.Network.Proto.LunaRiteHintStatusType) input.ReadEnum();
             break;
           }
-          case 40: {
+          case 48: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 72: {
             AreaId = input.ReadUInt32();
             break;
           }
-          case 74: {
+          case 90: {
             hintPoint_.AddEntriesFrom(input, _repeated_hintPoint_codec);
-            break;
-          }
-          case 104: {
-            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -313,20 +318,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
+          case 40: {
             HintStatus = (global::Weedwacker.Shared.Network.Proto.LunaRiteHintStatusType) input.ReadEnum();
             break;
           }
-          case 40: {
+          case 48: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 72: {
             AreaId = input.ReadUInt32();
             break;
           }
-          case 74: {
+          case 90: {
             hintPoint_.AddEntriesFrom(ref input, _repeated_hintPoint_codec);
-            break;
-          }
-          case 104: {
-            Retcode = input.ReadInt32();
             break;
           }
         }

@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static PhotoActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1QaG90b0FjdGl2aXR5RGV0YWlsSW5mby5wcm90bxoSUGhvdG9Qb3NEYXRh",
-            "LnByb3RvImAKF1Bob3RvQWN0aXZpdHlEZXRhaWxJbmZvEhkKEWlzX2NvbnRl",
-            "bnRfY2xvc2VkGAQgASgIEioKE3Bob3RvX3Bvc19kYXRhX2xpc3QYDCADKAsy",
-            "DS5QaG90b1Bvc0RhdGFCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
-            "UHJvdG9iBnByb3RvMw=="));
+            "Ch1QaG90b0FjdGl2aXR5RGV0YWlsSW5mby5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxoSUGhvdG9Qb3NEYXRhLnByb3RvIoABChdQ",
+            "aG90b0FjdGl2aXR5RGV0YWlsSW5mbxIZChFpc19jb250ZW50X2Nsb3NlZBgF",
+            "IAEoCBJKChNwaG90b19wb3NfZGF0YV9saXN0GA4gAygLMi0uV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90by5QaG90b1Bvc0RhdGFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.PhotoPosDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_content_closed" field.</summary>
-    public const int IsContentClosedFieldNumber = 4;
+    public const int IsContentClosedFieldNumber = 5;
     private bool isContentClosed_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -97,9 +97,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "photo_pos_data_list" field.</summary>
-    public const int PhotoPosDataListFieldNumber = 12;
+    public const int PhotoPosDataListFieldNumber = 14;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.PhotoPosData> _repeated_photoPosDataList_codec
-        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.PhotoPosData.Parser);
+        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.PhotoPosData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PhotoPosData> photoPosDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PhotoPosData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -152,7 +152,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (IsContentClosed != false) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteBool(IsContentClosed);
       }
       photoPosDataList_.WriteTo(output, _repeated_photoPosDataList_codec);
@@ -167,7 +167,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (IsContentClosed != false) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteBool(IsContentClosed);
       }
       photoPosDataList_.WriteTo(ref output, _repeated_photoPosDataList_codec);
@@ -216,11 +216,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
+          case 40: {
             IsContentClosed = input.ReadBool();
             break;
           }
-          case 98: {
+          case 114: {
             photoPosDataList_.AddEntriesFrom(input, _repeated_photoPosDataList_codec);
             break;
           }
@@ -239,11 +239,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
+          case 40: {
             IsContentClosed = input.ReadBool();
             break;
           }
-          case 98: {
+          case 114: {
             photoPosDataList_.AddEntriesFrom(ref input, _repeated_photoPosDataList_codec);
             break;
           }

@@ -24,12 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static ToTheMoonRemoveObstacleReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBUb1RoZU1vb25SZW1vdmVPYnN0YWNsZVJlcS5wcm90byKSAQoaVG9UaGVN",
-            "b29uUmVtb3ZlT2JzdGFjbGVSZXESDgoGaGFuZGxlGAwgASgFEhAKCHNjZW5l",
-            "X2lkGAogASgNEhAKCHF1ZXJ5X2lkGAsgASgFIkAKDE9ic3RhY2xlVHlwZRIV",
-            "ChFPQlNUQUNMRV9UWVBFX0JPWBAAEhkKFU9CU1RBQ0xFX1RZUEVfQ0FQU1VM",
-            "RRABQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90",
-            "bzM="));
+            "CiBUb1RoZU1vb25SZW1vdmVPYnN0YWNsZVJlcS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byKSAQoaVG9UaGVNb29uUmVtb3ZlT2Jz",
+            "dGFjbGVSZXESDgoGaGFuZGxlGA8gASgFEhAKCHNjZW5lX2lkGAcgASgNEhAK",
+            "CHF1ZXJ5X2lkGAYgASgFIkAKDE9ic3RhY2xlVHlwZRIVChFPQlNUQUNMRV9U",
+            "WVBFX0JPWBAAEhkKFU9CU1RBQ0xFX1RZUEVfQ0FQU1VMRRABYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -41,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 6190
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 6147;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class ToTheMoonRemoveObstacleReq : pb::IMessage<ToTheMoonRemoveObstacleReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -93,7 +96,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "handle" field.</summary>
-    public const int HandleFieldNumber = 12;
+    public const int HandleFieldNumber = 15;
     private int handle_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -105,7 +108,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "scene_id" field.</summary>
-    public const int SceneIdFieldNumber = 10;
+    public const int SceneIdFieldNumber = 7;
     private uint sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -117,7 +120,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "query_id" field.</summary>
-    public const int QueryIdFieldNumber = 11;
+    public const int QueryIdFieldNumber = 6;
     private int queryId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -174,16 +177,16 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (SceneId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(SceneId);
-      }
       if (QueryId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(48);
         output.WriteInt32(QueryId);
       }
+      if (SceneId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(SceneId);
+      }
       if (Handle != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(120);
         output.WriteInt32(Handle);
       }
       if (_unknownFields != null) {
@@ -196,16 +199,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (SceneId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(SceneId);
-      }
       if (QueryId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(48);
         output.WriteInt32(QueryId);
       }
+      if (SceneId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(SceneId);
+      }
       if (Handle != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(120);
         output.WriteInt32(Handle);
       }
       if (_unknownFields != null) {
@@ -263,15 +266,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 80: {
-            SceneId = input.ReadUInt32();
-            break;
-          }
-          case 88: {
+          case 48: {
             QueryId = input.ReadInt32();
             break;
           }
-          case 96: {
+          case 56: {
+            SceneId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
             Handle = input.ReadInt32();
             break;
           }
@@ -290,15 +293,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 80: {
-            SceneId = input.ReadUInt32();
-            break;
-          }
-          case 88: {
+          case 48: {
             QueryId = input.ReadInt32();
             break;
           }
-          case 96: {
+          case 56: {
+            SceneId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
             Handle = input.ReadInt32();
             break;
           }

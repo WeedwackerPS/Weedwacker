@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneTeamUpdateNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtTY2VuZVRlYW1VcGRhdGVOb3RpZnkucHJvdG8aFVNjZW5lVGVhbUF2YXRh",
-            "ci5wcm90byJbChVTY2VuZVRlYW1VcGRhdGVOb3RpZnkSMAoWc2NlbmVfdGVh",
-            "bV9hdmF0YXJfbGlzdBgLIAMoCzIQLlNjZW5lVGVhbUF2YXRhchIQCghpc19p",
-            "bl9tcBgPIAEoCEIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
-            "b2IGcHJvdG8z"));
+            "ChtTY2VuZVRlYW1VcGRhdGVOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aFVNjZW5lVGVhbUF2YXRhci5wcm90byJ7ChVT",
+            "Y2VuZVRlYW1VcGRhdGVOb3RpZnkSUAoWc2NlbmVfdGVhbV9hdmF0YXJfbGlz",
+            "dBgLIAMoCzIwLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uU2Nl",
+            "bmVUZWFtQXZhdGFyEhAKCGlzX2luX21wGAcgASgIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.SceneTeamAvatarReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1775
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1728;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class SceneTeamUpdateNotify : pb::IMessage<SceneTeamUpdateNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -101,7 +105,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_in_mp" field.</summary>
-    public const int IsInMpFieldNumber = 15;
+    public const int IsInMpFieldNumber = 7;
     private bool isInMp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,11 +160,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      sceneTeamAvatarList_.WriteTo(output, _repeated_sceneTeamAvatarList_codec);
       if (IsInMp != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(56);
         output.WriteBool(IsInMp);
       }
+      sceneTeamAvatarList_.WriteTo(output, _repeated_sceneTeamAvatarList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -171,11 +175,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      sceneTeamAvatarList_.WriteTo(ref output, _repeated_sceneTeamAvatarList_codec);
       if (IsInMp != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(56);
         output.WriteBool(IsInMp);
       }
+      sceneTeamAvatarList_.WriteTo(ref output, _repeated_sceneTeamAvatarList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -221,12 +225,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 90: {
-            sceneTeamAvatarList_.AddEntriesFrom(input, _repeated_sceneTeamAvatarList_codec);
+          case 56: {
+            IsInMp = input.ReadBool();
             break;
           }
-          case 120: {
-            IsInMp = input.ReadBool();
+          case 90: {
+            sceneTeamAvatarList_.AddEntriesFrom(input, _repeated_sceneTeamAvatarList_codec);
             break;
           }
         }
@@ -244,12 +248,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 90: {
-            sceneTeamAvatarList_.AddEntriesFrom(ref input, _repeated_sceneTeamAvatarList_codec);
+          case 56: {
+            IsInMp = input.ReadBool();
             break;
           }
-          case 120: {
-            IsInMp = input.ReadBool();
+          case 90: {
+            sceneTeamAvatarList_.AddEntriesFrom(ref input, _repeated_sceneTeamAvatarList_codec);
             break;
           }
         }

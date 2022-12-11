@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlatformStopRouteNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1QbGF0Zm9ybVN0b3BSb3V0ZU5vdGlmeS5wcm90bxoSUGxhdGZvcm1JbmZv",
-            "LnByb3RvImEKF1BsYXRmb3JtU3RvcFJvdXRlTm90aWZ5EhIKCnNjZW5lX3Rp",
-            "bWUYCSABKA0SEQoJZW50aXR5X2lkGAwgASgNEh8KCHBsYXRmb3JtGAggASgL",
-            "Mg0uUGxhdGZvcm1JbmZvQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
-            "LlByb3RvYgZwcm90bzM="));
+            "Ch1QbGF0Zm9ybVN0b3BSb3V0ZU5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxoSUGxhdGZvcm1JbmZvLnByb3RvIoEBChdQ",
+            "bGF0Zm9ybVN0b3BSb3V0ZU5vdGlmeRI/CghwbGF0Zm9ybRgHIAEoCzItLldl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uUGxhdGZvcm1JbmZvEhIK",
+            "CnNjZW5lX3RpbWUYCiABKA0SEQoJZW50aXR5X2lkGAYgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.PlatformInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlatformStopRouteNotify), global::Weedwacker.Shared.Network.Proto.PlatformStopRouteNotify.Parser, new[]{ "SceneTime", "EntityId", "Platform" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlatformStopRouteNotify), global::Weedwacker.Shared.Network.Proto.PlatformStopRouteNotify.Parser, new[]{ "Platform", "SceneTime", "EntityId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 266
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 209;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class PlatformStopRouteNotify : pb::IMessage<PlatformStopRouteNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +82,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlatformStopRouteNotify(PlatformStopRouteNotify other) : this() {
+      platform_ = other.platform_ != null ? other.platform_.Clone() : null;
       sceneTime_ = other.sceneTime_;
       entityId_ = other.entityId_;
-      platform_ = other.platform_ != null ? other.platform_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,8 +94,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PlatformStopRouteNotify(this);
     }
 
+    /// <summary>Field number for the "platform" field.</summary>
+    public const int PlatformFieldNumber = 7;
+    private global::Weedwacker.Shared.Network.Proto.PlatformInfo platform_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.PlatformInfo Platform {
+      get { return platform_; }
+      set {
+        platform_ = value;
+      }
+    }
+
     /// <summary>Field number for the "scene_time" field.</summary>
-    public const int SceneTimeFieldNumber = 9;
+    public const int SceneTimeFieldNumber = 10;
     private uint sceneTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,7 +119,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 12;
+    public const int EntityIdFieldNumber = 6;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -111,18 +127,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return entityId_; }
       set {
         entityId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "platform" field.</summary>
-    public const int PlatformFieldNumber = 8;
-    private global::Weedwacker.Shared.Network.Proto.PlatformInfo platform_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.PlatformInfo Platform {
-      get { return platform_; }
-      set {
-        platform_ = value;
       }
     }
 
@@ -141,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (!object.Equals(Platform, other.Platform)) return false;
       if (SceneTime != other.SceneTime) return false;
       if (EntityId != other.EntityId) return false;
-      if (!object.Equals(Platform, other.Platform)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,9 +155,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (platform_ != null) hash ^= Platform.GetHashCode();
       if (SceneTime != 0) hash ^= SceneTime.GetHashCode();
       if (EntityId != 0) hash ^= EntityId.GetHashCode();
-      if (platform_ != null) hash ^= Platform.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,17 +176,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (EntityId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(EntityId);
+      }
       if (platform_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(58);
         output.WriteMessage(Platform);
       }
       if (SceneTime != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(80);
         output.WriteUInt32(SceneTime);
-      }
-      if (EntityId != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(EntityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -194,17 +198,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (EntityId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(EntityId);
+      }
       if (platform_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(58);
         output.WriteMessage(Platform);
       }
       if (SceneTime != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(80);
         output.WriteUInt32(SceneTime);
-      }
-      if (EntityId != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(EntityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -216,14 +220,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (platform_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Platform);
+      }
       if (SceneTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneTime);
       }
       if (EntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
-      }
-      if (platform_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Platform);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -237,17 +241,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.SceneTime != 0) {
-        SceneTime = other.SceneTime;
-      }
-      if (other.EntityId != 0) {
-        EntityId = other.EntityId;
-      }
       if (other.platform_ != null) {
         if (platform_ == null) {
           Platform = new global::Weedwacker.Shared.Network.Proto.PlatformInfo();
         }
         Platform.MergeFrom(other.Platform);
+      }
+      if (other.SceneTime != 0) {
+        SceneTime = other.SceneTime;
+      }
+      if (other.EntityId != 0) {
+        EntityId = other.EntityId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -264,19 +268,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 66: {
+          case 48: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 58: {
             if (platform_ == null) {
               Platform = new global::Weedwacker.Shared.Network.Proto.PlatformInfo();
             }
             input.ReadMessage(Platform);
             break;
           }
-          case 72: {
+          case 80: {
             SceneTime = input.ReadUInt32();
-            break;
-          }
-          case 96: {
-            EntityId = input.ReadUInt32();
             break;
           }
         }
@@ -294,19 +298,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 66: {
+          case 48: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 58: {
             if (platform_ == null) {
               Platform = new global::Weedwacker.Shared.Network.Proto.PlatformInfo();
             }
             input.ReadMessage(Platform);
             break;
           }
-          case 72: {
+          case 80: {
             SceneTime = input.ReadUInt32();
-            break;
-          }
-          case 96: {
-            EntityId = input.ReadUInt32();
             break;
           }
         }

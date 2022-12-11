@@ -24,18 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static ChessActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1DaGVzc0FjdGl2aXR5RGV0YWlsSW5mby5wcm90byL0AQoXQ2hlc3NBY3Rp",
-            "dml0eURldGFpbEluZm8SDQoFbGV2ZWwYBCABKA0SIQoZaXNfdGVhY2hfZHVu",
-            "Z2Vvbl9maW5pc2hlZBgJIAEoCBIaChJjb250ZW50X2Nsb3NlX3RpbWUYDiAB",
-            "KA0SFAoMb2J0YWluZWRfZXhwGAggASgNEhkKEWlzX2NvbnRlbnRfY2xvc2Vk",
-            "GAUgASgIEhUKDWF2YWlsYWJsZV9leHAYAiABKA0SCwoDZXhwGA0gASgNEhwK",
-            "FGZpbmlzaGVkX21hcF9pZF9saXN0GAEgAygNEhgKEHB1bmlzaF9vdmVyX3Rp",
-            "bWUYAyABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9i",
-            "BnByb3RvMw=="));
+            "Ch1DaGVzc0FjdGl2aXR5RGV0YWlsSW5mby5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90byKBAgoXQ2hlc3NBY3Rpdml0eURldGFpbElu",
+            "Zm8SGAoQcHVuaXNoX292ZXJfdGltZRgJIAEoDRIbChNVbmszMzAwX0xQRERG",
+            "R0dLR0JQGAQgASgNEg0KBWxldmVsGA4gASgNEgsKA2V4cBgGIAEoDRIbChNV",
+            "bmszMzAwX0hCR0VHSVBJQU5HGA8gASgNEhoKEmNvbnRlbnRfY2xvc2VfdGlt",
+            "ZRgBIAEoDRIhChlpc190ZWFjaF9kdW5nZW9uX2ZpbmlzaGVkGAsgASgIEhkK",
+            "EWlzX2NvbnRlbnRfY2xvc2VkGAUgASgIEhwKFGZpbmlzaGVkX21hcF9pZF9s",
+            "aXN0GA0gAygNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChessActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.ChessActivityDetailInfo.Parser, new[]{ "Level", "IsTeachDungeonFinished", "ContentCloseTime", "ObtainedExp", "IsContentClosed", "AvailableExp", "Exp", "FinishedMapIdList", "PunishOverTime" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChessActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.ChessActivityDetailInfo.Parser, new[]{ "PunishOverTime", "Unk3300LPDDFGGKGBP", "Level", "Exp", "Unk3300HBGEGIPIANG", "ContentCloseTime", "IsTeachDungeonFinished", "IsContentClosed", "FinishedMapIdList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -76,15 +76,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChessActivityDetailInfo(ChessActivityDetailInfo other) : this() {
-      level_ = other.level_;
-      isTeachDungeonFinished_ = other.isTeachDungeonFinished_;
-      contentCloseTime_ = other.contentCloseTime_;
-      obtainedExp_ = other.obtainedExp_;
-      isContentClosed_ = other.isContentClosed_;
-      availableExp_ = other.availableExp_;
-      exp_ = other.exp_;
-      finishedMapIdList_ = other.finishedMapIdList_.Clone();
       punishOverTime_ = other.punishOverTime_;
+      unk3300LPDDFGGKGBP_ = other.unk3300LPDDFGGKGBP_;
+      level_ = other.level_;
+      exp_ = other.exp_;
+      unk3300HBGEGIPIANG_ = other.unk3300HBGEGIPIANG_;
+      contentCloseTime_ = other.contentCloseTime_;
+      isTeachDungeonFinished_ = other.isTeachDungeonFinished_;
+      isContentClosed_ = other.isContentClosed_;
+      finishedMapIdList_ = other.finishedMapIdList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,8 +94,32 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ChessActivityDetailInfo(this);
     }
 
+    /// <summary>Field number for the "punish_over_time" field.</summary>
+    public const int PunishOverTimeFieldNumber = 9;
+    private uint punishOverTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PunishOverTime {
+      get { return punishOverTime_; }
+      set {
+        punishOverTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_LPDDFGGKGBP" field.</summary>
+    public const int Unk3300LPDDFGGKGBPFieldNumber = 4;
+    private uint unk3300LPDDFGGKGBP_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300LPDDFGGKGBP {
+      get { return unk3300LPDDFGGKGBP_; }
+      set {
+        unk3300LPDDFGGKGBP_ = value;
+      }
+    }
+
     /// <summary>Field number for the "level" field.</summary>
-    public const int LevelFieldNumber = 4;
+    public const int LevelFieldNumber = 14;
     private uint level_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -106,20 +130,32 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_teach_dungeon_finished" field.</summary>
-    public const int IsTeachDungeonFinishedFieldNumber = 9;
-    private bool isTeachDungeonFinished_;
+    /// <summary>Field number for the "exp" field.</summary>
+    public const int ExpFieldNumber = 6;
+    private uint exp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsTeachDungeonFinished {
-      get { return isTeachDungeonFinished_; }
+    public uint Exp {
+      get { return exp_; }
       set {
-        isTeachDungeonFinished_ = value;
+        exp_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_HBGEGIPIANG" field.</summary>
+    public const int Unk3300HBGEGIPIANGFieldNumber = 15;
+    private uint unk3300HBGEGIPIANG_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300HBGEGIPIANG {
+      get { return unk3300HBGEGIPIANG_; }
+      set {
+        unk3300HBGEGIPIANG_ = value;
       }
     }
 
     /// <summary>Field number for the "content_close_time" field.</summary>
-    public const int ContentCloseTimeFieldNumber = 14;
+    public const int ContentCloseTimeFieldNumber = 1;
     private uint contentCloseTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -130,15 +166,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "obtained_exp" field.</summary>
-    public const int ObtainedExpFieldNumber = 8;
-    private uint obtainedExp_;
+    /// <summary>Field number for the "is_teach_dungeon_finished" field.</summary>
+    public const int IsTeachDungeonFinishedFieldNumber = 11;
+    private bool isTeachDungeonFinished_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ObtainedExp {
-      get { return obtainedExp_; }
+    public bool IsTeachDungeonFinished {
+      get { return isTeachDungeonFinished_; }
       set {
-        obtainedExp_ = value;
+        isTeachDungeonFinished_ = value;
       }
     }
 
@@ -154,51 +190,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "available_exp" field.</summary>
-    public const int AvailableExpFieldNumber = 2;
-    private uint availableExp_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint AvailableExp {
-      get { return availableExp_; }
-      set {
-        availableExp_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "exp" field.</summary>
-    public const int ExpFieldNumber = 13;
-    private uint exp_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Exp {
-      get { return exp_; }
-      set {
-        exp_ = value;
-      }
-    }
-
     /// <summary>Field number for the "finished_map_id_list" field.</summary>
-    public const int FinishedMapIdListFieldNumber = 1;
+    public const int FinishedMapIdListFieldNumber = 13;
     private static readonly pb::FieldCodec<uint> _repeated_finishedMapIdList_codec
-        = pb::FieldCodec.ForUInt32(10);
+        = pb::FieldCodec.ForUInt32(106);
     private readonly pbc::RepeatedField<uint> finishedMapIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<uint> FinishedMapIdList {
       get { return finishedMapIdList_; }
-    }
-
-    /// <summary>Field number for the "punish_over_time" field.</summary>
-    public const int PunishOverTimeFieldNumber = 3;
-    private uint punishOverTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint PunishOverTime {
-      get { return punishOverTime_; }
-      set {
-        punishOverTime_ = value;
-      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -216,15 +216,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Level != other.Level) return false;
-      if (IsTeachDungeonFinished != other.IsTeachDungeonFinished) return false;
-      if (ContentCloseTime != other.ContentCloseTime) return false;
-      if (ObtainedExp != other.ObtainedExp) return false;
-      if (IsContentClosed != other.IsContentClosed) return false;
-      if (AvailableExp != other.AvailableExp) return false;
-      if (Exp != other.Exp) return false;
-      if(!finishedMapIdList_.Equals(other.finishedMapIdList_)) return false;
       if (PunishOverTime != other.PunishOverTime) return false;
+      if (Unk3300LPDDFGGKGBP != other.Unk3300LPDDFGGKGBP) return false;
+      if (Level != other.Level) return false;
+      if (Exp != other.Exp) return false;
+      if (Unk3300HBGEGIPIANG != other.Unk3300HBGEGIPIANG) return false;
+      if (ContentCloseTime != other.ContentCloseTime) return false;
+      if (IsTeachDungeonFinished != other.IsTeachDungeonFinished) return false;
+      if (IsContentClosed != other.IsContentClosed) return false;
+      if(!finishedMapIdList_.Equals(other.finishedMapIdList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -232,15 +232,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Level != 0) hash ^= Level.GetHashCode();
-      if (IsTeachDungeonFinished != false) hash ^= IsTeachDungeonFinished.GetHashCode();
-      if (ContentCloseTime != 0) hash ^= ContentCloseTime.GetHashCode();
-      if (ObtainedExp != 0) hash ^= ObtainedExp.GetHashCode();
-      if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
-      if (AvailableExp != 0) hash ^= AvailableExp.GetHashCode();
-      if (Exp != 0) hash ^= Exp.GetHashCode();
-      hash ^= finishedMapIdList_.GetHashCode();
       if (PunishOverTime != 0) hash ^= PunishOverTime.GetHashCode();
+      if (Unk3300LPDDFGGKGBP != 0) hash ^= Unk3300LPDDFGGKGBP.GetHashCode();
+      if (Level != 0) hash ^= Level.GetHashCode();
+      if (Exp != 0) hash ^= Exp.GetHashCode();
+      if (Unk3300HBGEGIPIANG != 0) hash ^= Unk3300HBGEGIPIANG.GetHashCode();
+      if (ContentCloseTime != 0) hash ^= ContentCloseTime.GetHashCode();
+      if (IsTeachDungeonFinished != false) hash ^= IsTeachDungeonFinished.GetHashCode();
+      if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
+      hash ^= finishedMapIdList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -259,38 +259,38 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      finishedMapIdList_.WriteTo(output, _repeated_finishedMapIdList_codec);
-      if (AvailableExp != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(AvailableExp);
+      if (ContentCloseTime != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(ContentCloseTime);
       }
-      if (PunishOverTime != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(PunishOverTime);
-      }
-      if (Level != 0) {
+      if (Unk3300LPDDFGGKGBP != 0) {
         output.WriteRawTag(32);
-        output.WriteUInt32(Level);
+        output.WriteUInt32(Unk3300LPDDFGGKGBP);
       }
       if (IsContentClosed != false) {
         output.WriteRawTag(40);
         output.WriteBool(IsContentClosed);
       }
-      if (ObtainedExp != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(ObtainedExp);
-      }
-      if (IsTeachDungeonFinished != false) {
-        output.WriteRawTag(72);
-        output.WriteBool(IsTeachDungeonFinished);
-      }
       if (Exp != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(48);
         output.WriteUInt32(Exp);
       }
-      if (ContentCloseTime != 0) {
+      if (PunishOverTime != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(PunishOverTime);
+      }
+      if (IsTeachDungeonFinished != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(IsTeachDungeonFinished);
+      }
+      finishedMapIdList_.WriteTo(output, _repeated_finishedMapIdList_codec);
+      if (Level != 0) {
         output.WriteRawTag(112);
-        output.WriteUInt32(ContentCloseTime);
+        output.WriteUInt32(Level);
+      }
+      if (Unk3300HBGEGIPIANG != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Unk3300HBGEGIPIANG);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -302,38 +302,38 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      finishedMapIdList_.WriteTo(ref output, _repeated_finishedMapIdList_codec);
-      if (AvailableExp != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(AvailableExp);
+      if (ContentCloseTime != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(ContentCloseTime);
       }
-      if (PunishOverTime != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(PunishOverTime);
-      }
-      if (Level != 0) {
+      if (Unk3300LPDDFGGKGBP != 0) {
         output.WriteRawTag(32);
-        output.WriteUInt32(Level);
+        output.WriteUInt32(Unk3300LPDDFGGKGBP);
       }
       if (IsContentClosed != false) {
         output.WriteRawTag(40);
         output.WriteBool(IsContentClosed);
       }
-      if (ObtainedExp != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(ObtainedExp);
-      }
-      if (IsTeachDungeonFinished != false) {
-        output.WriteRawTag(72);
-        output.WriteBool(IsTeachDungeonFinished);
-      }
       if (Exp != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(48);
         output.WriteUInt32(Exp);
       }
-      if (ContentCloseTime != 0) {
+      if (PunishOverTime != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(PunishOverTime);
+      }
+      if (IsTeachDungeonFinished != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(IsTeachDungeonFinished);
+      }
+      finishedMapIdList_.WriteTo(ref output, _repeated_finishedMapIdList_codec);
+      if (Level != 0) {
         output.WriteRawTag(112);
-        output.WriteUInt32(ContentCloseTime);
+        output.WriteUInt32(Level);
+      }
+      if (Unk3300HBGEGIPIANG != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Unk3300HBGEGIPIANG);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -345,31 +345,31 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (PunishOverTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PunishOverTime);
+      }
+      if (Unk3300LPDDFGGKGBP != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LPDDFGGKGBP);
+      }
       if (Level != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Level);
-      }
-      if (IsTeachDungeonFinished != false) {
-        size += 1 + 1;
-      }
-      if (ContentCloseTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ContentCloseTime);
-      }
-      if (ObtainedExp != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ObtainedExp);
-      }
-      if (IsContentClosed != false) {
-        size += 1 + 1;
-      }
-      if (AvailableExp != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AvailableExp);
       }
       if (Exp != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Exp);
       }
-      size += finishedMapIdList_.CalculateSize(_repeated_finishedMapIdList_codec);
-      if (PunishOverTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PunishOverTime);
+      if (Unk3300HBGEGIPIANG != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300HBGEGIPIANG);
       }
+      if (ContentCloseTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ContentCloseTime);
+      }
+      if (IsTeachDungeonFinished != false) {
+        size += 1 + 1;
+      }
+      if (IsContentClosed != false) {
+        size += 1 + 1;
+      }
+      size += finishedMapIdList_.CalculateSize(_repeated_finishedMapIdList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -382,31 +382,31 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.PunishOverTime != 0) {
+        PunishOverTime = other.PunishOverTime;
+      }
+      if (other.Unk3300LPDDFGGKGBP != 0) {
+        Unk3300LPDDFGGKGBP = other.Unk3300LPDDFGGKGBP;
+      }
       if (other.Level != 0) {
         Level = other.Level;
-      }
-      if (other.IsTeachDungeonFinished != false) {
-        IsTeachDungeonFinished = other.IsTeachDungeonFinished;
-      }
-      if (other.ContentCloseTime != 0) {
-        ContentCloseTime = other.ContentCloseTime;
-      }
-      if (other.ObtainedExp != 0) {
-        ObtainedExp = other.ObtainedExp;
-      }
-      if (other.IsContentClosed != false) {
-        IsContentClosed = other.IsContentClosed;
-      }
-      if (other.AvailableExp != 0) {
-        AvailableExp = other.AvailableExp;
       }
       if (other.Exp != 0) {
         Exp = other.Exp;
       }
-      finishedMapIdList_.Add(other.finishedMapIdList_);
-      if (other.PunishOverTime != 0) {
-        PunishOverTime = other.PunishOverTime;
+      if (other.Unk3300HBGEGIPIANG != 0) {
+        Unk3300HBGEGIPIANG = other.Unk3300HBGEGIPIANG;
       }
+      if (other.ContentCloseTime != 0) {
+        ContentCloseTime = other.ContentCloseTime;
+      }
+      if (other.IsTeachDungeonFinished != false) {
+        IsTeachDungeonFinished = other.IsTeachDungeonFinished;
+      }
+      if (other.IsContentClosed != false) {
+        IsContentClosed = other.IsContentClosed;
+      }
+      finishedMapIdList_.Add(other.finishedMapIdList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -422,41 +422,41 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10:
           case 8: {
-            finishedMapIdList_.AddEntriesFrom(input, _repeated_finishedMapIdList_codec);
-            break;
-          }
-          case 16: {
-            AvailableExp = input.ReadUInt32();
-            break;
-          }
-          case 24: {
-            PunishOverTime = input.ReadUInt32();
+            ContentCloseTime = input.ReadUInt32();
             break;
           }
           case 32: {
-            Level = input.ReadUInt32();
+            Unk3300LPDDFGGKGBP = input.ReadUInt32();
             break;
           }
           case 40: {
             IsContentClosed = input.ReadBool();
             break;
           }
-          case 64: {
-            ObtainedExp = input.ReadUInt32();
-            break;
-          }
-          case 72: {
-            IsTeachDungeonFinished = input.ReadBool();
-            break;
-          }
-          case 104: {
+          case 48: {
             Exp = input.ReadUInt32();
             break;
           }
+          case 72: {
+            PunishOverTime = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            IsTeachDungeonFinished = input.ReadBool();
+            break;
+          }
+          case 106:
+          case 104: {
+            finishedMapIdList_.AddEntriesFrom(input, _repeated_finishedMapIdList_codec);
+            break;
+          }
           case 112: {
-            ContentCloseTime = input.ReadUInt32();
+            Level = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            Unk3300HBGEGIPIANG = input.ReadUInt32();
             break;
           }
         }
@@ -474,41 +474,41 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10:
           case 8: {
-            finishedMapIdList_.AddEntriesFrom(ref input, _repeated_finishedMapIdList_codec);
-            break;
-          }
-          case 16: {
-            AvailableExp = input.ReadUInt32();
-            break;
-          }
-          case 24: {
-            PunishOverTime = input.ReadUInt32();
+            ContentCloseTime = input.ReadUInt32();
             break;
           }
           case 32: {
-            Level = input.ReadUInt32();
+            Unk3300LPDDFGGKGBP = input.ReadUInt32();
             break;
           }
           case 40: {
             IsContentClosed = input.ReadBool();
             break;
           }
-          case 64: {
-            ObtainedExp = input.ReadUInt32();
-            break;
-          }
-          case 72: {
-            IsTeachDungeonFinished = input.ReadBool();
-            break;
-          }
-          case 104: {
+          case 48: {
             Exp = input.ReadUInt32();
             break;
           }
+          case 72: {
+            PunishOverTime = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            IsTeachDungeonFinished = input.ReadBool();
+            break;
+          }
+          case 106:
+          case 104: {
+            finishedMapIdList_.AddEntriesFrom(ref input, _repeated_finishedMapIdList_codec);
+            break;
+          }
           case 112: {
-            ContentCloseTime = input.ReadUInt32();
+            Level = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            Unk3300HBGEGIPIANG = input.ReadUInt32();
             break;
           }
         }

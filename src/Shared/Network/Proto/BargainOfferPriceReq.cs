@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static BargainOfferPriceReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpCYXJnYWluT2ZmZXJQcmljZVJlcS5wcm90byI5ChRCYXJnYWluT2ZmZXJQ",
-            "cmljZVJlcRISCgpiYXJnYWluX2lkGAQgASgNEg0KBXByaWNlGAYgASgNQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChpCYXJnYWluT2ZmZXJQcmljZVJlcS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90byI5ChRCYXJnYWluT2ZmZXJQcmljZVJlcRISCgpi",
+            "YXJnYWluX2lkGAUgASgNEg0KBXByaWNlGAMgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -38,10 +38,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 493
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 407;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class BargainOfferPriceReq : pb::IMessage<BargainOfferPriceReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "bargain_id" field.</summary>
-    public const int BargainIdFieldNumber = 4;
+    public const int BargainIdFieldNumber = 5;
     private uint bargainId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,7 +105,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "price" field.</summary>
-    public const int PriceFieldNumber = 6;
+    public const int PriceFieldNumber = 3;
     private uint price_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,13 +160,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (BargainId != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(BargainId);
-      }
       if (Price != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(24);
         output.WriteUInt32(Price);
+      }
+      if (BargainId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(BargainId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -174,13 +178,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (BargainId != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(BargainId);
-      }
       if (Price != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(24);
         output.WriteUInt32(Price);
+      }
+      if (BargainId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(BargainId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -231,12 +235,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            BargainId = input.ReadUInt32();
+          case 24: {
+            Price = input.ReadUInt32();
             break;
           }
-          case 48: {
-            Price = input.ReadUInt32();
+          case 40: {
+            BargainId = input.ReadUInt32();
             break;
           }
         }
@@ -254,12 +258,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            BargainId = input.ReadUInt32();
+          case 24: {
+            Price = input.ReadUInt32();
             break;
           }
-          case 48: {
-            Price = input.ReadUInt32();
+          case 40: {
+            BargainId = input.ReadUInt32();
             break;
           }
         }

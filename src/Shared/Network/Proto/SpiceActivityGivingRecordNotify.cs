@@ -24,16 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static SpiceActivityGivingRecordNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVTcGljZUFjdGl2aXR5R2l2aW5nUmVjb3JkTm90aWZ5LnByb3RvIo4BCh9T",
-            "cGljZUFjdGl2aXR5R2l2aW5nUmVjb3JkTm90aWZ5EiwKJGN1cnJlbnRfaW5j",
-            "cmVhc2VfYXZhdGFyX2ZldHRlcl90aW1lcxgDIAEoDRIqCiJpbmNyZWFzZV9h",
-            "dmF0YXJfZmV0dGVyX2xpbWl0X3RpbWVzGAcgASgNEhEKCWF2YXRhcl9pZBgL",
-            "IAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJv",
-            "dG8z"));
+            "CiVTcGljZUFjdGl2aXR5R2l2aW5nUmVjb3JkTm90aWZ5LnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIm4KH1NwaWNlQWN0aXZpdHlH",
+            "aXZpbmdSZWNvcmROb3RpZnkSGwoTVW5rMzMwMF9DSUhJQUpFR0NCTxgDIAEo",
+            "DRIbChNVbmszMzAwX0xBS1BNTUlQQk1JGAIgASgNEhEKCWF2YXRhcl9pZBgF",
+            "IAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SpiceActivityGivingRecordNotify), global::Weedwacker.Shared.Network.Proto.SpiceActivityGivingRecordNotify.Parser, new[]{ "CurrentIncreaseAvatarFetterTimes", "IncreaseAvatarFetterLimitTimes", "AvatarId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SpiceActivityGivingRecordNotify), global::Weedwacker.Shared.Network.Proto.SpiceActivityGivingRecordNotify.Parser, new[]{ "Unk3300CIHIAJEGCBO", "Unk3300LAKPMMIPBMI", "AvatarId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8407
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8719;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class SpiceActivityGivingRecordNotify : pb::IMessage<SpiceActivityGivingRecordNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SpiceActivityGivingRecordNotify(SpiceActivityGivingRecordNotify other) : this() {
-      currentIncreaseAvatarFetterTimes_ = other.currentIncreaseAvatarFetterTimes_;
-      increaseAvatarFetterLimitTimes_ = other.increaseAvatarFetterLimitTimes_;
+      unk3300CIHIAJEGCBO_ = other.unk3300CIHIAJEGCBO_;
+      unk3300LAKPMMIPBMI_ = other.unk3300LAKPMMIPBMI_;
       avatarId_ = other.avatarId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -91,32 +94,32 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SpiceActivityGivingRecordNotify(this);
     }
 
-    /// <summary>Field number for the "current_increase_avatar_fetter_times" field.</summary>
-    public const int CurrentIncreaseAvatarFetterTimesFieldNumber = 3;
-    private uint currentIncreaseAvatarFetterTimes_;
+    /// <summary>Field number for the "Unk3300_CIHIAJEGCBO" field.</summary>
+    public const int Unk3300CIHIAJEGCBOFieldNumber = 3;
+    private uint unk3300CIHIAJEGCBO_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurrentIncreaseAvatarFetterTimes {
-      get { return currentIncreaseAvatarFetterTimes_; }
+    public uint Unk3300CIHIAJEGCBO {
+      get { return unk3300CIHIAJEGCBO_; }
       set {
-        currentIncreaseAvatarFetterTimes_ = value;
+        unk3300CIHIAJEGCBO_ = value;
       }
     }
 
-    /// <summary>Field number for the "increase_avatar_fetter_limit_times" field.</summary>
-    public const int IncreaseAvatarFetterLimitTimesFieldNumber = 7;
-    private uint increaseAvatarFetterLimitTimes_;
+    /// <summary>Field number for the "Unk3300_LAKPMMIPBMI" field.</summary>
+    public const int Unk3300LAKPMMIPBMIFieldNumber = 2;
+    private uint unk3300LAKPMMIPBMI_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint IncreaseAvatarFetterLimitTimes {
-      get { return increaseAvatarFetterLimitTimes_; }
+    public uint Unk3300LAKPMMIPBMI {
+      get { return unk3300LAKPMMIPBMI_; }
       set {
-        increaseAvatarFetterLimitTimes_ = value;
+        unk3300LAKPMMIPBMI_ = value;
       }
     }
 
     /// <summary>Field number for the "avatar_id" field.</summary>
-    public const int AvatarIdFieldNumber = 11;
+    public const int AvatarIdFieldNumber = 5;
     private uint avatarId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -142,8 +145,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CurrentIncreaseAvatarFetterTimes != other.CurrentIncreaseAvatarFetterTimes) return false;
-      if (IncreaseAvatarFetterLimitTimes != other.IncreaseAvatarFetterLimitTimes) return false;
+      if (Unk3300CIHIAJEGCBO != other.Unk3300CIHIAJEGCBO) return false;
+      if (Unk3300LAKPMMIPBMI != other.Unk3300LAKPMMIPBMI) return false;
       if (AvatarId != other.AvatarId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -152,8 +155,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CurrentIncreaseAvatarFetterTimes != 0) hash ^= CurrentIncreaseAvatarFetterTimes.GetHashCode();
-      if (IncreaseAvatarFetterLimitTimes != 0) hash ^= IncreaseAvatarFetterLimitTimes.GetHashCode();
+      if (Unk3300CIHIAJEGCBO != 0) hash ^= Unk3300CIHIAJEGCBO.GetHashCode();
+      if (Unk3300LAKPMMIPBMI != 0) hash ^= Unk3300LAKPMMIPBMI.GetHashCode();
       if (AvatarId != 0) hash ^= AvatarId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -173,16 +176,16 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CurrentIncreaseAvatarFetterTimes != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(CurrentIncreaseAvatarFetterTimes);
+      if (Unk3300LAKPMMIPBMI != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300LAKPMMIPBMI);
       }
-      if (IncreaseAvatarFetterLimitTimes != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(IncreaseAvatarFetterLimitTimes);
+      if (Unk3300CIHIAJEGCBO != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300CIHIAJEGCBO);
       }
       if (AvatarId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(40);
         output.WriteUInt32(AvatarId);
       }
       if (_unknownFields != null) {
@@ -195,16 +198,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CurrentIncreaseAvatarFetterTimes != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(CurrentIncreaseAvatarFetterTimes);
+      if (Unk3300LAKPMMIPBMI != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300LAKPMMIPBMI);
       }
-      if (IncreaseAvatarFetterLimitTimes != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(IncreaseAvatarFetterLimitTimes);
+      if (Unk3300CIHIAJEGCBO != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300CIHIAJEGCBO);
       }
       if (AvatarId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(40);
         output.WriteUInt32(AvatarId);
       }
       if (_unknownFields != null) {
@@ -217,11 +220,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CurrentIncreaseAvatarFetterTimes != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurrentIncreaseAvatarFetterTimes);
+      if (Unk3300CIHIAJEGCBO != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300CIHIAJEGCBO);
       }
-      if (IncreaseAvatarFetterLimitTimes != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(IncreaseAvatarFetterLimitTimes);
+      if (Unk3300LAKPMMIPBMI != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LAKPMMIPBMI);
       }
       if (AvatarId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AvatarId);
@@ -238,11 +241,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.CurrentIncreaseAvatarFetterTimes != 0) {
-        CurrentIncreaseAvatarFetterTimes = other.CurrentIncreaseAvatarFetterTimes;
+      if (other.Unk3300CIHIAJEGCBO != 0) {
+        Unk3300CIHIAJEGCBO = other.Unk3300CIHIAJEGCBO;
       }
-      if (other.IncreaseAvatarFetterLimitTimes != 0) {
-        IncreaseAvatarFetterLimitTimes = other.IncreaseAvatarFetterLimitTimes;
+      if (other.Unk3300LAKPMMIPBMI != 0) {
+        Unk3300LAKPMMIPBMI = other.Unk3300LAKPMMIPBMI;
       }
       if (other.AvatarId != 0) {
         AvatarId = other.AvatarId;
@@ -262,15 +265,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 16: {
+            Unk3300LAKPMMIPBMI = input.ReadUInt32();
+            break;
+          }
           case 24: {
-            CurrentIncreaseAvatarFetterTimes = input.ReadUInt32();
+            Unk3300CIHIAJEGCBO = input.ReadUInt32();
             break;
           }
-          case 56: {
-            IncreaseAvatarFetterLimitTimes = input.ReadUInt32();
-            break;
-          }
-          case 88: {
+          case 40: {
             AvatarId = input.ReadUInt32();
             break;
           }
@@ -289,15 +292,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 16: {
+            Unk3300LAKPMMIPBMI = input.ReadUInt32();
+            break;
+          }
           case 24: {
-            CurrentIncreaseAvatarFetterTimes = input.ReadUInt32();
+            Unk3300CIHIAJEGCBO = input.ReadUInt32();
             break;
           }
-          case 56: {
-            IncreaseAvatarFetterLimitTimes = input.ReadUInt32();
-            break;
-          }
-          case 88: {
+          case 40: {
             AvatarId = input.ReadUInt32();
             break;
           }

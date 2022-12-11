@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static VintageMarketStoreUnlockSlotRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVWaW50YWdlTWFya2V0U3RvcmVVbmxvY2tTbG90UnNwLnByb3RvIlgKH1Zp",
-            "bnRhZ2VNYXJrZXRTdG9yZVVubG9ja1Nsb3RSc3ASDwoHcmV0Y29kZRgBIAEo",
-            "BRISCgpzbG90X2NvdW50GAYgASgNEhAKCHN0b3JlX2lkGAogASgNQiKqAh9X",
-            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiVWaW50YWdlTWFya2V0U3RvcmVVbmxvY2tTbG90UnNwLnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIlgKH1ZpbnRhZ2VNYXJrZXRT",
+            "dG9yZVVubG9ja1Nsb3RSc3ASDwoHcmV0Y29kZRgPIAEoBRIQCghzdG9yZV9p",
+            "ZBgOIAEoDRISCgpzbG90X2NvdW50GAMgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.VintageMarketStoreUnlockSlotRsp), global::Weedwacker.Shared.Network.Proto.VintageMarketStoreUnlockSlotRsp.Parser, new[]{ "Retcode", "SlotCount", "StoreId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.VintageMarketStoreUnlockSlotRsp), global::Weedwacker.Shared.Network.Proto.VintageMarketStoreUnlockSlotRsp.Parser, new[]{ "Retcode", "StoreId", "SlotCount" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 20733
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 23327;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class VintageMarketStoreUnlockSlotRsp : pb::IMessage<VintageMarketStoreUnlockSlotRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public VintageMarketStoreUnlockSlotRsp(VintageMarketStoreUnlockSlotRsp other) : this() {
       retcode_ = other.retcode_;
-      slotCount_ = other.slotCount_;
       storeId_ = other.storeId_;
+      slotCount_ = other.slotCount_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 1;
+    public const int RetcodeFieldNumber = 15;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,20 +105,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "slot_count" field.</summary>
-    public const int SlotCountFieldNumber = 6;
-    private uint slotCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SlotCount {
-      get { return slotCount_; }
-      set {
-        slotCount_ = value;
-      }
-    }
-
     /// <summary>Field number for the "store_id" field.</summary>
-    public const int StoreIdFieldNumber = 10;
+    public const int StoreIdFieldNumber = 14;
     private uint storeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,6 +114,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return storeId_; }
       set {
         storeId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "slot_count" field.</summary>
+    public const int SlotCountFieldNumber = 3;
+    private uint slotCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SlotCount {
+      get { return slotCount_; }
+      set {
+        slotCount_ = value;
       }
     }
 
@@ -141,8 +145,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (Retcode != other.Retcode) return false;
-      if (SlotCount != other.SlotCount) return false;
       if (StoreId != other.StoreId) return false;
+      if (SlotCount != other.SlotCount) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,8 +155,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      if (SlotCount != 0) hash ^= SlotCount.GetHashCode();
       if (StoreId != 0) hash ^= StoreId.GetHashCode();
+      if (SlotCount != 0) hash ^= SlotCount.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -171,17 +175,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Retcode != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(Retcode);
-      }
       if (SlotCount != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(24);
         output.WriteUInt32(SlotCount);
       }
       if (StoreId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(112);
         output.WriteUInt32(StoreId);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -193,17 +197,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Retcode != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(Retcode);
-      }
       if (SlotCount != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(24);
         output.WriteUInt32(SlotCount);
       }
       if (StoreId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(112);
         output.WriteUInt32(StoreId);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -218,11 +222,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
-      if (SlotCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SlotCount);
-      }
       if (StoreId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StoreId);
+      }
+      if (SlotCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SlotCount);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -239,11 +243,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      if (other.SlotCount != 0) {
-        SlotCount = other.SlotCount;
-      }
       if (other.StoreId != 0) {
         StoreId = other.StoreId;
+      }
+      if (other.SlotCount != 0) {
+        SlotCount = other.SlotCount;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -260,16 +264,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 48: {
+          case 24: {
             SlotCount = input.ReadUInt32();
             break;
           }
-          case 80: {
+          case 112: {
             StoreId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -287,16 +291,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 48: {
+          case 24: {
             SlotCount = input.ReadUInt32();
             break;
           }
-          case 80: {
+          case 112: {
             StoreId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            Retcode = input.ReadInt32();
             break;
           }
         }

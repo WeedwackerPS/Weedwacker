@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomePlantSubFieldDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtIb21lUGxhbnRTdWJGaWVsZERhdGEucHJvdG8aGkhvbWVQbGFudEZpZWxk",
-            "U3RhdHVzLnByb3RvIpcBChVIb21lUGxhbnRTdWJGaWVsZERhdGESFgoOZW50",
-            "aXR5X2lkX2xpc3QYDyADKA0SKwoMZmllbGRfc3RhdHVzGA4gASgOMhUuSG9t",
-            "ZVBsYW50RmllbGRTdGF0dXMSFgoOaG9tZV9nYXRoZXJfaWQYCSABKA0SDwoH",
-            "c2VlZF9pZBgIIAEoDRIQCghlbmRfdGltZRgEIAEoB0IiqgIfV2VlZHdhY2tl",
-            "ci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChtIb21lUGxhbnRTdWJGaWVsZERhdGEucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aGkhvbWVQbGFudEZpZWxkU3RhdHVzLnByb3Rv",
+            "IsgBChVIb21lUGxhbnRTdWJGaWVsZERhdGESSwoMZmllbGRfc3RhdHVzGAUg",
+            "ASgOMjUuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5Ib21lUGxh",
+            "bnRGaWVsZFN0YXR1cxIbChNVbmszMzAwX0lFTEhFQUFNQUtHGAcgASgNEhYK",
+            "DmVudGl0eV9pZF9saXN0GAwgAygNEhAKCGVuZF90aW1lGAYgASgHEhsKE1Vu",
+            "azMzMDBfR0FKSExHS0xCQksYCSABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HomePlantFieldStatusReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomePlantSubFieldData), global::Weedwacker.Shared.Network.Proto.HomePlantSubFieldData.Parser, new[]{ "EntityIdList", "FieldStatus", "HomeGatherId", "SeedId", "EndTime" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomePlantSubFieldData), global::Weedwacker.Shared.Network.Proto.HomePlantSubFieldData.Parser, new[]{ "FieldStatus", "Unk3300IELHEAAMAKG", "EntityIdList", "EndTime", "Unk3300GAJHLGKLBBK" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,11 +75,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomePlantSubFieldData(HomePlantSubFieldData other) : this() {
-      entityIdList_ = other.entityIdList_.Clone();
       fieldStatus_ = other.fieldStatus_;
-      homeGatherId_ = other.homeGatherId_;
-      seedId_ = other.seedId_;
+      unk3300IELHEAAMAKG_ = other.unk3300IELHEAAMAKG_;
+      entityIdList_ = other.entityIdList_.Clone();
       endTime_ = other.endTime_;
+      unk3300GAJHLGKLBBK_ = other.unk3300GAJHLGKLBBK_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,19 +89,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new HomePlantSubFieldData(this);
     }
 
-    /// <summary>Field number for the "entity_id_list" field.</summary>
-    public const int EntityIdListFieldNumber = 15;
-    private static readonly pb::FieldCodec<uint> _repeated_entityIdList_codec
-        = pb::FieldCodec.ForUInt32(122);
-    private readonly pbc::RepeatedField<uint> entityIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> EntityIdList {
-      get { return entityIdList_; }
-    }
-
     /// <summary>Field number for the "field_status" field.</summary>
-    public const int FieldStatusFieldNumber = 14;
+    public const int FieldStatusFieldNumber = 5;
     private global::Weedwacker.Shared.Network.Proto.HomePlantFieldStatus fieldStatus_ = global::Weedwacker.Shared.Network.Proto.HomePlantFieldStatus.StatueNone;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -111,32 +101,31 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "home_gather_id" field.</summary>
-    public const int HomeGatherIdFieldNumber = 9;
-    private uint homeGatherId_;
+    /// <summary>Field number for the "Unk3300_IELHEAAMAKG" field.</summary>
+    public const int Unk3300IELHEAAMAKGFieldNumber = 7;
+    private uint unk3300IELHEAAMAKG_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint HomeGatherId {
-      get { return homeGatherId_; }
+    public uint Unk3300IELHEAAMAKG {
+      get { return unk3300IELHEAAMAKG_; }
       set {
-        homeGatherId_ = value;
+        unk3300IELHEAAMAKG_ = value;
       }
     }
 
-    /// <summary>Field number for the "seed_id" field.</summary>
-    public const int SeedIdFieldNumber = 8;
-    private uint seedId_;
+    /// <summary>Field number for the "entity_id_list" field.</summary>
+    public const int EntityIdListFieldNumber = 12;
+    private static readonly pb::FieldCodec<uint> _repeated_entityIdList_codec
+        = pb::FieldCodec.ForUInt32(98);
+    private readonly pbc::RepeatedField<uint> entityIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SeedId {
-      get { return seedId_; }
-      set {
-        seedId_ = value;
-      }
+    public pbc::RepeatedField<uint> EntityIdList {
+      get { return entityIdList_; }
     }
 
     /// <summary>Field number for the "end_time" field.</summary>
-    public const int EndTimeFieldNumber = 4;
+    public const int EndTimeFieldNumber = 6;
     private uint endTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -144,6 +133,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return endTime_; }
       set {
         endTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_GAJHLGKLBBK" field.</summary>
+    public const int Unk3300GAJHLGKLBBKFieldNumber = 9;
+    private uint unk3300GAJHLGKLBBK_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300GAJHLGKLBBK {
+      get { return unk3300GAJHLGKLBBK_; }
+      set {
+        unk3300GAJHLGKLBBK_ = value;
       }
     }
 
@@ -162,11 +163,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!entityIdList_.Equals(other.entityIdList_)) return false;
       if (FieldStatus != other.FieldStatus) return false;
-      if (HomeGatherId != other.HomeGatherId) return false;
-      if (SeedId != other.SeedId) return false;
+      if (Unk3300IELHEAAMAKG != other.Unk3300IELHEAAMAKG) return false;
+      if(!entityIdList_.Equals(other.entityIdList_)) return false;
       if (EndTime != other.EndTime) return false;
+      if (Unk3300GAJHLGKLBBK != other.Unk3300GAJHLGKLBBK) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -174,11 +175,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= entityIdList_.GetHashCode();
       if (FieldStatus != global::Weedwacker.Shared.Network.Proto.HomePlantFieldStatus.StatueNone) hash ^= FieldStatus.GetHashCode();
-      if (HomeGatherId != 0) hash ^= HomeGatherId.GetHashCode();
-      if (SeedId != 0) hash ^= SeedId.GetHashCode();
+      if (Unk3300IELHEAAMAKG != 0) hash ^= Unk3300IELHEAAMAKG.GetHashCode();
+      hash ^= entityIdList_.GetHashCode();
       if (EndTime != 0) hash ^= EndTime.GetHashCode();
+      if (Unk3300GAJHLGKLBBK != 0) hash ^= Unk3300GAJHLGKLBBK.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -197,21 +198,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (FieldStatus != global::Weedwacker.Shared.Network.Proto.HomePlantFieldStatus.StatueNone) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) FieldStatus);
+      }
       if (EndTime != 0) {
-        output.WriteRawTag(37);
+        output.WriteRawTag(53);
         output.WriteFixed32(EndTime);
       }
-      if (SeedId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(SeedId);
+      if (Unk3300IELHEAAMAKG != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300IELHEAAMAKG);
       }
-      if (HomeGatherId != 0) {
+      if (Unk3300GAJHLGKLBBK != 0) {
         output.WriteRawTag(72);
-        output.WriteUInt32(HomeGatherId);
-      }
-      if (FieldStatus != global::Weedwacker.Shared.Network.Proto.HomePlantFieldStatus.StatueNone) {
-        output.WriteRawTag(112);
-        output.WriteEnum((int) FieldStatus);
+        output.WriteUInt32(Unk3300GAJHLGKLBBK);
       }
       entityIdList_.WriteTo(output, _repeated_entityIdList_codec);
       if (_unknownFields != null) {
@@ -224,21 +225,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (FieldStatus != global::Weedwacker.Shared.Network.Proto.HomePlantFieldStatus.StatueNone) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) FieldStatus);
+      }
       if (EndTime != 0) {
-        output.WriteRawTag(37);
+        output.WriteRawTag(53);
         output.WriteFixed32(EndTime);
       }
-      if (SeedId != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(SeedId);
+      if (Unk3300IELHEAAMAKG != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300IELHEAAMAKG);
       }
-      if (HomeGatherId != 0) {
+      if (Unk3300GAJHLGKLBBK != 0) {
         output.WriteRawTag(72);
-        output.WriteUInt32(HomeGatherId);
-      }
-      if (FieldStatus != global::Weedwacker.Shared.Network.Proto.HomePlantFieldStatus.StatueNone) {
-        output.WriteRawTag(112);
-        output.WriteEnum((int) FieldStatus);
+        output.WriteUInt32(Unk3300GAJHLGKLBBK);
       }
       entityIdList_.WriteTo(ref output, _repeated_entityIdList_codec);
       if (_unknownFields != null) {
@@ -251,18 +252,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += entityIdList_.CalculateSize(_repeated_entityIdList_codec);
       if (FieldStatus != global::Weedwacker.Shared.Network.Proto.HomePlantFieldStatus.StatueNone) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) FieldStatus);
       }
-      if (HomeGatherId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(HomeGatherId);
+      if (Unk3300IELHEAAMAKG != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300IELHEAAMAKG);
       }
-      if (SeedId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SeedId);
-      }
+      size += entityIdList_.CalculateSize(_repeated_entityIdList_codec);
       if (EndTime != 0) {
         size += 1 + 4;
+      }
+      if (Unk3300GAJHLGKLBBK != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GAJHLGKLBBK);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -276,18 +277,18 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      entityIdList_.Add(other.entityIdList_);
       if (other.FieldStatus != global::Weedwacker.Shared.Network.Proto.HomePlantFieldStatus.StatueNone) {
         FieldStatus = other.FieldStatus;
       }
-      if (other.HomeGatherId != 0) {
-        HomeGatherId = other.HomeGatherId;
+      if (other.Unk3300IELHEAAMAKG != 0) {
+        Unk3300IELHEAAMAKG = other.Unk3300IELHEAAMAKG;
       }
-      if (other.SeedId != 0) {
-        SeedId = other.SeedId;
-      }
+      entityIdList_.Add(other.entityIdList_);
       if (other.EndTime != 0) {
         EndTime = other.EndTime;
+      }
+      if (other.Unk3300GAJHLGKLBBK != 0) {
+        Unk3300GAJHLGKLBBK = other.Unk3300GAJHLGKLBBK;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -304,24 +305,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 37: {
-            EndTime = input.ReadFixed32();
-            break;
-          }
-          case 64: {
-            SeedId = input.ReadUInt32();
-            break;
-          }
-          case 72: {
-            HomeGatherId = input.ReadUInt32();
-            break;
-          }
-          case 112: {
+          case 40: {
             FieldStatus = (global::Weedwacker.Shared.Network.Proto.HomePlantFieldStatus) input.ReadEnum();
             break;
           }
-          case 122:
-          case 120: {
+          case 53: {
+            EndTime = input.ReadFixed32();
+            break;
+          }
+          case 56: {
+            Unk3300IELHEAAMAKG = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Unk3300GAJHLGKLBBK = input.ReadUInt32();
+            break;
+          }
+          case 98:
+          case 96: {
             entityIdList_.AddEntriesFrom(input, _repeated_entityIdList_codec);
             break;
           }
@@ -340,24 +341,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 37: {
-            EndTime = input.ReadFixed32();
-            break;
-          }
-          case 64: {
-            SeedId = input.ReadUInt32();
-            break;
-          }
-          case 72: {
-            HomeGatherId = input.ReadUInt32();
-            break;
-          }
-          case 112: {
+          case 40: {
             FieldStatus = (global::Weedwacker.Shared.Network.Proto.HomePlantFieldStatus) input.ReadEnum();
             break;
           }
-          case 122:
-          case 120: {
+          case 53: {
+            EndTime = input.ReadFixed32();
+            break;
+          }
+          case 56: {
+            Unk3300IELHEAAMAKG = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Unk3300GAJHLGKLBBK = input.ReadUInt32();
+            break;
+          }
+          case 98:
+          case 96: {
             entityIdList_.AddEntriesFrom(ref input, _repeated_entityIdList_codec);
             break;
           }

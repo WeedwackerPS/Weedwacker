@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static IrodoriChessMonsterInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1Jcm9kb3JpQ2hlc3NNb25zdGVySW5mby5wcm90byJmChdJcm9kb3JpQ2hl",
-            "c3NNb25zdGVySW5mbxIUCgxncmFudF9wb2ludHMYBiABKA0SDQoFbGV2ZWwY",
-            "DSABKA0SEgoKbW9uc3Rlcl9pZBgOIAEoDRISCgphZmZpeF9saXN0GAsgAygN",
-            "QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch1Jcm9kb3JpQ2hlc3NNb25zdGVySW5mby5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90byJmChdJcm9kb3JpQ2hlc3NNb25zdGVySW5m",
+            "bxIUCgxncmFudF9wb2ludHMYByABKA0SEgoKbW9uc3Rlcl9pZBgNIAEoDRIN",
+            "CgVsZXZlbBgLIAEoDRISCgphZmZpeF9saXN0GAogAygNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.IrodoriChessMonsterInfo), global::Weedwacker.Shared.Network.Proto.IrodoriChessMonsterInfo.Parser, new[]{ "GrantPoints", "Level", "MonsterId", "AffixList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.IrodoriChessMonsterInfo), global::Weedwacker.Shared.Network.Proto.IrodoriChessMonsterInfo.Parser, new[]{ "GrantPoints", "MonsterId", "Level", "AffixList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,8 +73,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public IrodoriChessMonsterInfo(IrodoriChessMonsterInfo other) : this() {
       grantPoints_ = other.grantPoints_;
-      level_ = other.level_;
       monsterId_ = other.monsterId_;
+      level_ = other.level_;
       affixList_ = other.affixList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -86,7 +86,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "grant_points" field.</summary>
-    public const int GrantPointsFieldNumber = 6;
+    public const int GrantPointsFieldNumber = 7;
     private uint grantPoints_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -97,20 +97,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "level" field.</summary>
-    public const int LevelFieldNumber = 13;
-    private uint level_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Level {
-      get { return level_; }
-      set {
-        level_ = value;
-      }
-    }
-
     /// <summary>Field number for the "monster_id" field.</summary>
-    public const int MonsterIdFieldNumber = 14;
+    public const int MonsterIdFieldNumber = 13;
     private uint monsterId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -121,10 +109,22 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "level" field.</summary>
+    public const int LevelFieldNumber = 11;
+    private uint level_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Level {
+      get { return level_; }
+      set {
+        level_ = value;
+      }
+    }
+
     /// <summary>Field number for the "affix_list" field.</summary>
-    public const int AffixListFieldNumber = 11;
+    public const int AffixListFieldNumber = 10;
     private static readonly pb::FieldCodec<uint> _repeated_affixList_codec
-        = pb::FieldCodec.ForUInt32(90);
+        = pb::FieldCodec.ForUInt32(82);
     private readonly pbc::RepeatedField<uint> affixList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -148,8 +148,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (GrantPoints != other.GrantPoints) return false;
-      if (Level != other.Level) return false;
       if (MonsterId != other.MonsterId) return false;
+      if (Level != other.Level) return false;
       if(!affixList_.Equals(other.affixList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -159,8 +159,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (GrantPoints != 0) hash ^= GrantPoints.GetHashCode();
-      if (Level != 0) hash ^= Level.GetHashCode();
       if (MonsterId != 0) hash ^= MonsterId.GetHashCode();
+      if (Level != 0) hash ^= Level.GetHashCode();
       hash ^= affixList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -181,16 +181,16 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (GrantPoints != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteUInt32(GrantPoints);
       }
       affixList_.WriteTo(output, _repeated_affixList_codec);
       if (Level != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(88);
         output.WriteUInt32(Level);
       }
       if (MonsterId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(104);
         output.WriteUInt32(MonsterId);
       }
       if (_unknownFields != null) {
@@ -204,16 +204,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (GrantPoints != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteUInt32(GrantPoints);
       }
       affixList_.WriteTo(ref output, _repeated_affixList_codec);
       if (Level != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(88);
         output.WriteUInt32(Level);
       }
       if (MonsterId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(104);
         output.WriteUInt32(MonsterId);
       }
       if (_unknownFields != null) {
@@ -229,11 +229,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (GrantPoints != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GrantPoints);
       }
-      if (Level != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Level);
-      }
       if (MonsterId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MonsterId);
+      }
+      if (Level != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Level);
       }
       size += affixList_.CalculateSize(_repeated_affixList_codec);
       if (_unknownFields != null) {
@@ -251,11 +251,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.GrantPoints != 0) {
         GrantPoints = other.GrantPoints;
       }
-      if (other.Level != 0) {
-        Level = other.Level;
-      }
       if (other.MonsterId != 0) {
         MonsterId = other.MonsterId;
+      }
+      if (other.Level != 0) {
+        Level = other.Level;
       }
       affixList_.Add(other.affixList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -273,20 +273,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
+          case 56: {
             GrantPoints = input.ReadUInt32();
             break;
           }
-          case 90:
-          case 88: {
+          case 82:
+          case 80: {
             affixList_.AddEntriesFrom(input, _repeated_affixList_codec);
             break;
           }
-          case 104: {
+          case 88: {
             Level = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 104: {
             MonsterId = input.ReadUInt32();
             break;
           }
@@ -305,20 +305,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
+          case 56: {
             GrantPoints = input.ReadUInt32();
             break;
           }
-          case 90:
-          case 88: {
+          case 82:
+          case 80: {
             affixList_.AddEntriesFrom(ref input, _repeated_affixList_codec);
             break;
           }
-          case 104: {
+          case 88: {
             Level = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 104: {
             MonsterId = input.ReadUInt32();
             break;
           }

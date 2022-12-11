@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static WinterCampTakeBattleRewardRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNXaW50ZXJDYW1wVGFrZUJhdHRsZVJld2FyZFJzcC5wcm90byI8Ch1XaW50",
-            "ZXJDYW1wVGFrZUJhdHRsZVJld2FyZFJzcBIPCgdyZXRjb2RlGAYgASgFEgoK",
-            "AmlkGA8gASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "CiNXaW50ZXJDYW1wVGFrZUJhdHRsZVJld2FyZFJzcC5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90byI8Ch1XaW50ZXJDYW1wVGFrZUJh",
+            "dHRsZVJld2FyZFJzcBIPCgdyZXRjb2RlGAYgASgFEgoKAmlkGA0gASgNYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8153
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8310;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class WinterCampTakeBattleRewardRsp : pb::IMessage<WinterCampTakeBattleRewardRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -101,7 +105,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 15;
+    public const int IdFieldNumber = 13;
     private uint id_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -161,7 +165,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteInt32(Retcode);
       }
       if (Id != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(104);
         output.WriteUInt32(Id);
       }
       if (_unknownFields != null) {
@@ -179,7 +183,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteInt32(Retcode);
       }
       if (Id != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(104);
         output.WriteUInt32(Id);
       }
       if (_unknownFields != null) {
@@ -235,7 +239,7 @@ namespace Weedwacker.Shared.Network.Proto {
             Retcode = input.ReadInt32();
             break;
           }
-          case 120: {
+          case 104: {
             Id = input.ReadUInt32();
             break;
           }
@@ -258,7 +262,7 @@ namespace Weedwacker.Shared.Network.Proto {
             Retcode = input.ReadInt32();
             break;
           }
-          case 120: {
+          case 104: {
             Id = input.ReadUInt32();
             break;
           }

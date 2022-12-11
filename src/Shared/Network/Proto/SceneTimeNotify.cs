@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneTimeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVTY2VuZVRpbWVOb3RpZnkucHJvdG8iSgoPU2NlbmVUaW1lTm90aWZ5EhIK",
-            "CnNjZW5lX3RpbWUYDiABKAQSEQoJaXNfcGF1c2VkGAEgASgIEhAKCHNjZW5l",
-            "X2lkGAcgASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "ChVTY2VuZVRpbWVOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8iSgoPU2NlbmVUaW1lTm90aWZ5EhIKCnNjZW5lX3RpbWUY",
+            "CiABKAQSEAoIc2NlbmVfaWQYDiABKA0SEQoJaXNfcGF1c2VkGAUgASgIYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneTimeNotify), global::Weedwacker.Shared.Network.Proto.SceneTimeNotify.Parser, new[]{ "SceneTime", "IsPaused", "SceneId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneTimeNotify), global::Weedwacker.Shared.Network.Proto.SceneTimeNotify.Parser, new[]{ "SceneTime", "SceneId", "IsPaused" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 245
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 296;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class SceneTimeNotify : pb::IMessage<SceneTimeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SceneTimeNotify(SceneTimeNotify other) : this() {
       sceneTime_ = other.sceneTime_;
-      isPaused_ = other.isPaused_;
       sceneId_ = other.sceneId_;
+      isPaused_ = other.isPaused_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "scene_time" field.</summary>
-    public const int SceneTimeFieldNumber = 14;
+    public const int SceneTimeFieldNumber = 10;
     private ulong sceneTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,20 +105,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_paused" field.</summary>
-    public const int IsPausedFieldNumber = 1;
-    private bool isPaused_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsPaused {
-      get { return isPaused_; }
-      set {
-        isPaused_ = value;
-      }
-    }
-
     /// <summary>Field number for the "scene_id" field.</summary>
-    public const int SceneIdFieldNumber = 7;
+    public const int SceneIdFieldNumber = 14;
     private uint sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,6 +114,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return sceneId_; }
       set {
         sceneId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_paused" field.</summary>
+    public const int IsPausedFieldNumber = 5;
+    private bool isPaused_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsPaused {
+      get { return isPaused_; }
+      set {
+        isPaused_ = value;
       }
     }
 
@@ -141,8 +145,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (SceneTime != other.SceneTime) return false;
-      if (IsPaused != other.IsPaused) return false;
       if (SceneId != other.SceneId) return false;
+      if (IsPaused != other.IsPaused) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,8 +155,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (SceneTime != 0UL) hash ^= SceneTime.GetHashCode();
-      if (IsPaused != false) hash ^= IsPaused.GetHashCode();
       if (SceneId != 0) hash ^= SceneId.GetHashCode();
+      if (IsPaused != false) hash ^= IsPaused.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,16 +176,16 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (IsPaused != false) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(40);
         output.WriteBool(IsPaused);
       }
-      if (SceneId != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(SceneId);
-      }
       if (SceneTime != 0UL) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(80);
         output.WriteUInt64(SceneTime);
+      }
+      if (SceneId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(SceneId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -194,16 +198,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (IsPaused != false) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(40);
         output.WriteBool(IsPaused);
       }
-      if (SceneId != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(SceneId);
-      }
       if (SceneTime != 0UL) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(80);
         output.WriteUInt64(SceneTime);
+      }
+      if (SceneId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(SceneId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -218,11 +222,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (SceneTime != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(SceneTime);
       }
-      if (IsPaused != false) {
-        size += 1 + 1;
-      }
       if (SceneId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
+      }
+      if (IsPaused != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -239,11 +243,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.SceneTime != 0UL) {
         SceneTime = other.SceneTime;
       }
-      if (other.IsPaused != false) {
-        IsPaused = other.IsPaused;
-      }
       if (other.SceneId != 0) {
         SceneId = other.SceneId;
+      }
+      if (other.IsPaused != false) {
+        IsPaused = other.IsPaused;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -260,16 +264,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 40: {
             IsPaused = input.ReadBool();
             break;
           }
-          case 56: {
-            SceneId = input.ReadUInt32();
+          case 80: {
+            SceneTime = input.ReadUInt64();
             break;
           }
           case 112: {
-            SceneTime = input.ReadUInt64();
+            SceneId = input.ReadUInt32();
             break;
           }
         }
@@ -287,16 +291,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 40: {
             IsPaused = input.ReadBool();
             break;
           }
-          case 56: {
-            SceneId = input.ReadUInt32();
+          case 80: {
+            SceneTime = input.ReadUInt64();
             break;
           }
           case 112: {
-            SceneTime = input.ReadUInt64();
+            SceneId = input.ReadUInt32();
             break;
           }
         }

@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static AbilityMetaSetPoseParameterReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFBYmlsaXR5TWV0YVNldFBvc2VQYXJhbWV0ZXIucHJvdG8aJEFuaW1hdG9y",
-            "UGFyYW1ldGVyVmFsdWVJbmZvUGFpci5wcm90byJNChtBYmlsaXR5TWV0YVNl",
-            "dFBvc2VQYXJhbWV0ZXISLgoFdmFsdWUYBiABKAsyHy5BbmltYXRvclBhcmFt",
-            "ZXRlclZhbHVlSW5mb1BhaXJCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
-            "cmsuUHJvdG9iBnByb3RvMw=="));
+            "CiFBYmlsaXR5TWV0YVNldFBvc2VQYXJhbWV0ZXIucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aJEFuaW1hdG9yUGFyYW1ldGVyVmFs",
+            "dWVJbmZvUGFpci5wcm90byJtChtBYmlsaXR5TWV0YVNldFBvc2VQYXJhbWV0",
+            "ZXISTgoFdmFsdWUYByABKAsyPy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvLkFuaW1hdG9yUGFyYW1ldGVyVmFsdWVJbmZvUGFpcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AnimatorParameterValueInfoPairReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "value" field.</summary>
-    public const int ValueFieldNumber = 6;
+    public const int ValueFieldNumber = 7;
     private global::Weedwacker.Shared.Network.Proto.AnimatorParameterValueInfoPair value_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -138,7 +138,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (value_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(58);
         output.WriteMessage(Value);
       }
       if (_unknownFields != null) {
@@ -152,7 +152,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (value_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(58);
         output.WriteMessage(Value);
       }
       if (_unknownFields != null) {
@@ -201,7 +201,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 50: {
+          case 58: {
             if (value_ == null) {
               Value = new global::Weedwacker.Shared.Network.Proto.AnimatorParameterValueInfoPair();
             }
@@ -223,7 +223,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 50: {
+          case 58: {
             if (value_ == null) {
               Value = new global::Weedwacker.Shared.Network.Proto.AnimatorParameterValueInfoPair();
             }

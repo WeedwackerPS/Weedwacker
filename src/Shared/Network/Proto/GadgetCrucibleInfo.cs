@@ -24,10 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static GadgetCrucibleInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhHYWRnZXRDcnVjaWJsZUluZm8ucHJvdG8iQgoSR2FkZ2V0Q3J1Y2libGVJ",
-            "bmZvEhIKCm1wX3BsYXlfaWQYASABKA0SGAoQcHJlcGFyZV9lbmRfdGltZRgC",
-            "IAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJv",
-            "dG8z"));
+            "ChhHYWRnZXRDcnVjaWJsZUluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8iQgoSR2FkZ2V0Q3J1Y2libGVJbmZvEhIKCm1wX3Bs",
+            "YXlfaWQYASABKA0SGAoQcHJlcGFyZV9lbmRfdGltZRgCIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

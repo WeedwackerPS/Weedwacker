@@ -24,14 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static FishCastRodReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRGaXNoQ2FzdFJvZFJlcS5wcm90bxoMVmVjdG9yLnByb3RvIl4KDkZpc2hD",
-            "YXN0Um9kUmVxEg8KB2JhaXRfaWQYDiABKA0SDgoGcm9kX2lkGAQgASgNEhUK",
-            "DXJvZF9lbnRpdHlfaWQYByABKA0SFAoDcG9zGAwgASgLMgcuVmVjdG9yQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChRGaXNoQ2FzdFJvZFJlcS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90bxoMVmVjdG9yLnByb3RvIpcBCg5GaXNoQ2FzdFJvZFJlcRIb",
+            "ChNVbmszMzAwX1BKRkhFRERGT0JNGAcgASgNEhsKE1VuazMzMDBfSUNBTEVJ",
+            "QkpDREEYDSABKA0SNAoDcG9zGAsgASgLMicuV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90by5WZWN0b3ISFQoNcm9kX2VudGl0eV9pZBgIIAEoDWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FishCastRodReq), global::Weedwacker.Shared.Network.Proto.FishCastRodReq.Parser, new[]{ "BaitId", "RodId", "RodEntityId", "Pos" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FishCastRodReq), global::Weedwacker.Shared.Network.Proto.FishCastRodReq.Parser, new[]{ "Unk3300PJFHEDDFOBM", "Unk3300ICALEIBJCDA", "Pos", "RodEntityId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5802
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5827;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class FishCastRodReq : pb::IMessage<FishCastRodReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,10 +84,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FishCastRodReq(FishCastRodReq other) : this() {
-      baitId_ = other.baitId_;
-      rodId_ = other.rodId_;
-      rodEntityId_ = other.rodEntityId_;
+      unk3300PJFHEDDFOBM_ = other.unk3300PJFHEDDFOBM_;
+      unk3300ICALEIBJCDA_ = other.unk3300ICALEIBJCDA_;
       pos_ = other.pos_ != null ? other.pos_.Clone() : null;
+      rodEntityId_ = other.rodEntityId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,44 +97,32 @@ namespace Weedwacker.Shared.Network.Proto {
       return new FishCastRodReq(this);
     }
 
-    /// <summary>Field number for the "bait_id" field.</summary>
-    public const int BaitIdFieldNumber = 14;
-    private uint baitId_;
+    /// <summary>Field number for the "Unk3300_PJFHEDDFOBM" field.</summary>
+    public const int Unk3300PJFHEDDFOBMFieldNumber = 7;
+    private uint unk3300PJFHEDDFOBM_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint BaitId {
-      get { return baitId_; }
+    public uint Unk3300PJFHEDDFOBM {
+      get { return unk3300PJFHEDDFOBM_; }
       set {
-        baitId_ = value;
+        unk3300PJFHEDDFOBM_ = value;
       }
     }
 
-    /// <summary>Field number for the "rod_id" field.</summary>
-    public const int RodIdFieldNumber = 4;
-    private uint rodId_;
+    /// <summary>Field number for the "Unk3300_ICALEIBJCDA" field.</summary>
+    public const int Unk3300ICALEIBJCDAFieldNumber = 13;
+    private uint unk3300ICALEIBJCDA_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RodId {
-      get { return rodId_; }
+    public uint Unk3300ICALEIBJCDA {
+      get { return unk3300ICALEIBJCDA_; }
       set {
-        rodId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "rod_entity_id" field.</summary>
-    public const int RodEntityIdFieldNumber = 7;
-    private uint rodEntityId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RodEntityId {
-      get { return rodEntityId_; }
-      set {
-        rodEntityId_ = value;
+        unk3300ICALEIBJCDA_ = value;
       }
     }
 
     /// <summary>Field number for the "pos" field.</summary>
-    public const int PosFieldNumber = 12;
+    public const int PosFieldNumber = 11;
     private global::Weedwacker.Shared.Network.Proto.Vector pos_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -136,6 +130,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return pos_; }
       set {
         pos_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "rod_entity_id" field.</summary>
+    public const int RodEntityIdFieldNumber = 8;
+    private uint rodEntityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint RodEntityId {
+      get { return rodEntityId_; }
+      set {
+        rodEntityId_ = value;
       }
     }
 
@@ -154,10 +160,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (BaitId != other.BaitId) return false;
-      if (RodId != other.RodId) return false;
-      if (RodEntityId != other.RodEntityId) return false;
+      if (Unk3300PJFHEDDFOBM != other.Unk3300PJFHEDDFOBM) return false;
+      if (Unk3300ICALEIBJCDA != other.Unk3300ICALEIBJCDA) return false;
       if (!object.Equals(Pos, other.Pos)) return false;
+      if (RodEntityId != other.RodEntityId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -165,10 +171,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (BaitId != 0) hash ^= BaitId.GetHashCode();
-      if (RodId != 0) hash ^= RodId.GetHashCode();
-      if (RodEntityId != 0) hash ^= RodEntityId.GetHashCode();
+      if (Unk3300PJFHEDDFOBM != 0) hash ^= Unk3300PJFHEDDFOBM.GetHashCode();
+      if (Unk3300ICALEIBJCDA != 0) hash ^= Unk3300ICALEIBJCDA.GetHashCode();
       if (pos_ != null) hash ^= Pos.GetHashCode();
+      if (RodEntityId != 0) hash ^= RodEntityId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -187,21 +193,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (RodId != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(RodId);
+      if (Unk3300PJFHEDDFOBM != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300PJFHEDDFOBM);
       }
       if (RodEntityId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(64);
         output.WriteUInt32(RodEntityId);
       }
       if (pos_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(90);
         output.WriteMessage(Pos);
       }
-      if (BaitId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(BaitId);
+      if (Unk3300ICALEIBJCDA != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300ICALEIBJCDA);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -213,21 +219,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (RodId != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(RodId);
+      if (Unk3300PJFHEDDFOBM != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300PJFHEDDFOBM);
       }
       if (RodEntityId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(64);
         output.WriteUInt32(RodEntityId);
       }
       if (pos_ != null) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(90);
         output.WriteMessage(Pos);
       }
-      if (BaitId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(BaitId);
+      if (Unk3300ICALEIBJCDA != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300ICALEIBJCDA);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -239,17 +245,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (BaitId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BaitId);
+      if (Unk3300PJFHEDDFOBM != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PJFHEDDFOBM);
       }
-      if (RodId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RodId);
-      }
-      if (RodEntityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RodEntityId);
+      if (Unk3300ICALEIBJCDA != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300ICALEIBJCDA);
       }
       if (pos_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pos);
+      }
+      if (RodEntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RodEntityId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -263,20 +269,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.BaitId != 0) {
-        BaitId = other.BaitId;
+      if (other.Unk3300PJFHEDDFOBM != 0) {
+        Unk3300PJFHEDDFOBM = other.Unk3300PJFHEDDFOBM;
       }
-      if (other.RodId != 0) {
-        RodId = other.RodId;
-      }
-      if (other.RodEntityId != 0) {
-        RodEntityId = other.RodEntityId;
+      if (other.Unk3300ICALEIBJCDA != 0) {
+        Unk3300ICALEIBJCDA = other.Unk3300ICALEIBJCDA;
       }
       if (other.pos_ != null) {
         if (pos_ == null) {
           Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
         }
         Pos.MergeFrom(other.Pos);
+      }
+      if (other.RodEntityId != 0) {
+        RodEntityId = other.RodEntityId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -293,23 +299,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            RodId = input.ReadUInt32();
+          case 56: {
+            Unk3300PJFHEDDFOBM = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 64: {
             RodEntityId = input.ReadUInt32();
             break;
           }
-          case 98: {
+          case 90: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Pos);
             break;
           }
-          case 112: {
-            BaitId = input.ReadUInt32();
+          case 104: {
+            Unk3300ICALEIBJCDA = input.ReadUInt32();
             break;
           }
         }
@@ -327,23 +333,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            RodId = input.ReadUInt32();
+          case 56: {
+            Unk3300PJFHEDDFOBM = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 64: {
             RodEntityId = input.ReadUInt32();
             break;
           }
-          case 98: {
+          case 90: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Pos);
             break;
           }
-          case 112: {
-            BaitId = input.ReadUInt32();
+          case 104: {
+            Unk3300ICALEIBJCDA = input.ReadUInt32();
             break;
           }
         }

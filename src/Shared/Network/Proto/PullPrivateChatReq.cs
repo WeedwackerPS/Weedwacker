@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static PullPrivateChatReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhQdWxsUHJpdmF0ZUNoYXRSZXEucHJvdG8iUQoSUHVsbFByaXZhdGVDaGF0",
-            "UmVxEhIKCnRhcmdldF91aWQYBSABKA0SEAoIcHVsbF9udW0YByABKA0SFQoN",
-            "ZnJvbV9zZXF1ZW5jZRgMIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
-            "d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChhQdWxsUHJpdmF0ZUNoYXRSZXEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8iUQoSUHVsbFByaXZhdGVDaGF0UmVxEhUKDWZyb21f",
+            "c2VxdWVuY2UYBSABKA0SEgoKdGFyZ2V0X3VpZBgMIAEoDRIQCghwdWxsX251",
+            "bRgLIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PullPrivateChatReq), global::Weedwacker.Shared.Network.Proto.PullPrivateChatReq.Parser, new[]{ "TargetUid", "PullNum", "FromSequence" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PullPrivateChatReq), global::Weedwacker.Shared.Network.Proto.PullPrivateChatReq.Parser, new[]{ "FromSequence", "TargetUid", "PullNum" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4971
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4993;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class PullPrivateChatReq : pb::IMessage<PullPrivateChatReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +82,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PullPrivateChatReq(PullPrivateChatReq other) : this() {
+      fromSequence_ = other.fromSequence_;
       targetUid_ = other.targetUid_;
       pullNum_ = other.pullNum_;
-      fromSequence_ = other.fromSequence_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,8 +94,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PullPrivateChatReq(this);
     }
 
+    /// <summary>Field number for the "from_sequence" field.</summary>
+    public const int FromSequenceFieldNumber = 5;
+    private uint fromSequence_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint FromSequence {
+      get { return fromSequence_; }
+      set {
+        fromSequence_ = value;
+      }
+    }
+
     /// <summary>Field number for the "target_uid" field.</summary>
-    public const int TargetUidFieldNumber = 5;
+    public const int TargetUidFieldNumber = 12;
     private uint targetUid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,7 +119,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "pull_num" field.</summary>
-    public const int PullNumFieldNumber = 7;
+    public const int PullNumFieldNumber = 11;
     private uint pullNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -111,18 +127,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return pullNum_; }
       set {
         pullNum_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "from_sequence" field.</summary>
-    public const int FromSequenceFieldNumber = 12;
-    private uint fromSequence_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FromSequence {
-      get { return fromSequence_; }
-      set {
-        fromSequence_ = value;
       }
     }
 
@@ -141,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (FromSequence != other.FromSequence) return false;
       if (TargetUid != other.TargetUid) return false;
       if (PullNum != other.PullNum) return false;
-      if (FromSequence != other.FromSequence) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,9 +155,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (FromSequence != 0) hash ^= FromSequence.GetHashCode();
       if (TargetUid != 0) hash ^= TargetUid.GetHashCode();
       if (PullNum != 0) hash ^= PullNum.GetHashCode();
-      if (FromSequence != 0) hash ^= FromSequence.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,17 +176,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (TargetUid != 0) {
+      if (FromSequence != 0) {
         output.WriteRawTag(40);
-        output.WriteUInt32(TargetUid);
+        output.WriteUInt32(FromSequence);
       }
       if (PullNum != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(88);
         output.WriteUInt32(PullNum);
       }
-      if (FromSequence != 0) {
+      if (TargetUid != 0) {
         output.WriteRawTag(96);
-        output.WriteUInt32(FromSequence);
+        output.WriteUInt32(TargetUid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -194,17 +198,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (TargetUid != 0) {
+      if (FromSequence != 0) {
         output.WriteRawTag(40);
-        output.WriteUInt32(TargetUid);
+        output.WriteUInt32(FromSequence);
       }
       if (PullNum != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(88);
         output.WriteUInt32(PullNum);
       }
-      if (FromSequence != 0) {
+      if (TargetUid != 0) {
         output.WriteRawTag(96);
-        output.WriteUInt32(FromSequence);
+        output.WriteUInt32(TargetUid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -216,14 +220,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (FromSequence != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FromSequence);
+      }
       if (TargetUid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetUid);
       }
       if (PullNum != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PullNum);
-      }
-      if (FromSequence != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FromSequence);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -237,14 +241,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.FromSequence != 0) {
+        FromSequence = other.FromSequence;
+      }
       if (other.TargetUid != 0) {
         TargetUid = other.TargetUid;
       }
       if (other.PullNum != 0) {
         PullNum = other.PullNum;
-      }
-      if (other.FromSequence != 0) {
-        FromSequence = other.FromSequence;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -262,15 +266,15 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 40: {
-            TargetUid = input.ReadUInt32();
+            FromSequence = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 88: {
             PullNum = input.ReadUInt32();
             break;
           }
           case 96: {
-            FromSequence = input.ReadUInt32();
+            TargetUid = input.ReadUInt32();
             break;
           }
         }
@@ -289,15 +293,15 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 40: {
-            TargetUid = input.ReadUInt32();
+            FromSequence = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 88: {
             PullNum = input.ReadUInt32();
             break;
           }
           case 96: {
-            FromSequence = input.ReadUInt32();
+            TargetUid = input.ReadUInt32();
             break;
           }
         }

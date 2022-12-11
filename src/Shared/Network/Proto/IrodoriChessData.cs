@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static IrodoriChessDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZJcm9kb3JpQ2hlc3NEYXRhLnByb3RvGhtJcm9kb3JpQ2hlc3NMZXZlbERh",
-            "dGEucHJvdG8iVAoQSXJvZG9yaUNoZXNzRGF0YRIPCgdpc19vcGVuGAggASgI",
-            "Ei8KD2xldmVsX2RhdGFfbGlzdBgBIAMoCzIWLklyb2RvcmlDaGVzc0xldmVs",
-            "RGF0YUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJv",
-            "dG8z"));
+            "ChZJcm9kb3JpQ2hlc3NEYXRhLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvGhtJcm9kb3JpQ2hlc3NMZXZlbERhdGEucHJvdG8idAoQ",
+            "SXJvZG9yaUNoZXNzRGF0YRIPCgdpc19vcGVuGAggASgIEk8KD2xldmVsX2Rh",
+            "dGFfbGlzdBgNIAMoCzI2LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
+            "dG8uSXJvZG9yaUNoZXNzTGV2ZWxEYXRhYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.IrodoriChessLevelDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -97,9 +97,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "level_data_list" field.</summary>
-    public const int LevelDataListFieldNumber = 1;
+    public const int LevelDataListFieldNumber = 13;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.IrodoriChessLevelData> _repeated_levelDataList_codec
-        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.IrodoriChessLevelData.Parser);
+        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.IrodoriChessLevelData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.IrodoriChessLevelData> levelDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.IrodoriChessLevelData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -151,11 +151,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      levelDataList_.WriteTo(output, _repeated_levelDataList_codec);
       if (IsOpen != false) {
         output.WriteRawTag(64);
         output.WriteBool(IsOpen);
       }
+      levelDataList_.WriteTo(output, _repeated_levelDataList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -166,11 +166,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      levelDataList_.WriteTo(ref output, _repeated_levelDataList_codec);
       if (IsOpen != false) {
         output.WriteRawTag(64);
         output.WriteBool(IsOpen);
       }
+      levelDataList_.WriteTo(ref output, _repeated_levelDataList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -216,12 +216,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            levelDataList_.AddEntriesFrom(input, _repeated_levelDataList_codec);
-            break;
-          }
           case 64: {
             IsOpen = input.ReadBool();
+            break;
+          }
+          case 106: {
+            levelDataList_.AddEntriesFrom(input, _repeated_levelDataList_codec);
             break;
           }
         }
@@ -239,12 +239,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            levelDataList_.AddEntriesFrom(ref input, _repeated_levelDataList_codec);
-            break;
-          }
           case 64: {
             IsOpen = input.ReadBool();
+            break;
+          }
+          case 106: {
+            levelDataList_.AddEntriesFrom(ref input, _repeated_levelDataList_codec);
             break;
           }
         }

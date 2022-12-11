@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static ClientInputTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVDbGllbnRJbnB1dFR5cGUucHJvdG8qlAEKD0NsaWVudElucHV0VHlwZRIa",
-            "ChZDTElFTlRfSU5QVVRfVFlQRV9OT05FEAASIwofQ0xJRU5UX0lOUFVUX1RZ",
-            "UEVfS0VZQk9SRF9NT1VTRRABEh0KGUNMSUVOVF9JTlBVVF9UWVBFX0dBTUVQ",
-            "QUQQAhIhCh1DTElFTlRfSU5QVVRfVFlQRV9UT1VDSF9QQU5FTBADQiKqAh9X",
-            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChVDbGllbnRJbnB1dFR5cGUucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8qlQEKD0NsaWVudElucHV0VHlwZRIaChZDTElFTlRfSU5Q",
+            "VVRfVFlQRV9OT05FEAASJAogQ0xJRU5UX0lOUFVUX1RZUEVfS0VZQk9BUkRf",
+            "TU9VU0UQARIdChlDTElFTlRfSU5QVVRfVFlQRV9HQU1FUEFEEAISIQodQ0xJ",
+            "RU5UX0lOUFVUX1RZUEVfVE9VQ0hfUEFORUwQA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Weedwacker.Shared.Network.Proto.ClientInputType), }, null, null));
@@ -39,7 +39,7 @@ namespace Weedwacker.Shared.Network.Proto {
   #region Enums
   public enum ClientInputType {
     [pbr::OriginalName("CLIENT_INPUT_TYPE_NONE")] None = 0,
-    [pbr::OriginalName("CLIENT_INPUT_TYPE_KEYBORD_MOUSE")] KeybordMouse = 1,
+    [pbr::OriginalName("CLIENT_INPUT_TYPE_KEYBOARD_MOUSE")] KeyboardMouse = 1,
     [pbr::OriginalName("CLIENT_INPUT_TYPE_GAMEPAD")] Gamepad = 2,
     [pbr::OriginalName("CLIENT_INPUT_TYPE_TOUCH_PANEL")] TouchPanel = 3,
   }

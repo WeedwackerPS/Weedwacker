@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static FoundationInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRGb3VuZGF0aW9uSW5mby5wcm90bxoWRm91bmRhdGlvblN0YXR1cy5wcm90",
-            "byJ/Cg5Gb3VuZGF0aW9uSW5mbxIhCgZzdGF0dXMYASABKA4yES5Gb3VuZGF0",
-            "aW9uU3RhdHVzEhAKCHVpZF9saXN0GAIgAygNEhsKE2N1cnJlbnRfYnVpbGRp",
-            "bmdfaWQYAyABKA0SGwoTYmVnaW5fYnVpbGRfdGltZV9tcxgEIAEoDUIiqgIf",
-            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChRGb3VuZGF0aW9uSW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90bxoWRm91bmRhdGlvblN0YXR1cy5wcm90byKZAQoORm91bmRh",
+            "dGlvbkluZm8SQQoGc3RhdHVzGAEgASgOMjEuV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90by5Gb3VuZGF0aW9uU3RhdHVzEhAKCHVpZF9saXN0GAIg",
+            "AygNEhsKE2N1cnJlbnRfYnVpbGRpbmdfaWQYAyABKA0SFQoNbG9ja2VkX2J5",
+            "X3VpZBgEIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FoundationStatusReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FoundationInfo), global::Weedwacker.Shared.Network.Proto.FoundationInfo.Parser, new[]{ "Status", "UidList", "CurrentBuildingId", "BeginBuildTimeMs" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FoundationInfo), global::Weedwacker.Shared.Network.Proto.FoundationInfo.Parser, new[]{ "Status", "UidList", "CurrentBuildingId", "LockedByUid" }, null, null, null, null)
           }));
     }
     #endregion
@@ -76,7 +77,7 @@ namespace Weedwacker.Shared.Network.Proto {
       status_ = other.status_;
       uidList_ = other.uidList_.Clone();
       currentBuildingId_ = other.currentBuildingId_;
-      beginBuildTimeMs_ = other.beginBuildTimeMs_;
+      lockedByUid_ = other.lockedByUid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -121,15 +122,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "begin_build_time_ms" field.</summary>
-    public const int BeginBuildTimeMsFieldNumber = 4;
-    private uint beginBuildTimeMs_;
+    /// <summary>Field number for the "locked_by_uid" field.</summary>
+    public const int LockedByUidFieldNumber = 4;
+    private uint lockedByUid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint BeginBuildTimeMs {
-      get { return beginBuildTimeMs_; }
+    public uint LockedByUid {
+      get { return lockedByUid_; }
       set {
-        beginBuildTimeMs_ = value;
+        lockedByUid_ = value;
       }
     }
 
@@ -151,7 +152,7 @@ namespace Weedwacker.Shared.Network.Proto {
       if (Status != other.Status) return false;
       if(!uidList_.Equals(other.uidList_)) return false;
       if (CurrentBuildingId != other.CurrentBuildingId) return false;
-      if (BeginBuildTimeMs != other.BeginBuildTimeMs) return false;
+      if (LockedByUid != other.LockedByUid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -162,7 +163,7 @@ namespace Weedwacker.Shared.Network.Proto {
       if (Status != global::Weedwacker.Shared.Network.Proto.FoundationStatus.None) hash ^= Status.GetHashCode();
       hash ^= uidList_.GetHashCode();
       if (CurrentBuildingId != 0) hash ^= CurrentBuildingId.GetHashCode();
-      if (BeginBuildTimeMs != 0) hash ^= BeginBuildTimeMs.GetHashCode();
+      if (LockedByUid != 0) hash ^= LockedByUid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -190,9 +191,9 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(24);
         output.WriteUInt32(CurrentBuildingId);
       }
-      if (BeginBuildTimeMs != 0) {
+      if (LockedByUid != 0) {
         output.WriteRawTag(32);
-        output.WriteUInt32(BeginBuildTimeMs);
+        output.WriteUInt32(LockedByUid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -213,9 +214,9 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(24);
         output.WriteUInt32(CurrentBuildingId);
       }
-      if (BeginBuildTimeMs != 0) {
+      if (LockedByUid != 0) {
         output.WriteRawTag(32);
-        output.WriteUInt32(BeginBuildTimeMs);
+        output.WriteUInt32(LockedByUid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -234,8 +235,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (CurrentBuildingId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurrentBuildingId);
       }
-      if (BeginBuildTimeMs != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BeginBuildTimeMs);
+      if (LockedByUid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LockedByUid);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -256,8 +257,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.CurrentBuildingId != 0) {
         CurrentBuildingId = other.CurrentBuildingId;
       }
-      if (other.BeginBuildTimeMs != 0) {
-        BeginBuildTimeMs = other.BeginBuildTimeMs;
+      if (other.LockedByUid != 0) {
+        LockedByUid = other.LockedByUid;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -288,7 +289,7 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           }
           case 32: {
-            BeginBuildTimeMs = input.ReadUInt32();
+            LockedByUid = input.ReadUInt32();
             break;
           }
         }
@@ -320,7 +321,7 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           }
           case 32: {
-            BeginBuildTimeMs = input.ReadUInt32();
+            LockedByUid = input.ReadUInt32();
             break;
           }
         }

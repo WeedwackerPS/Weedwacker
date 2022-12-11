@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGBossChallengeUpdateNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJHQ0dCb3NzQ2hhbGxlbmdlVXBkYXRlTm90aWZ5LnByb3RvGhpHQ0dCb3Nz",
-            "Q2hhbGxlbmdlRGF0YS5wcm90byJNChxHQ0dCb3NzQ2hhbGxlbmdlVXBkYXRl",
-            "Tm90aWZ5Ei0KDmJvc3NfY2hhbGxlbmdlGAsgASgLMhUuR0NHQm9zc0NoYWxs",
-            "ZW5nZURhdGFCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9i",
-            "BnByb3RvMw=="));
+            "CiJHQ0dCb3NzQ2hhbGxlbmdlVXBkYXRlTm90aWZ5LnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGhpHQ0dCb3NzQ2hhbGxlbmdlRGF0",
+            "YS5wcm90byJtChxHQ0dCb3NzQ2hhbGxlbmdlVXBkYXRlTm90aWZ5Ek0KDmJv",
+            "c3NfY2hhbGxlbmdlGAcgASgLMjUuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90by5HQ0dCb3NzQ2hhbGxlbmdlRGF0YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGBossChallengeDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 7073
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 7852;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GCGBossChallengeUpdateNotify : pb::IMessage<GCGBossChallengeUpdateNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "boss_challenge" field.</summary>
-    public const int BossChallengeFieldNumber = 11;
+    public const int BossChallengeFieldNumber = 7;
     private global::Weedwacker.Shared.Network.Proto.GCGBossChallengeData bossChallenge_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -143,7 +147,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (bossChallenge_ != null) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(58);
         output.WriteMessage(BossChallenge);
       }
       if (_unknownFields != null) {
@@ -157,7 +161,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (bossChallenge_ != null) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(58);
         output.WriteMessage(BossChallenge);
       }
       if (_unknownFields != null) {
@@ -206,7 +210,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 90: {
+          case 58: {
             if (bossChallenge_ == null) {
               BossChallenge = new global::Weedwacker.Shared.Network.Proto.GCGBossChallengeData();
             }
@@ -228,7 +232,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 90: {
+          case 58: {
             if (bossChallenge_ == null) {
               BossChallenge = new global::Weedwacker.Shared.Network.Proto.GCGBossChallengeData();
             }

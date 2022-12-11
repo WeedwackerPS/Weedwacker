@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static LanternRiteFireworksStageInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNMYW50ZXJuUml0ZUZpcmV3b3Jrc1N0YWdlSW5mby5wcm90bxonTGFudGVy",
-            "blJpdGVGaXJld29ya3NDaGFsbGVuZ2VJbmZvLnByb3RvIoMBCh1MYW50ZXJu",
-            "Uml0ZUZpcmV3b3Jrc1N0YWdlSW5mbxIPCgdpc19vcGVuGAggASgIEj8KE2No",
-            "YWxsZW5nZV9pbmZvX2xpc3QYCSADKAsyIi5MYW50ZXJuUml0ZUZpcmV3b3Jr",
-            "c0NoYWxsZW5nZUluZm8SEAoIc3RhZ2VfaWQYDyABKA1CIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiNMYW50ZXJuUml0ZUZpcmV3b3Jrc1N0YWdlSW5mby5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxonTGFudGVyblJpdGVGaXJld29y",
+            "a3NDaGFsbGVuZ2VJbmZvLnByb3RvIqMBCh1MYW50ZXJuUml0ZUZpcmV3b3Jr",
+            "c1N0YWdlSW5mbxIQCghzdGFnZV9pZBgOIAEoDRIPCgdpc19vcGVuGAkgASgI",
+            "El8KE2NoYWxsZW5nZV9pbmZvX2xpc3QYCyADKAsyQi5XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvLkxhbnRlcm5SaXRlRmlyZXdvcmtzQ2hhbGxl",
+            "bmdlSW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.LanternRiteFireworksChallengeInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.LanternRiteFireworksStageInfo), global::Weedwacker.Shared.Network.Proto.LanternRiteFireworksStageInfo.Parser, new[]{ "IsOpen", "ChallengeInfoList", "StageId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.LanternRiteFireworksStageInfo), global::Weedwacker.Shared.Network.Proto.LanternRiteFireworksStageInfo.Parser, new[]{ "StageId", "IsOpen", "ChallengeInfoList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,9 +75,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LanternRiteFireworksStageInfo(LanternRiteFireworksStageInfo other) : this() {
+      stageId_ = other.stageId_;
       isOpen_ = other.isOpen_;
       challengeInfoList_ = other.challengeInfoList_.Clone();
-      stageId_ = other.stageId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,8 +87,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new LanternRiteFireworksStageInfo(this);
     }
 
+    /// <summary>Field number for the "stage_id" field.</summary>
+    public const int StageIdFieldNumber = 14;
+    private uint stageId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint StageId {
+      get { return stageId_; }
+      set {
+        stageId_ = value;
+      }
+    }
+
     /// <summary>Field number for the "is_open" field.</summary>
-    public const int IsOpenFieldNumber = 8;
+    public const int IsOpenFieldNumber = 9;
     private bool isOpen_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -99,26 +112,14 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "challenge_info_list" field.</summary>
-    public const int ChallengeInfoListFieldNumber = 9;
+    public const int ChallengeInfoListFieldNumber = 11;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.LanternRiteFireworksChallengeInfo> _repeated_challengeInfoList_codec
-        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.LanternRiteFireworksChallengeInfo.Parser);
+        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.LanternRiteFireworksChallengeInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.LanternRiteFireworksChallengeInfo> challengeInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.LanternRiteFireworksChallengeInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.LanternRiteFireworksChallengeInfo> ChallengeInfoList {
       get { return challengeInfoList_; }
-    }
-
-    /// <summary>Field number for the "stage_id" field.</summary>
-    public const int StageIdFieldNumber = 15;
-    private uint stageId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint StageId {
-      get { return stageId_; }
-      set {
-        stageId_ = value;
-      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -136,9 +137,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (StageId != other.StageId) return false;
       if (IsOpen != other.IsOpen) return false;
       if(!challengeInfoList_.Equals(other.challengeInfoList_)) return false;
-      if (StageId != other.StageId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -146,9 +147,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (StageId != 0) hash ^= StageId.GetHashCode();
       if (IsOpen != false) hash ^= IsOpen.GetHashCode();
       hash ^= challengeInfoList_.GetHashCode();
-      if (StageId != 0) hash ^= StageId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -168,12 +169,12 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (IsOpen != false) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(72);
         output.WriteBool(IsOpen);
       }
       challengeInfoList_.WriteTo(output, _repeated_challengeInfoList_codec);
       if (StageId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(112);
         output.WriteUInt32(StageId);
       }
       if (_unknownFields != null) {
@@ -187,12 +188,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (IsOpen != false) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(72);
         output.WriteBool(IsOpen);
       }
       challengeInfoList_.WriteTo(ref output, _repeated_challengeInfoList_codec);
       if (StageId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(112);
         output.WriteUInt32(StageId);
       }
       if (_unknownFields != null) {
@@ -205,13 +206,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (StageId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
+      }
       if (IsOpen != false) {
         size += 1 + 1;
       }
       size += challengeInfoList_.CalculateSize(_repeated_challengeInfoList_codec);
-      if (StageId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
-      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -224,13 +225,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.StageId != 0) {
+        StageId = other.StageId;
+      }
       if (other.IsOpen != false) {
         IsOpen = other.IsOpen;
       }
       challengeInfoList_.Add(other.challengeInfoList_);
-      if (other.StageId != 0) {
-        StageId = other.StageId;
-      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -246,15 +247,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 64: {
+          case 72: {
             IsOpen = input.ReadBool();
             break;
           }
-          case 74: {
+          case 90: {
             challengeInfoList_.AddEntriesFrom(input, _repeated_challengeInfoList_codec);
             break;
           }
-          case 120: {
+          case 112: {
             StageId = input.ReadUInt32();
             break;
           }
@@ -273,15 +274,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 64: {
+          case 72: {
             IsOpen = input.ReadBool();
             break;
           }
-          case 74: {
+          case 90: {
             challengeInfoList_.AddEntriesFrom(ref input, _repeated_challengeInfoList_codec);
             break;
           }
-          case 120: {
+          case 112: {
             StageId = input.ReadUInt32();
             break;
           }

@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static ToTheMoonRemoveObstacleRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBUb1RoZU1vb25SZW1vdmVPYnN0YWNsZVJzcC5wcm90bxoSRHluYW1pY05v",
-            "ZGVzLnByb3RvImUKGlRvVGhlTW9vblJlbW92ZU9ic3RhY2xlUnNwEhAKCHF1",
-            "ZXJ5X2lkGAMgASgFEg8KB3JldGNvZGUYDiABKAUSJAoNZHluYW1pY19ub2Rl",
-            "cxgIIAEoCzINLkR5bmFtaWNOb2Rlc0IiqgIfV2VlZHdhY2tlci5TaGFyZWQu",
-            "TmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiBUb1RoZU1vb25SZW1vdmVPYnN0YWNsZVJzcC5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90bxoSRHluYW1pY05vZGVzLnByb3RvIoUB",
+            "ChpUb1RoZU1vb25SZW1vdmVPYnN0YWNsZVJzcBIPCgdyZXRjb2RlGA4gASgF",
+            "EkQKDWR5bmFtaWNfbm9kZXMYDCABKAsyLS5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLkR5bmFtaWNOb2RlcxIQCghxdWVyeV9pZBgFIAEoBWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.DynamicNodesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ToTheMoonRemoveObstacleRsp), global::Weedwacker.Shared.Network.Proto.ToTheMoonRemoveObstacleRsp.Parser, new[]{ "QueryId", "Retcode", "DynamicNodes" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ToTheMoonRemoveObstacleRsp), global::Weedwacker.Shared.Network.Proto.ToTheMoonRemoveObstacleRsp.Parser, new[]{ "Retcode", "DynamicNodes", "QueryId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 6173
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 6178;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ToTheMoonRemoveObstacleRsp : pb::IMessage<ToTheMoonRemoveObstacleRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +83,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ToTheMoonRemoveObstacleRsp(ToTheMoonRemoveObstacleRsp other) : this() {
-      queryId_ = other.queryId_;
       retcode_ = other.retcode_;
       dynamicNodes_ = other.dynamicNodes_ != null ? other.dynamicNodes_.Clone() : null;
+      queryId_ = other.queryId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,18 +93,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ToTheMoonRemoveObstacleRsp Clone() {
       return new ToTheMoonRemoveObstacleRsp(this);
-    }
-
-    /// <summary>Field number for the "query_id" field.</summary>
-    public const int QueryIdFieldNumber = 3;
-    private int queryId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int QueryId {
-      get { return queryId_; }
-      set {
-        queryId_ = value;
-      }
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
@@ -115,7 +108,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "dynamic_nodes" field.</summary>
-    public const int DynamicNodesFieldNumber = 8;
+    public const int DynamicNodesFieldNumber = 12;
     private global::Weedwacker.Shared.Network.Proto.DynamicNodes dynamicNodes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,6 +116,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return dynamicNodes_; }
       set {
         dynamicNodes_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "query_id" field.</summary>
+    public const int QueryIdFieldNumber = 5;
+    private int queryId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int QueryId {
+      get { return queryId_; }
+      set {
+        queryId_ = value;
       }
     }
 
@@ -141,9 +146,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (QueryId != other.QueryId) return false;
       if (Retcode != other.Retcode) return false;
       if (!object.Equals(DynamicNodes, other.DynamicNodes)) return false;
+      if (QueryId != other.QueryId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,9 +156,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (QueryId != 0) hash ^= QueryId.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (dynamicNodes_ != null) hash ^= DynamicNodes.GetHashCode();
+      if (QueryId != 0) hash ^= QueryId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -173,11 +178,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (QueryId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(40);
         output.WriteInt32(QueryId);
       }
       if (dynamicNodes_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(98);
         output.WriteMessage(DynamicNodes);
       }
       if (Retcode != 0) {
@@ -195,11 +200,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (QueryId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(40);
         output.WriteInt32(QueryId);
       }
       if (dynamicNodes_ != null) {
-        output.WriteRawTag(66);
+        output.WriteRawTag(98);
         output.WriteMessage(DynamicNodes);
       }
       if (Retcode != 0) {
@@ -216,14 +221,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (QueryId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(QueryId);
-      }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (dynamicNodes_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(DynamicNodes);
+      }
+      if (QueryId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(QueryId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -237,9 +242,6 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.QueryId != 0) {
-        QueryId = other.QueryId;
-      }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
@@ -248,6 +250,9 @@ namespace Weedwacker.Shared.Network.Proto {
           DynamicNodes = new global::Weedwacker.Shared.Network.Proto.DynamicNodes();
         }
         DynamicNodes.MergeFrom(other.DynamicNodes);
+      }
+      if (other.QueryId != 0) {
+        QueryId = other.QueryId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -264,11 +269,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
+          case 40: {
             QueryId = input.ReadInt32();
             break;
           }
-          case 66: {
+          case 98: {
             if (dynamicNodes_ == null) {
               DynamicNodes = new global::Weedwacker.Shared.Network.Proto.DynamicNodes();
             }
@@ -294,11 +299,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
+          case 40: {
             QueryId = input.ReadInt32();
             break;
           }
-          case 66: {
+          case 98: {
             if (dynamicNodes_ == null) {
               DynamicNodes = new global::Weedwacker.Shared.Network.Proto.DynamicNodes();
             }

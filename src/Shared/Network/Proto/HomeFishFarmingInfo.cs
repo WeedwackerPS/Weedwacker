@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeFishFarmingInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlIb21lRmlzaEZhcm1pbmdJbmZvLnByb3RvIkIKE0hvbWVGaXNoRmFybWlu",
-            "Z0luZm8SFAoMZmlzaF9pZF9saXN0GAsgAygNEhUKDWZpc2hwb25kX2d1aWQY",
-            "DiABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "ChlIb21lRmlzaEZhcm1pbmdJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvIkIKE0hvbWVGaXNoRmFybWluZ0luZm8SFAoMZmlz",
+            "aF9pZF9saXN0GA0gAygNEhUKDWZpc2hwb25kX2d1aWQYBSABKA1iBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,9 +84,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "fish_id_list" field.</summary>
-    public const int FishIdListFieldNumber = 11;
+    public const int FishIdListFieldNumber = 13;
     private static readonly pb::FieldCodec<uint> _repeated_fishIdList_codec
-        = pb::FieldCodec.ForUInt32(90);
+        = pb::FieldCodec.ForUInt32(106);
     private readonly pbc::RepeatedField<uint> fishIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -95,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "fishpond_guid" field.</summary>
-    public const int FishpondGuidFieldNumber = 14;
+    public const int FishpondGuidFieldNumber = 5;
     private uint fishpondGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -150,11 +150,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      fishIdList_.WriteTo(output, _repeated_fishIdList_codec);
       if (FishpondGuid != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(40);
         output.WriteUInt32(FishpondGuid);
       }
+      fishIdList_.WriteTo(output, _repeated_fishIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -165,11 +165,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      fishIdList_.WriteTo(ref output, _repeated_fishIdList_codec);
       if (FishpondGuid != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(40);
         output.WriteUInt32(FishpondGuid);
       }
+      fishIdList_.WriteTo(ref output, _repeated_fishIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -215,13 +215,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 90:
-          case 88: {
-            fishIdList_.AddEntriesFrom(input, _repeated_fishIdList_codec);
+          case 40: {
+            FishpondGuid = input.ReadUInt32();
             break;
           }
-          case 112: {
-            FishpondGuid = input.ReadUInt32();
+          case 106:
+          case 104: {
+            fishIdList_.AddEntriesFrom(input, _repeated_fishIdList_codec);
             break;
           }
         }
@@ -239,13 +239,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 90:
-          case 88: {
-            fishIdList_.AddEntriesFrom(ref input, _repeated_fishIdList_codec);
+          case 40: {
+            FishpondGuid = input.ReadUInt32();
             break;
           }
-          case 112: {
-            FishpondGuid = input.ReadUInt32();
+          case 106:
+          case 104: {
+            fishIdList_.AddEntriesFrom(ref input, _repeated_fishIdList_codec);
             break;
           }
         }

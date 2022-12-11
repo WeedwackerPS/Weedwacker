@@ -24,12 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlayerInvestigationAllInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiZQbGF5ZXJJbnZlc3RpZ2F0aW9uQWxsSW5mb05vdGlmeS5wcm90bxoTSW52",
-            "ZXN0aWdhdGlvbi5wcm90bxoZSW52ZXN0aWdhdGlvblRhcmdldC5wcm90byKH",
-            "AQogUGxheWVySW52ZXN0aWdhdGlvbkFsbEluZm9Ob3RpZnkSKgoSaW52ZXN0",
-            "aWdhdGlvbl9saXN0GA8gAygLMg4uSW52ZXN0aWdhdGlvbhI3ChlpbnZlc3Rp",
-            "Z2F0aW9uX3RhcmdldF9saXN0GAwgAygLMhQuSW52ZXN0aWdhdGlvblRhcmdl",
-            "dEIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiZQbGF5ZXJJbnZlc3RpZ2F0aW9uQWxsSW5mb05vdGlmeS5wcm90bxIfV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxoTSW52ZXN0aWdhdGlvbi5w",
+            "cm90bxoZSW52ZXN0aWdhdGlvblRhcmdldC5wcm90byLHAQogUGxheWVySW52",
+            "ZXN0aWdhdGlvbkFsbEluZm9Ob3RpZnkSSgoSaW52ZXN0aWdhdGlvbl9saXN0",
+            "GAsgAygLMi4uV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5JbnZl",
+            "c3RpZ2F0aW9uElcKGWludmVzdGlnYXRpb25fdGFyZ2V0X2xpc3QYBSADKAsy",
+            "NC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkludmVzdGlnYXRp",
+            "b25UYXJnZXRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.InvestigationReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.InvestigationTargetReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -41,9 +43,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1928
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1916;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class PlayerInvestigationAllInfoNotify : pb::IMessage<PlayerInvestigationAllInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,9 +97,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "investigation_list" field.</summary>
-    public const int InvestigationListFieldNumber = 15;
+    public const int InvestigationListFieldNumber = 11;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.Investigation> _repeated_investigationList_codec
-        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.Investigation.Parser);
+        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.Investigation.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Investigation> investigationList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Investigation>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,9 +108,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "investigation_target_list" field.</summary>
-    public const int InvestigationTargetListFieldNumber = 12;
+    public const int InvestigationTargetListFieldNumber = 5;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.InvestigationTarget> _repeated_investigationTargetList_codec
-        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.InvestigationTarget.Parser);
+        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.InvestigationTarget.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InvestigationTarget> investigationTargetList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.InvestigationTarget>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -211,11 +217,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 98: {
+          case 42: {
             investigationTargetList_.AddEntriesFrom(input, _repeated_investigationTargetList_codec);
             break;
           }
-          case 122: {
+          case 90: {
             investigationList_.AddEntriesFrom(input, _repeated_investigationList_codec);
             break;
           }
@@ -234,11 +240,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 98: {
+          case 42: {
             investigationTargetList_.AddEntriesFrom(ref input, _repeated_investigationTargetList_codec);
             break;
           }
-          case 122: {
+          case 90: {
             investigationList_.AddEntriesFrom(ref input, _repeated_investigationList_codec);
             break;
           }

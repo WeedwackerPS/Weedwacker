@@ -25,23 +25,25 @@ namespace Weedwacker.Shared.Network.Proto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CixTY2VuZUdhbGxlcnlWaW50YWdlSHVudGluZ1NldHRsZU5vdGlmeS5wcm90",
-            "bxooVmludGFnZUh1bnRpbmdGaXJzdFN0YWdlU2V0dGxlSW5mby5wcm90bxop",
-            "VmludGFnZUh1bnRpbmdTZWNvbmRTdGFnZVNldHRsZUluZm8ucHJvdG8aKFZp",
-            "bnRhZ2VIdW50aW5nVGhpcmRTdGFnZVNldHRsZUluZm8ucHJvdG8i8AIKJlNj",
-            "ZW5lR2FsbGVyeVZpbnRhZ2VIdW50aW5nU2V0dGxlTm90aWZ5EhcKD2hhc19u",
-            "ZXdfd2F0Y2hlchgLIAEoCBIQCghzdGFnZV9pZBgJIAEoDRIZChF0b3RhbF93",
-            "YXRjaGVyX251bRgMIAEoDRIcChRmaW5pc2hlZF93YXRjaGVyX251bRgGIAEo",
-            "DRIVCg1pc19uZXdfcmVjb3JkGAEgASgIEj8KEGZpcnN0X3N0YWdlX2luZm8Y",
-            "BCABKAsyIy5WaW50YWdlSHVudGluZ0ZpcnN0U3RhZ2VTZXR0bGVJbmZvSAAS",
-            "QQoRc2Vjb25kX3N0YWdlX2luZm8YCiABKAsyJC5WaW50YWdlSHVudGluZ1Nl",
-            "Y29uZFN0YWdlU2V0dGxlSW5mb0gAEj8KEHRoaXJkX3N0YWdlX2luZm8YCCAB",
-            "KAsyIy5WaW50YWdlSHVudGluZ1RoaXJkU3RhZ2VTZXR0bGVJbmZvSABCBgoE",
-            "aW5mb0IiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJv",
-            "dG8z"));
+            "bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxooVmludGFnZUh1",
+            "bnRpbmdGaXJzdFN0YWdlU2V0dGxlSW5mby5wcm90bxopVmludGFnZUh1bnRp",
+            "bmdTZWNvbmRTdGFnZVNldHRsZUluZm8ucHJvdG8aKFZpbnRhZ2VIdW50aW5n",
+            "VGhpcmRTdGFnZVNldHRsZUluZm8ucHJvdG8i0QMKJlNjZW5lR2FsbGVyeVZp",
+            "bnRhZ2VIdW50aW5nU2V0dGxlTm90aWZ5EhcKD2hhc19uZXdfd2F0Y2hlchgD",
+            "IAEoCBIVCg1pc19uZXdfcmVjb3JkGA0gASgIEhsKE1VuazMzMDBfRUhHRElL",
+            "T0dMS0wYDyABKA0SGwoTVW5rMzMwMF9LT0FLSE1MRlBHTRgGIAEoDRIQCghz",
+            "dGFnZV9pZBgJIAEoDRJfChBmaXJzdF9zdGFnZV9pbmZvGAcgASgLMkMuV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5WaW50YWdlSHVudGluZ0Zp",
+            "cnN0U3RhZ2VTZXR0bGVJbmZvSAASYQoRc2Vjb25kX3N0YWdlX2luZm8YCCAB",
+            "KAsyRC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlZpbnRhZ2VI",
+            "dW50aW5nU2Vjb25kU3RhZ2VTZXR0bGVJbmZvSAASXwoQdGhpcmRfc3RhZ2Vf",
+            "aW5mbxgOIAEoCzJDLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8u",
+            "VmludGFnZUh1bnRpbmdUaGlyZFN0YWdlU2V0dGxlSW5mb0gAQgYKBGluZm9i",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VintageHuntingFirstStageSettleInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.VintageHuntingSecondStageSettleInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.VintageHuntingThirdStageSettleInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneGalleryVintageHuntingSettleNotify), global::Weedwacker.Shared.Network.Proto.SceneGalleryVintageHuntingSettleNotify.Parser, new[]{ "HasNewWatcher", "StageId", "TotalWatcherNum", "FinishedWatcherNum", "IsNewRecord", "FirstStageInfo", "SecondStageInfo", "ThirdStageInfo" }, new[]{ "Info" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneGalleryVintageHuntingSettleNotify), global::Weedwacker.Shared.Network.Proto.SceneGalleryVintageHuntingSettleNotify.Parser, new[]{ "HasNewWatcher", "IsNewRecord", "Unk3300EHGDIKOGLKL", "Unk3300KOAKHMLFPGM", "StageId", "FirstStageInfo", "SecondStageInfo", "ThirdStageInfo" }, new[]{ "Info" }, null, null, null)
           }));
     }
     #endregion
@@ -49,9 +51,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 20324
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 22325;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class SceneGalleryVintageHuntingSettleNotify : pb::IMessage<SceneGalleryVintageHuntingSettleNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,10 +94,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SceneGalleryVintageHuntingSettleNotify(SceneGalleryVintageHuntingSettleNotify other) : this() {
       hasNewWatcher_ = other.hasNewWatcher_;
-      stageId_ = other.stageId_;
-      totalWatcherNum_ = other.totalWatcherNum_;
-      finishedWatcherNum_ = other.finishedWatcherNum_;
       isNewRecord_ = other.isNewRecord_;
+      unk3300EHGDIKOGLKL_ = other.unk3300EHGDIKOGLKL_;
+      unk3300KOAKHMLFPGM_ = other.unk3300KOAKHMLFPGM_;
+      stageId_ = other.stageId_;
       switch (other.InfoCase) {
         case InfoOneofCase.FirstStageInfo:
           FirstStageInfo = other.FirstStageInfo.Clone();
@@ -114,7 +120,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "has_new_watcher" field.</summary>
-    public const int HasNewWatcherFieldNumber = 11;
+    public const int HasNewWatcherFieldNumber = 3;
     private bool hasNewWatcher_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,6 +128,42 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return hasNewWatcher_; }
       set {
         hasNewWatcher_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_new_record" field.</summary>
+    public const int IsNewRecordFieldNumber = 13;
+    private bool isNewRecord_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsNewRecord {
+      get { return isNewRecord_; }
+      set {
+        isNewRecord_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_EHGDIKOGLKL" field.</summary>
+    public const int Unk3300EHGDIKOGLKLFieldNumber = 15;
+    private uint unk3300EHGDIKOGLKL_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300EHGDIKOGLKL {
+      get { return unk3300EHGDIKOGLKL_; }
+      set {
+        unk3300EHGDIKOGLKL_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_KOAKHMLFPGM" field.</summary>
+    public const int Unk3300KOAKHMLFPGMFieldNumber = 6;
+    private uint unk3300KOAKHMLFPGM_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300KOAKHMLFPGM {
+      get { return unk3300KOAKHMLFPGM_; }
+      set {
+        unk3300KOAKHMLFPGM_ = value;
       }
     }
 
@@ -137,44 +179,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "total_watcher_num" field.</summary>
-    public const int TotalWatcherNumFieldNumber = 12;
-    private uint totalWatcherNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TotalWatcherNum {
-      get { return totalWatcherNum_; }
-      set {
-        totalWatcherNum_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "finished_watcher_num" field.</summary>
-    public const int FinishedWatcherNumFieldNumber = 6;
-    private uint finishedWatcherNum_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FinishedWatcherNum {
-      get { return finishedWatcherNum_; }
-      set {
-        finishedWatcherNum_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_new_record" field.</summary>
-    public const int IsNewRecordFieldNumber = 1;
-    private bool isNewRecord_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsNewRecord {
-      get { return isNewRecord_; }
-      set {
-        isNewRecord_ = value;
-      }
-    }
-
     /// <summary>Field number for the "first_stage_info" field.</summary>
-    public const int FirstStageInfoFieldNumber = 4;
+    public const int FirstStageInfoFieldNumber = 7;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.VintageHuntingFirstStageSettleInfo FirstStageInfo {
@@ -186,7 +192,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "second_stage_info" field.</summary>
-    public const int SecondStageInfoFieldNumber = 10;
+    public const int SecondStageInfoFieldNumber = 8;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.VintageHuntingSecondStageSettleInfo SecondStageInfo {
@@ -198,7 +204,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "third_stage_info" field.</summary>
-    public const int ThirdStageInfoFieldNumber = 8;
+    public const int ThirdStageInfoFieldNumber = 14;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.VintageHuntingThirdStageSettleInfo ThirdStageInfo {
@@ -213,9 +219,9 @@ namespace Weedwacker.Shared.Network.Proto {
     /// <summary>Enum of possible cases for the "info" oneof.</summary>
     public enum InfoOneofCase {
       None = 0,
-      FirstStageInfo = 4,
-      SecondStageInfo = 10,
-      ThirdStageInfo = 8,
+      FirstStageInfo = 7,
+      SecondStageInfo = 8,
+      ThirdStageInfo = 14,
     }
     private InfoOneofCase infoCase_ = InfoOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -247,10 +253,10 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (HasNewWatcher != other.HasNewWatcher) return false;
-      if (StageId != other.StageId) return false;
-      if (TotalWatcherNum != other.TotalWatcherNum) return false;
-      if (FinishedWatcherNum != other.FinishedWatcherNum) return false;
       if (IsNewRecord != other.IsNewRecord) return false;
+      if (Unk3300EHGDIKOGLKL != other.Unk3300EHGDIKOGLKL) return false;
+      if (Unk3300KOAKHMLFPGM != other.Unk3300KOAKHMLFPGM) return false;
+      if (StageId != other.StageId) return false;
       if (!object.Equals(FirstStageInfo, other.FirstStageInfo)) return false;
       if (!object.Equals(SecondStageInfo, other.SecondStageInfo)) return false;
       if (!object.Equals(ThirdStageInfo, other.ThirdStageInfo)) return false;
@@ -263,10 +269,10 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (HasNewWatcher != false) hash ^= HasNewWatcher.GetHashCode();
-      if (StageId != 0) hash ^= StageId.GetHashCode();
-      if (TotalWatcherNum != 0) hash ^= TotalWatcherNum.GetHashCode();
-      if (FinishedWatcherNum != 0) hash ^= FinishedWatcherNum.GetHashCode();
       if (IsNewRecord != false) hash ^= IsNewRecord.GetHashCode();
+      if (Unk3300EHGDIKOGLKL != 0) hash ^= Unk3300EHGDIKOGLKL.GetHashCode();
+      if (Unk3300KOAKHMLFPGM != 0) hash ^= Unk3300KOAKHMLFPGM.GetHashCode();
+      if (StageId != 0) hash ^= StageId.GetHashCode();
       if (infoCase_ == InfoOneofCase.FirstStageInfo) hash ^= FirstStageInfo.GetHashCode();
       if (infoCase_ == InfoOneofCase.SecondStageInfo) hash ^= SecondStageInfo.GetHashCode();
       if (infoCase_ == InfoOneofCase.ThirdStageInfo) hash ^= ThirdStageInfo.GetHashCode();
@@ -289,37 +295,37 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsNewRecord != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(IsNewRecord);
+      if (HasNewWatcher != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(HasNewWatcher);
+      }
+      if (Unk3300KOAKHMLFPGM != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Unk3300KOAKHMLFPGM);
       }
       if (infoCase_ == InfoOneofCase.FirstStageInfo) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(58);
         output.WriteMessage(FirstStageInfo);
       }
-      if (FinishedWatcherNum != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(FinishedWatcherNum);
-      }
-      if (infoCase_ == InfoOneofCase.ThirdStageInfo) {
+      if (infoCase_ == InfoOneofCase.SecondStageInfo) {
         output.WriteRawTag(66);
-        output.WriteMessage(ThirdStageInfo);
+        output.WriteMessage(SecondStageInfo);
       }
       if (StageId != 0) {
         output.WriteRawTag(72);
         output.WriteUInt32(StageId);
       }
-      if (infoCase_ == InfoOneofCase.SecondStageInfo) {
-        output.WriteRawTag(82);
-        output.WriteMessage(SecondStageInfo);
+      if (IsNewRecord != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsNewRecord);
       }
-      if (HasNewWatcher != false) {
-        output.WriteRawTag(88);
-        output.WriteBool(HasNewWatcher);
+      if (infoCase_ == InfoOneofCase.ThirdStageInfo) {
+        output.WriteRawTag(114);
+        output.WriteMessage(ThirdStageInfo);
       }
-      if (TotalWatcherNum != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(TotalWatcherNum);
+      if (Unk3300EHGDIKOGLKL != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Unk3300EHGDIKOGLKL);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -331,37 +337,37 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsNewRecord != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(IsNewRecord);
+      if (HasNewWatcher != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(HasNewWatcher);
+      }
+      if (Unk3300KOAKHMLFPGM != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Unk3300KOAKHMLFPGM);
       }
       if (infoCase_ == InfoOneofCase.FirstStageInfo) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(58);
         output.WriteMessage(FirstStageInfo);
       }
-      if (FinishedWatcherNum != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(FinishedWatcherNum);
-      }
-      if (infoCase_ == InfoOneofCase.ThirdStageInfo) {
+      if (infoCase_ == InfoOneofCase.SecondStageInfo) {
         output.WriteRawTag(66);
-        output.WriteMessage(ThirdStageInfo);
+        output.WriteMessage(SecondStageInfo);
       }
       if (StageId != 0) {
         output.WriteRawTag(72);
         output.WriteUInt32(StageId);
       }
-      if (infoCase_ == InfoOneofCase.SecondStageInfo) {
-        output.WriteRawTag(82);
-        output.WriteMessage(SecondStageInfo);
+      if (IsNewRecord != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsNewRecord);
       }
-      if (HasNewWatcher != false) {
-        output.WriteRawTag(88);
-        output.WriteBool(HasNewWatcher);
+      if (infoCase_ == InfoOneofCase.ThirdStageInfo) {
+        output.WriteRawTag(114);
+        output.WriteMessage(ThirdStageInfo);
       }
-      if (TotalWatcherNum != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(TotalWatcherNum);
+      if (Unk3300EHGDIKOGLKL != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Unk3300EHGDIKOGLKL);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -376,17 +382,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (HasNewWatcher != false) {
         size += 1 + 1;
       }
-      if (StageId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
-      }
-      if (TotalWatcherNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalWatcherNum);
-      }
-      if (FinishedWatcherNum != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinishedWatcherNum);
-      }
       if (IsNewRecord != false) {
         size += 1 + 1;
+      }
+      if (Unk3300EHGDIKOGLKL != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300EHGDIKOGLKL);
+      }
+      if (Unk3300KOAKHMLFPGM != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300KOAKHMLFPGM);
+      }
+      if (StageId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
       }
       if (infoCase_ == InfoOneofCase.FirstStageInfo) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(FirstStageInfo);
@@ -412,17 +418,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.HasNewWatcher != false) {
         HasNewWatcher = other.HasNewWatcher;
       }
-      if (other.StageId != 0) {
-        StageId = other.StageId;
-      }
-      if (other.TotalWatcherNum != 0) {
-        TotalWatcherNum = other.TotalWatcherNum;
-      }
-      if (other.FinishedWatcherNum != 0) {
-        FinishedWatcherNum = other.FinishedWatcherNum;
-      }
       if (other.IsNewRecord != false) {
         IsNewRecord = other.IsNewRecord;
+      }
+      if (other.Unk3300EHGDIKOGLKL != 0) {
+        Unk3300EHGDIKOGLKL = other.Unk3300EHGDIKOGLKL;
+      }
+      if (other.Unk3300KOAKHMLFPGM != 0) {
+        Unk3300KOAKHMLFPGM = other.Unk3300KOAKHMLFPGM;
+      }
+      if (other.StageId != 0) {
+        StageId = other.StageId;
       }
       switch (other.InfoCase) {
         case InfoOneofCase.FirstStageInfo:
@@ -460,11 +466,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            IsNewRecord = input.ReadBool();
+          case 24: {
+            HasNewWatcher = input.ReadBool();
             break;
           }
-          case 34: {
+          case 48: {
+            Unk3300KOAKHMLFPGM = input.ReadUInt32();
+            break;
+          }
+          case 58: {
             global::Weedwacker.Shared.Network.Proto.VintageHuntingFirstStageSettleInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.VintageHuntingFirstStageSettleInfo();
             if (infoCase_ == InfoOneofCase.FirstStageInfo) {
               subBuilder.MergeFrom(FirstStageInfo);
@@ -473,24 +483,7 @@ namespace Weedwacker.Shared.Network.Proto {
             FirstStageInfo = subBuilder;
             break;
           }
-          case 48: {
-            FinishedWatcherNum = input.ReadUInt32();
-            break;
-          }
           case 66: {
-            global::Weedwacker.Shared.Network.Proto.VintageHuntingThirdStageSettleInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.VintageHuntingThirdStageSettleInfo();
-            if (infoCase_ == InfoOneofCase.ThirdStageInfo) {
-              subBuilder.MergeFrom(ThirdStageInfo);
-            }
-            input.ReadMessage(subBuilder);
-            ThirdStageInfo = subBuilder;
-            break;
-          }
-          case 72: {
-            StageId = input.ReadUInt32();
-            break;
-          }
-          case 82: {
             global::Weedwacker.Shared.Network.Proto.VintageHuntingSecondStageSettleInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.VintageHuntingSecondStageSettleInfo();
             if (infoCase_ == InfoOneofCase.SecondStageInfo) {
               subBuilder.MergeFrom(SecondStageInfo);
@@ -499,12 +492,25 @@ namespace Weedwacker.Shared.Network.Proto {
             SecondStageInfo = subBuilder;
             break;
           }
-          case 88: {
-            HasNewWatcher = input.ReadBool();
+          case 72: {
+            StageId = input.ReadUInt32();
             break;
           }
-          case 96: {
-            TotalWatcherNum = input.ReadUInt32();
+          case 104: {
+            IsNewRecord = input.ReadBool();
+            break;
+          }
+          case 114: {
+            global::Weedwacker.Shared.Network.Proto.VintageHuntingThirdStageSettleInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.VintageHuntingThirdStageSettleInfo();
+            if (infoCase_ == InfoOneofCase.ThirdStageInfo) {
+              subBuilder.MergeFrom(ThirdStageInfo);
+            }
+            input.ReadMessage(subBuilder);
+            ThirdStageInfo = subBuilder;
+            break;
+          }
+          case 120: {
+            Unk3300EHGDIKOGLKL = input.ReadUInt32();
             break;
           }
         }
@@ -522,11 +528,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            IsNewRecord = input.ReadBool();
+          case 24: {
+            HasNewWatcher = input.ReadBool();
             break;
           }
-          case 34: {
+          case 48: {
+            Unk3300KOAKHMLFPGM = input.ReadUInt32();
+            break;
+          }
+          case 58: {
             global::Weedwacker.Shared.Network.Proto.VintageHuntingFirstStageSettleInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.VintageHuntingFirstStageSettleInfo();
             if (infoCase_ == InfoOneofCase.FirstStageInfo) {
               subBuilder.MergeFrom(FirstStageInfo);
@@ -535,24 +545,7 @@ namespace Weedwacker.Shared.Network.Proto {
             FirstStageInfo = subBuilder;
             break;
           }
-          case 48: {
-            FinishedWatcherNum = input.ReadUInt32();
-            break;
-          }
           case 66: {
-            global::Weedwacker.Shared.Network.Proto.VintageHuntingThirdStageSettleInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.VintageHuntingThirdStageSettleInfo();
-            if (infoCase_ == InfoOneofCase.ThirdStageInfo) {
-              subBuilder.MergeFrom(ThirdStageInfo);
-            }
-            input.ReadMessage(subBuilder);
-            ThirdStageInfo = subBuilder;
-            break;
-          }
-          case 72: {
-            StageId = input.ReadUInt32();
-            break;
-          }
-          case 82: {
             global::Weedwacker.Shared.Network.Proto.VintageHuntingSecondStageSettleInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.VintageHuntingSecondStageSettleInfo();
             if (infoCase_ == InfoOneofCase.SecondStageInfo) {
               subBuilder.MergeFrom(SecondStageInfo);
@@ -561,12 +554,25 @@ namespace Weedwacker.Shared.Network.Proto {
             SecondStageInfo = subBuilder;
             break;
           }
-          case 88: {
-            HasNewWatcher = input.ReadBool();
+          case 72: {
+            StageId = input.ReadUInt32();
             break;
           }
-          case 96: {
-            TotalWatcherNum = input.ReadUInt32();
+          case 104: {
+            IsNewRecord = input.ReadBool();
+            break;
+          }
+          case 114: {
+            global::Weedwacker.Shared.Network.Proto.VintageHuntingThirdStageSettleInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.VintageHuntingThirdStageSettleInfo();
+            if (infoCase_ == InfoOneofCase.ThirdStageInfo) {
+              subBuilder.MergeFrom(ThirdStageInfo);
+            }
+            input.ReadMessage(subBuilder);
+            ThirdStageInfo = subBuilder;
+            break;
+          }
+          case 120: {
+            Unk3300EHGDIKOGLKL = input.ReadUInt32();
             break;
           }
         }

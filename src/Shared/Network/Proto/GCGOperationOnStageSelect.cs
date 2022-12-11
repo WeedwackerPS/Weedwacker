@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGOperationOnStageSelectReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9HQ0dPcGVyYXRpb25PblN0YWdlU2VsZWN0LnByb3RvIkwKGUdDR09wZXJh",
-            "dGlvbk9uU3RhZ2VTZWxlY3QSEQoJY2FyZF9ndWlkGAUgASgNEhwKFGNvc3Rf",
-            "ZGljZV9pbmRleF9saXN0GAQgAygNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5O",
-            "ZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch9HQ0dPcGVyYXRpb25PblN0YWdlU2VsZWN0LnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvIkwKGUdDR09wZXJhdGlvbk9uU3RhZ2VT",
+            "ZWxlY3QSHAoUY29zdF9kaWNlX2luZGV4X2xpc3QYCiADKA0SEQoJY2FyZF9n",
+            "dWlkGAYgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGOperationOnStageSelect), global::Weedwacker.Shared.Network.Proto.GCGOperationOnStageSelect.Parser, new[]{ "CardGuid", "CostDiceIndexList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGOperationOnStageSelect), global::Weedwacker.Shared.Network.Proto.GCGOperationOnStageSelect.Parser, new[]{ "CostDiceIndexList", "CardGuid" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +72,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGOperationOnStageSelect(GCGOperationOnStageSelect other) : this() {
-      cardGuid_ = other.cardGuid_;
       costDiceIndexList_ = other.costDiceIndexList_.Clone();
+      cardGuid_ = other.cardGuid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -83,8 +83,19 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GCGOperationOnStageSelect(this);
     }
 
+    /// <summary>Field number for the "cost_dice_index_list" field.</summary>
+    public const int CostDiceIndexListFieldNumber = 10;
+    private static readonly pb::FieldCodec<uint> _repeated_costDiceIndexList_codec
+        = pb::FieldCodec.ForUInt32(82);
+    private readonly pbc::RepeatedField<uint> costDiceIndexList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> CostDiceIndexList {
+      get { return costDiceIndexList_; }
+    }
+
     /// <summary>Field number for the "card_guid" field.</summary>
-    public const int CardGuidFieldNumber = 5;
+    public const int CardGuidFieldNumber = 6;
     private uint cardGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -93,17 +104,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         cardGuid_ = value;
       }
-    }
-
-    /// <summary>Field number for the "cost_dice_index_list" field.</summary>
-    public const int CostDiceIndexListFieldNumber = 4;
-    private static readonly pb::FieldCodec<uint> _repeated_costDiceIndexList_codec
-        = pb::FieldCodec.ForUInt32(34);
-    private readonly pbc::RepeatedField<uint> costDiceIndexList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> CostDiceIndexList {
-      get { return costDiceIndexList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -121,8 +121,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CardGuid != other.CardGuid) return false;
       if(!costDiceIndexList_.Equals(other.costDiceIndexList_)) return false;
+      if (CardGuid != other.CardGuid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -130,8 +130,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CardGuid != 0) hash ^= CardGuid.GetHashCode();
       hash ^= costDiceIndexList_.GetHashCode();
+      if (CardGuid != 0) hash ^= CardGuid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -150,11 +150,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      costDiceIndexList_.WriteTo(output, _repeated_costDiceIndexList_codec);
       if (CardGuid != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(48);
         output.WriteUInt32(CardGuid);
       }
+      costDiceIndexList_.WriteTo(output, _repeated_costDiceIndexList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -165,11 +165,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      costDiceIndexList_.WriteTo(ref output, _repeated_costDiceIndexList_codec);
       if (CardGuid != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(48);
         output.WriteUInt32(CardGuid);
       }
+      costDiceIndexList_.WriteTo(ref output, _repeated_costDiceIndexList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -180,10 +180,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += costDiceIndexList_.CalculateSize(_repeated_costDiceIndexList_codec);
       if (CardGuid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CardGuid);
       }
-      size += costDiceIndexList_.CalculateSize(_repeated_costDiceIndexList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -196,10 +196,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      costDiceIndexList_.Add(other.costDiceIndexList_);
       if (other.CardGuid != 0) {
         CardGuid = other.CardGuid;
       }
-      costDiceIndexList_.Add(other.costDiceIndexList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -215,13 +215,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 34:
-          case 32: {
-            costDiceIndexList_.AddEntriesFrom(input, _repeated_costDiceIndexList_codec);
+          case 48: {
+            CardGuid = input.ReadUInt32();
             break;
           }
-          case 40: {
-            CardGuid = input.ReadUInt32();
+          case 82:
+          case 80: {
+            costDiceIndexList_.AddEntriesFrom(input, _repeated_costDiceIndexList_codec);
             break;
           }
         }
@@ -239,13 +239,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 34:
-          case 32: {
-            costDiceIndexList_.AddEntriesFrom(ref input, _repeated_costDiceIndexList_codec);
+          case 48: {
+            CardGuid = input.ReadUInt32();
             break;
           }
-          case 40: {
-            CardGuid = input.ReadUInt32();
+          case 82:
+          case 80: {
+            costDiceIndexList_.AddEntriesFrom(ref input, _repeated_costDiceIndexList_codec);
             break;
           }
         }

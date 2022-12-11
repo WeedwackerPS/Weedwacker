@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetSignInRewardRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhHZXRTaWduSW5SZXdhcmRSc3AucHJvdG8aEFNpZ25JbkluZm8ucHJvdG8i",
-            "SAoSR2V0U2lnbkluUmV3YXJkUnNwEg8KB3JldGNvZGUYASABKAUSIQoMc2ln",
-            "bl9pbl9pbmZvGA4gASgLMgsuU2lnbkluSW5mb0IiqgIfV2VlZHdhY2tlci5T",
-            "aGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChhHZXRTaWduSW5SZXdhcmRSc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aEFNpZ25JbkluZm8ucHJvdG8iaAoSR2V0U2lnbklu",
+            "UmV3YXJkUnNwEkEKDHNpZ25faW5faW5mbxgDIAEoCzIrLldlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8uU2lnbkluSW5mbxIPCgdyZXRjb2RlGAEg",
+            "ASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.SignInInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetSignInRewardRsp), global::Weedwacker.Shared.Network.Proto.GetSignInRewardRsp.Parser, new[]{ "Retcode", "SignInInfo" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetSignInRewardRsp), global::Weedwacker.Shared.Network.Proto.GetSignInRewardRsp.Parser, new[]{ "SignInInfo", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2521
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2543;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GetSignInRewardRsp : pb::IMessage<GetSignInRewardRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetSignInRewardRsp(GetSignInRewardRsp other) : this() {
-      retcode_ = other.retcode_;
       signInInfo_ = other.signInInfo_ != null ? other.signInInfo_.Clone() : null;
+      retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,6 +91,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetSignInRewardRsp Clone() {
       return new GetSignInRewardRsp(this);
+    }
+
+    /// <summary>Field number for the "sign_in_info" field.</summary>
+    public const int SignInInfoFieldNumber = 3;
+    private global::Weedwacker.Shared.Network.Proto.SignInInfo signInInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.SignInInfo SignInInfo {
+      get { return signInInfo_; }
+      set {
+        signInInfo_ = value;
+      }
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
@@ -97,18 +114,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return retcode_; }
       set {
         retcode_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "sign_in_info" field.</summary>
-    public const int SignInInfoFieldNumber = 14;
-    private global::Weedwacker.Shared.Network.Proto.SignInInfo signInInfo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.SignInInfo SignInInfo {
-      get { return signInInfo_; }
-      set {
-        signInInfo_ = value;
       }
     }
 
@@ -127,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Retcode != other.Retcode) return false;
       if (!object.Equals(SignInInfo, other.SignInInfo)) return false;
+      if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +141,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (signInInfo_ != null) hash ^= SignInInfo.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -161,7 +166,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteInt32(Retcode);
       }
       if (signInInfo_ != null) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(26);
         output.WriteMessage(SignInInfo);
       }
       if (_unknownFields != null) {
@@ -179,7 +184,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteInt32(Retcode);
       }
       if (signInInfo_ != null) {
-        output.WriteRawTag(114);
+        output.WriteRawTag(26);
         output.WriteMessage(SignInInfo);
       }
       if (_unknownFields != null) {
@@ -192,11 +197,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
       if (signInInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(SignInInfo);
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -210,14 +215,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
-      }
       if (other.signInInfo_ != null) {
         if (signInInfo_ == null) {
           SignInInfo = new global::Weedwacker.Shared.Network.Proto.SignInInfo();
         }
         SignInInfo.MergeFrom(other.SignInInfo);
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -238,7 +243,7 @@ namespace Weedwacker.Shared.Network.Proto {
             Retcode = input.ReadInt32();
             break;
           }
-          case 114: {
+          case 26: {
             if (signInInfo_ == null) {
               SignInInfo = new global::Weedwacker.Shared.Network.Proto.SignInInfo();
             }
@@ -264,7 +269,7 @@ namespace Weedwacker.Shared.Network.Proto {
             Retcode = input.ReadInt32();
             break;
           }
-          case 114: {
+          case 26: {
             if (signInInfo_ == null) {
               SignInInfo = new global::Weedwacker.Shared.Network.Proto.SignInInfo();
             }

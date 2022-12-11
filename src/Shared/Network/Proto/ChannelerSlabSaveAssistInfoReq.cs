@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static ChannelerSlabSaveAssistInfoReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiRDaGFubmVsZXJTbGFiU2F2ZUFzc2lzdEluZm9SZXEucHJvdG8aHUNoYW5u",
-            "ZWxlclNsYWJBc3Npc3RJbmZvLnByb3RvIlQKHkNoYW5uZWxlclNsYWJTYXZl",
-            "QXNzaXN0SW5mb1JlcRIyChBhc3Npc3RfaW5mb19saXN0GAggAygLMhguQ2hh",
-            "bm5lbGVyU2xhYkFzc2lzdEluZm9CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
-            "dHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiRDaGFubmVsZXJTbGFiU2F2ZUFzc2lzdEluZm9SZXEucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aHUNoYW5uZWxlclNsYWJBc3Np",
+            "c3RJbmZvLnByb3RvInQKHkNoYW5uZWxlclNsYWJTYXZlQXNzaXN0SW5mb1Jl",
+            "cRJSChBhc3Npc3RfaW5mb19saXN0GA4gAygLMjguV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90by5DaGFubmVsZXJTbGFiQXNzaXN0SW5mb2IGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ChannelerSlabAssistInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8416
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8039;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class ChannelerSlabSaveAssistInfoReq : pb::IMessage<ChannelerSlabSaveAssistInfoReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,9 +95,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "assist_info_list" field.</summary>
-    public const int AssistInfoListFieldNumber = 8;
+    public const int AssistInfoListFieldNumber = 14;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ChannelerSlabAssistInfo> _repeated_assistInfoList_codec
-        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.ChannelerSlabAssistInfo.Parser);
+        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.ChannelerSlabAssistInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChannelerSlabAssistInfo> assistInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChannelerSlabAssistInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -193,7 +198,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 66: {
+          case 114: {
             assistInfoList_.AddEntriesFrom(input, _repeated_assistInfoList_codec);
             break;
           }
@@ -212,7 +217,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 66: {
+          case 114: {
             assistInfoList_.AddEntriesFrom(ref input, _repeated_assistInfoList_codec);
             break;
           }

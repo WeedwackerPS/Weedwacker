@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static ChatHistoryNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdDaGF0SGlzdG9yeU5vdGlmeS5wcm90bxoOQ2hhdEluZm8ucHJvdG8iRQoR",
-            "Q2hhdEhpc3RvcnlOb3RpZnkSHAoJY2hhdF9pbmZvGAkgAygLMgkuQ2hhdElu",
-            "Zm8SEgoKY2hhbm5lbF9pZBgMIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQu",
-            "TmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChdDaGF0SGlzdG9yeU5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxoOQ2hhdEluZm8ucHJvdG8iZQoRQ2hhdEhpc3RvcnlO",
+            "b3RpZnkSEgoKY2hhbm5lbF9pZBgBIAEoDRI8CgljaGF0X2luZm8YCSADKAsy",
+            "KS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkNoYXRJbmZvYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ChatInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChatHistoryNotify), global::Weedwacker.Shared.Network.Proto.ChatHistoryNotify.Parser, new[]{ "ChatInfo", "ChannelId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChatHistoryNotify), global::Weedwacker.Shared.Network.Proto.ChatHistoryNotify.Parser, new[]{ "ChannelId", "ChatInfo" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3496
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3309;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ChatHistoryNotify : pb::IMessage<ChatHistoryNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChatHistoryNotify(ChatHistoryNotify other) : this() {
-      chatInfo_ = other.chatInfo_.Clone();
       channelId_ = other.channelId_;
+      chatInfo_ = other.chatInfo_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,6 +91,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChatHistoryNotify Clone() {
       return new ChatHistoryNotify(this);
+    }
+
+    /// <summary>Field number for the "channel_id" field.</summary>
+    public const int ChannelIdFieldNumber = 1;
+    private uint channelId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ChannelId {
+      get { return channelId_; }
+      set {
+        channelId_ = value;
+      }
     }
 
     /// <summary>Field number for the "chat_info" field.</summary>
@@ -97,18 +114,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChatInfo> ChatInfo {
       get { return chatInfo_; }
-    }
-
-    /// <summary>Field number for the "channel_id" field.</summary>
-    public const int ChannelIdFieldNumber = 12;
-    private uint channelId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ChannelId {
-      get { return channelId_; }
-      set {
-        channelId_ = value;
-      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -126,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!chatInfo_.Equals(other.chatInfo_)) return false;
       if (ChannelId != other.ChannelId) return false;
+      if(!chatInfo_.Equals(other.chatInfo_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -135,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= chatInfo_.GetHashCode();
       if (ChannelId != 0) hash ^= ChannelId.GetHashCode();
+      hash ^= chatInfo_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -155,11 +160,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      chatInfo_.WriteTo(output, _repeated_chatInfo_codec);
       if (ChannelId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(8);
         output.WriteUInt32(ChannelId);
       }
+      chatInfo_.WriteTo(output, _repeated_chatInfo_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -170,11 +175,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      chatInfo_.WriteTo(ref output, _repeated_chatInfo_codec);
       if (ChannelId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(8);
         output.WriteUInt32(ChannelId);
       }
+      chatInfo_.WriteTo(ref output, _repeated_chatInfo_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -185,10 +190,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += chatInfo_.CalculateSize(_repeated_chatInfo_codec);
       if (ChannelId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChannelId);
       }
+      size += chatInfo_.CalculateSize(_repeated_chatInfo_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -201,10 +206,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      chatInfo_.Add(other.chatInfo_);
       if (other.ChannelId != 0) {
         ChannelId = other.ChannelId;
       }
+      chatInfo_.Add(other.chatInfo_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -220,12 +225,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 74: {
-            chatInfo_.AddEntriesFrom(input, _repeated_chatInfo_codec);
+          case 8: {
+            ChannelId = input.ReadUInt32();
             break;
           }
-          case 96: {
-            ChannelId = input.ReadUInt32();
+          case 74: {
+            chatInfo_.AddEntriesFrom(input, _repeated_chatInfo_codec);
             break;
           }
         }
@@ -243,12 +248,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 74: {
-            chatInfo_.AddEntriesFrom(ref input, _repeated_chatInfo_codec);
+          case 8: {
+            ChannelId = input.ReadUInt32();
             break;
           }
-          case 96: {
-            ChannelId = input.ReadUInt32();
+          case 74: {
+            chatInfo_.AddEntriesFrom(ref input, _repeated_chatInfo_codec);
             break;
           }
         }

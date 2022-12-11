@@ -48,7 +48,7 @@ namespace Weedwacker.GameServer.Packet.Send
                 EntityId = entity.EntityId,
                 PropType = (uint)prop,
                 PropDelta = value,
-                ChangeEnergyReson = changeEnergyReason
+                ChangeEnergyReason = changeEnergyReason
             };
             if (param != null)
                 param.AsParallel().ForAll(w => proto.ParamList.Add(w));

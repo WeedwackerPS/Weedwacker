@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetAreaExplorePointRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxHZXRBcmVhRXhwbG9yZVBvaW50UnNwLnByb3RvIlsKFkdldEFyZWFFeHBs",
-            "b3JlUG9pbnRSc3ASDwoHcmV0Y29kZRgIIAEoBRIUCgxhcmVhX2lkX2xpc3QY",
-            "CyADKA0SGgoSZXhwbG9yZV9wb2ludF9saXN0GAQgAygNQiKqAh9XZWVkd2Fj",
-            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChxHZXRBcmVhRXhwbG9yZVBvaW50UnNwLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvIlsKFkdldEFyZWFFeHBsb3JlUG9pbnRSc3AS",
+            "GgoSZXhwbG9yZV9wb2ludF9saXN0GAQgAygNEg8KB3JldGNvZGUYAiABKAUS",
+            "FAoMYXJlYV9pZF9saXN0GAsgAygNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetAreaExplorePointRsp), global::Weedwacker.Shared.Network.Proto.GetAreaExplorePointRsp.Parser, new[]{ "Retcode", "AreaIdList", "ExplorePointList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetAreaExplorePointRsp), global::Weedwacker.Shared.Network.Proto.GetAreaExplorePointRsp.Parser, new[]{ "ExplorePointList", "Retcode", "AreaIdList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 249
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 215;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GetAreaExplorePointRsp : pb::IMessage<GetAreaExplorePointRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,9 +81,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetAreaExplorePointRsp(GetAreaExplorePointRsp other) : this() {
+      explorePointList_ = other.explorePointList_.Clone();
       retcode_ = other.retcode_;
       areaIdList_ = other.areaIdList_.Clone();
-      explorePointList_ = other.explorePointList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,8 +93,19 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GetAreaExplorePointRsp(this);
     }
 
+    /// <summary>Field number for the "explore_point_list" field.</summary>
+    public const int ExplorePointListFieldNumber = 4;
+    private static readonly pb::FieldCodec<uint> _repeated_explorePointList_codec
+        = pb::FieldCodec.ForUInt32(34);
+    private readonly pbc::RepeatedField<uint> explorePointList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> ExplorePointList {
+      get { return explorePointList_; }
+    }
+
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 8;
+    public const int RetcodeFieldNumber = 2;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -112,17 +127,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return areaIdList_; }
     }
 
-    /// <summary>Field number for the "explore_point_list" field.</summary>
-    public const int ExplorePointListFieldNumber = 4;
-    private static readonly pb::FieldCodec<uint> _repeated_explorePointList_codec
-        = pb::FieldCodec.ForUInt32(34);
-    private readonly pbc::RepeatedField<uint> explorePointList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> ExplorePointList {
-      get { return explorePointList_; }
-    }
-
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -138,9 +142,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if(!explorePointList_.Equals(other.explorePointList_)) return false;
       if (Retcode != other.Retcode) return false;
       if(!areaIdList_.Equals(other.areaIdList_)) return false;
-      if(!explorePointList_.Equals(other.explorePointList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -148,9 +152,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      hash ^= explorePointList_.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
       hash ^= areaIdList_.GetHashCode();
-      hash ^= explorePointList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -169,11 +173,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      explorePointList_.WriteTo(output, _repeated_explorePointList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(16);
         output.WriteInt32(Retcode);
       }
+      explorePointList_.WriteTo(output, _repeated_explorePointList_codec);
       areaIdList_.WriteTo(output, _repeated_areaIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -185,11 +189,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      explorePointList_.WriteTo(ref output, _repeated_explorePointList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(16);
         output.WriteInt32(Retcode);
       }
+      explorePointList_.WriteTo(ref output, _repeated_explorePointList_codec);
       areaIdList_.WriteTo(ref output, _repeated_areaIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -201,11 +205,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += explorePointList_.CalculateSize(_repeated_explorePointList_codec);
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       size += areaIdList_.CalculateSize(_repeated_areaIdList_codec);
-      size += explorePointList_.CalculateSize(_repeated_explorePointList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -218,11 +222,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      explorePointList_.Add(other.explorePointList_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
       areaIdList_.Add(other.areaIdList_);
-      explorePointList_.Add(other.explorePointList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -238,13 +242,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 16: {
+            Retcode = input.ReadInt32();
+            break;
+          }
           case 34:
           case 32: {
             explorePointList_.AddEntriesFrom(input, _repeated_explorePointList_codec);
-            break;
-          }
-          case 64: {
-            Retcode = input.ReadInt32();
             break;
           }
           case 90:
@@ -267,13 +271,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 16: {
+            Retcode = input.ReadInt32();
+            break;
+          }
           case 34:
           case 32: {
             explorePointList_.AddEntriesFrom(ref input, _repeated_explorePointList_codec);
-            break;
-          }
-          case 64: {
-            Retcode = input.ReadInt32();
             break;
           }
           case 90:

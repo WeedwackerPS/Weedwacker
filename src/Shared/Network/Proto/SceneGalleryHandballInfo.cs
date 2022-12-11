@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneGalleryHandballInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5TY2VuZUdhbGxlcnlIYW5kYmFsbEluZm8ucHJvdG8aD1BsYWNlSW5mby5w",
-            "cm90byJVChhTY2VuZUdhbGxlcnlIYW5kYmFsbEluZm8SIwoPYmFsbF9wbGFj",
-            "ZV9pbmZvGAkgASgLMgouUGxhY2VJbmZvEhQKDGlzX2hhdmVfYmFsbBgPIAEo",
-            "CEIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch5TY2VuZUdhbGxlcnlIYW5kYmFsbEluZm8ucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aD1BsYWNlSW5mby5wcm90byJ1ChhTY2Vu",
+            "ZUdhbGxlcnlIYW5kYmFsbEluZm8SQwoPYmFsbF9wbGFjZV9pbmZvGAYgASgL",
+            "MiouV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5QbGFjZUluZm8S",
+            "FAoMaXNfaGF2ZV9iYWxsGAsgASgIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.PlaceInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "ball_place_info" field.</summary>
-    public const int BallPlaceInfoFieldNumber = 9;
+    public const int BallPlaceInfoFieldNumber = 6;
     private global::Weedwacker.Shared.Network.Proto.PlaceInfo ballPlaceInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -96,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_have_ball" field.</summary>
-    public const int IsHaveBallFieldNumber = 15;
+    public const int IsHaveBallFieldNumber = 11;
     private bool isHaveBall_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -152,11 +153,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (ballPlaceInfo_ != null) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(50);
         output.WriteMessage(BallPlaceInfo);
       }
       if (IsHaveBall != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(88);
         output.WriteBool(IsHaveBall);
       }
       if (_unknownFields != null) {
@@ -170,11 +171,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (ballPlaceInfo_ != null) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(50);
         output.WriteMessage(BallPlaceInfo);
       }
       if (IsHaveBall != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(88);
         output.WriteBool(IsHaveBall);
       }
       if (_unknownFields != null) {
@@ -229,14 +230,14 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 74: {
+          case 50: {
             if (ballPlaceInfo_ == null) {
               BallPlaceInfo = new global::Weedwacker.Shared.Network.Proto.PlaceInfo();
             }
             input.ReadMessage(BallPlaceInfo);
             break;
           }
-          case 120: {
+          case 88: {
             IsHaveBall = input.ReadBool();
             break;
           }
@@ -255,14 +256,14 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 74: {
+          case 50: {
             if (ballPlaceInfo_ == null) {
               BallPlaceInfo = new global::Weedwacker.Shared.Network.Proto.PlaceInfo();
             }
             input.ReadMessage(BallPlaceInfo);
             break;
           }
-          case 120: {
+          case 88: {
             IsHaveBall = input.ReadBool();
             break;
           }

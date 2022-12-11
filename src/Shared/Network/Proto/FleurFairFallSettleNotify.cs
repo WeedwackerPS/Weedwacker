@@ -24,13 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static FleurFairFallSettleNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9GbGV1ckZhaXJGYWxsU2V0dGxlTm90aWZ5LnByb3RvGh1GbGV1ckZhaXJG",
-            "YWxsU2V0dGxlSW5mby5wcm90byLIAQoZRmxldXJGYWlyRmFsbFNldHRsZU5v",
-            "dGlmeRITCgttaW5pZ2FtZV9pZBgPIAEoDRJGCg9zZXR0bGVfaW5mb19tYXAY",
-            "CyADKAsyLS5GbGV1ckZhaXJGYWxsU2V0dGxlTm90aWZ5LlNldHRsZUluZm9N",
-            "YXBFbnRyeRpOChJTZXR0bGVJbmZvTWFwRW50cnkSCwoDa2V5GAEgASgNEicK",
-            "BXZhbHVlGAIgASgLMhguRmxldXJGYWlyRmFsbFNldHRsZUluZm86AjgBQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch9GbGV1ckZhaXJGYWxsU2V0dGxlTm90aWZ5LnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvGh1GbGV1ckZhaXJGYWxsU2V0dGxlSW5m",
+            "by5wcm90byKIAgoZRmxldXJGYWlyRmFsbFNldHRsZU5vdGlmeRITCgttaW5p",
+            "Z2FtZV9pZBgCIAEoDRJmCg9zZXR0bGVfaW5mb19tYXAYDSADKAsyTS5XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkZsZXVyRmFpckZhbGxTZXR0",
+            "bGVOb3RpZnkuU2V0dGxlSW5mb01hcEVudHJ5Gm4KElNldHRsZUluZm9NYXBF",
+            "bnRyeRILCgNrZXkYASABKA0SRwoFdmFsdWUYAiABKAsyOC5XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvLkZsZXVyRmFpckZhbGxTZXR0bGVJbmZv",
+            "OgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FleurFairFallSettleInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -42,9 +44,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2017
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2136;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class FleurFairFallSettleNotify : pb::IMessage<FleurFairFallSettleNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -92,7 +98,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "minigame_id" field.</summary>
-    public const int MinigameIdFieldNumber = 15;
+    public const int MinigameIdFieldNumber = 2;
     private uint minigameId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,9 +110,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "settle_info_map" field.</summary>
-    public const int SettleInfoMapFieldNumber = 11;
+    public const int SettleInfoMapFieldNumber = 13;
     private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FleurFairFallSettleInfo>.Codec _map_settleInfoMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FleurFairFallSettleInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.FleurFairFallSettleInfo.Parser), 90);
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FleurFairFallSettleInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.FleurFairFallSettleInfo.Parser), 106);
     private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FleurFairFallSettleInfo> settleInfoMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.FleurFairFallSettleInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -158,11 +164,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      settleInfoMap_.WriteTo(output, _map_settleInfoMap_codec);
       if (MinigameId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(16);
         output.WriteUInt32(MinigameId);
       }
+      settleInfoMap_.WriteTo(output, _map_settleInfoMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -173,11 +179,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      settleInfoMap_.WriteTo(ref output, _map_settleInfoMap_codec);
       if (MinigameId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(16);
         output.WriteUInt32(MinigameId);
       }
+      settleInfoMap_.WriteTo(ref output, _map_settleInfoMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -223,12 +229,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 90: {
-            settleInfoMap_.AddEntriesFrom(input, _map_settleInfoMap_codec);
+          case 16: {
+            MinigameId = input.ReadUInt32();
             break;
           }
-          case 120: {
-            MinigameId = input.ReadUInt32();
+          case 106: {
+            settleInfoMap_.AddEntriesFrom(input, _map_settleInfoMap_codec);
             break;
           }
         }
@@ -246,12 +252,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 90: {
-            settleInfoMap_.AddEntriesFrom(ref input, _map_settleInfoMap_codec);
+          case 16: {
+            MinigameId = input.ReadUInt32();
             break;
           }
-          case 120: {
-            MinigameId = input.ReadUInt32();
+          case 106: {
+            settleInfoMap_.AddEntriesFrom(ref input, _map_settleInfoMap_codec);
             break;
           }
         }

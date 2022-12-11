@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static PotionActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5Qb3Rpb25BY3Rpdml0eURldGFpbEluZm8ucHJvdG8aFVBvdGlvblN0YWdl",
-            "RGF0YS5wcm90byJAChhQb3Rpb25BY3Rpdml0eURldGFpbEluZm8SJAoKc3Rh",
-            "Z2VfbGlzdBgKIAMoCzIQLlBvdGlvblN0YWdlRGF0YUIiqgIfV2VlZHdhY2tl",
-            "ci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch5Qb3Rpb25BY3Rpdml0eURldGFpbEluZm8ucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aFVBvdGlvblN0YWdlRGF0YS5wcm90byJg",
+            "ChhQb3Rpb25BY3Rpdml0eURldGFpbEluZm8SRAoKc3RhZ2VfbGlzdBgEIAMo",
+            "CzIwLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uUG90aW9uU3Rh",
+            "Z2VEYXRhYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.PotionStageDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,9 +84,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "stage_list" field.</summary>
-    public const int StageListFieldNumber = 10;
+    public const int StageListFieldNumber = 4;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.PotionStageData> _repeated_stageList_codec
-        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.PotionStageData.Parser);
+        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.PotionStageData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PotionStageData> stageList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PotionStageData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -186,7 +187,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 82: {
+          case 34: {
             stageList_.AddEntriesFrom(input, _repeated_stageList_codec);
             break;
           }
@@ -205,7 +206,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 82: {
+          case 34: {
             stageList_.AddEntriesFrom(ref input, _repeated_stageList_codec);
             break;
           }

@@ -24,13 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlantFlowerGiveFriendFlowerReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiRQbGFudEZsb3dlckdpdmVGcmllbmRGbG93ZXJSZXEucHJvdG8iwgEKHlBs",
-            "YW50Rmxvd2VyR2l2ZUZyaWVuZEZsb3dlclJlcRITCgtzY2hlZHVsZV9pZBgL",
-            "IAEoDRILCgN1aWQYDSABKA0SSQoOZmxvd2VyX251bV9tYXAYDCADKAsyMS5Q",
-            "bGFudEZsb3dlckdpdmVGcmllbmRGbG93ZXJSZXEuRmxvd2VyTnVtTWFwRW50",
-            "cnkaMwoRRmxvd2VyTnVtTWFwRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVl",
-            "GAIgASgNOgI4AUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
-            "b2IGcHJvdG8z"));
+            "CiRQbGFudEZsb3dlckdpdmVGcmllbmRGbG93ZXJSZXEucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8i4gEKHlBsYW50Rmxvd2VyR2l2",
+            "ZUZyaWVuZEZsb3dlclJlcRITCgtzY2hlZHVsZV9pZBgGIAEoDRILCgN1aWQY",
+            "AyABKA0SaQoOZmxvd2VyX251bV9tYXAYDSADKAsyUS5XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvLlBsYW50Rmxvd2VyR2l2ZUZyaWVuZEZsb3dl",
+            "clJlcS5GbG93ZXJOdW1NYXBFbnRyeRozChFGbG93ZXJOdW1NYXBFbnRyeRIL",
+            "CgNrZXkYASABKA0SDQoFdmFsdWUYAiABKA06AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -42,10 +42,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8846
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8930;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class PlantFlowerGiveFriendFlowerReq : pb::IMessage<PlantFlowerGiveFriendFlowerReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -94,7 +98,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "schedule_id" field.</summary>
-    public const int ScheduleIdFieldNumber = 11;
+    public const int ScheduleIdFieldNumber = 6;
     private uint scheduleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -106,7 +110,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "uid" field.</summary>
-    public const int UidFieldNumber = 13;
+    public const int UidFieldNumber = 3;
     private uint uid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -118,9 +122,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "flower_num_map" field.</summary>
-    public const int FlowerNumMapFieldNumber = 12;
+    public const int FlowerNumMapFieldNumber = 13;
     private static readonly pbc::MapField<uint, uint>.Codec _map_flowerNumMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 98);
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 106);
     private readonly pbc::MapField<uint, uint> flowerNumMap_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -174,15 +178,15 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (Uid != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Uid);
+      }
       if (ScheduleId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(48);
         output.WriteUInt32(ScheduleId);
       }
       flowerNumMap_.WriteTo(output, _map_flowerNumMap_codec);
-      if (Uid != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(Uid);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -193,15 +197,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Uid != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Uid);
+      }
       if (ScheduleId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(48);
         output.WriteUInt32(ScheduleId);
       }
       flowerNumMap_.WriteTo(ref output, _map_flowerNumMap_codec);
-      if (Uid != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(Uid);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -253,16 +257,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 88: {
+          case 24: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 48: {
             ScheduleId = input.ReadUInt32();
             break;
           }
-          case 98: {
+          case 106: {
             flowerNumMap_.AddEntriesFrom(input, _map_flowerNumMap_codec);
-            break;
-          }
-          case 104: {
-            Uid = input.ReadUInt32();
             break;
           }
         }
@@ -280,16 +284,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 88: {
+          case 24: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 48: {
             ScheduleId = input.ReadUInt32();
             break;
           }
-          case 98: {
+          case 106: {
             flowerNumMap_.AddEntriesFrom(ref input, _map_flowerNumMap_codec);
-            break;
-          }
-          case 104: {
-            Uid = input.ReadUInt32();
             break;
           }
         }

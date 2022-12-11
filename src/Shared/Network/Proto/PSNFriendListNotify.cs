@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static PSNFriendListNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlQU05GcmllbmRMaXN0Tm90aWZ5LnByb3RvGhFGcmllbmRCcmllZi5wcm90",
-            "byI8ChNQU05GcmllbmRMaXN0Tm90aWZ5EiUKD3Bzbl9mcmllbmRfbGlzdBgI",
-            "IAMoCzIMLkZyaWVuZEJyaWVmQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
-            "b3JrLlByb3RvYgZwcm90bzM="));
+            "ChlQU05GcmllbmRMaXN0Tm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvGhFGcmllbmRCcmllZi5wcm90byJcChNQU05Gcmll",
+            "bmRMaXN0Tm90aWZ5EkUKD3Bzbl9mcmllbmRfbGlzdBgBIAMoCzIsLldlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uRnJpZW5kQnJpZWZiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FriendBriefReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4087
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4087;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class PSNFriendListNotify : pb::IMessage<PSNFriendListNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "psn_friend_list" field.</summary>
-    public const int PsnFriendListFieldNumber = 8;
+    public const int PsnFriendListFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.FriendBrief> _repeated_psnFriendList_codec
-        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.FriendBrief.Parser);
+        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.FriendBrief.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FriendBrief> psnFriendList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FriendBrief>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -191,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 66: {
+          case 10: {
             psnFriendList_.AddEntriesFrom(input, _repeated_psnFriendList_codec);
             break;
           }
@@ -210,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 66: {
+          case 10: {
             psnFriendList_.AddEntriesFrom(ref input, _repeated_psnFriendList_codec);
             break;
           }

@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static CoopPointReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg9Db29wUG9pbnQucHJvdG8ilgEKCUNvb3BQb2ludBIXCg9zZWxmX2NvbmZp",
-            "ZGVuY2UYDyABKA0SHwoFc3RhdGUYCiABKA4yEC5Db29wUG9pbnQuU3RhdGUS",
-            "CgoCaWQYDiABKA0iQwoFU3RhdGUSEwoPU1RBVEVfVU5TVEFSVEVEEAASEQoN",
-            "U1RBVEVfU1RBUlRFRBABEhIKDlNUQVRFX0ZJTklTSEVEEAJCIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Cg9Db29wUG9pbnQucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8itgEKCUNvb3BQb2ludBIXCg9zZWxmX2NvbmZpZGVuY2UYBiABKA0S",
+            "PwoFc3RhdGUYDiABKA4yMC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
+            "b3RvLkNvb3BQb2ludC5TdGF0ZRIKCgJpZBgEIAEoDSJDCgVTdGF0ZRITCg9T",
+            "VEFURV9VTlNUQVJURUQQABIRCg1TVEFURV9TVEFSVEVEEAESEgoOU1RBVEVf",
+            "RklOSVNIRUQQAmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -86,7 +87,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "self_confidence" field.</summary>
-    public const int SelfConfidenceFieldNumber = 15;
+    public const int SelfConfidenceFieldNumber = 6;
     private uint selfConfidence_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -98,7 +99,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "state" field.</summary>
-    public const int StateFieldNumber = 10;
+    public const int StateFieldNumber = 14;
     private global::Weedwacker.Shared.Network.Proto.CoopPoint.Types.State state_ = global::Weedwacker.Shared.Network.Proto.CoopPoint.Types.State.Unstarted;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,7 +111,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 14;
+    public const int IdFieldNumber = 4;
     private uint id_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -167,17 +168,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (State != global::Weedwacker.Shared.Network.Proto.CoopPoint.Types.State.Unstarted) {
-        output.WriteRawTag(80);
-        output.WriteEnum((int) State);
-      }
       if (Id != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(32);
         output.WriteUInt32(Id);
       }
       if (SelfConfidence != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(48);
         output.WriteUInt32(SelfConfidence);
+      }
+      if (State != global::Weedwacker.Shared.Network.Proto.CoopPoint.Types.State.Unstarted) {
+        output.WriteRawTag(112);
+        output.WriteEnum((int) State);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -189,17 +190,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (State != global::Weedwacker.Shared.Network.Proto.CoopPoint.Types.State.Unstarted) {
-        output.WriteRawTag(80);
-        output.WriteEnum((int) State);
-      }
       if (Id != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(32);
         output.WriteUInt32(Id);
       }
       if (SelfConfidence != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(48);
         output.WriteUInt32(SelfConfidence);
+      }
+      if (State != global::Weedwacker.Shared.Network.Proto.CoopPoint.Types.State.Unstarted) {
+        output.WriteRawTag(112);
+        output.WriteEnum((int) State);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -256,16 +257,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 80: {
-            State = (global::Weedwacker.Shared.Network.Proto.CoopPoint.Types.State) input.ReadEnum();
-            break;
-          }
-          case 112: {
+          case 32: {
             Id = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 48: {
             SelfConfidence = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            State = (global::Weedwacker.Shared.Network.Proto.CoopPoint.Types.State) input.ReadEnum();
             break;
           }
         }
@@ -283,16 +284,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 80: {
-            State = (global::Weedwacker.Shared.Network.Proto.CoopPoint.Types.State) input.ReadEnum();
-            break;
-          }
-          case 112: {
+          case 32: {
             Id = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 48: {
             SelfConfidence = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            State = (global::Weedwacker.Shared.Network.Proto.CoopPoint.Types.State) input.ReadEnum();
             break;
           }
         }

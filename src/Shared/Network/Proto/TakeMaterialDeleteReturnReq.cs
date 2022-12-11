@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static TakeMaterialDeleteReturnReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFUYWtlTWF0ZXJpYWxEZWxldGVSZXR1cm5SZXEucHJvdG8aHk1hdGVyaWFs",
-            "RGVsZXRlUmV0dXJuVHlwZS5wcm90byJGChtUYWtlTWF0ZXJpYWxEZWxldGVS",
-            "ZXR1cm5SZXESJwoEdHlwZRgIIAEoDjIZLk1hdGVyaWFsRGVsZXRlUmV0dXJu",
-            "VHlwZUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJv",
-            "dG8z"));
+            "CiFUYWtlTWF0ZXJpYWxEZWxldGVSZXR1cm5SZXEucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aHk1hdGVyaWFsRGVsZXRlUmV0dXJu",
+            "VHlwZS5wcm90byJmChtUYWtlTWF0ZXJpYWxEZWxldGVSZXR1cm5SZXESRwoE",
+            "dHlwZRgLIAEoDjI5LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8u",
+            "TWF0ZXJpYWxEZWxldGVSZXR1cm5UeXBlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MaterialDeleteReturnTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 629
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 620;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class TakeMaterialDeleteReturnReq : pb::IMessage<TakeMaterialDeleteReturnReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "type" field.</summary>
-    public const int TypeFieldNumber = 8;
+    public const int TypeFieldNumber = 11;
     private global::Weedwacker.Shared.Network.Proto.MaterialDeleteReturnType type_ = global::Weedwacker.Shared.Network.Proto.MaterialDeleteReturnType.Bag;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -144,7 +148,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Type != global::Weedwacker.Shared.Network.Proto.MaterialDeleteReturnType.Bag) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(88);
         output.WriteEnum((int) Type);
       }
       if (_unknownFields != null) {
@@ -158,7 +162,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Type != global::Weedwacker.Shared.Network.Proto.MaterialDeleteReturnType.Bag) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(88);
         output.WriteEnum((int) Type);
       }
       if (_unknownFields != null) {
@@ -204,7 +208,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 64: {
+          case 88: {
             Type = (global::Weedwacker.Shared.Network.Proto.MaterialDeleteReturnType) input.ReadEnum();
             break;
           }
@@ -223,7 +227,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 64: {
+          case 88: {
             Type = (global::Weedwacker.Shared.Network.Proto.MaterialDeleteReturnType) input.ReadEnum();
             break;
           }

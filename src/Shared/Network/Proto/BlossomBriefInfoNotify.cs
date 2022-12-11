@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static BlossomBriefInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxCbG9zc29tQnJpZWZJbmZvTm90aWZ5LnByb3RvGhZCbG9zc29tQnJpZWZJ",
-            "bmZvLnByb3RvIkQKFkJsb3Nzb21CcmllZkluZm9Ob3RpZnkSKgoPYnJpZWZf",
-            "aW5mb19saXN0GAQgAygLMhEuQmxvc3NvbUJyaWVmSW5mb0IiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChxCbG9zc29tQnJpZWZJbmZvTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhZCbG9zc29tQnJpZWZJbmZvLnByb3RvImQK",
+            "FkJsb3Nzb21CcmllZkluZm9Ob3RpZnkSSgoPYnJpZWZfaW5mb19saXN0GAgg",
+            "AygLMjEuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5CbG9zc29t",
+            "QnJpZWZJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.BlossomBriefInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2712
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2756;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class BlossomBriefInfoNotify : pb::IMessage<BlossomBriefInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +94,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "brief_info_list" field.</summary>
-    public const int BriefInfoListFieldNumber = 4;
+    public const int BriefInfoListFieldNumber = 8;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.BlossomBriefInfo> _repeated_briefInfoList_codec
-        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.BlossomBriefInfo.Parser);
+        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.BlossomBriefInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BlossomBriefInfo> briefInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BlossomBriefInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -192,7 +197,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 34: {
+          case 66: {
             briefInfoList_.AddEntriesFrom(input, _repeated_briefInfoList_codec);
             break;
           }
@@ -211,7 +216,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 34: {
+          case 66: {
             briefInfoList_.AddEntriesFrom(ref input, _repeated_briefInfoList_codec);
             break;
           }

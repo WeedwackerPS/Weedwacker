@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static FleurFairMusicGameSettleRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFGbGV1ckZhaXJNdXNpY0dhbWVTZXR0bGVSc3AucHJvdG8iewobRmxldXJG",
-            "YWlyTXVzaWNHYW1lU2V0dGxlUnNwEhwKFGlzX3VubG9ja19uZXh0X2xldmVs",
-            "GAQgASgIEhUKDWlzX25ld19yZWNvcmQYDCABKAgSDwoHcmV0Y29kZRgFIAEo",
-            "BRIWCg5tdXNpY19iYXNpY19pZBgJIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFy",
-            "ZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiFGbGV1ckZhaXJNdXNpY0dhbWVTZXR0bGVSc3AucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iewobRmxldXJGYWlyTXVzaWNHYW1l",
+            "U2V0dGxlUnNwEhUKDWlzX25ld19yZWNvcmQYDyABKAgSHAoUaXNfdW5sb2Nr",
+            "X25leHRfbGV2ZWwYByABKAgSFgoObXVzaWNfYmFzaWNfaWQYBCABKA0SDwoH",
+            "cmV0Y29kZRgJIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FleurFairMusicGameSettleRsp), global::Weedwacker.Shared.Network.Proto.FleurFairMusicGameSettleRsp.Parser, new[]{ "IsUnlockNextLevel", "IsNewRecord", "Retcode", "MusicBasicId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FleurFairMusicGameSettleRsp), global::Weedwacker.Shared.Network.Proto.FleurFairMusicGameSettleRsp.Parser, new[]{ "IsNewRecord", "IsUnlockNextLevel", "MusicBasicId", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2113
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2156;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class FleurFairMusicGameSettleRsp : pb::IMessage<FleurFairMusicGameSettleRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,10 +82,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FleurFairMusicGameSettleRsp(FleurFairMusicGameSettleRsp other) : this() {
-      isUnlockNextLevel_ = other.isUnlockNextLevel_;
       isNewRecord_ = other.isNewRecord_;
-      retcode_ = other.retcode_;
+      isUnlockNextLevel_ = other.isUnlockNextLevel_;
       musicBasicId_ = other.musicBasicId_;
+      retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,20 +95,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new FleurFairMusicGameSettleRsp(this);
     }
 
-    /// <summary>Field number for the "is_unlock_next_level" field.</summary>
-    public const int IsUnlockNextLevelFieldNumber = 4;
-    private bool isUnlockNextLevel_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsUnlockNextLevel {
-      get { return isUnlockNextLevel_; }
-      set {
-        isUnlockNextLevel_ = value;
-      }
-    }
-
     /// <summary>Field number for the "is_new_record" field.</summary>
-    public const int IsNewRecordFieldNumber = 12;
+    public const int IsNewRecordFieldNumber = 15;
     private bool isNewRecord_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,20 +107,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 5;
-    private int retcode_;
+    /// <summary>Field number for the "is_unlock_next_level" field.</summary>
+    public const int IsUnlockNextLevelFieldNumber = 7;
+    private bool isUnlockNextLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
+    public bool IsUnlockNextLevel {
+      get { return isUnlockNextLevel_; }
       set {
-        retcode_ = value;
+        isUnlockNextLevel_ = value;
       }
     }
 
     /// <summary>Field number for the "music_basic_id" field.</summary>
-    public const int MusicBasicIdFieldNumber = 9;
+    public const int MusicBasicIdFieldNumber = 4;
     private uint musicBasicId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -136,6 +128,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return musicBasicId_; }
       set {
         musicBasicId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 9;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
       }
     }
 
@@ -154,10 +158,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsUnlockNextLevel != other.IsUnlockNextLevel) return false;
       if (IsNewRecord != other.IsNewRecord) return false;
-      if (Retcode != other.Retcode) return false;
+      if (IsUnlockNextLevel != other.IsUnlockNextLevel) return false;
       if (MusicBasicId != other.MusicBasicId) return false;
+      if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -165,10 +169,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsUnlockNextLevel != false) hash ^= IsUnlockNextLevel.GetHashCode();
       if (IsNewRecord != false) hash ^= IsNewRecord.GetHashCode();
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (IsUnlockNextLevel != false) hash ^= IsUnlockNextLevel.GetHashCode();
       if (MusicBasicId != 0) hash ^= MusicBasicId.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -187,20 +191,20 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsUnlockNextLevel != false) {
+      if (MusicBasicId != 0) {
         output.WriteRawTag(32);
+        output.WriteUInt32(MusicBasicId);
+      }
+      if (IsUnlockNextLevel != false) {
+        output.WriteRawTag(56);
         output.WriteBool(IsUnlockNextLevel);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(72);
         output.WriteInt32(Retcode);
       }
-      if (MusicBasicId != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(MusicBasicId);
-      }
       if (IsNewRecord != false) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(120);
         output.WriteBool(IsNewRecord);
       }
       if (_unknownFields != null) {
@@ -213,20 +217,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsUnlockNextLevel != false) {
+      if (MusicBasicId != 0) {
         output.WriteRawTag(32);
+        output.WriteUInt32(MusicBasicId);
+      }
+      if (IsUnlockNextLevel != false) {
+        output.WriteRawTag(56);
         output.WriteBool(IsUnlockNextLevel);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(72);
         output.WriteInt32(Retcode);
       }
-      if (MusicBasicId != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(MusicBasicId);
-      }
       if (IsNewRecord != false) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(120);
         output.WriteBool(IsNewRecord);
       }
       if (_unknownFields != null) {
@@ -239,17 +243,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsUnlockNextLevel != false) {
-        size += 1 + 1;
-      }
       if (IsNewRecord != false) {
         size += 1 + 1;
       }
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      if (IsUnlockNextLevel != false) {
+        size += 1 + 1;
       }
       if (MusicBasicId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MusicBasicId);
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -263,17 +267,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsUnlockNextLevel != false) {
-        IsUnlockNextLevel = other.IsUnlockNextLevel;
-      }
       if (other.IsNewRecord != false) {
         IsNewRecord = other.IsNewRecord;
       }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
+      if (other.IsUnlockNextLevel != false) {
+        IsUnlockNextLevel = other.IsUnlockNextLevel;
       }
       if (other.MusicBasicId != 0) {
         MusicBasicId = other.MusicBasicId;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -291,18 +295,18 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 32: {
-            IsUnlockNextLevel = input.ReadBool();
-            break;
-          }
-          case 40: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 72: {
             MusicBasicId = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 56: {
+            IsUnlockNextLevel = input.ReadBool();
+            break;
+          }
+          case 72: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 120: {
             IsNewRecord = input.ReadBool();
             break;
           }
@@ -322,18 +326,18 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 32: {
-            IsUnlockNextLevel = input.ReadBool();
-            break;
-          }
-          case 40: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 72: {
             MusicBasicId = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 56: {
+            IsUnlockNextLevel = input.ReadBool();
+            break;
+          }
+          case 72: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 120: {
             IsNewRecord = input.ReadBool();
             break;
           }

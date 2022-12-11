@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static MuqadasPotionActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVNdXFhZGFzUG90aW9uQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGhxNdXFh",
-            "ZGFzUG90aW9uTGV2ZWxEYXRhLnByb3RvImIKH011cWFkYXNQb3Rpb25BY3Rp",
-            "dml0eURldGFpbEluZm8SPwoebXVxYWRhc19wb3Rpb25fbGV2ZWxfZGF0YV9s",
-            "aXN0GAggAygLMhcuTXVxYWRhc1BvdGlvbkxldmVsRGF0YUIiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiVNdXFhZGFzUG90aW9uQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGhxNdXFhZGFzUG90aW9uTGV2",
+            "ZWxEYXRhLnByb3RvIoIBCh9NdXFhZGFzUG90aW9uQWN0aXZpdHlEZXRhaWxJ",
+            "bmZvEl8KHm11cWFkYXNfcG90aW9uX2xldmVsX2RhdGFfbGlzdBgFIAMoCzI3",
+            "LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uTXVxYWRhc1BvdGlv",
+            "bkxldmVsRGF0YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MuqadasPotionLevelDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,9 +85,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "muqadas_potion_level_data_list" field.</summary>
-    public const int MuqadasPotionLevelDataListFieldNumber = 8;
+    public const int MuqadasPotionLevelDataListFieldNumber = 5;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.MuqadasPotionLevelData> _repeated_muqadasPotionLevelDataList_codec
-        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.MuqadasPotionLevelData.Parser);
+        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.MuqadasPotionLevelData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MuqadasPotionLevelData> muqadasPotionLevelDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.MuqadasPotionLevelData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -187,7 +188,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 66: {
+          case 42: {
             muqadasPotionLevelDataList_.AddEntriesFrom(input, _repeated_muqadasPotionLevelDataList_codec);
             break;
           }
@@ -206,7 +207,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 66: {
+          case 42: {
             muqadasPotionLevelDataList_.AddEntriesFrom(ref input, _repeated_muqadasPotionLevelDataList_codec);
             break;
           }

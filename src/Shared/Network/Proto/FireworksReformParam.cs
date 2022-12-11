@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static FireworksReformParamReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpGaXJld29ya3NSZWZvcm1QYXJhbS5wcm90bxoeRmlyZXdvcmtzUmVmb3Jt",
-            "UGFyYW1UeXBlLnByb3RvIk4KFEZpcmV3b3Jrc1JlZm9ybVBhcmFtEicKBHR5",
-            "cGUYCCABKA4yGS5GaXJld29ya3NSZWZvcm1QYXJhbVR5cGUSDQoFdmFsdWUY",
-            "BCABKAVCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "ChpGaXJld29ya3NSZWZvcm1QYXJhbS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxoeRmlyZXdvcmtzUmVmb3JtUGFyYW1UeXBlLnBy",
+            "b3RvIm4KFEZpcmV3b3Jrc1JlZm9ybVBhcmFtEg0KBXZhbHVlGAEgASgFEkcK",
+            "BHR5cGUYBSABKA4yOS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
+            "LkZpcmV3b3Jrc1JlZm9ybVBhcmFtVHlwZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FireworksReformParamTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FireworksReformParam), global::Weedwacker.Shared.Network.Proto.FireworksReformParam.Parser, new[]{ "Type", "Value" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FireworksReformParam), global::Weedwacker.Shared.Network.Proto.FireworksReformParam.Parser, new[]{ "Value", "Type" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,8 +73,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FireworksReformParam(FireworksReformParam other) : this() {
-      type_ = other.type_;
       value_ = other.value_;
+      type_ = other.type_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,20 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new FireworksReformParam(this);
     }
 
-    /// <summary>Field number for the "type" field.</summary>
-    public const int TypeFieldNumber = 8;
-    private global::Weedwacker.Shared.Network.Proto.FireworksReformParamType type_ = global::Weedwacker.Shared.Network.Proto.FireworksReformParamType.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.FireworksReformParamType Type {
-      get { return type_; }
-      set {
-        type_ = value;
-      }
-    }
-
     /// <summary>Field number for the "value" field.</summary>
-    public const int ValueFieldNumber = 4;
+    public const int ValueFieldNumber = 1;
     private int value_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -105,6 +93,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return value_; }
       set {
         value_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "type" field.</summary>
+    public const int TypeFieldNumber = 5;
+    private global::Weedwacker.Shared.Network.Proto.FireworksReformParamType type_ = global::Weedwacker.Shared.Network.Proto.FireworksReformParamType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.FireworksReformParamType Type {
+      get { return type_; }
+      set {
+        type_ = value;
       }
     }
 
@@ -123,8 +123,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Type != other.Type) return false;
       if (Value != other.Value) return false;
+      if (Type != other.Type) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -132,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Type != global::Weedwacker.Shared.Network.Proto.FireworksReformParamType.None) hash ^= Type.GetHashCode();
       if (Value != 0) hash ^= Value.GetHashCode();
+      if (Type != global::Weedwacker.Shared.Network.Proto.FireworksReformParamType.None) hash ^= Type.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -153,11 +153,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Value != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(8);
         output.WriteInt32(Value);
       }
       if (Type != global::Weedwacker.Shared.Network.Proto.FireworksReformParamType.None) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(40);
         output.WriteEnum((int) Type);
       }
       if (_unknownFields != null) {
@@ -171,11 +171,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Value != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(8);
         output.WriteInt32(Value);
       }
       if (Type != global::Weedwacker.Shared.Network.Proto.FireworksReformParamType.None) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(40);
         output.WriteEnum((int) Type);
       }
       if (_unknownFields != null) {
@@ -188,11 +188,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Type != global::Weedwacker.Shared.Network.Proto.FireworksReformParamType.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
-      }
       if (Value != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Value);
+      }
+      if (Type != global::Weedwacker.Shared.Network.Proto.FireworksReformParamType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -206,11 +206,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Type != global::Weedwacker.Shared.Network.Proto.FireworksReformParamType.None) {
-        Type = other.Type;
-      }
       if (other.Value != 0) {
         Value = other.Value;
+      }
+      if (other.Type != global::Weedwacker.Shared.Network.Proto.FireworksReformParamType.None) {
+        Type = other.Type;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -227,11 +227,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
+          case 8: {
             Value = input.ReadInt32();
             break;
           }
-          case 64: {
+          case 40: {
             Type = (global::Weedwacker.Shared.Network.Proto.FireworksReformParamType) input.ReadEnum();
             break;
           }
@@ -250,11 +250,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
+          case 8: {
             Value = input.ReadInt32();
             break;
           }
-          case 64: {
+          case 40: {
             Type = (global::Weedwacker.Shared.Network.Proto.FireworksReformParamType) input.ReadEnum();
             break;
           }

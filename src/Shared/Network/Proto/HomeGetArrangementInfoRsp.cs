@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeGetArrangementInfoRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9Ib21lR2V0QXJyYW5nZW1lbnRJbmZvUnNwLnByb3RvGh5Ib21lU2NlbmVB",
-            "cnJhbmdlbWVudEluZm8ucHJvdG8ibAoZSG9tZUdldEFycmFuZ2VtZW50SW5m",
-            "b1JzcBIPCgdyZXRjb2RlGAYgASgFEj4KG3NjZW5lX2FycmFuZ2VtZW50X2lu",
-            "Zm9fbGlzdBgOIAMoCzIZLkhvbWVTY2VuZUFycmFuZ2VtZW50SW5mb0IiqgIf",
-            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch9Ib21lR2V0QXJyYW5nZW1lbnRJbmZvUnNwLnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvGh5Ib21lU2NlbmVBcnJhbmdlbWVudElu",
+            "Zm8ucHJvdG8ijAEKGUhvbWVHZXRBcnJhbmdlbWVudEluZm9Sc3ASXgobc2Nl",
+            "bmVfYXJyYW5nZW1lbnRfaW5mb19saXN0GA0gAygLMjkuV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90by5Ib21lU2NlbmVBcnJhbmdlbWVudEluZm8S",
+            "DwoHcmV0Y29kZRgLIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HomeSceneArrangementInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeGetArrangementInfoRsp), global::Weedwacker.Shared.Network.Proto.HomeGetArrangementInfoRsp.Parser, new[]{ "Retcode", "SceneArrangementInfoList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeGetArrangementInfoRsp), global::Weedwacker.Shared.Network.Proto.HomeGetArrangementInfoRsp.Parser, new[]{ "SceneArrangementInfoList", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4844
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4878;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class HomeGetArrangementInfoRsp : pb::IMessage<HomeGetArrangementInfoRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +83,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeGetArrangementInfoRsp(HomeGetArrangementInfoRsp other) : this() {
-      retcode_ = other.retcode_;
       sceneArrangementInfoList_ = other.sceneArrangementInfoList_.Clone();
+      retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,8 +94,19 @@ namespace Weedwacker.Shared.Network.Proto {
       return new HomeGetArrangementInfoRsp(this);
     }
 
+    /// <summary>Field number for the "scene_arrangement_info_list" field.</summary>
+    public const int SceneArrangementInfoListFieldNumber = 13;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeSceneArrangementInfo> _repeated_sceneArrangementInfoList_codec
+        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.HomeSceneArrangementInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeSceneArrangementInfo> sceneArrangementInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeSceneArrangementInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeSceneArrangementInfo> SceneArrangementInfoList {
+      get { return sceneArrangementInfoList_; }
+    }
+
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 6;
+    public const int RetcodeFieldNumber = 11;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -99,17 +115,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         retcode_ = value;
       }
-    }
-
-    /// <summary>Field number for the "scene_arrangement_info_list" field.</summary>
-    public const int SceneArrangementInfoListFieldNumber = 14;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeSceneArrangementInfo> _repeated_sceneArrangementInfoList_codec
-        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.HomeSceneArrangementInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeSceneArrangementInfo> sceneArrangementInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeSceneArrangementInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeSceneArrangementInfo> SceneArrangementInfoList {
-      get { return sceneArrangementInfoList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Retcode != other.Retcode) return false;
       if(!sceneArrangementInfoList_.Equals(other.sceneArrangementInfoList_)) return false;
+      if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +141,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       hash ^= sceneArrangementInfoList_.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -157,7 +162,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Retcode != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(88);
         output.WriteInt32(Retcode);
       }
       sceneArrangementInfoList_.WriteTo(output, _repeated_sceneArrangementInfoList_codec);
@@ -172,7 +177,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Retcode != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(88);
         output.WriteInt32(Retcode);
       }
       sceneArrangementInfoList_.WriteTo(ref output, _repeated_sceneArrangementInfoList_codec);
@@ -186,10 +191,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += sceneArrangementInfoList_.CalculateSize(_repeated_sceneArrangementInfoList_codec);
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
-      size += sceneArrangementInfoList_.CalculateSize(_repeated_sceneArrangementInfoList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -202,10 +207,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      sceneArrangementInfoList_.Add(other.sceneArrangementInfoList_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      sceneArrangementInfoList_.Add(other.sceneArrangementInfoList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -221,11 +226,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
+          case 88: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 114: {
+          case 106: {
             sceneArrangementInfoList_.AddEntriesFrom(input, _repeated_sceneArrangementInfoList_codec);
             break;
           }
@@ -244,11 +249,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
+          case 88: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 114: {
+          case 106: {
             sceneArrangementInfoList_.AddEntriesFrom(ref input, _repeated_sceneArrangementInfoList_codec);
             break;
           }

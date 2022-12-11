@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static ScenePlayBattleInterruptNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiRTY2VuZVBsYXlCYXR0bGVJbnRlcnJ1cHROb3RpZnkucHJvdG8iXQoeU2Nl",
-            "bmVQbGF5QmF0dGxlSW50ZXJydXB0Tm90aWZ5EhcKD2ludGVycnVwdF9zdGF0",
-            "ZRgGIAEoDRIPCgdwbGF5X2lkGAUgASgNEhEKCXBsYXlfdHlwZRgBIAEoDUIi",
-            "qgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiRTY2VuZVBsYXlCYXR0bGVJbnRlcnJ1cHROb3RpZnkucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iXQoeU2NlbmVQbGF5QmF0dGxl",
+            "SW50ZXJydXB0Tm90aWZ5EhcKD2ludGVycnVwdF9zdGF0ZRgIIAEoDRIPCgdw",
+            "bGF5X2lkGAogASgNEhEKCXBsYXlfdHlwZRgBIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4425
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4389;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ScenePlayBattleInterruptNotify : pb::IMessage<ScenePlayBattleInterruptNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "interrupt_state" field.</summary>
-    public const int InterruptStateFieldNumber = 6;
+    public const int InterruptStateFieldNumber = 8;
     private uint interruptState_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "play_id" field.</summary>
-    public const int PlayIdFieldNumber = 5;
+    public const int PlayIdFieldNumber = 10;
     private uint playId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -175,13 +179,13 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(8);
         output.WriteUInt32(PlayType);
       }
-      if (PlayId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(PlayId);
-      }
       if (InterruptState != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(64);
         output.WriteUInt32(InterruptState);
+      }
+      if (PlayId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(PlayId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -197,13 +201,13 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(8);
         output.WriteUInt32(PlayType);
       }
-      if (PlayId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(PlayId);
-      }
       if (InterruptState != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(64);
         output.WriteUInt32(InterruptState);
+      }
+      if (PlayId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(PlayId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -264,12 +268,12 @@ namespace Weedwacker.Shared.Network.Proto {
             PlayType = input.ReadUInt32();
             break;
           }
-          case 40: {
-            PlayId = input.ReadUInt32();
+          case 64: {
+            InterruptState = input.ReadUInt32();
             break;
           }
-          case 48: {
-            InterruptState = input.ReadUInt32();
+          case 80: {
+            PlayId = input.ReadUInt32();
             break;
           }
         }
@@ -291,12 +295,12 @@ namespace Weedwacker.Shared.Network.Proto {
             PlayType = input.ReadUInt32();
             break;
           }
-          case 40: {
-            PlayId = input.ReadUInt32();
+          case 64: {
+            InterruptState = input.ReadUInt32();
             break;
           }
-          case 48: {
-            InterruptState = input.ReadUInt32();
+          case 80: {
+            PlayId = input.ReadUInt32();
             break;
           }
         }

@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static AsterMidCampInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZBc3Rlck1pZENhbXBJbmZvLnByb3RvGgxWZWN0b3IucHJvdG8iOQoQQXN0",
-            "ZXJNaWRDYW1wSW5mbxIUCgNwb3MYAyABKAsyBy5WZWN0b3ISDwoHY2FtcF9p",
-            "ZBgIIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IG",
-            "cHJvdG8z"));
+            "ChZBc3Rlck1pZENhbXBJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvGgxWZWN0b3IucHJvdG8iWQoQQXN0ZXJNaWRDYW1wSW5m",
+            "bxI0CgNwb3MYAyABKAsyJy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
+            "b3RvLlZlY3RvchIPCgdjYW1wX2lkGA8gASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -96,7 +96,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "camp_id" field.</summary>
-    public const int CampIdFieldNumber = 8;
+    public const int CampIdFieldNumber = 15;
     private uint campId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,7 +156,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteMessage(Pos);
       }
       if (CampId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(120);
         output.WriteUInt32(CampId);
       }
       if (_unknownFields != null) {
@@ -174,7 +174,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteMessage(Pos);
       }
       if (CampId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(120);
         output.WriteUInt32(CampId);
       }
       if (_unknownFields != null) {
@@ -236,7 +236,7 @@ namespace Weedwacker.Shared.Network.Proto {
             input.ReadMessage(Pos);
             break;
           }
-          case 64: {
+          case 120: {
             CampId = input.ReadUInt32();
             break;
           }
@@ -262,7 +262,7 @@ namespace Weedwacker.Shared.Network.Proto {
             input.ReadMessage(Pos);
             break;
           }
-          case 64: {
+          case 120: {
             CampId = input.ReadUInt32();
             break;
           }

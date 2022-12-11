@@ -24,19 +24,21 @@ namespace Weedwacker.Shared.Network.Proto {
     static EntityFightPropChangeReasonNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CidFbnRpdHlGaWdodFByb3BDaGFuZ2VSZWFzb25Ob3RpZnkucHJvdG8aGENo",
-            "YW5nZUVuZXJneVJlYXNvbi5wcm90bxoUQ2hhbmdlSHBSZWFzb24ucHJvdG8a",
-            "FlByb3BDaGFuZ2VSZWFzb24ucHJvdG8i8QEKIUVudGl0eUZpZ2h0UHJvcENo",
-            "YW5nZVJlYXNvbk5vdGlmeRISCgpwYXJhbV9saXN0GAogAygNEhIKCnByb3Bf",
-            "ZGVsdGEYASABKAISKQoQY2hhbmdlX2hwX3JlYXNvbhgOIAEoDjIPLkNoYW5n",
-            "ZUhwUmVhc29uEiEKBnJlYXNvbhgGIAEoDjIRLlByb3BDaGFuZ2VSZWFzb24S",
-            "EQoJZW50aXR5X2lkGAUgASgNEjAKE2NoYW5nZV9lbmVyZ3lfcmVzb24YDyAB",
-            "KA4yEy5DaGFuZ2VFbmVyZ3lSZWFzb24SEQoJcHJvcF90eXBlGA0gASgNQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CidFbnRpdHlGaWdodFByb3BDaGFuZ2VSZWFzb25Ob3RpZnkucHJvdG8SH1dl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aGENoYW5nZUVuZXJneVJl",
+            "YXNvbi5wcm90bxoUQ2hhbmdlSHBSZWFzb24ucHJvdG8aFlByb3BDaGFuZ2VS",
+            "ZWFzb24ucHJvdG8i0gIKIUVudGl0eUZpZ2h0UHJvcENoYW5nZVJlYXNvbk5v",
+            "dGlmeRIRCglwcm9wX3R5cGUYBSABKA0SEgoKcGFyYW1fbGlzdBgHIAMoDRIR",
+            "CgllbnRpdHlfaWQYCCABKA0SQQoGcmVhc29uGAIgASgOMjEuV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90by5Qcm9wQ2hhbmdlUmVhc29uEkkKEGNo",
+            "YW5nZV9ocF9yZWFzb24YCSABKA4yLy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLkNoYW5nZUhwUmVhc29uElEKFGNoYW5nZV9lbmVyZ3lfcmVh",
+            "c29uGAwgASgOMjMuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5D",
+            "aGFuZ2VFbmVyZ3lSZWFzb24SEgoKcHJvcF9kZWx0YRgKIAEoAmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ChangeEnergyReasonReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ChangeHpReasonReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.PropChangeReasonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EntityFightPropChangeReasonNotify), global::Weedwacker.Shared.Network.Proto.EntityFightPropChangeReasonNotify.Parser, new[]{ "ParamList", "PropDelta", "ChangeHpReason", "Reason", "EntityId", "ChangeEnergyReson", "PropType" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EntityFightPropChangeReasonNotify), global::Weedwacker.Shared.Network.Proto.EntityFightPropChangeReasonNotify.Parser, new[]{ "PropType", "ParamList", "EntityId", "Reason", "ChangeHpReason", "ChangeEnergyReason", "PropDelta" }, null, null, null, null)
           }));
     }
     #endregion
@@ -44,9 +46,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1203
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1261;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class EntityFightPropChangeReasonNotify : pb::IMessage<EntityFightPropChangeReasonNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -82,13 +88,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EntityFightPropChangeReasonNotify(EntityFightPropChangeReasonNotify other) : this() {
-      paramList_ = other.paramList_.Clone();
-      propDelta_ = other.propDelta_;
-      changeHpReason_ = other.changeHpReason_;
-      reason_ = other.reason_;
-      entityId_ = other.entityId_;
-      changeEnergyReson_ = other.changeEnergyReson_;
       propType_ = other.propType_;
+      paramList_ = other.paramList_.Clone();
+      entityId_ = other.entityId_;
+      reason_ = other.reason_;
+      changeHpReason_ = other.changeHpReason_;
+      changeEnergyReason_ = other.changeEnergyReason_;
+      propDelta_ = other.propDelta_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -98,10 +104,22 @@ namespace Weedwacker.Shared.Network.Proto {
       return new EntityFightPropChangeReasonNotify(this);
     }
 
+    /// <summary>Field number for the "prop_type" field.</summary>
+    public const int PropTypeFieldNumber = 5;
+    private uint propType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PropType {
+      get { return propType_; }
+      set {
+        propType_ = value;
+      }
+    }
+
     /// <summary>Field number for the "param_list" field.</summary>
-    public const int ParamListFieldNumber = 10;
+    public const int ParamListFieldNumber = 7;
     private static readonly pb::FieldCodec<uint> _repeated_paramList_codec
-        = pb::FieldCodec.ForUInt32(82);
+        = pb::FieldCodec.ForUInt32(58);
     private readonly pbc::RepeatedField<uint> paramList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,44 +127,8 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return paramList_; }
     }
 
-    /// <summary>Field number for the "prop_delta" field.</summary>
-    public const int PropDeltaFieldNumber = 1;
-    private float propDelta_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float PropDelta {
-      get { return propDelta_; }
-      set {
-        propDelta_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "change_hp_reason" field.</summary>
-    public const int ChangeHpReasonFieldNumber = 14;
-    private global::Weedwacker.Shared.Network.Proto.ChangeHpReason changeHpReason_ = global::Weedwacker.Shared.Network.Proto.ChangeHpReason.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.ChangeHpReason ChangeHpReason {
-      get { return changeHpReason_; }
-      set {
-        changeHpReason_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "reason" field.</summary>
-    public const int ReasonFieldNumber = 6;
-    private global::Weedwacker.Shared.Network.Proto.PropChangeReason reason_ = global::Weedwacker.Shared.Network.Proto.PropChangeReason.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.PropChangeReason Reason {
-      get { return reason_; }
-      set {
-        reason_ = value;
-      }
-    }
-
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 5;
+    public const int EntityIdFieldNumber = 8;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,27 +139,51 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "change_energy_reson" field.</summary>
-    public const int ChangeEnergyResonFieldNumber = 15;
-    private global::Weedwacker.Shared.Network.Proto.ChangeEnergyReason changeEnergyReson_ = global::Weedwacker.Shared.Network.Proto.ChangeEnergyReason.None;
+    /// <summary>Field number for the "reason" field.</summary>
+    public const int ReasonFieldNumber = 2;
+    private global::Weedwacker.Shared.Network.Proto.PropChangeReason reason_ = global::Weedwacker.Shared.Network.Proto.PropChangeReason.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.ChangeEnergyReason ChangeEnergyReson {
-      get { return changeEnergyReson_; }
+    public global::Weedwacker.Shared.Network.Proto.PropChangeReason Reason {
+      get { return reason_; }
       set {
-        changeEnergyReson_ = value;
+        reason_ = value;
       }
     }
 
-    /// <summary>Field number for the "prop_type" field.</summary>
-    public const int PropTypeFieldNumber = 13;
-    private uint propType_;
+    /// <summary>Field number for the "change_hp_reason" field.</summary>
+    public const int ChangeHpReasonFieldNumber = 9;
+    private global::Weedwacker.Shared.Network.Proto.ChangeHpReason changeHpReason_ = global::Weedwacker.Shared.Network.Proto.ChangeHpReason.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint PropType {
-      get { return propType_; }
+    public global::Weedwacker.Shared.Network.Proto.ChangeHpReason ChangeHpReason {
+      get { return changeHpReason_; }
       set {
-        propType_ = value;
+        changeHpReason_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "change_energy_reason" field.</summary>
+    public const int ChangeEnergyReasonFieldNumber = 12;
+    private global::Weedwacker.Shared.Network.Proto.ChangeEnergyReason changeEnergyReason_ = global::Weedwacker.Shared.Network.Proto.ChangeEnergyReason.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.ChangeEnergyReason ChangeEnergyReason {
+      get { return changeEnergyReason_; }
+      set {
+        changeEnergyReason_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "prop_delta" field.</summary>
+    public const int PropDeltaFieldNumber = 10;
+    private float propDelta_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float PropDelta {
+      get { return propDelta_; }
+      set {
+        propDelta_ = value;
       }
     }
 
@@ -196,13 +202,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!paramList_.Equals(other.paramList_)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(PropDelta, other.PropDelta)) return false;
-      if (ChangeHpReason != other.ChangeHpReason) return false;
-      if (Reason != other.Reason) return false;
-      if (EntityId != other.EntityId) return false;
-      if (ChangeEnergyReson != other.ChangeEnergyReson) return false;
       if (PropType != other.PropType) return false;
+      if(!paramList_.Equals(other.paramList_)) return false;
+      if (EntityId != other.EntityId) return false;
+      if (Reason != other.Reason) return false;
+      if (ChangeHpReason != other.ChangeHpReason) return false;
+      if (ChangeEnergyReason != other.ChangeEnergyReason) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(PropDelta, other.PropDelta)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -210,13 +216,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= paramList_.GetHashCode();
-      if (PropDelta != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(PropDelta);
-      if (ChangeHpReason != global::Weedwacker.Shared.Network.Proto.ChangeHpReason.None) hash ^= ChangeHpReason.GetHashCode();
-      if (Reason != global::Weedwacker.Shared.Network.Proto.PropChangeReason.None) hash ^= Reason.GetHashCode();
-      if (EntityId != 0) hash ^= EntityId.GetHashCode();
-      if (ChangeEnergyReson != global::Weedwacker.Shared.Network.Proto.ChangeEnergyReason.None) hash ^= ChangeEnergyReson.GetHashCode();
       if (PropType != 0) hash ^= PropType.GetHashCode();
+      hash ^= paramList_.GetHashCode();
+      if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      if (Reason != global::Weedwacker.Shared.Network.Proto.PropChangeReason.None) hash ^= Reason.GetHashCode();
+      if (ChangeHpReason != global::Weedwacker.Shared.Network.Proto.ChangeHpReason.None) hash ^= ChangeHpReason.GetHashCode();
+      if (ChangeEnergyReason != global::Weedwacker.Shared.Network.Proto.ChangeEnergyReason.None) hash ^= ChangeEnergyReason.GetHashCode();
+      if (PropDelta != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(PropDelta);
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -235,30 +241,30 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (PropDelta != 0F) {
-        output.WriteRawTag(13);
-        output.WriteFloat(PropDelta);
-      }
-      if (EntityId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(EntityId);
-      }
       if (Reason != global::Weedwacker.Shared.Network.Proto.PropChangeReason.None) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(16);
         output.WriteEnum((int) Reason);
       }
-      paramList_.WriteTo(output, _repeated_paramList_codec);
       if (PropType != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(40);
         output.WriteUInt32(PropType);
       }
+      paramList_.WriteTo(output, _repeated_paramList_codec);
+      if (EntityId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(EntityId);
+      }
       if (ChangeHpReason != global::Weedwacker.Shared.Network.Proto.ChangeHpReason.None) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(72);
         output.WriteEnum((int) ChangeHpReason);
       }
-      if (ChangeEnergyReson != global::Weedwacker.Shared.Network.Proto.ChangeEnergyReason.None) {
-        output.WriteRawTag(120);
-        output.WriteEnum((int) ChangeEnergyReson);
+      if (PropDelta != 0F) {
+        output.WriteRawTag(85);
+        output.WriteFloat(PropDelta);
+      }
+      if (ChangeEnergyReason != global::Weedwacker.Shared.Network.Proto.ChangeEnergyReason.None) {
+        output.WriteRawTag(96);
+        output.WriteEnum((int) ChangeEnergyReason);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -270,30 +276,30 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (PropDelta != 0F) {
-        output.WriteRawTag(13);
-        output.WriteFloat(PropDelta);
-      }
-      if (EntityId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(EntityId);
-      }
       if (Reason != global::Weedwacker.Shared.Network.Proto.PropChangeReason.None) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(16);
         output.WriteEnum((int) Reason);
       }
-      paramList_.WriteTo(ref output, _repeated_paramList_codec);
       if (PropType != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(40);
         output.WriteUInt32(PropType);
       }
+      paramList_.WriteTo(ref output, _repeated_paramList_codec);
+      if (EntityId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(EntityId);
+      }
       if (ChangeHpReason != global::Weedwacker.Shared.Network.Proto.ChangeHpReason.None) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(72);
         output.WriteEnum((int) ChangeHpReason);
       }
-      if (ChangeEnergyReson != global::Weedwacker.Shared.Network.Proto.ChangeEnergyReason.None) {
-        output.WriteRawTag(120);
-        output.WriteEnum((int) ChangeEnergyReson);
+      if (PropDelta != 0F) {
+        output.WriteRawTag(85);
+        output.WriteFloat(PropDelta);
+      }
+      if (ChangeEnergyReason != global::Weedwacker.Shared.Network.Proto.ChangeEnergyReason.None) {
+        output.WriteRawTag(96);
+        output.WriteEnum((int) ChangeEnergyReason);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -305,24 +311,24 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += paramList_.CalculateSize(_repeated_paramList_codec);
-      if (PropDelta != 0F) {
-        size += 1 + 4;
+      if (PropType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PropType);
       }
-      if (ChangeHpReason != global::Weedwacker.Shared.Network.Proto.ChangeHpReason.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ChangeHpReason);
+      size += paramList_.CalculateSize(_repeated_paramList_codec);
+      if (EntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
       }
       if (Reason != global::Weedwacker.Shared.Network.Proto.PropChangeReason.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
       }
-      if (EntityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
+      if (ChangeHpReason != global::Weedwacker.Shared.Network.Proto.ChangeHpReason.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ChangeHpReason);
       }
-      if (ChangeEnergyReson != global::Weedwacker.Shared.Network.Proto.ChangeEnergyReason.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ChangeEnergyReson);
+      if (ChangeEnergyReason != global::Weedwacker.Shared.Network.Proto.ChangeEnergyReason.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ChangeEnergyReason);
       }
-      if (PropType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PropType);
+      if (PropDelta != 0F) {
+        size += 1 + 4;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -336,24 +342,24 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      paramList_.Add(other.paramList_);
-      if (other.PropDelta != 0F) {
-        PropDelta = other.PropDelta;
+      if (other.PropType != 0) {
+        PropType = other.PropType;
       }
-      if (other.ChangeHpReason != global::Weedwacker.Shared.Network.Proto.ChangeHpReason.None) {
-        ChangeHpReason = other.ChangeHpReason;
+      paramList_.Add(other.paramList_);
+      if (other.EntityId != 0) {
+        EntityId = other.EntityId;
       }
       if (other.Reason != global::Weedwacker.Shared.Network.Proto.PropChangeReason.None) {
         Reason = other.Reason;
       }
-      if (other.EntityId != 0) {
-        EntityId = other.EntityId;
+      if (other.ChangeHpReason != global::Weedwacker.Shared.Network.Proto.ChangeHpReason.None) {
+        ChangeHpReason = other.ChangeHpReason;
       }
-      if (other.ChangeEnergyReson != global::Weedwacker.Shared.Network.Proto.ChangeEnergyReason.None) {
-        ChangeEnergyReson = other.ChangeEnergyReson;
+      if (other.ChangeEnergyReason != global::Weedwacker.Shared.Network.Proto.ChangeEnergyReason.None) {
+        ChangeEnergyReason = other.ChangeEnergyReason;
       }
-      if (other.PropType != 0) {
-        PropType = other.PropType;
+      if (other.PropDelta != 0F) {
+        PropDelta = other.PropDelta;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -370,33 +376,33 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 13: {
-            PropDelta = input.ReadFloat();
-            break;
-          }
-          case 40: {
-            EntityId = input.ReadUInt32();
-            break;
-          }
-          case 48: {
+          case 16: {
             Reason = (global::Weedwacker.Shared.Network.Proto.PropChangeReason) input.ReadEnum();
             break;
           }
-          case 82:
-          case 80: {
-            paramList_.AddEntriesFrom(input, _repeated_paramList_codec);
-            break;
-          }
-          case 104: {
+          case 40: {
             PropType = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 58:
+          case 56: {
+            paramList_.AddEntriesFrom(input, _repeated_paramList_codec);
+            break;
+          }
+          case 64: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 72: {
             ChangeHpReason = (global::Weedwacker.Shared.Network.Proto.ChangeHpReason) input.ReadEnum();
             break;
           }
-          case 120: {
-            ChangeEnergyReson = (global::Weedwacker.Shared.Network.Proto.ChangeEnergyReason) input.ReadEnum();
+          case 85: {
+            PropDelta = input.ReadFloat();
+            break;
+          }
+          case 96: {
+            ChangeEnergyReason = (global::Weedwacker.Shared.Network.Proto.ChangeEnergyReason) input.ReadEnum();
             break;
           }
         }
@@ -414,33 +420,33 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 13: {
-            PropDelta = input.ReadFloat();
-            break;
-          }
-          case 40: {
-            EntityId = input.ReadUInt32();
-            break;
-          }
-          case 48: {
+          case 16: {
             Reason = (global::Weedwacker.Shared.Network.Proto.PropChangeReason) input.ReadEnum();
             break;
           }
-          case 82:
-          case 80: {
-            paramList_.AddEntriesFrom(ref input, _repeated_paramList_codec);
-            break;
-          }
-          case 104: {
+          case 40: {
             PropType = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 58:
+          case 56: {
+            paramList_.AddEntriesFrom(ref input, _repeated_paramList_codec);
+            break;
+          }
+          case 64: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 72: {
             ChangeHpReason = (global::Weedwacker.Shared.Network.Proto.ChangeHpReason) input.ReadEnum();
             break;
           }
-          case 120: {
-            ChangeEnergyReson = (global::Weedwacker.Shared.Network.Proto.ChangeEnergyReason) input.ReadEnum();
+          case 85: {
+            PropDelta = input.ReadFloat();
+            break;
+          }
+          case 96: {
+            ChangeEnergyReason = (global::Weedwacker.Shared.Network.Proto.ChangeEnergyReason) input.ReadEnum();
             break;
           }
         }

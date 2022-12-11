@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static GachaTransferItemReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdHYWNoYVRyYW5zZmVySXRlbS5wcm90bxoPSXRlbVBhcmFtLnByb3RvIksK",
-            "EUdhY2hhVHJhbnNmZXJJdGVtEhgKBGl0ZW0YAyABKAsyCi5JdGVtUGFyYW0S",
-            "HAoUaXNfdHJhbnNmZXJfaXRlbV9uZXcYASABKAhCIqoCH1dlZWR3YWNrZXIu",
-            "U2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChdHYWNoYVRyYW5zZmVySXRlbS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxoPSXRlbVBhcmFtLnByb3RvImsKEUdhY2hhVHJhbnNm",
+            "ZXJJdGVtEjgKBGl0ZW0YASABKAsyKi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLkl0ZW1QYXJhbRIcChRpc190cmFuc2Zlcl9pdGVtX25ldxgL",
+            "IAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ItemParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "item" field.</summary>
-    public const int ItemFieldNumber = 3;
+    public const int ItemFieldNumber = 1;
     private global::Weedwacker.Shared.Network.Proto.ItemParam item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -96,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_transfer_item_new" field.</summary>
-    public const int IsTransferItemNewFieldNumber = 1;
+    public const int IsTransferItemNewFieldNumber = 11;
     private bool isTransferItemNew_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -151,13 +152,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsTransferItemNew != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(IsTransferItemNew);
-      }
       if (item_ != null) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(10);
         output.WriteMessage(Item);
+      }
+      if (IsTransferItemNew != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(IsTransferItemNew);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -169,13 +170,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsTransferItemNew != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(IsTransferItemNew);
-      }
       if (item_ != null) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(10);
         output.WriteMessage(Item);
+      }
+      if (IsTransferItemNew != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(IsTransferItemNew);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -229,15 +230,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            IsTransferItemNew = input.ReadBool();
-            break;
-          }
-          case 26: {
+          case 10: {
             if (item_ == null) {
               Item = new global::Weedwacker.Shared.Network.Proto.ItemParam();
             }
             input.ReadMessage(Item);
+            break;
+          }
+          case 88: {
+            IsTransferItemNew = input.ReadBool();
             break;
           }
         }
@@ -255,15 +256,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            IsTransferItemNew = input.ReadBool();
-            break;
-          }
-          case 26: {
+          case 10: {
             if (item_ == null) {
               Item = new global::Weedwacker.Shared.Network.Proto.ItemParam();
             }
             input.ReadMessage(Item);
+            break;
+          }
+          case 88: {
+            IsTransferItemNew = input.ReadBool();
             break;
           }
         }

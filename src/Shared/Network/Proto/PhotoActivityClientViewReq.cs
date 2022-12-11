@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static PhotoActivityClientViewReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBQaG90b0FjdGl2aXR5Q2xpZW50Vmlld1JlcS5wcm90byIsChpQaG90b0Fj",
-            "dGl2aXR5Q2xpZW50Vmlld1JlcRIOCgZwb3NfaWQYDSABKA1CIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiBQaG90b0FjdGl2aXR5Q2xpZW50Vmlld1JlcS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byIsChpQaG90b0FjdGl2aXR5Q2xpZW50",
+            "Vmlld1JlcRIOCgZwb3NfaWQYDSABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -38,10 +38,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8709
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 9000;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class PhotoActivityClientViewReq : pb::IMessage<PhotoActivityClientViewReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

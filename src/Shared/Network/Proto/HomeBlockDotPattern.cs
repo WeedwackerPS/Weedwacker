@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeBlockDotPatternReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlIb21lQmxvY2tEb3RQYXR0ZXJuLnByb3RvIkIKE0hvbWVCbG9ja0RvdFBh",
-            "dHRlcm4SDQoFd2lkdGgYCCABKA0SDgoGaGVpZ2h0GAsgASgNEgwKBGRhdGEY",
-            "CSABKAxCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "ChlIb21lQmxvY2tEb3RQYXR0ZXJuLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvIkIKE0hvbWVCbG9ja0RvdFBhdHRlcm4SDQoFd2lk",
+            "dGgYDSABKA0SDAoEZGF0YRgMIAEoDBIOCgZoZWlnaHQYCyABKA1iBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeBlockDotPattern), global::Weedwacker.Shared.Network.Proto.HomeBlockDotPattern.Parser, new[]{ "Width", "Height", "Data" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeBlockDotPattern), global::Weedwacker.Shared.Network.Proto.HomeBlockDotPattern.Parser, new[]{ "Width", "Data", "Height" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,8 +73,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeBlockDotPattern(HomeBlockDotPattern other) : this() {
       width_ = other.width_;
-      height_ = other.height_;
       data_ = other.data_;
+      height_ = other.height_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,7 +85,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "width" field.</summary>
-    public const int WidthFieldNumber = 8;
+    public const int WidthFieldNumber = 13;
     private uint width_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -93,6 +93,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return width_; }
       set {
         width_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "data" field.</summary>
+    public const int DataFieldNumber = 12;
+    private pb::ByteString data_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pb::ByteString Data {
+      get { return data_; }
+      set {
+        data_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -105,18 +117,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return height_; }
       set {
         height_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "data" field.</summary>
-    public const int DataFieldNumber = 9;
-    private pb::ByteString data_ = pb::ByteString.Empty;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pb::ByteString Data {
-      get { return data_; }
-      set {
-        data_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -136,8 +136,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (Width != other.Width) return false;
-      if (Height != other.Height) return false;
       if (Data != other.Data) return false;
+      if (Height != other.Height) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -146,8 +146,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (Width != 0) hash ^= Width.GetHashCode();
-      if (Height != 0) hash ^= Height.GetHashCode();
       if (Data.Length != 0) hash ^= Data.GetHashCode();
+      if (Height != 0) hash ^= Height.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -166,17 +166,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Width != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(Width);
-      }
-      if (Data.Length != 0) {
-        output.WriteRawTag(74);
-        output.WriteBytes(Data);
-      }
       if (Height != 0) {
         output.WriteRawTag(88);
         output.WriteUInt32(Height);
+      }
+      if (Data.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteBytes(Data);
+      }
+      if (Width != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Width);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -188,17 +188,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Width != 0) {
-        output.WriteRawTag(64);
-        output.WriteUInt32(Width);
-      }
-      if (Data.Length != 0) {
-        output.WriteRawTag(74);
-        output.WriteBytes(Data);
-      }
       if (Height != 0) {
         output.WriteRawTag(88);
         output.WriteUInt32(Height);
+      }
+      if (Data.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteBytes(Data);
+      }
+      if (Width != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Width);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -213,11 +213,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (Width != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Width);
       }
-      if (Height != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Height);
-      }
       if (Data.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(Data);
+      }
+      if (Height != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Height);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -234,11 +234,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.Width != 0) {
         Width = other.Width;
       }
-      if (other.Height != 0) {
-        Height = other.Height;
-      }
       if (other.Data.Length != 0) {
         Data = other.Data;
+      }
+      if (other.Height != 0) {
+        Height = other.Height;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -255,16 +255,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 64: {
-            Width = input.ReadUInt32();
+          case 88: {
+            Height = input.ReadUInt32();
             break;
           }
-          case 74: {
+          case 98: {
             Data = input.ReadBytes();
             break;
           }
-          case 88: {
-            Height = input.ReadUInt32();
+          case 104: {
+            Width = input.ReadUInt32();
             break;
           }
         }
@@ -282,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 64: {
-            Width = input.ReadUInt32();
+          case 88: {
+            Height = input.ReadUInt32();
             break;
           }
-          case 74: {
+          case 98: {
             Data = input.ReadBytes();
             break;
           }
-          case 88: {
-            Height = input.ReadUInt32();
+          case 104: {
+            Width = input.ReadUInt32();
             break;
           }
         }

@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static QuestGlobalVarReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRRdWVzdEdsb2JhbFZhci5wcm90byIsCg5RdWVzdEdsb2JhbFZhchINCgV2",
-            "YWx1ZRgIIAEoBRILCgNrZXkYBCABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVk",
-            "Lk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChRRdWVzdEdsb2JhbFZhci5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90byIsCg5RdWVzdEdsb2JhbFZhchINCgV2YWx1ZRgEIAEoBRIL",
+            "CgNrZXkYCSABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "value" field.</summary>
-    public const int ValueFieldNumber = 8;
+    public const int ValueFieldNumber = 4;
     private int value_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -95,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "key" field.</summary>
-    public const int KeyFieldNumber = 4;
+    public const int KeyFieldNumber = 9;
     private uint key_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -150,13 +150,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Key != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(Key);
-      }
       if (Value != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(32);
         output.WriteInt32(Value);
+      }
+      if (Key != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Key);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -168,13 +168,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Key != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(Key);
-      }
       if (Value != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(32);
         output.WriteInt32(Value);
+      }
+      if (Key != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Key);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -226,11 +226,11 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 32: {
-            Key = input.ReadUInt32();
+            Value = input.ReadInt32();
             break;
           }
-          case 64: {
-            Value = input.ReadInt32();
+          case 72: {
+            Key = input.ReadUInt32();
             break;
           }
         }
@@ -249,11 +249,11 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 32: {
-            Key = input.ReadUInt32();
+            Value = input.ReadInt32();
             break;
           }
-          case 64: {
-            Value = input.ReadInt32();
+          case 72: {
+            Key = input.ReadUInt32();
             break;
           }
         }

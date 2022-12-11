@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static GameplayRecommendationSkillResponseReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CilHYW1lcGxheVJlY29tbWVuZGF0aW9uU2tpbGxSZXNwb25zZS5wcm90byJU",
-            "CiNHYW1lcGxheVJlY29tbWVuZGF0aW9uU2tpbGxSZXNwb25zZRIWCg5za2ls",
-            "bF9kZXBvdF9pZBgNIAEoDRIVCg1za2lsbF9pZF9saXN0GAkgAygNQiKqAh9X",
-            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CilHYW1lcGxheVJlY29tbWVuZGF0aW9uU2tpbGxSZXNwb25zZS5wcm90bxIf",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90byJUCiNHYW1lcGxheVJl",
+            "Y29tbWVuZGF0aW9uU2tpbGxSZXNwb25zZRIVCg1za2lsbF9pZF9saXN0GAEg",
+            "AygNEhYKDnNraWxsX2RlcG90X2lkGAsgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GameplayRecommendationSkillResponse), global::Weedwacker.Shared.Network.Proto.GameplayRecommendationSkillResponse.Parser, new[]{ "SkillDepotId", "SkillIdList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GameplayRecommendationSkillResponse), global::Weedwacker.Shared.Network.Proto.GameplayRecommendationSkillResponse.Parser, new[]{ "SkillIdList", "SkillDepotId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +72,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GameplayRecommendationSkillResponse(GameplayRecommendationSkillResponse other) : this() {
-      skillDepotId_ = other.skillDepotId_;
       skillIdList_ = other.skillIdList_.Clone();
+      skillDepotId_ = other.skillDepotId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -83,8 +83,19 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GameplayRecommendationSkillResponse(this);
     }
 
+    /// <summary>Field number for the "skill_id_list" field.</summary>
+    public const int SkillIdListFieldNumber = 1;
+    private static readonly pb::FieldCodec<uint> _repeated_skillIdList_codec
+        = pb::FieldCodec.ForUInt32(10);
+    private readonly pbc::RepeatedField<uint> skillIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> SkillIdList {
+      get { return skillIdList_; }
+    }
+
     /// <summary>Field number for the "skill_depot_id" field.</summary>
-    public const int SkillDepotIdFieldNumber = 13;
+    public const int SkillDepotIdFieldNumber = 11;
     private uint skillDepotId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -93,17 +104,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         skillDepotId_ = value;
       }
-    }
-
-    /// <summary>Field number for the "skill_id_list" field.</summary>
-    public const int SkillIdListFieldNumber = 9;
-    private static readonly pb::FieldCodec<uint> _repeated_skillIdList_codec
-        = pb::FieldCodec.ForUInt32(74);
-    private readonly pbc::RepeatedField<uint> skillIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> SkillIdList {
-      get { return skillIdList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -121,8 +121,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (SkillDepotId != other.SkillDepotId) return false;
       if(!skillIdList_.Equals(other.skillIdList_)) return false;
+      if (SkillDepotId != other.SkillDepotId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -130,8 +130,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (SkillDepotId != 0) hash ^= SkillDepotId.GetHashCode();
       hash ^= skillIdList_.GetHashCode();
+      if (SkillDepotId != 0) hash ^= SkillDepotId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -152,7 +152,7 @@ namespace Weedwacker.Shared.Network.Proto {
     #else
       skillIdList_.WriteTo(output, _repeated_skillIdList_codec);
       if (SkillDepotId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(88);
         output.WriteUInt32(SkillDepotId);
       }
       if (_unknownFields != null) {
@@ -167,7 +167,7 @@ namespace Weedwacker.Shared.Network.Proto {
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       skillIdList_.WriteTo(ref output, _repeated_skillIdList_codec);
       if (SkillDepotId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(88);
         output.WriteUInt32(SkillDepotId);
       }
       if (_unknownFields != null) {
@@ -180,10 +180,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += skillIdList_.CalculateSize(_repeated_skillIdList_codec);
       if (SkillDepotId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillDepotId);
       }
-      size += skillIdList_.CalculateSize(_repeated_skillIdList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -196,10 +196,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      skillIdList_.Add(other.skillIdList_);
       if (other.SkillDepotId != 0) {
         SkillDepotId = other.SkillDepotId;
       }
-      skillIdList_.Add(other.skillIdList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -215,12 +215,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 74:
-          case 72: {
+          case 10:
+          case 8: {
             skillIdList_.AddEntriesFrom(input, _repeated_skillIdList_codec);
             break;
           }
-          case 104: {
+          case 88: {
             SkillDepotId = input.ReadUInt32();
             break;
           }
@@ -239,12 +239,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 74:
-          case 72: {
+          case 10:
+          case 8: {
             skillIdList_.AddEntriesFrom(ref input, _repeated_skillIdList_codec);
             break;
           }
-          case 104: {
+          case 88: {
             SkillDepotId = input.ReadUInt32();
             break;
           }

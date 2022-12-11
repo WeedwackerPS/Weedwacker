@@ -24,18 +24,20 @@ namespace Weedwacker.Shared.Network.Proto {
     static LanternProjectionInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtMYW50ZXJuUHJvamVjdGlvbkluZm8ucHJvdG8aFUNsaWVudElucHV0VHlw",
-            "ZS5wcm90bxogTGFudGVyblByb2plY3Rpb25MZXZlbEluZm8ucHJvdG8iwgEK",
-            "FUxhbnRlcm5Qcm9qZWN0aW9uSW5mbxIvChV2aWV3X3N3aXRjaF90aXBzX2xp",
-            "c3QYDCADKA4yEC5DbGllbnRJbnB1dFR5cGUSLwoKbGV2ZWxfbGlzdBgGIAMo",
-            "CzIbLkxhbnRlcm5Qcm9qZWN0aW9uTGV2ZWxJbmZvEhcKD29wZW5fc3RhZ2Vf",
-            "bGlzdBgKIAMoDRIuChR2aWV3X2lucHV0X3RpcHNfbGlzdBgNIAMoDjIQLkNs",
-            "aWVudElucHV0VHlwZUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
-            "cm90b2IGcHJvdG8z"));
+            "ChtMYW50ZXJuUHJvamVjdGlvbkluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aFUNsaWVudElucHV0VHlwZS5wcm90bxogTGFu",
+            "dGVyblByb2plY3Rpb25MZXZlbEluZm8ucHJvdG8inwIKFUxhbnRlcm5Qcm9q",
+            "ZWN0aW9uSW5mbxJNChNVbmszMzAwX0ZBSUFJSkdDQkpHGAUgAygOMjAuV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5DbGllbnRJbnB1dFR5cGUS",
+            "FwoPb3Blbl9zdGFnZV9saXN0GA8gAygNEk8KCmxldmVsX2xpc3QYDSADKAsy",
+            "Oy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkxhbnRlcm5Qcm9q",
+            "ZWN0aW9uTGV2ZWxJbmZvEk0KE1VuazMzMDBfRUJISEZLTERPRkIYCiADKA4y",
+            "MC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkNsaWVudElucHV0",
+            "VHlwZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ClientInputTypeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.LanternProjectionLevelInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.LanternProjectionInfo), global::Weedwacker.Shared.Network.Proto.LanternProjectionInfo.Parser, new[]{ "ViewSwitchTipsList", "LevelList", "OpenStageList", "ViewInputTipsList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.LanternProjectionInfo), global::Weedwacker.Shared.Network.Proto.LanternProjectionInfo.Parser, new[]{ "Unk3300FAIAIJGCBJG", "OpenStageList", "LevelList", "Unk3300EBHHFKLDOFB" }, null, null, null, null)
           }));
     }
     #endregion
@@ -76,10 +78,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LanternProjectionInfo(LanternProjectionInfo other) : this() {
-      viewSwitchTipsList_ = other.viewSwitchTipsList_.Clone();
-      levelList_ = other.levelList_.Clone();
+      unk3300FAIAIJGCBJG_ = other.unk3300FAIAIJGCBJG_.Clone();
       openStageList_ = other.openStageList_.Clone();
-      viewInputTipsList_ = other.viewInputTipsList_.Clone();
+      levelList_ = other.levelList_.Clone();
+      unk3300EBHHFKLDOFB_ = other.unk3300EBHHFKLDOFB_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,32 +91,21 @@ namespace Weedwacker.Shared.Network.Proto {
       return new LanternProjectionInfo(this);
     }
 
-    /// <summary>Field number for the "view_switch_tips_list" field.</summary>
-    public const int ViewSwitchTipsListFieldNumber = 12;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ClientInputType> _repeated_viewSwitchTipsList_codec
-        = pb::FieldCodec.ForEnum(98, x => (int) x, x => (global::Weedwacker.Shared.Network.Proto.ClientInputType) x);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ClientInputType> viewSwitchTipsList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ClientInputType>();
+    /// <summary>Field number for the "Unk3300_FAIAIJGCBJG" field.</summary>
+    public const int Unk3300FAIAIJGCBJGFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ClientInputType> _repeated_unk3300FAIAIJGCBJG_codec
+        = pb::FieldCodec.ForEnum(42, x => (int) x, x => (global::Weedwacker.Shared.Network.Proto.ClientInputType) x);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ClientInputType> unk3300FAIAIJGCBJG_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ClientInputType>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ClientInputType> ViewSwitchTipsList {
-      get { return viewSwitchTipsList_; }
-    }
-
-    /// <summary>Field number for the "level_list" field.</summary>
-    public const int LevelListFieldNumber = 6;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.LanternProjectionLevelInfo> _repeated_levelList_codec
-        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.LanternProjectionLevelInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.LanternProjectionLevelInfo> levelList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.LanternProjectionLevelInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.LanternProjectionLevelInfo> LevelList {
-      get { return levelList_; }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ClientInputType> Unk3300FAIAIJGCBJG {
+      get { return unk3300FAIAIJGCBJG_; }
     }
 
     /// <summary>Field number for the "open_stage_list" field.</summary>
-    public const int OpenStageListFieldNumber = 10;
+    public const int OpenStageListFieldNumber = 15;
     private static readonly pb::FieldCodec<uint> _repeated_openStageList_codec
-        = pb::FieldCodec.ForUInt32(82);
+        = pb::FieldCodec.ForUInt32(122);
     private readonly pbc::RepeatedField<uint> openStageList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,15 +113,26 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return openStageList_; }
     }
 
-    /// <summary>Field number for the "view_input_tips_list" field.</summary>
-    public const int ViewInputTipsListFieldNumber = 13;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ClientInputType> _repeated_viewInputTipsList_codec
-        = pb::FieldCodec.ForEnum(106, x => (int) x, x => (global::Weedwacker.Shared.Network.Proto.ClientInputType) x);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ClientInputType> viewInputTipsList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ClientInputType>();
+    /// <summary>Field number for the "level_list" field.</summary>
+    public const int LevelListFieldNumber = 13;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.LanternProjectionLevelInfo> _repeated_levelList_codec
+        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.LanternProjectionLevelInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.LanternProjectionLevelInfo> levelList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.LanternProjectionLevelInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ClientInputType> ViewInputTipsList {
-      get { return viewInputTipsList_; }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.LanternProjectionLevelInfo> LevelList {
+      get { return levelList_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_EBHHFKLDOFB" field.</summary>
+    public const int Unk3300EBHHFKLDOFBFieldNumber = 10;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ClientInputType> _repeated_unk3300EBHHFKLDOFB_codec
+        = pb::FieldCodec.ForEnum(82, x => (int) x, x => (global::Weedwacker.Shared.Network.Proto.ClientInputType) x);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ClientInputType> unk3300EBHHFKLDOFB_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ClientInputType>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ClientInputType> Unk3300EBHHFKLDOFB {
+      get { return unk3300EBHHFKLDOFB_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -148,10 +150,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!viewSwitchTipsList_.Equals(other.viewSwitchTipsList_)) return false;
-      if(!levelList_.Equals(other.levelList_)) return false;
+      if(!unk3300FAIAIJGCBJG_.Equals(other.unk3300FAIAIJGCBJG_)) return false;
       if(!openStageList_.Equals(other.openStageList_)) return false;
-      if(!viewInputTipsList_.Equals(other.viewInputTipsList_)) return false;
+      if(!levelList_.Equals(other.levelList_)) return false;
+      if(!unk3300EBHHFKLDOFB_.Equals(other.unk3300EBHHFKLDOFB_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -159,10 +161,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= viewSwitchTipsList_.GetHashCode();
-      hash ^= levelList_.GetHashCode();
+      hash ^= unk3300FAIAIJGCBJG_.GetHashCode();
       hash ^= openStageList_.GetHashCode();
-      hash ^= viewInputTipsList_.GetHashCode();
+      hash ^= levelList_.GetHashCode();
+      hash ^= unk3300EBHHFKLDOFB_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -181,10 +183,10 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      unk3300FAIAIJGCBJG_.WriteTo(output, _repeated_unk3300FAIAIJGCBJG_codec);
+      unk3300EBHHFKLDOFB_.WriteTo(output, _repeated_unk3300EBHHFKLDOFB_codec);
       levelList_.WriteTo(output, _repeated_levelList_codec);
       openStageList_.WriteTo(output, _repeated_openStageList_codec);
-      viewSwitchTipsList_.WriteTo(output, _repeated_viewSwitchTipsList_codec);
-      viewInputTipsList_.WriteTo(output, _repeated_viewInputTipsList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -195,10 +197,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      unk3300FAIAIJGCBJG_.WriteTo(ref output, _repeated_unk3300FAIAIJGCBJG_codec);
+      unk3300EBHHFKLDOFB_.WriteTo(ref output, _repeated_unk3300EBHHFKLDOFB_codec);
       levelList_.WriteTo(ref output, _repeated_levelList_codec);
       openStageList_.WriteTo(ref output, _repeated_openStageList_codec);
-      viewSwitchTipsList_.WriteTo(ref output, _repeated_viewSwitchTipsList_codec);
-      viewInputTipsList_.WriteTo(ref output, _repeated_viewInputTipsList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -209,10 +211,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += viewSwitchTipsList_.CalculateSize(_repeated_viewSwitchTipsList_codec);
-      size += levelList_.CalculateSize(_repeated_levelList_codec);
+      size += unk3300FAIAIJGCBJG_.CalculateSize(_repeated_unk3300FAIAIJGCBJG_codec);
       size += openStageList_.CalculateSize(_repeated_openStageList_codec);
-      size += viewInputTipsList_.CalculateSize(_repeated_viewInputTipsList_codec);
+      size += levelList_.CalculateSize(_repeated_levelList_codec);
+      size += unk3300EBHHFKLDOFB_.CalculateSize(_repeated_unk3300EBHHFKLDOFB_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -225,10 +227,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      viewSwitchTipsList_.Add(other.viewSwitchTipsList_);
-      levelList_.Add(other.levelList_);
+      unk3300FAIAIJGCBJG_.Add(other.unk3300FAIAIJGCBJG_);
       openStageList_.Add(other.openStageList_);
-      viewInputTipsList_.Add(other.viewInputTipsList_);
+      levelList_.Add(other.levelList_);
+      unk3300EBHHFKLDOFB_.Add(other.unk3300EBHHFKLDOFB_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -244,23 +246,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 50: {
-            levelList_.AddEntriesFrom(input, _repeated_levelList_codec);
+          case 42:
+          case 40: {
+            unk3300FAIAIJGCBJG_.AddEntriesFrom(input, _repeated_unk3300FAIAIJGCBJG_codec);
             break;
           }
           case 82:
           case 80: {
+            unk3300EBHHFKLDOFB_.AddEntriesFrom(input, _repeated_unk3300EBHHFKLDOFB_codec);
+            break;
+          }
+          case 106: {
+            levelList_.AddEntriesFrom(input, _repeated_levelList_codec);
+            break;
+          }
+          case 122:
+          case 120: {
             openStageList_.AddEntriesFrom(input, _repeated_openStageList_codec);
-            break;
-          }
-          case 98:
-          case 96: {
-            viewSwitchTipsList_.AddEntriesFrom(input, _repeated_viewSwitchTipsList_codec);
-            break;
-          }
-          case 106:
-          case 104: {
-            viewInputTipsList_.AddEntriesFrom(input, _repeated_viewInputTipsList_codec);
             break;
           }
         }
@@ -278,23 +280,23 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 50: {
-            levelList_.AddEntriesFrom(ref input, _repeated_levelList_codec);
+          case 42:
+          case 40: {
+            unk3300FAIAIJGCBJG_.AddEntriesFrom(ref input, _repeated_unk3300FAIAIJGCBJG_codec);
             break;
           }
           case 82:
           case 80: {
+            unk3300EBHHFKLDOFB_.AddEntriesFrom(ref input, _repeated_unk3300EBHHFKLDOFB_codec);
+            break;
+          }
+          case 106: {
+            levelList_.AddEntriesFrom(ref input, _repeated_levelList_codec);
+            break;
+          }
+          case 122:
+          case 120: {
             openStageList_.AddEntriesFrom(ref input, _repeated_openStageList_codec);
-            break;
-          }
-          case 98:
-          case 96: {
-            viewSwitchTipsList_.AddEntriesFrom(ref input, _repeated_viewSwitchTipsList_codec);
-            break;
-          }
-          case 106:
-          case 104: {
-            viewInputTipsList_.AddEntriesFrom(ref input, _repeated_viewInputTipsList_codec);
             break;
           }
         }

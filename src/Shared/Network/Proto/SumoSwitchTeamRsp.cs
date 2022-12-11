@@ -24,17 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static SumoSwitchTeamRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdTdW1vU3dpdGNoVGVhbVJzcC5wcm90bxoVU3Vtb0R1bmdlb25UZWFtLnBy",
-            "b3RvIrABChFTdW1vU3dpdGNoVGVhbVJzcBIeChZuZXh0X3ZhbGlkX3N3aXRj",
-            "aF90aW1lGAcgASgNEisKEWR1bmdlb25fdGVhbV9saXN0GAogAygLMhAuU3Vt",
-            "b0R1bmdlb25UZWFtEhMKC2FjdGl2aXR5X2lkGAYgASgNEg8KB3JldGNvZGUY",
-            "DiABKAUSFgoOY3VyX3RlYW1faW5kZXgYCyABKA0SEAoIc3RhZ2VfaWQYBSAB",
-            "KA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3Rv",
-            "Mw=="));
+            "ChdTdW1vU3dpdGNoVGVhbVJzcC5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxoVU3Vtb0R1bmdlb25UZWFtLnByb3RvItIBChFTdW1v",
+            "U3dpdGNoVGVhbVJzcBIbChNVbmszMzAwX0JOSkJJR0hJSk9DGAggASgNEhAK",
+            "CHN0YWdlX2lkGAIgASgNEhMKC2FjdGl2aXR5X2lkGA8gASgNEhsKE1VuazMz",
+            "MDBfREpCSkFDR0hHRE0YASABKA0SSwoRZHVuZ2Vvbl90ZWFtX2xpc3QYDCAD",
+            "KAsyMC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlN1bW9EdW5n",
+            "ZW9uVGVhbRIPCgdyZXRjb2RlGAYgASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.SumoDungeonTeamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SumoSwitchTeamRsp), global::Weedwacker.Shared.Network.Proto.SumoSwitchTeamRsp.Parser, new[]{ "NextValidSwitchTime", "DungeonTeamList", "ActivityId", "Retcode", "CurTeamIndex", "StageId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SumoSwitchTeamRsp), global::Weedwacker.Shared.Network.Proto.SumoSwitchTeamRsp.Parser, new[]{ "Unk3300BNJBIGHIJOC", "StageId", "ActivityId", "Unk3300DJBJACGHGDM", "DungeonTeamList", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -42,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8525
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8201;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class SumoSwitchTeamRsp : pb::IMessage<SumoSwitchTeamRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,12 +84,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SumoSwitchTeamRsp(SumoSwitchTeamRsp other) : this() {
-      nextValidSwitchTime_ = other.nextValidSwitchTime_;
-      dungeonTeamList_ = other.dungeonTeamList_.Clone();
-      activityId_ = other.activityId_;
-      retcode_ = other.retcode_;
-      curTeamIndex_ = other.curTeamIndex_;
+      unk3300BNJBIGHIJOC_ = other.unk3300BNJBIGHIJOC_;
       stageId_ = other.stageId_;
+      activityId_ = other.activityId_;
+      unk3300DJBJACGHGDM_ = other.unk3300DJBJACGHGDM_;
+      dungeonTeamList_ = other.dungeonTeamList_.Clone();
+      retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -95,31 +99,32 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SumoSwitchTeamRsp(this);
     }
 
-    /// <summary>Field number for the "next_valid_switch_time" field.</summary>
-    public const int NextValidSwitchTimeFieldNumber = 7;
-    private uint nextValidSwitchTime_;
+    /// <summary>Field number for the "Unk3300_BNJBIGHIJOC" field.</summary>
+    public const int Unk3300BNJBIGHIJOCFieldNumber = 8;
+    private uint unk3300BNJBIGHIJOC_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint NextValidSwitchTime {
-      get { return nextValidSwitchTime_; }
+    public uint Unk3300BNJBIGHIJOC {
+      get { return unk3300BNJBIGHIJOC_; }
       set {
-        nextValidSwitchTime_ = value;
+        unk3300BNJBIGHIJOC_ = value;
       }
     }
 
-    /// <summary>Field number for the "dungeon_team_list" field.</summary>
-    public const int DungeonTeamListFieldNumber = 10;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.SumoDungeonTeam> _repeated_dungeonTeamList_codec
-        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.SumoDungeonTeam.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SumoDungeonTeam> dungeonTeamList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SumoDungeonTeam>();
+    /// <summary>Field number for the "stage_id" field.</summary>
+    public const int StageIdFieldNumber = 2;
+    private uint stageId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SumoDungeonTeam> DungeonTeamList {
-      get { return dungeonTeamList_; }
+    public uint StageId {
+      get { return stageId_; }
+      set {
+        stageId_ = value;
+      }
     }
 
     /// <summary>Field number for the "activity_id" field.</summary>
-    public const int ActivityIdFieldNumber = 6;
+    public const int ActivityIdFieldNumber = 15;
     private uint activityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -130,8 +135,31 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "Unk3300_DJBJACGHGDM" field.</summary>
+    public const int Unk3300DJBJACGHGDMFieldNumber = 1;
+    private uint unk3300DJBJACGHGDM_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300DJBJACGHGDM {
+      get { return unk3300DJBJACGHGDM_; }
+      set {
+        unk3300DJBJACGHGDM_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dungeon_team_list" field.</summary>
+    public const int DungeonTeamListFieldNumber = 12;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.SumoDungeonTeam> _repeated_dungeonTeamList_codec
+        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.SumoDungeonTeam.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SumoDungeonTeam> dungeonTeamList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SumoDungeonTeam>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SumoDungeonTeam> DungeonTeamList {
+      get { return dungeonTeamList_; }
+    }
+
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 14;
+    public const int RetcodeFieldNumber = 6;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -139,30 +167,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return retcode_; }
       set {
         retcode_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "cur_team_index" field.</summary>
-    public const int CurTeamIndexFieldNumber = 11;
-    private uint curTeamIndex_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurTeamIndex {
-      get { return curTeamIndex_; }
-      set {
-        curTeamIndex_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "stage_id" field.</summary>
-    public const int StageIdFieldNumber = 5;
-    private uint stageId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint StageId {
-      get { return stageId_; }
-      set {
-        stageId_ = value;
       }
     }
 
@@ -181,12 +185,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (NextValidSwitchTime != other.NextValidSwitchTime) return false;
-      if(!dungeonTeamList_.Equals(other.dungeonTeamList_)) return false;
-      if (ActivityId != other.ActivityId) return false;
-      if (Retcode != other.Retcode) return false;
-      if (CurTeamIndex != other.CurTeamIndex) return false;
+      if (Unk3300BNJBIGHIJOC != other.Unk3300BNJBIGHIJOC) return false;
       if (StageId != other.StageId) return false;
+      if (ActivityId != other.ActivityId) return false;
+      if (Unk3300DJBJACGHGDM != other.Unk3300DJBJACGHGDM) return false;
+      if(!dungeonTeamList_.Equals(other.dungeonTeamList_)) return false;
+      if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -194,12 +198,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (NextValidSwitchTime != 0) hash ^= NextValidSwitchTime.GetHashCode();
-      hash ^= dungeonTeamList_.GetHashCode();
-      if (ActivityId != 0) hash ^= ActivityId.GetHashCode();
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      if (CurTeamIndex != 0) hash ^= CurTeamIndex.GetHashCode();
+      if (Unk3300BNJBIGHIJOC != 0) hash ^= Unk3300BNJBIGHIJOC.GetHashCode();
       if (StageId != 0) hash ^= StageId.GetHashCode();
+      if (ActivityId != 0) hash ^= ActivityId.GetHashCode();
+      if (Unk3300DJBJACGHGDM != 0) hash ^= Unk3300DJBJACGHGDM.GetHashCode();
+      hash ^= dungeonTeamList_.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -218,26 +222,26 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (Unk3300DJBJACGHGDM != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300DJBJACGHGDM);
+      }
       if (StageId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(16);
         output.WriteUInt32(StageId);
       }
-      if (ActivityId != 0) {
+      if (Retcode != 0) {
         output.WriteRawTag(48);
-        output.WriteUInt32(ActivityId);
+        output.WriteInt32(Retcode);
       }
-      if (NextValidSwitchTime != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(NextValidSwitchTime);
+      if (Unk3300BNJBIGHIJOC != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300BNJBIGHIJOC);
       }
       dungeonTeamList_.WriteTo(output, _repeated_dungeonTeamList_codec);
-      if (CurTeamIndex != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(CurTeamIndex);
-      }
-      if (Retcode != 0) {
-        output.WriteRawTag(112);
-        output.WriteInt32(Retcode);
+      if (ActivityId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(ActivityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -249,26 +253,26 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Unk3300DJBJACGHGDM != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300DJBJACGHGDM);
+      }
       if (StageId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(16);
         output.WriteUInt32(StageId);
       }
-      if (ActivityId != 0) {
+      if (Retcode != 0) {
         output.WriteRawTag(48);
-        output.WriteUInt32(ActivityId);
+        output.WriteInt32(Retcode);
       }
-      if (NextValidSwitchTime != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(NextValidSwitchTime);
+      if (Unk3300BNJBIGHIJOC != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300BNJBIGHIJOC);
       }
       dungeonTeamList_.WriteTo(ref output, _repeated_dungeonTeamList_codec);
-      if (CurTeamIndex != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(CurTeamIndex);
-      }
-      if (Retcode != 0) {
-        output.WriteRawTag(112);
-        output.WriteInt32(Retcode);
+      if (ActivityId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(ActivityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -280,21 +284,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (NextValidSwitchTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextValidSwitchTime);
-      }
-      size += dungeonTeamList_.CalculateSize(_repeated_dungeonTeamList_codec);
-      if (ActivityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ActivityId);
-      }
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
-      if (CurTeamIndex != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurTeamIndex);
+      if (Unk3300BNJBIGHIJOC != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300BNJBIGHIJOC);
       }
       if (StageId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
+      }
+      if (ActivityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ActivityId);
+      }
+      if (Unk3300DJBJACGHGDM != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DJBJACGHGDM);
+      }
+      size += dungeonTeamList_.CalculateSize(_repeated_dungeonTeamList_codec);
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -308,21 +312,21 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.NextValidSwitchTime != 0) {
-        NextValidSwitchTime = other.NextValidSwitchTime;
-      }
-      dungeonTeamList_.Add(other.dungeonTeamList_);
-      if (other.ActivityId != 0) {
-        ActivityId = other.ActivityId;
-      }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
-      }
-      if (other.CurTeamIndex != 0) {
-        CurTeamIndex = other.CurTeamIndex;
+      if (other.Unk3300BNJBIGHIJOC != 0) {
+        Unk3300BNJBIGHIJOC = other.Unk3300BNJBIGHIJOC;
       }
       if (other.StageId != 0) {
         StageId = other.StageId;
+      }
+      if (other.ActivityId != 0) {
+        ActivityId = other.ActivityId;
+      }
+      if (other.Unk3300DJBJACGHGDM != 0) {
+        Unk3300DJBJACGHGDM = other.Unk3300DJBJACGHGDM;
+      }
+      dungeonTeamList_.Add(other.dungeonTeamList_);
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -339,28 +343,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
+          case 8: {
+            Unk3300DJBJACGHGDM = input.ReadUInt32();
+            break;
+          }
+          case 16: {
             StageId = input.ReadUInt32();
             break;
           }
           case 48: {
-            ActivityId = input.ReadUInt32();
+            Retcode = input.ReadInt32();
             break;
           }
-          case 56: {
-            NextValidSwitchTime = input.ReadUInt32();
+          case 64: {
+            Unk3300BNJBIGHIJOC = input.ReadUInt32();
             break;
           }
-          case 82: {
+          case 98: {
             dungeonTeamList_.AddEntriesFrom(input, _repeated_dungeonTeamList_codec);
             break;
           }
-          case 88: {
-            CurTeamIndex = input.ReadUInt32();
-            break;
-          }
-          case 112: {
-            Retcode = input.ReadInt32();
+          case 120: {
+            ActivityId = input.ReadUInt32();
             break;
           }
         }
@@ -378,28 +382,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
+          case 8: {
+            Unk3300DJBJACGHGDM = input.ReadUInt32();
+            break;
+          }
+          case 16: {
             StageId = input.ReadUInt32();
             break;
           }
           case 48: {
-            ActivityId = input.ReadUInt32();
+            Retcode = input.ReadInt32();
             break;
           }
-          case 56: {
-            NextValidSwitchTime = input.ReadUInt32();
+          case 64: {
+            Unk3300BNJBIGHIJOC = input.ReadUInt32();
             break;
           }
-          case 82: {
+          case 98: {
             dungeonTeamList_.AddEntriesFrom(ref input, _repeated_dungeonTeamList_codec);
             break;
           }
-          case 88: {
-            CurTeamIndex = input.ReadUInt32();
-            break;
-          }
-          case 112: {
-            Retcode = input.ReadInt32();
+          case 120: {
+            ActivityId = input.ReadUInt32();
             break;
           }
         }

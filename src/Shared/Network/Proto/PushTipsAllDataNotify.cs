@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static PushTipsAllDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtQdXNoVGlwc0FsbERhdGFOb3RpZnkucHJvdG8aElB1c2hUaXBzRGF0YS5w",
-            "cm90byI+ChVQdXNoVGlwc0FsbERhdGFOb3RpZnkSJQoOcHVzaF90aXBzX2xp",
-            "c3QYBCADKAsyDS5QdXNoVGlwc0RhdGFCIqoCH1dlZWR3YWNrZXIuU2hhcmVk",
-            "Lk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChtQdXNoVGlwc0FsbERhdGFOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aElB1c2hUaXBzRGF0YS5wcm90byJeChVQdXNo",
+            "VGlwc0FsbERhdGFOb3RpZnkSRQoOcHVzaF90aXBzX2xpc3QYBCADKAsyLS5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlB1c2hUaXBzRGF0YWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.PushTipsDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2222
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2237;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class PushTipsAllDataNotify : pb::IMessage<PushTipsAllDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

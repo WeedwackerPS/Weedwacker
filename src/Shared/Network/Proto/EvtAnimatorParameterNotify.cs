@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static EvtAnimatorParameterNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBFdnRBbmltYXRvclBhcmFtZXRlck5vdGlmeS5wcm90bxoeRXZ0QW5pbWF0",
-            "b3JQYXJhbWV0ZXJJbmZvLnByb3RvGhFGb3J3YXJkVHlwZS5wcm90byJ4ChpF",
-            "dnRBbmltYXRvclBhcmFtZXRlck5vdGlmeRI2ChNhbmltYXRvcl9wYXJhbV9p",
-            "bmZvGAwgASgLMhkuRXZ0QW5pbWF0b3JQYXJhbWV0ZXJJbmZvEiIKDGZvcndh",
-            "cmRfdHlwZRgOIAEoDjIMLkZvcndhcmRUeXBlQiKqAh9XZWVkd2Fja2VyLlNo",
-            "YXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiBFdnRBbmltYXRvclBhcmFtZXRlck5vdGlmeS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90bxoeRXZ0QW5pbWF0b3JQYXJhbWV0ZXJJ",
+            "bmZvLnByb3RvGhFGb3J3YXJkVHlwZS5wcm90byK4AQoaRXZ0QW5pbWF0b3JQ",
+            "YXJhbWV0ZXJOb3RpZnkSQgoMZm9yd2FyZF90eXBlGAkgASgOMiwuV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5Gb3J3YXJkVHlwZRJWChNhbmlt",
+            "YXRvcl9wYXJhbV9pbmZvGA0gASgLMjkuV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5FdnRBbmltYXRvclBhcmFtZXRlckluZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.EvtAnimatorParameterInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ForwardTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EvtAnimatorParameterNotify), global::Weedwacker.Shared.Network.Proto.EvtAnimatorParameterNotify.Parser, new[]{ "AnimatorParamInfo", "ForwardType" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EvtAnimatorParameterNotify), global::Weedwacker.Shared.Network.Proto.EvtAnimatorParameterNotify.Parser, new[]{ "ForwardType", "AnimatorParamInfo" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,10 +42,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 398
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 330;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class EvtAnimatorParameterNotify : pb::IMessage<EvtAnimatorParameterNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,8 +85,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EvtAnimatorParameterNotify(EvtAnimatorParameterNotify other) : this() {
-      animatorParamInfo_ = other.animatorParamInfo_ != null ? other.animatorParamInfo_.Clone() : null;
       forwardType_ = other.forwardType_;
+      animatorParamInfo_ = other.animatorParamInfo_ != null ? other.animatorParamInfo_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,20 +96,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new EvtAnimatorParameterNotify(this);
     }
 
-    /// <summary>Field number for the "animator_param_info" field.</summary>
-    public const int AnimatorParamInfoFieldNumber = 12;
-    private global::Weedwacker.Shared.Network.Proto.EvtAnimatorParameterInfo animatorParamInfo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.EvtAnimatorParameterInfo AnimatorParamInfo {
-      get { return animatorParamInfo_; }
-      set {
-        animatorParamInfo_ = value;
-      }
-    }
-
     /// <summary>Field number for the "forward_type" field.</summary>
-    public const int ForwardTypeFieldNumber = 14;
+    public const int ForwardTypeFieldNumber = 9;
     private global::Weedwacker.Shared.Network.Proto.ForwardType forwardType_ = global::Weedwacker.Shared.Network.Proto.ForwardType.Local;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -112,6 +105,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return forwardType_; }
       set {
         forwardType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "animator_param_info" field.</summary>
+    public const int AnimatorParamInfoFieldNumber = 13;
+    private global::Weedwacker.Shared.Network.Proto.EvtAnimatorParameterInfo animatorParamInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.EvtAnimatorParameterInfo AnimatorParamInfo {
+      get { return animatorParamInfo_; }
+      set {
+        animatorParamInfo_ = value;
       }
     }
 
@@ -130,8 +135,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(AnimatorParamInfo, other.AnimatorParamInfo)) return false;
       if (ForwardType != other.ForwardType) return false;
+      if (!object.Equals(AnimatorParamInfo, other.AnimatorParamInfo)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -139,8 +144,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (animatorParamInfo_ != null) hash ^= AnimatorParamInfo.GetHashCode();
       if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) hash ^= ForwardType.GetHashCode();
+      if (animatorParamInfo_ != null) hash ^= AnimatorParamInfo.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -159,13 +164,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (animatorParamInfo_ != null) {
-        output.WriteRawTag(98);
-        output.WriteMessage(AnimatorParamInfo);
-      }
       if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(72);
         output.WriteEnum((int) ForwardType);
+      }
+      if (animatorParamInfo_ != null) {
+        output.WriteRawTag(106);
+        output.WriteMessage(AnimatorParamInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -177,13 +182,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (animatorParamInfo_ != null) {
-        output.WriteRawTag(98);
-        output.WriteMessage(AnimatorParamInfo);
-      }
       if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(72);
         output.WriteEnum((int) ForwardType);
+      }
+      if (animatorParamInfo_ != null) {
+        output.WriteRawTag(106);
+        output.WriteMessage(AnimatorParamInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -195,11 +200,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (animatorParamInfo_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AnimatorParamInfo);
-      }
       if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ForwardType);
+      }
+      if (animatorParamInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AnimatorParamInfo);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -213,14 +218,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
+        ForwardType = other.ForwardType;
+      }
       if (other.animatorParamInfo_ != null) {
         if (animatorParamInfo_ == null) {
           AnimatorParamInfo = new global::Weedwacker.Shared.Network.Proto.EvtAnimatorParameterInfo();
         }
         AnimatorParamInfo.MergeFrom(other.AnimatorParamInfo);
-      }
-      if (other.ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
-        ForwardType = other.ForwardType;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -237,15 +242,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 98: {
+          case 72: {
+            ForwardType = (global::Weedwacker.Shared.Network.Proto.ForwardType) input.ReadEnum();
+            break;
+          }
+          case 106: {
             if (animatorParamInfo_ == null) {
               AnimatorParamInfo = new global::Weedwacker.Shared.Network.Proto.EvtAnimatorParameterInfo();
             }
             input.ReadMessage(AnimatorParamInfo);
-            break;
-          }
-          case 112: {
-            ForwardType = (global::Weedwacker.Shared.Network.Proto.ForwardType) input.ReadEnum();
             break;
           }
         }
@@ -263,15 +268,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 98: {
+          case 72: {
+            ForwardType = (global::Weedwacker.Shared.Network.Proto.ForwardType) input.ReadEnum();
+            break;
+          }
+          case 106: {
             if (animatorParamInfo_ == null) {
               AnimatorParamInfo = new global::Weedwacker.Shared.Network.Proto.EvtAnimatorParameterInfo();
             }
             input.ReadMessage(AnimatorParamInfo);
-            break;
-          }
-          case 112: {
-            ForwardType = (global::Weedwacker.Shared.Network.Proto.ForwardType) input.ReadEnum();
             break;
           }
         }

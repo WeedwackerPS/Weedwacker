@@ -25,11 +25,12 @@ namespace Weedwacker.Shared.Network.Proto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci9DYXRhTG9nRmluaXNoZWRHbG9iYWxXYXRjaGVyQWxsRGF0YU5vdGlmeS5w",
-            "cm90bxomQ2F0YUxvZ0dsb2JhbFdhdGNoZXJGaW5pc2hlZERhdGEucHJvdG8i",
-            "eQopQ2F0YUxvZ0ZpbmlzaGVkR2xvYmFsV2F0Y2hlckFsbERhdGFOb3RpZnkS",
-            "TAohZmluaXNoZWRfZ2xvYmFsX3dhdGNoZXJfZGF0YV9saXN0GA0gAygLMiEu",
-            "Q2F0YUxvZ0dsb2JhbFdhdGNoZXJGaW5pc2hlZERhdGFCIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "cm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxomQ2F0YUxv",
+            "Z0dsb2JhbFdhdGNoZXJGaW5pc2hlZERhdGEucHJvdG8imQEKKUNhdGFMb2dG",
+            "aW5pc2hlZEdsb2JhbFdhdGNoZXJBbGxEYXRhTm90aWZ5EmwKIWZpbmlzaGVk",
+            "X2dsb2JhbF93YXRjaGVyX2RhdGFfbGlzdBgHIAMoCzJBLldlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8uQ2F0YUxvZ0dsb2JhbFdhdGNoZXJGaW5p",
+            "c2hlZERhdGFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CataLogGlobalWatcherFinishedDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -41,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 6370
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 6365;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class CataLogFinishedGlobalWatcherAllDataNotify : pb::IMessage<CataLogFinishedGlobalWatcherAllDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,9 +95,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "finished_global_watcher_data_list" field.</summary>
-    public const int FinishedGlobalWatcherDataListFieldNumber = 13;
+    public const int FinishedGlobalWatcherDataListFieldNumber = 7;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.CataLogGlobalWatcherFinishedData> _repeated_finishedGlobalWatcherDataList_codec
-        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.CataLogGlobalWatcherFinishedData.Parser);
+        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.CataLogGlobalWatcherFinishedData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CataLogGlobalWatcherFinishedData> finishedGlobalWatcherDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.CataLogGlobalWatcherFinishedData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -193,7 +198,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 106: {
+          case 58: {
             finishedGlobalWatcherDataList_.AddEntriesFrom(input, _repeated_finishedGlobalWatcherDataList_codec);
             break;
           }
@@ -212,7 +217,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 106: {
+          case 58: {
             finishedGlobalWatcherDataList_.AddEntriesFrom(ref input, _repeated_finishedGlobalWatcherDataList_codec);
             break;
           }

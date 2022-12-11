@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static CombatInvokeEntryReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdDb21iYXRJbnZva2VFbnRyeS5wcm90bxoYQ29tYmF0VHlwZUFyZ3VtZW50",
-            "LnByb3RvGhFGb3J3YXJkVHlwZS5wcm90byJ4ChFDb21iYXRJbnZva2VFbnRy",
-            "eRITCgtjb21iYXRfZGF0YRgMIAEoDBIiCgxmb3J3YXJkX3R5cGUYCiABKA4y",
-            "DC5Gb3J3YXJkVHlwZRIqCg1hcmd1bWVudF90eXBlGAsgASgOMhMuQ29tYmF0",
-            "VHlwZUFyZ3VtZW50QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
-            "b3RvYgZwcm90bzM="));
+            "ChdDb21iYXRJbnZva2VFbnRyeS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxoYQ29tYmF0VHlwZUFyZ3VtZW50LnByb3RvGhFGb3J3",
+            "YXJkVHlwZS5wcm90byK4AQoRQ29tYmF0SW52b2tlRW50cnkSQgoMZm9yd2Fy",
+            "ZF90eXBlGAsgASgOMiwuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
+            "by5Gb3J3YXJkVHlwZRJKCg1hcmd1bWVudF90eXBlGAkgASgOMjMuV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5Db21iYXRUeXBlQXJndW1lbnQS",
+            "EwoLY29tYmF0X2RhdGEYByABKAxiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.CombatTypeArgumentReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ForwardTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CombatInvokeEntry), global::Weedwacker.Shared.Network.Proto.CombatInvokeEntry.Parser, new[]{ "CombatData", "ForwardType", "ArgumentType" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CombatInvokeEntry), global::Weedwacker.Shared.Network.Proto.CombatInvokeEntry.Parser, new[]{ "ForwardType", "ArgumentType", "CombatData" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,9 +75,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CombatInvokeEntry(CombatInvokeEntry other) : this() {
-      combatData_ = other.combatData_;
       forwardType_ = other.forwardType_;
       argumentType_ = other.argumentType_;
+      combatData_ = other.combatData_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,20 +87,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new CombatInvokeEntry(this);
     }
 
-    /// <summary>Field number for the "combat_data" field.</summary>
-    public const int CombatDataFieldNumber = 12;
-    private pb::ByteString combatData_ = pb::ByteString.Empty;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pb::ByteString CombatData {
-      get { return combatData_; }
-      set {
-        combatData_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "forward_type" field.</summary>
-    public const int ForwardTypeFieldNumber = 10;
+    public const int ForwardTypeFieldNumber = 11;
     private global::Weedwacker.Shared.Network.Proto.ForwardType forwardType_ = global::Weedwacker.Shared.Network.Proto.ForwardType.Local;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -111,7 +100,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "argument_type" field.</summary>
-    public const int ArgumentTypeFieldNumber = 11;
+    public const int ArgumentTypeFieldNumber = 9;
     private global::Weedwacker.Shared.Network.Proto.CombatTypeArgument argumentType_ = global::Weedwacker.Shared.Network.Proto.CombatTypeArgument.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -119,6 +108,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return argumentType_; }
       set {
         argumentType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "combat_data" field.</summary>
+    public const int CombatDataFieldNumber = 7;
+    private pb::ByteString combatData_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pb::ByteString CombatData {
+      get { return combatData_; }
+      set {
+        combatData_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -137,9 +138,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CombatData != other.CombatData) return false;
       if (ForwardType != other.ForwardType) return false;
       if (ArgumentType != other.ArgumentType) return false;
+      if (CombatData != other.CombatData) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -147,9 +148,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CombatData.Length != 0) hash ^= CombatData.GetHashCode();
       if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) hash ^= ForwardType.GetHashCode();
       if (ArgumentType != global::Weedwacker.Shared.Network.Proto.CombatTypeArgument.None) hash ^= ArgumentType.GetHashCode();
+      if (CombatData.Length != 0) hash ^= CombatData.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -168,17 +169,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
-        output.WriteRawTag(80);
-        output.WriteEnum((int) ForwardType);
+      if (CombatData.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteBytes(CombatData);
       }
       if (ArgumentType != global::Weedwacker.Shared.Network.Proto.CombatTypeArgument.None) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(72);
         output.WriteEnum((int) ArgumentType);
       }
-      if (CombatData.Length != 0) {
-        output.WriteRawTag(98);
-        output.WriteBytes(CombatData);
+      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
+        output.WriteRawTag(88);
+        output.WriteEnum((int) ForwardType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -190,17 +191,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
-        output.WriteRawTag(80);
-        output.WriteEnum((int) ForwardType);
+      if (CombatData.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteBytes(CombatData);
       }
       if (ArgumentType != global::Weedwacker.Shared.Network.Proto.CombatTypeArgument.None) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(72);
         output.WriteEnum((int) ArgumentType);
       }
-      if (CombatData.Length != 0) {
-        output.WriteRawTag(98);
-        output.WriteBytes(CombatData);
+      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
+        output.WriteRawTag(88);
+        output.WriteEnum((int) ForwardType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -212,14 +213,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CombatData.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeBytesSize(CombatData);
-      }
       if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ForwardType);
       }
       if (ArgumentType != global::Weedwacker.Shared.Network.Proto.CombatTypeArgument.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ArgumentType);
+      }
+      if (CombatData.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(CombatData);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -233,14 +234,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.CombatData.Length != 0) {
-        CombatData = other.CombatData;
-      }
       if (other.ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
         ForwardType = other.ForwardType;
       }
       if (other.ArgumentType != global::Weedwacker.Shared.Network.Proto.CombatTypeArgument.None) {
         ArgumentType = other.ArgumentType;
+      }
+      if (other.CombatData.Length != 0) {
+        CombatData = other.CombatData;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -257,16 +258,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 80: {
-            ForwardType = (global::Weedwacker.Shared.Network.Proto.ForwardType) input.ReadEnum();
+          case 58: {
+            CombatData = input.ReadBytes();
             break;
           }
-          case 88: {
+          case 72: {
             ArgumentType = (global::Weedwacker.Shared.Network.Proto.CombatTypeArgument) input.ReadEnum();
             break;
           }
-          case 98: {
-            CombatData = input.ReadBytes();
+          case 88: {
+            ForwardType = (global::Weedwacker.Shared.Network.Proto.ForwardType) input.ReadEnum();
             break;
           }
         }
@@ -284,16 +285,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 80: {
-            ForwardType = (global::Weedwacker.Shared.Network.Proto.ForwardType) input.ReadEnum();
+          case 58: {
+            CombatData = input.ReadBytes();
             break;
           }
-          case 88: {
+          case 72: {
             ArgumentType = (global::Weedwacker.Shared.Network.Proto.CombatTypeArgument) input.ReadEnum();
             break;
           }
-          case 98: {
-            CombatData = input.ReadBytes();
+          case 88: {
+            ForwardType = (global::Weedwacker.Shared.Network.Proto.ForwardType) input.ReadEnum();
             break;
           }
         }

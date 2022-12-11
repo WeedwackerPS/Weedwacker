@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static StartEffigyChallengeRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1TdGFydEVmZmlneUNoYWxsZW5nZVJzcC5wcm90byKEAQoXU3RhcnRFZmZp",
-            "Z3lDaGFsbGVuZ2VSc3ASGQoRY29uZGl0aW9uX2lkX2xpc3QYAiADKA0SDwoH",
-            "cmV0Y29kZRgIIAEoBRIUCgxjaGFsbGVuZ2VfaWQYDyABKA0SFQoNZGlmZmlj",
-            "dWx0eV9pZBgKIAEoDRIQCghwb2ludF9pZBgMIAEoDUIiqgIfV2VlZHdhY2tl",
-            "ci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch1TdGFydEVmZmlneUNoYWxsZW5nZVJzcC5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90byKEAQoXU3RhcnRFZmZpZ3lDaGFsbGVuZ2VS",
+            "c3ASEAoIcG9pbnRfaWQYBCABKA0SGQoRY29uZGl0aW9uX2lkX2xpc3QYCSAD",
+            "KA0SFQoNZGlmZmljdWx0eV9pZBgMIAEoDRIPCgdyZXRjb2RlGAUgASgFEhQK",
+            "DGNoYWxsZW5nZV9pZBgKIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.StartEffigyChallengeRsp), global::Weedwacker.Shared.Network.Proto.StartEffigyChallengeRsp.Parser, new[]{ "ConditionIdList", "Retcode", "ChallengeId", "DifficultyId", "PointId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.StartEffigyChallengeRsp), global::Weedwacker.Shared.Network.Proto.StartEffigyChallengeRsp.Parser, new[]{ "PointId", "ConditionIdList", "DifficultyId", "Retcode", "ChallengeId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2173
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2169;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class StartEffigyChallengeRsp : pb::IMessage<StartEffigyChallengeRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,11 +82,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public StartEffigyChallengeRsp(StartEffigyChallengeRsp other) : this() {
+      pointId_ = other.pointId_;
       conditionIdList_ = other.conditionIdList_.Clone();
+      difficultyId_ = other.difficultyId_;
       retcode_ = other.retcode_;
       challengeId_ = other.challengeId_;
-      difficultyId_ = other.difficultyId_;
-      pointId_ = other.pointId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,10 +96,22 @@ namespace Weedwacker.Shared.Network.Proto {
       return new StartEffigyChallengeRsp(this);
     }
 
+    /// <summary>Field number for the "point_id" field.</summary>
+    public const int PointIdFieldNumber = 4;
+    private uint pointId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PointId {
+      get { return pointId_; }
+      set {
+        pointId_ = value;
+      }
+    }
+
     /// <summary>Field number for the "condition_id_list" field.</summary>
-    public const int ConditionIdListFieldNumber = 2;
+    public const int ConditionIdListFieldNumber = 9;
     private static readonly pb::FieldCodec<uint> _repeated_conditionIdList_codec
-        = pb::FieldCodec.ForUInt32(18);
+        = pb::FieldCodec.ForUInt32(74);
     private readonly pbc::RepeatedField<uint> conditionIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,8 +119,20 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return conditionIdList_; }
     }
 
+    /// <summary>Field number for the "difficulty_id" field.</summary>
+    public const int DifficultyIdFieldNumber = 12;
+    private uint difficultyId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint DifficultyId {
+      get { return difficultyId_; }
+      set {
+        difficultyId_ = value;
+      }
+    }
+
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 8;
+    public const int RetcodeFieldNumber = 5;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -116,7 +144,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "challenge_id" field.</summary>
-    public const int ChallengeIdFieldNumber = 15;
+    public const int ChallengeIdFieldNumber = 10;
     private uint challengeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -124,30 +152,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return challengeId_; }
       set {
         challengeId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "difficulty_id" field.</summary>
-    public const int DifficultyIdFieldNumber = 10;
-    private uint difficultyId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DifficultyId {
-      get { return difficultyId_; }
-      set {
-        difficultyId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "point_id" field.</summary>
-    public const int PointIdFieldNumber = 12;
-    private uint pointId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint PointId {
-      get { return pointId_; }
-      set {
-        pointId_ = value;
       }
     }
 
@@ -166,11 +170,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (PointId != other.PointId) return false;
       if(!conditionIdList_.Equals(other.conditionIdList_)) return false;
+      if (DifficultyId != other.DifficultyId) return false;
       if (Retcode != other.Retcode) return false;
       if (ChallengeId != other.ChallengeId) return false;
-      if (DifficultyId != other.DifficultyId) return false;
-      if (PointId != other.PointId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -178,11 +182,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (PointId != 0) hash ^= PointId.GetHashCode();
       hash ^= conditionIdList_.GetHashCode();
+      if (DifficultyId != 0) hash ^= DifficultyId.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (ChallengeId != 0) hash ^= ChallengeId.GetHashCode();
-      if (DifficultyId != 0) hash ^= DifficultyId.GetHashCode();
-      if (PointId != 0) hash ^= PointId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -201,22 +205,22 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      conditionIdList_.WriteTo(output, _repeated_conditionIdList_codec);
-      if (Retcode != 0) {
-        output.WriteRawTag(64);
-        output.WriteInt32(Retcode);
-      }
-      if (DifficultyId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(DifficultyId);
-      }
       if (PointId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(32);
         output.WriteUInt32(PointId);
       }
+      if (Retcode != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(Retcode);
+      }
+      conditionIdList_.WriteTo(output, _repeated_conditionIdList_codec);
       if (ChallengeId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(80);
         output.WriteUInt32(ChallengeId);
+      }
+      if (DifficultyId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(DifficultyId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -228,22 +232,22 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      conditionIdList_.WriteTo(ref output, _repeated_conditionIdList_codec);
-      if (Retcode != 0) {
-        output.WriteRawTag(64);
-        output.WriteInt32(Retcode);
-      }
-      if (DifficultyId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(DifficultyId);
-      }
       if (PointId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(32);
         output.WriteUInt32(PointId);
       }
+      if (Retcode != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(Retcode);
+      }
+      conditionIdList_.WriteTo(ref output, _repeated_conditionIdList_codec);
       if (ChallengeId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(80);
         output.WriteUInt32(ChallengeId);
+      }
+      if (DifficultyId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(DifficultyId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -255,18 +259,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (PointId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PointId);
+      }
       size += conditionIdList_.CalculateSize(_repeated_conditionIdList_codec);
+      if (DifficultyId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DifficultyId);
+      }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (ChallengeId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeId);
-      }
-      if (DifficultyId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DifficultyId);
-      }
-      if (PointId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PointId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -280,18 +284,18 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.PointId != 0) {
+        PointId = other.PointId;
+      }
       conditionIdList_.Add(other.conditionIdList_);
+      if (other.DifficultyId != 0) {
+        DifficultyId = other.DifficultyId;
+      }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
       if (other.ChallengeId != 0) {
         ChallengeId = other.ChallengeId;
-      }
-      if (other.DifficultyId != 0) {
-        DifficultyId = other.DifficultyId;
-      }
-      if (other.PointId != 0) {
-        PointId = other.PointId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -308,25 +312,25 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18:
-          case 16: {
-            conditionIdList_.AddEntriesFrom(input, _repeated_conditionIdList_codec);
-            break;
-          }
-          case 64: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 80: {
-            DifficultyId = input.ReadUInt32();
-            break;
-          }
-          case 96: {
+          case 32: {
             PointId = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 40: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 74:
+          case 72: {
+            conditionIdList_.AddEntriesFrom(input, _repeated_conditionIdList_codec);
+            break;
+          }
+          case 80: {
             ChallengeId = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            DifficultyId = input.ReadUInt32();
             break;
           }
         }
@@ -344,25 +348,25 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18:
-          case 16: {
-            conditionIdList_.AddEntriesFrom(ref input, _repeated_conditionIdList_codec);
-            break;
-          }
-          case 64: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 80: {
-            DifficultyId = input.ReadUInt32();
-            break;
-          }
-          case 96: {
+          case 32: {
             PointId = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 40: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 74:
+          case 72: {
+            conditionIdList_.AddEntriesFrom(ref input, _repeated_conditionIdList_codec);
+            break;
+          }
+          case 80: {
             ChallengeId = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            DifficultyId = input.ReadUInt32();
             break;
           }
         }

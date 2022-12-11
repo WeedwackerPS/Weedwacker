@@ -24,16 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static OnlinePlayerInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZPbmxpbmVQbGF5ZXJJbmZvLnByb3RvGhNNcFNldHRpbmdUeXBlLnByb3Rv",
-            "GhRQcm9maWxlUGljdHVyZS5wcm90byLLAgoQT25saW5lUGxheWVySW5mbxIL",
-            "CgN1aWQYASABKA0SEAoIbmlja25hbWUYAiABKAkSFAoMcGxheWVyX2xldmVs",
-            "GAMgASgNEhEKCWF2YXRhcl9pZBgEIAEoDRInCg9tcF9zZXR0aW5nX3R5cGUY",
-            "BSABKA4yDi5NcFNldHRpbmdUeXBlEh8KF2N1cl9wbGF5ZXJfbnVtX2luX3dv",
-            "cmxkGAYgASgNEhMKC3dvcmxkX2xldmVsGAcgASgNEhEKCW9ubGluZV9pZBgI",
-            "IAEoCRIUCgxuYW1lX2NhcmRfaWQYCSABKA0SGgoSYmxhY2tsaXN0X3VpZF9s",
-            "aXN0GAogAygNEhEKCXNpZ25hdHVyZRgLIAEoCRIoCg9wcm9maWxlX3BpY3R1",
-            "cmUYDCABKAsyDy5Qcm9maWxlUGljdHVyZRIOCgZwc25faWQYDSABKAlCIqoC",
-            "H1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChZPbmxpbmVQbGF5ZXJJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvGhNNcFNldHRpbmdUeXBlLnByb3RvGhRQcm9maWxlUGlj",
+            "dHVyZS5wcm90byKLAwoQT25saW5lUGxheWVySW5mbxILCgN1aWQYASABKA0S",
+            "EAoIbmlja25hbWUYAiABKAkSFAoMcGxheWVyX2xldmVsGAMgASgNEhEKCWF2",
+            "YXRhcl9pZBgEIAEoDRJHCg9tcF9zZXR0aW5nX3R5cGUYBSABKA4yLi5XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLk1wU2V0dGluZ1R5cGUSHwoX",
+            "Y3VyX3BsYXllcl9udW1faW5fd29ybGQYBiABKA0SEwoLd29ybGRfbGV2ZWwY",
+            "ByABKA0SEQoJb25saW5lX2lkGAggASgJEhQKDG5hbWVfY2FyZF9pZBgJIAEo",
+            "DRIaChJibGFja2xpc3RfdWlkX2xpc3QYCiADKA0SEQoJc2lnbmF0dXJlGAsg",
+            "ASgJEkgKD3Byb2ZpbGVfcGljdHVyZRgMIAEoCzIvLldlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8uUHJvZmlsZVBpY3R1cmUSDgoGcHNuX2lkGA0g",
+            "ASgJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MpSettingTypeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ProfilePictureReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

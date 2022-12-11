@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static BuoyantCombatDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1CdW95YW50Q29tYmF0RGV0YWlsSW5mby5wcm90bxocQnVveWFudENvbWJh",
-            "dERhaWx5SW5mby5wcm90byJLChdCdW95YW50Q29tYmF0RGV0YWlsSW5mbxIw",
-            "Cg9kYWlseV9pbmZvX2xpc3QYCCADKAsyFy5CdW95YW50Q29tYmF0RGFpbHlJ",
-            "bmZvQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90",
-            "bzM="));
+            "Ch1CdW95YW50Q29tYmF0RGV0YWlsSW5mby5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxocQnVveWFudENvbWJhdERhaWx5SW5mby5w",
+            "cm90byJrChdCdW95YW50Q29tYmF0RGV0YWlsSW5mbxJQCg9kYWlseV9pbmZv",
+            "X2xpc3QYCyADKAsyNy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
+            "LkJ1b3lhbnRDb21iYXREYWlseUluZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.BuoyantCombatDailyInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,9 +84,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "daily_info_list" field.</summary>
-    public const int DailyInfoListFieldNumber = 8;
+    public const int DailyInfoListFieldNumber = 11;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.BuoyantCombatDailyInfo> _repeated_dailyInfoList_codec
-        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.BuoyantCombatDailyInfo.Parser);
+        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.BuoyantCombatDailyInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BuoyantCombatDailyInfo> dailyInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.BuoyantCombatDailyInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -187,7 +187,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 66: {
+          case 90: {
             dailyInfoList_.AddEntriesFrom(input, _repeated_dailyInfoList_codec);
             break;
           }
@@ -206,7 +206,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 66: {
+          case 90: {
             dailyInfoList_.AddEntriesFrom(ref input, _repeated_dailyInfoList_codec);
             break;
           }

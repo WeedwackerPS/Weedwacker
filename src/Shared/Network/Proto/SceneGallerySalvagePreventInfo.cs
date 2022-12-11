@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneGallerySalvagePreventInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiRTY2VuZUdhbGxlcnlTYWx2YWdlUHJldmVudEluZm8ucHJvdG8iNwoeU2Nl",
-            "bmVHYWxsZXJ5U2FsdmFnZVByZXZlbnRJbmZvEhUKDW1vbnN0ZXJfY291bnQY",
-            "ByABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "CiRTY2VuZUdhbGxlcnlTYWx2YWdlUHJldmVudEluZm8ucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iNwoeU2NlbmVHYWxsZXJ5U2Fs",
+            "dmFnZVByZXZlbnRJbmZvEhUKDW1vbnN0ZXJfY291bnQYASABKA1iBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "monster_count" field.</summary>
-    public const int MonsterCountFieldNumber = 7;
+    public const int MonsterCountFieldNumber = 1;
     private uint monsterCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -137,7 +137,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (MonsterCount != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(8);
         output.WriteUInt32(MonsterCount);
       }
       if (_unknownFields != null) {
@@ -151,7 +151,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (MonsterCount != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(8);
         output.WriteUInt32(MonsterCount);
       }
       if (_unknownFields != null) {
@@ -197,7 +197,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
+          case 8: {
             MonsterCount = input.ReadUInt32();
             break;
           }
@@ -216,7 +216,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
+          case 8: {
             MonsterCount = input.ReadUInt32();
             break;
           }

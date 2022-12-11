@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static DungeonPlayerDieReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlEdW5nZW9uUGxheWVyRGllUmVxLnByb3RvGhNQbGF5ZXJEaWVUeXBlLnBy",
-            "b3RvIksKE0R1bmdlb25QbGF5ZXJEaWVSZXESIAoIZGllX3R5cGUYBiABKA4y",
-            "Di5QbGF5ZXJEaWVUeXBlEhIKCmR1bmdlb25faWQYCCABKA1CIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChlEdW5nZW9uUGxheWVyRGllUmVxLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvGhNQbGF5ZXJEaWVUeXBlLnByb3RvImsKE0R1bmdl",
+            "b25QbGF5ZXJEaWVSZXESQAoIZGllX3R5cGUYBCABKA4yLi5XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvLlBsYXllckRpZVR5cGUSEgoKZHVuZ2Vv",
+            "bl9pZBgGIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.PlayerDieTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 981
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 925;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class DungeonPlayerDieReq : pb::IMessage<DungeonPlayerDieReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "die_type" field.</summary>
-    public const int DieTypeFieldNumber = 6;
+    public const int DieTypeFieldNumber = 4;
     private global::Weedwacker.Shared.Network.Proto.PlayerDieType dieType_ = global::Weedwacker.Shared.Network.Proto.PlayerDieType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +107,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "dungeon_id" field.</summary>
-    public const int DungeonIdFieldNumber = 8;
+    public const int DungeonIdFieldNumber = 6;
     private uint dungeonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -158,11 +163,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (DieType != global::Weedwacker.Shared.Network.Proto.PlayerDieType.None) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(32);
         output.WriteEnum((int) DieType);
       }
       if (DungeonId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(48);
         output.WriteUInt32(DungeonId);
       }
       if (_unknownFields != null) {
@@ -176,11 +181,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (DieType != global::Weedwacker.Shared.Network.Proto.PlayerDieType.None) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(32);
         output.WriteEnum((int) DieType);
       }
       if (DungeonId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(48);
         output.WriteUInt32(DungeonId);
       }
       if (_unknownFields != null) {
@@ -232,11 +237,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
+          case 32: {
             DieType = (global::Weedwacker.Shared.Network.Proto.PlayerDieType) input.ReadEnum();
             break;
           }
-          case 64: {
+          case 48: {
             DungeonId = input.ReadUInt32();
             break;
           }
@@ -255,11 +260,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
+          case 32: {
             DieType = (global::Weedwacker.Shared.Network.Proto.PlayerDieType) input.ReadEnum();
             break;
           }
-          case 64: {
+          case 48: {
             DungeonId = input.ReadUInt32();
             break;
           }

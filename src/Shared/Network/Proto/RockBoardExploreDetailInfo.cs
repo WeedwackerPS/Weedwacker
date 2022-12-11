@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static RockBoardExploreDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBSb2NrQm9hcmRFeHBsb3JlRGV0YWlsSW5mby5wcm90bxofUm9ja0JvYXJk",
-            "RXhwbG9yZVN0YWdlRGF0YS5wcm90byJRChpSb2NrQm9hcmRFeHBsb3JlRGV0",
-            "YWlsSW5mbxIzCg9zdGFnZV9kYXRhX2xpc3QYCSADKAsyGi5Sb2NrQm9hcmRF",
-            "eHBsb3JlU3RhZ2VEYXRhQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
-            "LlByb3RvYgZwcm90bzM="));
+            "CiBSb2NrQm9hcmRFeHBsb3JlRGV0YWlsSW5mby5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90bxofUm9ja0JvYXJkRXhwbG9yZVN0YWdl",
+            "RGF0YS5wcm90byJxChpSb2NrQm9hcmRFeHBsb3JlRGV0YWlsSW5mbxJTCg9z",
+            "dGFnZV9kYXRhX2xpc3QYDSADKAsyOi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLlJvY2tCb2FyZEV4cGxvcmVTdGFnZURhdGFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.RockBoardExploreStageDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,9 +84,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "stage_data_list" field.</summary>
-    public const int StageDataListFieldNumber = 9;
+    public const int StageDataListFieldNumber = 13;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.RockBoardExploreStageData> _repeated_stageDataList_codec
-        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.RockBoardExploreStageData.Parser);
+        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.RockBoardExploreStageData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RockBoardExploreStageData> stageDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.RockBoardExploreStageData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -187,7 +187,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 74: {
+          case 106: {
             stageDataList_.AddEntriesFrom(input, _repeated_stageDataList_codec);
             break;
           }
@@ -206,7 +206,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 74: {
+          case 106: {
             stageDataList_.AddEntriesFrom(ref input, _repeated_stageDataList_codec);
             break;
           }

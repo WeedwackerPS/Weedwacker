@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGMessagePackNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpHQ0dNZXNzYWdlUGFja05vdGlmeS5wcm90bxoUR0NHTWVzc2FnZVBhY2su",
-            "cHJvdG8iUQoUR0NHTWVzc2FnZVBhY2tOb3RpZnkSEgoKc2VydmVyX3NlcRgF",
-            "IAEoDRIlCgxtZXNzYWdlX3BhY2sYCCABKAsyDy5HQ0dNZXNzYWdlUGFja0Ii",
-            "qgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChpHQ0dNZXNzYWdlUGFja05vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxoUR0NHTWVzc2FnZVBhY2sucHJvdG8icgoUR0NH",
+            "TWVzc2FnZVBhY2tOb3RpZnkSEgoKc2VydmVyX3NlcRgCIAEoDRJGCg1tc2df",
+            "cGFja19saXN0GAwgAygLMi8uV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90by5HQ0dNZXNzYWdlUGFja2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGMessagePackReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGMessagePackNotify), global::Weedwacker.Shared.Network.Proto.GCGMessagePackNotify.Parser, new[]{ "ServerSeq", "MessagePack" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGMessagePackNotify), global::Weedwacker.Shared.Network.Proto.GCGMessagePackNotify.Parser, new[]{ "ServerSeq", "MsgPackList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 7516
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 7299;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GCGMessagePackNotify : pb::IMessage<GCGMessagePackNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,7 +83,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGMessagePackNotify(GCGMessagePackNotify other) : this() {
       serverSeq_ = other.serverSeq_;
-      messagePack_ = other.messagePack_ != null ? other.messagePack_.Clone() : null;
+      msgPackList_ = other.msgPackList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "server_seq" field.</summary>
-    public const int ServerSeqFieldNumber = 5;
+    public const int ServerSeqFieldNumber = 2;
     private uint serverSeq_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,16 +105,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "message_pack" field.</summary>
-    public const int MessagePackFieldNumber = 8;
-    private global::Weedwacker.Shared.Network.Proto.GCGMessagePack messagePack_;
+    /// <summary>Field number for the "msg_pack_list" field.</summary>
+    public const int MsgPackListFieldNumber = 12;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GCGMessagePack> _repeated_msgPackList_codec
+        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.GCGMessagePack.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGMessagePack> msgPackList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGMessagePack>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.GCGMessagePack MessagePack {
-      get { return messagePack_; }
-      set {
-        messagePack_ = value;
-      }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGMessagePack> MsgPackList {
+      get { return msgPackList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -129,7 +132,7 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (ServerSeq != other.ServerSeq) return false;
-      if (!object.Equals(MessagePack, other.MessagePack)) return false;
+      if(!msgPackList_.Equals(other.msgPackList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -138,7 +141,7 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (ServerSeq != 0) hash ^= ServerSeq.GetHashCode();
-      if (messagePack_ != null) hash ^= MessagePack.GetHashCode();
+      hash ^= msgPackList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -158,13 +161,10 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (ServerSeq != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(16);
         output.WriteUInt32(ServerSeq);
       }
-      if (messagePack_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(MessagePack);
-      }
+      msgPackList_.WriteTo(output, _repeated_msgPackList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -176,13 +176,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (ServerSeq != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(16);
         output.WriteUInt32(ServerSeq);
       }
-      if (messagePack_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(MessagePack);
-      }
+      msgPackList_.WriteTo(ref output, _repeated_msgPackList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -196,9 +193,7 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ServerSeq != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ServerSeq);
       }
-      if (messagePack_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(MessagePack);
-      }
+      size += msgPackList_.CalculateSize(_repeated_msgPackList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -214,12 +209,7 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.ServerSeq != 0) {
         ServerSeq = other.ServerSeq;
       }
-      if (other.messagePack_ != null) {
-        if (messagePack_ == null) {
-          MessagePack = new global::Weedwacker.Shared.Network.Proto.GCGMessagePack();
-        }
-        MessagePack.MergeFrom(other.MessagePack);
-      }
+      msgPackList_.Add(other.msgPackList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -235,15 +225,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
+          case 16: {
             ServerSeq = input.ReadUInt32();
             break;
           }
-          case 66: {
-            if (messagePack_ == null) {
-              MessagePack = new global::Weedwacker.Shared.Network.Proto.GCGMessagePack();
-            }
-            input.ReadMessage(MessagePack);
+          case 98: {
+            msgPackList_.AddEntriesFrom(input, _repeated_msgPackList_codec);
             break;
           }
         }
@@ -261,15 +248,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
+          case 16: {
             ServerSeq = input.ReadUInt32();
             break;
           }
-          case 66: {
-            if (messagePack_ == null) {
-              MessagePack = new global::Weedwacker.Shared.Network.Proto.GCGMessagePack();
-            }
-            input.ReadMessage(MessagePack);
+          case 98: {
+            msgPackList_.AddEntriesFrom(ref input, _repeated_msgPackList_codec);
             break;
           }
         }

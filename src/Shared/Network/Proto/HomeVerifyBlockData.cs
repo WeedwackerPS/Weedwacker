@@ -24,13 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeVerifyBlockDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlIb21lVmVyaWZ5QmxvY2tEYXRhLnByb3RvIjsKE0hvbWVWZXJpZnlCbG9j",
-            "a0RhdGESEAoIYmxvY2tfaWQYCiABKA0SEgoKZnVybml0dXJlcxgJIAEoDUIi",
-            "qgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChlIb21lVmVyaWZ5QmxvY2tEYXRhLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvIkAKE0hvbWVWZXJpZnlCbG9ja0RhdGESEAoIYmxv",
+            "Y2tfaWQYCyABKA0SFwoPZnVybml0dXJlX2NvdW50GA0gASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeVerifyBlockData), global::Weedwacker.Shared.Network.Proto.HomeVerifyBlockData.Parser, new[]{ "BlockId", "Furnitures" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeVerifyBlockData), global::Weedwacker.Shared.Network.Proto.HomeVerifyBlockData.Parser, new[]{ "BlockId", "FurnitureCount" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,7 +72,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeVerifyBlockData(HomeVerifyBlockData other) : this() {
       blockId_ = other.blockId_;
-      furnitures_ = other.furnitures_;
+      furnitureCount_ = other.furnitureCount_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -83,7 +83,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "block_id" field.</summary>
-    public const int BlockIdFieldNumber = 10;
+    public const int BlockIdFieldNumber = 11;
     private uint blockId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -94,15 +94,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "furnitures" field.</summary>
-    public const int FurnituresFieldNumber = 9;
-    private uint furnitures_;
+    /// <summary>Field number for the "furniture_count" field.</summary>
+    public const int FurnitureCountFieldNumber = 13;
+    private uint furnitureCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Furnitures {
-      get { return furnitures_; }
+    public uint FurnitureCount {
+      get { return furnitureCount_; }
       set {
-        furnitures_ = value;
+        furnitureCount_ = value;
       }
     }
 
@@ -122,7 +122,7 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (BlockId != other.BlockId) return false;
-      if (Furnitures != other.Furnitures) return false;
+      if (FurnitureCount != other.FurnitureCount) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -131,7 +131,7 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (BlockId != 0) hash ^= BlockId.GetHashCode();
-      if (Furnitures != 0) hash ^= Furnitures.GetHashCode();
+      if (FurnitureCount != 0) hash ^= FurnitureCount.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -150,13 +150,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Furnitures != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(Furnitures);
-      }
       if (BlockId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(88);
         output.WriteUInt32(BlockId);
+      }
+      if (FurnitureCount != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(FurnitureCount);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -168,13 +168,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Furnitures != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(Furnitures);
-      }
       if (BlockId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(88);
         output.WriteUInt32(BlockId);
+      }
+      if (FurnitureCount != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(FurnitureCount);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -189,8 +189,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (BlockId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BlockId);
       }
-      if (Furnitures != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Furnitures);
+      if (FurnitureCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FurnitureCount);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -207,8 +207,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.BlockId != 0) {
         BlockId = other.BlockId;
       }
-      if (other.Furnitures != 0) {
-        Furnitures = other.Furnitures;
+      if (other.FurnitureCount != 0) {
+        FurnitureCount = other.FurnitureCount;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -225,12 +225,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 72: {
-            Furnitures = input.ReadUInt32();
+          case 88: {
+            BlockId = input.ReadUInt32();
             break;
           }
-          case 80: {
-            BlockId = input.ReadUInt32();
+          case 104: {
+            FurnitureCount = input.ReadUInt32();
             break;
           }
         }
@@ -248,12 +248,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 72: {
-            Furnitures = input.ReadUInt32();
+          case 88: {
+            BlockId = input.ReadUInt32();
             break;
           }
-          case 80: {
-            BlockId = input.ReadUInt32();
+          case 104: {
+            FurnitureCount = input.ReadUInt32();
             break;
           }
         }

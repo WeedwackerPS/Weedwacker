@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static ExpeditionTakeRewardRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1FeHBlZGl0aW9uVGFrZVJld2FyZFJzcC5wcm90byJjChdFeHBlZGl0aW9u",
-            "VGFrZVJld2FyZFJzcBIPCgdyZXRjb2RlGA0gASgFEhAKCGlzX2JvbnVzGAsg",
-            "ASgIEhQKDHJld2FyZF9sZXZlbBgBIAEoDRIPCgdwYXRoX2lkGAkgASgNQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch1FeHBlZGl0aW9uVGFrZVJld2FyZFJzcC5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90byJjChdFeHBlZGl0aW9uVGFrZVJld2FyZFJz",
+            "cBIPCgdyZXRjb2RlGAQgASgFEhQKDHJld2FyZF9sZXZlbBgNIAEoDRIPCgdw",
+            "YXRoX2lkGAwgASgNEhAKCGlzX2JvbnVzGAogASgIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ExpeditionTakeRewardRsp), global::Weedwacker.Shared.Network.Proto.ExpeditionTakeRewardRsp.Parser, new[]{ "Retcode", "IsBonus", "RewardLevel", "PathId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ExpeditionTakeRewardRsp), global::Weedwacker.Shared.Network.Proto.ExpeditionTakeRewardRsp.Parser, new[]{ "Retcode", "RewardLevel", "PathId", "IsBonus" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2080
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2197;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ExpeditionTakeRewardRsp : pb::IMessage<ExpeditionTakeRewardRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +82,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ExpeditionTakeRewardRsp(ExpeditionTakeRewardRsp other) : this() {
       retcode_ = other.retcode_;
-      isBonus_ = other.isBonus_;
       rewardLevel_ = other.rewardLevel_;
       pathId_ = other.pathId_;
+      isBonus_ = other.isBonus_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 13;
+    public const int RetcodeFieldNumber = 4;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,20 +106,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_bonus" field.</summary>
-    public const int IsBonusFieldNumber = 11;
-    private bool isBonus_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsBonus {
-      get { return isBonus_; }
-      set {
-        isBonus_ = value;
-      }
-    }
-
     /// <summary>Field number for the "reward_level" field.</summary>
-    public const int RewardLevelFieldNumber = 1;
+    public const int RewardLevelFieldNumber = 13;
     private uint rewardLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -127,7 +119,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "path_id" field.</summary>
-    public const int PathIdFieldNumber = 9;
+    public const int PathIdFieldNumber = 12;
     private uint pathId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -135,6 +127,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return pathId_; }
       set {
         pathId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_bonus" field.</summary>
+    public const int IsBonusFieldNumber = 10;
+    private bool isBonus_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsBonus {
+      get { return isBonus_; }
+      set {
+        isBonus_ = value;
       }
     }
 
@@ -154,9 +158,9 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (Retcode != other.Retcode) return false;
-      if (IsBonus != other.IsBonus) return false;
       if (RewardLevel != other.RewardLevel) return false;
       if (PathId != other.PathId) return false;
+      if (IsBonus != other.IsBonus) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -165,9 +169,9 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      if (IsBonus != false) hash ^= IsBonus.GetHashCode();
       if (RewardLevel != 0) hash ^= RewardLevel.GetHashCode();
       if (PathId != 0) hash ^= PathId.GetHashCode();
+      if (IsBonus != false) hash ^= IsBonus.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -186,21 +190,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (RewardLevel != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(RewardLevel);
-      }
-      if (PathId != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(PathId);
+      if (Retcode != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Retcode);
       }
       if (IsBonus != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(80);
         output.WriteBool(IsBonus);
       }
-      if (Retcode != 0) {
+      if (PathId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(PathId);
+      }
+      if (RewardLevel != 0) {
         output.WriteRawTag(104);
-        output.WriteInt32(Retcode);
+        output.WriteUInt32(RewardLevel);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -212,21 +216,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (RewardLevel != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(RewardLevel);
-      }
-      if (PathId != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(PathId);
+      if (Retcode != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Retcode);
       }
       if (IsBonus != false) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(80);
         output.WriteBool(IsBonus);
       }
-      if (Retcode != 0) {
+      if (PathId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(PathId);
+      }
+      if (RewardLevel != 0) {
         output.WriteRawTag(104);
-        output.WriteInt32(Retcode);
+        output.WriteUInt32(RewardLevel);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -241,14 +245,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
-      if (IsBonus != false) {
-        size += 1 + 1;
-      }
       if (RewardLevel != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RewardLevel);
       }
       if (PathId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PathId);
+      }
+      if (IsBonus != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -265,14 +269,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      if (other.IsBonus != false) {
-        IsBonus = other.IsBonus;
-      }
       if (other.RewardLevel != 0) {
         RewardLevel = other.RewardLevel;
       }
       if (other.PathId != 0) {
         PathId = other.PathId;
+      }
+      if (other.IsBonus != false) {
+        IsBonus = other.IsBonus;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -289,20 +293,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            RewardLevel = input.ReadUInt32();
+          case 32: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 72: {
-            PathId = input.ReadUInt32();
-            break;
-          }
-          case 88: {
+          case 80: {
             IsBonus = input.ReadBool();
             break;
           }
+          case 96: {
+            PathId = input.ReadUInt32();
+            break;
+          }
           case 104: {
-            Retcode = input.ReadInt32();
+            RewardLevel = input.ReadUInt32();
             break;
           }
         }
@@ -320,20 +324,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            RewardLevel = input.ReadUInt32();
+          case 32: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 72: {
-            PathId = input.ReadUInt32();
-            break;
-          }
-          case 88: {
+          case 80: {
             IsBonus = input.ReadBool();
             break;
           }
+          case 96: {
+            PathId = input.ReadUInt32();
+            break;
+          }
           case 104: {
-            Retcode = input.ReadInt32();
+            RewardLevel = input.ReadUInt32();
             break;
           }
         }

@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGAttackCostInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdHQ0dBdHRhY2tDb3N0SW5mby5wcm90byKIAQoRR0NHQXR0YWNrQ29zdElu",
-            "Zm8SEAoIc2tpbGxfaWQYCCABKA0SMQoIY29zdF9tYXAYAyADKAsyHy5HQ0dB",
-            "dHRhY2tDb3N0SW5mby5Db3N0TWFwRW50cnkaLgoMQ29zdE1hcEVudHJ5EgsK",
-            "A2tleRgBIAEoDRINCgV2YWx1ZRgCIAEoDToCOAFCIqoCH1dlZWR3YWNrZXIu",
-            "U2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChdHQ0dBdHRhY2tDb3N0SW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxoQVWludDMyUGFpci5wcm90byJkChFHQ0dBdHRhY2tD",
+            "b3N0SW5mbxI9Cghjb3N0X21hcBgBIAMoCzIrLldlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8uVWludDMyUGFpchIQCghza2lsbF9pZBgHIAEoDWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.Uint32PairReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGAttackCostInfo), global::Weedwacker.Shared.Network.Proto.GCGAttackCostInfo.Parser, new[]{ "SkillId", "CostMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGAttackCostInfo), global::Weedwacker.Shared.Network.Proto.GCGAttackCostInfo.Parser, new[]{ "CostMap", "SkillId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,8 +73,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGAttackCostInfo(GCGAttackCostInfo other) : this() {
-      skillId_ = other.skillId_;
       costMap_ = other.costMap_.Clone();
+      skillId_ = other.skillId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,8 +84,19 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GCGAttackCostInfo(this);
     }
 
+    /// <summary>Field number for the "cost_map" field.</summary>
+    public const int CostMapFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.Uint32Pair> _repeated_costMap_codec
+        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.Uint32Pair.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Uint32Pair> costMap_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Uint32Pair>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Uint32Pair> CostMap {
+      get { return costMap_; }
+    }
+
     /// <summary>Field number for the "skill_id" field.</summary>
-    public const int SkillIdFieldNumber = 8;
+    public const int SkillIdFieldNumber = 7;
     private uint skillId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -94,17 +105,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         skillId_ = value;
       }
-    }
-
-    /// <summary>Field number for the "cost_map" field.</summary>
-    public const int CostMapFieldNumber = 3;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_costMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 26);
-    private readonly pbc::MapField<uint, uint> costMap_ = new pbc::MapField<uint, uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> CostMap {
-      get { return costMap_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -122,8 +122,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if(!costMap_.Equals(other.costMap_)) return false;
       if (SkillId != other.SkillId) return false;
-      if (!CostMap.Equals(other.CostMap)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -131,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      hash ^= costMap_.GetHashCode();
       if (SkillId != 0) hash ^= SkillId.GetHashCode();
-      hash ^= CostMap.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -151,9 +151,9 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      costMap_.WriteTo(output, _map_costMap_codec);
+      costMap_.WriteTo(output, _repeated_costMap_codec);
       if (SkillId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(56);
         output.WriteUInt32(SkillId);
       }
       if (_unknownFields != null) {
@@ -166,9 +166,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      costMap_.WriteTo(ref output, _map_costMap_codec);
+      costMap_.WriteTo(ref output, _repeated_costMap_codec);
       if (SkillId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(56);
         output.WriteUInt32(SkillId);
       }
       if (_unknownFields != null) {
@@ -181,10 +181,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += costMap_.CalculateSize(_repeated_costMap_codec);
       if (SkillId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillId);
       }
-      size += costMap_.CalculateSize(_map_costMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -197,10 +197,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      costMap_.Add(other.costMap_);
       if (other.SkillId != 0) {
         SkillId = other.SkillId;
       }
-      costMap_.Add(other.costMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -216,11 +216,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
-            costMap_.AddEntriesFrom(input, _map_costMap_codec);
+          case 10: {
+            costMap_.AddEntriesFrom(input, _repeated_costMap_codec);
             break;
           }
-          case 64: {
+          case 56: {
             SkillId = input.ReadUInt32();
             break;
           }
@@ -239,11 +239,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
-            costMap_.AddEntriesFrom(ref input, _map_costMap_codec);
+          case 10: {
+            costMap_.AddEntriesFrom(ref input, _repeated_costMap_codec);
             break;
           }
-          case 64: {
+          case 56: {
             SkillId = input.ReadUInt32();
             break;
           }

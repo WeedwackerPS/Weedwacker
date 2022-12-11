@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlayerReportReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVQbGF5ZXJSZXBvcnRSZXEucHJvdG8aFlJlcG9ydFJlYXNvblR5cGUucHJv",
-            "dG8imQEKD1BsYXllclJlcG9ydFJlcRIhCgZyZWFzb24YDCABKA4yES5SZXBv",
-            "cnRSZWFzb25UeXBlEg8KB2NvbnRlbnQYCCABKAkSHQoVdGFyZ2V0X2hvbWVf",
-            "bW9kdWxlX2lkGAUgASgNEh8KF3RhcmdldF9ob21lX21vZHVsZV9uYW1lGAYg",
-            "ASgJEhIKCnRhcmdldF91aWQYDiABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVk",
-            "Lk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChVQbGF5ZXJSZXBvcnRSZXEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8aFlJlcG9ydFJlYXNvblR5cGUucHJvdG8iuQEKD1BsYXll",
+            "clJlcG9ydFJlcRIfChd0YXJnZXRfaG9tZV9tb2R1bGVfbmFtZRgFIAEoCRIS",
+            "Cgp0YXJnZXRfdWlkGAogASgNEkEKBnJlYXNvbhgHIAEoDjIxLldlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uUmVwb3J0UmVhc29uVHlwZRIPCgdj",
+            "b250ZW50GAsgASgJEh0KFXRhcmdldF9ob21lX21vZHVsZV9pZBgPIAEoDWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ReportReasonTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerReportReq), global::Weedwacker.Shared.Network.Proto.PlayerReportReq.Parser, new[]{ "Reason", "Content", "TargetHomeModuleId", "TargetHomeModuleName", "TargetUid" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerReportReq), global::Weedwacker.Shared.Network.Proto.PlayerReportReq.Parser, new[]{ "TargetHomeModuleName", "TargetUid", "Reason", "Content", "TargetHomeModuleId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,10 +42,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4024
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4022;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class PlayerReportReq : pb::IMessage<PlayerReportReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,11 +85,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlayerReportReq(PlayerReportReq other) : this() {
+      targetHomeModuleName_ = other.targetHomeModuleName_;
+      targetUid_ = other.targetUid_;
       reason_ = other.reason_;
       content_ = other.content_;
       targetHomeModuleId_ = other.targetHomeModuleId_;
-      targetHomeModuleName_ = other.targetHomeModuleName_;
-      targetUid_ = other.targetUid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,44 +99,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PlayerReportReq(this);
     }
 
-    /// <summary>Field number for the "reason" field.</summary>
-    public const int ReasonFieldNumber = 12;
-    private global::Weedwacker.Shared.Network.Proto.ReportReasonType reason_ = global::Weedwacker.Shared.Network.Proto.ReportReasonType.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.ReportReasonType Reason {
-      get { return reason_; }
-      set {
-        reason_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "content" field.</summary>
-    public const int ContentFieldNumber = 8;
-    private string content_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Content {
-      get { return content_; }
-      set {
-        content_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "target_home_module_id" field.</summary>
-    public const int TargetHomeModuleIdFieldNumber = 5;
-    private uint targetHomeModuleId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TargetHomeModuleId {
-      get { return targetHomeModuleId_; }
-      set {
-        targetHomeModuleId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "target_home_module_name" field.</summary>
-    public const int TargetHomeModuleNameFieldNumber = 6;
+    public const int TargetHomeModuleNameFieldNumber = 5;
     private string targetHomeModuleName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -143,7 +112,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "target_uid" field.</summary>
-    public const int TargetUidFieldNumber = 14;
+    public const int TargetUidFieldNumber = 10;
     private uint targetUid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -151,6 +120,42 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return targetUid_; }
       set {
         targetUid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "reason" field.</summary>
+    public const int ReasonFieldNumber = 7;
+    private global::Weedwacker.Shared.Network.Proto.ReportReasonType reason_ = global::Weedwacker.Shared.Network.Proto.ReportReasonType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.ReportReasonType Reason {
+      get { return reason_; }
+      set {
+        reason_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "content" field.</summary>
+    public const int ContentFieldNumber = 11;
+    private string content_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Content {
+      get { return content_; }
+      set {
+        content_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "target_home_module_id" field.</summary>
+    public const int TargetHomeModuleIdFieldNumber = 15;
+    private uint targetHomeModuleId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TargetHomeModuleId {
+      get { return targetHomeModuleId_; }
+      set {
+        targetHomeModuleId_ = value;
       }
     }
 
@@ -169,11 +174,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (TargetHomeModuleName != other.TargetHomeModuleName) return false;
+      if (TargetUid != other.TargetUid) return false;
       if (Reason != other.Reason) return false;
       if (Content != other.Content) return false;
       if (TargetHomeModuleId != other.TargetHomeModuleId) return false;
-      if (TargetHomeModuleName != other.TargetHomeModuleName) return false;
-      if (TargetUid != other.TargetUid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -181,11 +186,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (TargetHomeModuleName.Length != 0) hash ^= TargetHomeModuleName.GetHashCode();
+      if (TargetUid != 0) hash ^= TargetUid.GetHashCode();
       if (Reason != global::Weedwacker.Shared.Network.Proto.ReportReasonType.None) hash ^= Reason.GetHashCode();
       if (Content.Length != 0) hash ^= Content.GetHashCode();
       if (TargetHomeModuleId != 0) hash ^= TargetHomeModuleId.GetHashCode();
-      if (TargetHomeModuleName.Length != 0) hash ^= TargetHomeModuleName.GetHashCode();
-      if (TargetUid != 0) hash ^= TargetUid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -204,25 +209,25 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (TargetHomeModuleId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(TargetHomeModuleId);
-      }
       if (TargetHomeModuleName.Length != 0) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(42);
         output.WriteString(TargetHomeModuleName);
       }
-      if (Content.Length != 0) {
-        output.WriteRawTag(66);
-        output.WriteString(Content);
-      }
       if (Reason != global::Weedwacker.Shared.Network.Proto.ReportReasonType.None) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(56);
         output.WriteEnum((int) Reason);
       }
       if (TargetUid != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(80);
         output.WriteUInt32(TargetUid);
+      }
+      if (Content.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(Content);
+      }
+      if (TargetHomeModuleId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(TargetHomeModuleId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -234,25 +239,25 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (TargetHomeModuleId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(TargetHomeModuleId);
-      }
       if (TargetHomeModuleName.Length != 0) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(42);
         output.WriteString(TargetHomeModuleName);
       }
-      if (Content.Length != 0) {
-        output.WriteRawTag(66);
-        output.WriteString(Content);
-      }
       if (Reason != global::Weedwacker.Shared.Network.Proto.ReportReasonType.None) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(56);
         output.WriteEnum((int) Reason);
       }
       if (TargetUid != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(80);
         output.WriteUInt32(TargetUid);
+      }
+      if (Content.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(Content);
+      }
+      if (TargetHomeModuleId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(TargetHomeModuleId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -264,6 +269,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (TargetHomeModuleName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(TargetHomeModuleName);
+      }
+      if (TargetUid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetUid);
+      }
       if (Reason != global::Weedwacker.Shared.Network.Proto.ReportReasonType.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
       }
@@ -272,12 +283,6 @@ namespace Weedwacker.Shared.Network.Proto {
       }
       if (TargetHomeModuleId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetHomeModuleId);
-      }
-      if (TargetHomeModuleName.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(TargetHomeModuleName);
-      }
-      if (TargetUid != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetUid);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -291,6 +296,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.TargetHomeModuleName.Length != 0) {
+        TargetHomeModuleName = other.TargetHomeModuleName;
+      }
+      if (other.TargetUid != 0) {
+        TargetUid = other.TargetUid;
+      }
       if (other.Reason != global::Weedwacker.Shared.Network.Proto.ReportReasonType.None) {
         Reason = other.Reason;
       }
@@ -299,12 +310,6 @@ namespace Weedwacker.Shared.Network.Proto {
       }
       if (other.TargetHomeModuleId != 0) {
         TargetHomeModuleId = other.TargetHomeModuleId;
-      }
-      if (other.TargetHomeModuleName.Length != 0) {
-        TargetHomeModuleName = other.TargetHomeModuleName;
-      }
-      if (other.TargetUid != 0) {
-        TargetUid = other.TargetUid;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -321,24 +326,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
-            TargetHomeModuleId = input.ReadUInt32();
-            break;
-          }
-          case 50: {
+          case 42: {
             TargetHomeModuleName = input.ReadString();
             break;
           }
-          case 66: {
-            Content = input.ReadString();
-            break;
-          }
-          case 96: {
+          case 56: {
             Reason = (global::Weedwacker.Shared.Network.Proto.ReportReasonType) input.ReadEnum();
             break;
           }
-          case 112: {
+          case 80: {
             TargetUid = input.ReadUInt32();
+            break;
+          }
+          case 90: {
+            Content = input.ReadString();
+            break;
+          }
+          case 120: {
+            TargetHomeModuleId = input.ReadUInt32();
             break;
           }
         }
@@ -356,24 +361,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
-            TargetHomeModuleId = input.ReadUInt32();
-            break;
-          }
-          case 50: {
+          case 42: {
             TargetHomeModuleName = input.ReadString();
             break;
           }
-          case 66: {
-            Content = input.ReadString();
-            break;
-          }
-          case 96: {
+          case 56: {
             Reason = (global::Weedwacker.Shared.Network.Proto.ReportReasonType) input.ReadEnum();
             break;
           }
-          case 112: {
+          case 80: {
             TargetUid = input.ReadUInt32();
+            break;
+          }
+          case 90: {
+            Content = input.ReadString();
+            break;
+          }
+          case 120: {
+            TargetHomeModuleId = input.ReadUInt32();
             break;
           }
         }

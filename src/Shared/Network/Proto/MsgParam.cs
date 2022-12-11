@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static MsgParamReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg5Nc2dQYXJhbS5wcm90byJSCghNc2dQYXJhbRITCglpbnRfcGFyYW0YCSAB",
-            "KA1IABITCglmbHRfcGFyYW0YByABKAJIABITCglzdHJfcGFyYW0YBCABKAlI",
-            "AEIHCgVwYXJhbUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
-            "b2IGcHJvdG8z"));
+            "Cg5Nc2dQYXJhbS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90byJSCghNc2dQYXJhbRITCglpbnRfcGFyYW0YDSABKA1IABITCglmbHRf",
+            "cGFyYW0YDiABKAJIABITCglzdHJfcGFyYW0YBCABKAlIAEIHCgVwYXJhbWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -94,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "int_param" field.</summary>
-    public const int IntParamFieldNumber = 9;
+    public const int IntParamFieldNumber = 13;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint IntParam {
@@ -106,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "flt_param" field.</summary>
-    public const int FltParamFieldNumber = 7;
+    public const int FltParamFieldNumber = 14;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float FltParam {
@@ -133,8 +133,8 @@ namespace Weedwacker.Shared.Network.Proto {
     /// <summary>Enum of possible cases for the "param" oneof.</summary>
     public enum ParamOneofCase {
       None = 0,
-      IntParam = 9,
-      FltParam = 7,
+      IntParam = 13,
+      FltParam = 14,
       StrParam = 4,
     }
     private ParamOneofCase paramCase_ = ParamOneofCase.None;
@@ -203,13 +203,13 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(34);
         output.WriteString(StrParam);
       }
-      if (paramCase_ == ParamOneofCase.FltParam) {
-        output.WriteRawTag(61);
-        output.WriteFloat(FltParam);
-      }
       if (paramCase_ == ParamOneofCase.IntParam) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(104);
         output.WriteUInt32(IntParam);
+      }
+      if (paramCase_ == ParamOneofCase.FltParam) {
+        output.WriteRawTag(117);
+        output.WriteFloat(FltParam);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -225,13 +225,13 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(34);
         output.WriteString(StrParam);
       }
-      if (paramCase_ == ParamOneofCase.FltParam) {
-        output.WriteRawTag(61);
-        output.WriteFloat(FltParam);
-      }
       if (paramCase_ == ParamOneofCase.IntParam) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(104);
         output.WriteUInt32(IntParam);
+      }
+      if (paramCase_ == ParamOneofCase.FltParam) {
+        output.WriteRawTag(117);
+        output.WriteFloat(FltParam);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -295,12 +295,12 @@ namespace Weedwacker.Shared.Network.Proto {
             StrParam = input.ReadString();
             break;
           }
-          case 61: {
-            FltParam = input.ReadFloat();
+          case 104: {
+            IntParam = input.ReadUInt32();
             break;
           }
-          case 72: {
-            IntParam = input.ReadUInt32();
+          case 117: {
+            FltParam = input.ReadFloat();
             break;
           }
         }
@@ -322,12 +322,12 @@ namespace Weedwacker.Shared.Network.Proto {
             StrParam = input.ReadString();
             break;
           }
-          case 61: {
-            FltParam = input.ReadFloat();
+          case 104: {
+            IntParam = input.ReadUInt32();
             break;
           }
-          case 72: {
-            IntParam = input.ReadUInt32();
+          case 117: {
+            FltParam = input.ReadFloat();
             break;
           }
         }

@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static GravenInnocencePhotoReminderNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CihHcmF2ZW5Jbm5vY2VuY2VQaG90b1JlbWluZGVyTm90aWZ5LnByb3RvIlIK",
-            "IkdyYXZlbklubm9jZW5jZVBob3RvUmVtaW5kZXJOb3RpZnkSFwoPZ3JvdXBf",
-            "YnVuZGxlX2lkGA4gASgNEhMKC3JlbWluZGVyX2lkGAYgASgNQiKqAh9XZWVk",
-            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CihHcmF2ZW5Jbm5vY2VuY2VQaG90b1JlbWluZGVyTm90aWZ5LnByb3RvEh9X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIlIKIkdyYXZlbklubm9j",
+            "ZW5jZVBob3RvUmVtaW5kZXJOb3RpZnkSEwoLcmVtaW5kZXJfaWQYDSABKA0S",
+            "FwoPZ3JvdXBfYnVuZGxlX2lkGAcgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GravenInnocencePhotoReminderNotify), global::Weedwacker.Shared.Network.Proto.GravenInnocencePhotoReminderNotify.Parser, new[]{ "GroupBundleId", "ReminderId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GravenInnocencePhotoReminderNotify), global::Weedwacker.Shared.Network.Proto.GravenInnocencePhotoReminderNotify.Parser, new[]{ "ReminderId", "GroupBundleId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 23864
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 22577;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GravenInnocencePhotoReminderNotify : pb::IMessage<GravenInnocencePhotoReminderNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +81,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GravenInnocencePhotoReminderNotify(GravenInnocencePhotoReminderNotify other) : this() {
-      groupBundleId_ = other.groupBundleId_;
       reminderId_ = other.reminderId_;
+      groupBundleId_ = other.groupBundleId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,20 +92,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GravenInnocencePhotoReminderNotify(this);
     }
 
-    /// <summary>Field number for the "group_bundle_id" field.</summary>
-    public const int GroupBundleIdFieldNumber = 14;
-    private uint groupBundleId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GroupBundleId {
-      get { return groupBundleId_; }
-      set {
-        groupBundleId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "reminder_id" field.</summary>
-    public const int ReminderIdFieldNumber = 6;
+    public const int ReminderIdFieldNumber = 13;
     private uint reminderId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,6 +101,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return reminderId_; }
       set {
         reminderId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "group_bundle_id" field.</summary>
+    public const int GroupBundleIdFieldNumber = 7;
+    private uint groupBundleId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GroupBundleId {
+      get { return groupBundleId_; }
+      set {
+        groupBundleId_ = value;
       }
     }
 
@@ -127,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (GroupBundleId != other.GroupBundleId) return false;
       if (ReminderId != other.ReminderId) return false;
+      if (GroupBundleId != other.GroupBundleId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (GroupBundleId != 0) hash ^= GroupBundleId.GetHashCode();
       if (ReminderId != 0) hash ^= ReminderId.GetHashCode();
+      if (GroupBundleId != 0) hash ^= GroupBundleId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -156,13 +160,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ReminderId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(ReminderId);
-      }
       if (GroupBundleId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(56);
         output.WriteUInt32(GroupBundleId);
+      }
+      if (ReminderId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(ReminderId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -174,13 +178,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ReminderId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(ReminderId);
-      }
       if (GroupBundleId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(56);
         output.WriteUInt32(GroupBundleId);
+      }
+      if (ReminderId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(ReminderId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -192,11 +196,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (GroupBundleId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GroupBundleId);
-      }
       if (ReminderId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ReminderId);
+      }
+      if (GroupBundleId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GroupBundleId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -210,11 +214,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.GroupBundleId != 0) {
-        GroupBundleId = other.GroupBundleId;
-      }
       if (other.ReminderId != 0) {
         ReminderId = other.ReminderId;
+      }
+      if (other.GroupBundleId != 0) {
+        GroupBundleId = other.GroupBundleId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -231,12 +235,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
-            ReminderId = input.ReadUInt32();
+          case 56: {
+            GroupBundleId = input.ReadUInt32();
             break;
           }
-          case 112: {
-            GroupBundleId = input.ReadUInt32();
+          case 104: {
+            ReminderId = input.ReadUInt32();
             break;
           }
         }
@@ -254,12 +258,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
-            ReminderId = input.ReadUInt32();
+          case 56: {
+            GroupBundleId = input.ReadUInt32();
             break;
           }
-          case 112: {
-            GroupBundleId = input.ReadUInt32();
+          case 104: {
+            ReminderId = input.ReadUInt32();
             break;
           }
         }

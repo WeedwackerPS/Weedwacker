@@ -24,16 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static QueryCurrRegionHttpRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxRdWVyeUN1cnJSZWdpb25IdHRwUnNwLnByb3RvGhVGb3JjZVVwZGF0ZUlu",
-            "Zm8ucHJvdG8aEFJlZ2lvbkluZm8ucHJvdG8aFFN0b3BTZXJ2ZXJJbmZvLnBy",
-            "b3RvIqYCChZRdWVyeUN1cnJSZWdpb25IdHRwUnNwEg8KB3JldGNvZGUYASAB",
-            "KAUSCwoDbXNnGAIgASgJEiAKC3JlZ2lvbl9pbmZvGAMgASgLMgsuUmVnaW9u",
-            "SW5mbxIZChFjbGllbnRfc2VjcmV0X2tleRgLIAEoDBImCh5yZWdpb25fY3Vz",
-            "dG9tX2NvbmZpZ19lbmNyeXB0ZWQYDCABKAwSLQolY2xpZW50X3JlZ2lvbl9j",
-            "dXN0b21fY29uZmlnX2VuY3J5cHRlZBgNIAEoDBIoCgxmb3JjZV91cGRhdGUY",
-            "BCABKAsyEC5Gb3JjZVVwZGF0ZUluZm9IABImCgtzdG9wX3NlcnZlchgFIAEo",
-            "CzIPLlN0b3BTZXJ2ZXJJbmZvSABCCAoGZGV0YWlsQiKqAh9XZWVkd2Fja2Vy",
-            "LlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChxRdWVyeUN1cnJSZWdpb25IdHRwUnNwLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhVGb3JjZVVwZGF0ZUluZm8ucHJvdG8aEFJl",
+            "Z2lvbkluZm8ucHJvdG8aFFN0b3BTZXJ2ZXJJbmZvLnByb3RvIoYDChZRdWVy",
+            "eUN1cnJSZWdpb25IdHRwUnNwEg8KB3JldGNvZGUYASABKAUSCwoDbXNnGAIg",
+            "ASgJEkAKC3JlZ2lvbl9pbmZvGAMgASgLMisuV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90by5SZWdpb25JbmZvEhkKEWNsaWVudF9zZWNyZXRfa2V5",
+            "GAsgASgMEiYKHnJlZ2lvbl9jdXN0b21fY29uZmlnX2VuY3J5cHRlZBgMIAEo",
+            "DBItCiVjbGllbnRfcmVnaW9uX2N1c3RvbV9jb25maWdfZW5jcnlwdGVkGA0g",
+            "ASgMEkgKDGZvcmNlX3VwZGF0ZRgEIAEoCzIwLldlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8uRm9yY2VVcGRhdGVJbmZvSAASRgoLc3RvcF9zZXJ2",
+            "ZXIYBSABKAsyLy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlN0",
+            "b3BTZXJ2ZXJJbmZvSABCCAoGZGV0YWlsYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ForceUpdateInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.RegionInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.StopServerInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

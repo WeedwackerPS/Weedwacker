@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static BlitzRushStageReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRCbGl0elJ1c2hTdGFnZS5wcm90byI0Cg5CbGl0elJ1c2hTdGFnZRIPCgdp",
-            "c19vcGVuGA0gASgIEhEKCW9wZW5fdGltZRgLIAEoDUIiqgIfV2VlZHdhY2tl",
-            "ci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChRCbGl0elJ1c2hTdGFnZS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90byI0Cg5CbGl0elJ1c2hTdGFnZRIPCgdpc19vcGVuGAggASgI",
+            "EhEKCW9wZW5fdGltZRgMIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_open" field.</summary>
-    public const int IsOpenFieldNumber = 13;
+    public const int IsOpenFieldNumber = 8;
     private bool isOpen_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -95,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "open_time" field.</summary>
-    public const int OpenTimeFieldNumber = 11;
+    public const int OpenTimeFieldNumber = 12;
     private uint openTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -150,13 +150,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (OpenTime != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(OpenTime);
-      }
       if (IsOpen != false) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(64);
         output.WriteBool(IsOpen);
+      }
+      if (OpenTime != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(OpenTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -168,13 +168,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (OpenTime != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(OpenTime);
-      }
       if (IsOpen != false) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(64);
         output.WriteBool(IsOpen);
+      }
+      if (OpenTime != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(OpenTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -225,12 +225,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 88: {
-            OpenTime = input.ReadUInt32();
+          case 64: {
+            IsOpen = input.ReadBool();
             break;
           }
-          case 104: {
-            IsOpen = input.ReadBool();
+          case 96: {
+            OpenTime = input.ReadUInt32();
             break;
           }
         }
@@ -248,12 +248,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 88: {
-            OpenTime = input.ReadUInt32();
+          case 64: {
+            IsOpen = input.ReadBool();
             break;
           }
-          case 104: {
-            IsOpen = input.ReadBool();
+          case 96: {
+            OpenTime = input.ReadUInt32();
             break;
           }
         }

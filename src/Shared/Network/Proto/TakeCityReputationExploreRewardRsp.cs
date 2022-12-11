@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static TakeCityReputationExploreRewardRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CihUYWtlQ2l0eVJlcHV0YXRpb25FeHBsb3JlUmV3YXJkUnNwLnByb3RvGg9J",
-            "dGVtUGFyYW0ucHJvdG8ifgoiVGFrZUNpdHlSZXB1dGF0aW9uRXhwbG9yZVJl",
-            "d2FyZFJzcBIXCg9leHBsb3JlX2lkX2xpc3QYCCADKA0SHQoJaXRlbV9saXN0",
-            "GAwgAygLMgouSXRlbVBhcmFtEg8KB3JldGNvZGUYBiABKAUSDwoHY2l0eV9p",
-            "ZBgNIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IG",
-            "cHJvdG8z"));
+            "CihUYWtlQ2l0eVJlcHV0YXRpb25FeHBsb3JlUmV3YXJkUnNwLnByb3RvEh9X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGg9JdGVtUGFyYW0ucHJv",
+            "dG8ingEKIlRha2VDaXR5UmVwdXRhdGlvbkV4cGxvcmVSZXdhcmRSc3ASDwoH",
+            "cmV0Y29kZRgFIAEoBRIXCg9leHBsb3JlX2lkX2xpc3QYDCADKA0SDwoHY2l0",
+            "eV9pZBgBIAEoDRI9CglpdGVtX2xpc3QYDiADKAsyKi5XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvLkl0ZW1QYXJhbWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ItemParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TakeCityReputationExploreRewardRsp), global::Weedwacker.Shared.Network.Proto.TakeCityReputationExploreRewardRsp.Parser, new[]{ "ExploreIdList", "ItemList", "Retcode", "CityId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TakeCityReputationExploreRewardRsp), global::Weedwacker.Shared.Network.Proto.TakeCityReputationExploreRewardRsp.Parser, new[]{ "Retcode", "ExploreIdList", "CityId", "ItemList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2881
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2825;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class TakeCityReputationExploreRewardRsp : pb::IMessage<TakeCityReputationExploreRewardRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,10 +83,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TakeCityReputationExploreRewardRsp(TakeCityReputationExploreRewardRsp other) : this() {
-      exploreIdList_ = other.exploreIdList_.Clone();
-      itemList_ = other.itemList_.Clone();
       retcode_ = other.retcode_;
+      exploreIdList_ = other.exploreIdList_.Clone();
       cityId_ = other.cityId_;
+      itemList_ = other.itemList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,30 +96,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new TakeCityReputationExploreRewardRsp(this);
     }
 
-    /// <summary>Field number for the "explore_id_list" field.</summary>
-    public const int ExploreIdListFieldNumber = 8;
-    private static readonly pb::FieldCodec<uint> _repeated_exploreIdList_codec
-        = pb::FieldCodec.ForUInt32(66);
-    private readonly pbc::RepeatedField<uint> exploreIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> ExploreIdList {
-      get { return exploreIdList_; }
-    }
-
-    /// <summary>Field number for the "item_list" field.</summary>
-    public const int ItemListFieldNumber = 12;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_itemList_codec
-        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> itemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> ItemList {
-      get { return itemList_; }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 6;
+    public const int RetcodeFieldNumber = 5;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -126,8 +108,19 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "explore_id_list" field.</summary>
+    public const int ExploreIdListFieldNumber = 12;
+    private static readonly pb::FieldCodec<uint> _repeated_exploreIdList_codec
+        = pb::FieldCodec.ForUInt32(98);
+    private readonly pbc::RepeatedField<uint> exploreIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> ExploreIdList {
+      get { return exploreIdList_; }
+    }
+
     /// <summary>Field number for the "city_id" field.</summary>
-    public const int CityIdFieldNumber = 13;
+    public const int CityIdFieldNumber = 1;
     private uint cityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -136,6 +129,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         cityId_ = value;
       }
+    }
+
+    /// <summary>Field number for the "item_list" field.</summary>
+    public const int ItemListFieldNumber = 14;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_itemList_codec
+        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> itemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> ItemList {
+      get { return itemList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -153,10 +157,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!exploreIdList_.Equals(other.exploreIdList_)) return false;
-      if(!itemList_.Equals(other.itemList_)) return false;
       if (Retcode != other.Retcode) return false;
+      if(!exploreIdList_.Equals(other.exploreIdList_)) return false;
       if (CityId != other.CityId) return false;
+      if(!itemList_.Equals(other.itemList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -164,10 +168,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= exploreIdList_.GetHashCode();
-      hash ^= itemList_.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      hash ^= exploreIdList_.GetHashCode();
       if (CityId != 0) hash ^= CityId.GetHashCode();
+      hash ^= itemList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -186,16 +190,16 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (CityId != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(CityId);
+      }
       if (Retcode != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(40);
         output.WriteInt32(Retcode);
       }
       exploreIdList_.WriteTo(output, _repeated_exploreIdList_codec);
       itemList_.WriteTo(output, _repeated_itemList_codec);
-      if (CityId != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(CityId);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -206,16 +210,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (CityId != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(CityId);
+      }
       if (Retcode != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(40);
         output.WriteInt32(Retcode);
       }
       exploreIdList_.WriteTo(ref output, _repeated_exploreIdList_codec);
       itemList_.WriteTo(ref output, _repeated_itemList_codec);
-      if (CityId != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(CityId);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -226,14 +230,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += exploreIdList_.CalculateSize(_repeated_exploreIdList_codec);
-      size += itemList_.CalculateSize(_repeated_itemList_codec);
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
+      size += exploreIdList_.CalculateSize(_repeated_exploreIdList_codec);
       if (CityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CityId);
       }
+      size += itemList_.CalculateSize(_repeated_itemList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -246,14 +250,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      exploreIdList_.Add(other.exploreIdList_);
-      itemList_.Add(other.itemList_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
+      exploreIdList_.Add(other.exploreIdList_);
       if (other.CityId != 0) {
         CityId = other.CityId;
       }
+      itemList_.Add(other.itemList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -269,21 +273,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
+          case 8: {
+            CityId = input.ReadUInt32();
+            break;
+          }
+          case 40: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 66:
-          case 64: {
+          case 98:
+          case 96: {
             exploreIdList_.AddEntriesFrom(input, _repeated_exploreIdList_codec);
             break;
           }
-          case 98: {
+          case 114: {
             itemList_.AddEntriesFrom(input, _repeated_itemList_codec);
-            break;
-          }
-          case 104: {
-            CityId = input.ReadUInt32();
             break;
           }
         }
@@ -301,21 +305,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
+          case 8: {
+            CityId = input.ReadUInt32();
+            break;
+          }
+          case 40: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 66:
-          case 64: {
+          case 98:
+          case 96: {
             exploreIdList_.AddEntriesFrom(ref input, _repeated_exploreIdList_codec);
             break;
           }
-          case 98: {
+          case 114: {
             itemList_.AddEntriesFrom(ref input, _repeated_itemList_codec);
-            break;
-          }
-          case 104: {
-            CityId = input.ReadUInt32();
             break;
           }
         }

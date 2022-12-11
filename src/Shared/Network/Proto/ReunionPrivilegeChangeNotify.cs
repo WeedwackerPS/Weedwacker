@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static ReunionPrivilegeChangeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJSZXVuaW9uUHJpdmlsZWdlQ2hhbmdlTm90aWZ5LnByb3RvGhpSZXVuaW9u",
-            "UHJpdmlsZWdlSW5mby5wcm90byJNChxSZXVuaW9uUHJpdmlsZWdlQ2hhbmdl",
-            "Tm90aWZ5Ei0KDnByaXZpbGVnZV9pbmZvGA0gASgLMhUuUmV1bmlvblByaXZp",
-            "bGVnZUluZm9CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9i",
-            "BnByb3RvMw=="));
+            "CiJSZXVuaW9uUHJpdmlsZWdlQ2hhbmdlTm90aWZ5LnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGhpSZXVuaW9uUHJpdmlsZWdlSW5m",
+            "by5wcm90byJtChxSZXVuaW9uUHJpdmlsZWdlQ2hhbmdlTm90aWZ5Ek0KDnBy",
+            "aXZpbGVnZV9pbmZvGAogASgLMjUuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90by5SZXVuaW9uUHJpdmlsZWdlSW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ReunionPrivilegeInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5098
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5087;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ReunionPrivilegeChangeNotify : pb::IMessage<ReunionPrivilegeChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "privilege_info" field.</summary>
-    public const int PrivilegeInfoFieldNumber = 13;
+    public const int PrivilegeInfoFieldNumber = 10;
     private global::Weedwacker.Shared.Network.Proto.ReunionPrivilegeInfo privilegeInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -143,7 +147,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (privilegeInfo_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(82);
         output.WriteMessage(PrivilegeInfo);
       }
       if (_unknownFields != null) {
@@ -157,7 +161,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (privilegeInfo_ != null) {
-        output.WriteRawTag(106);
+        output.WriteRawTag(82);
         output.WriteMessage(PrivilegeInfo);
       }
       if (_unknownFields != null) {
@@ -206,7 +210,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 106: {
+          case 82: {
             if (privilegeInfo_ == null) {
               PrivilegeInfo = new global::Weedwacker.Shared.Network.Proto.ReunionPrivilegeInfo();
             }
@@ -228,7 +232,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 106: {
+          case 82: {
             if (privilegeInfo_ == null) {
               PrivilegeInfo = new global::Weedwacker.Shared.Network.Proto.ReunionPrivilegeInfo();
             }

@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static InBattleMechanicusPickCardRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNJbkJhdHRsZU1lY2hhbmljdXNQaWNrQ2FyZFJzcC5wcm90byJnCh1JbkJh",
-            "dHRsZU1lY2hhbmljdXNQaWNrQ2FyZFJzcBIPCgdyZXRjb2RlGAsgASgFEg8K",
-            "B2NhcmRfaWQYAiABKA0SEgoKcGxheV9pbmRleBgEIAEoDRIQCghncm91cF9p",
-            "ZBgJIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IG",
-            "cHJvdG8z"));
+            "CiNJbkJhdHRsZU1lY2hhbmljdXNQaWNrQ2FyZFJzcC5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90byJnCh1JbkJhdHRsZU1lY2hhbmlj",
+            "dXNQaWNrQ2FyZFJzcBIPCgdyZXRjb2RlGAQgASgFEhAKCGdyb3VwX2lkGA4g",
+            "ASgNEhIKCnBsYXlfaW5kZXgYCiABKA0SDwoHY2FyZF9pZBgDIAEoDWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InBattleMechanicusPickCardRsp), global::Weedwacker.Shared.Network.Proto.InBattleMechanicusPickCardRsp.Parser, new[]{ "Retcode", "CardId", "PlayIndex", "GroupId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.InBattleMechanicusPickCardRsp), global::Weedwacker.Shared.Network.Proto.InBattleMechanicusPickCardRsp.Parser, new[]{ "Retcode", "GroupId", "PlayIndex", "CardId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5373
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5378;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class InBattleMechanicusPickCardRsp : pb::IMessage<InBattleMechanicusPickCardRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,9 +83,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InBattleMechanicusPickCardRsp(InBattleMechanicusPickCardRsp other) : this() {
       retcode_ = other.retcode_;
-      cardId_ = other.cardId_;
-      playIndex_ = other.playIndex_;
       groupId_ = other.groupId_;
+      playIndex_ = other.playIndex_;
+      cardId_ = other.cardId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,7 +96,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 11;
+    public const int RetcodeFieldNumber = 4;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,20 +107,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "card_id" field.</summary>
-    public const int CardIdFieldNumber = 2;
-    private uint cardId_;
+    /// <summary>Field number for the "group_id" field.</summary>
+    public const int GroupIdFieldNumber = 14;
+    private uint groupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CardId {
-      get { return cardId_; }
+    public uint GroupId {
+      get { return groupId_; }
       set {
-        cardId_ = value;
+        groupId_ = value;
       }
     }
 
     /// <summary>Field number for the "play_index" field.</summary>
-    public const int PlayIndexFieldNumber = 4;
+    public const int PlayIndexFieldNumber = 10;
     private uint playIndex_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -127,15 +131,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "group_id" field.</summary>
-    public const int GroupIdFieldNumber = 9;
-    private uint groupId_;
+    /// <summary>Field number for the "card_id" field.</summary>
+    public const int CardIdFieldNumber = 3;
+    private uint cardId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint GroupId {
-      get { return groupId_; }
+    public uint CardId {
+      get { return cardId_; }
       set {
-        groupId_ = value;
+        cardId_ = value;
       }
     }
 
@@ -155,9 +159,9 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (Retcode != other.Retcode) return false;
-      if (CardId != other.CardId) return false;
-      if (PlayIndex != other.PlayIndex) return false;
       if (GroupId != other.GroupId) return false;
+      if (PlayIndex != other.PlayIndex) return false;
+      if (CardId != other.CardId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -166,9 +170,9 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      if (CardId != 0) hash ^= CardId.GetHashCode();
-      if (PlayIndex != 0) hash ^= PlayIndex.GetHashCode();
       if (GroupId != 0) hash ^= GroupId.GetHashCode();
+      if (PlayIndex != 0) hash ^= PlayIndex.GetHashCode();
+      if (CardId != 0) hash ^= CardId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -188,20 +192,20 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (CardId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(24);
         output.WriteUInt32(CardId);
       }
-      if (PlayIndex != 0) {
+      if (Retcode != 0) {
         output.WriteRawTag(32);
+        output.WriteInt32(Retcode);
+      }
+      if (PlayIndex != 0) {
+        output.WriteRawTag(80);
         output.WriteUInt32(PlayIndex);
       }
       if (GroupId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(112);
         output.WriteUInt32(GroupId);
-      }
-      if (Retcode != 0) {
-        output.WriteRawTag(88);
-        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -214,20 +218,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (CardId != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(24);
         output.WriteUInt32(CardId);
       }
-      if (PlayIndex != 0) {
+      if (Retcode != 0) {
         output.WriteRawTag(32);
+        output.WriteInt32(Retcode);
+      }
+      if (PlayIndex != 0) {
+        output.WriteRawTag(80);
         output.WriteUInt32(PlayIndex);
       }
       if (GroupId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(112);
         output.WriteUInt32(GroupId);
-      }
-      if (Retcode != 0) {
-        output.WriteRawTag(88);
-        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -242,14 +246,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
-      if (CardId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CardId);
+      if (GroupId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GroupId);
       }
       if (PlayIndex != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayIndex);
       }
-      if (GroupId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GroupId);
+      if (CardId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CardId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -266,14 +270,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      if (other.CardId != 0) {
-        CardId = other.CardId;
+      if (other.GroupId != 0) {
+        GroupId = other.GroupId;
       }
       if (other.PlayIndex != 0) {
         PlayIndex = other.PlayIndex;
       }
-      if (other.GroupId != 0) {
-        GroupId = other.GroupId;
+      if (other.CardId != 0) {
+        CardId = other.CardId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -290,20 +294,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
+          case 24: {
             CardId = input.ReadUInt32();
             break;
           }
           case 32: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 80: {
             PlayIndex = input.ReadUInt32();
             break;
           }
-          case 72: {
+          case 112: {
             GroupId = input.ReadUInt32();
-            break;
-          }
-          case 88: {
-            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -321,20 +325,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
+          case 24: {
             CardId = input.ReadUInt32();
             break;
           }
           case 32: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 80: {
             PlayIndex = input.ReadUInt32();
             break;
           }
-          case 72: {
+          case 112: {
             GroupId = input.ReadUInt32();
-            break;
-          }
-          case 88: {
-            Retcode = input.ReadInt32();
             break;
           }
         }

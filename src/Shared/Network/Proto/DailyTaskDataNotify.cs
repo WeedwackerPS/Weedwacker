@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static DailyTaskDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlEYWlseVRhc2tEYXRhTm90aWZ5LnByb3RvImMKE0RhaWx5VGFza0RhdGFO",
-            "b3RpZnkSFwoPc2NvcmVfcmV3YXJkX2lkGAsgASgNEhQKDGZpbmlzaGVkX251",
-            "bRgEIAEoDRIdChVpc190YWtlbl9zY29yZV9yZXdhcmQYCSABKAhCIqoCH1dl",
-            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChlEYWlseVRhc2tEYXRhTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvImMKE0RhaWx5VGFza0RhdGFOb3RpZnkSFwoPc2Nv",
+            "cmVfcmV3YXJkX2lkGA0gASgNEhQKDGZpbmlzaGVkX251bRgIIAEoDRIdChVp",
+            "c190YWtlbl9zY29yZV9yZXdhcmQYBSABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 158
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 124;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class DailyTaskDataNotify : pb::IMessage<DailyTaskDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "score_reward_id" field.</summary>
-    public const int ScoreRewardIdFieldNumber = 11;
+    public const int ScoreRewardIdFieldNumber = 13;
     private uint scoreRewardId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "finished_num" field.</summary>
-    public const int FinishedNumFieldNumber = 4;
+    public const int FinishedNumFieldNumber = 8;
     private uint finishedNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,7 +118,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_taken_score_reward" field.</summary>
-    public const int IsTakenScoreRewardFieldNumber = 9;
+    public const int IsTakenScoreRewardFieldNumber = 5;
     private bool isTakenScoreReward_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -171,16 +175,16 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (FinishedNum != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(FinishedNum);
-      }
       if (IsTakenScoreReward != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(40);
         output.WriteBool(IsTakenScoreReward);
       }
+      if (FinishedNum != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(FinishedNum);
+      }
       if (ScoreRewardId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(104);
         output.WriteUInt32(ScoreRewardId);
       }
       if (_unknownFields != null) {
@@ -193,16 +197,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (FinishedNum != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(FinishedNum);
-      }
       if (IsTakenScoreReward != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(40);
         output.WriteBool(IsTakenScoreReward);
       }
+      if (FinishedNum != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(FinishedNum);
+      }
       if (ScoreRewardId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(104);
         output.WriteUInt32(ScoreRewardId);
       }
       if (_unknownFields != null) {
@@ -260,15 +264,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            FinishedNum = input.ReadUInt32();
-            break;
-          }
-          case 72: {
+          case 40: {
             IsTakenScoreReward = input.ReadBool();
             break;
           }
-          case 88: {
+          case 64: {
+            FinishedNum = input.ReadUInt32();
+            break;
+          }
+          case 104: {
             ScoreRewardId = input.ReadUInt32();
             break;
           }
@@ -287,15 +291,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            FinishedNum = input.ReadUInt32();
-            break;
-          }
-          case 72: {
+          case 40: {
             IsTakenScoreReward = input.ReadBool();
             break;
           }
-          case 88: {
+          case 64: {
+            FinishedNum = input.ReadUInt32();
+            break;
+          }
+          case 104: {
             ScoreRewardId = input.ReadUInt32();
             break;
           }

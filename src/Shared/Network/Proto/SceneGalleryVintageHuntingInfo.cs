@@ -24,16 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneGalleryVintageHuntingInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiRTY2VuZUdhbGxlcnlWaW50YWdlSHVudGluZ0luZm8ucHJvdG8aIlZpbnRh",
-            "Z2VIdW50aW5nRmlyc3RTdGFnZUluZm8ucHJvdG8aI1ZpbnRhZ2VIdW50aW5n",
-            "U2Vjb25kU3RhZ2VJbmZvLnByb3RvGiJWaW50YWdlSHVudGluZ1RoaXJkU3Rh",
-            "Z2VJbmZvLnByb3RvIu0BCh5TY2VuZUdhbGxlcnlWaW50YWdlSHVudGluZ0lu",
-            "Zm8SEAoIc3RhZ2VfaWQYByABKA0SOQoQZmlyc3Rfc3RhZ2VfaW5mbxgCIAEo",
-            "CzIdLlZpbnRhZ2VIdW50aW5nRmlyc3RTdGFnZUluZm9IABI7ChFzZWNvbmRf",
-            "c3RhZ2VfaW5mbxgPIAEoCzIeLlZpbnRhZ2VIdW50aW5nU2Vjb25kU3RhZ2VJ",
-            "bmZvSAASOQoQdGhpcmRfc3RhZ2VfaW5mbxgMIAEoCzIdLlZpbnRhZ2VIdW50",
-            "aW5nVGhpcmRTdGFnZUluZm9IAEIGCgRpbmZvQiKqAh9XZWVkd2Fja2VyLlNo",
-            "YXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiRTY2VuZUdhbGxlcnlWaW50YWdlSHVudGluZ0luZm8ucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aIlZpbnRhZ2VIdW50aW5nRmly",
+            "c3RTdGFnZUluZm8ucHJvdG8aI1ZpbnRhZ2VIdW50aW5nU2Vjb25kU3RhZ2VJ",
+            "bmZvLnByb3RvGiJWaW50YWdlSHVudGluZ1RoaXJkU3RhZ2VJbmZvLnByb3Rv",
+            "Is0CCh5TY2VuZUdhbGxlcnlWaW50YWdlSHVudGluZ0luZm8SEAoIc3RhZ2Vf",
+            "aWQYCSABKA0SWQoQZmlyc3Rfc3RhZ2VfaW5mbxgFIAEoCzI9LldlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uVmludGFnZUh1bnRpbmdGaXJzdFN0",
+            "YWdlSW5mb0gAElsKEXNlY29uZF9zdGFnZV9pbmZvGA4gASgLMj4uV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5WaW50YWdlSHVudGluZ1NlY29u",
+            "ZFN0YWdlSW5mb0gAElkKEHRoaXJkX3N0YWdlX2luZm8YCCABKAsyPS5XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlZpbnRhZ2VIdW50aW5nVGhp",
+            "cmRTdGFnZUluZm9IAEIGCgRpbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VintageHuntingFirstStageInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.VintageHuntingSecondStageInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.VintageHuntingThirdStageInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -101,7 +103,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "stage_id" field.</summary>
-    public const int StageIdFieldNumber = 7;
+    public const int StageIdFieldNumber = 9;
     private uint stageId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -113,7 +115,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "first_stage_info" field.</summary>
-    public const int FirstStageInfoFieldNumber = 2;
+    public const int FirstStageInfoFieldNumber = 5;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.VintageHuntingFirstStageInfo FirstStageInfo {
@@ -125,7 +127,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "second_stage_info" field.</summary>
-    public const int SecondStageInfoFieldNumber = 15;
+    public const int SecondStageInfoFieldNumber = 14;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.VintageHuntingSecondStageInfo SecondStageInfo {
@@ -137,7 +139,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "third_stage_info" field.</summary>
-    public const int ThirdStageInfoFieldNumber = 12;
+    public const int ThirdStageInfoFieldNumber = 8;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.VintageHuntingThirdStageInfo ThirdStageInfo {
@@ -152,9 +154,9 @@ namespace Weedwacker.Shared.Network.Proto {
     /// <summary>Enum of possible cases for the "info" oneof.</summary>
     public enum InfoOneofCase {
       None = 0,
-      FirstStageInfo = 2,
-      SecondStageInfo = 15,
-      ThirdStageInfo = 12,
+      FirstStageInfo = 5,
+      SecondStageInfo = 14,
+      ThirdStageInfo = 8,
     }
     private InfoOneofCase infoCase_ = InfoOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -221,19 +223,19 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (infoCase_ == InfoOneofCase.FirstStageInfo) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(42);
         output.WriteMessage(FirstStageInfo);
       }
-      if (StageId != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(StageId);
-      }
       if (infoCase_ == InfoOneofCase.ThirdStageInfo) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(66);
         output.WriteMessage(ThirdStageInfo);
       }
+      if (StageId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(StageId);
+      }
       if (infoCase_ == InfoOneofCase.SecondStageInfo) {
-        output.WriteRawTag(122);
+        output.WriteRawTag(114);
         output.WriteMessage(SecondStageInfo);
       }
       if (_unknownFields != null) {
@@ -247,19 +249,19 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (infoCase_ == InfoOneofCase.FirstStageInfo) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(42);
         output.WriteMessage(FirstStageInfo);
       }
-      if (StageId != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(StageId);
-      }
       if (infoCase_ == InfoOneofCase.ThirdStageInfo) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(66);
         output.WriteMessage(ThirdStageInfo);
       }
+      if (StageId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(StageId);
+      }
       if (infoCase_ == InfoOneofCase.SecondStageInfo) {
-        output.WriteRawTag(122);
+        output.WriteRawTag(114);
         output.WriteMessage(SecondStageInfo);
       }
       if (_unknownFields != null) {
@@ -335,7 +337,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
+          case 42: {
             global::Weedwacker.Shared.Network.Proto.VintageHuntingFirstStageInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.VintageHuntingFirstStageInfo();
             if (infoCase_ == InfoOneofCase.FirstStageInfo) {
               subBuilder.MergeFrom(FirstStageInfo);
@@ -344,11 +346,7 @@ namespace Weedwacker.Shared.Network.Proto {
             FirstStageInfo = subBuilder;
             break;
           }
-          case 56: {
-            StageId = input.ReadUInt32();
-            break;
-          }
-          case 98: {
+          case 66: {
             global::Weedwacker.Shared.Network.Proto.VintageHuntingThirdStageInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.VintageHuntingThirdStageInfo();
             if (infoCase_ == InfoOneofCase.ThirdStageInfo) {
               subBuilder.MergeFrom(ThirdStageInfo);
@@ -357,7 +355,11 @@ namespace Weedwacker.Shared.Network.Proto {
             ThirdStageInfo = subBuilder;
             break;
           }
-          case 122: {
+          case 72: {
+            StageId = input.ReadUInt32();
+            break;
+          }
+          case 114: {
             global::Weedwacker.Shared.Network.Proto.VintageHuntingSecondStageInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.VintageHuntingSecondStageInfo();
             if (infoCase_ == InfoOneofCase.SecondStageInfo) {
               subBuilder.MergeFrom(SecondStageInfo);
@@ -381,7 +383,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
+          case 42: {
             global::Weedwacker.Shared.Network.Proto.VintageHuntingFirstStageInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.VintageHuntingFirstStageInfo();
             if (infoCase_ == InfoOneofCase.FirstStageInfo) {
               subBuilder.MergeFrom(FirstStageInfo);
@@ -390,11 +392,7 @@ namespace Weedwacker.Shared.Network.Proto {
             FirstStageInfo = subBuilder;
             break;
           }
-          case 56: {
-            StageId = input.ReadUInt32();
-            break;
-          }
-          case 98: {
+          case 66: {
             global::Weedwacker.Shared.Network.Proto.VintageHuntingThirdStageInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.VintageHuntingThirdStageInfo();
             if (infoCase_ == InfoOneofCase.ThirdStageInfo) {
               subBuilder.MergeFrom(ThirdStageInfo);
@@ -403,7 +401,11 @@ namespace Weedwacker.Shared.Network.Proto {
             ThirdStageInfo = subBuilder;
             break;
           }
-          case 122: {
+          case 72: {
+            StageId = input.ReadUInt32();
+            break;
+          }
+          case 114: {
             global::Weedwacker.Shared.Network.Proto.VintageHuntingSecondStageInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.VintageHuntingSecondStageInfo();
             if (infoCase_ == InfoOneofCase.SecondStageInfo) {
               subBuilder.MergeFrom(SecondStageInfo);

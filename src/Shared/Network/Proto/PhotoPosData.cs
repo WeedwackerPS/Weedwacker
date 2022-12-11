@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static PhotoPosDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJQaG90b1Bvc0RhdGEucHJvdG8aDFZlY3Rvci5wcm90byJsCgxQaG90b1Bv",
-            "c0RhdGESFwoGY2VudGVyGA8gASgLMgcuVmVjdG9yEhEKCW9wZW5fdGltZRgC",
-            "IAEoDRIPCgdpc192aWV3GAQgASgIEg4KBnBvc19pZBgJIAEoDRIPCgdpc19v",
-            "cGVuGAYgASgIQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "ChJQaG90b1Bvc0RhdGEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8aDFZlY3Rvci5wcm90byKMAQoMUGhvdG9Qb3NEYXRhEhEKCW9w",
+            "ZW5fdGltZRgKIAEoDRIOCgZwb3NfaWQYCSABKA0SNwoGY2VudGVyGAcgASgL",
+            "MicuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5WZWN0b3ISDwoH",
+            "aXNfdmlldxgNIAEoCBIPCgdpc19vcGVuGAMgASgIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PhotoPosData), global::Weedwacker.Shared.Network.Proto.PhotoPosData.Parser, new[]{ "Center", "OpenTime", "IsView", "PosId", "IsOpen" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PhotoPosData), global::Weedwacker.Shared.Network.Proto.PhotoPosData.Parser, new[]{ "OpenTime", "PosId", "Center", "IsView", "IsOpen" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,10 +73,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PhotoPosData(PhotoPosData other) : this() {
-      center_ = other.center_ != null ? other.center_.Clone() : null;
       openTime_ = other.openTime_;
-      isView_ = other.isView_;
       posId_ = other.posId_;
+      center_ = other.center_ != null ? other.center_.Clone() : null;
+      isView_ = other.isView_;
       isOpen_ = other.isOpen_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -87,20 +87,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PhotoPosData(this);
     }
 
-    /// <summary>Field number for the "center" field.</summary>
-    public const int CenterFieldNumber = 15;
-    private global::Weedwacker.Shared.Network.Proto.Vector center_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector Center {
-      get { return center_; }
-      set {
-        center_ = value;
-      }
-    }
-
     /// <summary>Field number for the "open_time" field.</summary>
-    public const int OpenTimeFieldNumber = 2;
+    public const int OpenTimeFieldNumber = 10;
     private uint openTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -108,18 +96,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return openTime_; }
       set {
         openTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_view" field.</summary>
-    public const int IsViewFieldNumber = 4;
-    private bool isView_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsView {
-      get { return isView_; }
-      set {
-        isView_ = value;
       }
     }
 
@@ -135,8 +111,32 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "center" field.</summary>
+    public const int CenterFieldNumber = 7;
+    private global::Weedwacker.Shared.Network.Proto.Vector center_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector Center {
+      get { return center_; }
+      set {
+        center_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_view" field.</summary>
+    public const int IsViewFieldNumber = 13;
+    private bool isView_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsView {
+      get { return isView_; }
+      set {
+        isView_ = value;
+      }
+    }
+
     /// <summary>Field number for the "is_open" field.</summary>
-    public const int IsOpenFieldNumber = 6;
+    public const int IsOpenFieldNumber = 3;
     private bool isOpen_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -162,10 +162,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(Center, other.Center)) return false;
       if (OpenTime != other.OpenTime) return false;
-      if (IsView != other.IsView) return false;
       if (PosId != other.PosId) return false;
+      if (!object.Equals(Center, other.Center)) return false;
+      if (IsView != other.IsView) return false;
       if (IsOpen != other.IsOpen) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -174,10 +174,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (center_ != null) hash ^= Center.GetHashCode();
       if (OpenTime != 0) hash ^= OpenTime.GetHashCode();
-      if (IsView != false) hash ^= IsView.GetHashCode();
       if (PosId != 0) hash ^= PosId.GetHashCode();
+      if (center_ != null) hash ^= Center.GetHashCode();
+      if (IsView != false) hash ^= IsView.GetHashCode();
       if (IsOpen != false) hash ^= IsOpen.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -197,25 +197,25 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (OpenTime != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(OpenTime);
-      }
-      if (IsView != false) {
-        output.WriteRawTag(32);
-        output.WriteBool(IsView);
-      }
       if (IsOpen != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(24);
         output.WriteBool(IsOpen);
+      }
+      if (center_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(Center);
       }
       if (PosId != 0) {
         output.WriteRawTag(72);
         output.WriteUInt32(PosId);
       }
-      if (center_ != null) {
-        output.WriteRawTag(122);
-        output.WriteMessage(Center);
+      if (OpenTime != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(OpenTime);
+      }
+      if (IsView != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsView);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -227,25 +227,25 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (OpenTime != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(OpenTime);
-      }
-      if (IsView != false) {
-        output.WriteRawTag(32);
-        output.WriteBool(IsView);
-      }
       if (IsOpen != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(24);
         output.WriteBool(IsOpen);
+      }
+      if (center_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(Center);
       }
       if (PosId != 0) {
         output.WriteRawTag(72);
         output.WriteUInt32(PosId);
       }
-      if (center_ != null) {
-        output.WriteRawTag(122);
-        output.WriteMessage(Center);
+      if (OpenTime != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(OpenTime);
+      }
+      if (IsView != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsView);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -257,17 +257,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (center_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Center);
-      }
       if (OpenTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OpenTime);
       }
-      if (IsView != false) {
-        size += 1 + 1;
-      }
       if (PosId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PosId);
+      }
+      if (center_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Center);
+      }
+      if (IsView != false) {
+        size += 1 + 1;
       }
       if (IsOpen != false) {
         size += 1 + 1;
@@ -284,20 +284,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.OpenTime != 0) {
+        OpenTime = other.OpenTime;
+      }
+      if (other.PosId != 0) {
+        PosId = other.PosId;
+      }
       if (other.center_ != null) {
         if (center_ == null) {
           Center = new global::Weedwacker.Shared.Network.Proto.Vector();
         }
         Center.MergeFrom(other.Center);
       }
-      if (other.OpenTime != 0) {
-        OpenTime = other.OpenTime;
-      }
       if (other.IsView != false) {
         IsView = other.IsView;
-      }
-      if (other.PosId != 0) {
-        PosId = other.PosId;
       }
       if (other.IsOpen != false) {
         IsOpen = other.IsOpen;
@@ -317,27 +317,27 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            OpenTime = input.ReadUInt32();
-            break;
-          }
-          case 32: {
-            IsView = input.ReadBool();
-            break;
-          }
-          case 48: {
+          case 24: {
             IsOpen = input.ReadBool();
+            break;
+          }
+          case 58: {
+            if (center_ == null) {
+              Center = new global::Weedwacker.Shared.Network.Proto.Vector();
+            }
+            input.ReadMessage(Center);
             break;
           }
           case 72: {
             PosId = input.ReadUInt32();
             break;
           }
-          case 122: {
-            if (center_ == null) {
-              Center = new global::Weedwacker.Shared.Network.Proto.Vector();
-            }
-            input.ReadMessage(Center);
+          case 80: {
+            OpenTime = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            IsView = input.ReadBool();
             break;
           }
         }
@@ -355,27 +355,27 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            OpenTime = input.ReadUInt32();
-            break;
-          }
-          case 32: {
-            IsView = input.ReadBool();
-            break;
-          }
-          case 48: {
+          case 24: {
             IsOpen = input.ReadBool();
+            break;
+          }
+          case 58: {
+            if (center_ == null) {
+              Center = new global::Weedwacker.Shared.Network.Proto.Vector();
+            }
+            input.ReadMessage(Center);
             break;
           }
           case 72: {
             PosId = input.ReadUInt32();
             break;
           }
-          case 122: {
-            if (center_ == null) {
-              Center = new global::Weedwacker.Shared.Network.Proto.Vector();
-            }
-            input.ReadMessage(Center);
+          case 80: {
+            OpenTime = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            IsView = input.ReadBool();
             break;
           }
         }

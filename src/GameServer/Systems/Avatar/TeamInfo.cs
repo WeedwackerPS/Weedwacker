@@ -31,7 +31,11 @@ namespace Weedwacker.GameServer.Systems.Avatar
             TeamName = name;
             IsTowerTeam = false;
             int index = 0;
-            avatars.AsParallel().ForAll(a => AddAvatar(a, index++));
+            foreach (var item in avatars)
+            {
+                AddAvatar(item,index);
+                index++;
+            }
             IsTowerTeam = isTowerTeam;
         }
 

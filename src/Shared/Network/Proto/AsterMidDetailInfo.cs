@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static AsterMidDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhBc3Rlck1pZERldGFpbEluZm8ucHJvdG8aFkFzdGVyTWlkQ2FtcEluZm8u",
-            "cHJvdG8idgoSQXN0ZXJNaWREZXRhaWxJbmZvEhIKCmJlZ2luX3RpbWUYCiAB",
-            "KA0SJAoJY2FtcF9saXN0GAcgAygLMhEuQXN0ZXJNaWRDYW1wSW5mbxIPCgdp",
-            "c19vcGVuGAQgASgIEhUKDWNvbGxlY3RfY291bnQYCyABKA1CIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChhBc3Rlck1pZERldGFpbEluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aFkFzdGVyTWlkQ2FtcEluZm8ucHJvdG8ilgEKEkFz",
+            "dGVyTWlkRGV0YWlsSW5mbxIPCgdpc19vcGVuGA0gASgIEkQKCWNhbXBfbGlz",
+            "dBgLIAMoCzIxLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQXN0",
+            "ZXJNaWRDYW1wSW5mbxISCgpiZWdpbl90aW1lGAQgASgNEhUKDWNvbGxlY3Rf",
+            "Y291bnQYByABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AsterMidCampInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AsterMidDetailInfo), global::Weedwacker.Shared.Network.Proto.AsterMidDetailInfo.Parser, new[]{ "BeginTime", "CampList", "IsOpen", "CollectCount" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AsterMidDetailInfo), global::Weedwacker.Shared.Network.Proto.AsterMidDetailInfo.Parser, new[]{ "IsOpen", "CampList", "BeginTime", "CollectCount" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,9 +74,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AsterMidDetailInfo(AsterMidDetailInfo other) : this() {
-      beginTime_ = other.beginTime_;
-      campList_ = other.campList_.Clone();
       isOpen_ = other.isOpen_;
+      campList_ = other.campList_.Clone();
+      beginTime_ = other.beginTime_;
       collectCount_ = other.collectCount_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -86,31 +87,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AsterMidDetailInfo(this);
     }
 
-    /// <summary>Field number for the "begin_time" field.</summary>
-    public const int BeginTimeFieldNumber = 10;
-    private uint beginTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint BeginTime {
-      get { return beginTime_; }
-      set {
-        beginTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "camp_list" field.</summary>
-    public const int CampListFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.AsterMidCampInfo> _repeated_campList_codec
-        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.AsterMidCampInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AsterMidCampInfo> campList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AsterMidCampInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AsterMidCampInfo> CampList {
-      get { return campList_; }
-    }
-
     /// <summary>Field number for the "is_open" field.</summary>
-    public const int IsOpenFieldNumber = 4;
+    public const int IsOpenFieldNumber = 13;
     private bool isOpen_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -121,8 +99,31 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "camp_list" field.</summary>
+    public const int CampListFieldNumber = 11;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.AsterMidCampInfo> _repeated_campList_codec
+        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.AsterMidCampInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AsterMidCampInfo> campList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AsterMidCampInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AsterMidCampInfo> CampList {
+      get { return campList_; }
+    }
+
+    /// <summary>Field number for the "begin_time" field.</summary>
+    public const int BeginTimeFieldNumber = 4;
+    private uint beginTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint BeginTime {
+      get { return beginTime_; }
+      set {
+        beginTime_ = value;
+      }
+    }
+
     /// <summary>Field number for the "collect_count" field.</summary>
-    public const int CollectCountFieldNumber = 11;
+    public const int CollectCountFieldNumber = 7;
     private uint collectCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -148,9 +149,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (BeginTime != other.BeginTime) return false;
-      if(!campList_.Equals(other.campList_)) return false;
       if (IsOpen != other.IsOpen) return false;
+      if(!campList_.Equals(other.campList_)) return false;
+      if (BeginTime != other.BeginTime) return false;
       if (CollectCount != other.CollectCount) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -159,9 +160,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (BeginTime != 0) hash ^= BeginTime.GetHashCode();
-      hash ^= campList_.GetHashCode();
       if (IsOpen != false) hash ^= IsOpen.GetHashCode();
+      hash ^= campList_.GetHashCode();
+      if (BeginTime != 0) hash ^= BeginTime.GetHashCode();
       if (CollectCount != 0) hash ^= CollectCount.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -181,18 +182,18 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsOpen != false) {
-        output.WriteRawTag(32);
-        output.WriteBool(IsOpen);
-      }
-      campList_.WriteTo(output, _repeated_campList_codec);
       if (BeginTime != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(32);
         output.WriteUInt32(BeginTime);
       }
       if (CollectCount != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(56);
         output.WriteUInt32(CollectCount);
+      }
+      campList_.WriteTo(output, _repeated_campList_codec);
+      if (IsOpen != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsOpen);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -204,18 +205,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsOpen != false) {
-        output.WriteRawTag(32);
-        output.WriteBool(IsOpen);
-      }
-      campList_.WriteTo(ref output, _repeated_campList_codec);
       if (BeginTime != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(32);
         output.WriteUInt32(BeginTime);
       }
       if (CollectCount != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(56);
         output.WriteUInt32(CollectCount);
+      }
+      campList_.WriteTo(ref output, _repeated_campList_codec);
+      if (IsOpen != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsOpen);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -227,12 +228,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (BeginTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BeginTime);
-      }
-      size += campList_.CalculateSize(_repeated_campList_codec);
       if (IsOpen != false) {
         size += 1 + 1;
+      }
+      size += campList_.CalculateSize(_repeated_campList_codec);
+      if (BeginTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BeginTime);
       }
       if (CollectCount != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CollectCount);
@@ -249,12 +250,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.BeginTime != 0) {
-        BeginTime = other.BeginTime;
-      }
-      campList_.Add(other.campList_);
       if (other.IsOpen != false) {
         IsOpen = other.IsOpen;
+      }
+      campList_.Add(other.campList_);
+      if (other.BeginTime != 0) {
+        BeginTime = other.BeginTime;
       }
       if (other.CollectCount != 0) {
         CollectCount = other.CollectCount;
@@ -275,19 +276,19 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 32: {
-            IsOpen = input.ReadBool();
-            break;
-          }
-          case 58: {
-            campList_.AddEntriesFrom(input, _repeated_campList_codec);
-            break;
-          }
-          case 80: {
             BeginTime = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 56: {
             CollectCount = input.ReadUInt32();
+            break;
+          }
+          case 90: {
+            campList_.AddEntriesFrom(input, _repeated_campList_codec);
+            break;
+          }
+          case 104: {
+            IsOpen = input.ReadBool();
             break;
           }
         }
@@ -306,19 +307,19 @@ namespace Weedwacker.Shared.Network.Proto {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 32: {
-            IsOpen = input.ReadBool();
-            break;
-          }
-          case 58: {
-            campList_.AddEntriesFrom(ref input, _repeated_campList_codec);
-            break;
-          }
-          case 80: {
             BeginTime = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 56: {
             CollectCount = input.ReadUInt32();
+            break;
+          }
+          case 90: {
+            campList_.AddEntriesFrom(ref input, _repeated_campList_codec);
+            break;
+          }
+          case 104: {
+            IsOpen = input.ReadBool();
             break;
           }
         }

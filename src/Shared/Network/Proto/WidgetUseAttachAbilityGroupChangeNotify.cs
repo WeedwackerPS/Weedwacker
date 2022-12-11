@@ -25,13 +25,13 @@ namespace Weedwacker.Shared.Network.Proto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci1XaWRnZXRVc2VBdHRhY2hBYmlsaXR5R3JvdXBDaGFuZ2VOb3RpZnkucHJv",
-            "dG8iUQonV2lkZ2V0VXNlQXR0YWNoQWJpbGl0eUdyb3VwQ2hhbmdlTm90aWZ5",
-            "EhEKCWlzX2F0dGFjaBgGIAEoCBITCgttYXRlcmlhbF9pZBgLIAEoDUIiqgIf",
-            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "dG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iUQonV2lkZ2V0",
+            "VXNlQXR0YWNoQWJpbGl0eUdyb3VwQ2hhbmdlTm90aWZ5EhMKC21hdGVyaWFs",
+            "X2lkGA8gASgNEhEKCWlzX2F0dGFjaBgHIAEoCGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WidgetUseAttachAbilityGroupChangeNotify), global::Weedwacker.Shared.Network.Proto.WidgetUseAttachAbilityGroupChangeNotify.Parser, new[]{ "IsAttach", "MaterialId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WidgetUseAttachAbilityGroupChangeNotify), global::Weedwacker.Shared.Network.Proto.WidgetUseAttachAbilityGroupChangeNotify.Parser, new[]{ "MaterialId", "IsAttach" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4258
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4290;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class WidgetUseAttachAbilityGroupChangeNotify : pb::IMessage<WidgetUseAttachAbilityGroupChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +81,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public WidgetUseAttachAbilityGroupChangeNotify(WidgetUseAttachAbilityGroupChangeNotify other) : this() {
-      isAttach_ = other.isAttach_;
       materialId_ = other.materialId_;
+      isAttach_ = other.isAttach_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,20 +92,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new WidgetUseAttachAbilityGroupChangeNotify(this);
     }
 
-    /// <summary>Field number for the "is_attach" field.</summary>
-    public const int IsAttachFieldNumber = 6;
-    private bool isAttach_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsAttach {
-      get { return isAttach_; }
-      set {
-        isAttach_ = value;
-      }
-    }
-
     /// <summary>Field number for the "material_id" field.</summary>
-    public const int MaterialIdFieldNumber = 11;
+    public const int MaterialIdFieldNumber = 15;
     private uint materialId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,6 +101,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return materialId_; }
       set {
         materialId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_attach" field.</summary>
+    public const int IsAttachFieldNumber = 7;
+    private bool isAttach_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsAttach {
+      get { return isAttach_; }
+      set {
+        isAttach_ = value;
       }
     }
 
@@ -127,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsAttach != other.IsAttach) return false;
       if (MaterialId != other.MaterialId) return false;
+      if (IsAttach != other.IsAttach) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsAttach != false) hash ^= IsAttach.GetHashCode();
       if (MaterialId != 0) hash ^= MaterialId.GetHashCode();
+      if (IsAttach != false) hash ^= IsAttach.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -157,11 +161,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (IsAttach != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteBool(IsAttach);
       }
       if (MaterialId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(120);
         output.WriteUInt32(MaterialId);
       }
       if (_unknownFields != null) {
@@ -175,11 +179,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (IsAttach != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteBool(IsAttach);
       }
       if (MaterialId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(120);
         output.WriteUInt32(MaterialId);
       }
       if (_unknownFields != null) {
@@ -192,11 +196,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsAttach != false) {
-        size += 1 + 1;
-      }
       if (MaterialId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaterialId);
+      }
+      if (IsAttach != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -210,11 +214,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsAttach != false) {
-        IsAttach = other.IsAttach;
-      }
       if (other.MaterialId != 0) {
         MaterialId = other.MaterialId;
+      }
+      if (other.IsAttach != false) {
+        IsAttach = other.IsAttach;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -231,11 +235,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
+          case 56: {
             IsAttach = input.ReadBool();
             break;
           }
-          case 88: {
+          case 120: {
             MaterialId = input.ReadUInt32();
             break;
           }
@@ -254,11 +258,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
+          case 56: {
             IsAttach = input.ReadBool();
             break;
           }
-          case 88: {
+          case 120: {
             MaterialId = input.ReadUInt32();
             break;
           }

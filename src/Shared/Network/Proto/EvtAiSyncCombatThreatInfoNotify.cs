@@ -24,13 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static EvtAiSyncCombatThreatInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVFdnRBaVN5bmNDb21iYXRUaHJlYXRJbmZvTm90aWZ5LnByb3RvGhJBaVRo",
-            "cmVhdEluZm8ucHJvdG8ixwEKH0V2dEFpU3luY0NvbWJhdFRocmVhdEluZm9O",
-            "b3RpZnkSWQoWY29tYmF0X3RocmVhdF9pbmZvX21hcBgIIAMoCzI5LkV2dEFp",
-            "U3luY0NvbWJhdFRocmVhdEluZm9Ob3RpZnkuQ29tYmF0VGhyZWF0SW5mb01h",
-            "cEVudHJ5GkkKGENvbWJhdFRocmVhdEluZm9NYXBFbnRyeRILCgNrZXkYASAB",
-            "KA0SHAoFdmFsdWUYAiABKAsyDS5BaVRocmVhdEluZm86AjgBQiKqAh9XZWVk",
-            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiVFdnRBaVN5bmNDb21iYXRUaHJlYXRJbmZvTm90aWZ5LnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGhJBaVRocmVhdEluZm8ucHJv",
+            "dG8ihwIKH0V2dEFpU3luY0NvbWJhdFRocmVhdEluZm9Ob3RpZnkSeQoWY29t",
+            "YmF0X3RocmVhdF9pbmZvX21hcBgLIAMoCzJZLldlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8uRXZ0QWlTeW5jQ29tYmF0VGhyZWF0SW5mb05vdGlm",
+            "eS5Db21iYXRUaHJlYXRJbmZvTWFwRW50cnkaaQoYQ29tYmF0VGhyZWF0SW5m",
+            "b01hcEVudHJ5EgsKA2tleRgBIAEoDRI8CgV2YWx1ZRgCIAEoCzItLldlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQWlUaHJlYXRJbmZvOgI4AWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AiThreatInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -42,10 +44,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 329
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 320;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class EvtAiSyncCombatThreatInfoNotify : pb::IMessage<EvtAiSyncCombatThreatInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -92,9 +98,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "combat_threat_info_map" field.</summary>
-    public const int CombatThreatInfoMapFieldNumber = 8;
+    public const int CombatThreatInfoMapFieldNumber = 11;
     private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.AiThreatInfo>.Codec _map_combatThreatInfoMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.AiThreatInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.AiThreatInfo.Parser), 66);
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.AiThreatInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.AiThreatInfo.Parser), 90);
     private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.AiThreatInfo> combatThreatInfoMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.AiThreatInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -195,7 +201,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 66: {
+          case 90: {
             combatThreatInfoMap_.AddEntriesFrom(input, _map_combatThreatInfoMap_codec);
             break;
           }
@@ -214,7 +220,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 66: {
+          case 90: {
             combatThreatInfoMap_.AddEntriesFrom(ref input, _map_combatThreatInfoMap_codec);
             break;
           }

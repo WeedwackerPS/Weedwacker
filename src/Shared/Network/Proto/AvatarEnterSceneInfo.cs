@@ -24,19 +24,21 @@ namespace Weedwacker.Shared.Network.Proto {
     static AvatarEnterSceneInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpBdmF0YXJFbnRlclNjZW5lSW5mby5wcm90bxoaQWJpbGl0eVN5bmNTdGF0",
-            "ZUluZm8ucHJvdG8aEFNlcnZlckJ1ZmYucHJvdG8imQIKFEF2YXRhckVudGVy",
-            "U2NlbmVJbmZvEiUKEHNlcnZlcl9idWZmX2xpc3QYDiADKAsyCy5TZXJ2ZXJC",
-            "dWZmEhgKEGF2YXRhcl9lbnRpdHlfaWQYByABKA0SMgoTd2VhcG9uX2FiaWxp",
-            "dHlfaW5mbxgMIAEoCzIVLkFiaWxpdHlTeW5jU3RhdGVJbmZvEhgKEHdlYXBv",
-            "bl9lbnRpdHlfaWQYCiABKA0SMgoTYXZhdGFyX2FiaWxpdHlfaW5mbxgCIAEo",
-            "CzIVLkFiaWxpdHlTeW5jU3RhdGVJbmZvEhMKC2F2YXRhcl9ndWlkGA0gASgE",
-            "EhMKC3dlYXBvbl9ndWlkGAkgASgEEhQKDGJ1ZmZfaWRfbGlzdBgFIAMoDUIi",
-            "qgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChpBdmF0YXJFbnRlclNjZW5lSW5mby5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90bxoaQWJpbGl0eVN5bmNTdGF0ZUluZm8ucHJvdG8a",
+            "EFNlcnZlckJ1ZmYucHJvdG8i+QIKFEF2YXRhckVudGVyU2NlbmVJbmZvEhgK",
+            "EHdlYXBvbl9lbnRpdHlfaWQYBSABKA0SEwoLYXZhdGFyX2d1aWQYCSABKAQS",
+            "GAoQYXZhdGFyX2VudGl0eV9pZBgNIAEoDRJFChBzZXJ2ZXJfYnVmZl9saXN0",
+            "GAcgAygLMisuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5TZXJ2",
+            "ZXJCdWZmElIKE2F2YXRhcl9hYmlsaXR5X2luZm8YBiABKAsyNS5XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkFiaWxpdHlTeW5jU3RhdGVJbmZv",
+            "EhQKDGJ1ZmZfaWRfbGlzdBgIIAMoDRJSChN3ZWFwb25fYWJpbGl0eV9pbmZv",
+            "GAEgASgLMjUuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5BYmls",
+            "aXR5U3luY1N0YXRlSW5mbxITCgt3ZWFwb25fZ3VpZBgPIAEoBGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ServerBuffReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AvatarEnterSceneInfo), global::Weedwacker.Shared.Network.Proto.AvatarEnterSceneInfo.Parser, new[]{ "ServerBuffList", "AvatarEntityId", "WeaponAbilityInfo", "WeaponEntityId", "AvatarAbilityInfo", "AvatarGuid", "WeaponGuid", "BuffIdList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AvatarEnterSceneInfo), global::Weedwacker.Shared.Network.Proto.AvatarEnterSceneInfo.Parser, new[]{ "WeaponEntityId", "AvatarGuid", "AvatarEntityId", "ServerBuffList", "AvatarAbilityInfo", "BuffIdList", "WeaponAbilityInfo", "WeaponGuid" }, null, null, null, null)
           }));
     }
     #endregion
@@ -77,14 +79,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AvatarEnterSceneInfo(AvatarEnterSceneInfo other) : this() {
-      serverBuffList_ = other.serverBuffList_.Clone();
-      avatarEntityId_ = other.avatarEntityId_;
-      weaponAbilityInfo_ = other.weaponAbilityInfo_ != null ? other.weaponAbilityInfo_.Clone() : null;
       weaponEntityId_ = other.weaponEntityId_;
-      avatarAbilityInfo_ = other.avatarAbilityInfo_ != null ? other.avatarAbilityInfo_.Clone() : null;
       avatarGuid_ = other.avatarGuid_;
-      weaponGuid_ = other.weaponGuid_;
+      avatarEntityId_ = other.avatarEntityId_;
+      serverBuffList_ = other.serverBuffList_.Clone();
+      avatarAbilityInfo_ = other.avatarAbilityInfo_ != null ? other.avatarAbilityInfo_.Clone() : null;
       buffIdList_ = other.buffIdList_.Clone();
+      weaponAbilityInfo_ = other.weaponAbilityInfo_ != null ? other.weaponAbilityInfo_.Clone() : null;
+      weaponGuid_ = other.weaponGuid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,43 +96,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AvatarEnterSceneInfo(this);
     }
 
-    /// <summary>Field number for the "server_buff_list" field.</summary>
-    public const int ServerBuffListFieldNumber = 14;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ServerBuff> _repeated_serverBuffList_codec
-        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.ServerBuff.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ServerBuff> serverBuffList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ServerBuff>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ServerBuff> ServerBuffList {
-      get { return serverBuffList_; }
-    }
-
-    /// <summary>Field number for the "avatar_entity_id" field.</summary>
-    public const int AvatarEntityIdFieldNumber = 7;
-    private uint avatarEntityId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint AvatarEntityId {
-      get { return avatarEntityId_; }
-      set {
-        avatarEntityId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "weapon_ability_info" field.</summary>
-    public const int WeaponAbilityInfoFieldNumber = 12;
-    private global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo weaponAbilityInfo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo WeaponAbilityInfo {
-      get { return weaponAbilityInfo_; }
-      set {
-        weaponAbilityInfo_ = value;
-      }
-    }
-
     /// <summary>Field number for the "weapon_entity_id" field.</summary>
-    public const int WeaponEntityIdFieldNumber = 10;
+    public const int WeaponEntityIdFieldNumber = 5;
     private uint weaponEntityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -141,20 +108,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "avatar_ability_info" field.</summary>
-    public const int AvatarAbilityInfoFieldNumber = 2;
-    private global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo avatarAbilityInfo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo AvatarAbilityInfo {
-      get { return avatarAbilityInfo_; }
-      set {
-        avatarAbilityInfo_ = value;
-      }
-    }
-
     /// <summary>Field number for the "avatar_guid" field.</summary>
-    public const int AvatarGuidFieldNumber = 13;
+    public const int AvatarGuidFieldNumber = 9;
     private ulong avatarGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -165,8 +120,66 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "avatar_entity_id" field.</summary>
+    public const int AvatarEntityIdFieldNumber = 13;
+    private uint avatarEntityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint AvatarEntityId {
+      get { return avatarEntityId_; }
+      set {
+        avatarEntityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "server_buff_list" field.</summary>
+    public const int ServerBuffListFieldNumber = 7;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ServerBuff> _repeated_serverBuffList_codec
+        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.ServerBuff.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ServerBuff> serverBuffList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ServerBuff>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ServerBuff> ServerBuffList {
+      get { return serverBuffList_; }
+    }
+
+    /// <summary>Field number for the "avatar_ability_info" field.</summary>
+    public const int AvatarAbilityInfoFieldNumber = 6;
+    private global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo avatarAbilityInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo AvatarAbilityInfo {
+      get { return avatarAbilityInfo_; }
+      set {
+        avatarAbilityInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "buff_id_list" field.</summary>
+    public const int BuffIdListFieldNumber = 8;
+    private static readonly pb::FieldCodec<uint> _repeated_buffIdList_codec
+        = pb::FieldCodec.ForUInt32(66);
+    private readonly pbc::RepeatedField<uint> buffIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> BuffIdList {
+      get { return buffIdList_; }
+    }
+
+    /// <summary>Field number for the "weapon_ability_info" field.</summary>
+    public const int WeaponAbilityInfoFieldNumber = 1;
+    private global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo weaponAbilityInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo WeaponAbilityInfo {
+      get { return weaponAbilityInfo_; }
+      set {
+        weaponAbilityInfo_ = value;
+      }
+    }
+
     /// <summary>Field number for the "weapon_guid" field.</summary>
-    public const int WeaponGuidFieldNumber = 9;
+    public const int WeaponGuidFieldNumber = 15;
     private ulong weaponGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -175,17 +188,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         weaponGuid_ = value;
       }
-    }
-
-    /// <summary>Field number for the "buff_id_list" field.</summary>
-    public const int BuffIdListFieldNumber = 5;
-    private static readonly pb::FieldCodec<uint> _repeated_buffIdList_codec
-        = pb::FieldCodec.ForUInt32(42);
-    private readonly pbc::RepeatedField<uint> buffIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> BuffIdList {
-      get { return buffIdList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -203,14 +205,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!serverBuffList_.Equals(other.serverBuffList_)) return false;
-      if (AvatarEntityId != other.AvatarEntityId) return false;
-      if (!object.Equals(WeaponAbilityInfo, other.WeaponAbilityInfo)) return false;
       if (WeaponEntityId != other.WeaponEntityId) return false;
-      if (!object.Equals(AvatarAbilityInfo, other.AvatarAbilityInfo)) return false;
       if (AvatarGuid != other.AvatarGuid) return false;
-      if (WeaponGuid != other.WeaponGuid) return false;
+      if (AvatarEntityId != other.AvatarEntityId) return false;
+      if(!serverBuffList_.Equals(other.serverBuffList_)) return false;
+      if (!object.Equals(AvatarAbilityInfo, other.AvatarAbilityInfo)) return false;
       if(!buffIdList_.Equals(other.buffIdList_)) return false;
+      if (!object.Equals(WeaponAbilityInfo, other.WeaponAbilityInfo)) return false;
+      if (WeaponGuid != other.WeaponGuid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -218,14 +220,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= serverBuffList_.GetHashCode();
-      if (AvatarEntityId != 0) hash ^= AvatarEntityId.GetHashCode();
-      if (weaponAbilityInfo_ != null) hash ^= WeaponAbilityInfo.GetHashCode();
       if (WeaponEntityId != 0) hash ^= WeaponEntityId.GetHashCode();
-      if (avatarAbilityInfo_ != null) hash ^= AvatarAbilityInfo.GetHashCode();
       if (AvatarGuid != 0UL) hash ^= AvatarGuid.GetHashCode();
-      if (WeaponGuid != 0UL) hash ^= WeaponGuid.GetHashCode();
+      if (AvatarEntityId != 0) hash ^= AvatarEntityId.GetHashCode();
+      hash ^= serverBuffList_.GetHashCode();
+      if (avatarAbilityInfo_ != null) hash ^= AvatarAbilityInfo.GetHashCode();
       hash ^= buffIdList_.GetHashCode();
+      if (weaponAbilityInfo_ != null) hash ^= WeaponAbilityInfo.GetHashCode();
+      if (WeaponGuid != 0UL) hash ^= WeaponGuid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -244,32 +246,32 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (weaponAbilityInfo_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(WeaponAbilityInfo);
+      }
+      if (WeaponEntityId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(WeaponEntityId);
+      }
       if (avatarAbilityInfo_ != null) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(50);
         output.WriteMessage(AvatarAbilityInfo);
       }
+      serverBuffList_.WriteTo(output, _repeated_serverBuffList_codec);
       buffIdList_.WriteTo(output, _repeated_buffIdList_codec);
+      if (AvatarGuid != 0UL) {
+        output.WriteRawTag(72);
+        output.WriteUInt64(AvatarGuid);
+      }
       if (AvatarEntityId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(104);
         output.WriteUInt32(AvatarEntityId);
       }
       if (WeaponGuid != 0UL) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(120);
         output.WriteUInt64(WeaponGuid);
       }
-      if (WeaponEntityId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(WeaponEntityId);
-      }
-      if (weaponAbilityInfo_ != null) {
-        output.WriteRawTag(98);
-        output.WriteMessage(WeaponAbilityInfo);
-      }
-      if (AvatarGuid != 0UL) {
-        output.WriteRawTag(104);
-        output.WriteUInt64(AvatarGuid);
-      }
-      serverBuffList_.WriteTo(output, _repeated_serverBuffList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -280,32 +282,32 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (weaponAbilityInfo_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(WeaponAbilityInfo);
+      }
+      if (WeaponEntityId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(WeaponEntityId);
+      }
       if (avatarAbilityInfo_ != null) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(50);
         output.WriteMessage(AvatarAbilityInfo);
       }
+      serverBuffList_.WriteTo(ref output, _repeated_serverBuffList_codec);
       buffIdList_.WriteTo(ref output, _repeated_buffIdList_codec);
+      if (AvatarGuid != 0UL) {
+        output.WriteRawTag(72);
+        output.WriteUInt64(AvatarGuid);
+      }
       if (AvatarEntityId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(104);
         output.WriteUInt32(AvatarEntityId);
       }
       if (WeaponGuid != 0UL) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(120);
         output.WriteUInt64(WeaponGuid);
       }
-      if (WeaponEntityId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(WeaponEntityId);
-      }
-      if (weaponAbilityInfo_ != null) {
-        output.WriteRawTag(98);
-        output.WriteMessage(WeaponAbilityInfo);
-      }
-      if (AvatarGuid != 0UL) {
-        output.WriteRawTag(104);
-        output.WriteUInt64(AvatarGuid);
-      }
-      serverBuffList_.WriteTo(ref output, _repeated_serverBuffList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -316,26 +318,26 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += serverBuffList_.CalculateSize(_repeated_serverBuffList_codec);
-      if (AvatarEntityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AvatarEntityId);
-      }
-      if (weaponAbilityInfo_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(WeaponAbilityInfo);
-      }
       if (WeaponEntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WeaponEntityId);
-      }
-      if (avatarAbilityInfo_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AvatarAbilityInfo);
       }
       if (AvatarGuid != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(AvatarGuid);
       }
+      if (AvatarEntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AvatarEntityId);
+      }
+      size += serverBuffList_.CalculateSize(_repeated_serverBuffList_codec);
+      if (avatarAbilityInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AvatarAbilityInfo);
+      }
+      size += buffIdList_.CalculateSize(_repeated_buffIdList_codec);
+      if (weaponAbilityInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(WeaponAbilityInfo);
+      }
       if (WeaponGuid != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(WeaponGuid);
       }
-      size += buffIdList_.CalculateSize(_repeated_buffIdList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -348,32 +350,32 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      serverBuffList_.Add(other.serverBuffList_);
-      if (other.AvatarEntityId != 0) {
-        AvatarEntityId = other.AvatarEntityId;
-      }
-      if (other.weaponAbilityInfo_ != null) {
-        if (weaponAbilityInfo_ == null) {
-          WeaponAbilityInfo = new global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo();
-        }
-        WeaponAbilityInfo.MergeFrom(other.WeaponAbilityInfo);
-      }
       if (other.WeaponEntityId != 0) {
         WeaponEntityId = other.WeaponEntityId;
       }
+      if (other.AvatarGuid != 0UL) {
+        AvatarGuid = other.AvatarGuid;
+      }
+      if (other.AvatarEntityId != 0) {
+        AvatarEntityId = other.AvatarEntityId;
+      }
+      serverBuffList_.Add(other.serverBuffList_);
       if (other.avatarAbilityInfo_ != null) {
         if (avatarAbilityInfo_ == null) {
           AvatarAbilityInfo = new global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo();
         }
         AvatarAbilityInfo.MergeFrom(other.AvatarAbilityInfo);
       }
-      if (other.AvatarGuid != 0UL) {
-        AvatarGuid = other.AvatarGuid;
+      buffIdList_.Add(other.buffIdList_);
+      if (other.weaponAbilityInfo_ != null) {
+        if (weaponAbilityInfo_ == null) {
+          WeaponAbilityInfo = new global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo();
+        }
+        WeaponAbilityInfo.MergeFrom(other.WeaponAbilityInfo);
       }
       if (other.WeaponGuid != 0UL) {
         WeaponGuid = other.WeaponGuid;
       }
-      buffIdList_.Add(other.buffIdList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -389,43 +391,43 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
-            if (avatarAbilityInfo_ == null) {
-              AvatarAbilityInfo = new global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo();
-            }
-            input.ReadMessage(AvatarAbilityInfo);
-            break;
-          }
-          case 42:
-          case 40: {
-            buffIdList_.AddEntriesFrom(input, _repeated_buffIdList_codec);
-            break;
-          }
-          case 56: {
-            AvatarEntityId = input.ReadUInt32();
-            break;
-          }
-          case 72: {
-            WeaponGuid = input.ReadUInt64();
-            break;
-          }
-          case 80: {
-            WeaponEntityId = input.ReadUInt32();
-            break;
-          }
-          case 98: {
+          case 10: {
             if (weaponAbilityInfo_ == null) {
               WeaponAbilityInfo = new global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo();
             }
             input.ReadMessage(WeaponAbilityInfo);
             break;
           }
-          case 104: {
+          case 40: {
+            WeaponEntityId = input.ReadUInt32();
+            break;
+          }
+          case 50: {
+            if (avatarAbilityInfo_ == null) {
+              AvatarAbilityInfo = new global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo();
+            }
+            input.ReadMessage(AvatarAbilityInfo);
+            break;
+          }
+          case 58: {
+            serverBuffList_.AddEntriesFrom(input, _repeated_serverBuffList_codec);
+            break;
+          }
+          case 66:
+          case 64: {
+            buffIdList_.AddEntriesFrom(input, _repeated_buffIdList_codec);
+            break;
+          }
+          case 72: {
             AvatarGuid = input.ReadUInt64();
             break;
           }
-          case 114: {
-            serverBuffList_.AddEntriesFrom(input, _repeated_serverBuffList_codec);
+          case 104: {
+            AvatarEntityId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            WeaponGuid = input.ReadUInt64();
             break;
           }
         }
@@ -443,43 +445,43 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
-            if (avatarAbilityInfo_ == null) {
-              AvatarAbilityInfo = new global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo();
-            }
-            input.ReadMessage(AvatarAbilityInfo);
-            break;
-          }
-          case 42:
-          case 40: {
-            buffIdList_.AddEntriesFrom(ref input, _repeated_buffIdList_codec);
-            break;
-          }
-          case 56: {
-            AvatarEntityId = input.ReadUInt32();
-            break;
-          }
-          case 72: {
-            WeaponGuid = input.ReadUInt64();
-            break;
-          }
-          case 80: {
-            WeaponEntityId = input.ReadUInt32();
-            break;
-          }
-          case 98: {
+          case 10: {
             if (weaponAbilityInfo_ == null) {
               WeaponAbilityInfo = new global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo();
             }
             input.ReadMessage(WeaponAbilityInfo);
             break;
           }
-          case 104: {
+          case 40: {
+            WeaponEntityId = input.ReadUInt32();
+            break;
+          }
+          case 50: {
+            if (avatarAbilityInfo_ == null) {
+              AvatarAbilityInfo = new global::Weedwacker.Shared.Network.Proto.AbilitySyncStateInfo();
+            }
+            input.ReadMessage(AvatarAbilityInfo);
+            break;
+          }
+          case 58: {
+            serverBuffList_.AddEntriesFrom(ref input, _repeated_serverBuffList_codec);
+            break;
+          }
+          case 66:
+          case 64: {
+            buffIdList_.AddEntriesFrom(ref input, _repeated_buffIdList_codec);
+            break;
+          }
+          case 72: {
             AvatarGuid = input.ReadUInt64();
             break;
           }
-          case 114: {
-            serverBuffList_.AddEntriesFrom(ref input, _repeated_serverBuffList_codec);
+          case 104: {
+            AvatarEntityId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            WeaponGuid = input.ReadUInt64();
             break;
           }
         }

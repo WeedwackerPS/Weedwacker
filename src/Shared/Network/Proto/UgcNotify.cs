@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static UgcNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg9VZ2NOb3RpZnkucHJvdG8ibQoJVWdjTm90aWZ5EhoKEmlzX3VnY19wdWJs",
-            "aXNoX2JhbhgMIAEoCBIlCh1pc191Z2NfcHVibGlzaF9mZWF0dXJlX2Nsb3Nl",
-            "ZBgIIAEoCBIdChVpc191Z2NfZmVhdHVyZV9jbG9zZWQYDyABKAhCIqoCH1dl",
-            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Cg9VZ2NOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8iZAoJVWdjTm90aWZ5EhsKE1VuazMzMDBfSUJMRElOR0pKRkkYCCAB",
+            "KAgSHQoVaXNfdWdjX2ZlYXR1cmVfY2xvc2VkGAYgASgIEhsKE1VuazMzMDBf",
+            "S1BBQkpQTUxIQ0QYCSABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.UgcNotify), global::Weedwacker.Shared.Network.Proto.UgcNotify.Parser, new[]{ "IsUgcPublishBan", "IsUgcPublishFeatureClosed", "IsUgcFeatureClosed" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.UgcNotify), global::Weedwacker.Shared.Network.Proto.UgcNotify.Parser, new[]{ "Unk3300IBLDINGJJFI", "IsUgcFeatureClosed", "Unk3300KPABJPMLHCD" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 6341
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 6308;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class UgcNotify : pb::IMessage<UgcNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,9 +81,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UgcNotify(UgcNotify other) : this() {
-      isUgcPublishBan_ = other.isUgcPublishBan_;
-      isUgcPublishFeatureClosed_ = other.isUgcPublishFeatureClosed_;
+      unk3300IBLDINGJJFI_ = other.unk3300IBLDINGJJFI_;
       isUgcFeatureClosed_ = other.isUgcFeatureClosed_;
+      unk3300KPABJPMLHCD_ = other.unk3300KPABJPMLHCD_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,32 +93,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new UgcNotify(this);
     }
 
-    /// <summary>Field number for the "is_ugc_publish_ban" field.</summary>
-    public const int IsUgcPublishBanFieldNumber = 12;
-    private bool isUgcPublishBan_;
+    /// <summary>Field number for the "Unk3300_IBLDINGJJFI" field.</summary>
+    public const int Unk3300IBLDINGJJFIFieldNumber = 8;
+    private bool unk3300IBLDINGJJFI_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsUgcPublishBan {
-      get { return isUgcPublishBan_; }
+    public bool Unk3300IBLDINGJJFI {
+      get { return unk3300IBLDINGJJFI_; }
       set {
-        isUgcPublishBan_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_ugc_publish_feature_closed" field.</summary>
-    public const int IsUgcPublishFeatureClosedFieldNumber = 8;
-    private bool isUgcPublishFeatureClosed_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsUgcPublishFeatureClosed {
-      get { return isUgcPublishFeatureClosed_; }
-      set {
-        isUgcPublishFeatureClosed_ = value;
+        unk3300IBLDINGJJFI_ = value;
       }
     }
 
     /// <summary>Field number for the "is_ugc_feature_closed" field.</summary>
-    public const int IsUgcFeatureClosedFieldNumber = 15;
+    public const int IsUgcFeatureClosedFieldNumber = 6;
     private bool isUgcFeatureClosed_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,6 +114,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return isUgcFeatureClosed_; }
       set {
         isUgcFeatureClosed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_KPABJPMLHCD" field.</summary>
+    public const int Unk3300KPABJPMLHCDFieldNumber = 9;
+    private bool unk3300KPABJPMLHCD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300KPABJPMLHCD {
+      get { return unk3300KPABJPMLHCD_; }
+      set {
+        unk3300KPABJPMLHCD_ = value;
       }
     }
 
@@ -140,9 +144,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsUgcPublishBan != other.IsUgcPublishBan) return false;
-      if (IsUgcPublishFeatureClosed != other.IsUgcPublishFeatureClosed) return false;
+      if (Unk3300IBLDINGJJFI != other.Unk3300IBLDINGJJFI) return false;
       if (IsUgcFeatureClosed != other.IsUgcFeatureClosed) return false;
+      if (Unk3300KPABJPMLHCD != other.Unk3300KPABJPMLHCD) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,9 +154,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsUgcPublishBan != false) hash ^= IsUgcPublishBan.GetHashCode();
-      if (IsUgcPublishFeatureClosed != false) hash ^= IsUgcPublishFeatureClosed.GetHashCode();
+      if (Unk3300IBLDINGJJFI != false) hash ^= Unk3300IBLDINGJJFI.GetHashCode();
       if (IsUgcFeatureClosed != false) hash ^= IsUgcFeatureClosed.GetHashCode();
+      if (Unk3300KPABJPMLHCD != false) hash ^= Unk3300KPABJPMLHCD.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -171,17 +175,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsUgcPublishFeatureClosed != false) {
-        output.WriteRawTag(64);
-        output.WriteBool(IsUgcPublishFeatureClosed);
-      }
-      if (IsUgcPublishBan != false) {
-        output.WriteRawTag(96);
-        output.WriteBool(IsUgcPublishBan);
-      }
       if (IsUgcFeatureClosed != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(48);
         output.WriteBool(IsUgcFeatureClosed);
+      }
+      if (Unk3300IBLDINGJJFI != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(Unk3300IBLDINGJJFI);
+      }
+      if (Unk3300KPABJPMLHCD != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(Unk3300KPABJPMLHCD);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -193,17 +197,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsUgcPublishFeatureClosed != false) {
-        output.WriteRawTag(64);
-        output.WriteBool(IsUgcPublishFeatureClosed);
-      }
-      if (IsUgcPublishBan != false) {
-        output.WriteRawTag(96);
-        output.WriteBool(IsUgcPublishBan);
-      }
       if (IsUgcFeatureClosed != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(48);
         output.WriteBool(IsUgcFeatureClosed);
+      }
+      if (Unk3300IBLDINGJJFI != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(Unk3300IBLDINGJJFI);
+      }
+      if (Unk3300KPABJPMLHCD != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(Unk3300KPABJPMLHCD);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -215,13 +219,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsUgcPublishBan != false) {
-        size += 1 + 1;
-      }
-      if (IsUgcPublishFeatureClosed != false) {
+      if (Unk3300IBLDINGJJFI != false) {
         size += 1 + 1;
       }
       if (IsUgcFeatureClosed != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300KPABJPMLHCD != false) {
         size += 1 + 1;
       }
       if (_unknownFields != null) {
@@ -236,14 +240,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsUgcPublishBan != false) {
-        IsUgcPublishBan = other.IsUgcPublishBan;
-      }
-      if (other.IsUgcPublishFeatureClosed != false) {
-        IsUgcPublishFeatureClosed = other.IsUgcPublishFeatureClosed;
+      if (other.Unk3300IBLDINGJJFI != false) {
+        Unk3300IBLDINGJJFI = other.Unk3300IBLDINGJJFI;
       }
       if (other.IsUgcFeatureClosed != false) {
         IsUgcFeatureClosed = other.IsUgcFeatureClosed;
+      }
+      if (other.Unk3300KPABJPMLHCD != false) {
+        Unk3300KPABJPMLHCD = other.Unk3300KPABJPMLHCD;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -260,16 +264,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 64: {
-            IsUgcPublishFeatureClosed = input.ReadBool();
-            break;
-          }
-          case 96: {
-            IsUgcPublishBan = input.ReadBool();
-            break;
-          }
-          case 120: {
+          case 48: {
             IsUgcFeatureClosed = input.ReadBool();
+            break;
+          }
+          case 64: {
+            Unk3300IBLDINGJJFI = input.ReadBool();
+            break;
+          }
+          case 72: {
+            Unk3300KPABJPMLHCD = input.ReadBool();
             break;
           }
         }
@@ -287,16 +291,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 64: {
-            IsUgcPublishFeatureClosed = input.ReadBool();
-            break;
-          }
-          case 96: {
-            IsUgcPublishBan = input.ReadBool();
-            break;
-          }
-          case 120: {
+          case 48: {
             IsUgcFeatureClosed = input.ReadBool();
+            break;
+          }
+          case 64: {
+            Unk3300IBLDINGJJFI = input.ReadBool();
+            break;
+          }
+          case 72: {
+            Unk3300KPABJPMLHCD = input.ReadBool();
             break;
           }
         }

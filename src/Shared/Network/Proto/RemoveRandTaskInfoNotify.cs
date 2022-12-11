@@ -24,18 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static RemoveRandTaskInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5SZW1vdmVSYW5kVGFza0luZm9Ob3RpZnkucHJvdG8i8wEKGFJlbW92ZVJh",
-            "bmRUYXNrSW5mb05vdGlmeRIPCgdpc19zdWNjGAkgASgIEjYKBnJlYXNvbhgK",
-            "IAEoDjImLlJlbW92ZVJhbmRUYXNrSW5mb05vdGlmeS5GaW5pc2hSZWFzb24S",
-            "FAoMcmFuZF90YXNrX2lkGA0gASgNIngKDEZpbmlzaFJlYXNvbhIZChVGSU5J",
-            "U0hfUkVBU09OX0RFRkFVTFQQABIXChNGSU5JU0hfUkVBU09OX0NMRUFSEAES",
-            "GgoWRklOSVNIX1JFQVNPTl9ESVNUQU5DRRACEhgKFEZJTklTSF9SRUFTT05f",
-            "RklOSVNIEANCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9i",
-            "BnByb3RvMw=="));
+            "Ch5SZW1vdmVSYW5kVGFza0luZm9Ob3RpZnkucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8ikwIKGFJlbW92ZVJhbmRUYXNrSW5mb05v",
+            "dGlmeRIUCgxyYW5kX3Rhc2tfaWQYCiABKA0SVgoGcmVhc29uGA0gASgOMkYu",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5SZW1vdmVSYW5kVGFz",
+            "a0luZm9Ob3RpZnkuRmluaXNoUmVhc29uEg8KB2lzX3N1Y2MYBSABKAgieAoM",
+            "RmluaXNoUmVhc29uEhkKFUZJTklTSF9SRUFTT05fREVGQVVMVBAAEhcKE0ZJ",
+            "TklTSF9SRUFTT05fQ0xFQVIQARIaChZGSU5JU0hfUkVBU09OX0RJU1RBTkNF",
+            "EAISGAoURklOSVNIX1JFQVNPTl9GSU5JU0gQA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RemoveRandTaskInfoNotify), global::Weedwacker.Shared.Network.Proto.RemoveRandTaskInfoNotify.Parser, new[]{ "IsSucc", "Reason", "RandTaskId" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.RemoveRandTaskInfoNotify.Types.FinishReason) }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RemoveRandTaskInfoNotify), global::Weedwacker.Shared.Network.Proto.RemoveRandTaskInfoNotify.Parser, new[]{ "RandTaskId", "Reason", "IsSucc" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.RemoveRandTaskInfoNotify.Types.FinishReason) }, null, null)
           }));
     }
     #endregion
@@ -43,9 +43,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 161
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 198;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class RemoveRandTaskInfoNotify : pb::IMessage<RemoveRandTaskInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -81,9 +85,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RemoveRandTaskInfoNotify(RemoveRandTaskInfoNotify other) : this() {
-      isSucc_ = other.isSucc_;
-      reason_ = other.reason_;
       randTaskId_ = other.randTaskId_;
+      reason_ = other.reason_;
+      isSucc_ = other.isSucc_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,20 +97,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new RemoveRandTaskInfoNotify(this);
     }
 
-    /// <summary>Field number for the "is_succ" field.</summary>
-    public const int IsSuccFieldNumber = 9;
-    private bool isSucc_;
+    /// <summary>Field number for the "rand_task_id" field.</summary>
+    public const int RandTaskIdFieldNumber = 10;
+    private uint randTaskId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsSucc {
-      get { return isSucc_; }
+    public uint RandTaskId {
+      get { return randTaskId_; }
       set {
-        isSucc_ = value;
+        randTaskId_ = value;
       }
     }
 
     /// <summary>Field number for the "reason" field.</summary>
-    public const int ReasonFieldNumber = 10;
+    public const int ReasonFieldNumber = 13;
     private global::Weedwacker.Shared.Network.Proto.RemoveRandTaskInfoNotify.Types.FinishReason reason_ = global::Weedwacker.Shared.Network.Proto.RemoveRandTaskInfoNotify.Types.FinishReason.Default;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -117,15 +121,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "rand_task_id" field.</summary>
-    public const int RandTaskIdFieldNumber = 13;
-    private uint randTaskId_;
+    /// <summary>Field number for the "is_succ" field.</summary>
+    public const int IsSuccFieldNumber = 5;
+    private bool isSucc_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RandTaskId {
-      get { return randTaskId_; }
+    public bool IsSucc {
+      get { return isSucc_; }
       set {
-        randTaskId_ = value;
+        isSucc_ = value;
       }
     }
 
@@ -144,9 +148,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsSucc != other.IsSucc) return false;
-      if (Reason != other.Reason) return false;
       if (RandTaskId != other.RandTaskId) return false;
+      if (Reason != other.Reason) return false;
+      if (IsSucc != other.IsSucc) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -154,9 +158,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsSucc != false) hash ^= IsSucc.GetHashCode();
-      if (Reason != global::Weedwacker.Shared.Network.Proto.RemoveRandTaskInfoNotify.Types.FinishReason.Default) hash ^= Reason.GetHashCode();
       if (RandTaskId != 0) hash ^= RandTaskId.GetHashCode();
+      if (Reason != global::Weedwacker.Shared.Network.Proto.RemoveRandTaskInfoNotify.Types.FinishReason.Default) hash ^= Reason.GetHashCode();
+      if (IsSucc != false) hash ^= IsSucc.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -176,16 +180,16 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (IsSucc != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(40);
         output.WriteBool(IsSucc);
       }
-      if (Reason != global::Weedwacker.Shared.Network.Proto.RemoveRandTaskInfoNotify.Types.FinishReason.Default) {
-        output.WriteRawTag(80);
-        output.WriteEnum((int) Reason);
-      }
       if (RandTaskId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(80);
         output.WriteUInt32(RandTaskId);
+      }
+      if (Reason != global::Weedwacker.Shared.Network.Proto.RemoveRandTaskInfoNotify.Types.FinishReason.Default) {
+        output.WriteRawTag(104);
+        output.WriteEnum((int) Reason);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -198,16 +202,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (IsSucc != false) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(40);
         output.WriteBool(IsSucc);
       }
-      if (Reason != global::Weedwacker.Shared.Network.Proto.RemoveRandTaskInfoNotify.Types.FinishReason.Default) {
-        output.WriteRawTag(80);
-        output.WriteEnum((int) Reason);
-      }
       if (RandTaskId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(80);
         output.WriteUInt32(RandTaskId);
+      }
+      if (Reason != global::Weedwacker.Shared.Network.Proto.RemoveRandTaskInfoNotify.Types.FinishReason.Default) {
+        output.WriteRawTag(104);
+        output.WriteEnum((int) Reason);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -219,14 +223,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsSucc != false) {
-        size += 1 + 1;
+      if (RandTaskId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RandTaskId);
       }
       if (Reason != global::Weedwacker.Shared.Network.Proto.RemoveRandTaskInfoNotify.Types.FinishReason.Default) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
       }
-      if (RandTaskId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RandTaskId);
+      if (IsSucc != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -240,14 +244,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsSucc != false) {
-        IsSucc = other.IsSucc;
+      if (other.RandTaskId != 0) {
+        RandTaskId = other.RandTaskId;
       }
       if (other.Reason != global::Weedwacker.Shared.Network.Proto.RemoveRandTaskInfoNotify.Types.FinishReason.Default) {
         Reason = other.Reason;
       }
-      if (other.RandTaskId != 0) {
-        RandTaskId = other.RandTaskId;
+      if (other.IsSucc != false) {
+        IsSucc = other.IsSucc;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -264,16 +268,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 72: {
+          case 40: {
             IsSucc = input.ReadBool();
             break;
           }
           case 80: {
-            Reason = (global::Weedwacker.Shared.Network.Proto.RemoveRandTaskInfoNotify.Types.FinishReason) input.ReadEnum();
+            RandTaskId = input.ReadUInt32();
             break;
           }
           case 104: {
-            RandTaskId = input.ReadUInt32();
+            Reason = (global::Weedwacker.Shared.Network.Proto.RemoveRandTaskInfoNotify.Types.FinishReason) input.ReadEnum();
             break;
           }
         }
@@ -291,16 +295,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 72: {
+          case 40: {
             IsSucc = input.ReadBool();
             break;
           }
           case 80: {
-            Reason = (global::Weedwacker.Shared.Network.Proto.RemoveRandTaskInfoNotify.Types.FinishReason) input.ReadEnum();
+            RandTaskId = input.ReadUInt32();
             break;
           }
           case 104: {
-            RandTaskId = input.ReadUInt32();
+            Reason = (global::Weedwacker.Shared.Network.Proto.RemoveRandTaskInfoNotify.Types.FinishReason) input.ReadEnum();
             break;
           }
         }

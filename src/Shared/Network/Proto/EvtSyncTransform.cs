@@ -24,14 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static EvtSyncTransformReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZFdnRTeW5jVHJhbnNmb3JtLnByb3RvGgxWZWN0b3IucHJvdG8iXwoQRXZ0",
-            "U3luY1RyYW5zZm9ybRIRCgllbnRpdHlfaWQYDyABKA0SGwoKZW50aXR5X3Bv",
-            "cxgGIAEoCzIHLlZlY3RvchIbCgplbnRpdHlfcm90GAEgASgLMgcuVmVjdG9y",
-            "QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChZFdnRTeW5jVHJhbnNmb3JtLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvGgxWZWN0b3IucHJvdG8isQEKEEV2dFN5bmNUcmFuc2Zv",
+            "cm0SRAoTVW5rMzMwMF9KQU1LTE5GQkJBRBgPIAEoCzInLldlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8uVmVjdG9yEhEKCWVudGl0eV9pZBgNIAEo",
+            "DRJEChNVbmszMzAwX1BNSEZMQ09QRkJDGAkgASgLMicuV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90by5WZWN0b3JiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EvtSyncTransform), global::Weedwacker.Shared.Network.Proto.EvtSyncTransform.Parser, new[]{ "EntityId", "EntityPos", "EntityRot" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EvtSyncTransform), global::Weedwacker.Shared.Network.Proto.EvtSyncTransform.Parser, new[]{ "Unk3300JAMKLNFBBAD", "EntityId", "Unk3300PMHFLCOPFBC" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,9 +74,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EvtSyncTransform(EvtSyncTransform other) : this() {
+      unk3300JAMKLNFBBAD_ = other.unk3300JAMKLNFBBAD_ != null ? other.unk3300JAMKLNFBBAD_.Clone() : null;
       entityId_ = other.entityId_;
-      entityPos_ = other.entityPos_ != null ? other.entityPos_.Clone() : null;
-      entityRot_ = other.entityRot_ != null ? other.entityRot_.Clone() : null;
+      unk3300PMHFLCOPFBC_ = other.unk3300PMHFLCOPFBC_ != null ? other.unk3300PMHFLCOPFBC_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,8 +86,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new EvtSyncTransform(this);
     }
 
+    /// <summary>Field number for the "Unk3300_JAMKLNFBBAD" field.</summary>
+    public const int Unk3300JAMKLNFBBADFieldNumber = 15;
+    private global::Weedwacker.Shared.Network.Proto.Vector unk3300JAMKLNFBBAD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector Unk3300JAMKLNFBBAD {
+      get { return unk3300JAMKLNFBBAD_; }
+      set {
+        unk3300JAMKLNFBBAD_ = value;
+      }
+    }
+
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 15;
+    public const int EntityIdFieldNumber = 13;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -96,27 +110,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "entity_pos" field.</summary>
-    public const int EntityPosFieldNumber = 6;
-    private global::Weedwacker.Shared.Network.Proto.Vector entityPos_;
+    /// <summary>Field number for the "Unk3300_PMHFLCOPFBC" field.</summary>
+    public const int Unk3300PMHFLCOPFBCFieldNumber = 9;
+    private global::Weedwacker.Shared.Network.Proto.Vector unk3300PMHFLCOPFBC_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector EntityPos {
-      get { return entityPos_; }
+    public global::Weedwacker.Shared.Network.Proto.Vector Unk3300PMHFLCOPFBC {
+      get { return unk3300PMHFLCOPFBC_; }
       set {
-        entityPos_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "entity_rot" field.</summary>
-    public const int EntityRotFieldNumber = 1;
-    private global::Weedwacker.Shared.Network.Proto.Vector entityRot_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector EntityRot {
-      get { return entityRot_; }
-      set {
-        entityRot_ = value;
+        unk3300PMHFLCOPFBC_ = value;
       }
     }
 
@@ -135,9 +137,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (!object.Equals(Unk3300JAMKLNFBBAD, other.Unk3300JAMKLNFBBAD)) return false;
       if (EntityId != other.EntityId) return false;
-      if (!object.Equals(EntityPos, other.EntityPos)) return false;
-      if (!object.Equals(EntityRot, other.EntityRot)) return false;
+      if (!object.Equals(Unk3300PMHFLCOPFBC, other.Unk3300PMHFLCOPFBC)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -145,9 +147,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (unk3300JAMKLNFBBAD_ != null) hash ^= Unk3300JAMKLNFBBAD.GetHashCode();
       if (EntityId != 0) hash ^= EntityId.GetHashCode();
-      if (entityPos_ != null) hash ^= EntityPos.GetHashCode();
-      if (entityRot_ != null) hash ^= EntityRot.GetHashCode();
+      if (unk3300PMHFLCOPFBC_ != null) hash ^= Unk3300PMHFLCOPFBC.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -166,17 +168,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (entityRot_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(EntityRot);
-      }
-      if (entityPos_ != null) {
-        output.WriteRawTag(50);
-        output.WriteMessage(EntityPos);
+      if (unk3300PMHFLCOPFBC_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(Unk3300PMHFLCOPFBC);
       }
       if (EntityId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(104);
         output.WriteUInt32(EntityId);
+      }
+      if (unk3300JAMKLNFBBAD_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(Unk3300JAMKLNFBBAD);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -188,17 +190,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (entityRot_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(EntityRot);
-      }
-      if (entityPos_ != null) {
-        output.WriteRawTag(50);
-        output.WriteMessage(EntityPos);
+      if (unk3300PMHFLCOPFBC_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(Unk3300PMHFLCOPFBC);
       }
       if (EntityId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(104);
         output.WriteUInt32(EntityId);
+      }
+      if (unk3300JAMKLNFBBAD_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(Unk3300JAMKLNFBBAD);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -210,14 +212,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (unk3300JAMKLNFBBAD_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300JAMKLNFBBAD);
+      }
       if (EntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
       }
-      if (entityPos_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(EntityPos);
-      }
-      if (entityRot_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(EntityRot);
+      if (unk3300PMHFLCOPFBC_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300PMHFLCOPFBC);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -231,20 +233,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.unk3300JAMKLNFBBAD_ != null) {
+        if (unk3300JAMKLNFBBAD_ == null) {
+          Unk3300JAMKLNFBBAD = new global::Weedwacker.Shared.Network.Proto.Vector();
+        }
+        Unk3300JAMKLNFBBAD.MergeFrom(other.Unk3300JAMKLNFBBAD);
+      }
       if (other.EntityId != 0) {
         EntityId = other.EntityId;
       }
-      if (other.entityPos_ != null) {
-        if (entityPos_ == null) {
-          EntityPos = new global::Weedwacker.Shared.Network.Proto.Vector();
+      if (other.unk3300PMHFLCOPFBC_ != null) {
+        if (unk3300PMHFLCOPFBC_ == null) {
+          Unk3300PMHFLCOPFBC = new global::Weedwacker.Shared.Network.Proto.Vector();
         }
-        EntityPos.MergeFrom(other.EntityPos);
-      }
-      if (other.entityRot_ != null) {
-        if (entityRot_ == null) {
-          EntityRot = new global::Weedwacker.Shared.Network.Proto.Vector();
-        }
-        EntityRot.MergeFrom(other.EntityRot);
+        Unk3300PMHFLCOPFBC.MergeFrom(other.Unk3300PMHFLCOPFBC);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -261,22 +263,22 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            if (entityRot_ == null) {
-              EntityRot = new global::Weedwacker.Shared.Network.Proto.Vector();
+          case 74: {
+            if (unk3300PMHFLCOPFBC_ == null) {
+              Unk3300PMHFLCOPFBC = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
-            input.ReadMessage(EntityRot);
+            input.ReadMessage(Unk3300PMHFLCOPFBC);
             break;
           }
-          case 50: {
-            if (entityPos_ == null) {
-              EntityPos = new global::Weedwacker.Shared.Network.Proto.Vector();
-            }
-            input.ReadMessage(EntityPos);
-            break;
-          }
-          case 120: {
+          case 104: {
             EntityId = input.ReadUInt32();
+            break;
+          }
+          case 122: {
+            if (unk3300JAMKLNFBBAD_ == null) {
+              Unk3300JAMKLNFBBAD = new global::Weedwacker.Shared.Network.Proto.Vector();
+            }
+            input.ReadMessage(Unk3300JAMKLNFBBAD);
             break;
           }
         }
@@ -294,22 +296,22 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            if (entityRot_ == null) {
-              EntityRot = new global::Weedwacker.Shared.Network.Proto.Vector();
+          case 74: {
+            if (unk3300PMHFLCOPFBC_ == null) {
+              Unk3300PMHFLCOPFBC = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
-            input.ReadMessage(EntityRot);
+            input.ReadMessage(Unk3300PMHFLCOPFBC);
             break;
           }
-          case 50: {
-            if (entityPos_ == null) {
-              EntityPos = new global::Weedwacker.Shared.Network.Proto.Vector();
-            }
-            input.ReadMessage(EntityPos);
-            break;
-          }
-          case 120: {
+          case 104: {
             EntityId = input.ReadUInt32();
+            break;
+          }
+          case 122: {
+            if (unk3300JAMKLNFBBAD_ == null) {
+              Unk3300JAMKLNFBBAD = new global::Weedwacker.Shared.Network.Proto.Vector();
+            }
+            input.ReadMessage(Unk3300JAMKLNFBBAD);
             break;
           }
         }

@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static DynamicLayerNodesReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdEeW5hbWljTGF5ZXJOb2Rlcy5wcm90bxoURHluYW1pY1NWT05vZGUucHJv",
-            "dG8iQgoRRHluYW1pY0xheWVyTm9kZXMSDQoFbGV2ZWwYCiABKAUSHgoFbm9k",
-            "ZXMYBiADKAsyDy5EeW5hbWljU1ZPTm9kZUIiqgIfV2VlZHdhY2tlci5TaGFy",
-            "ZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChdEeW5hbWljTGF5ZXJOb2Rlcy5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxoURHluYW1pY1NWT05vZGUucHJvdG8iYgoRRHluYW1p",
+            "Y0xheWVyTm9kZXMSDQoFbGV2ZWwYByABKAUSPgoFbm9kZXMYBCADKAsyLy5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkR5bmFtaWNTVk9Ob2Rl",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.DynamicSVONodeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +85,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "level" field.</summary>
-    public const int LevelFieldNumber = 10;
+    public const int LevelFieldNumber = 7;
     private int level_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -96,9 +97,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "nodes" field.</summary>
-    public const int NodesFieldNumber = 6;
+    public const int NodesFieldNumber = 4;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.DynamicSVONode> _repeated_nodes_codec
-        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.DynamicSVONode.Parser);
+        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.DynamicSVONode.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DynamicSVONode> nodes_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DynamicSVONode>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -152,7 +153,7 @@ namespace Weedwacker.Shared.Network.Proto {
     #else
       nodes_.WriteTo(output, _repeated_nodes_codec);
       if (Level != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(56);
         output.WriteInt32(Level);
       }
       if (_unknownFields != null) {
@@ -167,7 +168,7 @@ namespace Weedwacker.Shared.Network.Proto {
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       nodes_.WriteTo(ref output, _repeated_nodes_codec);
       if (Level != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(56);
         output.WriteInt32(Level);
       }
       if (_unknownFields != null) {
@@ -215,11 +216,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 50: {
+          case 34: {
             nodes_.AddEntriesFrom(input, _repeated_nodes_codec);
             break;
           }
-          case 80: {
+          case 56: {
             Level = input.ReadInt32();
             break;
           }
@@ -238,11 +239,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 50: {
+          case 34: {
             nodes_.AddEntriesFrom(ref input, _repeated_nodes_codec);
             break;
           }
-          case 80: {
+          case 56: {
             Level = input.ReadInt32();
             break;
           }

@@ -24,13 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static FungusRenameReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVGdW5ndXNSZW5hbWVSZXEucHJvdG8iNQoPRnVuZ3VzUmVuYW1lUmVxEg8K",
-            "B25hbWVfaWQYASABKA0SEQoJZnVuZ3VzX2lkGAsgASgNQiKqAh9XZWVkd2Fj",
-            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChVGdW5ndXNSZW5hbWVSZXEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8iNQoPRnVuZ3VzUmVuYW1lUmVxEhEKCWZ1bmd1c19pZBgM",
+            "IAEoDRIPCgduYW1lX2lkGAsgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FungusRenameReq), global::Weedwacker.Shared.Network.Proto.FungusRenameReq.Parser, new[]{ "NameId", "FungusId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FungusRenameReq), global::Weedwacker.Shared.Network.Proto.FungusRenameReq.Parser, new[]{ "FungusId", "NameId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -38,10 +38,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 22006
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 22498;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class FungusRenameReq : pb::IMessage<FungusRenameReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +81,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FungusRenameReq(FungusRenameReq other) : this() {
-      nameId_ = other.nameId_;
       fungusId_ = other.fungusId_;
+      nameId_ = other.nameId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,20 +92,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new FungusRenameReq(this);
     }
 
-    /// <summary>Field number for the "name_id" field.</summary>
-    public const int NameIdFieldNumber = 1;
-    private uint nameId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint NameId {
-      get { return nameId_; }
-      set {
-        nameId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "fungus_id" field.</summary>
-    public const int FungusIdFieldNumber = 11;
+    public const int FungusIdFieldNumber = 12;
     private uint fungusId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,6 +101,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return fungusId_; }
       set {
         fungusId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "name_id" field.</summary>
+    public const int NameIdFieldNumber = 11;
+    private uint nameId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint NameId {
+      get { return nameId_; }
+      set {
+        nameId_ = value;
       }
     }
 
@@ -127,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (NameId != other.NameId) return false;
       if (FungusId != other.FungusId) return false;
+      if (NameId != other.NameId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (NameId != 0) hash ^= NameId.GetHashCode();
       if (FungusId != 0) hash ^= FungusId.GetHashCode();
+      if (NameId != 0) hash ^= NameId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -157,11 +161,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (NameId != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(88);
         output.WriteUInt32(NameId);
       }
       if (FungusId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(96);
         output.WriteUInt32(FungusId);
       }
       if (_unknownFields != null) {
@@ -175,11 +179,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (NameId != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(88);
         output.WriteUInt32(NameId);
       }
       if (FungusId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(96);
         output.WriteUInt32(FungusId);
       }
       if (_unknownFields != null) {
@@ -192,11 +196,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (NameId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NameId);
-      }
       if (FungusId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FungusId);
+      }
+      if (NameId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NameId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -210,11 +214,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.NameId != 0) {
-        NameId = other.NameId;
-      }
       if (other.FungusId != 0) {
         FungusId = other.FungusId;
+      }
+      if (other.NameId != 0) {
+        NameId = other.NameId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -231,11 +235,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 88: {
             NameId = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 96: {
             FungusId = input.ReadUInt32();
             break;
           }
@@ -254,11 +258,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 88: {
             NameId = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 96: {
             FungusId = input.ReadUInt32();
             break;
           }

@@ -81,7 +81,7 @@ namespace Weedwacker.GameServer.Systems.Avatar
                 await Owner.TeamManager.AddToTeamAsync(avatar);
                 if (Owner.World != null)
                 {
-                    await Owner.TeamManager.UpdateTeamEntities();
+                    await Owner.TeamManager.UpdateTeamEntitiesAsync();
                 }
             }
 

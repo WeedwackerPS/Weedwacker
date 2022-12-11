@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeExchangeWoodReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlIb21lRXhjaGFuZ2VXb29kUmVxLnByb3RvIqcBChNIb21lRXhjaGFuZ2VX",
-            "b29kUmVxEkYKEm1hdGVyaWFsX2NvdW50X21hcBgDIAMoCzIqLkhvbWVFeGNo",
-            "YW5nZVdvb2RSZXEuTWF0ZXJpYWxDb3VudE1hcEVudHJ5Eg8KB3dvb2RfaWQY",
-            "DCABKA0aNwoVTWF0ZXJpYWxDb3VudE1hcEVudHJ5EgsKA2tleRgBIAEoDRIN",
-            "CgV2YWx1ZRgCIAEoDToCOAFCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
-            "cmsuUHJvdG9iBnByb3RvMw=="));
+            "ChlIb21lRXhjaGFuZ2VXb29kUmVxLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvIscBChNIb21lRXhjaGFuZ2VXb29kUmVxEg8KB3dv",
+            "b2RfaWQYASABKA0SZgoSbWF0ZXJpYWxfY291bnRfbWFwGAQgAygLMkouV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5Ib21lRXhjaGFuZ2VXb29k",
+            "UmVxLk1hdGVyaWFsQ291bnRNYXBFbnRyeRo3ChVNYXRlcmlhbENvdW50TWFw",
+            "RW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeExchangeWoodReq), global::Weedwacker.Shared.Network.Proto.HomeExchangeWoodReq.Parser, new[]{ "MaterialCountMap", "WoodId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeExchangeWoodReq), global::Weedwacker.Shared.Network.Proto.HomeExchangeWoodReq.Parser, new[]{ "WoodId", "MaterialCountMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -41,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4576
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4808;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class HomeExchangeWoodReq : pb::IMessage<HomeExchangeWoodReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,8 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeExchangeWoodReq(HomeExchangeWoodReq other) : this() {
-      materialCountMap_ = other.materialCountMap_.Clone();
       woodId_ = other.woodId_;
+      materialCountMap_ = other.materialCountMap_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,19 +95,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new HomeExchangeWoodReq(this);
     }
 
-    /// <summary>Field number for the "material_count_map" field.</summary>
-    public const int MaterialCountMapFieldNumber = 3;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_materialCountMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 26);
-    private readonly pbc::MapField<uint, uint> materialCountMap_ = new pbc::MapField<uint, uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> MaterialCountMap {
-      get { return materialCountMap_; }
-    }
-
     /// <summary>Field number for the "wood_id" field.</summary>
-    public const int WoodIdFieldNumber = 12;
+    public const int WoodIdFieldNumber = 1;
     private uint woodId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -112,6 +105,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         woodId_ = value;
       }
+    }
+
+    /// <summary>Field number for the "material_count_map" field.</summary>
+    public const int MaterialCountMapFieldNumber = 4;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_materialCountMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 34);
+    private readonly pbc::MapField<uint, uint> materialCountMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> MaterialCountMap {
+      get { return materialCountMap_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -129,8 +133,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!MaterialCountMap.Equals(other.MaterialCountMap)) return false;
       if (WoodId != other.WoodId) return false;
+      if (!MaterialCountMap.Equals(other.MaterialCountMap)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -138,8 +142,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= MaterialCountMap.GetHashCode();
       if (WoodId != 0) hash ^= WoodId.GetHashCode();
+      hash ^= MaterialCountMap.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -158,11 +162,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      materialCountMap_.WriteTo(output, _map_materialCountMap_codec);
       if (WoodId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(8);
         output.WriteUInt32(WoodId);
       }
+      materialCountMap_.WriteTo(output, _map_materialCountMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -173,11 +177,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      materialCountMap_.WriteTo(ref output, _map_materialCountMap_codec);
       if (WoodId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(8);
         output.WriteUInt32(WoodId);
       }
+      materialCountMap_.WriteTo(ref output, _map_materialCountMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -188,10 +192,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += materialCountMap_.CalculateSize(_map_materialCountMap_codec);
       if (WoodId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WoodId);
       }
+      size += materialCountMap_.CalculateSize(_map_materialCountMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -204,10 +208,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      materialCountMap_.Add(other.materialCountMap_);
       if (other.WoodId != 0) {
         WoodId = other.WoodId;
       }
+      materialCountMap_.Add(other.materialCountMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -223,12 +227,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
-            materialCountMap_.AddEntriesFrom(input, _map_materialCountMap_codec);
+          case 8: {
+            WoodId = input.ReadUInt32();
             break;
           }
-          case 96: {
-            WoodId = input.ReadUInt32();
+          case 34: {
+            materialCountMap_.AddEntriesFrom(input, _map_materialCountMap_codec);
             break;
           }
         }
@@ -246,12 +250,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
-            materialCountMap_.AddEntriesFrom(ref input, _map_materialCountMap_codec);
+          case 8: {
+            WoodId = input.ReadUInt32();
             break;
           }
-          case 96: {
-            WoodId = input.ReadUInt32();
+          case 34: {
+            materialCountMap_.AddEntriesFrom(ref input, _map_materialCountMap_codec);
             break;
           }
         }

@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeGetOnlineStatusRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxIb21lR2V0T25saW5lU3RhdHVzUnNwLnByb3RvGhZPbmxpbmVQbGF5ZXJJ",
-            "bmZvLnByb3RvIlYKFkhvbWVHZXRPbmxpbmVTdGF0dXNSc3ASKwoQcGxheWVy",
-            "X2luZm9fbGlzdBgNIAMoCzIRLk9ubGluZVBsYXllckluZm8SDwoHcmV0Y29k",
-            "ZRgHIAEoBUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IG",
-            "cHJvdG8z"));
+            "ChxIb21lR2V0T25saW5lU3RhdHVzUnNwLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhZPbmxpbmVQbGF5ZXJJbmZvLnByb3RvInYK",
+            "FkhvbWVHZXRPbmxpbmVTdGF0dXNSc3ASDwoHcmV0Y29kZRgBIAEoBRJLChBw",
+            "bGF5ZXJfaW5mb19saXN0GAIgAygLMjEuV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5PbmxpbmVQbGF5ZXJJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeGetOnlineStatusRsp), global::Weedwacker.Shared.Network.Proto.HomeGetOnlineStatusRsp.Parser, new[]{ "PlayerInfoList", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeGetOnlineStatusRsp), global::Weedwacker.Shared.Network.Proto.HomeGetOnlineStatusRsp.Parser, new[]{ "Retcode", "PlayerInfoList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4705
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4649;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class HomeGetOnlineStatusRsp : pb::IMessage<HomeGetOnlineStatusRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeGetOnlineStatusRsp(HomeGetOnlineStatusRsp other) : this() {
-      playerInfoList_ = other.playerInfoList_.Clone();
       retcode_ = other.retcode_;
+      playerInfoList_ = other.playerInfoList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,19 +93,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new HomeGetOnlineStatusRsp(this);
     }
 
-    /// <summary>Field number for the "player_info_list" field.</summary>
-    public const int PlayerInfoListFieldNumber = 13;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo> _repeated_playerInfoList_codec
-        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo> playerInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo> PlayerInfoList {
-      get { return playerInfoList_; }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 7;
+    public const int RetcodeFieldNumber = 1;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,6 +103,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         retcode_ = value;
       }
+    }
+
+    /// <summary>Field number for the "player_info_list" field.</summary>
+    public const int PlayerInfoListFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo> _repeated_playerInfoList_codec
+        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo> playerInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo> PlayerInfoList {
+      get { return playerInfoList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!playerInfoList_.Equals(other.playerInfoList_)) return false;
       if (Retcode != other.Retcode) return false;
+      if(!playerInfoList_.Equals(other.playerInfoList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= playerInfoList_.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      hash ^= playerInfoList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -157,7 +161,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Retcode != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(8);
         output.WriteInt32(Retcode);
       }
       playerInfoList_.WriteTo(output, _repeated_playerInfoList_codec);
@@ -172,7 +176,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Retcode != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(8);
         output.WriteInt32(Retcode);
       }
       playerInfoList_.WriteTo(ref output, _repeated_playerInfoList_codec);
@@ -186,10 +190,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += playerInfoList_.CalculateSize(_repeated_playerInfoList_codec);
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
+      size += playerInfoList_.CalculateSize(_repeated_playerInfoList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -202,10 +206,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      playerInfoList_.Add(other.playerInfoList_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
+      playerInfoList_.Add(other.playerInfoList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -221,11 +225,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
+          case 8: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 106: {
+          case 18: {
             playerInfoList_.AddEntriesFrom(input, _repeated_playerInfoList_codec);
             break;
           }
@@ -244,11 +248,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
+          case 8: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 106: {
+          case 18: {
             playerInfoList_.AddEntriesFrom(ref input, _repeated_playerInfoList_codec);
             break;
           }

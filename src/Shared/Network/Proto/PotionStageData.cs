@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static PotionStageDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVQb3Rpb25TdGFnZURhdGEucHJvdG8aFVBvdGlvbkxldmVsRGF0YS5wcm90",
-            "byKcAQoPUG90aW9uU3RhZ2VEYXRhEhAKCHN0YWdlX2lkGAsgASgNEh4KFmNv",
-            "b2xfZG93bl9idWZmX2lkX2xpc3QYAiADKA0SDwoHaXNfb3BlbhgPIAEoCBIk",
-            "CgpsZXZlbF9saXN0GA4gAygLMhAuUG90aW9uTGV2ZWxEYXRhEiAKGGNvb2xf",
-            "ZG93bl9hdmF0YXJfaWRfbGlzdBgNIAMoDUIiqgIfV2VlZHdhY2tlci5TaGFy",
-            "ZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChVQb3Rpb25TdGFnZURhdGEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8aFVBvdGlvbkxldmVsRGF0YS5wcm90byK0AQoPUG90aW9u",
+            "U3RhZ2VEYXRhEhsKE1VuazMzMDBfQk1FSEpIRkNQTUEYByADKA0SGwoTVW5r",
+            "MzMwMF9OTE1FUFBQTUNLSRgJIAMoDRIQCghzdGFnZV9pZBgNIAEoDRIPCgdp",
+            "c19vcGVuGAggASgIEkQKCmxldmVsX2xpc3QYCyADKAsyMC5XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvLlBvdGlvbkxldmVsRGF0YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.PotionLevelDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PotionStageData), global::Weedwacker.Shared.Network.Proto.PotionStageData.Parser, new[]{ "StageId", "CoolDownBuffIdList", "IsOpen", "LevelList", "CoolDownAvatarIdList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PotionStageData), global::Weedwacker.Shared.Network.Proto.PotionStageData.Parser, new[]{ "Unk3300BMEHJHFCPMA", "Unk3300NLMEPPPMCKI", "StageId", "IsOpen", "LevelList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,11 +74,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PotionStageData(PotionStageData other) : this() {
+      unk3300BMEHJHFCPMA_ = other.unk3300BMEHJHFCPMA_.Clone();
+      unk3300NLMEPPPMCKI_ = other.unk3300NLMEPPPMCKI_.Clone();
       stageId_ = other.stageId_;
-      coolDownBuffIdList_ = other.coolDownBuffIdList_.Clone();
       isOpen_ = other.isOpen_;
       levelList_ = other.levelList_.Clone();
-      coolDownAvatarIdList_ = other.coolDownAvatarIdList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,8 +88,30 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PotionStageData(this);
     }
 
+    /// <summary>Field number for the "Unk3300_BMEHJHFCPMA" field.</summary>
+    public const int Unk3300BMEHJHFCPMAFieldNumber = 7;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300BMEHJHFCPMA_codec
+        = pb::FieldCodec.ForUInt32(58);
+    private readonly pbc::RepeatedField<uint> unk3300BMEHJHFCPMA_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300BMEHJHFCPMA {
+      get { return unk3300BMEHJHFCPMA_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_NLMEPPPMCKI" field.</summary>
+    public const int Unk3300NLMEPPPMCKIFieldNumber = 9;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300NLMEPPPMCKI_codec
+        = pb::FieldCodec.ForUInt32(74);
+    private readonly pbc::RepeatedField<uint> unk3300NLMEPPPMCKI_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300NLMEPPPMCKI {
+      get { return unk3300NLMEPPPMCKI_; }
+    }
+
     /// <summary>Field number for the "stage_id" field.</summary>
-    public const int StageIdFieldNumber = 11;
+    public const int StageIdFieldNumber = 13;
     private uint stageId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -100,19 +122,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "cool_down_buff_id_list" field.</summary>
-    public const int CoolDownBuffIdListFieldNumber = 2;
-    private static readonly pb::FieldCodec<uint> _repeated_coolDownBuffIdList_codec
-        = pb::FieldCodec.ForUInt32(18);
-    private readonly pbc::RepeatedField<uint> coolDownBuffIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> CoolDownBuffIdList {
-      get { return coolDownBuffIdList_; }
-    }
-
     /// <summary>Field number for the "is_open" field.</summary>
-    public const int IsOpenFieldNumber = 15;
+    public const int IsOpenFieldNumber = 8;
     private bool isOpen_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -124,25 +135,14 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "level_list" field.</summary>
-    public const int LevelListFieldNumber = 14;
+    public const int LevelListFieldNumber = 11;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.PotionLevelData> _repeated_levelList_codec
-        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.PotionLevelData.Parser);
+        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.PotionLevelData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PotionLevelData> levelList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PotionLevelData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PotionLevelData> LevelList {
       get { return levelList_; }
-    }
-
-    /// <summary>Field number for the "cool_down_avatar_id_list" field.</summary>
-    public const int CoolDownAvatarIdListFieldNumber = 13;
-    private static readonly pb::FieldCodec<uint> _repeated_coolDownAvatarIdList_codec
-        = pb::FieldCodec.ForUInt32(106);
-    private readonly pbc::RepeatedField<uint> coolDownAvatarIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> CoolDownAvatarIdList {
-      get { return coolDownAvatarIdList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -160,11 +160,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if(!unk3300BMEHJHFCPMA_.Equals(other.unk3300BMEHJHFCPMA_)) return false;
+      if(!unk3300NLMEPPPMCKI_.Equals(other.unk3300NLMEPPPMCKI_)) return false;
       if (StageId != other.StageId) return false;
-      if(!coolDownBuffIdList_.Equals(other.coolDownBuffIdList_)) return false;
       if (IsOpen != other.IsOpen) return false;
       if(!levelList_.Equals(other.levelList_)) return false;
-      if(!coolDownAvatarIdList_.Equals(other.coolDownAvatarIdList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -172,11 +172,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      hash ^= unk3300BMEHJHFCPMA_.GetHashCode();
+      hash ^= unk3300NLMEPPPMCKI_.GetHashCode();
       if (StageId != 0) hash ^= StageId.GetHashCode();
-      hash ^= coolDownBuffIdList_.GetHashCode();
       if (IsOpen != false) hash ^= IsOpen.GetHashCode();
       hash ^= levelList_.GetHashCode();
-      hash ^= coolDownAvatarIdList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -195,16 +195,16 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      coolDownBuffIdList_.WriteTo(output, _repeated_coolDownBuffIdList_codec);
-      if (StageId != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(StageId);
-      }
-      coolDownAvatarIdList_.WriteTo(output, _repeated_coolDownAvatarIdList_codec);
-      levelList_.WriteTo(output, _repeated_levelList_codec);
+      unk3300BMEHJHFCPMA_.WriteTo(output, _repeated_unk3300BMEHJHFCPMA_codec);
       if (IsOpen != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(64);
         output.WriteBool(IsOpen);
+      }
+      unk3300NLMEPPPMCKI_.WriteTo(output, _repeated_unk3300NLMEPPPMCKI_codec);
+      levelList_.WriteTo(output, _repeated_levelList_codec);
+      if (StageId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(StageId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -216,16 +216,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      coolDownBuffIdList_.WriteTo(ref output, _repeated_coolDownBuffIdList_codec);
-      if (StageId != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(StageId);
-      }
-      coolDownAvatarIdList_.WriteTo(ref output, _repeated_coolDownAvatarIdList_codec);
-      levelList_.WriteTo(ref output, _repeated_levelList_codec);
+      unk3300BMEHJHFCPMA_.WriteTo(ref output, _repeated_unk3300BMEHJHFCPMA_codec);
       if (IsOpen != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(64);
         output.WriteBool(IsOpen);
+      }
+      unk3300NLMEPPPMCKI_.WriteTo(ref output, _repeated_unk3300NLMEPPPMCKI_codec);
+      levelList_.WriteTo(ref output, _repeated_levelList_codec);
+      if (StageId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(StageId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -237,15 +237,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += unk3300BMEHJHFCPMA_.CalculateSize(_repeated_unk3300BMEHJHFCPMA_codec);
+      size += unk3300NLMEPPPMCKI_.CalculateSize(_repeated_unk3300NLMEPPPMCKI_codec);
       if (StageId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
       }
-      size += coolDownBuffIdList_.CalculateSize(_repeated_coolDownBuffIdList_codec);
       if (IsOpen != false) {
         size += 1 + 1;
       }
       size += levelList_.CalculateSize(_repeated_levelList_codec);
-      size += coolDownAvatarIdList_.CalculateSize(_repeated_coolDownAvatarIdList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -258,15 +258,15 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      unk3300BMEHJHFCPMA_.Add(other.unk3300BMEHJHFCPMA_);
+      unk3300NLMEPPPMCKI_.Add(other.unk3300NLMEPPPMCKI_);
       if (other.StageId != 0) {
         StageId = other.StageId;
       }
-      coolDownBuffIdList_.Add(other.coolDownBuffIdList_);
       if (other.IsOpen != false) {
         IsOpen = other.IsOpen;
       }
       levelList_.Add(other.levelList_);
-      coolDownAvatarIdList_.Add(other.coolDownAvatarIdList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -282,26 +282,26 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18:
-          case 16: {
-            coolDownBuffIdList_.AddEntriesFrom(input, _repeated_coolDownBuffIdList_codec);
+          case 58:
+          case 56: {
+            unk3300BMEHJHFCPMA_.AddEntriesFrom(input, _repeated_unk3300BMEHJHFCPMA_codec);
             break;
           }
-          case 88: {
-            StageId = input.ReadUInt32();
+          case 64: {
+            IsOpen = input.ReadBool();
             break;
           }
-          case 106:
-          case 104: {
-            coolDownAvatarIdList_.AddEntriesFrom(input, _repeated_coolDownAvatarIdList_codec);
+          case 74:
+          case 72: {
+            unk3300NLMEPPPMCKI_.AddEntriesFrom(input, _repeated_unk3300NLMEPPPMCKI_codec);
             break;
           }
-          case 114: {
+          case 90: {
             levelList_.AddEntriesFrom(input, _repeated_levelList_codec);
             break;
           }
-          case 120: {
-            IsOpen = input.ReadBool();
+          case 104: {
+            StageId = input.ReadUInt32();
             break;
           }
         }
@@ -319,26 +319,26 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18:
-          case 16: {
-            coolDownBuffIdList_.AddEntriesFrom(ref input, _repeated_coolDownBuffIdList_codec);
+          case 58:
+          case 56: {
+            unk3300BMEHJHFCPMA_.AddEntriesFrom(ref input, _repeated_unk3300BMEHJHFCPMA_codec);
             break;
           }
-          case 88: {
-            StageId = input.ReadUInt32();
+          case 64: {
+            IsOpen = input.ReadBool();
             break;
           }
-          case 106:
-          case 104: {
-            coolDownAvatarIdList_.AddEntriesFrom(ref input, _repeated_coolDownAvatarIdList_codec);
+          case 74:
+          case 72: {
+            unk3300NLMEPPPMCKI_.AddEntriesFrom(ref input, _repeated_unk3300NLMEPPPMCKI_codec);
             break;
           }
-          case 114: {
+          case 90: {
             levelList_.AddEntriesFrom(ref input, _repeated_levelList_codec);
             break;
           }
-          case 120: {
-            IsOpen = input.ReadBool();
+          case 104: {
+            StageId = input.ReadUInt32();
             break;
           }
         }

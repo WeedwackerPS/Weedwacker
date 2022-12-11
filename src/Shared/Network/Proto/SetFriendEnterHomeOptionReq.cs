@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static SetFriendEnterHomeOptionReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFTZXRGcmllbmRFbnRlckhvbWVPcHRpb25SZXEucHJvdG8aG0ZyaWVuZEVu",
-            "dGVySG9tZU9wdGlvbi5wcm90byJFChtTZXRGcmllbmRFbnRlckhvbWVPcHRp",
-            "b25SZXESJgoGb3B0aW9uGAcgASgOMhYuRnJpZW5kRW50ZXJIb21lT3B0aW9u",
-            "QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiFTZXRGcmllbmRFbnRlckhvbWVPcHRpb25SZXEucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aG0ZyaWVuZEVudGVySG9tZU9wdGlv",
+            "bi5wcm90byJlChtTZXRGcmllbmRFbnRlckhvbWVPcHRpb25SZXESRgoGb3B0",
+            "aW9uGAggASgOMjYuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5G",
+            "cmllbmRFbnRlckhvbWVPcHRpb25iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FriendEnterHomeOptionReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4494
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4853;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class SetFriendEnterHomeOptionReq : pb::IMessage<SetFriendEnterHomeOptionReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "option" field.</summary>
-    public const int OptionFieldNumber = 7;
+    public const int OptionFieldNumber = 8;
     private global::Weedwacker.Shared.Network.Proto.FriendEnterHomeOption option_ = global::Weedwacker.Shared.Network.Proto.FriendEnterHomeOption.NeedConfirm;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -143,7 +148,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Option != global::Weedwacker.Shared.Network.Proto.FriendEnterHomeOption.NeedConfirm) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(64);
         output.WriteEnum((int) Option);
       }
       if (_unknownFields != null) {
@@ -157,7 +162,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Option != global::Weedwacker.Shared.Network.Proto.FriendEnterHomeOption.NeedConfirm) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(64);
         output.WriteEnum((int) Option);
       }
       if (_unknownFields != null) {
@@ -203,7 +208,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
+          case 64: {
             Option = (global::Weedwacker.Shared.Network.Proto.FriendEnterHomeOption) input.ReadEnum();
             break;
           }
@@ -222,7 +227,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
+          case 64: {
             Option = (global::Weedwacker.Shared.Network.Proto.FriendEnterHomeOption) input.ReadEnum();
             break;
           }

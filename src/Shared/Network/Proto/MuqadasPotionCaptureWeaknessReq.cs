@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static MuqadasPotionCaptureWeaknessReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVNdXFhZGFzUG90aW9uQ2FwdHVyZVdlYWtuZXNzUmVxLnByb3RvIlMKH011",
-            "cWFkYXNQb3Rpb25DYXB0dXJlV2Vha25lc3NSZXESHgoWY2FwdHVyZV93ZWFr",
-            "bmVzc19jb3VudBgKIAEoDRIQCghsZXZlbF9pZBgPIAEoDUIiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiVNdXFhZGFzUG90aW9uQ2FwdHVyZVdlYWtuZXNzUmVxLnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIlMKH011cWFkYXNQb3Rpb25D",
+            "YXB0dXJlV2Vha25lc3NSZXESEAoIbGV2ZWxfaWQYByABKA0SHgoWY2FwdHVy",
+            "ZV93ZWFrbmVzc19jb3VudBgKIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MuqadasPotionCaptureWeaknessReq), global::Weedwacker.Shared.Network.Proto.MuqadasPotionCaptureWeaknessReq.Parser, new[]{ "CaptureWeaknessCount", "LevelId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MuqadasPotionCaptureWeaknessReq), global::Weedwacker.Shared.Network.Proto.MuqadasPotionCaptureWeaknessReq.Parser, new[]{ "LevelId", "CaptureWeaknessCount" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 20011
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 24162;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class MuqadasPotionCaptureWeaknessReq : pb::IMessage<MuqadasPotionCaptureWeaknessReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MuqadasPotionCaptureWeaknessReq(MuqadasPotionCaptureWeaknessReq other) : this() {
-      captureWeaknessCount_ = other.captureWeaknessCount_;
       levelId_ = other.levelId_;
+      captureWeaknessCount_ = other.captureWeaknessCount_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,6 +91,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MuqadasPotionCaptureWeaknessReq Clone() {
       return new MuqadasPotionCaptureWeaknessReq(this);
+    }
+
+    /// <summary>Field number for the "level_id" field.</summary>
+    public const int LevelIdFieldNumber = 7;
+    private uint levelId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LevelId {
+      get { return levelId_; }
+      set {
+        levelId_ = value;
+      }
     }
 
     /// <summary>Field number for the "capture_weakness_count" field.</summary>
@@ -98,18 +114,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return captureWeaknessCount_; }
       set {
         captureWeaknessCount_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "level_id" field.</summary>
-    public const int LevelIdFieldNumber = 15;
-    private uint levelId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint LevelId {
-      get { return levelId_; }
-      set {
-        levelId_ = value;
       }
     }
 
@@ -128,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CaptureWeaknessCount != other.CaptureWeaknessCount) return false;
       if (LevelId != other.LevelId) return false;
+      if (CaptureWeaknessCount != other.CaptureWeaknessCount) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -137,8 +141,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CaptureWeaknessCount != 0) hash ^= CaptureWeaknessCount.GetHashCode();
       if (LevelId != 0) hash ^= LevelId.GetHashCode();
+      if (CaptureWeaknessCount != 0) hash ^= CaptureWeaknessCount.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -157,13 +161,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (LevelId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(LevelId);
+      }
       if (CaptureWeaknessCount != 0) {
         output.WriteRawTag(80);
         output.WriteUInt32(CaptureWeaknessCount);
-      }
-      if (LevelId != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(LevelId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -175,13 +179,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (LevelId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(LevelId);
+      }
       if (CaptureWeaknessCount != 0) {
         output.WriteRawTag(80);
         output.WriteUInt32(CaptureWeaknessCount);
-      }
-      if (LevelId != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(LevelId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -193,11 +197,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CaptureWeaknessCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CaptureWeaknessCount);
-      }
       if (LevelId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
+      }
+      if (CaptureWeaknessCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CaptureWeaknessCount);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -211,11 +215,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.CaptureWeaknessCount != 0) {
-        CaptureWeaknessCount = other.CaptureWeaknessCount;
-      }
       if (other.LevelId != 0) {
         LevelId = other.LevelId;
+      }
+      if (other.CaptureWeaknessCount != 0) {
+        CaptureWeaknessCount = other.CaptureWeaknessCount;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -232,12 +236,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 80: {
-            CaptureWeaknessCount = input.ReadUInt32();
+          case 56: {
+            LevelId = input.ReadUInt32();
             break;
           }
-          case 120: {
-            LevelId = input.ReadUInt32();
+          case 80: {
+            CaptureWeaknessCount = input.ReadUInt32();
             break;
           }
         }
@@ -255,12 +259,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 80: {
-            CaptureWeaknessCount = input.ReadUInt32();
+          case 56: {
+            LevelId = input.ReadUInt32();
             break;
           }
-          case 120: {
-            LevelId = input.ReadUInt32();
+          case 80: {
+            CaptureWeaknessCount = input.ReadUInt32();
             break;
           }
         }

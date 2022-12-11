@@ -24,19 +24,21 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlayerMatchSuccNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtQbGF5ZXJNYXRjaFN1Y2NOb3RpZnkucHJvdG8aEkdDR01hdGNoSW5mby5w",
-            "cm90bxoWR2VuZXJhbE1hdGNoSW5mby5wcm90bxoPTWF0Y2hUeXBlLnByb3Rv",
-            "IoUCChVQbGF5ZXJNYXRjaFN1Y2NOb3RpZnkSLQoSZ2VuZXJhbF9tYXRjaF9p",
-            "bmZvGAcgASgLMhEuR2VuZXJhbE1hdGNoSW5mbxISCgptcF9wbGF5X2lkGA8g",
-            "ASgNEhAKCGhvc3RfdWlkGAMgASgNEh4KCm1hdGNoX3R5cGUYBSABKA4yCi5N",
-            "YXRjaFR5cGUSJQoOZ2NnX21hdGNoX2luZm8YCyABKAsyDS5HQ0dNYXRjaElu",
-            "Zm8SGAoQY29uZmlybV9lbmRfdGltZRgCIAEoDRISCgpkdW5nZW9uX2lkGAYg",
-            "ASgNEiIKGm1lY2hhbmljdXNfZGlmZmljdWx0X2xldmVsGAEgASgNQiKqAh9X",
-            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChtQbGF5ZXJNYXRjaFN1Y2NOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aEkdDR01hdGNoSW5mby5wcm90bxoWR2VuZXJh",
+            "bE1hdGNoSW5mby5wcm90bxoPTWF0Y2hUeXBlLnByb3RvIuUCChVQbGF5ZXJN",
+            "YXRjaFN1Y2NOb3RpZnkSTQoSZ2VuZXJhbF9tYXRjaF9pbmZvGAcgASgLMjEu",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5HZW5lcmFsTWF0Y2hJ",
+            "bmZvEhIKCmR1bmdlb25faWQYAyABKA0SPgoKbWF0Y2hfdHlwZRgPIAEoDjIq",
+            "LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uTWF0Y2hUeXBlEiIK",
+            "Gm1lY2hhbmljdXNfZGlmZmljdWx0X2xldmVsGAUgASgNEhgKEGNvbmZpcm1f",
+            "ZW5kX3RpbWUYDSABKA0SRQoOZ2NnX21hdGNoX2luZm8YCSABKAsyLS5XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkdDR01hdGNoSW5mbxISCgpt",
+            "cF9wbGF5X2lkGAsgASgNEhAKCGhvc3RfdWlkGAogASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGMatchInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GeneralMatchInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.MatchTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerMatchSuccNotify), global::Weedwacker.Shared.Network.Proto.PlayerMatchSuccNotify.Parser, new[]{ "GeneralMatchInfo", "MpPlayId", "HostUid", "MatchType", "GcgMatchInfo", "ConfirmEndTime", "DungeonId", "MechanicusDifficultLevel" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerMatchSuccNotify), global::Weedwacker.Shared.Network.Proto.PlayerMatchSuccNotify.Parser, new[]{ "GeneralMatchInfo", "DungeonId", "MatchType", "MechanicusDifficultLevel", "ConfirmEndTime", "GcgMatchInfo", "MpPlayId", "HostUid" }, null, null, null, null)
           }));
     }
     #endregion
@@ -44,9 +46,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4179
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4194;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class PlayerMatchSuccNotify : pb::IMessage<PlayerMatchSuccNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -83,13 +89,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlayerMatchSuccNotify(PlayerMatchSuccNotify other) : this() {
       generalMatchInfo_ = other.generalMatchInfo_ != null ? other.generalMatchInfo_.Clone() : null;
+      dungeonId_ = other.dungeonId_;
+      matchType_ = other.matchType_;
+      mechanicusDifficultLevel_ = other.mechanicusDifficultLevel_;
+      confirmEndTime_ = other.confirmEndTime_;
+      gcgMatchInfo_ = other.gcgMatchInfo_ != null ? other.gcgMatchInfo_.Clone() : null;
       mpPlayId_ = other.mpPlayId_;
       hostUid_ = other.hostUid_;
-      matchType_ = other.matchType_;
-      gcgMatchInfo_ = other.gcgMatchInfo_ != null ? other.gcgMatchInfo_.Clone() : null;
-      confirmEndTime_ = other.confirmEndTime_;
-      dungeonId_ = other.dungeonId_;
-      mechanicusDifficultLevel_ = other.mechanicusDifficultLevel_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -111,8 +117,68 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "dungeon_id" field.</summary>
+    public const int DungeonIdFieldNumber = 3;
+    private uint dungeonId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint DungeonId {
+      get { return dungeonId_; }
+      set {
+        dungeonId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "match_type" field.</summary>
+    public const int MatchTypeFieldNumber = 15;
+    private global::Weedwacker.Shared.Network.Proto.MatchType matchType_ = global::Weedwacker.Shared.Network.Proto.MatchType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.MatchType MatchType {
+      get { return matchType_; }
+      set {
+        matchType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mechanicus_difficult_level" field.</summary>
+    public const int MechanicusDifficultLevelFieldNumber = 5;
+    private uint mechanicusDifficultLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MechanicusDifficultLevel {
+      get { return mechanicusDifficultLevel_; }
+      set {
+        mechanicusDifficultLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "confirm_end_time" field.</summary>
+    public const int ConfirmEndTimeFieldNumber = 13;
+    private uint confirmEndTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ConfirmEndTime {
+      get { return confirmEndTime_; }
+      set {
+        confirmEndTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gcg_match_info" field.</summary>
+    public const int GcgMatchInfoFieldNumber = 9;
+    private global::Weedwacker.Shared.Network.Proto.GCGMatchInfo gcgMatchInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.GCGMatchInfo GcgMatchInfo {
+      get { return gcgMatchInfo_; }
+      set {
+        gcgMatchInfo_ = value;
+      }
+    }
+
     /// <summary>Field number for the "mp_play_id" field.</summary>
-    public const int MpPlayIdFieldNumber = 15;
+    public const int MpPlayIdFieldNumber = 11;
     private uint mpPlayId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -124,7 +190,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "host_uid" field.</summary>
-    public const int HostUidFieldNumber = 3;
+    public const int HostUidFieldNumber = 10;
     private uint hostUid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -132,66 +198,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return hostUid_; }
       set {
         hostUid_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "match_type" field.</summary>
-    public const int MatchTypeFieldNumber = 5;
-    private global::Weedwacker.Shared.Network.Proto.MatchType matchType_ = global::Weedwacker.Shared.Network.Proto.MatchType.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.MatchType MatchType {
-      get { return matchType_; }
-      set {
-        matchType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "gcg_match_info" field.</summary>
-    public const int GcgMatchInfoFieldNumber = 11;
-    private global::Weedwacker.Shared.Network.Proto.GCGMatchInfo gcgMatchInfo_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.GCGMatchInfo GcgMatchInfo {
-      get { return gcgMatchInfo_; }
-      set {
-        gcgMatchInfo_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "confirm_end_time" field.</summary>
-    public const int ConfirmEndTimeFieldNumber = 2;
-    private uint confirmEndTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ConfirmEndTime {
-      get { return confirmEndTime_; }
-      set {
-        confirmEndTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "dungeon_id" field.</summary>
-    public const int DungeonIdFieldNumber = 6;
-    private uint dungeonId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DungeonId {
-      get { return dungeonId_; }
-      set {
-        dungeonId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "mechanicus_difficult_level" field.</summary>
-    public const int MechanicusDifficultLevelFieldNumber = 1;
-    private uint mechanicusDifficultLevel_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MechanicusDifficultLevel {
-      get { return mechanicusDifficultLevel_; }
-      set {
-        mechanicusDifficultLevel_ = value;
       }
     }
 
@@ -211,13 +217,13 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (!object.Equals(GeneralMatchInfo, other.GeneralMatchInfo)) return false;
+      if (DungeonId != other.DungeonId) return false;
+      if (MatchType != other.MatchType) return false;
+      if (MechanicusDifficultLevel != other.MechanicusDifficultLevel) return false;
+      if (ConfirmEndTime != other.ConfirmEndTime) return false;
+      if (!object.Equals(GcgMatchInfo, other.GcgMatchInfo)) return false;
       if (MpPlayId != other.MpPlayId) return false;
       if (HostUid != other.HostUid) return false;
-      if (MatchType != other.MatchType) return false;
-      if (!object.Equals(GcgMatchInfo, other.GcgMatchInfo)) return false;
-      if (ConfirmEndTime != other.ConfirmEndTime) return false;
-      if (DungeonId != other.DungeonId) return false;
-      if (MechanicusDifficultLevel != other.MechanicusDifficultLevel) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -226,13 +232,13 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (generalMatchInfo_ != null) hash ^= GeneralMatchInfo.GetHashCode();
+      if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
+      if (MatchType != global::Weedwacker.Shared.Network.Proto.MatchType.None) hash ^= MatchType.GetHashCode();
+      if (MechanicusDifficultLevel != 0) hash ^= MechanicusDifficultLevel.GetHashCode();
+      if (ConfirmEndTime != 0) hash ^= ConfirmEndTime.GetHashCode();
+      if (gcgMatchInfo_ != null) hash ^= GcgMatchInfo.GetHashCode();
       if (MpPlayId != 0) hash ^= MpPlayId.GetHashCode();
       if (HostUid != 0) hash ^= HostUid.GetHashCode();
-      if (MatchType != global::Weedwacker.Shared.Network.Proto.MatchType.None) hash ^= MatchType.GetHashCode();
-      if (gcgMatchInfo_ != null) hash ^= GcgMatchInfo.GetHashCode();
-      if (ConfirmEndTime != 0) hash ^= ConfirmEndTime.GetHashCode();
-      if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
-      if (MechanicusDifficultLevel != 0) hash ^= MechanicusDifficultLevel.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -251,37 +257,37 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (MechanicusDifficultLevel != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(MechanicusDifficultLevel);
-      }
-      if (ConfirmEndTime != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(ConfirmEndTime);
-      }
-      if (HostUid != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(HostUid);
-      }
-      if (MatchType != global::Weedwacker.Shared.Network.Proto.MatchType.None) {
-        output.WriteRawTag(40);
-        output.WriteEnum((int) MatchType);
-      }
       if (DungeonId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(24);
         output.WriteUInt32(DungeonId);
+      }
+      if (MechanicusDifficultLevel != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(MechanicusDifficultLevel);
       }
       if (generalMatchInfo_ != null) {
         output.WriteRawTag(58);
         output.WriteMessage(GeneralMatchInfo);
       }
       if (gcgMatchInfo_ != null) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(74);
         output.WriteMessage(GcgMatchInfo);
       }
+      if (HostUid != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(HostUid);
+      }
       if (MpPlayId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(88);
         output.WriteUInt32(MpPlayId);
+      }
+      if (ConfirmEndTime != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(ConfirmEndTime);
+      }
+      if (MatchType != global::Weedwacker.Shared.Network.Proto.MatchType.None) {
+        output.WriteRawTag(120);
+        output.WriteEnum((int) MatchType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -293,37 +299,37 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (MechanicusDifficultLevel != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(MechanicusDifficultLevel);
-      }
-      if (ConfirmEndTime != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(ConfirmEndTime);
-      }
-      if (HostUid != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(HostUid);
-      }
-      if (MatchType != global::Weedwacker.Shared.Network.Proto.MatchType.None) {
-        output.WriteRawTag(40);
-        output.WriteEnum((int) MatchType);
-      }
       if (DungeonId != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(24);
         output.WriteUInt32(DungeonId);
+      }
+      if (MechanicusDifficultLevel != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(MechanicusDifficultLevel);
       }
       if (generalMatchInfo_ != null) {
         output.WriteRawTag(58);
         output.WriteMessage(GeneralMatchInfo);
       }
       if (gcgMatchInfo_ != null) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(74);
         output.WriteMessage(GcgMatchInfo);
       }
+      if (HostUid != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(HostUid);
+      }
       if (MpPlayId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(88);
         output.WriteUInt32(MpPlayId);
+      }
+      if (ConfirmEndTime != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(ConfirmEndTime);
+      }
+      if (MatchType != global::Weedwacker.Shared.Network.Proto.MatchType.None) {
+        output.WriteRawTag(120);
+        output.WriteEnum((int) MatchType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -338,26 +344,26 @@ namespace Weedwacker.Shared.Network.Proto {
       if (generalMatchInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(GeneralMatchInfo);
       }
+      if (DungeonId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonId);
+      }
+      if (MatchType != global::Weedwacker.Shared.Network.Proto.MatchType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) MatchType);
+      }
+      if (MechanicusDifficultLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MechanicusDifficultLevel);
+      }
+      if (ConfirmEndTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConfirmEndTime);
+      }
+      if (gcgMatchInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(GcgMatchInfo);
+      }
       if (MpPlayId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MpPlayId);
       }
       if (HostUid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(HostUid);
-      }
-      if (MatchType != global::Weedwacker.Shared.Network.Proto.MatchType.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) MatchType);
-      }
-      if (gcgMatchInfo_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(GcgMatchInfo);
-      }
-      if (ConfirmEndTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConfirmEndTime);
-      }
-      if (DungeonId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonId);
-      }
-      if (MechanicusDifficultLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MechanicusDifficultLevel);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -377,14 +383,17 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         GeneralMatchInfo.MergeFrom(other.GeneralMatchInfo);
       }
-      if (other.MpPlayId != 0) {
-        MpPlayId = other.MpPlayId;
-      }
-      if (other.HostUid != 0) {
-        HostUid = other.HostUid;
+      if (other.DungeonId != 0) {
+        DungeonId = other.DungeonId;
       }
       if (other.MatchType != global::Weedwacker.Shared.Network.Proto.MatchType.None) {
         MatchType = other.MatchType;
+      }
+      if (other.MechanicusDifficultLevel != 0) {
+        MechanicusDifficultLevel = other.MechanicusDifficultLevel;
+      }
+      if (other.ConfirmEndTime != 0) {
+        ConfirmEndTime = other.ConfirmEndTime;
       }
       if (other.gcgMatchInfo_ != null) {
         if (gcgMatchInfo_ == null) {
@@ -392,14 +401,11 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         GcgMatchInfo.MergeFrom(other.GcgMatchInfo);
       }
-      if (other.ConfirmEndTime != 0) {
-        ConfirmEndTime = other.ConfirmEndTime;
+      if (other.MpPlayId != 0) {
+        MpPlayId = other.MpPlayId;
       }
-      if (other.DungeonId != 0) {
-        DungeonId = other.DungeonId;
-      }
-      if (other.MechanicusDifficultLevel != 0) {
-        MechanicusDifficultLevel = other.MechanicusDifficultLevel;
+      if (other.HostUid != 0) {
+        HostUid = other.HostUid;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -416,24 +422,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            MechanicusDifficultLevel = input.ReadUInt32();
-            break;
-          }
-          case 16: {
-            ConfirmEndTime = input.ReadUInt32();
-            break;
-          }
           case 24: {
-            HostUid = input.ReadUInt32();
+            DungeonId = input.ReadUInt32();
             break;
           }
           case 40: {
-            MatchType = (global::Weedwacker.Shared.Network.Proto.MatchType) input.ReadEnum();
-            break;
-          }
-          case 48: {
-            DungeonId = input.ReadUInt32();
+            MechanicusDifficultLevel = input.ReadUInt32();
             break;
           }
           case 58: {
@@ -443,15 +437,27 @@ namespace Weedwacker.Shared.Network.Proto {
             input.ReadMessage(GeneralMatchInfo);
             break;
           }
-          case 90: {
+          case 74: {
             if (gcgMatchInfo_ == null) {
               GcgMatchInfo = new global::Weedwacker.Shared.Network.Proto.GCGMatchInfo();
             }
             input.ReadMessage(GcgMatchInfo);
             break;
           }
-          case 120: {
+          case 80: {
+            HostUid = input.ReadUInt32();
+            break;
+          }
+          case 88: {
             MpPlayId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            ConfirmEndTime = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            MatchType = (global::Weedwacker.Shared.Network.Proto.MatchType) input.ReadEnum();
             break;
           }
         }
@@ -469,24 +475,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            MechanicusDifficultLevel = input.ReadUInt32();
-            break;
-          }
-          case 16: {
-            ConfirmEndTime = input.ReadUInt32();
-            break;
-          }
           case 24: {
-            HostUid = input.ReadUInt32();
+            DungeonId = input.ReadUInt32();
             break;
           }
           case 40: {
-            MatchType = (global::Weedwacker.Shared.Network.Proto.MatchType) input.ReadEnum();
-            break;
-          }
-          case 48: {
-            DungeonId = input.ReadUInt32();
+            MechanicusDifficultLevel = input.ReadUInt32();
             break;
           }
           case 58: {
@@ -496,15 +490,27 @@ namespace Weedwacker.Shared.Network.Proto {
             input.ReadMessage(GeneralMatchInfo);
             break;
           }
-          case 90: {
+          case 74: {
             if (gcgMatchInfo_ == null) {
               GcgMatchInfo = new global::Weedwacker.Shared.Network.Proto.GCGMatchInfo();
             }
             input.ReadMessage(GcgMatchInfo);
             break;
           }
-          case 120: {
+          case 80: {
+            HostUid = input.ReadUInt32();
+            break;
+          }
+          case 88: {
             MpPlayId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            ConfirmEndTime = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            MatchType = (global::Weedwacker.Shared.Network.Proto.MatchType) input.ReadEnum();
             break;
           }
         }

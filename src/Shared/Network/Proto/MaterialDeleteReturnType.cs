@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static MaterialDeleteReturnTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5NYXRlcmlhbERlbGV0ZVJldHVyblR5cGUucHJvdG8qZQoYTWF0ZXJpYWxE",
-            "ZWxldGVSZXR1cm5UeXBlEiMKH01BVEVSSUFMX0RFTEVURV9SRVRVUk5fVFlQ",
-            "RV9CQUcQABIkCiBNQVRFUklBTF9ERUxFVEVfUkVUVVJOX1RZUEVfU0VFRBAB",
-            "QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch5NYXRlcmlhbERlbGV0ZVJldHVyblR5cGUucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8qZQoYTWF0ZXJpYWxEZWxldGVSZXR1cm5U",
+            "eXBlEiMKH01BVEVSSUFMX0RFTEVURV9SRVRVUk5fVFlQRV9CQUcQABIkCiBN",
+            "QVRFUklBTF9ERUxFVEVfUkVUVVJOX1RZUEVfU0VFRBABYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Weedwacker.Shared.Network.Proto.MaterialDeleteReturnType), }, null, null));

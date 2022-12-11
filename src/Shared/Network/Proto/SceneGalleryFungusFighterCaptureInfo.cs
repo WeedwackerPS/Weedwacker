@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneGalleryFungusFighterCaptureInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CipTY2VuZUdhbGxlcnlGdW5ndXNGaWdodGVyQ2FwdHVyZUluZm8ucHJvdG8i",
-            "QAokU2NlbmVHYWxsZXJ5RnVuZ3VzRmlnaHRlckNhcHR1cmVJbmZvEhgKEGlz",
-            "X2hpZGVfcHJvZ3Jlc3MYDSABKAhCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
-            "dHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CipTY2VuZUdhbGxlcnlGdW5ndXNGaWdodGVyQ2FwdHVyZUluZm8ucHJvdG8S",
+            "H1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iQAokU2NlbmVHYWxs",
+            "ZXJ5RnVuZ3VzRmlnaHRlckNhcHR1cmVJbmZvEhgKEGlzX2hpZGVfcHJvZ3Jl",
+            "c3MYDyABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_hide_progress" field.</summary>
-    public const int IsHideProgressFieldNumber = 13;
+    public const int IsHideProgressFieldNumber = 15;
     private bool isHideProgress_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -137,7 +137,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (IsHideProgress != false) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(120);
         output.WriteBool(IsHideProgress);
       }
       if (_unknownFields != null) {
@@ -151,7 +151,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (IsHideProgress != false) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(120);
         output.WriteBool(IsHideProgress);
       }
       if (_unknownFields != null) {
@@ -197,7 +197,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 104: {
+          case 120: {
             IsHideProgress = input.ReadBool();
             break;
           }
@@ -216,7 +216,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 104: {
+          case 120: {
             IsHideProgress = input.ReadBool();
             break;
           }

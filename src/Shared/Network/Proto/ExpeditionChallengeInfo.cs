@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static ExpeditionChallengeInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1FeHBlZGl0aW9uQ2hhbGxlbmdlSW5mby5wcm90byJNChdFeHBlZGl0aW9u",
-            "Q2hhbGxlbmdlSW5mbxITCgtpc19maW5pc2hlZBgFIAEoCBIKCgJpZBgLIAEo",
-            "DRIRCglvcGVuX3RpbWUYCSABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
-            "dHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch1FeHBlZGl0aW9uQ2hhbGxlbmdlSW5mby5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90byJNChdFeHBlZGl0aW9uQ2hhbGxlbmdlSW5m",
+            "bxIKCgJpZBgFIAEoDRITCgtpc19maW5pc2hlZBgCIAEoCBIRCglvcGVuX3Rp",
+            "bWUYDCABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ExpeditionChallengeInfo), global::Weedwacker.Shared.Network.Proto.ExpeditionChallengeInfo.Parser, new[]{ "IsFinished", "Id", "OpenTime" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ExpeditionChallengeInfo), global::Weedwacker.Shared.Network.Proto.ExpeditionChallengeInfo.Parser, new[]{ "Id", "IsFinished", "OpenTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +72,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ExpeditionChallengeInfo(ExpeditionChallengeInfo other) : this() {
-      isFinished_ = other.isFinished_;
       id_ = other.id_;
+      isFinished_ = other.isFinished_;
       openTime_ = other.openTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -84,20 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ExpeditionChallengeInfo(this);
     }
 
-    /// <summary>Field number for the "is_finished" field.</summary>
-    public const int IsFinishedFieldNumber = 5;
-    private bool isFinished_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsFinished {
-      get { return isFinished_; }
-      set {
-        isFinished_ = value;
-      }
-    }
-
     /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 11;
+    public const int IdFieldNumber = 5;
     private uint id_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -108,8 +96,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "is_finished" field.</summary>
+    public const int IsFinishedFieldNumber = 2;
+    private bool isFinished_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsFinished {
+      get { return isFinished_; }
+      set {
+        isFinished_ = value;
+      }
+    }
+
     /// <summary>Field number for the "open_time" field.</summary>
-    public const int OpenTimeFieldNumber = 9;
+    public const int OpenTimeFieldNumber = 12;
     private uint openTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -135,8 +135,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsFinished != other.IsFinished) return false;
       if (Id != other.Id) return false;
+      if (IsFinished != other.IsFinished) return false;
       if (OpenTime != other.OpenTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -145,8 +145,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsFinished != false) hash ^= IsFinished.GetHashCode();
       if (Id != 0) hash ^= Id.GetHashCode();
+      if (IsFinished != false) hash ^= IsFinished.GetHashCode();
       if (OpenTime != 0) hash ^= OpenTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -167,16 +167,16 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (IsFinished != false) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(16);
         output.WriteBool(IsFinished);
       }
-      if (OpenTime != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(OpenTime);
-      }
       if (Id != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(40);
         output.WriteUInt32(Id);
+      }
+      if (OpenTime != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(OpenTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -189,16 +189,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (IsFinished != false) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(16);
         output.WriteBool(IsFinished);
       }
-      if (OpenTime != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(OpenTime);
-      }
       if (Id != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(40);
         output.WriteUInt32(Id);
+      }
+      if (OpenTime != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(OpenTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -210,11 +210,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsFinished != false) {
-        size += 1 + 1;
-      }
       if (Id != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Id);
+      }
+      if (IsFinished != false) {
+        size += 1 + 1;
       }
       if (OpenTime != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OpenTime);
@@ -231,11 +231,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsFinished != false) {
-        IsFinished = other.IsFinished;
-      }
       if (other.Id != 0) {
         Id = other.Id;
+      }
+      if (other.IsFinished != false) {
+        IsFinished = other.IsFinished;
       }
       if (other.OpenTime != 0) {
         OpenTime = other.OpenTime;
@@ -255,16 +255,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
+          case 16: {
             IsFinished = input.ReadBool();
             break;
           }
-          case 72: {
-            OpenTime = input.ReadUInt32();
+          case 40: {
+            Id = input.ReadUInt32();
             break;
           }
-          case 88: {
-            Id = input.ReadUInt32();
+          case 96: {
+            OpenTime = input.ReadUInt32();
             break;
           }
         }
@@ -282,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
+          case 16: {
             IsFinished = input.ReadBool();
             break;
           }
-          case 72: {
-            OpenTime = input.ReadUInt32();
+          case 40: {
+            Id = input.ReadUInt32();
             break;
           }
-          case 88: {
-            Id = input.ReadUInt32();
+          case 96: {
+            OpenTime = input.ReadUInt32();
             break;
           }
         }

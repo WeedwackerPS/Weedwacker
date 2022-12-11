@@ -24,9 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlaceInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg9QbGFjZUluZm8ucHJvdG8aDFZlY3Rvci5wcm90byI3CglQbGFjZUluZm8S",
-            "FAoDcG9zGAEgASgLMgcuVmVjdG9yEhQKA3JvdBgCIAEoCzIHLlZlY3RvckIi",
-            "qgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Cg9QbGFjZUluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8aDFZlY3Rvci5wcm90byJ3CglQbGFjZUluZm8SNAoDcG9zGAEgASgL",
+            "MicuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5WZWN0b3ISNAoD",
+            "cm90GAIgASgLMicuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5W",
+            "ZWN0b3JiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

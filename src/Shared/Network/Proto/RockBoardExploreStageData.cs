@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static RockBoardExploreStageDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9Sb2NrQm9hcmRFeHBsb3JlU3RhZ2VEYXRhLnByb3RvImQKGVJvY2tCb2Fy",
-            "ZEV4cGxvcmVTdGFnZURhdGESEQoJaXNfZmluaXNoGAYgASgIEhEKCW9wZW5f",
-            "dGltZRgHIAEoDRIPCgdpc19vcGVuGAUgASgIEhAKCHN0YWdlX2lkGAMgASgN",
-            "QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch9Sb2NrQm9hcmRFeHBsb3JlU3RhZ2VEYXRhLnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvImQKGVJvY2tCb2FyZEV4cGxvcmVTdGFn",
+            "ZURhdGESEQoJaXNfZmluaXNoGAggASgIEg8KB2lzX29wZW4YCSABKAgSEQoJ",
+            "b3Blbl90aW1lGAwgASgNEhAKCHN0YWdlX2lkGA0gASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RockBoardExploreStageData), global::Weedwacker.Shared.Network.Proto.RockBoardExploreStageData.Parser, new[]{ "IsFinish", "OpenTime", "IsOpen", "StageId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.RockBoardExploreStageData), global::Weedwacker.Shared.Network.Proto.RockBoardExploreStageData.Parser, new[]{ "IsFinish", "IsOpen", "OpenTime", "StageId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,8 +73,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RockBoardExploreStageData(RockBoardExploreStageData other) : this() {
       isFinish_ = other.isFinish_;
-      openTime_ = other.openTime_;
       isOpen_ = other.isOpen_;
+      openTime_ = other.openTime_;
       stageId_ = other.stageId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -86,7 +86,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_finish" field.</summary>
-    public const int IsFinishFieldNumber = 6;
+    public const int IsFinishFieldNumber = 8;
     private bool isFinish_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -97,20 +97,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "open_time" field.</summary>
-    public const int OpenTimeFieldNumber = 7;
-    private uint openTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint OpenTime {
-      get { return openTime_; }
-      set {
-        openTime_ = value;
-      }
-    }
-
     /// <summary>Field number for the "is_open" field.</summary>
-    public const int IsOpenFieldNumber = 5;
+    public const int IsOpenFieldNumber = 9;
     private bool isOpen_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -121,8 +109,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "open_time" field.</summary>
+    public const int OpenTimeFieldNumber = 12;
+    private uint openTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint OpenTime {
+      get { return openTime_; }
+      set {
+        openTime_ = value;
+      }
+    }
+
     /// <summary>Field number for the "stage_id" field.</summary>
-    public const int StageIdFieldNumber = 3;
+    public const int StageIdFieldNumber = 13;
     private uint stageId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -149,8 +149,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (IsFinish != other.IsFinish) return false;
-      if (OpenTime != other.OpenTime) return false;
       if (IsOpen != other.IsOpen) return false;
+      if (OpenTime != other.OpenTime) return false;
       if (StageId != other.StageId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -160,8 +160,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (IsFinish != false) hash ^= IsFinish.GetHashCode();
-      if (OpenTime != 0) hash ^= OpenTime.GetHashCode();
       if (IsOpen != false) hash ^= IsOpen.GetHashCode();
+      if (OpenTime != 0) hash ^= OpenTime.GetHashCode();
       if (StageId != 0) hash ^= StageId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -181,21 +181,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (StageId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(StageId);
-      }
-      if (IsOpen != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(IsOpen);
-      }
       if (IsFinish != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(64);
         output.WriteBool(IsFinish);
       }
+      if (IsOpen != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(IsOpen);
+      }
       if (OpenTime != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(96);
         output.WriteUInt32(OpenTime);
+      }
+      if (StageId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(StageId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -207,21 +207,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (StageId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(StageId);
-      }
-      if (IsOpen != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(IsOpen);
-      }
       if (IsFinish != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(64);
         output.WriteBool(IsFinish);
       }
+      if (IsOpen != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(IsOpen);
+      }
       if (OpenTime != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(96);
         output.WriteUInt32(OpenTime);
+      }
+      if (StageId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(StageId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -236,11 +236,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (IsFinish != false) {
         size += 1 + 1;
       }
-      if (OpenTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OpenTime);
-      }
       if (IsOpen != false) {
         size += 1 + 1;
+      }
+      if (OpenTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OpenTime);
       }
       if (StageId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
@@ -260,11 +260,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.IsFinish != false) {
         IsFinish = other.IsFinish;
       }
-      if (other.OpenTime != 0) {
-        OpenTime = other.OpenTime;
-      }
       if (other.IsOpen != false) {
         IsOpen = other.IsOpen;
+      }
+      if (other.OpenTime != 0) {
+        OpenTime = other.OpenTime;
       }
       if (other.StageId != 0) {
         StageId = other.StageId;
@@ -284,20 +284,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            StageId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            IsOpen = input.ReadBool();
-            break;
-          }
-          case 48: {
+          case 64: {
             IsFinish = input.ReadBool();
             break;
           }
-          case 56: {
+          case 72: {
+            IsOpen = input.ReadBool();
+            break;
+          }
+          case 96: {
             OpenTime = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            StageId = input.ReadUInt32();
             break;
           }
         }
@@ -315,20 +315,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            StageId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            IsOpen = input.ReadBool();
-            break;
-          }
-          case 48: {
+          case 64: {
             IsFinish = input.ReadBool();
             break;
           }
-          case 56: {
+          case 72: {
+            IsOpen = input.ReadBool();
+            break;
+          }
+          case 96: {
             OpenTime = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            StageId = input.ReadUInt32();
             break;
           }
         }

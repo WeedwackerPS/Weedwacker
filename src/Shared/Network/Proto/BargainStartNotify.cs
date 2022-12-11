@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static BargainStartNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhCYXJnYWluU3RhcnROb3RpZnkucHJvdG8aFUJhcmdhaW5TbmFwc2hvdC5w",
-            "cm90byJMChJCYXJnYWluU3RhcnROb3RpZnkSEgoKYmFyZ2Fpbl9pZBgEIAEo",
-            "DRIiCghzbmFwc2hvdBgCIAEoCzIQLkJhcmdhaW5TbmFwc2hvdEIiqgIfV2Vl",
-            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChhCYXJnYWluU3RhcnROb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aFUJhcmdhaW5TbmFwc2hvdC5wcm90byJsChJCYXJn",
+            "YWluU3RhcnROb3RpZnkSEgoKYmFyZ2Fpbl9pZBgLIAEoDRJCCghzbmFwc2hv",
+            "dBgKIAEoCzIwLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQmFy",
+            "Z2FpblNuYXBzaG90YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.BargainSnapshotReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 404
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 444;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class BargainStartNotify : pb::IMessage<BargainStartNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "bargain_id" field.</summary>
-    public const int BargainIdFieldNumber = 4;
+    public const int BargainIdFieldNumber = 11;
     private uint bargainId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "snapshot" field.</summary>
-    public const int SnapshotFieldNumber = 2;
+    public const int SnapshotFieldNumber = 10;
     private global::Weedwacker.Shared.Network.Proto.BargainSnapshot snapshot_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,11 +162,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (snapshot_ != null) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(82);
         output.WriteMessage(Snapshot);
       }
       if (BargainId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(88);
         output.WriteUInt32(BargainId);
       }
       if (_unknownFields != null) {
@@ -175,11 +180,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (snapshot_ != null) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(82);
         output.WriteMessage(Snapshot);
       }
       if (BargainId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(88);
         output.WriteUInt32(BargainId);
       }
       if (_unknownFields != null) {
@@ -234,14 +239,14 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
+          case 82: {
             if (snapshot_ == null) {
               Snapshot = new global::Weedwacker.Shared.Network.Proto.BargainSnapshot();
             }
             input.ReadMessage(Snapshot);
             break;
           }
-          case 32: {
+          case 88: {
             BargainId = input.ReadUInt32();
             break;
           }
@@ -260,14 +265,14 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
+          case 82: {
             if (snapshot_ == null) {
               Snapshot = new global::Weedwacker.Shared.Network.Proto.BargainSnapshot();
             }
             input.ReadMessage(Snapshot);
             break;
           }
-          case 32: {
+          case 88: {
             BargainId = input.ReadUInt32();
             break;
           }

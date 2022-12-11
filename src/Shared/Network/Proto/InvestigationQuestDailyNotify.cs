@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static InvestigationQuestDailyNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNJbnZlc3RpZ2F0aW9uUXVlc3REYWlseU5vdGlmeS5wcm90byIfCh1JbnZl",
-            "c3RpZ2F0aW9uUXVlc3REYWlseU5vdGlmeUIiqgIfV2VlZHdhY2tlci5TaGFy",
-            "ZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiNJbnZlc3RpZ2F0aW9uUXVlc3REYWlseU5vdGlmeS5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90byIfCh1JbnZlc3RpZ2F0aW9uUXVl",
+            "c3REYWlseU5vdGlmeWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -38,9 +38,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1921
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1926;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class InvestigationQuestDailyNotify : pb::IMessage<InvestigationQuestDailyNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

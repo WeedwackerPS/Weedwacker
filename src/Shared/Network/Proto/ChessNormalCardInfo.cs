@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static ChessNormalCardInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlDaGVzc05vcm1hbENhcmRJbmZvLnByb3RvIlQKE0NoZXNzTm9ybWFsQ2Fy",
-            "ZEluZm8SDwoHY2FyZF9pZBgCIAEoDRITCgtjb3N0X3BvaW50cxgPIAEoDRIX",
-            "Cg9pc19hdHRhY2hfY3Vyc2UYBiABKAhCIqoCH1dlZWR3YWNrZXIuU2hhcmVk",
-            "Lk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChlDaGVzc05vcm1hbENhcmRJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvIlQKE0NoZXNzTm9ybWFsQ2FyZEluZm8SEwoLY29z",
+            "dF9wb2ludHMYAyABKA0SDwoHY2FyZF9pZBgCIAEoDRIXCg9pc19hdHRhY2hf",
+            "Y3Vyc2UYBCABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChessNormalCardInfo), global::Weedwacker.Shared.Network.Proto.ChessNormalCardInfo.Parser, new[]{ "CardId", "CostPoints", "IsAttachCurse" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChessNormalCardInfo), global::Weedwacker.Shared.Network.Proto.ChessNormalCardInfo.Parser, new[]{ "CostPoints", "CardId", "IsAttachCurse" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +72,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChessNormalCardInfo(ChessNormalCardInfo other) : this() {
-      cardId_ = other.cardId_;
       costPoints_ = other.costPoints_;
+      cardId_ = other.cardId_;
       isAttachCurse_ = other.isAttachCurse_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -82,6 +82,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChessNormalCardInfo Clone() {
       return new ChessNormalCardInfo(this);
+    }
+
+    /// <summary>Field number for the "cost_points" field.</summary>
+    public const int CostPointsFieldNumber = 3;
+    private uint costPoints_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CostPoints {
+      get { return costPoints_; }
+      set {
+        costPoints_ = value;
+      }
     }
 
     /// <summary>Field number for the "card_id" field.</summary>
@@ -96,20 +108,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "cost_points" field.</summary>
-    public const int CostPointsFieldNumber = 15;
-    private uint costPoints_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CostPoints {
-      get { return costPoints_; }
-      set {
-        costPoints_ = value;
-      }
-    }
-
     /// <summary>Field number for the "is_attach_curse" field.</summary>
-    public const int IsAttachCurseFieldNumber = 6;
+    public const int IsAttachCurseFieldNumber = 4;
     private bool isAttachCurse_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -135,8 +135,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (CardId != other.CardId) return false;
       if (CostPoints != other.CostPoints) return false;
+      if (CardId != other.CardId) return false;
       if (IsAttachCurse != other.IsAttachCurse) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -145,8 +145,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (CardId != 0) hash ^= CardId.GetHashCode();
       if (CostPoints != 0) hash ^= CostPoints.GetHashCode();
+      if (CardId != 0) hash ^= CardId.GetHashCode();
       if (IsAttachCurse != false) hash ^= IsAttachCurse.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -170,13 +170,13 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(16);
         output.WriteUInt32(CardId);
       }
-      if (IsAttachCurse != false) {
-        output.WriteRawTag(48);
-        output.WriteBool(IsAttachCurse);
-      }
       if (CostPoints != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(24);
         output.WriteUInt32(CostPoints);
+      }
+      if (IsAttachCurse != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(IsAttachCurse);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -192,13 +192,13 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(16);
         output.WriteUInt32(CardId);
       }
-      if (IsAttachCurse != false) {
-        output.WriteRawTag(48);
-        output.WriteBool(IsAttachCurse);
-      }
       if (CostPoints != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(24);
         output.WriteUInt32(CostPoints);
+      }
+      if (IsAttachCurse != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(IsAttachCurse);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -210,11 +210,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (CardId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CardId);
-      }
       if (CostPoints != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CostPoints);
+      }
+      if (CardId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CardId);
       }
       if (IsAttachCurse != false) {
         size += 1 + 1;
@@ -231,11 +231,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.CardId != 0) {
-        CardId = other.CardId;
-      }
       if (other.CostPoints != 0) {
         CostPoints = other.CostPoints;
+      }
+      if (other.CardId != 0) {
+        CardId = other.CardId;
       }
       if (other.IsAttachCurse != false) {
         IsAttachCurse = other.IsAttachCurse;
@@ -259,12 +259,12 @@ namespace Weedwacker.Shared.Network.Proto {
             CardId = input.ReadUInt32();
             break;
           }
-          case 48: {
-            IsAttachCurse = input.ReadBool();
+          case 24: {
+            CostPoints = input.ReadUInt32();
             break;
           }
-          case 120: {
-            CostPoints = input.ReadUInt32();
+          case 32: {
+            IsAttachCurse = input.ReadBool();
             break;
           }
         }
@@ -286,12 +286,12 @@ namespace Weedwacker.Shared.Network.Proto {
             CardId = input.ReadUInt32();
             break;
           }
-          case 48: {
-            IsAttachCurse = input.ReadBool();
+          case 24: {
+            CostPoints = input.ReadUInt32();
             break;
           }
-          case 120: {
-            CostPoints = input.ReadUInt32();
+          case 32: {
+            IsAttachCurse = input.ReadBool();
             break;
           }
         }

@@ -24,15 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static RoutePointReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChBSb3V0ZVBvaW50LnByb3RvGhRNYXRoUXVhdGVybmlvbi5wcm90bxoMVmVj",
-            "dG9yLnByb3RvIokCCgpSb3V0ZVBvaW50EhkKCHBvc2l0aW9uGAEgASgLMgcu",
-            "VmVjdG9yEhQKDGFycml2ZV9yYW5nZRgCIAEoAhIXCg9oYXNfcmVhY2hfZXZl",
-            "bnQYAyABKAgSEgoIdmVsb2NpdHkYCyABKAJIABIOCgR0aW1lGAwgASgCSAAS",
-            "GwoIcm90YXRpb24YFSABKAsyBy5WZWN0b3JIARIpCg5yb3RhdGlvbl9zcGVl",
-            "ZBgWIAEoCzIPLk1hdGhRdWF0ZXJuaW9uSAESJQoKYXhpc19zcGVlZBgXIAEo",
-            "CzIPLk1hdGhRdWF0ZXJuaW9uSAFCDQoLbW92ZV9wYXJhbXNCDwoNcm90YXRl",
-            "X3BhcmFtc0IiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IG",
-            "cHJvdG8z"));
+            "ChBSb3V0ZVBvaW50LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvGhRNYXRoUXVhdGVybmlvbi5wcm90bxoMVmVjdG9yLnByb3RvIokD",
+            "CgpSb3V0ZVBvaW50EjkKCHBvc2l0aW9uGAEgASgLMicuV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90by5WZWN0b3ISFAoMYXJyaXZlX3JhbmdlGAIg",
+            "ASgCEhcKD2hhc19yZWFjaF9ldmVudBgDIAEoCBISCgh2ZWxvY2l0eRgLIAEo",
+            "AkgAEg4KBHRpbWUYDCABKAJIABI7Cghyb3RhdGlvbhgVIAEoCzInLldlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uVmVjdG9ySAESSQoOcm90YXRp",
+            "b25fc3BlZWQYFiABKAsyLy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
+            "b3RvLk1hdGhRdWF0ZXJuaW9uSAESRQoKYXhpc19zcGVlZBgXIAEoCzIvLldl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uTWF0aFF1YXRlcm5pb25I",
+            "AUINCgttb3ZlX3BhcmFtc0IPCg1yb3RhdGVfcGFyYW1zYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MathQuaternionReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

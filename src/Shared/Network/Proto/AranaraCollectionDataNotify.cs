@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static AranaraCollectionDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFBcmFuYXJhQ29sbGVjdGlvbkRhdGFOb3RpZnkucHJvdG8aHEFyYW5hcmFD",
-            "b2xsZWN0aW9uU3VpdGUucHJvdG8iVQobQXJhbmFyYUNvbGxlY3Rpb25EYXRh",
-            "Tm90aWZ5EjYKFWNvbGxlY3Rpb25fc3VpdGVfbGlzdBgOIAMoCzIXLkFyYW5h",
-            "cmFDb2xsZWN0aW9uU3VpdGVCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
-            "cmsuUHJvdG9iBnByb3RvMw=="));
+            "CiFBcmFuYXJhQ29sbGVjdGlvbkRhdGFOb3RpZnkucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aHEFyYW5hcmFDb2xsZWN0aW9uU3Vp",
+            "dGUucHJvdG8idQobQXJhbmFyYUNvbGxlY3Rpb25EYXRhTm90aWZ5ElYKFWNv",
+            "bGxlY3Rpb25fc3VpdGVfbGlzdBgPIAMoCzI3LldlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8uQXJhbmFyYUNvbGxlY3Rpb25TdWl0ZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.AranaraCollectionSuiteReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 6376
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 6392;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AranaraCollectionDataNotify : pb::IMessage<AranaraCollectionDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "collection_suite_list" field.</summary>
-    public const int CollectionSuiteListFieldNumber = 14;
+    public const int CollectionSuiteListFieldNumber = 15;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.AranaraCollectionSuite> _repeated_collectionSuiteList_codec
-        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.AranaraCollectionSuite.Parser);
+        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.AranaraCollectionSuite.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AranaraCollectionSuite> collectionSuiteList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.AranaraCollectionSuite>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -192,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 114: {
+          case 122: {
             collectionSuiteList_.AddEntriesFrom(input, _repeated_collectionSuiteList_codec);
             break;
           }
@@ -211,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 114: {
+          case 122: {
             collectionSuiteList_.AddEntriesFrom(ref input, _repeated_collectionSuiteList_codec);
             break;
           }

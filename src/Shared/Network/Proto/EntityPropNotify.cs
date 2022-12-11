@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static EntityPropNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZFbnRpdHlQcm9wTm90aWZ5LnByb3RvGg9Qcm9wVmFsdWUucHJvdG8ikwEK",
-            "EEVudGl0eVByb3BOb3RpZnkSMAoIcHJvcF9tYXAYASADKAsyHi5FbnRpdHlQ",
-            "cm9wTm90aWZ5LlByb3BNYXBFbnRyeRIRCgllbnRpdHlfaWQYDiABKA0aOgoM",
-            "UHJvcE1hcEVudHJ5EgsKA2tleRgBIAEoDRIZCgV2YWx1ZRgCIAEoCzIKLlBy",
-            "b3BWYWx1ZToCOAFCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
-            "dG9iBnByb3RvMw=="));
+            "ChZFbnRpdHlQcm9wTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvGg9Qcm9wVmFsdWUucHJvdG8i0wEKEEVudGl0eVByb3BO",
+            "b3RpZnkSEQoJZW50aXR5X2lkGA0gASgNElAKCHByb3BfbWFwGAkgAygLMj4u",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5FbnRpdHlQcm9wTm90",
+            "aWZ5LlByb3BNYXBFbnRyeRpaCgxQcm9wTWFwRW50cnkSCwoDa2V5GAEgASgN",
+            "EjkKBXZhbHVlGAIgASgLMiouV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90by5Qcm9wVmFsdWU6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.PropValueReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EntityPropNotify), global::Weedwacker.Shared.Network.Proto.EntityPropNotify.Parser, new[]{ "PropMap", "EntityId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EntityPropNotify), global::Weedwacker.Shared.Network.Proto.EntityPropNotify.Parser, new[]{ "EntityId", "PropMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -41,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1272
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1279;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class EntityPropNotify : pb::IMessage<EntityPropNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,8 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EntityPropNotify(EntityPropNotify other) : this() {
-      propMap_ = other.propMap_.Clone();
       entityId_ = other.entityId_;
+      propMap_ = other.propMap_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,19 +95,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new EntityPropNotify(this);
     }
 
-    /// <summary>Field number for the "prop_map" field.</summary>
-    public const int PropMapFieldNumber = 1;
-    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.PropValue>.Codec _map_propMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.PropValue>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.PropValue.Parser), 10);
-    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.PropValue> propMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.PropValue>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.PropValue> PropMap {
-      get { return propMap_; }
-    }
-
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 14;
+    public const int EntityIdFieldNumber = 13;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -111,6 +105,17 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         entityId_ = value;
       }
+    }
+
+    /// <summary>Field number for the "prop_map" field.</summary>
+    public const int PropMapFieldNumber = 9;
+    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.PropValue>.Codec _map_propMap_codec
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.PropValue>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.PropValue.Parser), 74);
+    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.PropValue> propMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.PropValue>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.PropValue> PropMap {
+      get { return propMap_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -128,8 +133,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!PropMap.Equals(other.PropMap)) return false;
       if (EntityId != other.EntityId) return false;
+      if (!PropMap.Equals(other.PropMap)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -137,8 +142,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= PropMap.GetHashCode();
       if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      hash ^= PropMap.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -159,7 +164,7 @@ namespace Weedwacker.Shared.Network.Proto {
     #else
       propMap_.WriteTo(output, _map_propMap_codec);
       if (EntityId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(104);
         output.WriteUInt32(EntityId);
       }
       if (_unknownFields != null) {
@@ -174,7 +179,7 @@ namespace Weedwacker.Shared.Network.Proto {
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       propMap_.WriteTo(ref output, _map_propMap_codec);
       if (EntityId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(104);
         output.WriteUInt32(EntityId);
       }
       if (_unknownFields != null) {
@@ -187,10 +192,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += propMap_.CalculateSize(_map_propMap_codec);
       if (EntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
       }
+      size += propMap_.CalculateSize(_map_propMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -203,10 +208,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      propMap_.Add(other.propMap_);
       if (other.EntityId != 0) {
         EntityId = other.EntityId;
       }
+      propMap_.Add(other.propMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -222,11 +227,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 74: {
             propMap_.AddEntriesFrom(input, _map_propMap_codec);
             break;
           }
-          case 112: {
+          case 104: {
             EntityId = input.ReadUInt32();
             break;
           }
@@ -245,11 +250,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
+          case 74: {
             propMap_.AddEntriesFrom(ref input, _map_propMap_codec);
             break;
           }
-          case 112: {
+          case 104: {
             EntityId = input.ReadUInt32();
             break;
           }

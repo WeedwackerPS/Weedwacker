@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomePictureFrameInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBIb21lUGljdHVyZUZyYW1lSW5mb05vdGlmeS5wcm90bxoaSG9tZVBpY3R1",
-            "cmVGcmFtZUluZm8ucHJvdG8iVAoaSG9tZVBpY3R1cmVGcmFtZUluZm9Ob3Rp",
-            "ZnkSNgoXcGljdHVyZV9mcmFtZV9pbmZvX2xpc3QYDCADKAsyFS5Ib21lUGlj",
-            "dHVyZUZyYW1lSW5mb0IiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
-            "cm90b2IGcHJvdG8z"));
+            "CiBIb21lUGljdHVyZUZyYW1lSW5mb05vdGlmeS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90bxoaSG9tZVBpY3R1cmVGcmFtZUluZm8u",
+            "cHJvdG8idAoaSG9tZVBpY3R1cmVGcmFtZUluZm9Ob3RpZnkSVgoXcGljdHVy",
+            "ZV9mcmFtZV9pbmZvX2xpc3QYByADKAsyNS5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLkhvbWVQaWN0dXJlRnJhbWVJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HomePictureFrameInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4878
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4495;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class HomePictureFrameInfoNotify : pb::IMessage<HomePictureFrameInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "picture_frame_info_list" field.</summary>
-    public const int PictureFrameInfoListFieldNumber = 12;
+    public const int PictureFrameInfoListFieldNumber = 7;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomePictureFrameInfo> _repeated_pictureFrameInfoList_codec
-        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.HomePictureFrameInfo.Parser);
+        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.HomePictureFrameInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomePictureFrameInfo> pictureFrameInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomePictureFrameInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -192,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 98: {
+          case 58: {
             pictureFrameInfoList_.AddEntriesFrom(input, _repeated_pictureFrameInfoList_codec);
             break;
           }
@@ -211,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 98: {
+          case 58: {
             pictureFrameInfoList_.AddEntriesFrom(ref input, _repeated_pictureFrameInfoList_codec);
             break;
           }

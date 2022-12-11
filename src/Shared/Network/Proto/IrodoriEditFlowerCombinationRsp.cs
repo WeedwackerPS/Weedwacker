@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static IrodoriEditFlowerCombinationRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVJcm9kb3JpRWRpdEZsb3dlckNvbWJpbmF0aW9uUnNwLnByb3RvImsKH0ly",
-            "b2RvcmlFZGl0Rmxvd2VyQ29tYmluYXRpb25Sc3ASGwoTaXNfYWxyZWFkeV9m",
-            "aW5pc2hlZBgEIAEoCBIaChJpc19jYW5fdGFrZV9yZXdhcmQYAyABKAgSDwoH",
-            "cmV0Y29kZRgBIAEoBUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
-            "cm90b2IGcHJvdG8z"));
+            "CiVJcm9kb3JpRWRpdEZsb3dlckNvbWJpbmF0aW9uUnNwLnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvImwKH0lyb2RvcmlFZGl0Rmxv",
+            "d2VyQ29tYmluYXRpb25Sc3ASDwoHcmV0Y29kZRgCIAEoBRIbChNVbmszMzAw",
+            "X0lBUExIQktKTEJGGAggASgIEhsKE1VuazMzMDBfREJCR1BPTURLUEsYCSAB",
+            "KAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.IrodoriEditFlowerCombinationRsp), global::Weedwacker.Shared.Network.Proto.IrodoriEditFlowerCombinationRsp.Parser, new[]{ "IsAlreadyFinished", "IsCanTakeReward", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.IrodoriEditFlowerCombinationRsp), global::Weedwacker.Shared.Network.Proto.IrodoriEditFlowerCombinationRsp.Parser, new[]{ "Retcode", "Unk3300IAPLHBKJLBF", "Unk3300DBBGPOMDKPK" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8833
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8454;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class IrodoriEditFlowerCombinationRsp : pb::IMessage<IrodoriEditFlowerCombinationRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +82,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public IrodoriEditFlowerCombinationRsp(IrodoriEditFlowerCombinationRsp other) : this() {
-      isAlreadyFinished_ = other.isAlreadyFinished_;
-      isCanTakeReward_ = other.isCanTakeReward_;
       retcode_ = other.retcode_;
+      unk3300IAPLHBKJLBF_ = other.unk3300IAPLHBKJLBF_;
+      unk3300DBBGPOMDKPK_ = other.unk3300DBBGPOMDKPK_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,32 +94,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new IrodoriEditFlowerCombinationRsp(this);
     }
 
-    /// <summary>Field number for the "is_already_finished" field.</summary>
-    public const int IsAlreadyFinishedFieldNumber = 4;
-    private bool isAlreadyFinished_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsAlreadyFinished {
-      get { return isAlreadyFinished_; }
-      set {
-        isAlreadyFinished_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_can_take_reward" field.</summary>
-    public const int IsCanTakeRewardFieldNumber = 3;
-    private bool isCanTakeReward_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsCanTakeReward {
-      get { return isCanTakeReward_; }
-      set {
-        isCanTakeReward_ = value;
-      }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 1;
+    public const int RetcodeFieldNumber = 2;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,6 +103,30 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return retcode_; }
       set {
         retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_IAPLHBKJLBF" field.</summary>
+    public const int Unk3300IAPLHBKJLBFFieldNumber = 8;
+    private bool unk3300IAPLHBKJLBF_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300IAPLHBKJLBF {
+      get { return unk3300IAPLHBKJLBF_; }
+      set {
+        unk3300IAPLHBKJLBF_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_DBBGPOMDKPK" field.</summary>
+    public const int Unk3300DBBGPOMDKPKFieldNumber = 9;
+    private bool unk3300DBBGPOMDKPK_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300DBBGPOMDKPK {
+      get { return unk3300DBBGPOMDKPK_; }
+      set {
+        unk3300DBBGPOMDKPK_ = value;
       }
     }
 
@@ -141,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsAlreadyFinished != other.IsAlreadyFinished) return false;
-      if (IsCanTakeReward != other.IsCanTakeReward) return false;
       if (Retcode != other.Retcode) return false;
+      if (Unk3300IAPLHBKJLBF != other.Unk3300IAPLHBKJLBF) return false;
+      if (Unk3300DBBGPOMDKPK != other.Unk3300DBBGPOMDKPK) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,9 +155,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsAlreadyFinished != false) hash ^= IsAlreadyFinished.GetHashCode();
-      if (IsCanTakeReward != false) hash ^= IsCanTakeReward.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (Unk3300IAPLHBKJLBF != false) hash ^= Unk3300IAPLHBKJLBF.GetHashCode();
+      if (Unk3300DBBGPOMDKPK != false) hash ^= Unk3300DBBGPOMDKPK.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -173,16 +177,16 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Retcode != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(16);
         output.WriteInt32(Retcode);
       }
-      if (IsCanTakeReward != false) {
-        output.WriteRawTag(24);
-        output.WriteBool(IsCanTakeReward);
+      if (Unk3300IAPLHBKJLBF != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(Unk3300IAPLHBKJLBF);
       }
-      if (IsAlreadyFinished != false) {
-        output.WriteRawTag(32);
-        output.WriteBool(IsAlreadyFinished);
+      if (Unk3300DBBGPOMDKPK != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(Unk3300DBBGPOMDKPK);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -195,16 +199,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Retcode != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(16);
         output.WriteInt32(Retcode);
       }
-      if (IsCanTakeReward != false) {
-        output.WriteRawTag(24);
-        output.WriteBool(IsCanTakeReward);
+      if (Unk3300IAPLHBKJLBF != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(Unk3300IAPLHBKJLBF);
       }
-      if (IsAlreadyFinished != false) {
-        output.WriteRawTag(32);
-        output.WriteBool(IsAlreadyFinished);
+      if (Unk3300DBBGPOMDKPK != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(Unk3300DBBGPOMDKPK);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -216,14 +220,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsAlreadyFinished != false) {
-        size += 1 + 1;
-      }
-      if (IsCanTakeReward != false) {
-        size += 1 + 1;
-      }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (Unk3300IAPLHBKJLBF != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300DBBGPOMDKPK != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -237,14 +241,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsAlreadyFinished != false) {
-        IsAlreadyFinished = other.IsAlreadyFinished;
-      }
-      if (other.IsCanTakeReward != false) {
-        IsCanTakeReward = other.IsCanTakeReward;
-      }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
+      }
+      if (other.Unk3300IAPLHBKJLBF != false) {
+        Unk3300IAPLHBKJLBF = other.Unk3300IAPLHBKJLBF;
+      }
+      if (other.Unk3300DBBGPOMDKPK != false) {
+        Unk3300DBBGPOMDKPK = other.Unk3300DBBGPOMDKPK;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -261,16 +265,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 16: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 24: {
-            IsCanTakeReward = input.ReadBool();
+          case 64: {
+            Unk3300IAPLHBKJLBF = input.ReadBool();
             break;
           }
-          case 32: {
-            IsAlreadyFinished = input.ReadBool();
+          case 72: {
+            Unk3300DBBGPOMDKPK = input.ReadBool();
             break;
           }
         }
@@ -288,16 +292,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 16: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 24: {
-            IsCanTakeReward = input.ReadBool();
+          case 64: {
+            Unk3300IAPLHBKJLBF = input.ReadBool();
             break;
           }
-          case 32: {
-            IsAlreadyFinished = input.ReadBool();
+          case 72: {
+            Unk3300DBBGPOMDKPK = input.ReadBool();
             break;
           }
         }

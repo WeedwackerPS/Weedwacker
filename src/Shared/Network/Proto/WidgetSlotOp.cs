@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static WidgetSlotOpReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJXaWRnZXRTbG90T3AucHJvdG8qRAoMV2lkZ2V0U2xvdE9wEhkKFVdJREdF",
-            "VF9TTE9UX09QX0FUVEFDSBAAEhkKFVdJREdFVF9TTE9UX09QX0RFVEFDSBAB",
-            "QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChJXaWRnZXRTbG90T3AucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8qRAoMV2lkZ2V0U2xvdE9wEhkKFVdJREdFVF9TTE9UX09QX0FU",
+            "VEFDSBAAEhkKFVdJREdFVF9TTE9UX09QX0RFVEFDSBABYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Weedwacker.Shared.Network.Proto.WidgetSlotOp), }, null, null));

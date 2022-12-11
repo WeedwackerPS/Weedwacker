@@ -24,14 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static LevelupCityReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRMZXZlbHVwQ2l0eVJlcS5wcm90byJFCg5MZXZlbHVwQ2l0eVJlcRIQCghz",
-            "Y2VuZV9pZBgFIAEoDRIPCgdhcmVhX2lkGAMgASgNEhAKCGl0ZW1fbnVtGA4g",
-            "ASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90",
-            "bzM="));
+            "ChRMZXZlbHVwQ2l0eVJlcS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90byJFCg5MZXZlbHVwQ2l0eVJlcRIQCghzY2VuZV9pZBgJIAEo",
+            "DRIQCghpdGVtX251bRgNIAEoDRIPCgdhcmVhX2lkGAcgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.LevelupCityReq), global::Weedwacker.Shared.Network.Proto.LevelupCityReq.Parser, new[]{ "SceneId", "AreaId", "ItemNum" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.LevelupCityReq), global::Weedwacker.Shared.Network.Proto.LevelupCityReq.Parser, new[]{ "SceneId", "ItemNum", "AreaId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +38,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 216
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 223;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class LevelupCityReq : pb::IMessage<LevelupCityReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LevelupCityReq(LevelupCityReq other) : this() {
       sceneId_ = other.sceneId_;
-      areaId_ = other.areaId_;
       itemNum_ = other.itemNum_;
+      areaId_ = other.areaId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "scene_id" field.</summary>
-    public const int SceneIdFieldNumber = 5;
+    public const int SceneIdFieldNumber = 9;
     private uint sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,20 +105,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "area_id" field.</summary>
-    public const int AreaIdFieldNumber = 3;
-    private uint areaId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint AreaId {
-      get { return areaId_; }
-      set {
-        areaId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "item_num" field.</summary>
-    public const int ItemNumFieldNumber = 14;
+    public const int ItemNumFieldNumber = 13;
     private uint itemNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,6 +114,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return itemNum_; }
       set {
         itemNum_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "area_id" field.</summary>
+    public const int AreaIdFieldNumber = 7;
+    private uint areaId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint AreaId {
+      get { return areaId_; }
+      set {
+        areaId_ = value;
       }
     }
 
@@ -142,8 +145,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (SceneId != other.SceneId) return false;
-      if (AreaId != other.AreaId) return false;
       if (ItemNum != other.ItemNum) return false;
+      if (AreaId != other.AreaId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -152,8 +155,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (SceneId != 0) hash ^= SceneId.GetHashCode();
-      if (AreaId != 0) hash ^= AreaId.GetHashCode();
       if (ItemNum != 0) hash ^= ItemNum.GetHashCode();
+      if (AreaId != 0) hash ^= AreaId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -173,15 +176,15 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (AreaId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(56);
         output.WriteUInt32(AreaId);
       }
       if (SceneId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(72);
         output.WriteUInt32(SceneId);
       }
       if (ItemNum != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(104);
         output.WriteUInt32(ItemNum);
       }
       if (_unknownFields != null) {
@@ -195,15 +198,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (AreaId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(56);
         output.WriteUInt32(AreaId);
       }
       if (SceneId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(72);
         output.WriteUInt32(SceneId);
       }
       if (ItemNum != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(104);
         output.WriteUInt32(ItemNum);
       }
       if (_unknownFields != null) {
@@ -219,11 +222,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (SceneId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
       }
-      if (AreaId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AreaId);
-      }
       if (ItemNum != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ItemNum);
+      }
+      if (AreaId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AreaId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -240,11 +243,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.SceneId != 0) {
         SceneId = other.SceneId;
       }
-      if (other.AreaId != 0) {
-        AreaId = other.AreaId;
-      }
       if (other.ItemNum != 0) {
         ItemNum = other.ItemNum;
+      }
+      if (other.AreaId != 0) {
+        AreaId = other.AreaId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -261,15 +264,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
+          case 56: {
             AreaId = input.ReadUInt32();
             break;
           }
-          case 40: {
+          case 72: {
             SceneId = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 104: {
             ItemNum = input.ReadUInt32();
             break;
           }
@@ -288,15 +291,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
+          case 56: {
             AreaId = input.ReadUInt32();
             break;
           }
-          case 40: {
+          case 72: {
             SceneId = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 104: {
             ItemNum = input.ReadUInt32();
             break;
           }

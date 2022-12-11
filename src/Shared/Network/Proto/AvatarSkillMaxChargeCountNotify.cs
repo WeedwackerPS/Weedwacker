@@ -24,15 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static AvatarSkillMaxChargeCountNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVBdmF0YXJTa2lsbE1heENoYXJnZUNvdW50Tm90aWZ5LnByb3RvImIKH0F2",
-            "YXRhclNraWxsTWF4Q2hhcmdlQ291bnROb3RpZnkSEAoIc2tpbGxfaWQYBiAB",
-            "KA0SGAoQbWF4X2NoYXJnZV9jb3VudBgLIAEoDRITCgthdmF0YXJfZ3VpZBgH",
-            "IAEoBEIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJv",
-            "dG8z"));
+            "CiVBdmF0YXJTa2lsbE1heENoYXJnZUNvdW50Tm90aWZ5LnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvImIKH0F2YXRhclNraWxsTWF4",
+            "Q2hhcmdlQ291bnROb3RpZnkSEwoLYXZhdGFyX2d1aWQYBCABKAQSGAoQbWF4",
+            "X2NoYXJnZV9jb3VudBgJIAEoDRIQCghza2lsbF9pZBgGIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AvatarSkillMaxChargeCountNotify), global::Weedwacker.Shared.Network.Proto.AvatarSkillMaxChargeCountNotify.Parser, new[]{ "SkillId", "MaxChargeCount", "AvatarGuid" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AvatarSkillMaxChargeCountNotify), global::Weedwacker.Shared.Network.Proto.AvatarSkillMaxChargeCountNotify.Parser, new[]{ "AvatarGuid", "MaxChargeCount", "SkillId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1003
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1061;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AvatarSkillMaxChargeCountNotify : pb::IMessage<AvatarSkillMaxChargeCountNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +81,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AvatarSkillMaxChargeCountNotify(AvatarSkillMaxChargeCountNotify other) : this() {
-      skillId_ = other.skillId_;
-      maxChargeCount_ = other.maxChargeCount_;
       avatarGuid_ = other.avatarGuid_;
+      maxChargeCount_ = other.maxChargeCount_;
+      skillId_ = other.skillId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,6 +91,30 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AvatarSkillMaxChargeCountNotify Clone() {
       return new AvatarSkillMaxChargeCountNotify(this);
+    }
+
+    /// <summary>Field number for the "avatar_guid" field.</summary>
+    public const int AvatarGuidFieldNumber = 4;
+    private ulong avatarGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong AvatarGuid {
+      get { return avatarGuid_; }
+      set {
+        avatarGuid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "max_charge_count" field.</summary>
+    public const int MaxChargeCountFieldNumber = 9;
+    private uint maxChargeCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MaxChargeCount {
+      get { return maxChargeCount_; }
+      set {
+        maxChargeCount_ = value;
+      }
     }
 
     /// <summary>Field number for the "skill_id" field.</summary>
@@ -99,30 +126,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return skillId_; }
       set {
         skillId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "max_charge_count" field.</summary>
-    public const int MaxChargeCountFieldNumber = 11;
-    private uint maxChargeCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint MaxChargeCount {
-      get { return maxChargeCount_; }
-      set {
-        maxChargeCount_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "avatar_guid" field.</summary>
-    public const int AvatarGuidFieldNumber = 7;
-    private ulong avatarGuid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong AvatarGuid {
-      get { return avatarGuid_; }
-      set {
-        avatarGuid_ = value;
       }
     }
 
@@ -141,9 +144,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (SkillId != other.SkillId) return false;
-      if (MaxChargeCount != other.MaxChargeCount) return false;
       if (AvatarGuid != other.AvatarGuid) return false;
+      if (MaxChargeCount != other.MaxChargeCount) return false;
+      if (SkillId != other.SkillId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,9 +154,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (SkillId != 0) hash ^= SkillId.GetHashCode();
-      if (MaxChargeCount != 0) hash ^= MaxChargeCount.GetHashCode();
       if (AvatarGuid != 0UL) hash ^= AvatarGuid.GetHashCode();
+      if (MaxChargeCount != 0) hash ^= MaxChargeCount.GetHashCode();
+      if (SkillId != 0) hash ^= SkillId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,16 +175,16 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (AvatarGuid != 0UL) {
+        output.WriteRawTag(32);
+        output.WriteUInt64(AvatarGuid);
+      }
       if (SkillId != 0) {
         output.WriteRawTag(48);
         output.WriteUInt32(SkillId);
       }
-      if (AvatarGuid != 0UL) {
-        output.WriteRawTag(56);
-        output.WriteUInt64(AvatarGuid);
-      }
       if (MaxChargeCount != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(72);
         output.WriteUInt32(MaxChargeCount);
       }
       if (_unknownFields != null) {
@@ -194,16 +197,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (AvatarGuid != 0UL) {
+        output.WriteRawTag(32);
+        output.WriteUInt64(AvatarGuid);
+      }
       if (SkillId != 0) {
         output.WriteRawTag(48);
         output.WriteUInt32(SkillId);
       }
-      if (AvatarGuid != 0UL) {
-        output.WriteRawTag(56);
-        output.WriteUInt64(AvatarGuid);
-      }
       if (MaxChargeCount != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(72);
         output.WriteUInt32(MaxChargeCount);
       }
       if (_unknownFields != null) {
@@ -216,14 +219,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (SkillId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillId);
+      if (AvatarGuid != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(AvatarGuid);
       }
       if (MaxChargeCount != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxChargeCount);
       }
-      if (AvatarGuid != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(AvatarGuid);
+      if (SkillId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -237,14 +240,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.SkillId != 0) {
-        SkillId = other.SkillId;
+      if (other.AvatarGuid != 0UL) {
+        AvatarGuid = other.AvatarGuid;
       }
       if (other.MaxChargeCount != 0) {
         MaxChargeCount = other.MaxChargeCount;
       }
-      if (other.AvatarGuid != 0UL) {
-        AvatarGuid = other.AvatarGuid;
+      if (other.SkillId != 0) {
+        SkillId = other.SkillId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -261,15 +264,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 32: {
+            AvatarGuid = input.ReadUInt64();
+            break;
+          }
           case 48: {
             SkillId = input.ReadUInt32();
             break;
           }
-          case 56: {
-            AvatarGuid = input.ReadUInt64();
-            break;
-          }
-          case 88: {
+          case 72: {
             MaxChargeCount = input.ReadUInt32();
             break;
           }
@@ -288,15 +291,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 32: {
+            AvatarGuid = input.ReadUInt64();
+            break;
+          }
           case 48: {
             SkillId = input.ReadUInt32();
             break;
           }
-          case 56: {
-            AvatarGuid = input.ReadUInt64();
-            break;
-          }
-          case 88: {
+          case 72: {
             MaxChargeCount = input.ReadUInt32();
             break;
           }

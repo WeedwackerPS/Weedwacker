@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static DraftOwnerStartInviteRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5EcmFmdE93bmVyU3RhcnRJbnZpdGVSc3AucHJvdG8aGURyYWZ0SW52aXRl",
-            "RmFpbEluZm8ucHJvdG8ihQEKGERyYWZ0T3duZXJTdGFydEludml0ZVJzcBIz",
-            "ChVpbnZpdGVfZmFpbF9pbmZvX2xpc3QYDyADKAsyFC5EcmFmdEludml0ZUZh",
-            "aWxJbmZvEg8KB3JldGNvZGUYCSABKAUSEQoJd3JvbmdfdWlkGAMgASgNEhAK",
-            "CGRyYWZ0X2lkGA4gASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
-            "LlByb3RvYgZwcm90bzM="));
+            "Ch5EcmFmdE93bmVyU3RhcnRJbnZpdGVSc3AucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aGURyYWZ0SW52aXRlRmFpbEluZm8ucHJv",
+            "dG8ipQEKGERyYWZ0T3duZXJTdGFydEludml0ZVJzcBJTChVpbnZpdGVfZmFp",
+            "bF9pbmZvX2xpc3QYDCADKAsyNC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvLkRyYWZ0SW52aXRlRmFpbEluZm8SEAoIZHJhZnRfaWQYBCABKA0S",
+            "DwoHcmV0Y29kZRgCIAEoBRIRCgl3cm9uZ191aWQYBiABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.DraftInviteFailInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DraftOwnerStartInviteRsp), global::Weedwacker.Shared.Network.Proto.DraftOwnerStartInviteRsp.Parser, new[]{ "InviteFailInfoList", "Retcode", "WrongUid", "DraftId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DraftOwnerStartInviteRsp), global::Weedwacker.Shared.Network.Proto.DraftOwnerStartInviteRsp.Parser, new[]{ "InviteFailInfoList", "DraftId", "Retcode", "WrongUid" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5435
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5419;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class DraftOwnerStartInviteRsp : pb::IMessage<DraftOwnerStartInviteRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -81,9 +85,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DraftOwnerStartInviteRsp(DraftOwnerStartInviteRsp other) : this() {
       inviteFailInfoList_ = other.inviteFailInfoList_.Clone();
+      draftId_ = other.draftId_;
       retcode_ = other.retcode_;
       wrongUid_ = other.wrongUid_;
-      draftId_ = other.draftId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,9 +98,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "invite_fail_info_list" field.</summary>
-    public const int InviteFailInfoListFieldNumber = 15;
+    public const int InviteFailInfoListFieldNumber = 12;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.DraftInviteFailInfo> _repeated_inviteFailInfoList_codec
-        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.DraftInviteFailInfo.Parser);
+        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.DraftInviteFailInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DraftInviteFailInfo> inviteFailInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DraftInviteFailInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,8 +108,20 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return inviteFailInfoList_; }
     }
 
+    /// <summary>Field number for the "draft_id" field.</summary>
+    public const int DraftIdFieldNumber = 4;
+    private uint draftId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint DraftId {
+      get { return draftId_; }
+      set {
+        draftId_ = value;
+      }
+    }
+
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 9;
+    public const int RetcodeFieldNumber = 2;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -117,7 +133,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "wrong_uid" field.</summary>
-    public const int WrongUidFieldNumber = 3;
+    public const int WrongUidFieldNumber = 6;
     private uint wrongUid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -125,18 +141,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return wrongUid_; }
       set {
         wrongUid_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "draft_id" field.</summary>
-    public const int DraftIdFieldNumber = 14;
-    private uint draftId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DraftId {
-      get { return draftId_; }
-      set {
-        draftId_ = value;
       }
     }
 
@@ -156,9 +160,9 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if(!inviteFailInfoList_.Equals(other.inviteFailInfoList_)) return false;
+      if (DraftId != other.DraftId) return false;
       if (Retcode != other.Retcode) return false;
       if (WrongUid != other.WrongUid) return false;
-      if (DraftId != other.DraftId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -167,9 +171,9 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= inviteFailInfoList_.GetHashCode();
+      if (DraftId != 0) hash ^= DraftId.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (WrongUid != 0) hash ^= WrongUid.GetHashCode();
-      if (DraftId != 0) hash ^= DraftId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -188,17 +192,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (WrongUid != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(WrongUid);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(16);
         output.WriteInt32(Retcode);
       }
       if (DraftId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(32);
         output.WriteUInt32(DraftId);
+      }
+      if (WrongUid != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(WrongUid);
       }
       inviteFailInfoList_.WriteTo(output, _repeated_inviteFailInfoList_codec);
       if (_unknownFields != null) {
@@ -211,17 +215,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (WrongUid != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(WrongUid);
-      }
       if (Retcode != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(16);
         output.WriteInt32(Retcode);
       }
       if (DraftId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(32);
         output.WriteUInt32(DraftId);
+      }
+      if (WrongUid != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(WrongUid);
       }
       inviteFailInfoList_.WriteTo(ref output, _repeated_inviteFailInfoList_codec);
       if (_unknownFields != null) {
@@ -235,14 +239,14 @@ namespace Weedwacker.Shared.Network.Proto {
     public int CalculateSize() {
       int size = 0;
       size += inviteFailInfoList_.CalculateSize(_repeated_inviteFailInfoList_codec);
+      if (DraftId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DraftId);
+      }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (WrongUid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WrongUid);
-      }
-      if (DraftId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DraftId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -257,14 +261,14 @@ namespace Weedwacker.Shared.Network.Proto {
         return;
       }
       inviteFailInfoList_.Add(other.inviteFailInfoList_);
+      if (other.DraftId != 0) {
+        DraftId = other.DraftId;
+      }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
       if (other.WrongUid != 0) {
         WrongUid = other.WrongUid;
-      }
-      if (other.DraftId != 0) {
-        DraftId = other.DraftId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -281,19 +285,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            WrongUid = input.ReadUInt32();
-            break;
-          }
-          case 72: {
+          case 16: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 112: {
+          case 32: {
             DraftId = input.ReadUInt32();
             break;
           }
-          case 122: {
+          case 48: {
+            WrongUid = input.ReadUInt32();
+            break;
+          }
+          case 98: {
             inviteFailInfoList_.AddEntriesFrom(input, _repeated_inviteFailInfoList_codec);
             break;
           }
@@ -312,19 +316,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            WrongUid = input.ReadUInt32();
-            break;
-          }
-          case 72: {
+          case 16: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 112: {
+          case 32: {
             DraftId = input.ReadUInt32();
             break;
           }
-          case 122: {
+          case 48: {
+            WrongUid = input.ReadUInt32();
+            break;
+          }
+          case 98: {
             inviteFailInfoList_.AddEntriesFrom(ref input, _repeated_inviteFailInfoList_codec);
             break;
           }

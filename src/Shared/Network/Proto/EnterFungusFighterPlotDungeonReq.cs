@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static EnterFungusFighterPlotDungeonReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiZFbnRlckZ1bmd1c0ZpZ2h0ZXJQbG90RHVuZ2VvblJlcS5wcm90byJOCiBF",
-            "bnRlckZ1bmd1c0ZpZ2h0ZXJQbG90RHVuZ2VvblJlcRISCgpkdW5nZW9uX2lk",
-            "GA4gASgNEhYKDmZ1bmd1c19pZF9saXN0GAggAygNQiKqAh9XZWVkd2Fja2Vy",
-            "LlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiZFbnRlckZ1bmd1c0ZpZ2h0ZXJQbG90RHVuZ2VvblJlcS5wcm90bxIfV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90byJOCiBFbnRlckZ1bmd1c0Zp",
+            "Z2h0ZXJQbG90RHVuZ2VvblJlcRIWCg5mdW5ndXNfaWRfbGlzdBgLIAMoDRIS",
+            "CgpkdW5nZW9uX2lkGA8gASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EnterFungusFighterPlotDungeonReq), global::Weedwacker.Shared.Network.Proto.EnterFungusFighterPlotDungeonReq.Parser, new[]{ "DungeonId", "FungusIdList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.EnterFungusFighterPlotDungeonReq), global::Weedwacker.Shared.Network.Proto.EnterFungusFighterPlotDungeonReq.Parser, new[]{ "FungusIdList", "DungeonId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 23053
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 23768;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class EnterFungusFighterPlotDungeonReq : pb::IMessage<EnterFungusFighterPlotDungeonReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EnterFungusFighterPlotDungeonReq(EnterFungusFighterPlotDungeonReq other) : this() {
-      dungeonId_ = other.dungeonId_;
       fungusIdList_ = other.fungusIdList_.Clone();
+      dungeonId_ = other.dungeonId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,8 +93,19 @@ namespace Weedwacker.Shared.Network.Proto {
       return new EnterFungusFighterPlotDungeonReq(this);
     }
 
+    /// <summary>Field number for the "fungus_id_list" field.</summary>
+    public const int FungusIdListFieldNumber = 11;
+    private static readonly pb::FieldCodec<uint> _repeated_fungusIdList_codec
+        = pb::FieldCodec.ForUInt32(90);
+    private readonly pbc::RepeatedField<uint> fungusIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> FungusIdList {
+      get { return fungusIdList_; }
+    }
+
     /// <summary>Field number for the "dungeon_id" field.</summary>
-    public const int DungeonIdFieldNumber = 14;
+    public const int DungeonIdFieldNumber = 15;
     private uint dungeonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -99,17 +114,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         dungeonId_ = value;
       }
-    }
-
-    /// <summary>Field number for the "fungus_id_list" field.</summary>
-    public const int FungusIdListFieldNumber = 8;
-    private static readonly pb::FieldCodec<uint> _repeated_fungusIdList_codec
-        = pb::FieldCodec.ForUInt32(66);
-    private readonly pbc::RepeatedField<uint> fungusIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> FungusIdList {
-      get { return fungusIdList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -127,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (DungeonId != other.DungeonId) return false;
       if(!fungusIdList_.Equals(other.fungusIdList_)) return false;
+      if (DungeonId != other.DungeonId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
       hash ^= fungusIdList_.GetHashCode();
+      if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -158,7 +162,7 @@ namespace Weedwacker.Shared.Network.Proto {
     #else
       fungusIdList_.WriteTo(output, _repeated_fungusIdList_codec);
       if (DungeonId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(120);
         output.WriteUInt32(DungeonId);
       }
       if (_unknownFields != null) {
@@ -173,7 +177,7 @@ namespace Weedwacker.Shared.Network.Proto {
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       fungusIdList_.WriteTo(ref output, _repeated_fungusIdList_codec);
       if (DungeonId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(120);
         output.WriteUInt32(DungeonId);
       }
       if (_unknownFields != null) {
@@ -186,10 +190,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += fungusIdList_.CalculateSize(_repeated_fungusIdList_codec);
       if (DungeonId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonId);
       }
-      size += fungusIdList_.CalculateSize(_repeated_fungusIdList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -202,10 +206,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      fungusIdList_.Add(other.fungusIdList_);
       if (other.DungeonId != 0) {
         DungeonId = other.DungeonId;
       }
-      fungusIdList_.Add(other.fungusIdList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -221,12 +225,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 66:
-          case 64: {
+          case 90:
+          case 88: {
             fungusIdList_.AddEntriesFrom(input, _repeated_fungusIdList_codec);
             break;
           }
-          case 112: {
+          case 120: {
             DungeonId = input.ReadUInt32();
             break;
           }
@@ -245,12 +249,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 66:
-          case 64: {
+          case 90:
+          case 88: {
             fungusIdList_.AddEntriesFrom(ref input, _repeated_fungusIdList_codec);
             break;
           }
-          case 112: {
+          case 120: {
             DungeonId = input.ReadUInt32();
             break;
           }

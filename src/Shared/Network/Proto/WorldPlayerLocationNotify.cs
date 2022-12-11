@@ -24,12 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static WorldPlayerLocationNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9Xb3JsZFBsYXllckxvY2F0aW9uTm90aWZ5LnByb3RvGhhQbGF5ZXJMb2Nh",
-            "dGlvbkluZm8ucHJvdG8aHVBsYXllcldvcmxkTG9jYXRpb25JbmZvLnByb3Rv",
-            "IoIBChlXb3JsZFBsYXllckxvY2F0aW9uTm90aWZ5EjcKFXBsYXllcl93b3Js",
-            "ZF9sb2NfbGlzdBgIIAMoCzIYLlBsYXllcldvcmxkTG9jYXRpb25JbmZvEiwK",
-            "D3BsYXllcl9sb2NfbGlzdBgPIAMoCzITLlBsYXllckxvY2F0aW9uSW5mb0Ii",
-            "qgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch9Xb3JsZFBsYXllckxvY2F0aW9uTm90aWZ5LnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvGhhQbGF5ZXJMb2NhdGlvbkluZm8ucHJv",
+            "dG8aHVBsYXllcldvcmxkTG9jYXRpb25JbmZvLnByb3RvIsIBChlXb3JsZFBs",
+            "YXllckxvY2F0aW9uTm90aWZ5ElcKFXBsYXllcl93b3JsZF9sb2NfbGlzdBgF",
+            "IAMoCzI4LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uUGxheWVy",
+            "V29ybGRMb2NhdGlvbkluZm8STAoPcGxheWVyX2xvY19saXN0GA4gAygLMjMu",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5QbGF5ZXJMb2NhdGlv",
+            "bkluZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.PlayerLocationInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.PlayerWorldLocationInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -41,9 +43,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 258
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 224;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class WorldPlayerLocationNotify : pb::IMessage<WorldPlayerLocationNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,9 +97,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "player_world_loc_list" field.</summary>
-    public const int PlayerWorldLocListFieldNumber = 8;
+    public const int PlayerWorldLocListFieldNumber = 5;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.PlayerWorldLocationInfo> _repeated_playerWorldLocList_codec
-        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.PlayerWorldLocationInfo.Parser);
+        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.PlayerWorldLocationInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PlayerWorldLocationInfo> playerWorldLocList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PlayerWorldLocationInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,9 +108,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "player_loc_list" field.</summary>
-    public const int PlayerLocListFieldNumber = 15;
+    public const int PlayerLocListFieldNumber = 14;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.PlayerLocationInfo> _repeated_playerLocList_codec
-        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.PlayerLocationInfo.Parser);
+        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.PlayerLocationInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PlayerLocationInfo> playerLocList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PlayerLocationInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -211,11 +217,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 66: {
+          case 42: {
             playerWorldLocList_.AddEntriesFrom(input, _repeated_playerWorldLocList_codec);
             break;
           }
-          case 122: {
+          case 114: {
             playerLocList_.AddEntriesFrom(input, _repeated_playerLocList_codec);
             break;
           }
@@ -234,11 +240,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 66: {
+          case 42: {
             playerWorldLocList_.AddEntriesFrom(ref input, _repeated_playerWorldLocList_codec);
             break;
           }
-          case 122: {
+          case 114: {
             playerLocList_.AddEntriesFrom(ref input, _repeated_playerLocList_codec);
             break;
           }

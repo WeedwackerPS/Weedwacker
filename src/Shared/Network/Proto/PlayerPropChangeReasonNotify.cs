@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlayerPropChangeReasonNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJQbGF5ZXJQcm9wQ2hhbmdlUmVhc29uTm90aWZ5LnByb3RvGhZQcm9wQ2hh",
-            "bmdlUmVhc29uLnByb3RvInoKHFBsYXllclByb3BDaGFuZ2VSZWFzb25Ob3Rp",
-            "ZnkSEQoJcHJvcF90eXBlGAYgASgNEhEKCW9sZF92YWx1ZRgMIAEoAhIhCgZy",
-            "ZWFzb24YASABKA4yES5Qcm9wQ2hhbmdlUmVhc29uEhEKCWN1cl92YWx1ZRgL",
-            "IAEoAkIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJv",
-            "dG8z"));
+            "CiJQbGF5ZXJQcm9wQ2hhbmdlUmVhc29uTm90aWZ5LnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGhZQcm9wQ2hhbmdlUmVhc29uLnBy",
+            "b3RvIpoBChxQbGF5ZXJQcm9wQ2hhbmdlUmVhc29uTm90aWZ5EhEKCW9sZF92",
+            "YWx1ZRgKIAEoAhIRCgljdXJfdmFsdWUYCyABKAISQQoGcmVhc29uGAIgASgO",
+            "MjEuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5Qcm9wQ2hhbmdl",
+            "UmVhc29uEhEKCXByb3BfdHlwZRgFIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.PropChangeReasonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerPropChangeReasonNotify), global::Weedwacker.Shared.Network.Proto.PlayerPropChangeReasonNotify.Parser, new[]{ "PropType", "OldValue", "Reason", "CurValue" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerPropChangeReasonNotify), global::Weedwacker.Shared.Network.Proto.PlayerPropChangeReasonNotify.Parser, new[]{ "OldValue", "CurValue", "Reason", "PropType" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1299
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1257;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class PlayerPropChangeReasonNotify : pb::IMessage<PlayerPropChangeReasonNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,10 +83,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlayerPropChangeReasonNotify(PlayerPropChangeReasonNotify other) : this() {
-      propType_ = other.propType_;
       oldValue_ = other.oldValue_;
-      reason_ = other.reason_;
       curValue_ = other.curValue_;
+      reason_ = other.reason_;
+      propType_ = other.propType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,20 +96,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PlayerPropChangeReasonNotify(this);
     }
 
-    /// <summary>Field number for the "prop_type" field.</summary>
-    public const int PropTypeFieldNumber = 6;
-    private uint propType_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint PropType {
-      get { return propType_; }
-      set {
-        propType_ = value;
-      }
-    }
-
     /// <summary>Field number for the "old_value" field.</summary>
-    public const int OldValueFieldNumber = 12;
+    public const int OldValueFieldNumber = 10;
     private float oldValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -113,18 +105,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return oldValue_; }
       set {
         oldValue_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "reason" field.</summary>
-    public const int ReasonFieldNumber = 1;
-    private global::Weedwacker.Shared.Network.Proto.PropChangeReason reason_ = global::Weedwacker.Shared.Network.Proto.PropChangeReason.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.PropChangeReason Reason {
-      get { return reason_; }
-      set {
-        reason_ = value;
       }
     }
 
@@ -137,6 +117,30 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return curValue_; }
       set {
         curValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "reason" field.</summary>
+    public const int ReasonFieldNumber = 2;
+    private global::Weedwacker.Shared.Network.Proto.PropChangeReason reason_ = global::Weedwacker.Shared.Network.Proto.PropChangeReason.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.PropChangeReason Reason {
+      get { return reason_; }
+      set {
+        reason_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "prop_type" field.</summary>
+    public const int PropTypeFieldNumber = 5;
+    private uint propType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PropType {
+      get { return propType_; }
+      set {
+        propType_ = value;
       }
     }
 
@@ -155,10 +159,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (PropType != other.PropType) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(OldValue, other.OldValue)) return false;
-      if (Reason != other.Reason) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(CurValue, other.CurValue)) return false;
+      if (Reason != other.Reason) return false;
+      if (PropType != other.PropType) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -166,10 +170,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (PropType != 0) hash ^= PropType.GetHashCode();
       if (OldValue != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(OldValue);
-      if (Reason != global::Weedwacker.Shared.Network.Proto.PropChangeReason.None) hash ^= Reason.GetHashCode();
       if (CurValue != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(CurValue);
+      if (Reason != global::Weedwacker.Shared.Network.Proto.PropChangeReason.None) hash ^= Reason.GetHashCode();
+      if (PropType != 0) hash ^= PropType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -189,20 +193,20 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Reason != global::Weedwacker.Shared.Network.Proto.PropChangeReason.None) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(16);
         output.WriteEnum((int) Reason);
       }
       if (PropType != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(40);
         output.WriteUInt32(PropType);
+      }
+      if (OldValue != 0F) {
+        output.WriteRawTag(85);
+        output.WriteFloat(OldValue);
       }
       if (CurValue != 0F) {
         output.WriteRawTag(93);
         output.WriteFloat(CurValue);
-      }
-      if (OldValue != 0F) {
-        output.WriteRawTag(101);
-        output.WriteFloat(OldValue);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -215,20 +219,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Reason != global::Weedwacker.Shared.Network.Proto.PropChangeReason.None) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(16);
         output.WriteEnum((int) Reason);
       }
       if (PropType != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(40);
         output.WriteUInt32(PropType);
+      }
+      if (OldValue != 0F) {
+        output.WriteRawTag(85);
+        output.WriteFloat(OldValue);
       }
       if (CurValue != 0F) {
         output.WriteRawTag(93);
         output.WriteFloat(CurValue);
-      }
-      if (OldValue != 0F) {
-        output.WriteRawTag(101);
-        output.WriteFloat(OldValue);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -240,17 +244,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (PropType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PropType);
-      }
       if (OldValue != 0F) {
+        size += 1 + 4;
+      }
+      if (CurValue != 0F) {
         size += 1 + 4;
       }
       if (Reason != global::Weedwacker.Shared.Network.Proto.PropChangeReason.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
       }
-      if (CurValue != 0F) {
-        size += 1 + 4;
+      if (PropType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PropType);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -264,17 +268,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.PropType != 0) {
-        PropType = other.PropType;
-      }
       if (other.OldValue != 0F) {
         OldValue = other.OldValue;
+      }
+      if (other.CurValue != 0F) {
+        CurValue = other.CurValue;
       }
       if (other.Reason != global::Weedwacker.Shared.Network.Proto.PropChangeReason.None) {
         Reason = other.Reason;
       }
-      if (other.CurValue != 0F) {
-        CurValue = other.CurValue;
+      if (other.PropType != 0) {
+        PropType = other.PropType;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -291,20 +295,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 16: {
             Reason = (global::Weedwacker.Shared.Network.Proto.PropChangeReason) input.ReadEnum();
             break;
           }
-          case 48: {
+          case 40: {
             PropType = input.ReadUInt32();
+            break;
+          }
+          case 85: {
+            OldValue = input.ReadFloat();
             break;
           }
           case 93: {
             CurValue = input.ReadFloat();
-            break;
-          }
-          case 101: {
-            OldValue = input.ReadFloat();
             break;
           }
         }
@@ -322,20 +326,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 16: {
             Reason = (global::Weedwacker.Shared.Network.Proto.PropChangeReason) input.ReadEnum();
             break;
           }
-          case 48: {
+          case 40: {
             PropType = input.ReadUInt32();
+            break;
+          }
+          case 85: {
+            OldValue = input.ReadFloat();
             break;
           }
           case 93: {
             CurValue = input.ReadFloat();
-            break;
-          }
-          case 101: {
-            OldValue = input.ReadFloat();
             break;
           }
         }

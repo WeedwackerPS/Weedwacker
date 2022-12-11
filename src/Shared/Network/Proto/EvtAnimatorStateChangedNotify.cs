@@ -24,13 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static EvtAnimatorStateChangedNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNFdnRBbmltYXRvclN0YXRlQ2hhbmdlZE5vdGlmeS5wcm90bxohRXZ0QW5p",
-            "bWF0b3JTdGF0ZUNoYW5nZWRJbmZvLnByb3RvGhFGb3J3YXJkVHlwZS5wcm90",
-            "byKKAQodRXZ0QW5pbWF0b3JTdGF0ZUNoYW5nZWROb3RpZnkSIgoMZm9yd2Fy",
-            "ZF90eXBlGAMgASgOMgwuRm9yd2FyZFR5cGUSRQofZXZ0X2FuaW1hdG9yX3N0",
-            "YXRlX2NoYW5nZWRfaW5mbxgKIAEoCzIcLkV2dEFuaW1hdG9yU3RhdGVDaGFu",
-            "Z2VkSW5mb0IiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IG",
-            "cHJvdG8z"));
+            "CiNFdnRBbmltYXRvclN0YXRlQ2hhbmdlZE5vdGlmeS5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxohRXZ0QW5pbWF0b3JTdGF0ZUNo",
+            "YW5nZWRJbmZvLnByb3RvGhFGb3J3YXJkVHlwZS5wcm90byLKAQodRXZ0QW5p",
+            "bWF0b3JTdGF0ZUNoYW5nZWROb3RpZnkSQgoMZm9yd2FyZF90eXBlGA4gASgO",
+            "MiwuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5Gb3J3YXJkVHlw",
+            "ZRJlCh9ldnRfYW5pbWF0b3Jfc3RhdGVfY2hhbmdlZF9pbmZvGAIgASgLMjwu",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5FdnRBbmltYXRvclN0",
+            "YXRlQ2hhbmdlZEluZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.EvtAnimatorStateChangedInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ForwardTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -42,10 +43,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 331
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 327;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class EvtAnimatorStateChangedNotify : pb::IMessage<EvtAnimatorStateChangedNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -93,7 +98,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "forward_type" field.</summary>
-    public const int ForwardTypeFieldNumber = 3;
+    public const int ForwardTypeFieldNumber = 14;
     private global::Weedwacker.Shared.Network.Proto.ForwardType forwardType_ = global::Weedwacker.Shared.Network.Proto.ForwardType.Local;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -105,7 +110,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "evt_animator_state_changed_info" field.</summary>
-    public const int EvtAnimatorStateChangedInfoFieldNumber = 10;
+    public const int EvtAnimatorStateChangedInfoFieldNumber = 2;
     private global::Weedwacker.Shared.Network.Proto.EvtAnimatorStateChangedInfo evtAnimatorStateChangedInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -160,13 +165,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
-        output.WriteRawTag(24);
-        output.WriteEnum((int) ForwardType);
-      }
       if (evtAnimatorStateChangedInfo_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(18);
         output.WriteMessage(EvtAnimatorStateChangedInfo);
+      }
+      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
+        output.WriteRawTag(112);
+        output.WriteEnum((int) ForwardType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -178,13 +183,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
-        output.WriteRawTag(24);
-        output.WriteEnum((int) ForwardType);
-      }
       if (evtAnimatorStateChangedInfo_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(18);
         output.WriteMessage(EvtAnimatorStateChangedInfo);
+      }
+      if (ForwardType != global::Weedwacker.Shared.Network.Proto.ForwardType.Local) {
+        output.WriteRawTag(112);
+        output.WriteEnum((int) ForwardType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -238,15 +243,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            ForwardType = (global::Weedwacker.Shared.Network.Proto.ForwardType) input.ReadEnum();
-            break;
-          }
-          case 82: {
+          case 18: {
             if (evtAnimatorStateChangedInfo_ == null) {
               EvtAnimatorStateChangedInfo = new global::Weedwacker.Shared.Network.Proto.EvtAnimatorStateChangedInfo();
             }
             input.ReadMessage(EvtAnimatorStateChangedInfo);
+            break;
+          }
+          case 112: {
+            ForwardType = (global::Weedwacker.Shared.Network.Proto.ForwardType) input.ReadEnum();
             break;
           }
         }
@@ -264,15 +269,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            ForwardType = (global::Weedwacker.Shared.Network.Proto.ForwardType) input.ReadEnum();
-            break;
-          }
-          case 82: {
+          case 18: {
             if (evtAnimatorStateChangedInfo_ == null) {
               EvtAnimatorStateChangedInfo = new global::Weedwacker.Shared.Network.Proto.EvtAnimatorStateChangedInfo();
             }
             input.ReadMessage(EvtAnimatorStateChangedInfo);
+            break;
+          }
+          case 112: {
+            ForwardType = (global::Weedwacker.Shared.Network.Proto.ForwardType) input.ReadEnum();
             break;
           }
         }

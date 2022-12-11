@@ -24,22 +24,23 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlantFlowerActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNQbGFudEZsb3dlckFjdGl2aXR5RGV0YWlsSW5mby5wcm90byKhAwodUGxh",
-            "bnRGbG93ZXJBY3Rpdml0eURldGFpbEluZm8SGQoRaXNfY29udGVudF9jbG9z",
-            "ZWQYAyABKAgSUQoTd2lzaF9mbG93ZXJfbnVtX21hcBgKIAMoCzI0LlBsYW50",
-            "Rmxvd2VyQWN0aXZpdHlEZXRhaWxJbmZvLldpc2hGbG93ZXJOdW1NYXBFbnRy",
-            "eRIcChR0b2RheV9zZWVkX3Jld2FyZF9pZBgLIAEoDRIRCglkYXlfaW5kZXgY",
-            "ASABKA0SHAoUaXNfdG9kYXlfaGFzX2F3YXJkZWQYDSABKAgSUQoTdXNlZF9m",
-            "bG93ZXJfbnVtX21hcBgHIAMoCzI0LlBsYW50Rmxvd2VyQWN0aXZpdHlEZXRh",
-            "aWxJbmZvLlVzZWRGbG93ZXJOdW1NYXBFbnRyeRo3ChVXaXNoRmxvd2VyTnVt",
-            "TWFwRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4ARo3ChVV",
-            "c2VkRmxvd2VyTnVtTWFwRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIg",
-            "ASgNOgI4AUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IG",
-            "cHJvdG8z"));
+            "CiNQbGFudEZsb3dlckFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90byLpAwodUGxhbnRGbG93ZXJBY3Rp",
+            "dml0eURldGFpbEluZm8SEQoJZGF5X2luZGV4GAEgASgNEhwKFHRvZGF5X3Nl",
+            "ZWRfcmV3YXJkX2lkGA8gASgNEhkKEWlzX2NvbnRlbnRfY2xvc2VkGAMgASgI",
+            "EnMKE1VuazMzMDBfRVBNS0RGT0JMRksYCSADKAsyVi5XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvLlBsYW50Rmxvd2VyQWN0aXZpdHlEZXRhaWxJ",
+            "bmZvLlVuazMzMDBFUE1LREZPQkxGS0VudHJ5EnMKE1VuazMzMDBfRUxBSUJN",
+            "RElCRkoYBSADKAsyVi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
+            "LlBsYW50Rmxvd2VyQWN0aXZpdHlEZXRhaWxJbmZvLlVuazMzMDBFTEFJQk1E",
+            "SUJGSkVudHJ5EhwKFGlzX3RvZGF5X2hhc19hd2FyZGVkGAggASgIGjkKF1Vu",
+            "azMzMDBFUE1LREZPQkxGS0VudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgC",
+            "IAEoDToCOAEaOQoXVW5rMzMwMEVMQUlCTURJQkZKRW50cnkSCwoDa2V5GAEg",
+            "ASgNEg0KBXZhbHVlGAIgASgNOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlantFlowerActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.PlantFlowerActivityDetailInfo.Parser, new[]{ "IsContentClosed", "WishFlowerNumMap", "TodaySeedRewardId", "DayIndex", "IsTodayHasAwarded", "UsedFlowerNumMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlantFlowerActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.PlantFlowerActivityDetailInfo.Parser, new[]{ "DayIndex", "TodaySeedRewardId", "IsContentClosed", "Unk3300EPMKDFOBLFK", "Unk3300ELAIBMDIBFJ", "IsTodayHasAwarded" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
           }));
     }
     #endregion
@@ -80,12 +81,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlantFlowerActivityDetailInfo(PlantFlowerActivityDetailInfo other) : this() {
-      isContentClosed_ = other.isContentClosed_;
-      wishFlowerNumMap_ = other.wishFlowerNumMap_.Clone();
-      todaySeedRewardId_ = other.todaySeedRewardId_;
       dayIndex_ = other.dayIndex_;
+      todaySeedRewardId_ = other.todaySeedRewardId_;
+      isContentClosed_ = other.isContentClosed_;
+      unk3300EPMKDFOBLFK_ = other.unk3300EPMKDFOBLFK_.Clone();
+      unk3300ELAIBMDIBFJ_ = other.unk3300ELAIBMDIBFJ_.Clone();
       isTodayHasAwarded_ = other.isTodayHasAwarded_;
-      usedFlowerNumMap_ = other.usedFlowerNumMap_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,41 +94,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlantFlowerActivityDetailInfo Clone() {
       return new PlantFlowerActivityDetailInfo(this);
-    }
-
-    /// <summary>Field number for the "is_content_closed" field.</summary>
-    public const int IsContentClosedFieldNumber = 3;
-    private bool isContentClosed_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsContentClosed {
-      get { return isContentClosed_; }
-      set {
-        isContentClosed_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "wish_flower_num_map" field.</summary>
-    public const int WishFlowerNumMapFieldNumber = 10;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_wishFlowerNumMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 82);
-    private readonly pbc::MapField<uint, uint> wishFlowerNumMap_ = new pbc::MapField<uint, uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> WishFlowerNumMap {
-      get { return wishFlowerNumMap_; }
-    }
-
-    /// <summary>Field number for the "today_seed_reward_id" field.</summary>
-    public const int TodaySeedRewardIdFieldNumber = 11;
-    private uint todaySeedRewardId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TodaySeedRewardId {
-      get { return todaySeedRewardId_; }
-      set {
-        todaySeedRewardId_ = value;
-      }
     }
 
     /// <summary>Field number for the "day_index" field.</summary>
@@ -142,8 +108,54 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "today_seed_reward_id" field.</summary>
+    public const int TodaySeedRewardIdFieldNumber = 15;
+    private uint todaySeedRewardId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TodaySeedRewardId {
+      get { return todaySeedRewardId_; }
+      set {
+        todaySeedRewardId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_content_closed" field.</summary>
+    public const int IsContentClosedFieldNumber = 3;
+    private bool isContentClosed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsContentClosed {
+      get { return isContentClosed_; }
+      set {
+        isContentClosed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_EPMKDFOBLFK" field.</summary>
+    public const int Unk3300EPMKDFOBLFKFieldNumber = 9;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_unk3300EPMKDFOBLFK_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 74);
+    private readonly pbc::MapField<uint, uint> unk3300EPMKDFOBLFK_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> Unk3300EPMKDFOBLFK {
+      get { return unk3300EPMKDFOBLFK_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_ELAIBMDIBFJ" field.</summary>
+    public const int Unk3300ELAIBMDIBFJFieldNumber = 5;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_unk3300ELAIBMDIBFJ_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 42);
+    private readonly pbc::MapField<uint, uint> unk3300ELAIBMDIBFJ_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> Unk3300ELAIBMDIBFJ {
+      get { return unk3300ELAIBMDIBFJ_; }
+    }
+
     /// <summary>Field number for the "is_today_has_awarded" field.</summary>
-    public const int IsTodayHasAwardedFieldNumber = 13;
+    public const int IsTodayHasAwardedFieldNumber = 8;
     private bool isTodayHasAwarded_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -152,17 +164,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         isTodayHasAwarded_ = value;
       }
-    }
-
-    /// <summary>Field number for the "used_flower_num_map" field.</summary>
-    public const int UsedFlowerNumMapFieldNumber = 7;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_usedFlowerNumMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 58);
-    private readonly pbc::MapField<uint, uint> usedFlowerNumMap_ = new pbc::MapField<uint, uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> UsedFlowerNumMap {
-      get { return usedFlowerNumMap_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -180,12 +181,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsContentClosed != other.IsContentClosed) return false;
-      if (!WishFlowerNumMap.Equals(other.WishFlowerNumMap)) return false;
-      if (TodaySeedRewardId != other.TodaySeedRewardId) return false;
       if (DayIndex != other.DayIndex) return false;
+      if (TodaySeedRewardId != other.TodaySeedRewardId) return false;
+      if (IsContentClosed != other.IsContentClosed) return false;
+      if (!Unk3300EPMKDFOBLFK.Equals(other.Unk3300EPMKDFOBLFK)) return false;
+      if (!Unk3300ELAIBMDIBFJ.Equals(other.Unk3300ELAIBMDIBFJ)) return false;
       if (IsTodayHasAwarded != other.IsTodayHasAwarded) return false;
-      if (!UsedFlowerNumMap.Equals(other.UsedFlowerNumMap)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -193,12 +194,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
-      hash ^= WishFlowerNumMap.GetHashCode();
-      if (TodaySeedRewardId != 0) hash ^= TodaySeedRewardId.GetHashCode();
       if (DayIndex != 0) hash ^= DayIndex.GetHashCode();
+      if (TodaySeedRewardId != 0) hash ^= TodaySeedRewardId.GetHashCode();
+      if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
+      hash ^= Unk3300EPMKDFOBLFK.GetHashCode();
+      hash ^= Unk3300ELAIBMDIBFJ.GetHashCode();
       if (IsTodayHasAwarded != false) hash ^= IsTodayHasAwarded.GetHashCode();
-      hash ^= UsedFlowerNumMap.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -225,15 +226,15 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(24);
         output.WriteBool(IsContentClosed);
       }
-      usedFlowerNumMap_.WriteTo(output, _map_usedFlowerNumMap_codec);
-      wishFlowerNumMap_.WriteTo(output, _map_wishFlowerNumMap_codec);
-      if (TodaySeedRewardId != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(TodaySeedRewardId);
-      }
+      unk3300ELAIBMDIBFJ_.WriteTo(output, _map_unk3300ELAIBMDIBFJ_codec);
       if (IsTodayHasAwarded != false) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(64);
         output.WriteBool(IsTodayHasAwarded);
+      }
+      unk3300EPMKDFOBLFK_.WriteTo(output, _map_unk3300EPMKDFOBLFK_codec);
+      if (TodaySeedRewardId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(TodaySeedRewardId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -253,15 +254,15 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(24);
         output.WriteBool(IsContentClosed);
       }
-      usedFlowerNumMap_.WriteTo(ref output, _map_usedFlowerNumMap_codec);
-      wishFlowerNumMap_.WriteTo(ref output, _map_wishFlowerNumMap_codec);
-      if (TodaySeedRewardId != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(TodaySeedRewardId);
-      }
+      unk3300ELAIBMDIBFJ_.WriteTo(ref output, _map_unk3300ELAIBMDIBFJ_codec);
       if (IsTodayHasAwarded != false) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(64);
         output.WriteBool(IsTodayHasAwarded);
+      }
+      unk3300EPMKDFOBLFK_.WriteTo(ref output, _map_unk3300EPMKDFOBLFK_codec);
+      if (TodaySeedRewardId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(TodaySeedRewardId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -273,20 +274,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsContentClosed != false) {
-        size += 1 + 1;
-      }
-      size += wishFlowerNumMap_.CalculateSize(_map_wishFlowerNumMap_codec);
-      if (TodaySeedRewardId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TodaySeedRewardId);
-      }
       if (DayIndex != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DayIndex);
       }
+      if (TodaySeedRewardId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TodaySeedRewardId);
+      }
+      if (IsContentClosed != false) {
+        size += 1 + 1;
+      }
+      size += unk3300EPMKDFOBLFK_.CalculateSize(_map_unk3300EPMKDFOBLFK_codec);
+      size += unk3300ELAIBMDIBFJ_.CalculateSize(_map_unk3300ELAIBMDIBFJ_codec);
       if (IsTodayHasAwarded != false) {
         size += 1 + 1;
       }
-      size += usedFlowerNumMap_.CalculateSize(_map_usedFlowerNumMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -299,20 +300,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsContentClosed != false) {
-        IsContentClosed = other.IsContentClosed;
-      }
-      wishFlowerNumMap_.Add(other.wishFlowerNumMap_);
-      if (other.TodaySeedRewardId != 0) {
-        TodaySeedRewardId = other.TodaySeedRewardId;
-      }
       if (other.DayIndex != 0) {
         DayIndex = other.DayIndex;
       }
+      if (other.TodaySeedRewardId != 0) {
+        TodaySeedRewardId = other.TodaySeedRewardId;
+      }
+      if (other.IsContentClosed != false) {
+        IsContentClosed = other.IsContentClosed;
+      }
+      unk3300EPMKDFOBLFK_.Add(other.unk3300EPMKDFOBLFK_);
+      unk3300ELAIBMDIBFJ_.Add(other.unk3300ELAIBMDIBFJ_);
       if (other.IsTodayHasAwarded != false) {
         IsTodayHasAwarded = other.IsTodayHasAwarded;
       }
-      usedFlowerNumMap_.Add(other.usedFlowerNumMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -336,20 +337,20 @@ namespace Weedwacker.Shared.Network.Proto {
             IsContentClosed = input.ReadBool();
             break;
           }
-          case 58: {
-            usedFlowerNumMap_.AddEntriesFrom(input, _map_usedFlowerNumMap_codec);
+          case 42: {
+            unk3300ELAIBMDIBFJ_.AddEntriesFrom(input, _map_unk3300ELAIBMDIBFJ_codec);
             break;
           }
-          case 82: {
-            wishFlowerNumMap_.AddEntriesFrom(input, _map_wishFlowerNumMap_codec);
-            break;
-          }
-          case 88: {
-            TodaySeedRewardId = input.ReadUInt32();
-            break;
-          }
-          case 104: {
+          case 64: {
             IsTodayHasAwarded = input.ReadBool();
+            break;
+          }
+          case 74: {
+            unk3300EPMKDFOBLFK_.AddEntriesFrom(input, _map_unk3300EPMKDFOBLFK_codec);
+            break;
+          }
+          case 120: {
+            TodaySeedRewardId = input.ReadUInt32();
             break;
           }
         }
@@ -375,20 +376,20 @@ namespace Weedwacker.Shared.Network.Proto {
             IsContentClosed = input.ReadBool();
             break;
           }
-          case 58: {
-            usedFlowerNumMap_.AddEntriesFrom(ref input, _map_usedFlowerNumMap_codec);
+          case 42: {
+            unk3300ELAIBMDIBFJ_.AddEntriesFrom(ref input, _map_unk3300ELAIBMDIBFJ_codec);
             break;
           }
-          case 82: {
-            wishFlowerNumMap_.AddEntriesFrom(ref input, _map_wishFlowerNumMap_codec);
-            break;
-          }
-          case 88: {
-            TodaySeedRewardId = input.ReadUInt32();
-            break;
-          }
-          case 104: {
+          case 64: {
             IsTodayHasAwarded = input.ReadBool();
+            break;
+          }
+          case 74: {
+            unk3300EPMKDFOBLFK_.AddEntriesFrom(ref input, _map_unk3300EPMKDFOBLFK_codec);
+            break;
+          }
+          case 120: {
+            TodaySeedRewardId = input.ReadUInt32();
             break;
           }
         }

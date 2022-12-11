@@ -24,17 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetActivityInfoRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhHZXRBY3Rpdml0eUluZm9Sc3AucHJvdG8aEkFjdGl2aXR5SW5mby5wcm90",
-            "bxoQVWludDMyUGFpci5wcm90byKuAQoSR2V0QWN0aXZpdHlJbmZvUnNwEg8K",
-            "B3JldGNvZGUYDSABKAUSKQoSYWN0aXZpdHlfaW5mb19saXN0GAUgAygLMg0u",
-            "QWN0aXZpdHlJbmZvEh4KFmFjdGl2YXRlZF9zYWxlX2lkX2xpc3QYCyADKA0S",
-            "PAonZGlzYWJsZV90cmFuc2Zlcl9wb2ludF9pbnRlcmFjdGlvbl9saXN0GAog",
-            "AygLMgsuVWludDMyUGFpckIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
-            "ay5Qcm90b2IGcHJvdG8z"));
+            "ChhHZXRBY3Rpdml0eUluZm9Sc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aEkFjdGl2aXR5SW5mby5wcm90bxoQVWludDMyUGFp",
+            "ci5wcm90byLuAQoSR2V0QWN0aXZpdHlJbmZvUnNwElwKJ2Rpc2FibGVfdHJh",
+            "bnNmZXJfcG9pbnRfaW50ZXJhY3Rpb25fbGlzdBgKIAMoCzIrLldlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uVWludDMyUGFpchIPCgdyZXRjb2Rl",
+            "GAYgASgFEkkKEmFjdGl2aXR5X2luZm9fbGlzdBgCIAMoCzItLldlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQWN0aXZpdHlJbmZvEh4KFmFjdGl2",
+            "YXRlZF9zYWxlX2lkX2xpc3QYASADKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ActivityInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.Uint32PairReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetActivityInfoRsp), global::Weedwacker.Shared.Network.Proto.GetActivityInfoRsp.Parser, new[]{ "Retcode", "ActivityInfoList", "ActivatedSaleIdList", "DisableTransferPointInteractionList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetActivityInfoRsp), global::Weedwacker.Shared.Network.Proto.GetActivityInfoRsp.Parser, new[]{ "DisableTransferPointInteractionList", "Retcode", "ActivityInfoList", "ActivatedSaleIdList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -42,9 +43,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2041
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2043;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GetActivityInfoRsp : pb::IMessage<GetActivityInfoRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,10 +85,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetActivityInfoRsp(GetActivityInfoRsp other) : this() {
+      disableTransferPointInteractionList_ = other.disableTransferPointInteractionList_.Clone();
       retcode_ = other.retcode_;
       activityInfoList_ = other.activityInfoList_.Clone();
       activatedSaleIdList_ = other.activatedSaleIdList_.Clone();
-      disableTransferPointInteractionList_ = other.disableTransferPointInteractionList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,40 +96,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetActivityInfoRsp Clone() {
       return new GetActivityInfoRsp(this);
-    }
-
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 13;
-    private int retcode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "activity_info_list" field.</summary>
-    public const int ActivityInfoListFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ActivityInfo> _repeated_activityInfoList_codec
-        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.ActivityInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityInfo> activityInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityInfo> ActivityInfoList {
-      get { return activityInfoList_; }
-    }
-
-    /// <summary>Field number for the "activated_sale_id_list" field.</summary>
-    public const int ActivatedSaleIdListFieldNumber = 11;
-    private static readonly pb::FieldCodec<uint> _repeated_activatedSaleIdList_codec
-        = pb::FieldCodec.ForUInt32(90);
-    private readonly pbc::RepeatedField<uint> activatedSaleIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> ActivatedSaleIdList {
-      get { return activatedSaleIdList_; }
     }
 
     /// <summary>Field number for the "disable_transfer_point_interaction_list" field.</summary>
@@ -136,6 +107,40 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Uint32Pair> DisableTransferPointInteractionList {
       get { return disableTransferPointInteractionList_; }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 6;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "activity_info_list" field.</summary>
+    public const int ActivityInfoListFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ActivityInfo> _repeated_activityInfoList_codec
+        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.ActivityInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityInfo> activityInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityInfo> ActivityInfoList {
+      get { return activityInfoList_; }
+    }
+
+    /// <summary>Field number for the "activated_sale_id_list" field.</summary>
+    public const int ActivatedSaleIdListFieldNumber = 1;
+    private static readonly pb::FieldCodec<uint> _repeated_activatedSaleIdList_codec
+        = pb::FieldCodec.ForUInt32(10);
+    private readonly pbc::RepeatedField<uint> activatedSaleIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> ActivatedSaleIdList {
+      get { return activatedSaleIdList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -153,10 +158,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if(!disableTransferPointInteractionList_.Equals(other.disableTransferPointInteractionList_)) return false;
       if (Retcode != other.Retcode) return false;
       if(!activityInfoList_.Equals(other.activityInfoList_)) return false;
       if(!activatedSaleIdList_.Equals(other.activatedSaleIdList_)) return false;
-      if(!disableTransferPointInteractionList_.Equals(other.disableTransferPointInteractionList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -164,10 +169,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      hash ^= disableTransferPointInteractionList_.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
       hash ^= activityInfoList_.GetHashCode();
       hash ^= activatedSaleIdList_.GetHashCode();
-      hash ^= disableTransferPointInteractionList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -186,13 +191,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      activityInfoList_.WriteTo(output, _repeated_activityInfoList_codec);
-      disableTransferPointInteractionList_.WriteTo(output, _repeated_disableTransferPointInteractionList_codec);
       activatedSaleIdList_.WriteTo(output, _repeated_activatedSaleIdList_codec);
+      activityInfoList_.WriteTo(output, _repeated_activityInfoList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(48);
         output.WriteInt32(Retcode);
       }
+      disableTransferPointInteractionList_.WriteTo(output, _repeated_disableTransferPointInteractionList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -203,13 +208,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      activityInfoList_.WriteTo(ref output, _repeated_activityInfoList_codec);
-      disableTransferPointInteractionList_.WriteTo(ref output, _repeated_disableTransferPointInteractionList_codec);
       activatedSaleIdList_.WriteTo(ref output, _repeated_activatedSaleIdList_codec);
+      activityInfoList_.WriteTo(ref output, _repeated_activityInfoList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(48);
         output.WriteInt32(Retcode);
       }
+      disableTransferPointInteractionList_.WriteTo(ref output, _repeated_disableTransferPointInteractionList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -220,12 +225,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += disableTransferPointInteractionList_.CalculateSize(_repeated_disableTransferPointInteractionList_codec);
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       size += activityInfoList_.CalculateSize(_repeated_activityInfoList_codec);
       size += activatedSaleIdList_.CalculateSize(_repeated_activatedSaleIdList_codec);
-      size += disableTransferPointInteractionList_.CalculateSize(_repeated_disableTransferPointInteractionList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -238,12 +243,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      disableTransferPointInteractionList_.Add(other.disableTransferPointInteractionList_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
       activityInfoList_.Add(other.activityInfoList_);
       activatedSaleIdList_.Add(other.activatedSaleIdList_);
-      disableTransferPointInteractionList_.Add(other.disableTransferPointInteractionList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -259,21 +264,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 42: {
+          case 10:
+          case 8: {
+            activatedSaleIdList_.AddEntriesFrom(input, _repeated_activatedSaleIdList_codec);
+            break;
+          }
+          case 18: {
             activityInfoList_.AddEntriesFrom(input, _repeated_activityInfoList_codec);
+            break;
+          }
+          case 48: {
+            Retcode = input.ReadInt32();
             break;
           }
           case 82: {
             disableTransferPointInteractionList_.AddEntriesFrom(input, _repeated_disableTransferPointInteractionList_codec);
-            break;
-          }
-          case 90:
-          case 88: {
-            activatedSaleIdList_.AddEntriesFrom(input, _repeated_activatedSaleIdList_codec);
-            break;
-          }
-          case 104: {
-            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -291,21 +296,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 42: {
+          case 10:
+          case 8: {
+            activatedSaleIdList_.AddEntriesFrom(ref input, _repeated_activatedSaleIdList_codec);
+            break;
+          }
+          case 18: {
             activityInfoList_.AddEntriesFrom(ref input, _repeated_activityInfoList_codec);
+            break;
+          }
+          case 48: {
+            Retcode = input.ReadInt32();
             break;
           }
           case 82: {
             disableTransferPointInteractionList_.AddEntriesFrom(ref input, _repeated_disableTransferPointInteractionList_codec);
-            break;
-          }
-          case 90:
-          case 88: {
-            activatedSaleIdList_.AddEntriesFrom(ref input, _repeated_activatedSaleIdList_codec);
-            break;
-          }
-          case 104: {
-            Retcode = input.ReadInt32();
             break;
           }
         }

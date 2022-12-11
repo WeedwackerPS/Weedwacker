@@ -24,16 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static MailDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg5NYWlsRGF0YS5wcm90bxoWTWFpbENvbGxlY3RTdGF0ZS5wcm90bxoOTWFp",
-            "bEl0ZW0ucHJvdG8aFU1haWxUZXh0Q29udGVudC5wcm90byKiAgoITWFpbERh",
-            "dGESDwoHbWFpbF9pZBgBIAEoDRIrChFtYWlsX3RleHRfY29udGVudBgEIAEo",
-            "CzIQLk1haWxUZXh0Q29udGVudBIcCglpdGVtX2xpc3QYByADKAsyCS5NYWls",
-            "SXRlbRIRCglzZW5kX3RpbWUYCCABKA0SEwoLZXhwaXJlX3RpbWUYCSABKA0S",
-            "EgoKaW1wb3J0YW5jZRgKIAEoDRIPCgdpc19yZWFkGAsgASgIEhkKEWlzX2F0",
-            "dGFjaG1lbnRfZ290GAwgASgIEhEKCWNvbmZpZ19pZBgNIAEoDRIVCg1hcmd1",
-            "bWVudF9saXN0GA4gAygJEigKDWNvbGxlY3Rfc3RhdGUYDyABKA4yES5NYWls",
-            "Q29sbGVjdFN0YXRlQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
-            "b3RvYgZwcm90bzM="));
+            "Cg5NYWlsRGF0YS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90bxoWTWFpbENvbGxlY3RTdGF0ZS5wcm90bxoOTWFpbEl0ZW0ucHJvdG8a",
+            "FU1haWxUZXh0Q29udGVudC5wcm90byKCAwoITWFpbERhdGESDwoHbWFpbF9p",
+            "ZBgBIAEoDRJLChFtYWlsX3RleHRfY29udGVudBgEIAEoCzIwLldlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uTWFpbFRleHRDb250ZW50EjwKCWl0",
+            "ZW1fbGlzdBgHIAMoCzIpLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
+            "dG8uTWFpbEl0ZW0SEQoJc2VuZF90aW1lGAggASgNEhMKC2V4cGlyZV90aW1l",
+            "GAkgASgNEhIKCmltcG9ydGFuY2UYCiABKA0SDwoHaXNfcmVhZBgLIAEoCBIZ",
+            "ChFpc19hdHRhY2htZW50X2dvdBgMIAEoCBIRCgljb25maWdfaWQYDSABKA0S",
+            "FQoNYXJndW1lbnRfbGlzdBgOIAMoCRJICg1jb2xsZWN0X3N0YXRlGA8gASgO",
+            "MjEuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5NYWlsQ29sbGVj",
+            "dFN0YXRlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.MailCollectStateReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.MailItemReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.MailTextContentReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

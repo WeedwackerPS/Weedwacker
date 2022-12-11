@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static NavMeshStatsNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhOYXZNZXNoU3RhdHNOb3RpZnkucHJvdG8aGFBiTmF2TWVzaFN0YXRzSW5m",
-            "by5wcm90byI4ChJOYXZNZXNoU3RhdHNOb3RpZnkSIgoFaW5mb3MYBCADKAsy",
-            "Ey5QYk5hdk1lc2hTdGF0c0luZm9CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
-            "dHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChhOYXZNZXNoU3RhdHNOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aGFBiTmF2TWVzaFN0YXRzSW5mby5wcm90byJYChJO",
+            "YXZNZXNoU3RhdHNOb3RpZnkSQgoFaW5mb3MYAyADKAsyMy5XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvLlBiTmF2TWVzaFN0YXRzSW5mb2IGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.PbNavMeshStatsInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2316
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2323;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class NavMeshStatsNotify : pb::IMessage<NavMeshStatsNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +94,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "infos" field.</summary>
-    public const int InfosFieldNumber = 4;
+    public const int InfosFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.PbNavMeshStatsInfo> _repeated_infos_codec
-        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.PbNavMeshStatsInfo.Parser);
+        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.PbNavMeshStatsInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PbNavMeshStatsInfo> infos_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PbNavMeshStatsInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -192,7 +197,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 34: {
+          case 26: {
             infos_.AddEntriesFrom(input, _repeated_infos_codec);
             break;
           }
@@ -211,7 +216,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 34: {
+          case 26: {
             infos_.AddEntriesFrom(ref input, _repeated_infos_codec);
             break;
           }

@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static MistTrialFloorLevelNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9NaXN0VHJpYWxGbG9vckxldmVsTm90aWZ5LnByb3RvIkoKGU1pc3RUcmlh",
-            "bEZsb29yTGV2ZWxOb3RpZnkSEwoLZmxvb3JfbGV2ZWwYByABKA0SGAoQZHVu",
-            "Z2Vvbl9zY2VuZV9pZBgOIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
-            "d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch9NaXN0VHJpYWxGbG9vckxldmVsTm90aWZ5LnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvIkoKGU1pc3RUcmlhbEZsb29yTGV2ZWxO",
+            "b3RpZnkSGAoQZHVuZ2Vvbl9zY2VuZV9pZBgGIAEoDRITCgtmbG9vcl9sZXZl",
+            "bBgHIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MistTrialFloorLevelNotify), global::Weedwacker.Shared.Network.Proto.MistTrialFloorLevelNotify.Parser, new[]{ "FloorLevel", "DungeonSceneId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MistTrialFloorLevelNotify), global::Weedwacker.Shared.Network.Proto.MistTrialFloorLevelNotify.Parser, new[]{ "DungeonSceneId", "FloorLevel" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 968
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 988;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class MistTrialFloorLevelNotify : pb::IMessage<MistTrialFloorLevelNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MistTrialFloorLevelNotify(MistTrialFloorLevelNotify other) : this() {
-      floorLevel_ = other.floorLevel_;
       dungeonSceneId_ = other.dungeonSceneId_;
+      floorLevel_ = other.floorLevel_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,6 +91,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MistTrialFloorLevelNotify Clone() {
       return new MistTrialFloorLevelNotify(this);
+    }
+
+    /// <summary>Field number for the "dungeon_scene_id" field.</summary>
+    public const int DungeonSceneIdFieldNumber = 6;
+    private uint dungeonSceneId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint DungeonSceneId {
+      get { return dungeonSceneId_; }
+      set {
+        dungeonSceneId_ = value;
+      }
     }
 
     /// <summary>Field number for the "floor_level" field.</summary>
@@ -98,18 +114,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return floorLevel_; }
       set {
         floorLevel_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "dungeon_scene_id" field.</summary>
-    public const int DungeonSceneIdFieldNumber = 14;
-    private uint dungeonSceneId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DungeonSceneId {
-      get { return dungeonSceneId_; }
-      set {
-        dungeonSceneId_ = value;
       }
     }
 
@@ -128,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (FloorLevel != other.FloorLevel) return false;
       if (DungeonSceneId != other.DungeonSceneId) return false;
+      if (FloorLevel != other.FloorLevel) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -137,8 +141,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (FloorLevel != 0) hash ^= FloorLevel.GetHashCode();
       if (DungeonSceneId != 0) hash ^= DungeonSceneId.GetHashCode();
+      if (FloorLevel != 0) hash ^= FloorLevel.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -157,13 +161,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (DungeonSceneId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(DungeonSceneId);
+      }
       if (FloorLevel != 0) {
         output.WriteRawTag(56);
         output.WriteUInt32(FloorLevel);
-      }
-      if (DungeonSceneId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(DungeonSceneId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -175,13 +179,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (DungeonSceneId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(DungeonSceneId);
+      }
       if (FloorLevel != 0) {
         output.WriteRawTag(56);
         output.WriteUInt32(FloorLevel);
-      }
-      if (DungeonSceneId != 0) {
-        output.WriteRawTag(112);
-        output.WriteUInt32(DungeonSceneId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -193,11 +197,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (FloorLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FloorLevel);
-      }
       if (DungeonSceneId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonSceneId);
+      }
+      if (FloorLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FloorLevel);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -211,11 +215,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.FloorLevel != 0) {
-        FloorLevel = other.FloorLevel;
-      }
       if (other.DungeonSceneId != 0) {
         DungeonSceneId = other.DungeonSceneId;
+      }
+      if (other.FloorLevel != 0) {
+        FloorLevel = other.FloorLevel;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -232,12 +236,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 56: {
-            FloorLevel = input.ReadUInt32();
+          case 48: {
+            DungeonSceneId = input.ReadUInt32();
             break;
           }
-          case 112: {
-            DungeonSceneId = input.ReadUInt32();
+          case 56: {
+            FloorLevel = input.ReadUInt32();
             break;
           }
         }
@@ -255,12 +259,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 56: {
-            FloorLevel = input.ReadUInt32();
+          case 48: {
+            DungeonSceneId = input.ReadUInt32();
             break;
           }
-          case 112: {
-            DungeonSceneId = input.ReadUInt32();
+          case 56: {
+            FloorLevel = input.ReadUInt32();
             break;
           }
         }

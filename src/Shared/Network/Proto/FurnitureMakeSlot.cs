@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static FurnitureMakeSlotReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdGdXJuaXR1cmVNYWtlU2xvdC5wcm90bxoXRnVybml0dXJlTWFrZURhdGEu",
-            "cHJvdG8iSQoRRnVybml0dXJlTWFrZVNsb3QSNAoYZnVybml0dXJlX21ha2Vf",
-            "ZGF0YV9saXN0GA4gAygLMhIuRnVybml0dXJlTWFrZURhdGFCIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChdGdXJuaXR1cmVNYWtlU2xvdC5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90bxoXRnVybml0dXJlTWFrZURhdGEucHJvdG8iaQoRRnVy",
+            "bml0dXJlTWFrZVNsb3QSVAoYZnVybml0dXJlX21ha2VfZGF0YV9saXN0GAEg",
+            "AygLMjIuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5GdXJuaXR1",
+            "cmVNYWtlRGF0YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FurnitureMakeDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,9 +84,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "furniture_make_data_list" field.</summary>
-    public const int FurnitureMakeDataListFieldNumber = 14;
+    public const int FurnitureMakeDataListFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.FurnitureMakeData> _repeated_furnitureMakeDataList_codec
-        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.FurnitureMakeData.Parser);
+        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.FurnitureMakeData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FurnitureMakeData> furnitureMakeDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FurnitureMakeData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -186,7 +187,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 114: {
+          case 10: {
             furnitureMakeDataList_.AddEntriesFrom(input, _repeated_furnitureMakeDataList_codec);
             break;
           }
@@ -205,7 +206,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 114: {
+          case 10: {
             furnitureMakeDataList_.AddEntriesFrom(ref input, _repeated_furnitureMakeDataList_codec);
             break;
           }

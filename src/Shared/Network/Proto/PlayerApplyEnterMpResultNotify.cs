@@ -24,26 +24,27 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlayerApplyEnterMpResultNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiRQbGF5ZXJBcHBseUVudGVyTXBSZXN1bHROb3RpZnkucHJvdG8i7QQKHlBs",
-            "YXllckFwcGx5RW50ZXJNcFJlc3VsdE5vdGlmeRIRCglpc19hZ3JlZWQYAiAB",
-            "KAgSFwoPdGFyZ2V0X25pY2tuYW1lGAwgASgJEjYKBnJlYXNvbhgNIAEoDjIm",
-            "LlBsYXllckFwcGx5RW50ZXJNcFJlc3VsdE5vdGlmeS5SZWFzb24SEgoKdGFy",
-            "Z2V0X3VpZBgBIAEoDSLSAwoGUmVhc29uEhcKE1JFQVNPTl9QTEFZRVJfSlVE",
-            "R0UQABIdChlSRUFTT05fU0NFTkVfQ0FOTk9UX0VOVEVSEAESIQodUkVBU09O",
-            "X1BMQVlFUl9DQU5OT1RfRU5URVJfTVAQAhIXChNSRUFTT05fU1lTVEVNX0pV",
-            "REdFEAMSIgoeUkVBU09OX0FMTE9XX0VOVEVSX1BMQVlFUl9GVUxMEAQSJgoi",
-            "UkVBU09OX1dPUkxEX0xFVkVMX0xPV0VSX1RIQU5fSE9TVBAFEhgKFFJFQVNP",
-            "Tl9IT1NUX0lOX01BVENIEAYSHgoaUkVBU09OX1BMQVlFUl9JTl9CTEFDS0xJ",
-            "U1QQBxImCiJSRUFTT05fUFNfUExBWUVSX05PVF9BQ0NFUFRfT1RIRVJTEAgS",
-            "GgoWUkVBU09OX0hPU1RfSVNfQkxPQ0tFRBAJEigKJFJFQVNPTl9PVEhFUl9E",
-            "QVRBX1ZFUlNJT05fTk9UX0xBVEVTVBAKEiIKHlJFQVNPTl9EQVRBX1ZFUlNJ",
-            "T05fTk9UX0xBVEVTVBALEiUKIVJFQVNPTl9QTEFZRVJfTk9UX0lOX1BMQVlF",
-            "Ul9XT1JMRBAMEhUKEVJFQVNPTl9NQVhfUExBWUVSEA1CIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiRQbGF5ZXJBcHBseUVudGVyTXBSZXN1bHROb3RpZnkucHJvdG8SH1dlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8ijQUKHlBsYXllckFwcGx5RW50",
+            "ZXJNcFJlc3VsdE5vdGlmeRJWCgZyZWFzb24YCiABKA4yRi5XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvLlBsYXllckFwcGx5RW50ZXJNcFJlc3Vs",
+            "dE5vdGlmeS5SZWFzb24SFwoPdGFyZ2V0X25pY2tuYW1lGAUgASgJEhEKCWlz",
+            "X2FncmVlZBgCIAEoCBISCgp0YXJnZXRfdWlkGAQgASgNItIDCgZSZWFzb24S",
+            "FwoTUkVBU09OX1BMQVlFUl9KVURHRRAAEh0KGVJFQVNPTl9TQ0VORV9DQU5O",
+            "T1RfRU5URVIQARIhCh1SRUFTT05fUExBWUVSX0NBTk5PVF9FTlRFUl9NUBAC",
+            "EhcKE1JFQVNPTl9TWVNURU1fSlVER0UQAxIiCh5SRUFTT05fQUxMT1dfRU5U",
+            "RVJfUExBWUVSX0ZVTEwQBBImCiJSRUFTT05fV09STERfTEVWRUxfTE9XRVJf",
+            "VEhBTl9IT1NUEAUSGAoUUkVBU09OX0hPU1RfSU5fTUFUQ0gQBhIeChpSRUFT",
+            "T05fUExBWUVSX0lOX0JMQUNLTElTVBAHEiYKIlJFQVNPTl9QU19QTEFZRVJf",
+            "Tk9UX0FDQ0VQVF9PVEhFUlMQCBIaChZSRUFTT05fSE9TVF9JU19CTE9DS0VE",
+            "EAkSKAokUkVBU09OX09USEVSX0RBVEFfVkVSU0lPTl9OT1RfTEFURVNUEAoS",
+            "IgoeUkVBU09OX0RBVEFfVkVSU0lPTl9OT1RfTEFURVNUEAsSJQohUkVBU09O",
+            "X1BMQVlFUl9OT1RfSU5fUExBWUVSX1dPUkxEEAwSFQoRUkVBU09OX01BWF9Q",
+            "TEFZRVIQDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpResultNotify), global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpResultNotify.Parser, new[]{ "IsAgreed", "TargetNickname", "Reason", "TargetUid" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpResultNotify.Types.Reason) }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpResultNotify), global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpResultNotify.Parser, new[]{ "Reason", "TargetNickname", "IsAgreed", "TargetUid" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpResultNotify.Types.Reason) }, null, null)
           }));
     }
     #endregion
@@ -51,9 +52,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1807
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1835;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class PlayerApplyEnterMpResultNotify : pb::IMessage<PlayerApplyEnterMpResultNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +94,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlayerApplyEnterMpResultNotify(PlayerApplyEnterMpResultNotify other) : this() {
-      isAgreed_ = other.isAgreed_;
-      targetNickname_ = other.targetNickname_;
       reason_ = other.reason_;
+      targetNickname_ = other.targetNickname_;
+      isAgreed_ = other.isAgreed_;
       targetUid_ = other.targetUid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -100,6 +105,30 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PlayerApplyEnterMpResultNotify Clone() {
       return new PlayerApplyEnterMpResultNotify(this);
+    }
+
+    /// <summary>Field number for the "reason" field.</summary>
+    public const int ReasonFieldNumber = 10;
+    private global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpResultNotify.Types.Reason reason_ = global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpResultNotify.Types.Reason.PlayerJudge;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpResultNotify.Types.Reason Reason {
+      get { return reason_; }
+      set {
+        reason_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "target_nickname" field.</summary>
+    public const int TargetNicknameFieldNumber = 5;
+    private string targetNickname_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string TargetNickname {
+      get { return targetNickname_; }
+      set {
+        targetNickname_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
     }
 
     /// <summary>Field number for the "is_agreed" field.</summary>
@@ -114,32 +143,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "target_nickname" field.</summary>
-    public const int TargetNicknameFieldNumber = 12;
-    private string targetNickname_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string TargetNickname {
-      get { return targetNickname_; }
-      set {
-        targetNickname_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "reason" field.</summary>
-    public const int ReasonFieldNumber = 13;
-    private global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpResultNotify.Types.Reason reason_ = global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpResultNotify.Types.Reason.PlayerJudge;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpResultNotify.Types.Reason Reason {
-      get { return reason_; }
-      set {
-        reason_ = value;
-      }
-    }
-
     /// <summary>Field number for the "target_uid" field.</summary>
-    public const int TargetUidFieldNumber = 1;
+    public const int TargetUidFieldNumber = 4;
     private uint targetUid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -165,9 +170,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsAgreed != other.IsAgreed) return false;
-      if (TargetNickname != other.TargetNickname) return false;
       if (Reason != other.Reason) return false;
+      if (TargetNickname != other.TargetNickname) return false;
+      if (IsAgreed != other.IsAgreed) return false;
       if (TargetUid != other.TargetUid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -176,9 +181,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsAgreed != false) hash ^= IsAgreed.GetHashCode();
-      if (TargetNickname.Length != 0) hash ^= TargetNickname.GetHashCode();
       if (Reason != global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpResultNotify.Types.Reason.PlayerJudge) hash ^= Reason.GetHashCode();
+      if (TargetNickname.Length != 0) hash ^= TargetNickname.GetHashCode();
+      if (IsAgreed != false) hash ^= IsAgreed.GetHashCode();
       if (TargetUid != 0) hash ^= TargetUid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -198,20 +203,20 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (TargetUid != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(TargetUid);
-      }
       if (IsAgreed != false) {
         output.WriteRawTag(16);
         output.WriteBool(IsAgreed);
       }
+      if (TargetUid != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(TargetUid);
+      }
       if (TargetNickname.Length != 0) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(42);
         output.WriteString(TargetNickname);
       }
       if (Reason != global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpResultNotify.Types.Reason.PlayerJudge) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(80);
         output.WriteEnum((int) Reason);
       }
       if (_unknownFields != null) {
@@ -224,20 +229,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (TargetUid != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(TargetUid);
-      }
       if (IsAgreed != false) {
         output.WriteRawTag(16);
         output.WriteBool(IsAgreed);
       }
+      if (TargetUid != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(TargetUid);
+      }
       if (TargetNickname.Length != 0) {
-        output.WriteRawTag(98);
+        output.WriteRawTag(42);
         output.WriteString(TargetNickname);
       }
       if (Reason != global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpResultNotify.Types.Reason.PlayerJudge) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(80);
         output.WriteEnum((int) Reason);
       }
       if (_unknownFields != null) {
@@ -250,14 +255,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsAgreed != false) {
-        size += 1 + 1;
+      if (Reason != global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpResultNotify.Types.Reason.PlayerJudge) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
       }
       if (TargetNickname.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(TargetNickname);
       }
-      if (Reason != global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpResultNotify.Types.Reason.PlayerJudge) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
+      if (IsAgreed != false) {
+        size += 1 + 1;
       }
       if (TargetUid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetUid);
@@ -274,14 +279,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsAgreed != false) {
-        IsAgreed = other.IsAgreed;
+      if (other.Reason != global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpResultNotify.Types.Reason.PlayerJudge) {
+        Reason = other.Reason;
       }
       if (other.TargetNickname.Length != 0) {
         TargetNickname = other.TargetNickname;
       }
-      if (other.Reason != global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpResultNotify.Types.Reason.PlayerJudge) {
-        Reason = other.Reason;
+      if (other.IsAgreed != false) {
+        IsAgreed = other.IsAgreed;
       }
       if (other.TargetUid != 0) {
         TargetUid = other.TargetUid;
@@ -301,19 +306,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            TargetUid = input.ReadUInt32();
-            break;
-          }
           case 16: {
             IsAgreed = input.ReadBool();
             break;
           }
-          case 98: {
+          case 32: {
+            TargetUid = input.ReadUInt32();
+            break;
+          }
+          case 42: {
             TargetNickname = input.ReadString();
             break;
           }
-          case 104: {
+          case 80: {
             Reason = (global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpResultNotify.Types.Reason) input.ReadEnum();
             break;
           }
@@ -332,19 +337,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            TargetUid = input.ReadUInt32();
-            break;
-          }
           case 16: {
             IsAgreed = input.ReadBool();
             break;
           }
-          case 98: {
+          case 32: {
+            TargetUid = input.ReadUInt32();
+            break;
+          }
+          case 42: {
             TargetNickname = input.ReadString();
             break;
           }
-          case 104: {
+          case 80: {
             Reason = (global::Weedwacker.Shared.Network.Proto.PlayerApplyEnterMpResultNotify.Types.Reason) input.ReadEnum();
             break;
           }

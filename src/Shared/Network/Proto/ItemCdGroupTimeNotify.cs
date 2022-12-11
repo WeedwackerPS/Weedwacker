@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static ItemCdGroupTimeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtJdGVtQ2RHcm91cFRpbWVOb3RpZnkucHJvdG8ihQEKFUl0ZW1DZEdyb3Vw",
-            "VGltZU5vdGlmeRI6CgtpdGVtX2NkX21hcBgJIAMoCzIlLkl0ZW1DZEdyb3Vw",
-            "VGltZU5vdGlmeS5JdGVtQ2RNYXBFbnRyeRowCg5JdGVtQ2RNYXBFbnRyeRIL",
-            "CgNrZXkYASABKA0SDQoFdmFsdWUYAiABKAQ6AjgBQiKqAh9XZWVkd2Fja2Vy",
-            "LlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChtJdGVtQ2RHcm91cFRpbWVOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8ipQEKFUl0ZW1DZEdyb3VwVGltZU5vdGlmeRJa",
+            "CgtpdGVtX2NkX21hcBgHIAMoCzJFLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uSXRlbUNkR3JvdXBUaW1lTm90aWZ5Lkl0ZW1DZE1hcEVudHJ5",
+            "GjAKDkl0ZW1DZE1hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgCIAEo",
+            "BDoCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 634
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 680;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ItemCdGroupTimeNotify : pb::IMessage<ItemCdGroupTimeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +94,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "item_cd_map" field.</summary>
-    public const int ItemCdMapFieldNumber = 9;
+    public const int ItemCdMapFieldNumber = 7;
     private static readonly pbc::MapField<uint, ulong>.Codec _map_itemCdMap_codec
-        = new pbc::MapField<uint, ulong>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt64(16, 0UL), 74);
+        = new pbc::MapField<uint, ulong>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt64(16, 0UL), 58);
     private readonly pbc::MapField<uint, ulong> itemCdMap_ = new pbc::MapField<uint, ulong>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -192,7 +197,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 74: {
+          case 58: {
             itemCdMap_.AddEntriesFrom(input, _map_itemCdMap_codec);
             break;
           }
@@ -211,7 +216,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 74: {
+          case 58: {
             itemCdMap_.AddEntriesFrom(ref input, _map_itemCdMap_codec);
             break;
           }

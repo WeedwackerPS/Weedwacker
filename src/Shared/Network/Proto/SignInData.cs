@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static SignInDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChBTaWduSW5EYXRhLnByb3RvGg9JdGVtUGFyYW0ucHJvdG8iRQoKU2lnbklu",
-            "RGF0YRIRCglkYXlfY291bnQYDiABKA0SJAoQcmV3YXJkX2l0ZW1fbGlzdBgF",
-            "IAMoCzIKLkl0ZW1QYXJhbUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
-            "ay5Qcm90b2IGcHJvdG8z"));
+            "ChBTaWduSW5EYXRhLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvGg9JdGVtUGFyYW0ucHJvdG8iZQoKU2lnbkluRGF0YRIRCglkYXlf",
+            "Y291bnQYBCABKA0SRAoQcmV3YXJkX2l0ZW1fbGlzdBgPIAMoCzIqLldlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uSXRlbVBhcmFtYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ItemParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "day_count" field.</summary>
-    public const int DayCountFieldNumber = 14;
+    public const int DayCountFieldNumber = 4;
     private uint dayCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -96,9 +96,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "reward_item_list" field.</summary>
-    public const int RewardItemListFieldNumber = 5;
+    public const int RewardItemListFieldNumber = 15;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_rewardItemList_codec
-        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
+        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> rewardItemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -150,11 +150,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      rewardItemList_.WriteTo(output, _repeated_rewardItemList_codec);
       if (DayCount != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(32);
         output.WriteUInt32(DayCount);
       }
+      rewardItemList_.WriteTo(output, _repeated_rewardItemList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -165,11 +165,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      rewardItemList_.WriteTo(ref output, _repeated_rewardItemList_codec);
       if (DayCount != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(32);
         output.WriteUInt32(DayCount);
       }
+      rewardItemList_.WriteTo(ref output, _repeated_rewardItemList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -215,12 +215,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 42: {
-            rewardItemList_.AddEntriesFrom(input, _repeated_rewardItemList_codec);
+          case 32: {
+            DayCount = input.ReadUInt32();
             break;
           }
-          case 112: {
-            DayCount = input.ReadUInt32();
+          case 122: {
+            rewardItemList_.AddEntriesFrom(input, _repeated_rewardItemList_codec);
             break;
           }
         }
@@ -238,12 +238,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 42: {
-            rewardItemList_.AddEntriesFrom(ref input, _repeated_rewardItemList_codec);
+          case 32: {
+            DayCount = input.ReadUInt32();
             break;
           }
-          case 112: {
-            DayCount = input.ReadUInt32();
+          case 122: {
+            rewardItemList_.AddEntriesFrom(ref input, _repeated_rewardItemList_codec);
             break;
           }
         }

@@ -24,18 +24,21 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGSettleNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVHQ0dTZXR0bGVOb3RpZnkucHJvdG8aEkdDR0VuZFJlYXNvbi5wcm90bxoZ",
-            "R0NHR2FtZUJ1c2luZXNzVHlwZS5wcm90bxoPSXRlbVBhcmFtLnByb3RvIsgB",
-            "Cg9HQ0dTZXR0bGVOb3RpZnkSDwoHZ2FtZV9pZBgHIAEoDRIrCg1idXNpbmVz",
-            "c190eXBlGAIgASgOMhQuR0NHR2FtZUJ1c2luZXNzVHlwZRIOCgZpc193aW4Y",
-            "DSABKAgSJAoQcmV3YXJkX2l0ZW1fbGlzdBgJIAMoCzIKLkl0ZW1QYXJhbRIi",
-            "ChpmaW5pc2hlZF9jaGFsbGVuZ2VfaWRfbGlzdBgGIAMoDRIdCgZyZWFzb24Y",
-            "AyABKA4yDS5HQ0dFbmRSZWFzb25CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
-            "dHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChVHQ0dTZXR0bGVOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8aEkdDR0VuZFJlYXNvbi5wcm90bxoZR0NHR2FtZUJ1c2lu",
+            "ZXNzVHlwZS5wcm90bxoPSXRlbVBhcmFtLnByb3RvIukCCg9HQ0dTZXR0bGVO",
+            "b3RpZnkSRAoQcmV3YXJkX2l0ZW1fbGlzdBgIIAMoCzIqLldlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8uSXRlbVBhcmFtEiIKGmZpbmlzaGVkX2No",
+            "YWxsZW5nZV9pZF9saXN0GAEgAygNEg8KB2dhbWVfaWQYAyABKA0SDgoGaXNf",
+            "d2luGAIgASgIEksKDWJ1c2luZXNzX3R5cGUYBSABKA4yNC5XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvLkdDR0dhbWVCdXNpbmVzc1R5cGUSGQoR",
+            "d2luX2NvbnRyb2xsZXJfaWQYCyABKA0SJAocZm9yYmlkX2ZpbmlzaF9jaGFs",
+            "bGVuZ2VfbGlzdBgKIAMoDRI9CgZyZWFzb24YBCABKA4yLS5XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvLkdDR0VuZFJlYXNvbmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGEndReasonReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGGameBusinessTypeReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ItemParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGSettleNotify), global::Weedwacker.Shared.Network.Proto.GCGSettleNotify.Parser, new[]{ "GameId", "BusinessType", "IsWin", "RewardItemList", "FinishedChallengeIdList", "Reason" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGSettleNotify), global::Weedwacker.Shared.Network.Proto.GCGSettleNotify.Parser, new[]{ "RewardItemList", "FinishedChallengeIdList", "GameId", "IsWin", "BusinessType", "WinControllerId", "ForbidFinishChallengeList", "Reason" }, null, null, null, null)
           }));
     }
     #endregion
@@ -43,9 +46,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 7769
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 7562;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GCGSettleNotify : pb::IMessage<GCGSettleNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -81,11 +88,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGSettleNotify(GCGSettleNotify other) : this() {
-      gameId_ = other.gameId_;
-      businessType_ = other.businessType_;
-      isWin_ = other.isWin_;
       rewardItemList_ = other.rewardItemList_.Clone();
       finishedChallengeIdList_ = other.finishedChallengeIdList_.Clone();
+      gameId_ = other.gameId_;
+      isWin_ = other.isWin_;
+      businessType_ = other.businessType_;
+      winControllerId_ = other.winControllerId_;
+      forbidFinishChallengeList_ = other.forbidFinishChallengeList_.Clone();
       reason_ = other.reason_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -96,8 +105,30 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GCGSettleNotify(this);
     }
 
+    /// <summary>Field number for the "reward_item_list" field.</summary>
+    public const int RewardItemListFieldNumber = 8;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_rewardItemList_codec
+        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> rewardItemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> RewardItemList {
+      get { return rewardItemList_; }
+    }
+
+    /// <summary>Field number for the "finished_challenge_id_list" field.</summary>
+    public const int FinishedChallengeIdListFieldNumber = 1;
+    private static readonly pb::FieldCodec<uint> _repeated_finishedChallengeIdList_codec
+        = pb::FieldCodec.ForUInt32(10);
+    private readonly pbc::RepeatedField<uint> finishedChallengeIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> FinishedChallengeIdList {
+      get { return finishedChallengeIdList_; }
+    }
+
     /// <summary>Field number for the "game_id" field.</summary>
-    public const int GameIdFieldNumber = 7;
+    public const int GameIdFieldNumber = 3;
     private uint gameId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -108,20 +139,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "business_type" field.</summary>
-    public const int BusinessTypeFieldNumber = 2;
-    private global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType businessType_ = global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType BusinessType {
-      get { return businessType_; }
-      set {
-        businessType_ = value;
-      }
-    }
-
     /// <summary>Field number for the "is_win" field.</summary>
-    public const int IsWinFieldNumber = 13;
+    public const int IsWinFieldNumber = 2;
     private bool isWin_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -132,30 +151,43 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "reward_item_list" field.</summary>
-    public const int RewardItemListFieldNumber = 9;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_rewardItemList_codec
-        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> rewardItemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
+    /// <summary>Field number for the "business_type" field.</summary>
+    public const int BusinessTypeFieldNumber = 5;
+    private global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType businessType_ = global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> RewardItemList {
-      get { return rewardItemList_; }
+    public global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType BusinessType {
+      get { return businessType_; }
+      set {
+        businessType_ = value;
+      }
     }
 
-    /// <summary>Field number for the "finished_challenge_id_list" field.</summary>
-    public const int FinishedChallengeIdListFieldNumber = 6;
-    private static readonly pb::FieldCodec<uint> _repeated_finishedChallengeIdList_codec
-        = pb::FieldCodec.ForUInt32(50);
-    private readonly pbc::RepeatedField<uint> finishedChallengeIdList_ = new pbc::RepeatedField<uint>();
+    /// <summary>Field number for the "win_controller_id" field.</summary>
+    public const int WinControllerIdFieldNumber = 11;
+    private uint winControllerId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> FinishedChallengeIdList {
-      get { return finishedChallengeIdList_; }
+    public uint WinControllerId {
+      get { return winControllerId_; }
+      set {
+        winControllerId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "forbid_finish_challenge_list" field.</summary>
+    public const int ForbidFinishChallengeListFieldNumber = 10;
+    private static readonly pb::FieldCodec<uint> _repeated_forbidFinishChallengeList_codec
+        = pb::FieldCodec.ForUInt32(82);
+    private readonly pbc::RepeatedField<uint> forbidFinishChallengeList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> ForbidFinishChallengeList {
+      get { return forbidFinishChallengeList_; }
     }
 
     /// <summary>Field number for the "reason" field.</summary>
-    public const int ReasonFieldNumber = 3;
+    public const int ReasonFieldNumber = 4;
     private global::Weedwacker.Shared.Network.Proto.GCGEndReason reason_ = global::Weedwacker.Shared.Network.Proto.GCGEndReason.Default;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -181,11 +213,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (GameId != other.GameId) return false;
-      if (BusinessType != other.BusinessType) return false;
-      if (IsWin != other.IsWin) return false;
       if(!rewardItemList_.Equals(other.rewardItemList_)) return false;
       if(!finishedChallengeIdList_.Equals(other.finishedChallengeIdList_)) return false;
+      if (GameId != other.GameId) return false;
+      if (IsWin != other.IsWin) return false;
+      if (BusinessType != other.BusinessType) return false;
+      if (WinControllerId != other.WinControllerId) return false;
+      if(!forbidFinishChallengeList_.Equals(other.forbidFinishChallengeList_)) return false;
       if (Reason != other.Reason) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -194,11 +228,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (GameId != 0) hash ^= GameId.GetHashCode();
-      if (BusinessType != global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType.None) hash ^= BusinessType.GetHashCode();
-      if (IsWin != false) hash ^= IsWin.GetHashCode();
       hash ^= rewardItemList_.GetHashCode();
       hash ^= finishedChallengeIdList_.GetHashCode();
+      if (GameId != 0) hash ^= GameId.GetHashCode();
+      if (IsWin != false) hash ^= IsWin.GetHashCode();
+      if (BusinessType != global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType.None) hash ^= BusinessType.GetHashCode();
+      if (WinControllerId != 0) hash ^= WinControllerId.GetHashCode();
+      hash ^= forbidFinishChallengeList_.GetHashCode();
       if (Reason != global::Weedwacker.Shared.Network.Proto.GCGEndReason.Default) hash ^= Reason.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -218,23 +254,28 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (BusinessType != global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType.None) {
-        output.WriteRawTag(16);
-        output.WriteEnum((int) BusinessType);
-      }
-      if (Reason != global::Weedwacker.Shared.Network.Proto.GCGEndReason.Default) {
-        output.WriteRawTag(24);
-        output.WriteEnum((int) Reason);
-      }
       finishedChallengeIdList_.WriteTo(output, _repeated_finishedChallengeIdList_codec);
+      if (IsWin != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(IsWin);
+      }
       if (GameId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(24);
         output.WriteUInt32(GameId);
       }
+      if (Reason != global::Weedwacker.Shared.Network.Proto.GCGEndReason.Default) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) Reason);
+      }
+      if (BusinessType != global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType.None) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) BusinessType);
+      }
       rewardItemList_.WriteTo(output, _repeated_rewardItemList_codec);
-      if (IsWin != false) {
-        output.WriteRawTag(104);
-        output.WriteBool(IsWin);
+      forbidFinishChallengeList_.WriteTo(output, _repeated_forbidFinishChallengeList_codec);
+      if (WinControllerId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(WinControllerId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -246,23 +287,28 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (BusinessType != global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType.None) {
-        output.WriteRawTag(16);
-        output.WriteEnum((int) BusinessType);
-      }
-      if (Reason != global::Weedwacker.Shared.Network.Proto.GCGEndReason.Default) {
-        output.WriteRawTag(24);
-        output.WriteEnum((int) Reason);
-      }
       finishedChallengeIdList_.WriteTo(ref output, _repeated_finishedChallengeIdList_codec);
+      if (IsWin != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(IsWin);
+      }
       if (GameId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(24);
         output.WriteUInt32(GameId);
       }
+      if (Reason != global::Weedwacker.Shared.Network.Proto.GCGEndReason.Default) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) Reason);
+      }
+      if (BusinessType != global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType.None) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) BusinessType);
+      }
       rewardItemList_.WriteTo(ref output, _repeated_rewardItemList_codec);
-      if (IsWin != false) {
-        output.WriteRawTag(104);
-        output.WriteBool(IsWin);
+      forbidFinishChallengeList_.WriteTo(ref output, _repeated_forbidFinishChallengeList_codec);
+      if (WinControllerId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(WinControllerId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -274,17 +320,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += rewardItemList_.CalculateSize(_repeated_rewardItemList_codec);
+      size += finishedChallengeIdList_.CalculateSize(_repeated_finishedChallengeIdList_codec);
       if (GameId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GameId);
-      }
-      if (BusinessType != global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) BusinessType);
       }
       if (IsWin != false) {
         size += 1 + 1;
       }
-      size += rewardItemList_.CalculateSize(_repeated_rewardItemList_codec);
-      size += finishedChallengeIdList_.CalculateSize(_repeated_finishedChallengeIdList_codec);
+      if (BusinessType != global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) BusinessType);
+      }
+      if (WinControllerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WinControllerId);
+      }
+      size += forbidFinishChallengeList_.CalculateSize(_repeated_forbidFinishChallengeList_codec);
       if (Reason != global::Weedwacker.Shared.Network.Proto.GCGEndReason.Default) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
       }
@@ -300,17 +350,21 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      rewardItemList_.Add(other.rewardItemList_);
+      finishedChallengeIdList_.Add(other.finishedChallengeIdList_);
       if (other.GameId != 0) {
         GameId = other.GameId;
-      }
-      if (other.BusinessType != global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType.None) {
-        BusinessType = other.BusinessType;
       }
       if (other.IsWin != false) {
         IsWin = other.IsWin;
       }
-      rewardItemList_.Add(other.rewardItemList_);
-      finishedChallengeIdList_.Add(other.finishedChallengeIdList_);
+      if (other.BusinessType != global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType.None) {
+        BusinessType = other.BusinessType;
+      }
+      if (other.WinControllerId != 0) {
+        WinControllerId = other.WinControllerId;
+      }
+      forbidFinishChallengeList_.Add(other.forbidFinishChallengeList_);
       if (other.Reason != global::Weedwacker.Shared.Network.Proto.GCGEndReason.Default) {
         Reason = other.Reason;
       }
@@ -329,29 +383,38 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            BusinessType = (global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType) input.ReadEnum();
-            break;
-          }
-          case 24: {
-            Reason = (global::Weedwacker.Shared.Network.Proto.GCGEndReason) input.ReadEnum();
-            break;
-          }
-          case 50:
-          case 48: {
+          case 10:
+          case 8: {
             finishedChallengeIdList_.AddEntriesFrom(input, _repeated_finishedChallengeIdList_codec);
             break;
           }
-          case 56: {
+          case 16: {
+            IsWin = input.ReadBool();
+            break;
+          }
+          case 24: {
             GameId = input.ReadUInt32();
             break;
           }
-          case 74: {
+          case 32: {
+            Reason = (global::Weedwacker.Shared.Network.Proto.GCGEndReason) input.ReadEnum();
+            break;
+          }
+          case 40: {
+            BusinessType = (global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType) input.ReadEnum();
+            break;
+          }
+          case 66: {
             rewardItemList_.AddEntriesFrom(input, _repeated_rewardItemList_codec);
             break;
           }
-          case 104: {
-            IsWin = input.ReadBool();
+          case 82:
+          case 80: {
+            forbidFinishChallengeList_.AddEntriesFrom(input, _repeated_forbidFinishChallengeList_codec);
+            break;
+          }
+          case 88: {
+            WinControllerId = input.ReadUInt32();
             break;
           }
         }
@@ -369,29 +432,38 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            BusinessType = (global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType) input.ReadEnum();
-            break;
-          }
-          case 24: {
-            Reason = (global::Weedwacker.Shared.Network.Proto.GCGEndReason) input.ReadEnum();
-            break;
-          }
-          case 50:
-          case 48: {
+          case 10:
+          case 8: {
             finishedChallengeIdList_.AddEntriesFrom(ref input, _repeated_finishedChallengeIdList_codec);
             break;
           }
-          case 56: {
+          case 16: {
+            IsWin = input.ReadBool();
+            break;
+          }
+          case 24: {
             GameId = input.ReadUInt32();
             break;
           }
-          case 74: {
+          case 32: {
+            Reason = (global::Weedwacker.Shared.Network.Proto.GCGEndReason) input.ReadEnum();
+            break;
+          }
+          case 40: {
+            BusinessType = (global::Weedwacker.Shared.Network.Proto.GCGGameBusinessType) input.ReadEnum();
+            break;
+          }
+          case 66: {
             rewardItemList_.AddEntriesFrom(ref input, _repeated_rewardItemList_codec);
             break;
           }
-          case 104: {
-            IsWin = input.ReadBool();
+          case 82:
+          case 80: {
+            forbidFinishChallengeList_.AddEntriesFrom(ref input, _repeated_forbidFinishChallengeList_codec);
+            break;
+          }
+          case 88: {
+            WinControllerId = input.ReadUInt32();
             break;
           }
         }

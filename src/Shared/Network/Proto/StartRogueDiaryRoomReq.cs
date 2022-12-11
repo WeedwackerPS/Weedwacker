@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static StartRogueDiaryRoomReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxTdGFydFJvZ3VlRGlhcnlSb29tUmVxLnByb3RvIkkKFlN0YXJ0Um9ndWVE",
-            "aWFyeVJvb21SZXESFwoPcm9vbV9kaWZmaWN1bHR5GA0gASgNEhYKDmlzX3Nl",
-            "bGVjdF9oYXJkGAEgASgIQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
-            "LlByb3RvYgZwcm90bzM="));
+            "ChxTdGFydFJvZ3VlRGlhcnlSb29tUmVxLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvIkkKFlN0YXJ0Um9ndWVEaWFyeVJvb21SZXES",
+            "FgoOaXNfc2VsZWN0X2hhcmQYCiABKAgSFwoPcm9vbV9kaWZmaWN1bHR5GA0g",
+            "ASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.StartRogueDiaryRoomReq), global::Weedwacker.Shared.Network.Proto.StartRogueDiaryRoomReq.Parser, new[]{ "RoomDifficulty", "IsSelectHard" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.StartRogueDiaryRoomReq), global::Weedwacker.Shared.Network.Proto.StartRogueDiaryRoomReq.Parser, new[]{ "IsSelectHard", "RoomDifficulty" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8159
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8279;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class StartRogueDiaryRoomReq : pb::IMessage<StartRogueDiaryRoomReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public StartRogueDiaryRoomReq(StartRogueDiaryRoomReq other) : this() {
-      roomDifficulty_ = other.roomDifficulty_;
       isSelectHard_ = other.isSelectHard_;
+      roomDifficulty_ = other.roomDifficulty_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,6 +91,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public StartRogueDiaryRoomReq Clone() {
       return new StartRogueDiaryRoomReq(this);
+    }
+
+    /// <summary>Field number for the "is_select_hard" field.</summary>
+    public const int IsSelectHardFieldNumber = 10;
+    private bool isSelectHard_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsSelectHard {
+      get { return isSelectHard_; }
+      set {
+        isSelectHard_ = value;
+      }
     }
 
     /// <summary>Field number for the "room_difficulty" field.</summary>
@@ -98,18 +114,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return roomDifficulty_; }
       set {
         roomDifficulty_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_select_hard" field.</summary>
-    public const int IsSelectHardFieldNumber = 1;
-    private bool isSelectHard_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsSelectHard {
-      get { return isSelectHard_; }
-      set {
-        isSelectHard_ = value;
       }
     }
 
@@ -128,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (RoomDifficulty != other.RoomDifficulty) return false;
       if (IsSelectHard != other.IsSelectHard) return false;
+      if (RoomDifficulty != other.RoomDifficulty) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -137,8 +141,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (RoomDifficulty != 0) hash ^= RoomDifficulty.GetHashCode();
       if (IsSelectHard != false) hash ^= IsSelectHard.GetHashCode();
+      if (RoomDifficulty != 0) hash ^= RoomDifficulty.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -158,7 +162,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (IsSelectHard != false) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(80);
         output.WriteBool(IsSelectHard);
       }
       if (RoomDifficulty != 0) {
@@ -176,7 +180,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (IsSelectHard != false) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(80);
         output.WriteBool(IsSelectHard);
       }
       if (RoomDifficulty != 0) {
@@ -193,11 +197,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (RoomDifficulty != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RoomDifficulty);
-      }
       if (IsSelectHard != false) {
         size += 1 + 1;
+      }
+      if (RoomDifficulty != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RoomDifficulty);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -211,11 +215,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.RoomDifficulty != 0) {
-        RoomDifficulty = other.RoomDifficulty;
-      }
       if (other.IsSelectHard != false) {
         IsSelectHard = other.IsSelectHard;
+      }
+      if (other.RoomDifficulty != 0) {
+        RoomDifficulty = other.RoomDifficulty;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -232,7 +236,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 80: {
             IsSelectHard = input.ReadBool();
             break;
           }
@@ -255,7 +259,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 80: {
             IsSelectHard = input.ReadBool();
             break;
           }

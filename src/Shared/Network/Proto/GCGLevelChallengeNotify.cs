@@ -24,13 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGLevelChallengeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1HQ0dMZXZlbENoYWxsZW5nZU5vdGlmeS5wcm90bxoaR0NHQm9zc0NoYWxs",
-            "ZW5nZURhdGEucHJvdG8aEkdDR0xldmVsRGF0YS5wcm90byKcAQoXR0NHTGV2",
-            "ZWxDaGFsbGVuZ2VOb3RpZnkSOQoadW5sb2NrX2Jvc3NfY2hhbGxlbmdlX2xp",
-            "c3QYAyADKAsyFS5HQ0dCb3NzQ2hhbGxlbmdlRGF0YRIjCht1bmxvY2tfd29y",
-            "bGRfY2hhbGxlbmdlX2xpc3QYCCADKA0SIQoKbGV2ZWxfbGlzdBgKIAMoCzIN",
-            "LkdDR0xldmVsRGF0YUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
-            "cm90b2IGcHJvdG8z"));
+            "Ch1HQ0dMZXZlbENoYWxsZW5nZU5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxoaR0NHQm9zc0NoYWxsZW5nZURhdGEucHJv",
+            "dG8aEkdDR0xldmVsRGF0YS5wcm90byLcAQoXR0NHTGV2ZWxDaGFsbGVuZ2VO",
+            "b3RpZnkSWQoadW5sb2NrX2Jvc3NfY2hhbGxlbmdlX2xpc3QYCyADKAsyNS5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkdDR0Jvc3NDaGFsbGVu",
+            "Z2VEYXRhEiMKG3VubG9ja193b3JsZF9jaGFsbGVuZ2VfbGlzdBgDIAMoDRJB",
+            "CgpsZXZlbF9saXN0GAQgAygLMi0uV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90by5HQ0dMZXZlbERhdGFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGBossChallengeDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGLevelDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -42,9 +43,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 7055
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 7183;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GCGLevelChallengeNotify : pb::IMessage<GCGLevelChallengeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -93,9 +98,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "unlock_boss_challenge_list" field.</summary>
-    public const int UnlockBossChallengeListFieldNumber = 3;
+    public const int UnlockBossChallengeListFieldNumber = 11;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GCGBossChallengeData> _repeated_unlockBossChallengeList_codec
-        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.GCGBossChallengeData.Parser);
+        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.GCGBossChallengeData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGBossChallengeData> unlockBossChallengeList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGBossChallengeData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,9 +109,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "unlock_world_challenge_list" field.</summary>
-    public const int UnlockWorldChallengeListFieldNumber = 8;
+    public const int UnlockWorldChallengeListFieldNumber = 3;
     private static readonly pb::FieldCodec<uint> _repeated_unlockWorldChallengeList_codec
-        = pb::FieldCodec.ForUInt32(66);
+        = pb::FieldCodec.ForUInt32(26);
     private readonly pbc::RepeatedField<uint> unlockWorldChallengeList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,9 +120,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "level_list" field.</summary>
-    public const int LevelListFieldNumber = 10;
+    public const int LevelListFieldNumber = 4;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.GCGLevelData> _repeated_levelList_codec
-        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.GCGLevelData.Parser);
+        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.GCGLevelData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGLevelData> levelList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.GCGLevelData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -171,9 +176,9 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      unlockBossChallengeList_.WriteTo(output, _repeated_unlockBossChallengeList_codec);
       unlockWorldChallengeList_.WriteTo(output, _repeated_unlockWorldChallengeList_codec);
       levelList_.WriteTo(output, _repeated_levelList_codec);
+      unlockBossChallengeList_.WriteTo(output, _repeated_unlockBossChallengeList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -184,9 +189,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      unlockBossChallengeList_.WriteTo(ref output, _repeated_unlockBossChallengeList_codec);
       unlockWorldChallengeList_.WriteTo(ref output, _repeated_unlockWorldChallengeList_codec);
       levelList_.WriteTo(ref output, _repeated_levelList_codec);
+      unlockBossChallengeList_.WriteTo(ref output, _repeated_unlockBossChallengeList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -230,17 +235,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
-            unlockBossChallengeList_.AddEntriesFrom(input, _repeated_unlockBossChallengeList_codec);
-            break;
-          }
-          case 66:
-          case 64: {
+          case 26:
+          case 24: {
             unlockWorldChallengeList_.AddEntriesFrom(input, _repeated_unlockWorldChallengeList_codec);
             break;
           }
-          case 82: {
+          case 34: {
             levelList_.AddEntriesFrom(input, _repeated_levelList_codec);
+            break;
+          }
+          case 90: {
+            unlockBossChallengeList_.AddEntriesFrom(input, _repeated_unlockBossChallengeList_codec);
             break;
           }
         }
@@ -258,17 +263,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
-            unlockBossChallengeList_.AddEntriesFrom(ref input, _repeated_unlockBossChallengeList_codec);
-            break;
-          }
-          case 66:
-          case 64: {
+          case 26:
+          case 24: {
             unlockWorldChallengeList_.AddEntriesFrom(ref input, _repeated_unlockWorldChallengeList_codec);
             break;
           }
-          case 82: {
+          case 34: {
             levelList_.AddEntriesFrom(ref input, _repeated_levelList_codec);
+            break;
+          }
+          case 90: {
+            unlockBossChallengeList_.AddEntriesFrom(ref input, _repeated_unlockBossChallengeList_codec);
             break;
           }
         }

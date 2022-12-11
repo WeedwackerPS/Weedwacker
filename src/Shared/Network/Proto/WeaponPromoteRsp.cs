@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static WeaponPromoteRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZXZWFwb25Qcm9tb3RlUnNwLnByb3RvInUKEFdlYXBvblByb21vdGVSc3AS",
-            "GgoSdGFyZ2V0X3dlYXBvbl9ndWlkGAMgASgEEhkKEW9sZF9wcm9tb3RlX2xl",
-            "dmVsGAcgASgNEhkKEWN1cl9wcm9tb3RlX2xldmVsGAwgASgNEg8KB3JldGNv",
-            "ZGUYBCABKAVCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9i",
-            "BnByb3RvMw=="));
+            "ChZXZWFwb25Qcm9tb3RlUnNwLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvInkKEFdlYXBvblByb21vdGVSc3ASGwoTVW5rMzMwMF9H",
+            "R0ZDSVBBS0tEUBgEIAEoDRIaChJ0YXJnZXRfd2VhcG9uX2d1aWQYCyABKAQS",
+            "GwoTVW5rMzMwMF9NQkVCSUFDSk5CQhgFIAEoDRIPCgdyZXRjb2RlGAggASgF",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WeaponPromoteRsp), global::Weedwacker.Shared.Network.Proto.WeaponPromoteRsp.Parser, new[]{ "TargetWeaponGuid", "OldPromoteLevel", "CurPromoteLevel", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WeaponPromoteRsp), global::Weedwacker.Shared.Network.Proto.WeaponPromoteRsp.Parser, new[]{ "Unk3300GGFCIPAKKDP", "TargetWeaponGuid", "Unk3300MBEBIACJNBB", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 665
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 689;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class WeaponPromoteRsp : pb::IMessage<WeaponPromoteRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +82,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public WeaponPromoteRsp(WeaponPromoteRsp other) : this() {
+      unk3300GGFCIPAKKDP_ = other.unk3300GGFCIPAKKDP_;
       targetWeaponGuid_ = other.targetWeaponGuid_;
-      oldPromoteLevel_ = other.oldPromoteLevel_;
-      curPromoteLevel_ = other.curPromoteLevel_;
+      unk3300MBEBIACJNBB_ = other.unk3300MBEBIACJNBB_;
       retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -91,8 +95,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new WeaponPromoteRsp(this);
     }
 
+    /// <summary>Field number for the "Unk3300_GGFCIPAKKDP" field.</summary>
+    public const int Unk3300GGFCIPAKKDPFieldNumber = 4;
+    private uint unk3300GGFCIPAKKDP_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300GGFCIPAKKDP {
+      get { return unk3300GGFCIPAKKDP_; }
+      set {
+        unk3300GGFCIPAKKDP_ = value;
+      }
+    }
+
     /// <summary>Field number for the "target_weapon_guid" field.</summary>
-    public const int TargetWeaponGuidFieldNumber = 3;
+    public const int TargetWeaponGuidFieldNumber = 11;
     private ulong targetWeaponGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,32 +119,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "old_promote_level" field.</summary>
-    public const int OldPromoteLevelFieldNumber = 7;
-    private uint oldPromoteLevel_;
+    /// <summary>Field number for the "Unk3300_MBEBIACJNBB" field.</summary>
+    public const int Unk3300MBEBIACJNBBFieldNumber = 5;
+    private uint unk3300MBEBIACJNBB_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint OldPromoteLevel {
-      get { return oldPromoteLevel_; }
+    public uint Unk3300MBEBIACJNBB {
+      get { return unk3300MBEBIACJNBB_; }
       set {
-        oldPromoteLevel_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "cur_promote_level" field.</summary>
-    public const int CurPromoteLevelFieldNumber = 12;
-    private uint curPromoteLevel_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurPromoteLevel {
-      get { return curPromoteLevel_; }
-      set {
-        curPromoteLevel_ = value;
+        unk3300MBEBIACJNBB_ = value;
       }
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 4;
+    public const int RetcodeFieldNumber = 8;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -154,9 +158,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Unk3300GGFCIPAKKDP != other.Unk3300GGFCIPAKKDP) return false;
       if (TargetWeaponGuid != other.TargetWeaponGuid) return false;
-      if (OldPromoteLevel != other.OldPromoteLevel) return false;
-      if (CurPromoteLevel != other.CurPromoteLevel) return false;
+      if (Unk3300MBEBIACJNBB != other.Unk3300MBEBIACJNBB) return false;
       if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -165,9 +169,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (Unk3300GGFCIPAKKDP != 0) hash ^= Unk3300GGFCIPAKKDP.GetHashCode();
       if (TargetWeaponGuid != 0UL) hash ^= TargetWeaponGuid.GetHashCode();
-      if (OldPromoteLevel != 0) hash ^= OldPromoteLevel.GetHashCode();
-      if (CurPromoteLevel != 0) hash ^= CurPromoteLevel.GetHashCode();
+      if (Unk3300MBEBIACJNBB != 0) hash ^= Unk3300MBEBIACJNBB.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -187,21 +191,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (TargetWeaponGuid != 0UL) {
-        output.WriteRawTag(24);
-        output.WriteUInt64(TargetWeaponGuid);
+      if (Unk3300GGFCIPAKKDP != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300GGFCIPAKKDP);
+      }
+      if (Unk3300MBEBIACJNBB != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300MBEBIACJNBB);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(64);
         output.WriteInt32(Retcode);
       }
-      if (OldPromoteLevel != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(OldPromoteLevel);
-      }
-      if (CurPromoteLevel != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(CurPromoteLevel);
+      if (TargetWeaponGuid != 0UL) {
+        output.WriteRawTag(88);
+        output.WriteUInt64(TargetWeaponGuid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -213,21 +217,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (TargetWeaponGuid != 0UL) {
-        output.WriteRawTag(24);
-        output.WriteUInt64(TargetWeaponGuid);
+      if (Unk3300GGFCIPAKKDP != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300GGFCIPAKKDP);
+      }
+      if (Unk3300MBEBIACJNBB != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300MBEBIACJNBB);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(64);
         output.WriteInt32(Retcode);
       }
-      if (OldPromoteLevel != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(OldPromoteLevel);
-      }
-      if (CurPromoteLevel != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(CurPromoteLevel);
+      if (TargetWeaponGuid != 0UL) {
+        output.WriteRawTag(88);
+        output.WriteUInt64(TargetWeaponGuid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -239,14 +243,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (Unk3300GGFCIPAKKDP != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GGFCIPAKKDP);
+      }
       if (TargetWeaponGuid != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(TargetWeaponGuid);
       }
-      if (OldPromoteLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OldPromoteLevel);
-      }
-      if (CurPromoteLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurPromoteLevel);
+      if (Unk3300MBEBIACJNBB != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300MBEBIACJNBB);
       }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
@@ -263,14 +267,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.Unk3300GGFCIPAKKDP != 0) {
+        Unk3300GGFCIPAKKDP = other.Unk3300GGFCIPAKKDP;
+      }
       if (other.TargetWeaponGuid != 0UL) {
         TargetWeaponGuid = other.TargetWeaponGuid;
       }
-      if (other.OldPromoteLevel != 0) {
-        OldPromoteLevel = other.OldPromoteLevel;
-      }
-      if (other.CurPromoteLevel != 0) {
-        CurPromoteLevel = other.CurPromoteLevel;
+      if (other.Unk3300MBEBIACJNBB != 0) {
+        Unk3300MBEBIACJNBB = other.Unk3300MBEBIACJNBB;
       }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
@@ -290,20 +294,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            TargetWeaponGuid = input.ReadUInt64();
+          case 32: {
+            Unk3300GGFCIPAKKDP = input.ReadUInt32();
             break;
           }
-          case 32: {
+          case 40: {
+            Unk3300MBEBIACJNBB = input.ReadUInt32();
+            break;
+          }
+          case 64: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 56: {
-            OldPromoteLevel = input.ReadUInt32();
-            break;
-          }
-          case 96: {
-            CurPromoteLevel = input.ReadUInt32();
+          case 88: {
+            TargetWeaponGuid = input.ReadUInt64();
             break;
           }
         }
@@ -321,20 +325,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            TargetWeaponGuid = input.ReadUInt64();
+          case 32: {
+            Unk3300GGFCIPAKKDP = input.ReadUInt32();
             break;
           }
-          case 32: {
+          case 40: {
+            Unk3300MBEBIACJNBB = input.ReadUInt32();
+            break;
+          }
+          case 64: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 56: {
-            OldPromoteLevel = input.ReadUInt32();
-            break;
-          }
-          case 96: {
-            CurPromoteLevel = input.ReadUInt32();
+          case 88: {
+            TargetWeaponGuid = input.ReadUInt64();
             break;
           }
         }

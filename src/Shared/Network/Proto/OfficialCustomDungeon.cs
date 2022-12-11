@@ -24,10 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static OfficialCustomDungeonReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtPZmZpY2lhbEN1c3RvbUR1bmdlb24ucHJvdG8iPgoVT2ZmaWNpYWxDdXN0",
-            "b21EdW5nZW9uEhIKCmR1bmdlb25faWQYCyABKA0SEQoJd2luX3RpbWVzGAMg",
-            "ASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90",
-            "bzM="));
+            "ChtPZmZpY2lhbEN1c3RvbUR1bmdlb24ucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8iPgoVT2ZmaWNpYWxDdXN0b21EdW5nZW9uEhIK",
+            "CmR1bmdlb25faWQYBCABKA0SEQoJd2luX3RpbWVzGA0gASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +83,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "dungeon_id" field.</summary>
-    public const int DungeonIdFieldNumber = 11;
+    public const int DungeonIdFieldNumber = 4;
     private uint dungeonId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -96,7 +95,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "win_times" field.</summary>
-    public const int WinTimesFieldNumber = 3;
+    public const int WinTimesFieldNumber = 13;
     private uint winTimes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -151,13 +150,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (WinTimes != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(WinTimes);
-      }
       if (DungeonId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(32);
         output.WriteUInt32(DungeonId);
+      }
+      if (WinTimes != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(WinTimes);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -169,13 +168,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (WinTimes != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(WinTimes);
-      }
       if (DungeonId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(32);
         output.WriteUInt32(DungeonId);
+      }
+      if (WinTimes != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(WinTimes);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -226,12 +225,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            WinTimes = input.ReadUInt32();
+          case 32: {
+            DungeonId = input.ReadUInt32();
             break;
           }
-          case 88: {
-            DungeonId = input.ReadUInt32();
+          case 104: {
+            WinTimes = input.ReadUInt32();
             break;
           }
         }
@@ -249,12 +248,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            WinTimes = input.ReadUInt32();
+          case 32: {
+            DungeonId = input.ReadUInt32();
             break;
           }
-          case 88: {
-            DungeonId = input.ReadUInt32();
+          case 104: {
+            WinTimes = input.ReadUInt32();
             break;
           }
         }

@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetPushTipsRewardRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpHZXRQdXNoVGlwc1Jld2FyZFJzcC5wcm90byJCChRHZXRQdXNoVGlwc1Jl",
-            "d2FyZFJzcBIPCgdyZXRjb2RlGAogASgFEhkKEXB1c2hfdGlwc19pZF9saXN0",
-            "GAkgAygNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZw",
-            "cm90bzM="));
+            "ChpHZXRQdXNoVGlwc1Jld2FyZFJzcC5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90byJCChRHZXRQdXNoVGlwc1Jld2FyZFJzcBIZChFw",
+            "dXNoX3RpcHNfaWRfbGlzdBgFIAMoDRIPCgdyZXRjb2RlGAIgASgFYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetPushTipsRewardRsp), global::Weedwacker.Shared.Network.Proto.GetPushTipsRewardRsp.Parser, new[]{ "Retcode", "PushTipsIdList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetPushTipsRewardRsp), global::Weedwacker.Shared.Network.Proto.GetPushTipsRewardRsp.Parser, new[]{ "PushTipsIdList", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2294
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2205;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GetPushTipsRewardRsp : pb::IMessage<GetPushTipsRewardRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +81,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetPushTipsRewardRsp(GetPushTipsRewardRsp other) : this() {
-      retcode_ = other.retcode_;
       pushTipsIdList_ = other.pushTipsIdList_.Clone();
+      retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,8 +92,19 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GetPushTipsRewardRsp(this);
     }
 
+    /// <summary>Field number for the "push_tips_id_list" field.</summary>
+    public const int PushTipsIdListFieldNumber = 5;
+    private static readonly pb::FieldCodec<uint> _repeated_pushTipsIdList_codec
+        = pb::FieldCodec.ForUInt32(42);
+    private readonly pbc::RepeatedField<uint> pushTipsIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> PushTipsIdList {
+      get { return pushTipsIdList_; }
+    }
+
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 10;
+    public const int RetcodeFieldNumber = 2;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -98,17 +113,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         retcode_ = value;
       }
-    }
-
-    /// <summary>Field number for the "push_tips_id_list" field.</summary>
-    public const int PushTipsIdListFieldNumber = 9;
-    private static readonly pb::FieldCodec<uint> _repeated_pushTipsIdList_codec
-        = pb::FieldCodec.ForUInt32(74);
-    private readonly pbc::RepeatedField<uint> pushTipsIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> PushTipsIdList {
-      get { return pushTipsIdList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -126,8 +130,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Retcode != other.Retcode) return false;
       if(!pushTipsIdList_.Equals(other.pushTipsIdList_)) return false;
+      if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -135,8 +139,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       hash ^= pushTipsIdList_.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -155,11 +159,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      pushTipsIdList_.WriteTo(output, _repeated_pushTipsIdList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(16);
         output.WriteInt32(Retcode);
       }
+      pushTipsIdList_.WriteTo(output, _repeated_pushTipsIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -170,11 +174,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      pushTipsIdList_.WriteTo(ref output, _repeated_pushTipsIdList_codec);
       if (Retcode != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(16);
         output.WriteInt32(Retcode);
       }
+      pushTipsIdList_.WriteTo(ref output, _repeated_pushTipsIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -185,10 +189,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += pushTipsIdList_.CalculateSize(_repeated_pushTipsIdList_codec);
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
-      size += pushTipsIdList_.CalculateSize(_repeated_pushTipsIdList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -201,10 +205,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      pushTipsIdList_.Add(other.pushTipsIdList_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      pushTipsIdList_.Add(other.pushTipsIdList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -220,13 +224,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 74:
-          case 72: {
-            pushTipsIdList_.AddEntriesFrom(input, _repeated_pushTipsIdList_codec);
+          case 16: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 80: {
-            Retcode = input.ReadInt32();
+          case 42:
+          case 40: {
+            pushTipsIdList_.AddEntriesFrom(input, _repeated_pushTipsIdList_codec);
             break;
           }
         }
@@ -244,13 +248,13 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 74:
-          case 72: {
-            pushTipsIdList_.AddEntriesFrom(ref input, _repeated_pushTipsIdList_codec);
+          case 16: {
+            Retcode = input.ReadInt32();
             break;
           }
-          case 80: {
-            Retcode = input.ReadInt32();
+          case 42:
+          case 40: {
+            pushTipsIdList_.AddEntriesFrom(ref input, _repeated_pushTipsIdList_codec);
             break;
           }
         }

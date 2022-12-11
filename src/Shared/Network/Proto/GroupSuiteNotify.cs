@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static GroupSuiteNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZHcm91cFN1aXRlTm90aWZ5LnByb3RvIncKEEdyb3VwU3VpdGVOb3RpZnkS",
-            "MgoJZ3JvdXBfbWFwGAMgAygLMh8uR3JvdXBTdWl0ZU5vdGlmeS5Hcm91cE1h",
-            "cEVudHJ5Gi8KDUdyb3VwTWFwRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVl",
-            "GAIgASgNOgI4AUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
-            "b2IGcHJvdG8z"));
+            "ChZHcm91cFN1aXRlTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvIpcBChBHcm91cFN1aXRlTm90aWZ5ElIKCWdyb3VwX21h",
+            "cBgEIAMoCzI/LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uR3Jv",
+            "dXBTdWl0ZU5vdGlmeS5Hcm91cE1hcEVudHJ5Gi8KDUdyb3VwTWFwRW50cnkS",
+            "CwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3257
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3489;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GroupSuiteNotify : pb::IMessage<GroupSuiteNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "group_map" field.</summary>
-    public const int GroupMapFieldNumber = 3;
+    public const int GroupMapFieldNumber = 4;
     private static readonly pbc::MapField<uint, uint>.Codec _map_groupMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 26);
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 34);
     private readonly pbc::MapField<uint, uint> groupMap_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -192,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
+          case 34: {
             groupMap_.AddEntriesFrom(input, _map_groupMap_codec);
             break;
           }
@@ -211,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
+          case 34: {
             groupMap_.AddEntriesFrom(ref input, _map_groupMap_codec);
             break;
           }

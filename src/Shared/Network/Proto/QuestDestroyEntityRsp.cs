@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static QuestDestroyEntityRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtRdWVzdERlc3Ryb3lFbnRpdHlSc3AucHJvdG8iXwoVUXVlc3REZXN0cm95",
-            "RW50aXR5UnNwEhAKCHF1ZXN0X2lkGA4gASgNEhAKCHNjZW5lX2lkGAkgASgN",
-            "EhEKCWVudGl0eV9pZBgMIAEoDRIPCgdyZXRjb2RlGAEgASgFQiKqAh9XZWVk",
-            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChtRdWVzdERlc3Ryb3lFbnRpdHlSc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8iXwoVUXVlc3REZXN0cm95RW50aXR5UnNwEg8K",
+            "B3JldGNvZGUYAyABKAUSEAoIc2NlbmVfaWQYBiABKA0SEQoJZW50aXR5X2lk",
+            "GAggASgNEhAKCHF1ZXN0X2lkGAkgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.QuestDestroyEntityRsp), global::Weedwacker.Shared.Network.Proto.QuestDestroyEntityRsp.Parser, new[]{ "QuestId", "SceneId", "EntityId", "Retcode" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.QuestDestroyEntityRsp), global::Weedwacker.Shared.Network.Proto.QuestDestroyEntityRsp.Parser, new[]{ "Retcode", "SceneId", "EntityId", "QuestId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 448
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 448;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class QuestDestroyEntityRsp : pb::IMessage<QuestDestroyEntityRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,10 +81,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public QuestDestroyEntityRsp(QuestDestroyEntityRsp other) : this() {
-      questId_ = other.questId_;
+      retcode_ = other.retcode_;
       sceneId_ = other.sceneId_;
       entityId_ = other.entityId_;
-      retcode_ = other.retcode_;
+      questId_ = other.questId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,20 +94,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new QuestDestroyEntityRsp(this);
     }
 
-    /// <summary>Field number for the "quest_id" field.</summary>
-    public const int QuestIdFieldNumber = 14;
-    private uint questId_;
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 3;
+    private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint QuestId {
-      get { return questId_; }
+    public int Retcode {
+      get { return retcode_; }
       set {
-        questId_ = value;
+        retcode_ = value;
       }
     }
 
     /// <summary>Field number for the "scene_id" field.</summary>
-    public const int SceneIdFieldNumber = 9;
+    public const int SceneIdFieldNumber = 6;
     private uint sceneId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,7 +119,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 12;
+    public const int EntityIdFieldNumber = 8;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -126,15 +130,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 1;
-    private int retcode_;
+    /// <summary>Field number for the "quest_id" field.</summary>
+    public const int QuestIdFieldNumber = 9;
+    private uint questId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
+    public uint QuestId {
+      get { return questId_; }
       set {
-        retcode_ = value;
+        questId_ = value;
       }
     }
 
@@ -153,10 +157,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (QuestId != other.QuestId) return false;
+      if (Retcode != other.Retcode) return false;
       if (SceneId != other.SceneId) return false;
       if (EntityId != other.EntityId) return false;
-      if (Retcode != other.Retcode) return false;
+      if (QuestId != other.QuestId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -164,10 +168,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (QuestId != 0) hash ^= QuestId.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (SceneId != 0) hash ^= SceneId.GetHashCode();
       if (EntityId != 0) hash ^= EntityId.GetHashCode();
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (QuestId != 0) hash ^= QuestId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -187,19 +191,19 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Retcode != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(24);
         output.WriteInt32(Retcode);
       }
       if (SceneId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(48);
         output.WriteUInt32(SceneId);
       }
       if (EntityId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(64);
         output.WriteUInt32(EntityId);
       }
       if (QuestId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(72);
         output.WriteUInt32(QuestId);
       }
       if (_unknownFields != null) {
@@ -213,19 +217,19 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Retcode != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(24);
         output.WriteInt32(Retcode);
       }
       if (SceneId != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(48);
         output.WriteUInt32(SceneId);
       }
       if (EntityId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(64);
         output.WriteUInt32(EntityId);
       }
       if (QuestId != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(72);
         output.WriteUInt32(QuestId);
       }
       if (_unknownFields != null) {
@@ -238,8 +242,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (QuestId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(QuestId);
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (SceneId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
@@ -247,8 +251,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (EntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
       }
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      if (QuestId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(QuestId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -262,8 +266,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.QuestId != 0) {
-        QuestId = other.QuestId;
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
       }
       if (other.SceneId != 0) {
         SceneId = other.SceneId;
@@ -271,8 +275,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.EntityId != 0) {
         EntityId = other.EntityId;
       }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
+      if (other.QuestId != 0) {
+        QuestId = other.QuestId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -289,19 +293,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 24: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 72: {
+          case 48: {
             SceneId = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 64: {
             EntityId = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 72: {
             QuestId = input.ReadUInt32();
             break;
           }
@@ -320,19 +324,19 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 24: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 72: {
+          case 48: {
             SceneId = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 64: {
             EntityId = input.ReadUInt32();
             break;
           }
-          case 112: {
+          case 72: {
             QuestId = input.ReadUInt32();
             break;
           }

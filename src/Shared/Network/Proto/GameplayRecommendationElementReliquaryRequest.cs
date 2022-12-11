@@ -25,14 +25,14 @@ namespace Weedwacker.Shared.Network.Proto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjNHYW1lcGxheVJlY29tbWVuZGF0aW9uRWxlbWVudFJlbGlxdWFyeVJlcXVl",
-            "c3QucHJvdG8iWQotR2FtZXBsYXlSZWNvbW1lbmRhdGlvbkVsZW1lbnRSZWxp",
-            "cXVhcnlSZXF1ZXN0EhIKCmVxdWlwX3R5cGUYCSABKA0SFAoMZWxlbWVudF90",
-            "eXBlGAwgASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
-            "YgZwcm90bzM="));
+            "c3QucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iWQot",
+            "R2FtZXBsYXlSZWNvbW1lbmRhdGlvbkVsZW1lbnRSZWxpcXVhcnlSZXF1ZXN0",
+            "EhQKDGVsZW1lbnRfdHlwZRgCIAEoDRISCgplcXVpcF90eXBlGAMgASgNYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GameplayRecommendationElementReliquaryRequest), global::Weedwacker.Shared.Network.Proto.GameplayRecommendationElementReliquaryRequest.Parser, new[]{ "EquipType", "ElementType" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GameplayRecommendationElementReliquaryRequest), global::Weedwacker.Shared.Network.Proto.GameplayRecommendationElementReliquaryRequest.Parser, new[]{ "ElementType", "EquipType" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,8 +73,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GameplayRecommendationElementReliquaryRequest(GameplayRecommendationElementReliquaryRequest other) : this() {
-      equipType_ = other.equipType_;
       elementType_ = other.elementType_;
+      equipType_ = other.equipType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,20 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GameplayRecommendationElementReliquaryRequest(this);
     }
 
-    /// <summary>Field number for the "equip_type" field.</summary>
-    public const int EquipTypeFieldNumber = 9;
-    private uint equipType_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EquipType {
-      get { return equipType_; }
-      set {
-        equipType_ = value;
-      }
-    }
-
     /// <summary>Field number for the "element_type" field.</summary>
-    public const int ElementTypeFieldNumber = 12;
+    public const int ElementTypeFieldNumber = 2;
     private uint elementType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -105,6 +93,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return elementType_; }
       set {
         elementType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "equip_type" field.</summary>
+    public const int EquipTypeFieldNumber = 3;
+    private uint equipType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EquipType {
+      get { return equipType_; }
+      set {
+        equipType_ = value;
       }
     }
 
@@ -123,8 +123,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (EquipType != other.EquipType) return false;
       if (ElementType != other.ElementType) return false;
+      if (EquipType != other.EquipType) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -132,8 +132,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (EquipType != 0) hash ^= EquipType.GetHashCode();
       if (ElementType != 0) hash ^= ElementType.GetHashCode();
+      if (EquipType != 0) hash ^= EquipType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -152,13 +152,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (EquipType != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(EquipType);
-      }
       if (ElementType != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(16);
         output.WriteUInt32(ElementType);
+      }
+      if (EquipType != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(EquipType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -170,13 +170,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (EquipType != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(EquipType);
-      }
       if (ElementType != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(16);
         output.WriteUInt32(ElementType);
+      }
+      if (EquipType != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(EquipType);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -188,11 +188,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (EquipType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EquipType);
-      }
       if (ElementType != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ElementType);
+      }
+      if (EquipType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EquipType);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -206,11 +206,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.EquipType != 0) {
-        EquipType = other.EquipType;
-      }
       if (other.ElementType != 0) {
         ElementType = other.ElementType;
+      }
+      if (other.EquipType != 0) {
+        EquipType = other.EquipType;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -227,12 +227,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 72: {
-            EquipType = input.ReadUInt32();
+          case 16: {
+            ElementType = input.ReadUInt32();
             break;
           }
-          case 96: {
-            ElementType = input.ReadUInt32();
+          case 24: {
+            EquipType = input.ReadUInt32();
             break;
           }
         }
@@ -250,12 +250,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 72: {
-            EquipType = input.ReadUInt32();
+          case 16: {
+            ElementType = input.ReadUInt32();
             break;
           }
-          case 96: {
-            ElementType = input.ReadUInt32();
+          case 24: {
+            EquipType = input.ReadUInt32();
             break;
           }
         }

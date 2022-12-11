@@ -24,10 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static ChessSelectedCardsNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5DaGVzc1NlbGVjdGVkQ2FyZHNOb3RpZnkucHJvdG8aE0NoZXNzQ2FyZElu",
-            "Zm8ucHJvdG8iSwoYQ2hlc3NTZWxlY3RlZENhcmRzTm90aWZ5Ei8KF3NlbGVj",
-            "dGVkX2NhcmRfaW5mb19saXN0GAQgAygLMg4uQ2hlc3NDYXJkSW5mb0IiqgIf",
-            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch5DaGVzc1NlbGVjdGVkQ2FyZHNOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aE0NoZXNzQ2FyZEluZm8ucHJvdG8iawoY",
+            "Q2hlc3NTZWxlY3RlZENhcmRzTm90aWZ5Ek8KF3NlbGVjdGVkX2NhcmRfaW5m",
+            "b19saXN0GAkgAygLMi4uV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
+            "by5DaGVzc0NhcmRJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ChessCardInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5392
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5397;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ChessSelectedCardsNotify : pb::IMessage<ChessSelectedCardsNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "selected_card_info_list" field.</summary>
-    public const int SelectedCardInfoListFieldNumber = 4;
+    public const int SelectedCardInfoListFieldNumber = 9;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ChessCardInfo> _repeated_selectedCardInfoList_codec
-        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.ChessCardInfo.Parser);
+        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.ChessCardInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChessCardInfo> selectedCardInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ChessCardInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -191,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 34: {
+          case 74: {
             selectedCardInfoList_.AddEntriesFrom(input, _repeated_selectedCardInfoList_codec);
             break;
           }
@@ -210,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 34: {
+          case 74: {
             selectedCardInfoList_.AddEntriesFrom(ref input, _repeated_selectedCardInfoList_codec);
             break;
           }

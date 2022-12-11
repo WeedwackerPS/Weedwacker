@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static RoguelikeGiveUpRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhSb2d1ZWxpa2VHaXZlVXBSc3AucHJvdG8aIFJvZ3VlbGlrZUR1bmdlb25T",
-            "ZXR0bGVJbmZvLnByb3RvInMKElJvZ3VlbGlrZUdpdmVVcFJzcBIPCgdyZXRj",
-            "b2RlGAQgASgFEhAKCHN0YWdlX2lkGAcgASgNEjIKC3NldHRsZV9pbmZvGAgg",
-            "ASgLMhsuUm9ndWVsaWtlRHVuZ2VvblNldHRsZUluZm9IAEIGCgRpbmZvQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChhSb2d1ZWxpa2VHaXZlVXBSc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aIFJvZ3VlbGlrZUR1bmdlb25TZXR0bGVJbmZvLnBy",
+            "b3RvIpMBChJSb2d1ZWxpa2VHaXZlVXBSc3ASDwoHcmV0Y29kZRgGIAEoBRIQ",
+            "CghzdGFnZV9pZBgOIAEoDRJSCgtzZXR0bGVfaW5mbxgCIAEoCzI7LldlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uUm9ndWVsaWtlRHVuZ2VvblNl",
+            "dHRsZUluZm9IAEIGCgRpbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.RoguelikeDungeonSettleInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8139
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8905;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class RoguelikeGiveUpRsp : pb::IMessage<RoguelikeGiveUpRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -96,7 +101,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 4;
+    public const int RetcodeFieldNumber = 6;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -108,7 +113,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "stage_id" field.</summary>
-    public const int StageIdFieldNumber = 7;
+    public const int StageIdFieldNumber = 14;
     private uint stageId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -120,7 +125,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "settle_info" field.</summary>
-    public const int SettleInfoFieldNumber = 8;
+    public const int SettleInfoFieldNumber = 2;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.RoguelikeDungeonSettleInfo SettleInfo {
@@ -135,7 +140,7 @@ namespace Weedwacker.Shared.Network.Proto {
     /// <summary>Enum of possible cases for the "info" oneof.</summary>
     public enum InfoOneofCase {
       None = 0,
-      SettleInfo = 8,
+      SettleInfo = 2,
     }
     private InfoOneofCase infoCase_ = InfoOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -199,17 +204,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (infoCase_ == InfoOneofCase.SettleInfo) {
+        output.WriteRawTag(18);
+        output.WriteMessage(SettleInfo);
+      }
       if (Retcode != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(48);
         output.WriteInt32(Retcode);
       }
       if (StageId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(112);
         output.WriteUInt32(StageId);
-      }
-      if (infoCase_ == InfoOneofCase.SettleInfo) {
-        output.WriteRawTag(66);
-        output.WriteMessage(SettleInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -221,17 +226,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (infoCase_ == InfoOneofCase.SettleInfo) {
+        output.WriteRawTag(18);
+        output.WriteMessage(SettleInfo);
+      }
       if (Retcode != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(48);
         output.WriteInt32(Retcode);
       }
       if (StageId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(112);
         output.WriteUInt32(StageId);
-      }
-      if (infoCase_ == InfoOneofCase.SettleInfo) {
-        output.WriteRawTag(66);
-        output.WriteMessage(SettleInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -294,21 +299,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 56: {
-            StageId = input.ReadUInt32();
-            break;
-          }
-          case 66: {
+          case 18: {
             global::Weedwacker.Shared.Network.Proto.RoguelikeDungeonSettleInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.RoguelikeDungeonSettleInfo();
             if (infoCase_ == InfoOneofCase.SettleInfo) {
               subBuilder.MergeFrom(SettleInfo);
             }
             input.ReadMessage(subBuilder);
             SettleInfo = subBuilder;
+            break;
+          }
+          case 48: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 112: {
+            StageId = input.ReadUInt32();
             break;
           }
         }
@@ -326,21 +331,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 56: {
-            StageId = input.ReadUInt32();
-            break;
-          }
-          case 66: {
+          case 18: {
             global::Weedwacker.Shared.Network.Proto.RoguelikeDungeonSettleInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.RoguelikeDungeonSettleInfo();
             if (infoCase_ == InfoOneofCase.SettleInfo) {
               subBuilder.MergeFrom(SettleInfo);
             }
             input.ReadMessage(subBuilder);
             SettleInfo = subBuilder;
+            break;
+          }
+          case 48: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 112: {
+            StageId = input.ReadUInt32();
             break;
           }
         }

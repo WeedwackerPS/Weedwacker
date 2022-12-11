@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneGalleryMuqadasPotionInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNTY2VuZUdhbGxlcnlNdXFhZGFzUG90aW9uSW5mby5wcm90byJ9Ch1TY2Vu",
-            "ZUdhbGxlcnlNdXFhZGFzUG90aW9uSW5mbxINCgVzY29yZRgGIAEoDRIeChZj",
-            "YXB0dXJlX3dlYWtuZXNzX2NvdW50GAQgASgNEhQKDHNraWxsX2VuZXJneRgK",
-            "IAEoDRIXCg9za2lsbF91c2VfbGltaXQYCSABKA1CIqoCH1dlZWR3YWNrZXIu",
-            "U2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiNTY2VuZUdhbGxlcnlNdXFhZGFzUG90aW9uSW5mby5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90byKIAQodU2NlbmVHYWxsZXJ5TXVx",
+            "YWRhc1BvdGlvbkluZm8SDQoFc2NvcmUYASABKA0SGwoTVW5rMzMwMF9OSE9M",
+            "R0dBRk1QSBgFIAEoDRIbChNVbmszMzAwX0xLRUlDT0xNUElJGAogASgNEh4K",
+            "FmNhcHR1cmVfd2Vha25lc3NfY291bnQYDCABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneGalleryMuqadasPotionInfo), global::Weedwacker.Shared.Network.Proto.SceneGalleryMuqadasPotionInfo.Parser, new[]{ "Score", "CaptureWeaknessCount", "SkillEnergy", "SkillUseLimit" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneGalleryMuqadasPotionInfo), global::Weedwacker.Shared.Network.Proto.SceneGalleryMuqadasPotionInfo.Parser, new[]{ "Score", "Unk3300NHOLGGAFMPH", "Unk3300LKEICOLMPII", "CaptureWeaknessCount" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,9 +74,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SceneGalleryMuqadasPotionInfo(SceneGalleryMuqadasPotionInfo other) : this() {
       score_ = other.score_;
+      unk3300NHOLGGAFMPH_ = other.unk3300NHOLGGAFMPH_;
+      unk3300LKEICOLMPII_ = other.unk3300LKEICOLMPII_;
       captureWeaknessCount_ = other.captureWeaknessCount_;
-      skillEnergy_ = other.skillEnergy_;
-      skillUseLimit_ = other.skillUseLimit_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,7 +87,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "score" field.</summary>
-    public const int ScoreFieldNumber = 6;
+    public const int ScoreFieldNumber = 1;
     private uint score_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -98,8 +98,32 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "Unk3300_NHOLGGAFMPH" field.</summary>
+    public const int Unk3300NHOLGGAFMPHFieldNumber = 5;
+    private uint unk3300NHOLGGAFMPH_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300NHOLGGAFMPH {
+      get { return unk3300NHOLGGAFMPH_; }
+      set {
+        unk3300NHOLGGAFMPH_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_LKEICOLMPII" field.</summary>
+    public const int Unk3300LKEICOLMPIIFieldNumber = 10;
+    private uint unk3300LKEICOLMPII_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300LKEICOLMPII {
+      get { return unk3300LKEICOLMPII_; }
+      set {
+        unk3300LKEICOLMPII_ = value;
+      }
+    }
+
     /// <summary>Field number for the "capture_weakness_count" field.</summary>
-    public const int CaptureWeaknessCountFieldNumber = 4;
+    public const int CaptureWeaknessCountFieldNumber = 12;
     private uint captureWeaknessCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -107,30 +131,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return captureWeaknessCount_; }
       set {
         captureWeaknessCount_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "skill_energy" field.</summary>
-    public const int SkillEnergyFieldNumber = 10;
-    private uint skillEnergy_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SkillEnergy {
-      get { return skillEnergy_; }
-      set {
-        skillEnergy_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "skill_use_limit" field.</summary>
-    public const int SkillUseLimitFieldNumber = 9;
-    private uint skillUseLimit_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SkillUseLimit {
-      get { return skillUseLimit_; }
-      set {
-        skillUseLimit_ = value;
       }
     }
 
@@ -150,9 +150,9 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (Score != other.Score) return false;
+      if (Unk3300NHOLGGAFMPH != other.Unk3300NHOLGGAFMPH) return false;
+      if (Unk3300LKEICOLMPII != other.Unk3300LKEICOLMPII) return false;
       if (CaptureWeaknessCount != other.CaptureWeaknessCount) return false;
-      if (SkillEnergy != other.SkillEnergy) return false;
-      if (SkillUseLimit != other.SkillUseLimit) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -161,9 +161,9 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (Score != 0) hash ^= Score.GetHashCode();
+      if (Unk3300NHOLGGAFMPH != 0) hash ^= Unk3300NHOLGGAFMPH.GetHashCode();
+      if (Unk3300LKEICOLMPII != 0) hash ^= Unk3300LKEICOLMPII.GetHashCode();
       if (CaptureWeaknessCount != 0) hash ^= CaptureWeaknessCount.GetHashCode();
-      if (SkillEnergy != 0) hash ^= SkillEnergy.GetHashCode();
-      if (SkillUseLimit != 0) hash ^= SkillUseLimit.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -182,21 +182,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CaptureWeaknessCount != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(CaptureWeaknessCount);
-      }
       if (Score != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(8);
         output.WriteUInt32(Score);
       }
-      if (SkillUseLimit != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(SkillUseLimit);
+      if (Unk3300NHOLGGAFMPH != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300NHOLGGAFMPH);
       }
-      if (SkillEnergy != 0) {
+      if (Unk3300LKEICOLMPII != 0) {
         output.WriteRawTag(80);
-        output.WriteUInt32(SkillEnergy);
+        output.WriteUInt32(Unk3300LKEICOLMPII);
+      }
+      if (CaptureWeaknessCount != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(CaptureWeaknessCount);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -208,21 +208,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CaptureWeaknessCount != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(CaptureWeaknessCount);
-      }
       if (Score != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(8);
         output.WriteUInt32(Score);
       }
-      if (SkillUseLimit != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(SkillUseLimit);
+      if (Unk3300NHOLGGAFMPH != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300NHOLGGAFMPH);
       }
-      if (SkillEnergy != 0) {
+      if (Unk3300LKEICOLMPII != 0) {
         output.WriteRawTag(80);
-        output.WriteUInt32(SkillEnergy);
+        output.WriteUInt32(Unk3300LKEICOLMPII);
+      }
+      if (CaptureWeaknessCount != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(CaptureWeaknessCount);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -237,14 +237,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (Score != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Score);
       }
+      if (Unk3300NHOLGGAFMPH != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NHOLGGAFMPH);
+      }
+      if (Unk3300LKEICOLMPII != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LKEICOLMPII);
+      }
       if (CaptureWeaknessCount != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CaptureWeaknessCount);
-      }
-      if (SkillEnergy != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillEnergy);
-      }
-      if (SkillUseLimit != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillUseLimit);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -261,14 +261,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.Score != 0) {
         Score = other.Score;
       }
+      if (other.Unk3300NHOLGGAFMPH != 0) {
+        Unk3300NHOLGGAFMPH = other.Unk3300NHOLGGAFMPH;
+      }
+      if (other.Unk3300LKEICOLMPII != 0) {
+        Unk3300LKEICOLMPII = other.Unk3300LKEICOLMPII;
+      }
       if (other.CaptureWeaknessCount != 0) {
         CaptureWeaknessCount = other.CaptureWeaknessCount;
-      }
-      if (other.SkillEnergy != 0) {
-        SkillEnergy = other.SkillEnergy;
-      }
-      if (other.SkillUseLimit != 0) {
-        SkillUseLimit = other.SkillUseLimit;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -285,20 +285,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            CaptureWeaknessCount = input.ReadUInt32();
-            break;
-          }
-          case 48: {
+          case 8: {
             Score = input.ReadUInt32();
             break;
           }
-          case 72: {
-            SkillUseLimit = input.ReadUInt32();
+          case 40: {
+            Unk3300NHOLGGAFMPH = input.ReadUInt32();
             break;
           }
           case 80: {
-            SkillEnergy = input.ReadUInt32();
+            Unk3300LKEICOLMPII = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            CaptureWeaknessCount = input.ReadUInt32();
             break;
           }
         }
@@ -316,20 +316,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            CaptureWeaknessCount = input.ReadUInt32();
-            break;
-          }
-          case 48: {
+          case 8: {
             Score = input.ReadUInt32();
             break;
           }
-          case 72: {
-            SkillUseLimit = input.ReadUInt32();
+          case 40: {
+            Unk3300NHOLGGAFMPH = input.ReadUInt32();
             break;
           }
           case 80: {
-            SkillEnergy = input.ReadUInt32();
+            Unk3300LKEICOLMPII = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            CaptureWeaknessCount = input.ReadUInt32();
             break;
           }
         }

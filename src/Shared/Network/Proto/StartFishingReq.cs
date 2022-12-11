@@ -24,13 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static StartFishingReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVTdGFydEZpc2hpbmdSZXEucHJvdG8iPgoPU3RhcnRGaXNoaW5nUmVxEhUK",
-            "DXJvZF9lbnRpdHlfaWQYBSABKA0SFAoMZmlzaF9wb29sX2lkGA8gASgNQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChVTdGFydEZpc2hpbmdSZXEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8iPgoPU3RhcnRGaXNoaW5nUmVxEhQKDGZpc2hfcG9vbF9p",
+            "ZBgCIAEoDRIVCg1yb2RfZW50aXR5X2lkGAYgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.StartFishingReq), global::Weedwacker.Shared.Network.Proto.StartFishingReq.Parser, new[]{ "RodEntityId", "FishPoolId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.StartFishingReq), global::Weedwacker.Shared.Network.Proto.StartFishingReq.Parser, new[]{ "FishPoolId", "RodEntityId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -38,10 +38,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5825
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5822;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class StartFishingReq : pb::IMessage<StartFishingReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +81,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public StartFishingReq(StartFishingReq other) : this() {
-      rodEntityId_ = other.rodEntityId_;
       fishPoolId_ = other.fishPoolId_;
+      rodEntityId_ = other.rodEntityId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,20 +92,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new StartFishingReq(this);
     }
 
-    /// <summary>Field number for the "rod_entity_id" field.</summary>
-    public const int RodEntityIdFieldNumber = 5;
-    private uint rodEntityId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint RodEntityId {
-      get { return rodEntityId_; }
-      set {
-        rodEntityId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "fish_pool_id" field.</summary>
-    public const int FishPoolIdFieldNumber = 15;
+    public const int FishPoolIdFieldNumber = 2;
     private uint fishPoolId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,6 +101,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return fishPoolId_; }
       set {
         fishPoolId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "rod_entity_id" field.</summary>
+    public const int RodEntityIdFieldNumber = 6;
+    private uint rodEntityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint RodEntityId {
+      get { return rodEntityId_; }
+      set {
+        rodEntityId_ = value;
       }
     }
 
@@ -127,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (RodEntityId != other.RodEntityId) return false;
       if (FishPoolId != other.FishPoolId) return false;
+      if (RodEntityId != other.RodEntityId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (RodEntityId != 0) hash ^= RodEntityId.GetHashCode();
       if (FishPoolId != 0) hash ^= FishPoolId.GetHashCode();
+      if (RodEntityId != 0) hash ^= RodEntityId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -156,13 +160,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (RodEntityId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(RodEntityId);
-      }
       if (FishPoolId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(16);
         output.WriteUInt32(FishPoolId);
+      }
+      if (RodEntityId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(RodEntityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -174,13 +178,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (RodEntityId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(RodEntityId);
-      }
       if (FishPoolId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(16);
         output.WriteUInt32(FishPoolId);
+      }
+      if (RodEntityId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(RodEntityId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -192,11 +196,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (RodEntityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RodEntityId);
-      }
       if (FishPoolId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FishPoolId);
+      }
+      if (RodEntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RodEntityId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -210,11 +214,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.RodEntityId != 0) {
-        RodEntityId = other.RodEntityId;
-      }
       if (other.FishPoolId != 0) {
         FishPoolId = other.FishPoolId;
+      }
+      if (other.RodEntityId != 0) {
+        RodEntityId = other.RodEntityId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -231,12 +235,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
-            RodEntityId = input.ReadUInt32();
+          case 16: {
+            FishPoolId = input.ReadUInt32();
             break;
           }
-          case 120: {
-            FishPoolId = input.ReadUInt32();
+          case 48: {
+            RodEntityId = input.ReadUInt32();
             break;
           }
         }
@@ -254,12 +258,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
-            RodEntityId = input.ReadUInt32();
+          case 16: {
+            FishPoolId = input.ReadUInt32();
             break;
           }
-          case 120: {
-            FishPoolId = input.ReadUInt32();
+          case 48: {
+            RodEntityId = input.ReadUInt32();
             break;
           }
         }

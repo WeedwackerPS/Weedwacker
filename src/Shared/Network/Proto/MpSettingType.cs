@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static MpSettingTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChNNcFNldHRpbmdUeXBlLnByb3RvKnYKDU1wU2V0dGluZ1R5cGUSHAoYTVBf",
-            "U0VUVElOR19UWVBFX05PX0VOVEVSEAASIAocTVBfU0VUVElOR19UWVBFX0VO",
-            "VEVSX0ZSRUVMWRABEiUKIU1QX1NFVFRJTkdfVFlQRV9FTlRFUl9BRlRFUl9B",
-            "UFBMWRACQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZw",
-            "cm90bzM="));
+            "ChNNcFNldHRpbmdUeXBlLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvKnYKDU1wU2V0dGluZ1R5cGUSHAoYTVBfU0VUVElOR19UWVBF",
+            "X05PX0VOVEVSEAASIAocTVBfU0VUVElOR19UWVBFX0VOVEVSX0ZSRUVMWRAB",
+            "EiUKIU1QX1NFVFRJTkdfVFlQRV9FTlRFUl9BRlRFUl9BUFBMWRACYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Weedwacker.Shared.Network.Proto.MpSettingType), }, null, null));

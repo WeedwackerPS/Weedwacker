@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static TrialAvatarActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNUcmlhbEF2YXRhckFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxopVHJpYWxB",
-            "dmF0YXJBY3Rpdml0eVJld2FyZERldGFpbEluZm8ucHJvdG8iXwodVHJpYWxB",
-            "dmF0YXJBY3Rpdml0eURldGFpbEluZm8SPgoQcmV3YXJkX2luZm9fbGlzdBgN",
-            "IAMoCzIkLlRyaWFsQXZhdGFyQWN0aXZpdHlSZXdhcmREZXRhaWxJbmZvQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiNUcmlhbEF2YXRhckFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxopVHJpYWxBdmF0YXJBY3Rpdml0",
+            "eVJld2FyZERldGFpbEluZm8ucHJvdG8ifwodVHJpYWxBdmF0YXJBY3Rpdml0",
+            "eURldGFpbEluZm8SXgoQcmV3YXJkX2luZm9fbGlzdBgLIAMoCzJELldlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uVHJpYWxBdmF0YXJBY3Rpdml0",
+            "eVJld2FyZERldGFpbEluZm9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.TrialAvatarActivityRewardDetailInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,9 +85,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "reward_info_list" field.</summary>
-    public const int RewardInfoListFieldNumber = 13;
+    public const int RewardInfoListFieldNumber = 11;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.TrialAvatarActivityRewardDetailInfo> _repeated_rewardInfoList_codec
-        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.TrialAvatarActivityRewardDetailInfo.Parser);
+        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.TrialAvatarActivityRewardDetailInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TrialAvatarActivityRewardDetailInfo> rewardInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.TrialAvatarActivityRewardDetailInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -187,7 +188,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 106: {
+          case 90: {
             rewardInfoList_.AddEntriesFrom(input, _repeated_rewardInfoList_codec);
             break;
           }
@@ -206,7 +207,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 106: {
+          case 90: {
             rewardInfoList_.AddEntriesFrom(ref input, _repeated_rewardInfoList_codec);
             break;
           }

@@ -24,17 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static QueryPathRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJRdWVyeVBhdGhSc3AucHJvdG8aDFZlY3Rvci5wcm90byLlAQoMUXVlcnlQ",
-            "YXRoUnNwEhAKCHF1ZXJ5X2lkGAwgASgFEhgKB2Nvcm5lcnMYBiADKAsyBy5W",
-            "ZWN0b3ISMgoMcXVlcnlfc3RhdHVzGAggASgOMhwuUXVlcnlQYXRoUnNwLlBh",
-            "dGhTdGF0dXNUeXBlEg8KB3JldGNvZGUYASABKAUiZAoOUGF0aFN0YXR1c1R5",
-            "cGUSGQoVUEFUSF9TVEFUVVNfVFlQRV9GQUlMEAASGQoVUEFUSF9TVEFUVVNf",
-            "VFlQRV9TVUNDEAESHAoYUEFUSF9TVEFUVVNfVFlQRV9QQVJUSUFMEAJCIqoC",
-            "H1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChJRdWVyeVBhdGhSc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8aDFZlY3Rvci5wcm90byKlAgoMUXVlcnlQYXRoUnNwElIKDHF1",
+            "ZXJ5X3N0YXR1cxgDIAEoDjI8LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8uUXVlcnlQYXRoUnNwLlBhdGhTdGF0dXNUeXBlEg8KB3JldGNvZGUY",
+            "CiABKAUSEAoIcXVlcnlfaWQYCCABKAUSOAoHY29ybmVycxgBIAMoCzInLldl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uVmVjdG9yImQKDlBhdGhT",
+            "dGF0dXNUeXBlEhkKFVBBVEhfU1RBVFVTX1RZUEVfRkFJTBAAEhkKFVBBVEhf",
+            "U1RBVFVTX1RZUEVfU1VDQxABEhwKGFBBVEhfU1RBVFVTX1RZUEVfUEFSVElB",
+            "TBACYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.QueryPathRsp), global::Weedwacker.Shared.Network.Proto.QueryPathRsp.Parser, new[]{ "QueryId", "Corners", "QueryStatus", "Retcode" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.QueryPathRsp.Types.PathStatusType) }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.QueryPathRsp), global::Weedwacker.Shared.Network.Proto.QueryPathRsp.Parser, new[]{ "QueryStatus", "Retcode", "QueryId", "Corners" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.QueryPathRsp.Types.PathStatusType) }, null, null)
           }));
     }
     #endregion
@@ -42,9 +44,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2398
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2330;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class QueryPathRsp : pb::IMessage<QueryPathRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,10 +86,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public QueryPathRsp(QueryPathRsp other) : this() {
-      queryId_ = other.queryId_;
-      corners_ = other.corners_.Clone();
       queryStatus_ = other.queryStatus_;
       retcode_ = other.retcode_;
+      queryId_ = other.queryId_;
+      corners_ = other.corners_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,31 +99,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new QueryPathRsp(this);
     }
 
-    /// <summary>Field number for the "query_id" field.</summary>
-    public const int QueryIdFieldNumber = 12;
-    private int queryId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int QueryId {
-      get { return queryId_; }
-      set {
-        queryId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "corners" field.</summary>
-    public const int CornersFieldNumber = 6;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.Vector> _repeated_corners_codec
-        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.Vector.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Vector> corners_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Vector>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Vector> Corners {
-      get { return corners_; }
-    }
-
     /// <summary>Field number for the "query_status" field.</summary>
-    public const int QueryStatusFieldNumber = 8;
+    public const int QueryStatusFieldNumber = 3;
     private global::Weedwacker.Shared.Network.Proto.QueryPathRsp.Types.PathStatusType queryStatus_ = global::Weedwacker.Shared.Network.Proto.QueryPathRsp.Types.PathStatusType.Fail;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -129,7 +112,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 1;
+    public const int RetcodeFieldNumber = 10;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -138,6 +121,29 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         retcode_ = value;
       }
+    }
+
+    /// <summary>Field number for the "query_id" field.</summary>
+    public const int QueryIdFieldNumber = 8;
+    private int queryId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int QueryId {
+      get { return queryId_; }
+      set {
+        queryId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "corners" field.</summary>
+    public const int CornersFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.Vector> _repeated_corners_codec
+        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.Vector.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Vector> corners_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Vector>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.Vector> Corners {
+      get { return corners_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -155,10 +161,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (QueryId != other.QueryId) return false;
-      if(!corners_.Equals(other.corners_)) return false;
       if (QueryStatus != other.QueryStatus) return false;
       if (Retcode != other.Retcode) return false;
+      if (QueryId != other.QueryId) return false;
+      if(!corners_.Equals(other.corners_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -166,10 +172,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (QueryId != 0) hash ^= QueryId.GetHashCode();
-      hash ^= corners_.GetHashCode();
       if (QueryStatus != global::Weedwacker.Shared.Network.Proto.QueryPathRsp.Types.PathStatusType.Fail) hash ^= QueryStatus.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (QueryId != 0) hash ^= QueryId.GetHashCode();
+      hash ^= corners_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -188,18 +194,18 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Retcode != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(Retcode);
-      }
       corners_.WriteTo(output, _repeated_corners_codec);
       if (QueryStatus != global::Weedwacker.Shared.Network.Proto.QueryPathRsp.Types.PathStatusType.Fail) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(24);
         output.WriteEnum((int) QueryStatus);
       }
       if (QueryId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(64);
         output.WriteInt32(QueryId);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -211,18 +217,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Retcode != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(Retcode);
-      }
       corners_.WriteTo(ref output, _repeated_corners_codec);
       if (QueryStatus != global::Weedwacker.Shared.Network.Proto.QueryPathRsp.Types.PathStatusType.Fail) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(24);
         output.WriteEnum((int) QueryStatus);
       }
       if (QueryId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(64);
         output.WriteInt32(QueryId);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -234,16 +240,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (QueryId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(QueryId);
-      }
-      size += corners_.CalculateSize(_repeated_corners_codec);
       if (QueryStatus != global::Weedwacker.Shared.Network.Proto.QueryPathRsp.Types.PathStatusType.Fail) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) QueryStatus);
       }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
+      if (QueryId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(QueryId);
+      }
+      size += corners_.CalculateSize(_repeated_corners_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -256,16 +262,16 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.QueryId != 0) {
-        QueryId = other.QueryId;
-      }
-      corners_.Add(other.corners_);
       if (other.QueryStatus != global::Weedwacker.Shared.Network.Proto.QueryPathRsp.Types.PathStatusType.Fail) {
         QueryStatus = other.QueryStatus;
       }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
+      if (other.QueryId != 0) {
+        QueryId = other.QueryId;
+      }
+      corners_.Add(other.corners_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -281,20 +287,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 50: {
+          case 10: {
             corners_.AddEntriesFrom(input, _repeated_corners_codec);
             break;
           }
-          case 64: {
+          case 24: {
             QueryStatus = (global::Weedwacker.Shared.Network.Proto.QueryPathRsp.Types.PathStatusType) input.ReadEnum();
             break;
           }
-          case 96: {
+          case 64: {
             QueryId = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -312,20 +318,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 50: {
+          case 10: {
             corners_.AddEntriesFrom(ref input, _repeated_corners_codec);
             break;
           }
-          case 64: {
+          case 24: {
             QueryStatus = (global::Weedwacker.Shared.Network.Proto.QueryPathRsp.Types.PathStatusType) input.ReadEnum();
             break;
           }
-          case 96: {
+          case 64: {
             QueryId = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            Retcode = input.ReadInt32();
             break;
           }
         }

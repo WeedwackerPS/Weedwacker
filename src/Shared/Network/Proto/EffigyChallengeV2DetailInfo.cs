@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static EffigyChallengeV2DetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFFZmZpZ3lDaGFsbGVuZ2VWMkRldGFpbEluZm8ucHJvdG8aIEVmZmlneUNo",
-            "YWxsZW5nZVYyTGV2ZWxEYXRhLnByb3RvIlMKG0VmZmlneUNoYWxsZW5nZVYy",
-            "RGV0YWlsSW5mbxI0Cg9sZXZlbF9kYXRhX2xpc3QYAyADKAsyGy5FZmZpZ3lD",
-            "aGFsbGVuZ2VWMkxldmVsRGF0YUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0",
-            "d29yay5Qcm90b2IGcHJvdG8z"));
+            "CiFFZmZpZ3lDaGFsbGVuZ2VWMkRldGFpbEluZm8ucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8aIEVmZmlneUNoYWxsZW5nZVYyTGV2",
+            "ZWxEYXRhLnByb3RvInMKG0VmZmlneUNoYWxsZW5nZVYyRGV0YWlsSW5mbxJU",
+            "Cg9sZXZlbF9kYXRhX2xpc3QYASADKAsyOy5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLkVmZmlneUNoYWxsZW5nZVYyTGV2ZWxEYXRhYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.EffigyChallengeV2LevelDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,9 +85,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "level_data_list" field.</summary>
-    public const int LevelDataListFieldNumber = 3;
+    public const int LevelDataListFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.EffigyChallengeV2LevelData> _repeated_levelDataList_codec
-        = pb::FieldCodec.ForMessage(26, global::Weedwacker.Shared.Network.Proto.EffigyChallengeV2LevelData.Parser);
+        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.EffigyChallengeV2LevelData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EffigyChallengeV2LevelData> levelDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.EffigyChallengeV2LevelData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -187,7 +188,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
+          case 10: {
             levelDataList_.AddEntriesFrom(input, _repeated_levelDataList_codec);
             break;
           }
@@ -206,7 +207,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
+          case 10: {
             levelDataList_.AddEntriesFrom(ref input, _repeated_levelDataList_codec);
             break;
           }

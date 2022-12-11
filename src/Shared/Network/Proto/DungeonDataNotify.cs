@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static DungeonDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdEdW5nZW9uRGF0YU5vdGlmeS5wcm90byKMAQoRRHVuZ2VvbkRhdGFOb3Rp",
-            "ZnkSQAoQZHVuZ2Vvbl9kYXRhX21hcBgBIAMoCzImLkR1bmdlb25EYXRhTm90",
-            "aWZ5LkR1bmdlb25EYXRhTWFwRW50cnkaNQoTRHVuZ2VvbkRhdGFNYXBFbnRy",
-            "eRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiABKA06AjgBQiKqAh9XZWVkd2Fj",
-            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChdEdW5nZW9uRGF0YU5vdGlmeS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90byKsAQoRRHVuZ2VvbkRhdGFOb3RpZnkSYAoQZHVuZ2Vv",
+            "bl9kYXRhX21hcBgHIAMoCzJGLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8uRHVuZ2VvbkRhdGFOb3RpZnkuRHVuZ2VvbkRhdGFNYXBFbnRyeRo1",
+            "ChNEdW5nZW9uRGF0YU1hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgC",
+            "IAEoDToCOAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 982
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 990;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class DungeonDataNotify : pb::IMessage<DungeonDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +94,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "dungeon_data_map" field.</summary>
-    public const int DungeonDataMapFieldNumber = 1;
+    public const int DungeonDataMapFieldNumber = 7;
     private static readonly pbc::MapField<uint, uint>.Codec _map_dungeonDataMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 10);
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 58);
     private readonly pbc::MapField<uint, uint> dungeonDataMap_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -192,7 +197,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
+          case 58: {
             dungeonDataMap_.AddEntriesFrom(input, _map_dungeonDataMap_codec);
             break;
           }
@@ -211,7 +216,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
+          case 58: {
             dungeonDataMap_.AddEntriesFrom(ref input, _map_dungeonDataMap_codec);
             break;
           }

@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static TakeReunionSignInRewardRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBUYWtlUmV1bmlvblNpZ25JblJld2FyZFJzcC5wcm90bxoXUmV1bmlvblNp",
-            "Z25JbkluZm8ucHJvdG8iVwoaVGFrZVJldW5pb25TaWduSW5SZXdhcmRSc3AS",
-            "KAoMc2lnbl9pbl9pbmZvGAogASgLMhIuUmV1bmlvblNpZ25JbkluZm8SDwoH",
-            "cmV0Y29kZRgFIAEoBUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
-            "cm90b2IGcHJvdG8z"));
+            "CiBUYWtlUmV1bmlvblNpZ25JblJld2FyZFJzcC5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90bxoXUmV1bmlvblNpZ25JbkluZm8ucHJv",
+            "dG8idwoaVGFrZVJldW5pb25TaWduSW5SZXdhcmRSc3ASSAoMc2lnbl9pbl9p",
+            "bmZvGA0gASgLMjIuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5S",
+            "ZXVuaW9uU2lnbkluSW5mbxIPCgdyZXRjb2RlGAcgASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ReunionSignInInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5072
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5067;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class TakeReunionSignInRewardRsp : pb::IMessage<TakeReunionSignInRewardRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "sign_in_info" field.</summary>
-    public const int SignInInfoFieldNumber = 10;
+    public const int SignInInfoFieldNumber = 13;
     private global::Weedwacker.Shared.Network.Proto.ReunionSignInInfo signInInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 5;
+    public const int RetcodeFieldNumber = 7;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -158,11 +162,11 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Retcode != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(56);
         output.WriteInt32(Retcode);
       }
       if (signInInfo_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(106);
         output.WriteMessage(SignInInfo);
       }
       if (_unknownFields != null) {
@@ -176,11 +180,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Retcode != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(56);
         output.WriteInt32(Retcode);
       }
       if (signInInfo_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(106);
         output.WriteMessage(SignInInfo);
       }
       if (_unknownFields != null) {
@@ -235,11 +239,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
+          case 56: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 82: {
+          case 106: {
             if (signInInfo_ == null) {
               SignInInfo = new global::Weedwacker.Shared.Network.Proto.ReunionSignInInfo();
             }
@@ -261,11 +265,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
+          case 56: {
             Retcode = input.ReadInt32();
             break;
           }
-          case 82: {
+          case 106: {
             if (signInInfo_ == null) {
               SignInInfo = new global::Weedwacker.Shared.Network.Proto.ReunionSignInInfo();
             }

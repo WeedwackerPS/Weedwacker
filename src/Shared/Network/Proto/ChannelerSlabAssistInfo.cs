@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static ChannelerSlabAssistInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1DaGFubmVsZXJTbGFiQXNzaXN0SW5mby5wcm90byJPChdDaGFubmVsZXJT",
-            "bGFiQXNzaXN0SW5mbxILCgN1aWQYCiABKA0SFAoMYXZhdGFyX2xldmVsGAwg",
-            "ASgNEhEKCWF2YXRhcl9pZBgGIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQu",
-            "TmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "Ch1DaGFubmVsZXJTbGFiQXNzaXN0SW5mby5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90byJPChdDaGFubmVsZXJTbGFiQXNzaXN0SW5m",
+            "bxIUCgxhdmF0YXJfbGV2ZWwYCiABKA0SCwoDdWlkGAsgASgNEhEKCWF2YXRh",
+            "cl9pZBgGIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChannelerSlabAssistInfo), global::Weedwacker.Shared.Network.Proto.ChannelerSlabAssistInfo.Parser, new[]{ "Uid", "AvatarLevel", "AvatarId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChannelerSlabAssistInfo), global::Weedwacker.Shared.Network.Proto.ChannelerSlabAssistInfo.Parser, new[]{ "AvatarLevel", "Uid", "AvatarId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,8 +72,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChannelerSlabAssistInfo(ChannelerSlabAssistInfo other) : this() {
-      uid_ = other.uid_;
       avatarLevel_ = other.avatarLevel_;
+      uid_ = other.uid_;
       avatarId_ = other.avatarId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -84,20 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ChannelerSlabAssistInfo(this);
     }
 
-    /// <summary>Field number for the "uid" field.</summary>
-    public const int UidFieldNumber = 10;
-    private uint uid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Uid {
-      get { return uid_; }
-      set {
-        uid_ = value;
-      }
-    }
-
     /// <summary>Field number for the "avatar_level" field.</summary>
-    public const int AvatarLevelFieldNumber = 12;
+    public const int AvatarLevelFieldNumber = 10;
     private uint avatarLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -105,6 +93,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return avatarLevel_; }
       set {
         avatarLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "uid" field.</summary>
+    public const int UidFieldNumber = 11;
+    private uint uid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Uid {
+      get { return uid_; }
+      set {
+        uid_ = value;
       }
     }
 
@@ -135,8 +135,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Uid != other.Uid) return false;
       if (AvatarLevel != other.AvatarLevel) return false;
+      if (Uid != other.Uid) return false;
       if (AvatarId != other.AvatarId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -145,8 +145,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Uid != 0) hash ^= Uid.GetHashCode();
       if (AvatarLevel != 0) hash ^= AvatarLevel.GetHashCode();
+      if (Uid != 0) hash ^= Uid.GetHashCode();
       if (AvatarId != 0) hash ^= AvatarId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -170,13 +170,13 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(48);
         output.WriteUInt32(AvatarId);
       }
-      if (Uid != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(Uid);
-      }
       if (AvatarLevel != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(80);
         output.WriteUInt32(AvatarLevel);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Uid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -192,13 +192,13 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(48);
         output.WriteUInt32(AvatarId);
       }
-      if (Uid != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(Uid);
-      }
       if (AvatarLevel != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(80);
         output.WriteUInt32(AvatarLevel);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Uid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -210,11 +210,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Uid != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
-      }
       if (AvatarLevel != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AvatarLevel);
+      }
+      if (Uid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
       }
       if (AvatarId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AvatarId);
@@ -231,11 +231,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Uid != 0) {
-        Uid = other.Uid;
-      }
       if (other.AvatarLevel != 0) {
         AvatarLevel = other.AvatarLevel;
+      }
+      if (other.Uid != 0) {
+        Uid = other.Uid;
       }
       if (other.AvatarId != 0) {
         AvatarId = other.AvatarId;
@@ -260,11 +260,11 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           }
           case 80: {
-            Uid = input.ReadUInt32();
+            AvatarLevel = input.ReadUInt32();
             break;
           }
-          case 96: {
-            AvatarLevel = input.ReadUInt32();
+          case 88: {
+            Uid = input.ReadUInt32();
             break;
           }
         }
@@ -287,11 +287,11 @@ namespace Weedwacker.Shared.Network.Proto {
             break;
           }
           case 80: {
-            Uid = input.ReadUInt32();
+            AvatarLevel = input.ReadUInt32();
             break;
           }
-          case 96: {
-            AvatarLevel = input.ReadUInt32();
+          case 88: {
+            Uid = input.ReadUInt32();
             break;
           }
         }

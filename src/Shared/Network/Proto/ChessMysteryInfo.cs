@@ -24,20 +24,22 @@ namespace Weedwacker.Shared.Network.Proto {
     static ChessMysteryInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZDaGVzc015c3RlcnlJbmZvLnByb3RvGh1DaGVzc0VudHJhbmNlRGV0YWls",
-            "SW5mby5wcm90byK7AgoQQ2hlc3NNeXN0ZXJ5SW5mbxJDChJlbnRyYW5jZV9w",
-            "b2ludF9tYXAYDSADKAsyJy5DaGVzc015c3RlcnlJbmZvLkVudHJhbmNlUG9p",
-            "bnRNYXBFbnRyeRIaChJleGl0X3BvaW50X2lkX2xpc3QYAyADKA0SPQoPZGV0",
-            "YWlsX2luZm9fbWFwGAUgAygLMiQuQ2hlc3NNeXN0ZXJ5SW5mby5EZXRhaWxJ",
-            "bmZvTWFwRW50cnkaNwoVRW50cmFuY2VQb2ludE1hcEVudHJ5EgsKA2tleRgB",
-            "IAEoDRINCgV2YWx1ZRgCIAEoDToCOAEaTgoSRGV0YWlsSW5mb01hcEVudHJ5",
-            "EgsKA2tleRgBIAEoDRInCgV2YWx1ZRgCIAEoCzIYLkNoZXNzRW50cmFuY2VE",
-            "ZXRhaWxJbmZvOgI4AUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
-            "cm90b2IGcHJvdG8z"));
+            "ChZDaGVzc015c3RlcnlJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvGh1DaGVzc0VudHJhbmNlRGV0YWlsSW5mby5wcm90byKb",
+            "AwoQQ2hlc3NNeXN0ZXJ5SW5mbxIaChJleGl0X3BvaW50X2lkX2xpc3QYDyAD",
+            "KA0SYwoSZW50cmFuY2VfcG9pbnRfbWFwGAogAygLMkcuV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90by5DaGVzc015c3RlcnlJbmZvLkVudHJhbmNl",
+            "UG9pbnRNYXBFbnRyeRJdCg9kZXRhaWxfaW5mb19tYXAYCCADKAsyRC5XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkNoZXNzTXlzdGVyeUluZm8u",
+            "RGV0YWlsSW5mb01hcEVudHJ5GjcKFUVudHJhbmNlUG9pbnRNYXBFbnRyeRIL",
+            "CgNrZXkYASABKA0SDQoFdmFsdWUYAiABKA06AjgBGm4KEkRldGFpbEluZm9N",
+            "YXBFbnRyeRILCgNrZXkYASABKA0SRwoFdmFsdWUYAiABKAsyOC5XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkNoZXNzRW50cmFuY2VEZXRhaWxJ",
+            "bmZvOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ChessEntranceDetailInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChessMysteryInfo), global::Weedwacker.Shared.Network.Proto.ChessMysteryInfo.Parser, new[]{ "EntrancePointMap", "ExitPointIdList", "DetailInfoMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ChessMysteryInfo), global::Weedwacker.Shared.Network.Proto.ChessMysteryInfo.Parser, new[]{ "ExitPointIdList", "EntrancePointMap", "DetailInfoMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
           }));
     }
     #endregion
@@ -78,8 +80,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChessMysteryInfo(ChessMysteryInfo other) : this() {
-      entrancePointMap_ = other.entrancePointMap_.Clone();
       exitPointIdList_ = other.exitPointIdList_.Clone();
+      entrancePointMap_ = other.entrancePointMap_.Clone();
       detailInfoMap_ = other.detailInfoMap_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -90,21 +92,10 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ChessMysteryInfo(this);
     }
 
-    /// <summary>Field number for the "entrance_point_map" field.</summary>
-    public const int EntrancePointMapFieldNumber = 13;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_entrancePointMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 106);
-    private readonly pbc::MapField<uint, uint> entrancePointMap_ = new pbc::MapField<uint, uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> EntrancePointMap {
-      get { return entrancePointMap_; }
-    }
-
     /// <summary>Field number for the "exit_point_id_list" field.</summary>
-    public const int ExitPointIdListFieldNumber = 3;
+    public const int ExitPointIdListFieldNumber = 15;
     private static readonly pb::FieldCodec<uint> _repeated_exitPointIdList_codec
-        = pb::FieldCodec.ForUInt32(26);
+        = pb::FieldCodec.ForUInt32(122);
     private readonly pbc::RepeatedField<uint> exitPointIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -112,10 +103,21 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return exitPointIdList_; }
     }
 
+    /// <summary>Field number for the "entrance_point_map" field.</summary>
+    public const int EntrancePointMapFieldNumber = 10;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_entrancePointMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 82);
+    private readonly pbc::MapField<uint, uint> entrancePointMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> EntrancePointMap {
+      get { return entrancePointMap_; }
+    }
+
     /// <summary>Field number for the "detail_info_map" field.</summary>
-    public const int DetailInfoMapFieldNumber = 5;
+    public const int DetailInfoMapFieldNumber = 8;
     private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.ChessEntranceDetailInfo>.Codec _map_detailInfoMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.ChessEntranceDetailInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.ChessEntranceDetailInfo.Parser), 42);
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.ChessEntranceDetailInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.ChessEntranceDetailInfo.Parser), 66);
     private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.ChessEntranceDetailInfo> detailInfoMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.ChessEntranceDetailInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -138,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!EntrancePointMap.Equals(other.EntrancePointMap)) return false;
       if(!exitPointIdList_.Equals(other.exitPointIdList_)) return false;
+      if (!EntrancePointMap.Equals(other.EntrancePointMap)) return false;
       if (!DetailInfoMap.Equals(other.DetailInfoMap)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -148,8 +150,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= EntrancePointMap.GetHashCode();
       hash ^= exitPointIdList_.GetHashCode();
+      hash ^= EntrancePointMap.GetHashCode();
       hash ^= DetailInfoMap.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -169,9 +171,9 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      exitPointIdList_.WriteTo(output, _repeated_exitPointIdList_codec);
       detailInfoMap_.WriteTo(output, _map_detailInfoMap_codec);
       entrancePointMap_.WriteTo(output, _map_entrancePointMap_codec);
+      exitPointIdList_.WriteTo(output, _repeated_exitPointIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -182,9 +184,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      exitPointIdList_.WriteTo(ref output, _repeated_exitPointIdList_codec);
       detailInfoMap_.WriteTo(ref output, _map_detailInfoMap_codec);
       entrancePointMap_.WriteTo(ref output, _map_entrancePointMap_codec);
+      exitPointIdList_.WriteTo(ref output, _repeated_exitPointIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -195,8 +197,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += entrancePointMap_.CalculateSize(_map_entrancePointMap_codec);
       size += exitPointIdList_.CalculateSize(_repeated_exitPointIdList_codec);
+      size += entrancePointMap_.CalculateSize(_map_entrancePointMap_codec);
       size += detailInfoMap_.CalculateSize(_map_detailInfoMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -210,8 +212,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      entrancePointMap_.Add(other.entrancePointMap_);
       exitPointIdList_.Add(other.exitPointIdList_);
+      entrancePointMap_.Add(other.entrancePointMap_);
       detailInfoMap_.Add(other.detailInfoMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -228,17 +230,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26:
-          case 24: {
-            exitPointIdList_.AddEntriesFrom(input, _repeated_exitPointIdList_codec);
-            break;
-          }
-          case 42: {
+          case 66: {
             detailInfoMap_.AddEntriesFrom(input, _map_detailInfoMap_codec);
             break;
           }
-          case 106: {
+          case 82: {
             entrancePointMap_.AddEntriesFrom(input, _map_entrancePointMap_codec);
+            break;
+          }
+          case 122:
+          case 120: {
+            exitPointIdList_.AddEntriesFrom(input, _repeated_exitPointIdList_codec);
             break;
           }
         }
@@ -256,17 +258,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26:
-          case 24: {
-            exitPointIdList_.AddEntriesFrom(ref input, _repeated_exitPointIdList_codec);
-            break;
-          }
-          case 42: {
+          case 66: {
             detailInfoMap_.AddEntriesFrom(ref input, _map_detailInfoMap_codec);
             break;
           }
-          case 106: {
+          case 82: {
             entrancePointMap_.AddEntriesFrom(ref input, _map_entrancePointMap_codec);
+            break;
+          }
+          case 122:
+          case 120: {
+            exitPointIdList_.AddEntriesFrom(ref input, _repeated_exitPointIdList_codec);
             break;
           }
         }

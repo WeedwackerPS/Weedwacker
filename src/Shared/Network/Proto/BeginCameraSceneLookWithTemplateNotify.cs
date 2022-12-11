@@ -25,20 +25,22 @@ namespace Weedwacker.Shared.Network.Proto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CixCZWdpbkNhbWVyYVNjZW5lTG9va1dpdGhUZW1wbGF0ZU5vdGlmeS5wcm90",
-            "bxoMVmVjdG9yLnByb3RvItoCCiZCZWdpbkNhbWVyYVNjZW5lTG9va1dpdGhU",
-            "ZW1wbGF0ZU5vdGlmeRIZCghsb29rX3BvcxgIIAEoCzIHLlZlY3RvchITCgt0",
-            "ZW1wbGF0ZV9pZBgFIAEoDRIbCgpmb2xsb3dfcG9zGAIgASgLMgcuVmVjdG9y",
-            "EhEKCWVudGl0eV9pZBgMIAEoDRIUCgxvdGhlcl9wYXJhbXMYDSADKAkSRwoL",
-            "Zm9sbG93X3R5cGUYCSABKA4yMi5CZWdpbkNhbWVyYVNjZW5lTG9va1dpdGhU",
-            "ZW1wbGF0ZU5vdGlmeS5Gb2xsb3dUeXBlInEKCkZvbGxvd1R5cGUSHwobRk9M",
-            "TE9XX1RZUEVfSU5JVF9GT0xMT1dfUE9TEAASHgoaRk9MTE9XX1RZUEVfU0VU",
-            "X0ZPTExPV19QT1MQARIiCh5GT0xMT1dfVFlQRV9TRVRfQUJTX0ZPTExPV19Q",
-            "T1MQAkIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJv",
-            "dG8z"));
+            "bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxoMVmVjdG9yLnBy",
+            "b3RvIs4DCiZCZWdpbkNhbWVyYVNjZW5lTG9va1dpdGhUZW1wbGF0ZU5vdGlm",
+            "eRJnCgtmb2xsb3dfdHlwZRgFIAEoDjJSLldlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8uQmVnaW5DYW1lcmFTY2VuZUxvb2tXaXRoVGVtcGxhdGVO",
+            "b3RpZnkuRm9sbG93VHlwZRIRCgllbnRpdHlfaWQYByABKA0SRAoTVW5rMzMw",
+            "MF9GSkRGR0xOTE1CThgBIAEoCzInLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uVmVjdG9yEhMKC3RlbXBsYXRlX2lkGA0gASgNEhQKDG90aGVy",
+            "X3BhcmFtcxgMIAMoCRJEChNVbmszMzAwX1BQQ0lESUNNSUVOGAogASgLMicu",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5WZWN0b3IicQoKRm9s",
+            "bG93VHlwZRIfChtGT0xMT1dfVFlQRV9JTklUX0ZPTExPV19QT1MQABIeChpG",
+            "T0xMT1dfVFlQRV9TRVRfRk9MTE9XX1BPUxABEiIKHkZPTExPV19UWVBFX1NF",
+            "VF9BQlNfRk9MTE9XX1BPUxACYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BeginCameraSceneLookWithTemplateNotify), global::Weedwacker.Shared.Network.Proto.BeginCameraSceneLookWithTemplateNotify.Parser, new[]{ "LookPos", "TemplateId", "FollowPos", "EntityId", "OtherParams", "FollowType" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.BeginCameraSceneLookWithTemplateNotify.Types.FollowType) }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BeginCameraSceneLookWithTemplateNotify), global::Weedwacker.Shared.Network.Proto.BeginCameraSceneLookWithTemplateNotify.Parser, new[]{ "FollowType", "EntityId", "Unk3300FJDFGLNLMBN", "TemplateId", "OtherParams", "Unk3300PPCIDICMIEN" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.BeginCameraSceneLookWithTemplateNotify.Types.FollowType) }, null, null)
           }));
     }
     #endregion
@@ -46,9 +48,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3160
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3342;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class BeginCameraSceneLookWithTemplateNotify : pb::IMessage<BeginCameraSceneLookWithTemplateNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -84,12 +90,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BeginCameraSceneLookWithTemplateNotify(BeginCameraSceneLookWithTemplateNotify other) : this() {
-      lookPos_ = other.lookPos_ != null ? other.lookPos_.Clone() : null;
-      templateId_ = other.templateId_;
-      followPos_ = other.followPos_ != null ? other.followPos_.Clone() : null;
-      entityId_ = other.entityId_;
-      otherParams_ = other.otherParams_.Clone();
       followType_ = other.followType_;
+      entityId_ = other.entityId_;
+      unk3300FJDFGLNLMBN_ = other.unk3300FJDFGLNLMBN_ != null ? other.unk3300FJDFGLNLMBN_.Clone() : null;
+      templateId_ = other.templateId_;
+      otherParams_ = other.otherParams_.Clone();
+      unk3300PPCIDICMIEN_ = other.unk3300PPCIDICMIEN_ != null ? other.unk3300PPCIDICMIEN_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -99,44 +105,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new BeginCameraSceneLookWithTemplateNotify(this);
     }
 
-    /// <summary>Field number for the "look_pos" field.</summary>
-    public const int LookPosFieldNumber = 8;
-    private global::Weedwacker.Shared.Network.Proto.Vector lookPos_;
+    /// <summary>Field number for the "follow_type" field.</summary>
+    public const int FollowTypeFieldNumber = 5;
+    private global::Weedwacker.Shared.Network.Proto.BeginCameraSceneLookWithTemplateNotify.Types.FollowType followType_ = global::Weedwacker.Shared.Network.Proto.BeginCameraSceneLookWithTemplateNotify.Types.FollowType.InitFollowPos;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector LookPos {
-      get { return lookPos_; }
+    public global::Weedwacker.Shared.Network.Proto.BeginCameraSceneLookWithTemplateNotify.Types.FollowType FollowType {
+      get { return followType_; }
       set {
-        lookPos_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "template_id" field.</summary>
-    public const int TemplateIdFieldNumber = 5;
-    private uint templateId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint TemplateId {
-      get { return templateId_; }
-      set {
-        templateId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "follow_pos" field.</summary>
-    public const int FollowPosFieldNumber = 2;
-    private global::Weedwacker.Shared.Network.Proto.Vector followPos_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector FollowPos {
-      get { return followPos_; }
-      set {
-        followPos_ = value;
+        followType_ = value;
       }
     }
 
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 12;
+    public const int EntityIdFieldNumber = 7;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -147,10 +129,34 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "Unk3300_FJDFGLNLMBN" field.</summary>
+    public const int Unk3300FJDFGLNLMBNFieldNumber = 1;
+    private global::Weedwacker.Shared.Network.Proto.Vector unk3300FJDFGLNLMBN_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector Unk3300FJDFGLNLMBN {
+      get { return unk3300FJDFGLNLMBN_; }
+      set {
+        unk3300FJDFGLNLMBN_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "template_id" field.</summary>
+    public const int TemplateIdFieldNumber = 13;
+    private uint templateId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TemplateId {
+      get { return templateId_; }
+      set {
+        templateId_ = value;
+      }
+    }
+
     /// <summary>Field number for the "other_params" field.</summary>
-    public const int OtherParamsFieldNumber = 13;
+    public const int OtherParamsFieldNumber = 12;
     private static readonly pb::FieldCodec<string> _repeated_otherParams_codec
-        = pb::FieldCodec.ForString(106);
+        = pb::FieldCodec.ForString(98);
     private readonly pbc::RepeatedField<string> otherParams_ = new pbc::RepeatedField<string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -158,15 +164,15 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return otherParams_; }
     }
 
-    /// <summary>Field number for the "follow_type" field.</summary>
-    public const int FollowTypeFieldNumber = 9;
-    private global::Weedwacker.Shared.Network.Proto.BeginCameraSceneLookWithTemplateNotify.Types.FollowType followType_ = global::Weedwacker.Shared.Network.Proto.BeginCameraSceneLookWithTemplateNotify.Types.FollowType.InitFollowPos;
+    /// <summary>Field number for the "Unk3300_PPCIDICMIEN" field.</summary>
+    public const int Unk3300PPCIDICMIENFieldNumber = 10;
+    private global::Weedwacker.Shared.Network.Proto.Vector unk3300PPCIDICMIEN_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.BeginCameraSceneLookWithTemplateNotify.Types.FollowType FollowType {
-      get { return followType_; }
+    public global::Weedwacker.Shared.Network.Proto.Vector Unk3300PPCIDICMIEN {
+      get { return unk3300PPCIDICMIEN_; }
       set {
-        followType_ = value;
+        unk3300PPCIDICMIEN_ = value;
       }
     }
 
@@ -185,12 +191,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(LookPos, other.LookPos)) return false;
-      if (TemplateId != other.TemplateId) return false;
-      if (!object.Equals(FollowPos, other.FollowPos)) return false;
-      if (EntityId != other.EntityId) return false;
-      if(!otherParams_.Equals(other.otherParams_)) return false;
       if (FollowType != other.FollowType) return false;
+      if (EntityId != other.EntityId) return false;
+      if (!object.Equals(Unk3300FJDFGLNLMBN, other.Unk3300FJDFGLNLMBN)) return false;
+      if (TemplateId != other.TemplateId) return false;
+      if(!otherParams_.Equals(other.otherParams_)) return false;
+      if (!object.Equals(Unk3300PPCIDICMIEN, other.Unk3300PPCIDICMIEN)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -198,12 +204,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (lookPos_ != null) hash ^= LookPos.GetHashCode();
-      if (TemplateId != 0) hash ^= TemplateId.GetHashCode();
-      if (followPos_ != null) hash ^= FollowPos.GetHashCode();
-      if (EntityId != 0) hash ^= EntityId.GetHashCode();
-      hash ^= otherParams_.GetHashCode();
       if (FollowType != global::Weedwacker.Shared.Network.Proto.BeginCameraSceneLookWithTemplateNotify.Types.FollowType.InitFollowPos) hash ^= FollowType.GetHashCode();
+      if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      if (unk3300FJDFGLNLMBN_ != null) hash ^= Unk3300FJDFGLNLMBN.GetHashCode();
+      if (TemplateId != 0) hash ^= TemplateId.GetHashCode();
+      hash ^= otherParams_.GetHashCode();
+      if (unk3300PPCIDICMIEN_ != null) hash ^= Unk3300PPCIDICMIEN.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -222,27 +228,27 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (followPos_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(FollowPos);
-      }
-      if (TemplateId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(TemplateId);
-      }
-      if (lookPos_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(LookPos);
+      if (unk3300FJDFGLNLMBN_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Unk3300FJDFGLNLMBN);
       }
       if (FollowType != global::Weedwacker.Shared.Network.Proto.BeginCameraSceneLookWithTemplateNotify.Types.FollowType.InitFollowPos) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(40);
         output.WriteEnum((int) FollowType);
       }
       if (EntityId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(56);
         output.WriteUInt32(EntityId);
       }
+      if (unk3300PPCIDICMIEN_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(Unk3300PPCIDICMIEN);
+      }
       otherParams_.WriteTo(output, _repeated_otherParams_codec);
+      if (TemplateId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(TemplateId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -253,27 +259,27 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (followPos_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(FollowPos);
-      }
-      if (TemplateId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(TemplateId);
-      }
-      if (lookPos_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(LookPos);
+      if (unk3300FJDFGLNLMBN_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Unk3300FJDFGLNLMBN);
       }
       if (FollowType != global::Weedwacker.Shared.Network.Proto.BeginCameraSceneLookWithTemplateNotify.Types.FollowType.InitFollowPos) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(40);
         output.WriteEnum((int) FollowType);
       }
       if (EntityId != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(56);
         output.WriteUInt32(EntityId);
       }
+      if (unk3300PPCIDICMIEN_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(Unk3300PPCIDICMIEN);
+      }
       otherParams_.WriteTo(ref output, _repeated_otherParams_codec);
+      if (TemplateId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(TemplateId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -284,21 +290,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (lookPos_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(LookPos);
-      }
-      if (TemplateId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TemplateId);
-      }
-      if (followPos_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FollowPos);
+      if (FollowType != global::Weedwacker.Shared.Network.Proto.BeginCameraSceneLookWithTemplateNotify.Types.FollowType.InitFollowPos) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) FollowType);
       }
       if (EntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
       }
+      if (unk3300FJDFGLNLMBN_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300FJDFGLNLMBN);
+      }
+      if (TemplateId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TemplateId);
+      }
       size += otherParams_.CalculateSize(_repeated_otherParams_codec);
-      if (FollowType != global::Weedwacker.Shared.Network.Proto.BeginCameraSceneLookWithTemplateNotify.Types.FollowType.InitFollowPos) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) FollowType);
+      if (unk3300PPCIDICMIEN_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300PPCIDICMIEN);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -312,27 +318,27 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.lookPos_ != null) {
-        if (lookPos_ == null) {
-          LookPos = new global::Weedwacker.Shared.Network.Proto.Vector();
-        }
-        LookPos.MergeFrom(other.LookPos);
-      }
-      if (other.TemplateId != 0) {
-        TemplateId = other.TemplateId;
-      }
-      if (other.followPos_ != null) {
-        if (followPos_ == null) {
-          FollowPos = new global::Weedwacker.Shared.Network.Proto.Vector();
-        }
-        FollowPos.MergeFrom(other.FollowPos);
+      if (other.FollowType != global::Weedwacker.Shared.Network.Proto.BeginCameraSceneLookWithTemplateNotify.Types.FollowType.InitFollowPos) {
+        FollowType = other.FollowType;
       }
       if (other.EntityId != 0) {
         EntityId = other.EntityId;
       }
+      if (other.unk3300FJDFGLNLMBN_ != null) {
+        if (unk3300FJDFGLNLMBN_ == null) {
+          Unk3300FJDFGLNLMBN = new global::Weedwacker.Shared.Network.Proto.Vector();
+        }
+        Unk3300FJDFGLNLMBN.MergeFrom(other.Unk3300FJDFGLNLMBN);
+      }
+      if (other.TemplateId != 0) {
+        TemplateId = other.TemplateId;
+      }
       otherParams_.Add(other.otherParams_);
-      if (other.FollowType != global::Weedwacker.Shared.Network.Proto.BeginCameraSceneLookWithTemplateNotify.Types.FollowType.InitFollowPos) {
-        FollowType = other.FollowType;
+      if (other.unk3300PPCIDICMIEN_ != null) {
+        if (unk3300PPCIDICMIEN_ == null) {
+          Unk3300PPCIDICMIEN = new global::Weedwacker.Shared.Network.Proto.Vector();
+        }
+        Unk3300PPCIDICMIEN.MergeFrom(other.Unk3300PPCIDICMIEN);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -349,34 +355,34 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
-            if (followPos_ == null) {
-              FollowPos = new global::Weedwacker.Shared.Network.Proto.Vector();
+          case 10: {
+            if (unk3300FJDFGLNLMBN_ == null) {
+              Unk3300FJDFGLNLMBN = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
-            input.ReadMessage(FollowPos);
+            input.ReadMessage(Unk3300FJDFGLNLMBN);
             break;
           }
           case 40: {
-            TemplateId = input.ReadUInt32();
-            break;
-          }
-          case 66: {
-            if (lookPos_ == null) {
-              LookPos = new global::Weedwacker.Shared.Network.Proto.Vector();
-            }
-            input.ReadMessage(LookPos);
-            break;
-          }
-          case 72: {
             FollowType = (global::Weedwacker.Shared.Network.Proto.BeginCameraSceneLookWithTemplateNotify.Types.FollowType) input.ReadEnum();
             break;
           }
-          case 96: {
+          case 56: {
             EntityId = input.ReadUInt32();
             break;
           }
-          case 106: {
+          case 82: {
+            if (unk3300PPCIDICMIEN_ == null) {
+              Unk3300PPCIDICMIEN = new global::Weedwacker.Shared.Network.Proto.Vector();
+            }
+            input.ReadMessage(Unk3300PPCIDICMIEN);
+            break;
+          }
+          case 98: {
             otherParams_.AddEntriesFrom(input, _repeated_otherParams_codec);
+            break;
+          }
+          case 104: {
+            TemplateId = input.ReadUInt32();
             break;
           }
         }
@@ -394,34 +400,34 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
-            if (followPos_ == null) {
-              FollowPos = new global::Weedwacker.Shared.Network.Proto.Vector();
+          case 10: {
+            if (unk3300FJDFGLNLMBN_ == null) {
+              Unk3300FJDFGLNLMBN = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
-            input.ReadMessage(FollowPos);
+            input.ReadMessage(Unk3300FJDFGLNLMBN);
             break;
           }
           case 40: {
-            TemplateId = input.ReadUInt32();
-            break;
-          }
-          case 66: {
-            if (lookPos_ == null) {
-              LookPos = new global::Weedwacker.Shared.Network.Proto.Vector();
-            }
-            input.ReadMessage(LookPos);
-            break;
-          }
-          case 72: {
             FollowType = (global::Weedwacker.Shared.Network.Proto.BeginCameraSceneLookWithTemplateNotify.Types.FollowType) input.ReadEnum();
             break;
           }
-          case 96: {
+          case 56: {
             EntityId = input.ReadUInt32();
             break;
           }
-          case 106: {
+          case 82: {
+            if (unk3300PPCIDICMIEN_ == null) {
+              Unk3300PPCIDICMIEN = new global::Weedwacker.Shared.Network.Proto.Vector();
+            }
+            input.ReadMessage(Unk3300PPCIDICMIEN);
+            break;
+          }
+          case 98: {
             otherParams_.AddEntriesFrom(ref input, _repeated_otherParams_codec);
+            break;
+          }
+          case 104: {
+            TemplateId = input.ReadUInt32();
             break;
           }
         }

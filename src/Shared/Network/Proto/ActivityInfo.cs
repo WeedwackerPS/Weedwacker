@@ -24,156 +24,209 @@ namespace Weedwacker.Shared.Network.Proto {
     static ActivityInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJBY3Rpdml0eUluZm8ucHJvdG8aGkFjdGl2aXR5UHVzaFRpcHNEYXRhLnBy",
-            "b3RvGhlBY3Rpdml0eVdhdGNoZXJJbmZvLnByb3RvGiZBcmVuYUNoYWxsZW5n",
-            "ZUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxodQXN0ZXJBY3Rpdml0eURldGFp",
-            "bEluZm8ucHJvdG8aIUJhcnRlbmRlckFjdGl2aXR5RGV0YWlsSW5mby5wcm90",
-            "bxogQmxlc3NpbmdBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aIUJsaXR6UnVz",
-            "aEFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxonQm91bmNlQ29uanVyaW5nQWN0",
-            "aXZpdHlEZXRhaWxJbmZvLnByb3RvGh1CdW95YW50Q29tYmF0RGV0YWlsSW5m",
-            "by5wcm90bxolQ2hhbm5lbGVyU2xhYkFjdGl2aXR5RGV0YWlsSW5mby5wcm90",
-            "bxodQ2hhckFtdXNlbWVudERldGFpbEluZm8ucHJvdG8aHUNoZXNzQWN0aXZp",
-            "dHlEZXRhaWxJbmZvLnByb3RvGiBDcnVjaWJsZUFjdGl2aXR5RGV0YWlsSW5m",
-            "by5wcm90bxojQ3J5c3RhbExpbmtBY3Rpdml0eURldGFpbEluZm8ucHJvdG8a",
-            "IERlbGl2ZXJ5QWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGhtEaWdBY3Rpdml0",
-            "eURldGFpbEluZm8ucHJvdG8aI0RyYWdvblNwaW5lQWN0aXZpdHlEZXRhaWxJ",
-            "bmZvLnByb3RvGhlFY2hvU2hlbGxEZXRhaWxJbmZvLnByb3RvGh5FZmZpZ3lB",
-            "Y3Rpdml0eURldGFpbEluZm8ucHJvdG8aIUVmZmlneUNoYWxsZW5nZVYyRGV0",
-            "YWlsSW5mby5wcm90bxoiRXhwZWRpdGlvbkFjdGl2aXR5RGV0YWlsSW5mby5w",
-            "cm90bxodRmluZEhpbGljaHVybERldGFpbEluZm8ucHJvdG8aIUZsZXVyRmFp",
-            "ckFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxoeRmxpZ2h0QWN0aXZpdHlEZXRh",
-            "aWxJbmZvLnByb3RvGh1GdW5ndXNGaWdodGVyRGV0YWlsSW5mby5wcm90bxod",
-            "R2FjaGFBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aHEdlYXJBY3Rpdml0eURl",
-            "dGFpbEluZm8ucHJvdG8aH0dyYXZlbklubm9jZW5jZURldGFpbEluZm8ucHJv",
-            "dG8aHUhhY2hpQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGiNIaWRlQW5kU2Vl",
-            "a0FjdGl2aXR5RGV0YWlsSW5mby5wcm90bxodSW5zdGFibGVTcHJheURldGFp",
-            "bEluZm8ucHJvdG8aH0lyb2RvcmlBY3Rpdml0eURldGFpbEluZm8ucHJvdG8a",
-            "G0lzbGFuZFBhcnR5RGV0YWlsSW5mby5wcm90bxojTGFudGVyblJpdGVBY3Rp",
-            "dml0eURldGFpbEluZm8ucHJvdG8aL0x1bWluYW5jZVN0b25lQ2hhbGxlbmdl",
-            "QWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGhhMdW5hUml0ZURldGFpbEluZm8u",
-            "cHJvdG8aJk1pY2hpYWVNYXRzdXJpQWN0aXZpdHlEZXRhaWxJbmZvLnByb3Rv",
-            "GiFNaXN0VHJpYWxBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aJE1vb25maW5U",
-            "cmlhbEFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxolTXVxYWRhc1BvdGlvbkFj",
-            "dGl2aXR5RGV0YWlsSW5mby5wcm90bxohTXVzaWNHYW1lQWN0aXZpdHlEZXRh",
-            "aWxJbmZvLnByb3RvGh1QaG90b0FjdGl2aXR5RGV0YWlsSW5mby5wcm90bxoj",
-            "UGxhbnRGbG93ZXJBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aHlBvdGlvbkFj",
-            "dGl2aXR5RGV0YWlsSW5mby5wcm90bxogUm9ja0JvYXJkRXhwbG9yZURldGFp",
-            "bEluZm8ucHJvdG8aIlJvZ3VlRGlhcnlBY3Rpdml0eURldGFpbEluZm8ucHJv",
-            "dG8aKFJvZ3VlbGlrZUR1bmdlb25BY3Rpdml0eURldGFpbEluZm8ucHJvdG8a",
-            "IFNhbGVzbWFuQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGh9TZWFMYW1wQWN0",
-            "aXZpdHlEZXRhaWxJbmZvLnByb3RvGhlTZWFMYW1wQWN0aXZpdHlJbmZvLnBy",
-            "b3RvGh1TcGljZUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxoaU3VtbWVyVGlt",
-            "ZURldGFpbEluZm8ucHJvdG8aHFN1bW1lclRpbWVWMkRldGFpbEluZm8ucHJv",
-            "dG8aHFN1bW9BY3Rpdml0eURldGFpbEluZm8ucHJvdG8aJFRhbnVraVRyYXZl",
-            "bEFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxojVHJlYXN1cmVNYXBBY3Rpdml0",
-            "eURldGFpbEluZm8ucHJvdG8aJlRyZWFzdXJlU2VlbGllQWN0aXZpdHlEZXRh",
-            "aWxJbmZvLnByb3RvGiNUcmlhbEF2YXRhckFjdGl2aXR5RGV0YWlsSW5mby5w",
-            "cm90bxobVWdjQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGhdWaW50YWdlRGV0",
-            "YWlsSW5mby5wcm90bxojV2F0ZXJTcGlyaXRBY3Rpdml0eURldGFpbEluZm8u",
-            "cHJvdG8aGVdpbmRGaWVsZERldGFpbEluZm8ucHJvdG8aIldpbnRlckNhbXBB",
-            "Y3Rpdml0eURldGFpbEluZm8ucHJvdG8iiSIKDEFjdGl2aXR5SW5mbxITCgtp",
-            "c19maW5pc2hlZBgGIAEoCBIVCg1hY3Rpdml0eV90eXBlGAQgASgNEhIKCmJl",
-            "Z2luX3RpbWUYCCABKA0SGgoRdGFrZW5fcmV3YXJkX2xpc3QYyQIgAygNEhIK",
-            "CWlzX2hpZGRlbhiXByABKAgSFgoNaXNfcXVpY2tfb3BlbhipCyABKAgSFgoO",
-            "bWVldF9jb25kX2xpc3QYCiADKA0SPgoRYWN0aXZpdHlfY29pbl9tYXAYqgUg",
-            "AygLMiIuQWN0aXZpdHlJbmZvLkFjdGl2aXR5Q29pbk1hcEVudHJ5EhkKEWlz",
-            "X2Jhbm5lcl9jbGVhcmVkGGYgASgIEhIKCWN1cl9zY29yZRjyDiABKA0SHQoU",
-            "Zmlyc3RfZGF5X3N0YXJ0X3RpbWUY0AQgASgNEhMKC2FjdGl2aXR5X2lkGAwg",
-            "ASgNEhkKEWlzX3BsYXlfb3Blbl9hbmltGA0gASgIEhAKCGVuZF90aW1lGAUg",
-            "ASgNEhQKC3Njb3JlX2xpbWl0GKYPIAEoDRI9ChF3aXNoX2dpZnRfbnVtX21h",
-            "cBj3CiADKAsyIS5BY3Rpdml0eUluZm8uV2lzaEdpZnROdW1NYXBFbnRyeRIi",
-            "ChlzZWxlY3RlZF9hdmF0YXJfcmV3YXJkX2lkGIoKIAEoDRIhChhpc19jb21t",
-            "b25fY29udGVudF9jbG9zZWQYqw8gASgIEhgKEGV4cGlyZV9jb25kX2xpc3QY",
-            "AyADKA0SPAocYWN0aXZpdHlfcHVzaF90aXBzX2RhdGFfbGlzdBjgBiADKAsy",
-            "FS5BY3Rpdml0eVB1c2hUaXBzRGF0YRIvChF3YXRjaGVyX2luZm9fbGlzdBgC",
-            "IAMoCzIULkFjdGl2aXR5V2F0Y2hlckluZm8SEwoLc2NoZWR1bGVfaWQYDyAB",
-            "KA0SEwoLaXNfc3RhcnRpbmcYCSABKAgSMwoNc2FtX2xhbXBfaW5mbxgHIAEo",
-            "CzIaLlNlYUxhbXBBY3Rpdml0eURldGFpbEluZm9IABI0Cg1jcnVjaWJsZV9p",
-            "bmZvGA4gASgLMhsuQ3J1Y2libGVBY3Rpdml0eURldGFpbEluZm9IABI0Cg1z",
-            "YWxlc21hbl9pbmZvGAsgASgLMhsuU2FsZXNtYW5BY3Rpdml0eURldGFpbElu",
-            "Zm9IABI7ChF0cmlhbF9hdmF0YXJfaW5mbxgBIAEoCzIeLlRyaWFsQXZhdGFy",
-            "QWN0aXZpdHlEZXRhaWxJbmZvSAASNQoNZGVsaXZlcnlfaW5mbxjECCABKAsy",
-            "Gy5EZWxpdmVyeUFjdGl2aXR5RGV0YWlsSW5mb0gAEi8KCmFzdGVyX2luZm8Y",
-            "rQQgASgLMhguQXN0ZXJBY3Rpdml0eURldGFpbEluZm9IABIxCgtmbGlnaHRf",
-            "aW5mbxjVCiABKAsyGS5GbGlnaHRBY3Rpdml0eURldGFpbEluZm9IABI8ChFk",
-            "cmFnb25fc3BpbmVfaW5mbxi/DSABKAsyHi5EcmFnb25TcGluZUFjdGl2aXR5",
-            "RGV0YWlsSW5mb0gAEjEKC2VmZmlneV9pbmZvGIcDIAEoCzIZLkVmZmlneUFj",
-            "dGl2aXR5RGV0YWlsSW5mb0gAEjwKEXRyZWFzdXJlX21hcF9pbmZvGNoIIAEo",
-            "CzIeLlRyZWFzdXJlTWFwQWN0aXZpdHlEZXRhaWxJbmZvSAASNQoNYmxlc3Np",
-            "bmdfaW5mbxjNDiABKAsyGy5CbGVzc2luZ0FjdGl2aXR5RGV0YWlsSW5mb0gA",
-            "Ei4KDXNlYV9sYW1wX2luZm8Y7gMgASgLMhQuU2VhTGFtcEFjdGl2aXR5SW5m",
-            "b0gAEjkKD2V4cGVkaXRpb25faW5mbxjKASABKAsyHS5FeHBlZGl0aW9uQWN0",
-            "aXZpdHlEZXRhaWxJbmZvSAASQgoUYXJlbmFfY2hhbGxlbmdlX2luZm8Y2wYg",
-            "ASgLMiEuQXJlbmFDaGFsbGVuZ2VBY3Rpdml0eURldGFpbEluZm9IABI4Cg9m",
-            "bGV1cl9mYWlyX2luZm8Y2QYgASgLMhwuRmxldXJGYWlyQWN0aXZpdHlEZXRh",
-            "aWxJbmZvSAASPAoRd2F0ZXJfc3Bpcml0X2luZm8Yiw0gASgLMh4uV2F0ZXJT",
-            "cGlyaXRBY3Rpdml0eURldGFpbEluZm9IABJAChNjaGFubmVsZXJfc2xhYl9p",
-            "bmZvGPcHIAEoCzIgLkNoYW5uZWxlclNsYWJBY3Rpdml0eURldGFpbEluZm9I",
-            "ABJBChhtaXN0X3RyaWFsX2FjdGl2aXR5X2luZm8YnAEgASgLMhwuTWlzdFRy",
-            "aWFsQWN0aXZpdHlEZXRhaWxJbmZvSAASPQoSaGlkZV9hbmRfc2Vla19pbmZv",
-            "GKsDIAEoCzIeLkhpZGVBbmRTZWVrQWN0aXZpdHlEZXRhaWxJbmZvSAASOAoT",
-            "ZmluZF9oaWxpY2h1cmxfaW5mbxiDCyABKAsyGC5GaW5kSGlsaWNodXJsRGV0",
-            "YWlsSW5mb0gAEjIKEHN1bW1lcl90aW1lX2luZm8Y3AogASgLMhUuU3VtbWVy",
-            "VGltZURldGFpbEluZm9IABI4ChNidW95YW50X2NvbWJhdF9pbmZvGLIOIAEo",
-            "CzIYLkJ1b3lhbnRDb21iYXREZXRhaWxJbmZvSAASMAoPZWNob19zaGVsbF9p",
-            "bmZvGNkIIAEoCzIULkVjaG9TaGVsbERldGFpbEluZm9IABJEChVib3VuY2Vf",
-            "Y29uanVyaW5nX2luZm8Y/wUgASgLMiIuQm91bmNlQ29uanVyaW5nQWN0aXZp",
-            "dHlEZXRhaWxJbmZvSAASOAoPYmxpdHpfcnVzaF9pbmZvGJoGIAEoCzIcLkJs",
-            "aXR6UnVzaEFjdGl2aXR5RGV0YWlsSW5mb0gAEi8KCmNoZXNzX2luZm8Ynwcg",
-            "ASgLMhguQ2hlc3NBY3Rpdml0eURldGFpbEluZm9IABItCglzdW1vX2luZm8Y",
-            "7QkgASgLMhcuU3Vtb0FjdGl2aXR5RGV0YWlsSW5mb0gAEj4KEm1vb25maW5f",
-            "dHJpYWxfaW5mbxi0DCABKAsyHy5Nb29uZmluVHJpYWxBY3Rpdml0eURldGFp",
-            "bEluZm9IABIuCg5sdW5hX3JpdGVfaW5mbxiuBiABKAsyEy5MdW5hUml0ZURl",
-            "dGFpbEluZm9IABI7ChFwbGFudF9mbG93ZXJfaW5mbxg2IAEoCzIeLlBsYW50",
-            "Rmxvd2VyQWN0aXZpdHlEZXRhaWxJbmZvSAASOAoPbXVzaWNfZ2FtZV9pbmZv",
-            "GMwDIAEoCzIcLk11c2ljR2FtZUFjdGl2aXR5RGV0YWlsSW5mb0gAEkYKFnJv",
-            "Z3VlbGlrZV9kdW5nZW9uX2luZm8Y2wEgASgLMiMuUm9ndWVsaWtlRHVuZ2Vv",
-            "bkFjdGl2aXR5RGV0YWlsSW5mb0gAEisKCGRpZ19pbmZvGJMDIAEoCzIWLkRp",
-            "Z0FjdGl2aXR5RGV0YWlsSW5mb0gAEi8KCmhhY2hpX2luZm8Y6wMgASgLMhgu",
-            "SGFjaGlBY3Rpdml0eURldGFpbEluZm9IABI6ChB3aW50ZXJfY2FtcF9pbmZv",
-            "GLsIIAEoCzIdLldpbnRlckNhbXBBY3Rpdml0eURldGFpbEluZm9IABIxCgtw",
-            "b3Rpb25faW5mbxj5CSABKAsyGS5Qb3Rpb25BY3Rpdml0eURldGFpbEluZm9I",
-            "ABJHCht0YW51a2lfdHJhdmVsX2FjdGl2aXR5X2luZm8YhA4gASgLMh8uVGFu",
-            "dWtpVHJhdmVsQWN0aXZpdHlEZXRhaWxJbmZvSAASRQoabGFudGVybl9yaXRl",
-            "X2FjdGl2aXR5X2luZm8Y1A4gASgLMh4uTGFudGVyblJpdGVBY3Rpdml0eURl",
-            "dGFpbEluZm9IABJCChRtaWNoaWFlX21hdHN1cmlfaW5mbxjCASABKAsyIS5N",
-            "aWNoaWFlTWF0c3VyaUFjdGl2aXR5RGV0YWlsSW5mb0gAEjcKDmJhcnRlbmRl",
-            "cl9pbmZvGL0NIAEoCzIcLkJhcnRlbmRlckFjdGl2aXR5RGV0YWlsSW5mb0gA",
-            "EisKCHVnY19pbmZvGL8FIAEoCzIWLlVnY0FjdGl2aXR5RGV0YWlsSW5mb0gA",
-            "EjwKEWNyeXN0YWxfbGlua19pbmZvGMoJIAEoCzIeLkNyeXN0YWxMaW5rQWN0",
-            "aXZpdHlEZXRhaWxJbmZvSAASMwoMaXJvZG9yaV9pbmZvGO4FIAEoCzIaLkly",
-            "b2RvcmlBY3Rpdml0eURldGFpbEluZm9IABIvCgpwaG90b19pbmZvGMgCIAEo",
-            "CzIYLlBob3RvQWN0aXZpdHlEZXRhaWxJbmZvSAASLwoKc3BpY2VfaW5mbxjj",
-            "DiABKAsyGC5TcGljZUFjdGl2aXR5RGV0YWlsSW5mb0gAEi8KCmdhY2hhX2lu",
-            "Zm8YuQYgASgLMhguR2FjaGFBY3Rpdml0eURldGFpbEluZm9IABJVCh5sdW1p",
-            "bmFuY2Vfc3RvbmVfY2hhbGxlbmdlX2luZm8YnAogASgLMiouTHVtaW5hbmNl",
-            "U3RvbmVDaGFsbGVuZ2VBY3Rpdml0eURldGFpbEluZm9IABI6ChByb2d1ZV9k",
-            "aWFyeV9pbmZvGKwGIAEoCzIdLlJvZ3VlRGlhcnlBY3Rpdml0eURldGFpbElu",
-            "Zm9IABI3ChNzdW1tZXJfdGltZV92Ml9pbmZvGO4EIAEoCzIXLlN1bW1lclRp",
-            "bWVWMkRldGFpbEluZm9IABI0ChFpc2xhbmRfcGFydHlfaW5mbxjdDiABKAsy",
-            "Fi5Jc2xhbmRQYXJ0eURldGFpbEluZm9IABItCglnZWFyX2luZm8Y0gUgASgL",
-            "MhcuR2VhckFjdGl2aXR5RGV0YWlsSW5mb0gAEjwKFWdyYXZlbl9pbm5vY2Vu",
-            "Y2VfaW5mbxj3DiABKAsyGi5HcmF2ZW5Jbm5vY2VuY2VEZXRhaWxJbmZvSAAS",
-            "OAoTaW5zdGFibGVfc3ByYXlfaW5mbxiTCCABKAsyGC5JbnN0YWJsZVNwcmF5",
-            "RGV0YWlsSW5mb0gAEkAKE211cWFkYXNfcG90aW9uX2luZm8YhQkgASgLMiAu",
-            "TXVxYWRhc1BvdGlvbkFjdGl2aXR5RGV0YWlsSW5mb0gAEkIKFHRyZWFzdXJl",
-            "X3NlZWxpZV9pbmZvGMYHIAEoCzIhLlRyZWFzdXJlU2VlbGllQWN0aXZpdHlE",
-            "ZXRhaWxJbmZvSAASPwoXcm9ja19ib2FyZF9leHBsb3JlX2luZm8YtgggASgL",
-            "MhsuUm9ja0JvYXJkRXhwbG9yZURldGFpbEluZm9IABIrCgx2aW50YWdlX2lu",
-            "Zm8YvQMgASgLMhIuVmludGFnZURldGFpbEluZm9IABIwCg93aW5kX2ZpZWxk",
-            "X2luZm8Y4AIgASgLMhQuV2luZEZpZWxkRGV0YWlsSW5mb0gAEjgKE2Z1bmd1",
-            "c19maWdodGVyX2luZm8Y6gMgASgLMhguRnVuZ3VzRmlnaHRlckRldGFpbElu",
-            "Zm9IABI4ChNjaGFyX2FtdXNlbWVudF9pbmZvGNgLIAEoCzIYLkNoYXJBbXVz",
-            "ZW1lbnREZXRhaWxJbmZvSAASPgoVZWZmaWd5X2NoYWxsZW5nZV9pbmZvGIEI",
-            "IAEoCzIcLkVmZmlneUNoYWxsZW5nZVYyRGV0YWlsSW5mb0gAGjYKFEFjdGl2",
-            "aXR5Q29pbk1hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgCIAEoDToC",
-            "OAEaNQoTV2lzaEdpZnROdW1NYXBFbnRyeRILCgNrZXkYASABKA0SDQoFdmFs",
-            "dWUYAiABKA06AjgBQggKBmRldGFpbEIiqgIfV2VlZHdhY2tlci5TaGFyZWQu",
-            "TmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChJBY3Rpdml0eUluZm8ucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8aGkFjdGl2aXR5UHVzaFRpcHNEYXRhLnByb3RvGhlBY3Rpdml0",
+            "eVdhdGNoZXJJbmZvLnByb3RvGiZBcmVuYUNoYWxsZW5nZUFjdGl2aXR5RGV0",
+            "YWlsSW5mby5wcm90bxodQXN0ZXJBY3Rpdml0eURldGFpbEluZm8ucHJvdG8a",
+            "IUJhcnRlbmRlckFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxogQmxlc3NpbmdB",
+            "Y3Rpdml0eURldGFpbEluZm8ucHJvdG8aIUJsaXR6UnVzaEFjdGl2aXR5RGV0",
+            "YWlsSW5mby5wcm90bxonQm91bmNlQ29uanVyaW5nQWN0aXZpdHlEZXRhaWxJ",
+            "bmZvLnByb3RvGhxCcmlja0JyZWFrZXJEZXRhaWxJbmZvLnByb3RvGh1CdW95",
+            "YW50Q29tYmF0RGV0YWlsSW5mby5wcm90bxolQ2hhbm5lbGVyU2xhYkFjdGl2",
+            "aXR5RGV0YWlsSW5mby5wcm90bxodQ2hhckFtdXNlbWVudERldGFpbEluZm8u",
+            "cHJvdG8aHUNoZXNzQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGhtDb2luQ29s",
+            "bGVjdERldGFpbEluZm8ucHJvdG8aIENydWNpYmxlQWN0aXZpdHlEZXRhaWxJ",
+            "bmZvLnByb3RvGiNDcnlzdGFsTGlua0FjdGl2aXR5RGV0YWlsSW5mby5wcm90",
+            "bxogRGVsaXZlcnlBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aG0RpZ0FjdGl2",
+            "aXR5RGV0YWlsSW5mby5wcm90bxojRHJhZ29uU3BpbmVBY3Rpdml0eURldGFp",
+            "bEluZm8ucHJvdG8aGUVjaG9TaGVsbERldGFpbEluZm8ucHJvdG8aHkVmZmln",
+            "eUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxohRWZmaWd5Q2hhbGxlbmdlVjJE",
+            "ZXRhaWxJbmZvLnByb3RvGiJFeHBlZGl0aW9uQWN0aXZpdHlEZXRhaWxJbmZv",
+            "LnByb3RvGh1GaW5kSGlsaWNodXJsRGV0YWlsSW5mby5wcm90bxohRmxldXJG",
+            "YWlyQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGh5GbGlnaHRBY3Rpdml0eURl",
+            "dGFpbEluZm8ucHJvdG8aHUZ1bmd1c0ZpZ2h0ZXJEZXRhaWxJbmZvLnByb3Rv",
+            "Gh1HYWNoYUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxocR2VhckFjdGl2aXR5",
+            "RGV0YWlsSW5mby5wcm90bxofR3JhdmVuSW5ub2NlbmNlRGV0YWlsSW5mby5w",
+            "cm90bxodSGFjaGlBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aI0hpZGVBbmRT",
+            "ZWVrQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGh1JbnN0YWJsZVNwcmF5RGV0",
+            "YWlsSW5mby5wcm90bxofSXJvZG9yaUFjdGl2aXR5RGV0YWlsSW5mby5wcm90",
+            "bxobSXNsYW5kUGFydHlEZXRhaWxJbmZvLnByb3RvGiNMYW50ZXJuUml0ZUFj",
+            "dGl2aXR5RGV0YWlsSW5mby5wcm90bxovTHVtaW5hbmNlU3RvbmVDaGFsbGVu",
+            "Z2VBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aGEx1bmFSaXRlRGV0YWlsSW5m",
+            "by5wcm90bxomTWljaGlhZU1hdHN1cmlBY3Rpdml0eURldGFpbEluZm8ucHJv",
+            "dG8aIU1pc3RUcmlhbEFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxokTW9vbmZp",
+            "blRyaWFsQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGiVNdXFhZGFzUG90aW9u",
+            "QWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGiFNdXNpY0dhbWVBY3Rpdml0eURl",
+            "dGFpbEluZm8ucHJvdG8aHVBob3RvQWN0aXZpdHlEZXRhaWxJbmZvLnByb3Rv",
+            "GiNQbGFudEZsb3dlckFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxoeUG90aW9u",
+            "QWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGiBSb2NrQm9hcmRFeHBsb3JlRGV0",
+            "YWlsSW5mby5wcm90bxoiUm9ndWVEaWFyeUFjdGl2aXR5RGV0YWlsSW5mby5w",
+            "cm90bxooUm9ndWVsaWtlRHVuZ2VvbkFjdGl2aXR5RGV0YWlsSW5mby5wcm90",
+            "bxogU2FsZXNtYW5BY3Rpdml0eURldGFpbEluZm8ucHJvdG8aH1NlYUxhbXBB",
+            "Y3Rpdml0eURldGFpbEluZm8ucHJvdG8aGVNlYUxhbXBBY3Rpdml0eUluZm8u",
+            "cHJvdG8aHVNwaWNlQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGhpTdW1tZXJU",
+            "aW1lRGV0YWlsSW5mby5wcm90bxocU3VtbWVyVGltZVYyRGV0YWlsSW5mby5w",
+            "cm90bxocU3Vtb0FjdGl2aXR5RGV0YWlsSW5mby5wcm90bxokVGFudWtpVHJh",
+            "dmVsQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGiNUcmVhc3VyZU1hcEFjdGl2",
+            "aXR5RGV0YWlsSW5mby5wcm90bxomVHJlYXN1cmVTZWVsaWVBY3Rpdml0eURl",
+            "dGFpbEluZm8ucHJvdG8aI1RyaWFsQXZhdGFyQWN0aXZpdHlEZXRhaWxJbmZv",
+            "LnByb3RvGhtVZ2NBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aH1ZpbnRhZ2VB",
+            "Y3Rpdml0eURldGFpbEluZm8ucHJvdG8aI1dhdGVyU3Bpcml0QWN0aXZpdHlE",
+            "ZXRhaWxJbmZvLnByb3RvGhlXaW5kRmllbGREZXRhaWxJbmZvLnByb3RvGiJX",
+            "aW50ZXJDYW1wQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvIoY0CgxBY3Rpdml0",
+            "eUluZm8SHAoTVW5rMzMwMF9NSk5QR0VLTE9DRxjoAiABKAgSEwoLaXNfZmlu",
+            "aXNoZWQYCCABKAgSEgoJY3VyX3Njb3JlGPQJIAEoDRITCgtzY2hlZHVsZV9p",
+            "ZBgHIAEoDRIcChNVbmszMzAwX0pBRUFMQUlPT0lEGM4OIAEoDRIbChNVbmsz",
+            "MzAwX0lDTkpKS0RIUENIGA4gASgIEhsKE1VuazMzMDBfQkdOSUJMS0NQQ0EY",
+            "CyADKA0SHAoTVW5rMzMwMF9ORVBLTExCSkZLSxjtDCABKAgSTwoRd2F0Y2hl",
+            "cl9pbmZvX2xpc3QYBiADKAsyNC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvLkFjdGl2aXR5V2F0Y2hlckluZm8SXAocYWN0aXZpdHlfcHVzaF90",
+            "aXBzX2RhdGFfbGlzdBjLDiADKAsyNS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLkFjdGl2aXR5UHVzaFRpcHNEYXRhEhMKC2FjdGl2aXR5X2lk",
+            "GA0gASgNEhoKEXRha2VuX3Jld2FyZF9saXN0GOEOIAMoDRIcChNVbmszMzAw",
+            "X0dDRUFLRU1NSkVBGLkFIAEoDRJdChFhY3Rpdml0eV9jb2luX21hcBgkIAMo",
+            "CzJCLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQWN0aXZpdHlJ",
+            "bmZvLkFjdGl2aXR5Q29pbk1hcEVudHJ5Eh0KFGZpcnN0X2RheV9zdGFydF90",
+            "aW1lGJIGIAEoDRIcChNVbmszMzAwX0FCSktMQUxLTERHGM4LIAEoCBIbChNV",
+            "bmszMzAwX0RNSUxPT05CRUxIGAMgASgNEhwKE1VuazMzMDBfQ0JDRUhMSkpP",
+            "R0kY3wogASgIEhIKCmJlZ2luX3RpbWUYASABKA0SGwoTVW5rMzMwMF9NREJE",
+            "UElCRUdHSBgMIAEoCBJdChF3aXNoX2dpZnRfbnVtX21hcBirByADKAsyQS5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkFjdGl2aXR5SW5mby5X",
+            "aXNoR2lmdE51bU1hcEVudHJ5EhAKCGVuZF90aW1lGAogASgNEhsKE1VuazMz",
+            "MDBfSEtLTklITkJIQUUYBSADKA0SUwoNc2FtX2xhbXBfaW5mbxgCIAEoCzI6",
+            "LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uU2VhTGFtcEFjdGl2",
+            "aXR5RGV0YWlsSW5mb0gAElQKDWNydWNpYmxlX2luZm8YDyABKAsyOy5XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkNydWNpYmxlQWN0aXZpdHlE",
+            "ZXRhaWxJbmZvSAASVAoNc2FsZXNtYW5faW5mbxgJIAEoCzI7LldlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uU2FsZXNtYW5BY3Rpdml0eURldGFp",
+            "bEluZm9IABJbChF0cmlhbF9hdmF0YXJfaW5mbxgEIAEoCzI+LldlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uVHJpYWxBdmF0YXJBY3Rpdml0eURl",
+            "dGFpbEluZm9IABJVCg1kZWxpdmVyeV9pbmZvGPUIIAEoCzI7LldlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uRGVsaXZlcnlBY3Rpdml0eURldGFp",
+            "bEluZm9IABJPCgphc3Rlcl9pbmZvGLkPIAEoCzI4LldlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8uQXN0ZXJBY3Rpdml0eURldGFpbEluZm9IABJR",
+            "CgtmbGlnaHRfaW5mbxjbDyABKAsyOS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLkZsaWdodEFjdGl2aXR5RGV0YWlsSW5mb0gAElwKEWRyYWdv",
+            "bl9zcGluZV9pbmZvGJ4KIAEoCzI+LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uRHJhZ29uU3BpbmVBY3Rpdml0eURldGFpbEluZm9IABJRCgtl",
+            "ZmZpZ3lfaW5mbxjeCiABKAsyOS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvLkVmZmlneUFjdGl2aXR5RGV0YWlsSW5mb0gAElwKEXRyZWFzdXJl",
+            "X21hcF9pbmZvGIUPIAEoCzI+LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8uVHJlYXN1cmVNYXBBY3Rpdml0eURldGFpbEluZm9IABJVCg1ibGVz",
+            "c2luZ19pbmZvGKoPIAEoCzI7LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8uQmxlc3NpbmdBY3Rpdml0eURldGFpbEluZm9IABJOCg1zZWFfbGFt",
+            "cF9pbmZvGPcBIAEoCzI0LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
+            "dG8uU2VhTGFtcEFjdGl2aXR5SW5mb0gAElkKD2V4cGVkaXRpb25faW5mbxjY",
+            "DSABKAsyPS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkV4cGVk",
+            "aXRpb25BY3Rpdml0eURldGFpbEluZm9IABJiChRhcmVuYV9jaGFsbGVuZ2Vf",
+            "aW5mbxiaBCABKAsyQS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3Rv",
+            "LkFyZW5hQ2hhbGxlbmdlQWN0aXZpdHlEZXRhaWxJbmZvSAASWAoPZmxldXJf",
+            "ZmFpcl9pbmZvGKcLIAEoCzI8LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8uRmxldXJGYWlyQWN0aXZpdHlEZXRhaWxJbmZvSAASXAoRd2F0ZXJf",
+            "c3Bpcml0X2luZm8Y+wQgASgLMj4uV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90by5XYXRlclNwaXJpdEFjdGl2aXR5RGV0YWlsSW5mb0gAEmAKE2No",
+            "YW5uZWxlcl9zbGFiX2luZm8YzgYgASgLMkAuV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90by5DaGFubmVsZXJTbGFiQWN0aXZpdHlEZXRhaWxJbmZv",
+            "SAASYQoYbWlzdF90cmlhbF9hY3Rpdml0eV9pbmZvGLADIAEoCzI8LldlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uTWlzdFRyaWFsQWN0aXZpdHlE",
+            "ZXRhaWxJbmZvSAASXQoSaGlkZV9hbmRfc2Vla19pbmZvGMcGIAEoCzI+Lldl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uSGlkZUFuZFNlZWtBY3Rp",
+            "dml0eURldGFpbEluZm9IABJYChNmaW5kX2hpbGljaHVybF9pbmZvGPoCIAEo",
+            "CzI4LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uRmluZEhpbGlj",
+            "aHVybERldGFpbEluZm9IABJSChBzdW1tZXJfdGltZV9pbmZvGPYOIAEoCzI1",
+            "LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uU3VtbWVyVGltZURl",
+            "dGFpbEluZm9IABJYChNidW95YW50X2NvbWJhdF9pbmZvGK4FIAEoCzI4Lldl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQnVveWFudENvbWJhdERl",
+            "dGFpbEluZm9IABJQCg9lY2hvX3NoZWxsX2luZm8YigkgASgLMjQuV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5FY2hvU2hlbGxEZXRhaWxJbmZv",
+            "SAASZAoVYm91bmNlX2Nvbmp1cmluZ19pbmZvGJoHIAEoCzJCLldlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQm91bmNlQ29uanVyaW5nQWN0aXZp",
+            "dHlEZXRhaWxJbmZvSAASVwoPYmxpdHpfcnVzaF9pbmZvGEAgASgLMjwuV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5CbGl0elJ1c2hBY3Rpdml0",
+            "eURldGFpbEluZm9IABJPCgpjaGVzc19pbmZvGO4HIAEoCzI4LldlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQ2hlc3NBY3Rpdml0eURldGFpbElu",
+            "Zm9IABJNCglzdW1vX2luZm8Y+QMgASgLMjcuV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90by5TdW1vQWN0aXZpdHlEZXRhaWxJbmZvSAASXgoSbW9v",
+            "bmZpbl90cmlhbF9pbmZvGP4FIAEoCzI/LldlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8uTW9vbmZpblRyaWFsQWN0aXZpdHlEZXRhaWxJbmZvSAAS",
+            "TgoObHVuYV9yaXRlX2luZm8YiQwgASgLMjMuV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90by5MdW5hUml0ZURldGFpbEluZm9IABJcChFwbGFudF9m",
+            "bG93ZXJfaW5mbxj6CSABKAsyPi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvLlBsYW50Rmxvd2VyQWN0aXZpdHlEZXRhaWxJbmZvSAASWAoPbXVz",
+            "aWNfZ2FtZV9pbmZvGMUPIAEoCzI8LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uTXVzaWNHYW1lQWN0aXZpdHlEZXRhaWxJbmZvSAASZgoWcm9n",
+            "dWVsaWtlX2R1bmdlb25faW5mbxjKByABKAsyQy5XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvLlJvZ3VlbGlrZUR1bmdlb25BY3Rpdml0eURldGFp",
+            "bEluZm9IABJLCghkaWdfaW5mbxjGDiABKAsyNi5XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvLkRpZ0FjdGl2aXR5RGV0YWlsSW5mb0gAEk8KCmhh",
+            "Y2hpX2luZm8Y/wMgASgLMjguV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90by5IYWNoaUFjdGl2aXR5RGV0YWlsSW5mb0gAEloKEHdpbnRlcl9jYW1w",
+            "X2luZm8YuwUgASgLMj0uV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
+            "by5XaW50ZXJDYW1wQWN0aXZpdHlEZXRhaWxJbmZvSAASUQoLcG90aW9uX2lu",
+            "Zm8YnwwgASgLMjkuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5Q",
+            "b3Rpb25BY3Rpdml0eURldGFpbEluZm9IABJnCht0YW51a2lfdHJhdmVsX2Fj",
+            "dGl2aXR5X2luZm8YxAogASgLMj8uV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90by5UYW51a2lUcmF2ZWxBY3Rpdml0eURldGFpbEluZm9IABJlChps",
+            "YW50ZXJuX3JpdGVfYWN0aXZpdHlfaW5mbxjtASABKAsyPi5XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvLkxhbnRlcm5SaXRlQWN0aXZpdHlEZXRh",
+            "aWxJbmZvSAASYgoUbWljaGlhZV9tYXRzdXJpX2luZm8Yrw4gASgLMkEuV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5NaWNoaWFlTWF0c3VyaUFj",
+            "dGl2aXR5RGV0YWlsSW5mb0gAElcKDmJhcnRlbmRlcl9pbmZvGKcEIAEoCzI8",
+            "LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQmFydGVuZGVyQWN0",
+            "aXZpdHlEZXRhaWxJbmZvSAASSwoIdWdjX2luZm8YngkgASgLMjYuV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5VZ2NBY3Rpdml0eURldGFpbElu",
+            "Zm9IABJcChFjcnlzdGFsX2xpbmtfaW5mbxisBiABKAsyPi5XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvLkNyeXN0YWxMaW5rQWN0aXZpdHlEZXRh",
+            "aWxJbmZvSAASUwoMaXJvZG9yaV9pbmZvGKAIIAEoCzI6LldlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8uSXJvZG9yaUFjdGl2aXR5RGV0YWlsSW5m",
+            "b0gAEk8KCnBob3RvX2luZm8Yng4gASgLMjguV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90by5QaG90b0FjdGl2aXR5RGV0YWlsSW5mb0gAEk8KCnNw",
+            "aWNlX2luZm8YlQYgASgLMjguV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90by5TcGljZUFjdGl2aXR5RGV0YWlsSW5mb0gAEk8KCmdhY2hhX2luZm8Y",
+            "kQogASgLMjguV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5HYWNo",
+            "YUFjdGl2aXR5RGV0YWlsSW5mb0gAEnUKHmx1bWluYW5jZV9zdG9uZV9jaGFs",
+            "bGVuZ2VfaW5mbxi8AyABKAsySi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvLkx1bWluYW5jZVN0b25lQ2hhbGxlbmdlQWN0aXZpdHlEZXRhaWxJ",
+            "bmZvSAASWgoQcm9ndWVfZGlhcnlfaW5mbxiwBCABKAsyPS5XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvLlJvZ3VlRGlhcnlBY3Rpdml0eURldGFp",
+            "bEluZm9IABJXChNzdW1tZXJfdGltZV92Ml9pbmZvGJsDIAEoCzI3LldlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uU3VtbWVyVGltZVYyRGV0YWls",
+            "SW5mb0gAElQKEWlzbGFuZF9wYXJ0eV9pbmZvGOQFIAEoCzI2LldlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uSXNsYW5kUGFydHlEZXRhaWxJbmZv",
+            "SAASTQoJZ2Vhcl9pbmZvGMoLIAEoCzI3LldlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8uR2VhckFjdGl2aXR5RGV0YWlsSW5mb0gAElwKFWdyYXZl",
+            "bl9pbm5vY2VuY2VfaW5mbxiIDyABKAsyOi5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLkdyYXZlbklubm9jZW5jZURldGFpbEluZm9IABJYChNp",
+            "bnN0YWJsZV9zcHJheV9pbmZvGPkIIAEoCzI4LldlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8uSW5zdGFibGVTcHJheURldGFpbEluZm9IABJgChNt",
+            "dXFhZGFzX3BvdGlvbl9pbmZvGP4MIAEoCzJALldlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8uTXVxYWRhc1BvdGlvbkFjdGl2aXR5RGV0YWlsSW5m",
+            "b0gAEmIKFHRyZWFzdXJlX3NlZWxpZV9pbmZvGIgIIAEoCzJBLldlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uVHJlYXN1cmVTZWVsaWVBY3Rpdml0",
+            "eURldGFpbEluZm9IABJfChdyb2NrX2JvYXJkX2V4cGxvcmVfaW5mbxjxCSAB",
+            "KAsyOy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlJvY2tCb2Fy",
+            "ZEV4cGxvcmVEZXRhaWxJbmZvSAASUwoMdmludGFnZV9pbmZvGJwKIAEoCzI6",
+            "LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uVmludGFnZUFjdGl2",
+            "aXR5RGV0YWlsSW5mb0gAElAKD3dpbmRfZmllbGRfaW5mbxjUAyABKAsyNC5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLldpbmRGaWVsZERldGFp",
+            "bEluZm9IABJYChNmdW5ndXNfZmlnaHRlcl9pbmZvGN0NIAEoCzI4LldlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uRnVuZ3VzRmlnaHRlckRldGFp",
+            "bEluZm9IABJYChNjaGFyX2FtdXNlbWVudF9pbmZvGO0EIAEoCzI4LldlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uQ2hhckFtdXNlbWVudERldGFp",
+            "bEluZm9IABJeChVlZmZpZ3lfY2hhbGxlbmdlX2luZm8Y6QEgASgLMjwuV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5FZmZpZ3lDaGFsbGVuZ2VW",
+            "MkRldGFpbEluZm9IABJUChFjb2luX2NvbGxlY3RfaW5mbxjSDyABKAsyNi5X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkNvaW5Db2xsZWN0RGV0",
+            "YWlsSW5mb0gAElYKEmJyaWNrX2JyZWFrZXJfaW5mbxjyCyABKAsyNy5XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkJyaWNrQnJlYWtlckRldGFp",
+            "bEluZm9IABo2ChRBY3Rpdml0eUNvaW5NYXBFbnRyeRILCgNrZXkYASABKA0S",
+            "DQoFdmFsdWUYAiABKA06AjgBGjUKE1dpc2hHaWZ0TnVtTWFwRW50cnkSCwoD",
+            "a2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AUIICgZkZXRhaWxiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ActivityPushTipsDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ActivityWatcherInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ArenaChallengeActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.AsterActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.BartenderActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.BlessingActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.BlitzRushActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.BounceConjuringActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.BuoyantCombatDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ChannelerSlabActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CharAmusementDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ChessActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CrucibleActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CrystalLinkActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.DeliveryActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.DigActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.DragonSpineActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.EchoShellDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.EffigyActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.EffigyChallengeV2DetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ExpeditionActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.FindHilichurlDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.FleurFairActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.FlightActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.FungusFighterDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GachaActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GearActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GravenInnocenceDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.HachiActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.HideAndSeekActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.InstableSprayDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.IrodoriActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.IslandPartyDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.LanternRiteActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.LunaRiteDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.MichiaeMatsuriActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.MistTrialActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.MoonfinTrialActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.MuqadasPotionActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.MusicGameActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.PhotoActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.PlantFlowerActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.PotionActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.RockBoardExploreDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.RogueDiaryActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.RoguelikeDungeonActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.SalesmanActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.SeaLampActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.SeaLampActivityInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.SpiceActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.SummerTimeDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.SummerTimeV2DetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.SumoActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.TanukiTravelActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.TreasureMapActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.TreasureSeelieActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.TrialAvatarActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.UgcActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.VintageDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.WaterSpiritActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.WindFieldDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.WinterCampActivityDetailInfoReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ActivityPushTipsDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ActivityWatcherInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ArenaChallengeActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.AsterActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.BartenderActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.BlessingActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.BlitzRushActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.BounceConjuringActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.BrickBreakerDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.BuoyantCombatDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ChannelerSlabActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CharAmusementDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ChessActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CoinCollectDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CrucibleActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.CrystalLinkActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.DeliveryActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.DigActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.DragonSpineActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.EchoShellDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.EffigyActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.EffigyChallengeV2DetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ExpeditionActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.FindHilichurlDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.FleurFairActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.FlightActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.FungusFighterDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GachaActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GearActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GravenInnocenceDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.HachiActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.HideAndSeekActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.InstableSprayDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.IrodoriActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.IslandPartyDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.LanternRiteActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.LunaRiteDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.MichiaeMatsuriActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.MistTrialActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.MoonfinTrialActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.MuqadasPotionActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.MusicGameActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.PhotoActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.PlantFlowerActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.PotionActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.RockBoardExploreDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.RogueDiaryActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.RoguelikeDungeonActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.SalesmanActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.SeaLampActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.SeaLampActivityInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.SpiceActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.SummerTimeDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.SummerTimeV2DetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.SumoActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.TanukiTravelActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.TreasureMapActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.TreasureSeelieActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.TrialAvatarActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.UgcActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.VintageActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.WaterSpiritActivityDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.WindFieldDetailInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.WinterCampActivityDetailInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ActivityInfo), global::Weedwacker.Shared.Network.Proto.ActivityInfo.Parser, new[]{ "IsFinished", "ActivityType", "BeginTime", "TakenRewardList", "IsHidden", "IsQuickOpen", "MeetCondList", "ActivityCoinMap", "IsBannerCleared", "CurScore", "FirstDayStartTime", "ActivityId", "IsPlayOpenAnim", "EndTime", "ScoreLimit", "WishGiftNumMap", "SelectedAvatarRewardId", "IsCommonContentClosed", "ExpireCondList", "ActivityPushTipsDataList", "WatcherInfoList", "ScheduleId", "IsStarting", "SamLampInfo", "CrucibleInfo", "SalesmanInfo", "TrialAvatarInfo", "DeliveryInfo", "AsterInfo", "FlightInfo", "DragonSpineInfo", "EffigyInfo", "TreasureMapInfo", "BlessingInfo", "SeaLampInfo", "ExpeditionInfo", "ArenaChallengeInfo", "FleurFairInfo", "WaterSpiritInfo", "ChannelerSlabInfo", "MistTrialActivityInfo", "HideAndSeekInfo", "FindHilichurlInfo", "SummerTimeInfo", "BuoyantCombatInfo", "EchoShellInfo", "BounceConjuringInfo", "BlitzRushInfo", "ChessInfo", "SumoInfo", "MoonfinTrialInfo", "LunaRiteInfo", "PlantFlowerInfo", "MusicGameInfo", "RoguelikeDungeonInfo", "DigInfo", "HachiInfo", "WinterCampInfo", "PotionInfo", "TanukiTravelActivityInfo", "LanternRiteActivityInfo", "MichiaeMatsuriInfo", "BartenderInfo", "UgcInfo", "CrystalLinkInfo", "IrodoriInfo", "PhotoInfo", "SpiceInfo", "GachaInfo", "LuminanceStoneChallengeInfo", "RogueDiaryInfo", "SummerTimeV2Info", "IslandPartyInfo", "GearInfo", "GravenInnocenceInfo", "InstableSprayInfo", "MuqadasPotionInfo", "TreasureSeelieInfo", "RockBoardExploreInfo", "VintageInfo", "WindFieldInfo", "FungusFighterInfo", "CharAmusementInfo", "EffigyChallengeInfo" }, new[]{ "Detail" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ActivityInfo), global::Weedwacker.Shared.Network.Proto.ActivityInfo.Parser, new[]{ "Unk3300MJNPGEKLOCG", "IsFinished", "CurScore", "ScheduleId", "Unk3300JAEALAIOOID", "Unk3300ICNJJKDHPCH", "Unk3300BGNIBLKCPCA", "Unk3300NEPKLLBJFKK", "WatcherInfoList", "ActivityPushTipsDataList", "ActivityId", "TakenRewardList", "Unk3300GCEAKEMMJEA", "ActivityCoinMap", "FirstDayStartTime", "Unk3300ABJKLALKLDG", "Unk3300DMILOONBELH", "Unk3300CBCEHLJJOGI", "BeginTime", "Unk3300MDBDPIBEGGH", "WishGiftNumMap", "EndTime", "Unk3300HKKNIHNBHAE", "SamLampInfo", "CrucibleInfo", "SalesmanInfo", "TrialAvatarInfo", "DeliveryInfo", "AsterInfo", "FlightInfo", "DragonSpineInfo", "EffigyInfo", "TreasureMapInfo", "BlessingInfo", "SeaLampInfo", "ExpeditionInfo", "ArenaChallengeInfo", "FleurFairInfo", "WaterSpiritInfo", "ChannelerSlabInfo", "MistTrialActivityInfo", "HideAndSeekInfo", "FindHilichurlInfo", "SummerTimeInfo", "BuoyantCombatInfo", "EchoShellInfo", "BounceConjuringInfo", "BlitzRushInfo", "ChessInfo", "SumoInfo", "MoonfinTrialInfo", "LunaRiteInfo", "PlantFlowerInfo", "MusicGameInfo", "RoguelikeDungeonInfo", "DigInfo", "HachiInfo", "WinterCampInfo", "PotionInfo", "TanukiTravelActivityInfo", "LanternRiteActivityInfo", "MichiaeMatsuriInfo", "BartenderInfo", "UgcInfo", "CrystalLinkInfo", "IrodoriInfo", "PhotoInfo", "SpiceInfo", "GachaInfo", "LuminanceStoneChallengeInfo", "RogueDiaryInfo", "SummerTimeV2Info", "IslandPartyInfo", "GearInfo", "GravenInnocenceInfo", "InstableSprayInfo", "MuqadasPotionInfo", "TreasureSeelieInfo", "RockBoardExploreInfo", "VintageInfo", "WindFieldInfo", "FungusFighterInfo", "CharAmusementInfo", "EffigyChallengeInfo", "CoinCollectInfo", "BrickBreakerInfo" }, new[]{ "Detail" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
           }));
     }
     #endregion
@@ -214,29 +267,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ActivityInfo(ActivityInfo other) : this() {
+      unk3300MJNPGEKLOCG_ = other.unk3300MJNPGEKLOCG_;
       isFinished_ = other.isFinished_;
-      activityType_ = other.activityType_;
-      beginTime_ = other.beginTime_;
-      takenRewardList_ = other.takenRewardList_.Clone();
-      isHidden_ = other.isHidden_;
-      isQuickOpen_ = other.isQuickOpen_;
-      meetCondList_ = other.meetCondList_.Clone();
-      activityCoinMap_ = other.activityCoinMap_.Clone();
-      isBannerCleared_ = other.isBannerCleared_;
       curScore_ = other.curScore_;
-      firstDayStartTime_ = other.firstDayStartTime_;
-      activityId_ = other.activityId_;
-      isPlayOpenAnim_ = other.isPlayOpenAnim_;
-      endTime_ = other.endTime_;
-      scoreLimit_ = other.scoreLimit_;
-      wishGiftNumMap_ = other.wishGiftNumMap_.Clone();
-      selectedAvatarRewardId_ = other.selectedAvatarRewardId_;
-      isCommonContentClosed_ = other.isCommonContentClosed_;
-      expireCondList_ = other.expireCondList_.Clone();
-      activityPushTipsDataList_ = other.activityPushTipsDataList_.Clone();
-      watcherInfoList_ = other.watcherInfoList_.Clone();
       scheduleId_ = other.scheduleId_;
-      isStarting_ = other.isStarting_;
+      unk3300JAEALAIOOID_ = other.unk3300JAEALAIOOID_;
+      unk3300ICNJJKDHPCH_ = other.unk3300ICNJJKDHPCH_;
+      unk3300BGNIBLKCPCA_ = other.unk3300BGNIBLKCPCA_.Clone();
+      unk3300NEPKLLBJFKK_ = other.unk3300NEPKLLBJFKK_;
+      watcherInfoList_ = other.watcherInfoList_.Clone();
+      activityPushTipsDataList_ = other.activityPushTipsDataList_.Clone();
+      activityId_ = other.activityId_;
+      takenRewardList_ = other.takenRewardList_.Clone();
+      unk3300GCEAKEMMJEA_ = other.unk3300GCEAKEMMJEA_;
+      activityCoinMap_ = other.activityCoinMap_.Clone();
+      firstDayStartTime_ = other.firstDayStartTime_;
+      unk3300ABJKLALKLDG_ = other.unk3300ABJKLALKLDG_;
+      unk3300DMILOONBELH_ = other.unk3300DMILOONBELH_;
+      unk3300CBCEHLJJOGI_ = other.unk3300CBCEHLJJOGI_;
+      beginTime_ = other.beginTime_;
+      unk3300MDBDPIBEGGH_ = other.unk3300MDBDPIBEGGH_;
+      wishGiftNumMap_ = other.wishGiftNumMap_.Clone();
+      endTime_ = other.endTime_;
+      unk3300HKKNIHNBHAE_ = other.unk3300HKKNIHNBHAE_.Clone();
       switch (other.DetailCase) {
         case DetailOneofCase.SamLampInfo:
           SamLampInfo = other.SamLampInfo.Clone();
@@ -421,6 +474,12 @@ namespace Weedwacker.Shared.Network.Proto {
         case DetailOneofCase.EffigyChallengeInfo:
           EffigyChallengeInfo = other.EffigyChallengeInfo.Clone();
           break;
+        case DetailOneofCase.CoinCollectInfo:
+          CoinCollectInfo = other.CoinCollectInfo.Clone();
+          break;
+        case DetailOneofCase.BrickBreakerInfo:
+          BrickBreakerInfo = other.BrickBreakerInfo.Clone();
+          break;
       }
 
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -432,8 +491,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ActivityInfo(this);
     }
 
+    /// <summary>Field number for the "Unk3300_MJNPGEKLOCG" field.</summary>
+    public const int Unk3300MJNPGEKLOCGFieldNumber = 360;
+    private bool unk3300MJNPGEKLOCG_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300MJNPGEKLOCG {
+      get { return unk3300MJNPGEKLOCG_; }
+      set {
+        unk3300MJNPGEKLOCG_ = value;
+      }
+    }
+
     /// <summary>Field number for the "is_finished" field.</summary>
-    public const int IsFinishedFieldNumber = 6;
+    public const int IsFinishedFieldNumber = 8;
     private bool isFinished_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -444,101 +515,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "activity_type" field.</summary>
-    public const int ActivityTypeFieldNumber = 4;
-    private uint activityType_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ActivityType {
-      get { return activityType_; }
-      set {
-        activityType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "begin_time" field.</summary>
-    public const int BeginTimeFieldNumber = 8;
-    private uint beginTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint BeginTime {
-      get { return beginTime_; }
-      set {
-        beginTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "taken_reward_list" field.</summary>
-    public const int TakenRewardListFieldNumber = 329;
-    private static readonly pb::FieldCodec<uint> _repeated_takenRewardList_codec
-        = pb::FieldCodec.ForUInt32(2634);
-    private readonly pbc::RepeatedField<uint> takenRewardList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> TakenRewardList {
-      get { return takenRewardList_; }
-    }
-
-    /// <summary>Field number for the "is_hidden" field.</summary>
-    public const int IsHiddenFieldNumber = 919;
-    private bool isHidden_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsHidden {
-      get { return isHidden_; }
-      set {
-        isHidden_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_quick_open" field.</summary>
-    public const int IsQuickOpenFieldNumber = 1449;
-    private bool isQuickOpen_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsQuickOpen {
-      get { return isQuickOpen_; }
-      set {
-        isQuickOpen_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "meet_cond_list" field.</summary>
-    public const int MeetCondListFieldNumber = 10;
-    private static readonly pb::FieldCodec<uint> _repeated_meetCondList_codec
-        = pb::FieldCodec.ForUInt32(82);
-    private readonly pbc::RepeatedField<uint> meetCondList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> MeetCondList {
-      get { return meetCondList_; }
-    }
-
-    /// <summary>Field number for the "activity_coin_map" field.</summary>
-    public const int ActivityCoinMapFieldNumber = 682;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_activityCoinMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 5458);
-    private readonly pbc::MapField<uint, uint> activityCoinMap_ = new pbc::MapField<uint, uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> ActivityCoinMap {
-      get { return activityCoinMap_; }
-    }
-
-    /// <summary>Field number for the "is_banner_cleared" field.</summary>
-    public const int IsBannerClearedFieldNumber = 102;
-    private bool isBannerCleared_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsBannerCleared {
-      get { return isBannerCleared_; }
-      set {
-        isBannerCleared_ = value;
-      }
-    }
-
     /// <summary>Field number for the "cur_score" field.</summary>
-    public const int CurScoreFieldNumber = 1906;
+    public const int CurScoreFieldNumber = 1268;
     private uint curScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -549,136 +527,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "first_day_start_time" field.</summary>
-    public const int FirstDayStartTimeFieldNumber = 592;
-    private uint firstDayStartTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FirstDayStartTime {
-      get { return firstDayStartTime_; }
-      set {
-        firstDayStartTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "activity_id" field.</summary>
-    public const int ActivityIdFieldNumber = 12;
-    private uint activityId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ActivityId {
-      get { return activityId_; }
-      set {
-        activityId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_play_open_anim" field.</summary>
-    public const int IsPlayOpenAnimFieldNumber = 13;
-    private bool isPlayOpenAnim_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsPlayOpenAnim {
-      get { return isPlayOpenAnim_; }
-      set {
-        isPlayOpenAnim_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "end_time" field.</summary>
-    public const int EndTimeFieldNumber = 5;
-    private uint endTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint EndTime {
-      get { return endTime_; }
-      set {
-        endTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "score_limit" field.</summary>
-    public const int ScoreLimitFieldNumber = 1958;
-    private uint scoreLimit_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ScoreLimit {
-      get { return scoreLimit_; }
-      set {
-        scoreLimit_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "wish_gift_num_map" field.</summary>
-    public const int WishGiftNumMapFieldNumber = 1399;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_wishGiftNumMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 11194);
-    private readonly pbc::MapField<uint, uint> wishGiftNumMap_ = new pbc::MapField<uint, uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> WishGiftNumMap {
-      get { return wishGiftNumMap_; }
-    }
-
-    /// <summary>Field number for the "selected_avatar_reward_id" field.</summary>
-    public const int SelectedAvatarRewardIdFieldNumber = 1290;
-    private uint selectedAvatarRewardId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SelectedAvatarRewardId {
-      get { return selectedAvatarRewardId_; }
-      set {
-        selectedAvatarRewardId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_common_content_closed" field.</summary>
-    public const int IsCommonContentClosedFieldNumber = 1963;
-    private bool isCommonContentClosed_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsCommonContentClosed {
-      get { return isCommonContentClosed_; }
-      set {
-        isCommonContentClosed_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "expire_cond_list" field.</summary>
-    public const int ExpireCondListFieldNumber = 3;
-    private static readonly pb::FieldCodec<uint> _repeated_expireCondList_codec
-        = pb::FieldCodec.ForUInt32(26);
-    private readonly pbc::RepeatedField<uint> expireCondList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> ExpireCondList {
-      get { return expireCondList_; }
-    }
-
-    /// <summary>Field number for the "activity_push_tips_data_list" field.</summary>
-    public const int ActivityPushTipsDataListFieldNumber = 864;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ActivityPushTipsData> _repeated_activityPushTipsDataList_codec
-        = pb::FieldCodec.ForMessage(6914, global::Weedwacker.Shared.Network.Proto.ActivityPushTipsData.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityPushTipsData> activityPushTipsDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityPushTipsData>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityPushTipsData> ActivityPushTipsDataList {
-      get { return activityPushTipsDataList_; }
-    }
-
-    /// <summary>Field number for the "watcher_info_list" field.</summary>
-    public const int WatcherInfoListFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ActivityWatcherInfo> _repeated_watcherInfoList_codec
-        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.ActivityWatcherInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityWatcherInfo> watcherInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityWatcherInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityWatcherInfo> WatcherInfoList {
-      get { return watcherInfoList_; }
-    }
-
     /// <summary>Field number for the "schedule_id" field.</summary>
-    public const int ScheduleIdFieldNumber = 15;
+    public const int ScheduleIdFieldNumber = 7;
     private uint scheduleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -689,20 +539,229 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_starting" field.</summary>
-    public const int IsStartingFieldNumber = 9;
-    private bool isStarting_;
+    /// <summary>Field number for the "Unk3300_JAEALAIOOID" field.</summary>
+    public const int Unk3300JAEALAIOOIDFieldNumber = 1870;
+    private uint unk3300JAEALAIOOID_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsStarting {
-      get { return isStarting_; }
+    public uint Unk3300JAEALAIOOID {
+      get { return unk3300JAEALAIOOID_; }
       set {
-        isStarting_ = value;
+        unk3300JAEALAIOOID_ = value;
       }
     }
 
+    /// <summary>Field number for the "Unk3300_ICNJJKDHPCH" field.</summary>
+    public const int Unk3300ICNJJKDHPCHFieldNumber = 14;
+    private bool unk3300ICNJJKDHPCH_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300ICNJJKDHPCH {
+      get { return unk3300ICNJJKDHPCH_; }
+      set {
+        unk3300ICNJJKDHPCH_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_BGNIBLKCPCA" field.</summary>
+    public const int Unk3300BGNIBLKCPCAFieldNumber = 11;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300BGNIBLKCPCA_codec
+        = pb::FieldCodec.ForUInt32(90);
+    private readonly pbc::RepeatedField<uint> unk3300BGNIBLKCPCA_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300BGNIBLKCPCA {
+      get { return unk3300BGNIBLKCPCA_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_NEPKLLBJFKK" field.</summary>
+    public const int Unk3300NEPKLLBJFKKFieldNumber = 1645;
+    private bool unk3300NEPKLLBJFKK_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300NEPKLLBJFKK {
+      get { return unk3300NEPKLLBJFKK_; }
+      set {
+        unk3300NEPKLLBJFKK_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "watcher_info_list" field.</summary>
+    public const int WatcherInfoListFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ActivityWatcherInfo> _repeated_watcherInfoList_codec
+        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.ActivityWatcherInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityWatcherInfo> watcherInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityWatcherInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityWatcherInfo> WatcherInfoList {
+      get { return watcherInfoList_; }
+    }
+
+    /// <summary>Field number for the "activity_push_tips_data_list" field.</summary>
+    public const int ActivityPushTipsDataListFieldNumber = 1867;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ActivityPushTipsData> _repeated_activityPushTipsDataList_codec
+        = pb::FieldCodec.ForMessage(14938, global::Weedwacker.Shared.Network.Proto.ActivityPushTipsData.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityPushTipsData> activityPushTipsDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityPushTipsData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityPushTipsData> ActivityPushTipsDataList {
+      get { return activityPushTipsDataList_; }
+    }
+
+    /// <summary>Field number for the "activity_id" field.</summary>
+    public const int ActivityIdFieldNumber = 13;
+    private uint activityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ActivityId {
+      get { return activityId_; }
+      set {
+        activityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "taken_reward_list" field.</summary>
+    public const int TakenRewardListFieldNumber = 1889;
+    private static readonly pb::FieldCodec<uint> _repeated_takenRewardList_codec
+        = pb::FieldCodec.ForUInt32(15114);
+    private readonly pbc::RepeatedField<uint> takenRewardList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> TakenRewardList {
+      get { return takenRewardList_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_GCEAKEMMJEA" field.</summary>
+    public const int Unk3300GCEAKEMMJEAFieldNumber = 697;
+    private uint unk3300GCEAKEMMJEA_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300GCEAKEMMJEA {
+      get { return unk3300GCEAKEMMJEA_; }
+      set {
+        unk3300GCEAKEMMJEA_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "activity_coin_map" field.</summary>
+    public const int ActivityCoinMapFieldNumber = 36;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_activityCoinMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 290);
+    private readonly pbc::MapField<uint, uint> activityCoinMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> ActivityCoinMap {
+      get { return activityCoinMap_; }
+    }
+
+    /// <summary>Field number for the "first_day_start_time" field.</summary>
+    public const int FirstDayStartTimeFieldNumber = 786;
+    private uint firstDayStartTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint FirstDayStartTime {
+      get { return firstDayStartTime_; }
+      set {
+        firstDayStartTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_ABJKLALKLDG" field.</summary>
+    public const int Unk3300ABJKLALKLDGFieldNumber = 1486;
+    private bool unk3300ABJKLALKLDG_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300ABJKLALKLDG {
+      get { return unk3300ABJKLALKLDG_; }
+      set {
+        unk3300ABJKLALKLDG_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_DMILOONBELH" field.</summary>
+    public const int Unk3300DMILOONBELHFieldNumber = 3;
+    private uint unk3300DMILOONBELH_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300DMILOONBELH {
+      get { return unk3300DMILOONBELH_; }
+      set {
+        unk3300DMILOONBELH_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_CBCEHLJJOGI" field.</summary>
+    public const int Unk3300CBCEHLJJOGIFieldNumber = 1375;
+    private bool unk3300CBCEHLJJOGI_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300CBCEHLJJOGI {
+      get { return unk3300CBCEHLJJOGI_; }
+      set {
+        unk3300CBCEHLJJOGI_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "begin_time" field.</summary>
+    public const int BeginTimeFieldNumber = 1;
+    private uint beginTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint BeginTime {
+      get { return beginTime_; }
+      set {
+        beginTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_MDBDPIBEGGH" field.</summary>
+    public const int Unk3300MDBDPIBEGGHFieldNumber = 12;
+    private bool unk3300MDBDPIBEGGH_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300MDBDPIBEGGH {
+      get { return unk3300MDBDPIBEGGH_; }
+      set {
+        unk3300MDBDPIBEGGH_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "wish_gift_num_map" field.</summary>
+    public const int WishGiftNumMapFieldNumber = 939;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_wishGiftNumMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 7514);
+    private readonly pbc::MapField<uint, uint> wishGiftNumMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> WishGiftNumMap {
+      get { return wishGiftNumMap_; }
+    }
+
+    /// <summary>Field number for the "end_time" field.</summary>
+    public const int EndTimeFieldNumber = 10;
+    private uint endTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EndTime {
+      get { return endTime_; }
+      set {
+        endTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_HKKNIHNBHAE" field.</summary>
+    public const int Unk3300HKKNIHNBHAEFieldNumber = 5;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300HKKNIHNBHAE_codec
+        = pb::FieldCodec.ForUInt32(42);
+    private readonly pbc::RepeatedField<uint> unk3300HKKNIHNBHAE_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300HKKNIHNBHAE {
+      get { return unk3300HKKNIHNBHAE_; }
+    }
+
     /// <summary>Field number for the "sam_lamp_info" field.</summary>
-    public const int SamLampInfoFieldNumber = 7;
+    public const int SamLampInfoFieldNumber = 2;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.SeaLampActivityDetailInfo SamLampInfo {
@@ -714,7 +773,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "crucible_info" field.</summary>
-    public const int CrucibleInfoFieldNumber = 14;
+    public const int CrucibleInfoFieldNumber = 15;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.CrucibleActivityDetailInfo CrucibleInfo {
@@ -726,7 +785,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "salesman_info" field.</summary>
-    public const int SalesmanInfoFieldNumber = 11;
+    public const int SalesmanInfoFieldNumber = 9;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.SalesmanActivityDetailInfo SalesmanInfo {
@@ -738,7 +797,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "trial_avatar_info" field.</summary>
-    public const int TrialAvatarInfoFieldNumber = 1;
+    public const int TrialAvatarInfoFieldNumber = 4;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.TrialAvatarActivityDetailInfo TrialAvatarInfo {
@@ -750,7 +809,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "delivery_info" field.</summary>
-    public const int DeliveryInfoFieldNumber = 1092;
+    public const int DeliveryInfoFieldNumber = 1141;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.DeliveryActivityDetailInfo DeliveryInfo {
@@ -762,7 +821,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "aster_info" field.</summary>
-    public const int AsterInfoFieldNumber = 557;
+    public const int AsterInfoFieldNumber = 1977;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.AsterActivityDetailInfo AsterInfo {
@@ -774,7 +833,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "flight_info" field.</summary>
-    public const int FlightInfoFieldNumber = 1365;
+    public const int FlightInfoFieldNumber = 2011;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.FlightActivityDetailInfo FlightInfo {
@@ -786,7 +845,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "dragon_spine_info" field.</summary>
-    public const int DragonSpineInfoFieldNumber = 1727;
+    public const int DragonSpineInfoFieldNumber = 1310;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.DragonSpineActivityDetailInfo DragonSpineInfo {
@@ -798,7 +857,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "effigy_info" field.</summary>
-    public const int EffigyInfoFieldNumber = 391;
+    public const int EffigyInfoFieldNumber = 1374;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.EffigyActivityDetailInfo EffigyInfo {
@@ -810,7 +869,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "treasure_map_info" field.</summary>
-    public const int TreasureMapInfoFieldNumber = 1114;
+    public const int TreasureMapInfoFieldNumber = 1925;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.TreasureMapActivityDetailInfo TreasureMapInfo {
@@ -822,7 +881,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "blessing_info" field.</summary>
-    public const int BlessingInfoFieldNumber = 1869;
+    public const int BlessingInfoFieldNumber = 1962;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.BlessingActivityDetailInfo BlessingInfo {
@@ -834,7 +893,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "sea_lamp_info" field.</summary>
-    public const int SeaLampInfoFieldNumber = 494;
+    public const int SeaLampInfoFieldNumber = 247;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.SeaLampActivityInfo SeaLampInfo {
@@ -846,7 +905,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "expedition_info" field.</summary>
-    public const int ExpeditionInfoFieldNumber = 202;
+    public const int ExpeditionInfoFieldNumber = 1752;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.ExpeditionActivityDetailInfo ExpeditionInfo {
@@ -858,7 +917,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "arena_challenge_info" field.</summary>
-    public const int ArenaChallengeInfoFieldNumber = 859;
+    public const int ArenaChallengeInfoFieldNumber = 538;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.ArenaChallengeActivityDetailInfo ArenaChallengeInfo {
@@ -870,7 +929,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "fleur_fair_info" field.</summary>
-    public const int FleurFairInfoFieldNumber = 857;
+    public const int FleurFairInfoFieldNumber = 1447;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.FleurFairActivityDetailInfo FleurFairInfo {
@@ -882,7 +941,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "water_spirit_info" field.</summary>
-    public const int WaterSpiritInfoFieldNumber = 1675;
+    public const int WaterSpiritInfoFieldNumber = 635;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.WaterSpiritActivityDetailInfo WaterSpiritInfo {
@@ -894,7 +953,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "channeler_slab_info" field.</summary>
-    public const int ChannelerSlabInfoFieldNumber = 1015;
+    public const int ChannelerSlabInfoFieldNumber = 846;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.ChannelerSlabActivityDetailInfo ChannelerSlabInfo {
@@ -906,7 +965,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "mist_trial_activity_info" field.</summary>
-    public const int MistTrialActivityInfoFieldNumber = 156;
+    public const int MistTrialActivityInfoFieldNumber = 432;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.MistTrialActivityDetailInfo MistTrialActivityInfo {
@@ -918,7 +977,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "hide_and_seek_info" field.</summary>
-    public const int HideAndSeekInfoFieldNumber = 427;
+    public const int HideAndSeekInfoFieldNumber = 839;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.HideAndSeekActivityDetailInfo HideAndSeekInfo {
@@ -930,7 +989,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "find_hilichurl_info" field.</summary>
-    public const int FindHilichurlInfoFieldNumber = 1411;
+    public const int FindHilichurlInfoFieldNumber = 378;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.FindHilichurlDetailInfo FindHilichurlInfo {
@@ -942,7 +1001,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "summer_time_info" field.</summary>
-    public const int SummerTimeInfoFieldNumber = 1372;
+    public const int SummerTimeInfoFieldNumber = 1910;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.SummerTimeDetailInfo SummerTimeInfo {
@@ -954,7 +1013,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "buoyant_combat_info" field.</summary>
-    public const int BuoyantCombatInfoFieldNumber = 1842;
+    public const int BuoyantCombatInfoFieldNumber = 686;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.BuoyantCombatDetailInfo BuoyantCombatInfo {
@@ -966,7 +1025,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "echo_shell_info" field.</summary>
-    public const int EchoShellInfoFieldNumber = 1113;
+    public const int EchoShellInfoFieldNumber = 1162;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.EchoShellDetailInfo EchoShellInfo {
@@ -978,7 +1037,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "bounce_conjuring_info" field.</summary>
-    public const int BounceConjuringInfoFieldNumber = 767;
+    public const int BounceConjuringInfoFieldNumber = 922;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.BounceConjuringActivityDetailInfo BounceConjuringInfo {
@@ -990,7 +1049,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "blitz_rush_info" field.</summary>
-    public const int BlitzRushInfoFieldNumber = 794;
+    public const int BlitzRushInfoFieldNumber = 64;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.BlitzRushActivityDetailInfo BlitzRushInfo {
@@ -1002,7 +1061,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "chess_info" field.</summary>
-    public const int ChessInfoFieldNumber = 927;
+    public const int ChessInfoFieldNumber = 1006;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.ChessActivityDetailInfo ChessInfo {
@@ -1014,7 +1073,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "sumo_info" field.</summary>
-    public const int SumoInfoFieldNumber = 1261;
+    public const int SumoInfoFieldNumber = 505;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.SumoActivityDetailInfo SumoInfo {
@@ -1026,7 +1085,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "moonfin_trial_info" field.</summary>
-    public const int MoonfinTrialInfoFieldNumber = 1588;
+    public const int MoonfinTrialInfoFieldNumber = 766;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.MoonfinTrialActivityDetailInfo MoonfinTrialInfo {
@@ -1038,7 +1097,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "luna_rite_info" field.</summary>
-    public const int LunaRiteInfoFieldNumber = 814;
+    public const int LunaRiteInfoFieldNumber = 1545;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.LunaRiteDetailInfo LunaRiteInfo {
@@ -1050,7 +1109,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "plant_flower_info" field.</summary>
-    public const int PlantFlowerInfoFieldNumber = 54;
+    public const int PlantFlowerInfoFieldNumber = 1274;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.PlantFlowerActivityDetailInfo PlantFlowerInfo {
@@ -1062,7 +1121,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "music_game_info" field.</summary>
-    public const int MusicGameInfoFieldNumber = 460;
+    public const int MusicGameInfoFieldNumber = 1989;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.MusicGameActivityDetailInfo MusicGameInfo {
@@ -1074,7 +1133,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "roguelike_dungeon_info" field.</summary>
-    public const int RoguelikeDungeonInfoFieldNumber = 219;
+    public const int RoguelikeDungeonInfoFieldNumber = 970;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.RoguelikeDungeonActivityDetailInfo RoguelikeDungeonInfo {
@@ -1086,7 +1145,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "dig_info" field.</summary>
-    public const int DigInfoFieldNumber = 403;
+    public const int DigInfoFieldNumber = 1862;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.DigActivityDetailInfo DigInfo {
@@ -1098,7 +1157,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "hachi_info" field.</summary>
-    public const int HachiInfoFieldNumber = 491;
+    public const int HachiInfoFieldNumber = 511;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.HachiActivityDetailInfo HachiInfo {
@@ -1110,7 +1169,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "winter_camp_info" field.</summary>
-    public const int WinterCampInfoFieldNumber = 1083;
+    public const int WinterCampInfoFieldNumber = 699;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.WinterCampActivityDetailInfo WinterCampInfo {
@@ -1122,7 +1181,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "potion_info" field.</summary>
-    public const int PotionInfoFieldNumber = 1273;
+    public const int PotionInfoFieldNumber = 1567;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.PotionActivityDetailInfo PotionInfo {
@@ -1134,7 +1193,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "tanuki_travel_activity_info" field.</summary>
-    public const int TanukiTravelActivityInfoFieldNumber = 1796;
+    public const int TanukiTravelActivityInfoFieldNumber = 1348;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.TanukiTravelActivityDetailInfo TanukiTravelActivityInfo {
@@ -1146,7 +1205,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "lantern_rite_activity_info" field.</summary>
-    public const int LanternRiteActivityInfoFieldNumber = 1876;
+    public const int LanternRiteActivityInfoFieldNumber = 237;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.LanternRiteActivityDetailInfo LanternRiteActivityInfo {
@@ -1158,7 +1217,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "michiae_matsuri_info" field.</summary>
-    public const int MichiaeMatsuriInfoFieldNumber = 194;
+    public const int MichiaeMatsuriInfoFieldNumber = 1839;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.MichiaeMatsuriActivityDetailInfo MichiaeMatsuriInfo {
@@ -1170,7 +1229,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "bartender_info" field.</summary>
-    public const int BartenderInfoFieldNumber = 1725;
+    public const int BartenderInfoFieldNumber = 551;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.BartenderActivityDetailInfo BartenderInfo {
@@ -1182,7 +1241,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "ugc_info" field.</summary>
-    public const int UgcInfoFieldNumber = 703;
+    public const int UgcInfoFieldNumber = 1182;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.UgcActivityDetailInfo UgcInfo {
@@ -1194,7 +1253,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "crystal_link_info" field.</summary>
-    public const int CrystalLinkInfoFieldNumber = 1226;
+    public const int CrystalLinkInfoFieldNumber = 812;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.CrystalLinkActivityDetailInfo CrystalLinkInfo {
@@ -1206,7 +1265,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "irodori_info" field.</summary>
-    public const int IrodoriInfoFieldNumber = 750;
+    public const int IrodoriInfoFieldNumber = 1056;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.IrodoriActivityDetailInfo IrodoriInfo {
@@ -1218,7 +1277,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "photo_info" field.</summary>
-    public const int PhotoInfoFieldNumber = 328;
+    public const int PhotoInfoFieldNumber = 1822;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.PhotoActivityDetailInfo PhotoInfo {
@@ -1230,7 +1289,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "spice_info" field.</summary>
-    public const int SpiceInfoFieldNumber = 1891;
+    public const int SpiceInfoFieldNumber = 789;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.SpiceActivityDetailInfo SpiceInfo {
@@ -1242,7 +1301,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "gacha_info" field.</summary>
-    public const int GachaInfoFieldNumber = 825;
+    public const int GachaInfoFieldNumber = 1297;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GachaActivityDetailInfo GachaInfo {
@@ -1254,7 +1313,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "luminance_stone_challenge_info" field.</summary>
-    public const int LuminanceStoneChallengeInfoFieldNumber = 1308;
+    public const int LuminanceStoneChallengeInfoFieldNumber = 444;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeActivityDetailInfo LuminanceStoneChallengeInfo {
@@ -1266,7 +1325,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "rogue_diary_info" field.</summary>
-    public const int RogueDiaryInfoFieldNumber = 812;
+    public const int RogueDiaryInfoFieldNumber = 560;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.RogueDiaryActivityDetailInfo RogueDiaryInfo {
@@ -1278,7 +1337,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "summer_time_v2_info" field.</summary>
-    public const int SummerTimeV2InfoFieldNumber = 622;
+    public const int SummerTimeV2InfoFieldNumber = 411;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.SummerTimeV2DetailInfo SummerTimeV2Info {
@@ -1290,7 +1349,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "island_party_info" field.</summary>
-    public const int IslandPartyInfoFieldNumber = 1885;
+    public const int IslandPartyInfoFieldNumber = 740;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.IslandPartyDetailInfo IslandPartyInfo {
@@ -1302,7 +1361,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "gear_info" field.</summary>
-    public const int GearInfoFieldNumber = 722;
+    public const int GearInfoFieldNumber = 1482;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GearActivityDetailInfo GearInfo {
@@ -1314,7 +1373,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "graven_innocence_info" field.</summary>
-    public const int GravenInnocenceInfoFieldNumber = 1911;
+    public const int GravenInnocenceInfoFieldNumber = 1928;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GravenInnocenceDetailInfo GravenInnocenceInfo {
@@ -1326,7 +1385,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "instable_spray_info" field.</summary>
-    public const int InstableSprayInfoFieldNumber = 1043;
+    public const int InstableSprayInfoFieldNumber = 1145;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.InstableSprayDetailInfo InstableSprayInfo {
@@ -1338,7 +1397,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "muqadas_potion_info" field.</summary>
-    public const int MuqadasPotionInfoFieldNumber = 1157;
+    public const int MuqadasPotionInfoFieldNumber = 1662;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.MuqadasPotionActivityDetailInfo MuqadasPotionInfo {
@@ -1350,7 +1409,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "treasure_seelie_info" field.</summary>
-    public const int TreasureSeelieInfoFieldNumber = 966;
+    public const int TreasureSeelieInfoFieldNumber = 1032;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.TreasureSeelieActivityDetailInfo TreasureSeelieInfo {
@@ -1362,7 +1421,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "rock_board_explore_info" field.</summary>
-    public const int RockBoardExploreInfoFieldNumber = 1078;
+    public const int RockBoardExploreInfoFieldNumber = 1265;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.RockBoardExploreDetailInfo RockBoardExploreInfo {
@@ -1374,11 +1433,11 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "vintage_info" field.</summary>
-    public const int VintageInfoFieldNumber = 445;
+    public const int VintageInfoFieldNumber = 1308;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.VintageDetailInfo VintageInfo {
-      get { return detailCase_ == DetailOneofCase.VintageInfo ? (global::Weedwacker.Shared.Network.Proto.VintageDetailInfo) detail_ : null; }
+    public global::Weedwacker.Shared.Network.Proto.VintageActivityDetailInfo VintageInfo {
+      get { return detailCase_ == DetailOneofCase.VintageInfo ? (global::Weedwacker.Shared.Network.Proto.VintageActivityDetailInfo) detail_ : null; }
       set {
         detail_ = value;
         detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.VintageInfo;
@@ -1386,7 +1445,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "wind_field_info" field.</summary>
-    public const int WindFieldInfoFieldNumber = 352;
+    public const int WindFieldInfoFieldNumber = 468;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.WindFieldDetailInfo WindFieldInfo {
@@ -1398,7 +1457,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "fungus_fighter_info" field.</summary>
-    public const int FungusFighterInfoFieldNumber = 490;
+    public const int FungusFighterInfoFieldNumber = 1757;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.FungusFighterDetailInfo FungusFighterInfo {
@@ -1410,7 +1469,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "char_amusement_info" field.</summary>
-    public const int CharAmusementInfoFieldNumber = 1496;
+    public const int CharAmusementInfoFieldNumber = 621;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.CharAmusementDetailInfo CharAmusementInfo {
@@ -1422,7 +1481,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "effigy_challenge_info" field.</summary>
-    public const int EffigyChallengeInfoFieldNumber = 1025;
+    public const int EffigyChallengeInfoFieldNumber = 233;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.EffigyChallengeV2DetailInfo EffigyChallengeInfo {
@@ -1433,71 +1492,97 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "coin_collect_info" field.</summary>
+    public const int CoinCollectInfoFieldNumber = 2002;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.CoinCollectDetailInfo CoinCollectInfo {
+      get { return detailCase_ == DetailOneofCase.CoinCollectInfo ? (global::Weedwacker.Shared.Network.Proto.CoinCollectDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.CoinCollectInfo;
+      }
+    }
+
+    /// <summary>Field number for the "brick_breaker_info" field.</summary>
+    public const int BrickBreakerInfoFieldNumber = 1522;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.BrickBreakerDetailInfo BrickBreakerInfo {
+      get { return detailCase_ == DetailOneofCase.BrickBreakerInfo ? (global::Weedwacker.Shared.Network.Proto.BrickBreakerDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.BrickBreakerInfo;
+      }
+    }
+
     private object detail_;
     /// <summary>Enum of possible cases for the "detail" oneof.</summary>
     public enum DetailOneofCase {
       None = 0,
-      SamLampInfo = 7,
-      CrucibleInfo = 14,
-      SalesmanInfo = 11,
-      TrialAvatarInfo = 1,
-      DeliveryInfo = 1092,
-      AsterInfo = 557,
-      FlightInfo = 1365,
-      DragonSpineInfo = 1727,
-      EffigyInfo = 391,
-      TreasureMapInfo = 1114,
-      BlessingInfo = 1869,
-      SeaLampInfo = 494,
-      ExpeditionInfo = 202,
-      ArenaChallengeInfo = 859,
-      FleurFairInfo = 857,
-      WaterSpiritInfo = 1675,
-      ChannelerSlabInfo = 1015,
-      MistTrialActivityInfo = 156,
-      HideAndSeekInfo = 427,
-      FindHilichurlInfo = 1411,
-      SummerTimeInfo = 1372,
-      BuoyantCombatInfo = 1842,
-      EchoShellInfo = 1113,
-      BounceConjuringInfo = 767,
-      BlitzRushInfo = 794,
-      ChessInfo = 927,
-      SumoInfo = 1261,
-      MoonfinTrialInfo = 1588,
-      LunaRiteInfo = 814,
-      PlantFlowerInfo = 54,
-      MusicGameInfo = 460,
-      RoguelikeDungeonInfo = 219,
-      DigInfo = 403,
-      HachiInfo = 491,
-      WinterCampInfo = 1083,
-      PotionInfo = 1273,
-      TanukiTravelActivityInfo = 1796,
-      LanternRiteActivityInfo = 1876,
-      MichiaeMatsuriInfo = 194,
-      BartenderInfo = 1725,
-      UgcInfo = 703,
-      CrystalLinkInfo = 1226,
-      IrodoriInfo = 750,
-      PhotoInfo = 328,
-      SpiceInfo = 1891,
-      GachaInfo = 825,
-      LuminanceStoneChallengeInfo = 1308,
-      RogueDiaryInfo = 812,
-      SummerTimeV2Info = 622,
-      IslandPartyInfo = 1885,
-      GearInfo = 722,
-      GravenInnocenceInfo = 1911,
-      InstableSprayInfo = 1043,
-      MuqadasPotionInfo = 1157,
-      TreasureSeelieInfo = 966,
-      RockBoardExploreInfo = 1078,
-      VintageInfo = 445,
-      WindFieldInfo = 352,
-      FungusFighterInfo = 490,
-      CharAmusementInfo = 1496,
-      EffigyChallengeInfo = 1025,
+      SamLampInfo = 2,
+      CrucibleInfo = 15,
+      SalesmanInfo = 9,
+      TrialAvatarInfo = 4,
+      DeliveryInfo = 1141,
+      AsterInfo = 1977,
+      FlightInfo = 2011,
+      DragonSpineInfo = 1310,
+      EffigyInfo = 1374,
+      TreasureMapInfo = 1925,
+      BlessingInfo = 1962,
+      SeaLampInfo = 247,
+      ExpeditionInfo = 1752,
+      ArenaChallengeInfo = 538,
+      FleurFairInfo = 1447,
+      WaterSpiritInfo = 635,
+      ChannelerSlabInfo = 846,
+      MistTrialActivityInfo = 432,
+      HideAndSeekInfo = 839,
+      FindHilichurlInfo = 378,
+      SummerTimeInfo = 1910,
+      BuoyantCombatInfo = 686,
+      EchoShellInfo = 1162,
+      BounceConjuringInfo = 922,
+      BlitzRushInfo = 64,
+      ChessInfo = 1006,
+      SumoInfo = 505,
+      MoonfinTrialInfo = 766,
+      LunaRiteInfo = 1545,
+      PlantFlowerInfo = 1274,
+      MusicGameInfo = 1989,
+      RoguelikeDungeonInfo = 970,
+      DigInfo = 1862,
+      HachiInfo = 511,
+      WinterCampInfo = 699,
+      PotionInfo = 1567,
+      TanukiTravelActivityInfo = 1348,
+      LanternRiteActivityInfo = 237,
+      MichiaeMatsuriInfo = 1839,
+      BartenderInfo = 551,
+      UgcInfo = 1182,
+      CrystalLinkInfo = 812,
+      IrodoriInfo = 1056,
+      PhotoInfo = 1822,
+      SpiceInfo = 789,
+      GachaInfo = 1297,
+      LuminanceStoneChallengeInfo = 444,
+      RogueDiaryInfo = 560,
+      SummerTimeV2Info = 411,
+      IslandPartyInfo = 740,
+      GearInfo = 1482,
+      GravenInnocenceInfo = 1928,
+      InstableSprayInfo = 1145,
+      MuqadasPotionInfo = 1662,
+      TreasureSeelieInfo = 1032,
+      RockBoardExploreInfo = 1265,
+      VintageInfo = 1308,
+      WindFieldInfo = 468,
+      FungusFighterInfo = 1757,
+      CharAmusementInfo = 621,
+      EffigyChallengeInfo = 233,
+      CoinCollectInfo = 2002,
+      BrickBreakerInfo = 1522,
     }
     private DetailOneofCase detailCase_ = DetailOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1528,29 +1613,29 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Unk3300MJNPGEKLOCG != other.Unk3300MJNPGEKLOCG) return false;
       if (IsFinished != other.IsFinished) return false;
-      if (ActivityType != other.ActivityType) return false;
-      if (BeginTime != other.BeginTime) return false;
-      if(!takenRewardList_.Equals(other.takenRewardList_)) return false;
-      if (IsHidden != other.IsHidden) return false;
-      if (IsQuickOpen != other.IsQuickOpen) return false;
-      if(!meetCondList_.Equals(other.meetCondList_)) return false;
-      if (!ActivityCoinMap.Equals(other.ActivityCoinMap)) return false;
-      if (IsBannerCleared != other.IsBannerCleared) return false;
       if (CurScore != other.CurScore) return false;
-      if (FirstDayStartTime != other.FirstDayStartTime) return false;
-      if (ActivityId != other.ActivityId) return false;
-      if (IsPlayOpenAnim != other.IsPlayOpenAnim) return false;
-      if (EndTime != other.EndTime) return false;
-      if (ScoreLimit != other.ScoreLimit) return false;
-      if (!WishGiftNumMap.Equals(other.WishGiftNumMap)) return false;
-      if (SelectedAvatarRewardId != other.SelectedAvatarRewardId) return false;
-      if (IsCommonContentClosed != other.IsCommonContentClosed) return false;
-      if(!expireCondList_.Equals(other.expireCondList_)) return false;
-      if(!activityPushTipsDataList_.Equals(other.activityPushTipsDataList_)) return false;
-      if(!watcherInfoList_.Equals(other.watcherInfoList_)) return false;
       if (ScheduleId != other.ScheduleId) return false;
-      if (IsStarting != other.IsStarting) return false;
+      if (Unk3300JAEALAIOOID != other.Unk3300JAEALAIOOID) return false;
+      if (Unk3300ICNJJKDHPCH != other.Unk3300ICNJJKDHPCH) return false;
+      if(!unk3300BGNIBLKCPCA_.Equals(other.unk3300BGNIBLKCPCA_)) return false;
+      if (Unk3300NEPKLLBJFKK != other.Unk3300NEPKLLBJFKK) return false;
+      if(!watcherInfoList_.Equals(other.watcherInfoList_)) return false;
+      if(!activityPushTipsDataList_.Equals(other.activityPushTipsDataList_)) return false;
+      if (ActivityId != other.ActivityId) return false;
+      if(!takenRewardList_.Equals(other.takenRewardList_)) return false;
+      if (Unk3300GCEAKEMMJEA != other.Unk3300GCEAKEMMJEA) return false;
+      if (!ActivityCoinMap.Equals(other.ActivityCoinMap)) return false;
+      if (FirstDayStartTime != other.FirstDayStartTime) return false;
+      if (Unk3300ABJKLALKLDG != other.Unk3300ABJKLALKLDG) return false;
+      if (Unk3300DMILOONBELH != other.Unk3300DMILOONBELH) return false;
+      if (Unk3300CBCEHLJJOGI != other.Unk3300CBCEHLJJOGI) return false;
+      if (BeginTime != other.BeginTime) return false;
+      if (Unk3300MDBDPIBEGGH != other.Unk3300MDBDPIBEGGH) return false;
+      if (!WishGiftNumMap.Equals(other.WishGiftNumMap)) return false;
+      if (EndTime != other.EndTime) return false;
+      if(!unk3300HKKNIHNBHAE_.Equals(other.unk3300HKKNIHNBHAE_)) return false;
       if (!object.Equals(SamLampInfo, other.SamLampInfo)) return false;
       if (!object.Equals(CrucibleInfo, other.CrucibleInfo)) return false;
       if (!object.Equals(SalesmanInfo, other.SalesmanInfo)) return false;
@@ -1612,6 +1697,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (!object.Equals(FungusFighterInfo, other.FungusFighterInfo)) return false;
       if (!object.Equals(CharAmusementInfo, other.CharAmusementInfo)) return false;
       if (!object.Equals(EffigyChallengeInfo, other.EffigyChallengeInfo)) return false;
+      if (!object.Equals(CoinCollectInfo, other.CoinCollectInfo)) return false;
+      if (!object.Equals(BrickBreakerInfo, other.BrickBreakerInfo)) return false;
       if (DetailCase != other.DetailCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -1620,29 +1707,29 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (Unk3300MJNPGEKLOCG != false) hash ^= Unk3300MJNPGEKLOCG.GetHashCode();
       if (IsFinished != false) hash ^= IsFinished.GetHashCode();
-      if (ActivityType != 0) hash ^= ActivityType.GetHashCode();
-      if (BeginTime != 0) hash ^= BeginTime.GetHashCode();
-      hash ^= takenRewardList_.GetHashCode();
-      if (IsHidden != false) hash ^= IsHidden.GetHashCode();
-      if (IsQuickOpen != false) hash ^= IsQuickOpen.GetHashCode();
-      hash ^= meetCondList_.GetHashCode();
-      hash ^= ActivityCoinMap.GetHashCode();
-      if (IsBannerCleared != false) hash ^= IsBannerCleared.GetHashCode();
       if (CurScore != 0) hash ^= CurScore.GetHashCode();
-      if (FirstDayStartTime != 0) hash ^= FirstDayStartTime.GetHashCode();
-      if (ActivityId != 0) hash ^= ActivityId.GetHashCode();
-      if (IsPlayOpenAnim != false) hash ^= IsPlayOpenAnim.GetHashCode();
-      if (EndTime != 0) hash ^= EndTime.GetHashCode();
-      if (ScoreLimit != 0) hash ^= ScoreLimit.GetHashCode();
-      hash ^= WishGiftNumMap.GetHashCode();
-      if (SelectedAvatarRewardId != 0) hash ^= SelectedAvatarRewardId.GetHashCode();
-      if (IsCommonContentClosed != false) hash ^= IsCommonContentClosed.GetHashCode();
-      hash ^= expireCondList_.GetHashCode();
-      hash ^= activityPushTipsDataList_.GetHashCode();
-      hash ^= watcherInfoList_.GetHashCode();
       if (ScheduleId != 0) hash ^= ScheduleId.GetHashCode();
-      if (IsStarting != false) hash ^= IsStarting.GetHashCode();
+      if (Unk3300JAEALAIOOID != 0) hash ^= Unk3300JAEALAIOOID.GetHashCode();
+      if (Unk3300ICNJJKDHPCH != false) hash ^= Unk3300ICNJJKDHPCH.GetHashCode();
+      hash ^= unk3300BGNIBLKCPCA_.GetHashCode();
+      if (Unk3300NEPKLLBJFKK != false) hash ^= Unk3300NEPKLLBJFKK.GetHashCode();
+      hash ^= watcherInfoList_.GetHashCode();
+      hash ^= activityPushTipsDataList_.GetHashCode();
+      if (ActivityId != 0) hash ^= ActivityId.GetHashCode();
+      hash ^= takenRewardList_.GetHashCode();
+      if (Unk3300GCEAKEMMJEA != 0) hash ^= Unk3300GCEAKEMMJEA.GetHashCode();
+      hash ^= ActivityCoinMap.GetHashCode();
+      if (FirstDayStartTime != 0) hash ^= FirstDayStartTime.GetHashCode();
+      if (Unk3300ABJKLALKLDG != false) hash ^= Unk3300ABJKLALKLDG.GetHashCode();
+      if (Unk3300DMILOONBELH != 0) hash ^= Unk3300DMILOONBELH.GetHashCode();
+      if (Unk3300CBCEHLJJOGI != false) hash ^= Unk3300CBCEHLJJOGI.GetHashCode();
+      if (BeginTime != 0) hash ^= BeginTime.GetHashCode();
+      if (Unk3300MDBDPIBEGGH != false) hash ^= Unk3300MDBDPIBEGGH.GetHashCode();
+      hash ^= WishGiftNumMap.GetHashCode();
+      if (EndTime != 0) hash ^= EndTime.GetHashCode();
+      hash ^= unk3300HKKNIHNBHAE_.GetHashCode();
       if (detailCase_ == DetailOneofCase.SamLampInfo) hash ^= SamLampInfo.GetHashCode();
       if (detailCase_ == DetailOneofCase.CrucibleInfo) hash ^= CrucibleInfo.GetHashCode();
       if (detailCase_ == DetailOneofCase.SalesmanInfo) hash ^= SalesmanInfo.GetHashCode();
@@ -1704,6 +1791,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (detailCase_ == DetailOneofCase.FungusFighterInfo) hash ^= FungusFighterInfo.GetHashCode();
       if (detailCase_ == DetailOneofCase.CharAmusementInfo) hash ^= CharAmusementInfo.GetHashCode();
       if (detailCase_ == DetailOneofCase.EffigyChallengeInfo) hash ^= EffigyChallengeInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.CoinCollectInfo) hash ^= CoinCollectInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.BrickBreakerInfo) hash ^= BrickBreakerInfo.GetHashCode();
       hash ^= (int) detailCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -1723,320 +1812,328 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (detailCase_ == DetailOneofCase.TrialAvatarInfo) {
-        output.WriteRawTag(10);
-        output.WriteMessage(TrialAvatarInfo);
-      }
-      watcherInfoList_.WriteTo(output, _repeated_watcherInfoList_codec);
-      expireCondList_.WriteTo(output, _repeated_expireCondList_codec);
-      if (ActivityType != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(ActivityType);
-      }
-      if (EndTime != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(EndTime);
-      }
-      if (IsFinished != false) {
-        output.WriteRawTag(48);
-        output.WriteBool(IsFinished);
-      }
-      if (detailCase_ == DetailOneofCase.SamLampInfo) {
-        output.WriteRawTag(58);
-        output.WriteMessage(SamLampInfo);
-      }
       if (BeginTime != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(8);
         output.WriteUInt32(BeginTime);
       }
-      if (IsStarting != false) {
-        output.WriteRawTag(72);
-        output.WriteBool(IsStarting);
+      if (detailCase_ == DetailOneofCase.SamLampInfo) {
+        output.WriteRawTag(18);
+        output.WriteMessage(SamLampInfo);
       }
-      meetCondList_.WriteTo(output, _repeated_meetCondList_codec);
-      if (detailCase_ == DetailOneofCase.SalesmanInfo) {
-        output.WriteRawTag(90);
-        output.WriteMessage(SalesmanInfo);
+      if (Unk3300DMILOONBELH != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300DMILOONBELH);
       }
-      if (ActivityId != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(ActivityId);
+      if (detailCase_ == DetailOneofCase.TrialAvatarInfo) {
+        output.WriteRawTag(34);
+        output.WriteMessage(TrialAvatarInfo);
       }
-      if (IsPlayOpenAnim != false) {
-        output.WriteRawTag(104);
-        output.WriteBool(IsPlayOpenAnim);
-      }
-      if (detailCase_ == DetailOneofCase.CrucibleInfo) {
-        output.WriteRawTag(114);
-        output.WriteMessage(CrucibleInfo);
-      }
+      unk3300HKKNIHNBHAE_.WriteTo(output, _repeated_unk3300HKKNIHNBHAE_codec);
+      watcherInfoList_.WriteTo(output, _repeated_watcherInfoList_codec);
       if (ScheduleId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(56);
         output.WriteUInt32(ScheduleId);
       }
-      if (detailCase_ == DetailOneofCase.PlantFlowerInfo) {
-        output.WriteRawTag(178, 3);
-        output.WriteMessage(PlantFlowerInfo);
+      if (IsFinished != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsFinished);
       }
-      if (IsBannerCleared != false) {
-        output.WriteRawTag(176, 6);
-        output.WriteBool(IsBannerCleared);
+      if (detailCase_ == DetailOneofCase.SalesmanInfo) {
+        output.WriteRawTag(74);
+        output.WriteMessage(SalesmanInfo);
       }
-      if (detailCase_ == DetailOneofCase.MistTrialActivityInfo) {
-        output.WriteRawTag(226, 9);
-        output.WriteMessage(MistTrialActivityInfo);
+      if (EndTime != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(EndTime);
       }
-      if (detailCase_ == DetailOneofCase.MichiaeMatsuriInfo) {
-        output.WriteRawTag(146, 12);
-        output.WriteMessage(MichiaeMatsuriInfo);
+      unk3300BGNIBLKCPCA_.WriteTo(output, _repeated_unk3300BGNIBLKCPCA_codec);
+      if (Unk3300MDBDPIBEGGH != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(Unk3300MDBDPIBEGGH);
       }
-      if (detailCase_ == DetailOneofCase.ExpeditionInfo) {
-        output.WriteRawTag(210, 12);
-        output.WriteMessage(ExpeditionInfo);
+      if (ActivityId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(ActivityId);
       }
-      if (detailCase_ == DetailOneofCase.RoguelikeDungeonInfo) {
-        output.WriteRawTag(218, 13);
-        output.WriteMessage(RoguelikeDungeonInfo);
+      if (Unk3300ICNJJKDHPCH != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(Unk3300ICNJJKDHPCH);
       }
-      if (detailCase_ == DetailOneofCase.PhotoInfo) {
-        output.WriteRawTag(194, 20);
-        output.WriteMessage(PhotoInfo);
-      }
-      takenRewardList_.WriteTo(output, _repeated_takenRewardList_codec);
-      if (detailCase_ == DetailOneofCase.WindFieldInfo) {
-        output.WriteRawTag(130, 22);
-        output.WriteMessage(WindFieldInfo);
-      }
-      if (detailCase_ == DetailOneofCase.EffigyInfo) {
-        output.WriteRawTag(186, 24);
-        output.WriteMessage(EffigyInfo);
-      }
-      if (detailCase_ == DetailOneofCase.DigInfo) {
-        output.WriteRawTag(154, 25);
-        output.WriteMessage(DigInfo);
-      }
-      if (detailCase_ == DetailOneofCase.HideAndSeekInfo) {
-        output.WriteRawTag(218, 26);
-        output.WriteMessage(HideAndSeekInfo);
-      }
-      if (detailCase_ == DetailOneofCase.VintageInfo) {
-        output.WriteRawTag(234, 27);
-        output.WriteMessage(VintageInfo);
-      }
-      if (detailCase_ == DetailOneofCase.MusicGameInfo) {
-        output.WriteRawTag(226, 28);
-        output.WriteMessage(MusicGameInfo);
-      }
-      if (detailCase_ == DetailOneofCase.FungusFighterInfo) {
-        output.WriteRawTag(210, 30);
-        output.WriteMessage(FungusFighterInfo);
-      }
-      if (detailCase_ == DetailOneofCase.HachiInfo) {
-        output.WriteRawTag(218, 30);
-        output.WriteMessage(HachiInfo);
-      }
-      if (detailCase_ == DetailOneofCase.SeaLampInfo) {
-        output.WriteRawTag(242, 30);
-        output.WriteMessage(SeaLampInfo);
-      }
-      if (detailCase_ == DetailOneofCase.AsterInfo) {
-        output.WriteRawTag(234, 34);
-        output.WriteMessage(AsterInfo);
-      }
-      if (FirstDayStartTime != 0) {
-        output.WriteRawTag(128, 37);
-        output.WriteUInt32(FirstDayStartTime);
-      }
-      if (detailCase_ == DetailOneofCase.SummerTimeV2Info) {
-        output.WriteRawTag(242, 38);
-        output.WriteMessage(SummerTimeV2Info);
+      if (detailCase_ == DetailOneofCase.CrucibleInfo) {
+        output.WriteRawTag(122);
+        output.WriteMessage(CrucibleInfo);
       }
       activityCoinMap_.WriteTo(output, _map_activityCoinMap_codec);
-      if (detailCase_ == DetailOneofCase.UgcInfo) {
-        output.WriteRawTag(250, 43);
-        output.WriteMessage(UgcInfo);
-      }
-      if (detailCase_ == DetailOneofCase.GearInfo) {
-        output.WriteRawTag(146, 45);
-        output.WriteMessage(GearInfo);
-      }
-      if (detailCase_ == DetailOneofCase.IrodoriInfo) {
-        output.WriteRawTag(242, 46);
-        output.WriteMessage(IrodoriInfo);
-      }
-      if (detailCase_ == DetailOneofCase.BounceConjuringInfo) {
-        output.WriteRawTag(250, 47);
-        output.WriteMessage(BounceConjuringInfo);
-      }
       if (detailCase_ == DetailOneofCase.BlitzRushInfo) {
-        output.WriteRawTag(210, 49);
+        output.WriteRawTag(130, 4);
         output.WriteMessage(BlitzRushInfo);
       }
-      if (detailCase_ == DetailOneofCase.RogueDiaryInfo) {
-        output.WriteRawTag(226, 50);
-        output.WriteMessage(RogueDiaryInfo);
+      if (detailCase_ == DetailOneofCase.EffigyChallengeInfo) {
+        output.WriteRawTag(202, 14);
+        output.WriteMessage(EffigyChallengeInfo);
       }
-      if (detailCase_ == DetailOneofCase.LunaRiteInfo) {
-        output.WriteRawTag(242, 50);
-        output.WriteMessage(LunaRiteInfo);
+      if (detailCase_ == DetailOneofCase.LanternRiteActivityInfo) {
+        output.WriteRawTag(234, 14);
+        output.WriteMessage(LanternRiteActivityInfo);
       }
-      if (detailCase_ == DetailOneofCase.GachaInfo) {
-        output.WriteRawTag(202, 51);
-        output.WriteMessage(GachaInfo);
+      if (detailCase_ == DetailOneofCase.SeaLampInfo) {
+        output.WriteRawTag(186, 15);
+        output.WriteMessage(SeaLampInfo);
       }
-      if (detailCase_ == DetailOneofCase.FleurFairInfo) {
-        output.WriteRawTag(202, 53);
-        output.WriteMessage(FleurFairInfo);
+      if (Unk3300MJNPGEKLOCG != false) {
+        output.WriteRawTag(192, 22);
+        output.WriteBool(Unk3300MJNPGEKLOCG);
+      }
+      if (detailCase_ == DetailOneofCase.FindHilichurlInfo) {
+        output.WriteRawTag(210, 23);
+        output.WriteMessage(FindHilichurlInfo);
+      }
+      if (detailCase_ == DetailOneofCase.SummerTimeV2Info) {
+        output.WriteRawTag(218, 25);
+        output.WriteMessage(SummerTimeV2Info);
+      }
+      if (detailCase_ == DetailOneofCase.MistTrialActivityInfo) {
+        output.WriteRawTag(130, 27);
+        output.WriteMessage(MistTrialActivityInfo);
+      }
+      if (detailCase_ == DetailOneofCase.LuminanceStoneChallengeInfo) {
+        output.WriteRawTag(226, 27);
+        output.WriteMessage(LuminanceStoneChallengeInfo);
+      }
+      if (detailCase_ == DetailOneofCase.WindFieldInfo) {
+        output.WriteRawTag(162, 29);
+        output.WriteMessage(WindFieldInfo);
+      }
+      if (detailCase_ == DetailOneofCase.SumoInfo) {
+        output.WriteRawTag(202, 31);
+        output.WriteMessage(SumoInfo);
+      }
+      if (detailCase_ == DetailOneofCase.HachiInfo) {
+        output.WriteRawTag(250, 31);
+        output.WriteMessage(HachiInfo);
       }
       if (detailCase_ == DetailOneofCase.ArenaChallengeInfo) {
-        output.WriteRawTag(218, 53);
+        output.WriteRawTag(210, 33);
         output.WriteMessage(ArenaChallengeInfo);
       }
-      activityPushTipsDataList_.WriteTo(output, _repeated_activityPushTipsDataList_codec);
-      if (IsHidden != false) {
-        output.WriteRawTag(184, 57);
-        output.WriteBool(IsHidden);
+      if (detailCase_ == DetailOneofCase.BartenderInfo) {
+        output.WriteRawTag(186, 34);
+        output.WriteMessage(BartenderInfo);
+      }
+      if (detailCase_ == DetailOneofCase.RogueDiaryInfo) {
+        output.WriteRawTag(130, 35);
+        output.WriteMessage(RogueDiaryInfo);
+      }
+      if (detailCase_ == DetailOneofCase.CharAmusementInfo) {
+        output.WriteRawTag(234, 38);
+        output.WriteMessage(CharAmusementInfo);
+      }
+      if (detailCase_ == DetailOneofCase.WaterSpiritInfo) {
+        output.WriteRawTag(218, 39);
+        output.WriteMessage(WaterSpiritInfo);
+      }
+      if (detailCase_ == DetailOneofCase.BuoyantCombatInfo) {
+        output.WriteRawTag(242, 42);
+        output.WriteMessage(BuoyantCombatInfo);
+      }
+      if (Unk3300GCEAKEMMJEA != 0) {
+        output.WriteRawTag(200, 43);
+        output.WriteUInt32(Unk3300GCEAKEMMJEA);
+      }
+      if (detailCase_ == DetailOneofCase.WinterCampInfo) {
+        output.WriteRawTag(218, 43);
+        output.WriteMessage(WinterCampInfo);
+      }
+      if (detailCase_ == DetailOneofCase.IslandPartyInfo) {
+        output.WriteRawTag(162, 46);
+        output.WriteMessage(IslandPartyInfo);
+      }
+      if (detailCase_ == DetailOneofCase.MoonfinTrialInfo) {
+        output.WriteRawTag(242, 47);
+        output.WriteMessage(MoonfinTrialInfo);
+      }
+      if (FirstDayStartTime != 0) {
+        output.WriteRawTag(144, 49);
+        output.WriteUInt32(FirstDayStartTime);
+      }
+      if (detailCase_ == DetailOneofCase.SpiceInfo) {
+        output.WriteRawTag(170, 49);
+        output.WriteMessage(SpiceInfo);
+      }
+      if (detailCase_ == DetailOneofCase.CrystalLinkInfo) {
+        output.WriteRawTag(226, 50);
+        output.WriteMessage(CrystalLinkInfo);
+      }
+      if (detailCase_ == DetailOneofCase.HideAndSeekInfo) {
+        output.WriteRawTag(186, 52);
+        output.WriteMessage(HideAndSeekInfo);
+      }
+      if (detailCase_ == DetailOneofCase.ChannelerSlabInfo) {
+        output.WriteRawTag(242, 52);
+        output.WriteMessage(ChannelerSlabInfo);
+      }
+      if (detailCase_ == DetailOneofCase.BounceConjuringInfo) {
+        output.WriteRawTag(210, 57);
+        output.WriteMessage(BounceConjuringInfo);
+      }
+      wishGiftNumMap_.WriteTo(output, _map_wishGiftNumMap_codec);
+      if (detailCase_ == DetailOneofCase.RoguelikeDungeonInfo) {
+        output.WriteRawTag(210, 60);
+        output.WriteMessage(RoguelikeDungeonInfo);
       }
       if (detailCase_ == DetailOneofCase.ChessInfo) {
-        output.WriteRawTag(250, 57);
+        output.WriteRawTag(242, 62);
         output.WriteMessage(ChessInfo);
       }
       if (detailCase_ == DetailOneofCase.TreasureSeelieInfo) {
-        output.WriteRawTag(178, 60);
+        output.WriteRawTag(194, 64);
         output.WriteMessage(TreasureSeelieInfo);
       }
-      if (detailCase_ == DetailOneofCase.ChannelerSlabInfo) {
-        output.WriteRawTag(186, 63);
-        output.WriteMessage(ChannelerSlabInfo);
-      }
-      if (detailCase_ == DetailOneofCase.EffigyChallengeInfo) {
-        output.WriteRawTag(138, 64);
-        output.WriteMessage(EffigyChallengeInfo);
-      }
-      if (detailCase_ == DetailOneofCase.InstableSprayInfo) {
-        output.WriteRawTag(154, 65);
-        output.WriteMessage(InstableSprayInfo);
-      }
-      if (detailCase_ == DetailOneofCase.RockBoardExploreInfo) {
-        output.WriteRawTag(178, 67);
-        output.WriteMessage(RockBoardExploreInfo);
-      }
-      if (detailCase_ == DetailOneofCase.WinterCampInfo) {
-        output.WriteRawTag(218, 67);
-        output.WriteMessage(WinterCampInfo);
+      if (detailCase_ == DetailOneofCase.IrodoriInfo) {
+        output.WriteRawTag(130, 66);
+        output.WriteMessage(IrodoriInfo);
       }
       if (detailCase_ == DetailOneofCase.DeliveryInfo) {
-        output.WriteRawTag(162, 68);
+        output.WriteRawTag(170, 71);
         output.WriteMessage(DeliveryInfo);
       }
+      if (detailCase_ == DetailOneofCase.InstableSprayInfo) {
+        output.WriteRawTag(202, 71);
+        output.WriteMessage(InstableSprayInfo);
+      }
       if (detailCase_ == DetailOneofCase.EchoShellInfo) {
-        output.WriteRawTag(202, 69);
+        output.WriteRawTag(210, 72);
         output.WriteMessage(EchoShellInfo);
       }
-      if (detailCase_ == DetailOneofCase.TreasureMapInfo) {
-        output.WriteRawTag(210, 69);
-        output.WriteMessage(TreasureMapInfo);
+      if (detailCase_ == DetailOneofCase.UgcInfo) {
+        output.WriteRawTag(242, 73);
+        output.WriteMessage(UgcInfo);
       }
-      if (detailCase_ == DetailOneofCase.MuqadasPotionInfo) {
-        output.WriteRawTag(170, 72);
-        output.WriteMessage(MuqadasPotionInfo);
+      if (detailCase_ == DetailOneofCase.RockBoardExploreInfo) {
+        output.WriteRawTag(138, 79);
+        output.WriteMessage(RockBoardExploreInfo);
       }
-      if (detailCase_ == DetailOneofCase.CrystalLinkInfo) {
-        output.WriteRawTag(210, 76);
-        output.WriteMessage(CrystalLinkInfo);
+      if (CurScore != 0) {
+        output.WriteRawTag(160, 79);
+        output.WriteUInt32(CurScore);
       }
-      if (detailCase_ == DetailOneofCase.SumoInfo) {
-        output.WriteRawTag(234, 78);
-        output.WriteMessage(SumoInfo);
+      if (detailCase_ == DetailOneofCase.PlantFlowerInfo) {
+        output.WriteRawTag(210, 79);
+        output.WriteMessage(PlantFlowerInfo);
       }
-      if (detailCase_ == DetailOneofCase.PotionInfo) {
-        output.WriteRawTag(202, 79);
-        output.WriteMessage(PotionInfo);
+      if (detailCase_ == DetailOneofCase.GachaInfo) {
+        output.WriteRawTag(138, 81);
+        output.WriteMessage(GachaInfo);
       }
-      if (SelectedAvatarRewardId != 0) {
-        output.WriteRawTag(208, 80);
-        output.WriteUInt32(SelectedAvatarRewardId);
-      }
-      if (detailCase_ == DetailOneofCase.LuminanceStoneChallengeInfo) {
+      if (detailCase_ == DetailOneofCase.VintageInfo) {
         output.WriteRawTag(226, 81);
-        output.WriteMessage(LuminanceStoneChallengeInfo);
-      }
-      if (detailCase_ == DetailOneofCase.FlightInfo) {
-        output.WriteRawTag(170, 85);
-        output.WriteMessage(FlightInfo);
-      }
-      if (detailCase_ == DetailOneofCase.SummerTimeInfo) {
-        output.WriteRawTag(226, 85);
-        output.WriteMessage(SummerTimeInfo);
-      }
-      wishGiftNumMap_.WriteTo(output, _map_wishGiftNumMap_codec);
-      if (detailCase_ == DetailOneofCase.FindHilichurlInfo) {
-        output.WriteRawTag(154, 88);
-        output.WriteMessage(FindHilichurlInfo);
-      }
-      if (IsQuickOpen != false) {
-        output.WriteRawTag(200, 90);
-        output.WriteBool(IsQuickOpen);
-      }
-      if (detailCase_ == DetailOneofCase.CharAmusementInfo) {
-        output.WriteRawTag(194, 93);
-        output.WriteMessage(CharAmusementInfo);
-      }
-      if (detailCase_ == DetailOneofCase.MoonfinTrialInfo) {
-        output.WriteRawTag(162, 99);
-        output.WriteMessage(MoonfinTrialInfo);
-      }
-      if (detailCase_ == DetailOneofCase.WaterSpiritInfo) {
-        output.WriteRawTag(218, 104);
-        output.WriteMessage(WaterSpiritInfo);
-      }
-      if (detailCase_ == DetailOneofCase.BartenderInfo) {
-        output.WriteRawTag(234, 107);
-        output.WriteMessage(BartenderInfo);
+        output.WriteMessage(VintageInfo);
       }
       if (detailCase_ == DetailOneofCase.DragonSpineInfo) {
-        output.WriteRawTag(250, 107);
+        output.WriteRawTag(242, 81);
         output.WriteMessage(DragonSpineInfo);
       }
       if (detailCase_ == DetailOneofCase.TanukiTravelActivityInfo) {
-        output.WriteRawTag(162, 112);
+        output.WriteRawTag(162, 84);
         output.WriteMessage(TanukiTravelActivityInfo);
       }
-      if (detailCase_ == DetailOneofCase.BuoyantCombatInfo) {
-        output.WriteRawTag(146, 115);
-        output.WriteMessage(BuoyantCombatInfo);
+      if (detailCase_ == DetailOneofCase.EffigyInfo) {
+        output.WriteRawTag(242, 85);
+        output.WriteMessage(EffigyInfo);
       }
-      if (detailCase_ == DetailOneofCase.BlessingInfo) {
-        output.WriteRawTag(234, 116);
-        output.WriteMessage(BlessingInfo);
+      if (Unk3300CBCEHLJJOGI != false) {
+        output.WriteRawTag(248, 85);
+        output.WriteBool(Unk3300CBCEHLJJOGI);
       }
-      if (detailCase_ == DetailOneofCase.LanternRiteActivityInfo) {
-        output.WriteRawTag(162, 117);
-        output.WriteMessage(LanternRiteActivityInfo);
+      if (detailCase_ == DetailOneofCase.FleurFairInfo) {
+        output.WriteRawTag(186, 90);
+        output.WriteMessage(FleurFairInfo);
       }
-      if (detailCase_ == DetailOneofCase.IslandPartyInfo) {
-        output.WriteRawTag(234, 117);
-        output.WriteMessage(IslandPartyInfo);
+      if (detailCase_ == DetailOneofCase.GearInfo) {
+        output.WriteRawTag(210, 92);
+        output.WriteMessage(GearInfo);
       }
-      if (detailCase_ == DetailOneofCase.SpiceInfo) {
-        output.WriteRawTag(154, 118);
-        output.WriteMessage(SpiceInfo);
+      if (Unk3300ABJKLALKLDG != false) {
+        output.WriteRawTag(240, 92);
+        output.WriteBool(Unk3300ABJKLALKLDG);
       }
-      if (CurScore != 0) {
-        output.WriteRawTag(144, 119);
-        output.WriteUInt32(CurScore);
+      if (detailCase_ == DetailOneofCase.BrickBreakerInfo) {
+        output.WriteRawTag(146, 95);
+        output.WriteMessage(BrickBreakerInfo);
+      }
+      if (detailCase_ == DetailOneofCase.LunaRiteInfo) {
+        output.WriteRawTag(202, 96);
+        output.WriteMessage(LunaRiteInfo);
+      }
+      if (detailCase_ == DetailOneofCase.PotionInfo) {
+        output.WriteRawTag(250, 97);
+        output.WriteMessage(PotionInfo);
+      }
+      if (Unk3300NEPKLLBJFKK != false) {
+        output.WriteRawTag(232, 102);
+        output.WriteBool(Unk3300NEPKLLBJFKK);
+      }
+      if (detailCase_ == DetailOneofCase.MuqadasPotionInfo) {
+        output.WriteRawTag(242, 103);
+        output.WriteMessage(MuqadasPotionInfo);
+      }
+      if (detailCase_ == DetailOneofCase.ExpeditionInfo) {
+        output.WriteRawTag(194, 109);
+        output.WriteMessage(ExpeditionInfo);
+      }
+      if (detailCase_ == DetailOneofCase.FungusFighterInfo) {
+        output.WriteRawTag(234, 109);
+        output.WriteMessage(FungusFighterInfo);
+      }
+      if (detailCase_ == DetailOneofCase.PhotoInfo) {
+        output.WriteRawTag(242, 113);
+        output.WriteMessage(PhotoInfo);
+      }
+      if (detailCase_ == DetailOneofCase.MichiaeMatsuriInfo) {
+        output.WriteRawTag(250, 114);
+        output.WriteMessage(MichiaeMatsuriInfo);
+      }
+      if (detailCase_ == DetailOneofCase.DigInfo) {
+        output.WriteRawTag(178, 116);
+        output.WriteMessage(DigInfo);
+      }
+      activityPushTipsDataList_.WriteTo(output, _repeated_activityPushTipsDataList_codec);
+      if (Unk3300JAEALAIOOID != 0) {
+        output.WriteRawTag(240, 116);
+        output.WriteUInt32(Unk3300JAEALAIOOID);
+      }
+      takenRewardList_.WriteTo(output, _repeated_takenRewardList_codec);
+      if (detailCase_ == DetailOneofCase.SummerTimeInfo) {
+        output.WriteRawTag(178, 119);
+        output.WriteMessage(SummerTimeInfo);
+      }
+      if (detailCase_ == DetailOneofCase.TreasureMapInfo) {
+        output.WriteRawTag(170, 120);
+        output.WriteMessage(TreasureMapInfo);
       }
       if (detailCase_ == DetailOneofCase.GravenInnocenceInfo) {
-        output.WriteRawTag(186, 119);
+        output.WriteRawTag(194, 120);
         output.WriteMessage(GravenInnocenceInfo);
       }
-      if (ScoreLimit != 0) {
-        output.WriteRawTag(176, 122);
-        output.WriteUInt32(ScoreLimit);
+      if (detailCase_ == DetailOneofCase.BlessingInfo) {
+        output.WriteRawTag(210, 122);
+        output.WriteMessage(BlessingInfo);
       }
-      if (IsCommonContentClosed != false) {
-        output.WriteRawTag(216, 122);
-        output.WriteBool(IsCommonContentClosed);
+      if (detailCase_ == DetailOneofCase.AsterInfo) {
+        output.WriteRawTag(202, 123);
+        output.WriteMessage(AsterInfo);
+      }
+      if (detailCase_ == DetailOneofCase.MusicGameInfo) {
+        output.WriteRawTag(170, 124);
+        output.WriteMessage(MusicGameInfo);
+      }
+      if (detailCase_ == DetailOneofCase.CoinCollectInfo) {
+        output.WriteRawTag(146, 125);
+        output.WriteMessage(CoinCollectInfo);
+      }
+      if (detailCase_ == DetailOneofCase.FlightInfo) {
+        output.WriteRawTag(218, 125);
+        output.WriteMessage(FlightInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -2048,320 +2145,328 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (detailCase_ == DetailOneofCase.TrialAvatarInfo) {
-        output.WriteRawTag(10);
-        output.WriteMessage(TrialAvatarInfo);
-      }
-      watcherInfoList_.WriteTo(ref output, _repeated_watcherInfoList_codec);
-      expireCondList_.WriteTo(ref output, _repeated_expireCondList_codec);
-      if (ActivityType != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(ActivityType);
-      }
-      if (EndTime != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(EndTime);
-      }
-      if (IsFinished != false) {
-        output.WriteRawTag(48);
-        output.WriteBool(IsFinished);
-      }
-      if (detailCase_ == DetailOneofCase.SamLampInfo) {
-        output.WriteRawTag(58);
-        output.WriteMessage(SamLampInfo);
-      }
       if (BeginTime != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(8);
         output.WriteUInt32(BeginTime);
       }
-      if (IsStarting != false) {
-        output.WriteRawTag(72);
-        output.WriteBool(IsStarting);
+      if (detailCase_ == DetailOneofCase.SamLampInfo) {
+        output.WriteRawTag(18);
+        output.WriteMessage(SamLampInfo);
       }
-      meetCondList_.WriteTo(ref output, _repeated_meetCondList_codec);
-      if (detailCase_ == DetailOneofCase.SalesmanInfo) {
-        output.WriteRawTag(90);
-        output.WriteMessage(SalesmanInfo);
+      if (Unk3300DMILOONBELH != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300DMILOONBELH);
       }
-      if (ActivityId != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(ActivityId);
+      if (detailCase_ == DetailOneofCase.TrialAvatarInfo) {
+        output.WriteRawTag(34);
+        output.WriteMessage(TrialAvatarInfo);
       }
-      if (IsPlayOpenAnim != false) {
-        output.WriteRawTag(104);
-        output.WriteBool(IsPlayOpenAnim);
-      }
-      if (detailCase_ == DetailOneofCase.CrucibleInfo) {
-        output.WriteRawTag(114);
-        output.WriteMessage(CrucibleInfo);
-      }
+      unk3300HKKNIHNBHAE_.WriteTo(ref output, _repeated_unk3300HKKNIHNBHAE_codec);
+      watcherInfoList_.WriteTo(ref output, _repeated_watcherInfoList_codec);
       if (ScheduleId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(56);
         output.WriteUInt32(ScheduleId);
       }
-      if (detailCase_ == DetailOneofCase.PlantFlowerInfo) {
-        output.WriteRawTag(178, 3);
-        output.WriteMessage(PlantFlowerInfo);
+      if (IsFinished != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsFinished);
       }
-      if (IsBannerCleared != false) {
-        output.WriteRawTag(176, 6);
-        output.WriteBool(IsBannerCleared);
+      if (detailCase_ == DetailOneofCase.SalesmanInfo) {
+        output.WriteRawTag(74);
+        output.WriteMessage(SalesmanInfo);
       }
-      if (detailCase_ == DetailOneofCase.MistTrialActivityInfo) {
-        output.WriteRawTag(226, 9);
-        output.WriteMessage(MistTrialActivityInfo);
+      if (EndTime != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(EndTime);
       }
-      if (detailCase_ == DetailOneofCase.MichiaeMatsuriInfo) {
-        output.WriteRawTag(146, 12);
-        output.WriteMessage(MichiaeMatsuriInfo);
+      unk3300BGNIBLKCPCA_.WriteTo(ref output, _repeated_unk3300BGNIBLKCPCA_codec);
+      if (Unk3300MDBDPIBEGGH != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(Unk3300MDBDPIBEGGH);
       }
-      if (detailCase_ == DetailOneofCase.ExpeditionInfo) {
-        output.WriteRawTag(210, 12);
-        output.WriteMessage(ExpeditionInfo);
+      if (ActivityId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(ActivityId);
       }
-      if (detailCase_ == DetailOneofCase.RoguelikeDungeonInfo) {
-        output.WriteRawTag(218, 13);
-        output.WriteMessage(RoguelikeDungeonInfo);
+      if (Unk3300ICNJJKDHPCH != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(Unk3300ICNJJKDHPCH);
       }
-      if (detailCase_ == DetailOneofCase.PhotoInfo) {
-        output.WriteRawTag(194, 20);
-        output.WriteMessage(PhotoInfo);
-      }
-      takenRewardList_.WriteTo(ref output, _repeated_takenRewardList_codec);
-      if (detailCase_ == DetailOneofCase.WindFieldInfo) {
-        output.WriteRawTag(130, 22);
-        output.WriteMessage(WindFieldInfo);
-      }
-      if (detailCase_ == DetailOneofCase.EffigyInfo) {
-        output.WriteRawTag(186, 24);
-        output.WriteMessage(EffigyInfo);
-      }
-      if (detailCase_ == DetailOneofCase.DigInfo) {
-        output.WriteRawTag(154, 25);
-        output.WriteMessage(DigInfo);
-      }
-      if (detailCase_ == DetailOneofCase.HideAndSeekInfo) {
-        output.WriteRawTag(218, 26);
-        output.WriteMessage(HideAndSeekInfo);
-      }
-      if (detailCase_ == DetailOneofCase.VintageInfo) {
-        output.WriteRawTag(234, 27);
-        output.WriteMessage(VintageInfo);
-      }
-      if (detailCase_ == DetailOneofCase.MusicGameInfo) {
-        output.WriteRawTag(226, 28);
-        output.WriteMessage(MusicGameInfo);
-      }
-      if (detailCase_ == DetailOneofCase.FungusFighterInfo) {
-        output.WriteRawTag(210, 30);
-        output.WriteMessage(FungusFighterInfo);
-      }
-      if (detailCase_ == DetailOneofCase.HachiInfo) {
-        output.WriteRawTag(218, 30);
-        output.WriteMessage(HachiInfo);
-      }
-      if (detailCase_ == DetailOneofCase.SeaLampInfo) {
-        output.WriteRawTag(242, 30);
-        output.WriteMessage(SeaLampInfo);
-      }
-      if (detailCase_ == DetailOneofCase.AsterInfo) {
-        output.WriteRawTag(234, 34);
-        output.WriteMessage(AsterInfo);
-      }
-      if (FirstDayStartTime != 0) {
-        output.WriteRawTag(128, 37);
-        output.WriteUInt32(FirstDayStartTime);
-      }
-      if (detailCase_ == DetailOneofCase.SummerTimeV2Info) {
-        output.WriteRawTag(242, 38);
-        output.WriteMessage(SummerTimeV2Info);
+      if (detailCase_ == DetailOneofCase.CrucibleInfo) {
+        output.WriteRawTag(122);
+        output.WriteMessage(CrucibleInfo);
       }
       activityCoinMap_.WriteTo(ref output, _map_activityCoinMap_codec);
-      if (detailCase_ == DetailOneofCase.UgcInfo) {
-        output.WriteRawTag(250, 43);
-        output.WriteMessage(UgcInfo);
-      }
-      if (detailCase_ == DetailOneofCase.GearInfo) {
-        output.WriteRawTag(146, 45);
-        output.WriteMessage(GearInfo);
-      }
-      if (detailCase_ == DetailOneofCase.IrodoriInfo) {
-        output.WriteRawTag(242, 46);
-        output.WriteMessage(IrodoriInfo);
-      }
-      if (detailCase_ == DetailOneofCase.BounceConjuringInfo) {
-        output.WriteRawTag(250, 47);
-        output.WriteMessage(BounceConjuringInfo);
-      }
       if (detailCase_ == DetailOneofCase.BlitzRushInfo) {
-        output.WriteRawTag(210, 49);
+        output.WriteRawTag(130, 4);
         output.WriteMessage(BlitzRushInfo);
       }
-      if (detailCase_ == DetailOneofCase.RogueDiaryInfo) {
-        output.WriteRawTag(226, 50);
-        output.WriteMessage(RogueDiaryInfo);
+      if (detailCase_ == DetailOneofCase.EffigyChallengeInfo) {
+        output.WriteRawTag(202, 14);
+        output.WriteMessage(EffigyChallengeInfo);
       }
-      if (detailCase_ == DetailOneofCase.LunaRiteInfo) {
-        output.WriteRawTag(242, 50);
-        output.WriteMessage(LunaRiteInfo);
+      if (detailCase_ == DetailOneofCase.LanternRiteActivityInfo) {
+        output.WriteRawTag(234, 14);
+        output.WriteMessage(LanternRiteActivityInfo);
       }
-      if (detailCase_ == DetailOneofCase.GachaInfo) {
-        output.WriteRawTag(202, 51);
-        output.WriteMessage(GachaInfo);
+      if (detailCase_ == DetailOneofCase.SeaLampInfo) {
+        output.WriteRawTag(186, 15);
+        output.WriteMessage(SeaLampInfo);
       }
-      if (detailCase_ == DetailOneofCase.FleurFairInfo) {
-        output.WriteRawTag(202, 53);
-        output.WriteMessage(FleurFairInfo);
+      if (Unk3300MJNPGEKLOCG != false) {
+        output.WriteRawTag(192, 22);
+        output.WriteBool(Unk3300MJNPGEKLOCG);
+      }
+      if (detailCase_ == DetailOneofCase.FindHilichurlInfo) {
+        output.WriteRawTag(210, 23);
+        output.WriteMessage(FindHilichurlInfo);
+      }
+      if (detailCase_ == DetailOneofCase.SummerTimeV2Info) {
+        output.WriteRawTag(218, 25);
+        output.WriteMessage(SummerTimeV2Info);
+      }
+      if (detailCase_ == DetailOneofCase.MistTrialActivityInfo) {
+        output.WriteRawTag(130, 27);
+        output.WriteMessage(MistTrialActivityInfo);
+      }
+      if (detailCase_ == DetailOneofCase.LuminanceStoneChallengeInfo) {
+        output.WriteRawTag(226, 27);
+        output.WriteMessage(LuminanceStoneChallengeInfo);
+      }
+      if (detailCase_ == DetailOneofCase.WindFieldInfo) {
+        output.WriteRawTag(162, 29);
+        output.WriteMessage(WindFieldInfo);
+      }
+      if (detailCase_ == DetailOneofCase.SumoInfo) {
+        output.WriteRawTag(202, 31);
+        output.WriteMessage(SumoInfo);
+      }
+      if (detailCase_ == DetailOneofCase.HachiInfo) {
+        output.WriteRawTag(250, 31);
+        output.WriteMessage(HachiInfo);
       }
       if (detailCase_ == DetailOneofCase.ArenaChallengeInfo) {
-        output.WriteRawTag(218, 53);
+        output.WriteRawTag(210, 33);
         output.WriteMessage(ArenaChallengeInfo);
       }
-      activityPushTipsDataList_.WriteTo(ref output, _repeated_activityPushTipsDataList_codec);
-      if (IsHidden != false) {
-        output.WriteRawTag(184, 57);
-        output.WriteBool(IsHidden);
+      if (detailCase_ == DetailOneofCase.BartenderInfo) {
+        output.WriteRawTag(186, 34);
+        output.WriteMessage(BartenderInfo);
+      }
+      if (detailCase_ == DetailOneofCase.RogueDiaryInfo) {
+        output.WriteRawTag(130, 35);
+        output.WriteMessage(RogueDiaryInfo);
+      }
+      if (detailCase_ == DetailOneofCase.CharAmusementInfo) {
+        output.WriteRawTag(234, 38);
+        output.WriteMessage(CharAmusementInfo);
+      }
+      if (detailCase_ == DetailOneofCase.WaterSpiritInfo) {
+        output.WriteRawTag(218, 39);
+        output.WriteMessage(WaterSpiritInfo);
+      }
+      if (detailCase_ == DetailOneofCase.BuoyantCombatInfo) {
+        output.WriteRawTag(242, 42);
+        output.WriteMessage(BuoyantCombatInfo);
+      }
+      if (Unk3300GCEAKEMMJEA != 0) {
+        output.WriteRawTag(200, 43);
+        output.WriteUInt32(Unk3300GCEAKEMMJEA);
+      }
+      if (detailCase_ == DetailOneofCase.WinterCampInfo) {
+        output.WriteRawTag(218, 43);
+        output.WriteMessage(WinterCampInfo);
+      }
+      if (detailCase_ == DetailOneofCase.IslandPartyInfo) {
+        output.WriteRawTag(162, 46);
+        output.WriteMessage(IslandPartyInfo);
+      }
+      if (detailCase_ == DetailOneofCase.MoonfinTrialInfo) {
+        output.WriteRawTag(242, 47);
+        output.WriteMessage(MoonfinTrialInfo);
+      }
+      if (FirstDayStartTime != 0) {
+        output.WriteRawTag(144, 49);
+        output.WriteUInt32(FirstDayStartTime);
+      }
+      if (detailCase_ == DetailOneofCase.SpiceInfo) {
+        output.WriteRawTag(170, 49);
+        output.WriteMessage(SpiceInfo);
+      }
+      if (detailCase_ == DetailOneofCase.CrystalLinkInfo) {
+        output.WriteRawTag(226, 50);
+        output.WriteMessage(CrystalLinkInfo);
+      }
+      if (detailCase_ == DetailOneofCase.HideAndSeekInfo) {
+        output.WriteRawTag(186, 52);
+        output.WriteMessage(HideAndSeekInfo);
+      }
+      if (detailCase_ == DetailOneofCase.ChannelerSlabInfo) {
+        output.WriteRawTag(242, 52);
+        output.WriteMessage(ChannelerSlabInfo);
+      }
+      if (detailCase_ == DetailOneofCase.BounceConjuringInfo) {
+        output.WriteRawTag(210, 57);
+        output.WriteMessage(BounceConjuringInfo);
+      }
+      wishGiftNumMap_.WriteTo(ref output, _map_wishGiftNumMap_codec);
+      if (detailCase_ == DetailOneofCase.RoguelikeDungeonInfo) {
+        output.WriteRawTag(210, 60);
+        output.WriteMessage(RoguelikeDungeonInfo);
       }
       if (detailCase_ == DetailOneofCase.ChessInfo) {
-        output.WriteRawTag(250, 57);
+        output.WriteRawTag(242, 62);
         output.WriteMessage(ChessInfo);
       }
       if (detailCase_ == DetailOneofCase.TreasureSeelieInfo) {
-        output.WriteRawTag(178, 60);
+        output.WriteRawTag(194, 64);
         output.WriteMessage(TreasureSeelieInfo);
       }
-      if (detailCase_ == DetailOneofCase.ChannelerSlabInfo) {
-        output.WriteRawTag(186, 63);
-        output.WriteMessage(ChannelerSlabInfo);
-      }
-      if (detailCase_ == DetailOneofCase.EffigyChallengeInfo) {
-        output.WriteRawTag(138, 64);
-        output.WriteMessage(EffigyChallengeInfo);
-      }
-      if (detailCase_ == DetailOneofCase.InstableSprayInfo) {
-        output.WriteRawTag(154, 65);
-        output.WriteMessage(InstableSprayInfo);
-      }
-      if (detailCase_ == DetailOneofCase.RockBoardExploreInfo) {
-        output.WriteRawTag(178, 67);
-        output.WriteMessage(RockBoardExploreInfo);
-      }
-      if (detailCase_ == DetailOneofCase.WinterCampInfo) {
-        output.WriteRawTag(218, 67);
-        output.WriteMessage(WinterCampInfo);
+      if (detailCase_ == DetailOneofCase.IrodoriInfo) {
+        output.WriteRawTag(130, 66);
+        output.WriteMessage(IrodoriInfo);
       }
       if (detailCase_ == DetailOneofCase.DeliveryInfo) {
-        output.WriteRawTag(162, 68);
+        output.WriteRawTag(170, 71);
         output.WriteMessage(DeliveryInfo);
       }
+      if (detailCase_ == DetailOneofCase.InstableSprayInfo) {
+        output.WriteRawTag(202, 71);
+        output.WriteMessage(InstableSprayInfo);
+      }
       if (detailCase_ == DetailOneofCase.EchoShellInfo) {
-        output.WriteRawTag(202, 69);
+        output.WriteRawTag(210, 72);
         output.WriteMessage(EchoShellInfo);
       }
-      if (detailCase_ == DetailOneofCase.TreasureMapInfo) {
-        output.WriteRawTag(210, 69);
-        output.WriteMessage(TreasureMapInfo);
+      if (detailCase_ == DetailOneofCase.UgcInfo) {
+        output.WriteRawTag(242, 73);
+        output.WriteMessage(UgcInfo);
       }
-      if (detailCase_ == DetailOneofCase.MuqadasPotionInfo) {
-        output.WriteRawTag(170, 72);
-        output.WriteMessage(MuqadasPotionInfo);
+      if (detailCase_ == DetailOneofCase.RockBoardExploreInfo) {
+        output.WriteRawTag(138, 79);
+        output.WriteMessage(RockBoardExploreInfo);
       }
-      if (detailCase_ == DetailOneofCase.CrystalLinkInfo) {
-        output.WriteRawTag(210, 76);
-        output.WriteMessage(CrystalLinkInfo);
+      if (CurScore != 0) {
+        output.WriteRawTag(160, 79);
+        output.WriteUInt32(CurScore);
       }
-      if (detailCase_ == DetailOneofCase.SumoInfo) {
-        output.WriteRawTag(234, 78);
-        output.WriteMessage(SumoInfo);
+      if (detailCase_ == DetailOneofCase.PlantFlowerInfo) {
+        output.WriteRawTag(210, 79);
+        output.WriteMessage(PlantFlowerInfo);
       }
-      if (detailCase_ == DetailOneofCase.PotionInfo) {
-        output.WriteRawTag(202, 79);
-        output.WriteMessage(PotionInfo);
+      if (detailCase_ == DetailOneofCase.GachaInfo) {
+        output.WriteRawTag(138, 81);
+        output.WriteMessage(GachaInfo);
       }
-      if (SelectedAvatarRewardId != 0) {
-        output.WriteRawTag(208, 80);
-        output.WriteUInt32(SelectedAvatarRewardId);
-      }
-      if (detailCase_ == DetailOneofCase.LuminanceStoneChallengeInfo) {
+      if (detailCase_ == DetailOneofCase.VintageInfo) {
         output.WriteRawTag(226, 81);
-        output.WriteMessage(LuminanceStoneChallengeInfo);
-      }
-      if (detailCase_ == DetailOneofCase.FlightInfo) {
-        output.WriteRawTag(170, 85);
-        output.WriteMessage(FlightInfo);
-      }
-      if (detailCase_ == DetailOneofCase.SummerTimeInfo) {
-        output.WriteRawTag(226, 85);
-        output.WriteMessage(SummerTimeInfo);
-      }
-      wishGiftNumMap_.WriteTo(ref output, _map_wishGiftNumMap_codec);
-      if (detailCase_ == DetailOneofCase.FindHilichurlInfo) {
-        output.WriteRawTag(154, 88);
-        output.WriteMessage(FindHilichurlInfo);
-      }
-      if (IsQuickOpen != false) {
-        output.WriteRawTag(200, 90);
-        output.WriteBool(IsQuickOpen);
-      }
-      if (detailCase_ == DetailOneofCase.CharAmusementInfo) {
-        output.WriteRawTag(194, 93);
-        output.WriteMessage(CharAmusementInfo);
-      }
-      if (detailCase_ == DetailOneofCase.MoonfinTrialInfo) {
-        output.WriteRawTag(162, 99);
-        output.WriteMessage(MoonfinTrialInfo);
-      }
-      if (detailCase_ == DetailOneofCase.WaterSpiritInfo) {
-        output.WriteRawTag(218, 104);
-        output.WriteMessage(WaterSpiritInfo);
-      }
-      if (detailCase_ == DetailOneofCase.BartenderInfo) {
-        output.WriteRawTag(234, 107);
-        output.WriteMessage(BartenderInfo);
+        output.WriteMessage(VintageInfo);
       }
       if (detailCase_ == DetailOneofCase.DragonSpineInfo) {
-        output.WriteRawTag(250, 107);
+        output.WriteRawTag(242, 81);
         output.WriteMessage(DragonSpineInfo);
       }
       if (detailCase_ == DetailOneofCase.TanukiTravelActivityInfo) {
-        output.WriteRawTag(162, 112);
+        output.WriteRawTag(162, 84);
         output.WriteMessage(TanukiTravelActivityInfo);
       }
-      if (detailCase_ == DetailOneofCase.BuoyantCombatInfo) {
-        output.WriteRawTag(146, 115);
-        output.WriteMessage(BuoyantCombatInfo);
+      if (detailCase_ == DetailOneofCase.EffigyInfo) {
+        output.WriteRawTag(242, 85);
+        output.WriteMessage(EffigyInfo);
       }
-      if (detailCase_ == DetailOneofCase.BlessingInfo) {
-        output.WriteRawTag(234, 116);
-        output.WriteMessage(BlessingInfo);
+      if (Unk3300CBCEHLJJOGI != false) {
+        output.WriteRawTag(248, 85);
+        output.WriteBool(Unk3300CBCEHLJJOGI);
       }
-      if (detailCase_ == DetailOneofCase.LanternRiteActivityInfo) {
-        output.WriteRawTag(162, 117);
-        output.WriteMessage(LanternRiteActivityInfo);
+      if (detailCase_ == DetailOneofCase.FleurFairInfo) {
+        output.WriteRawTag(186, 90);
+        output.WriteMessage(FleurFairInfo);
       }
-      if (detailCase_ == DetailOneofCase.IslandPartyInfo) {
-        output.WriteRawTag(234, 117);
-        output.WriteMessage(IslandPartyInfo);
+      if (detailCase_ == DetailOneofCase.GearInfo) {
+        output.WriteRawTag(210, 92);
+        output.WriteMessage(GearInfo);
       }
-      if (detailCase_ == DetailOneofCase.SpiceInfo) {
-        output.WriteRawTag(154, 118);
-        output.WriteMessage(SpiceInfo);
+      if (Unk3300ABJKLALKLDG != false) {
+        output.WriteRawTag(240, 92);
+        output.WriteBool(Unk3300ABJKLALKLDG);
       }
-      if (CurScore != 0) {
-        output.WriteRawTag(144, 119);
-        output.WriteUInt32(CurScore);
+      if (detailCase_ == DetailOneofCase.BrickBreakerInfo) {
+        output.WriteRawTag(146, 95);
+        output.WriteMessage(BrickBreakerInfo);
+      }
+      if (detailCase_ == DetailOneofCase.LunaRiteInfo) {
+        output.WriteRawTag(202, 96);
+        output.WriteMessage(LunaRiteInfo);
+      }
+      if (detailCase_ == DetailOneofCase.PotionInfo) {
+        output.WriteRawTag(250, 97);
+        output.WriteMessage(PotionInfo);
+      }
+      if (Unk3300NEPKLLBJFKK != false) {
+        output.WriteRawTag(232, 102);
+        output.WriteBool(Unk3300NEPKLLBJFKK);
+      }
+      if (detailCase_ == DetailOneofCase.MuqadasPotionInfo) {
+        output.WriteRawTag(242, 103);
+        output.WriteMessage(MuqadasPotionInfo);
+      }
+      if (detailCase_ == DetailOneofCase.ExpeditionInfo) {
+        output.WriteRawTag(194, 109);
+        output.WriteMessage(ExpeditionInfo);
+      }
+      if (detailCase_ == DetailOneofCase.FungusFighterInfo) {
+        output.WriteRawTag(234, 109);
+        output.WriteMessage(FungusFighterInfo);
+      }
+      if (detailCase_ == DetailOneofCase.PhotoInfo) {
+        output.WriteRawTag(242, 113);
+        output.WriteMessage(PhotoInfo);
+      }
+      if (detailCase_ == DetailOneofCase.MichiaeMatsuriInfo) {
+        output.WriteRawTag(250, 114);
+        output.WriteMessage(MichiaeMatsuriInfo);
+      }
+      if (detailCase_ == DetailOneofCase.DigInfo) {
+        output.WriteRawTag(178, 116);
+        output.WriteMessage(DigInfo);
+      }
+      activityPushTipsDataList_.WriteTo(ref output, _repeated_activityPushTipsDataList_codec);
+      if (Unk3300JAEALAIOOID != 0) {
+        output.WriteRawTag(240, 116);
+        output.WriteUInt32(Unk3300JAEALAIOOID);
+      }
+      takenRewardList_.WriteTo(ref output, _repeated_takenRewardList_codec);
+      if (detailCase_ == DetailOneofCase.SummerTimeInfo) {
+        output.WriteRawTag(178, 119);
+        output.WriteMessage(SummerTimeInfo);
+      }
+      if (detailCase_ == DetailOneofCase.TreasureMapInfo) {
+        output.WriteRawTag(170, 120);
+        output.WriteMessage(TreasureMapInfo);
       }
       if (detailCase_ == DetailOneofCase.GravenInnocenceInfo) {
-        output.WriteRawTag(186, 119);
+        output.WriteRawTag(194, 120);
         output.WriteMessage(GravenInnocenceInfo);
       }
-      if (ScoreLimit != 0) {
-        output.WriteRawTag(176, 122);
-        output.WriteUInt32(ScoreLimit);
+      if (detailCase_ == DetailOneofCase.BlessingInfo) {
+        output.WriteRawTag(210, 122);
+        output.WriteMessage(BlessingInfo);
       }
-      if (IsCommonContentClosed != false) {
-        output.WriteRawTag(216, 122);
-        output.WriteBool(IsCommonContentClosed);
+      if (detailCase_ == DetailOneofCase.AsterInfo) {
+        output.WriteRawTag(202, 123);
+        output.WriteMessage(AsterInfo);
+      }
+      if (detailCase_ == DetailOneofCase.MusicGameInfo) {
+        output.WriteRawTag(170, 124);
+        output.WriteMessage(MusicGameInfo);
+      }
+      if (detailCase_ == DetailOneofCase.CoinCollectInfo) {
+        output.WriteRawTag(146, 125);
+        output.WriteMessage(CoinCollectInfo);
+      }
+      if (detailCase_ == DetailOneofCase.FlightInfo) {
+        output.WriteRawTag(218, 125);
+        output.WriteMessage(FlightInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -2373,61 +2478,61 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (Unk3300MJNPGEKLOCG != false) {
+        size += 2 + 1;
+      }
       if (IsFinished != false) {
         size += 1 + 1;
-      }
-      if (ActivityType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ActivityType);
-      }
-      if (BeginTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BeginTime);
-      }
-      size += takenRewardList_.CalculateSize(_repeated_takenRewardList_codec);
-      if (IsHidden != false) {
-        size += 2 + 1;
-      }
-      if (IsQuickOpen != false) {
-        size += 2 + 1;
-      }
-      size += meetCondList_.CalculateSize(_repeated_meetCondList_codec);
-      size += activityCoinMap_.CalculateSize(_map_activityCoinMap_codec);
-      if (IsBannerCleared != false) {
-        size += 2 + 1;
       }
       if (CurScore != 0) {
         size += 2 + pb::CodedOutputStream.ComputeUInt32Size(CurScore);
       }
-      if (FirstDayStartTime != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(FirstDayStartTime);
-      }
-      if (ActivityId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ActivityId);
-      }
-      if (IsPlayOpenAnim != false) {
-        size += 1 + 1;
-      }
-      if (EndTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
-      }
-      if (ScoreLimit != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(ScoreLimit);
-      }
-      size += wishGiftNumMap_.CalculateSize(_map_wishGiftNumMap_codec);
-      if (SelectedAvatarRewardId != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(SelectedAvatarRewardId);
-      }
-      if (IsCommonContentClosed != false) {
-        size += 2 + 1;
-      }
-      size += expireCondList_.CalculateSize(_repeated_expireCondList_codec);
-      size += activityPushTipsDataList_.CalculateSize(_repeated_activityPushTipsDataList_codec);
-      size += watcherInfoList_.CalculateSize(_repeated_watcherInfoList_codec);
       if (ScheduleId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScheduleId);
       }
-      if (IsStarting != false) {
+      if (Unk3300JAEALAIOOID != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300JAEALAIOOID);
+      }
+      if (Unk3300ICNJJKDHPCH != false) {
         size += 1 + 1;
       }
+      size += unk3300BGNIBLKCPCA_.CalculateSize(_repeated_unk3300BGNIBLKCPCA_codec);
+      if (Unk3300NEPKLLBJFKK != false) {
+        size += 2 + 1;
+      }
+      size += watcherInfoList_.CalculateSize(_repeated_watcherInfoList_codec);
+      size += activityPushTipsDataList_.CalculateSize(_repeated_activityPushTipsDataList_codec);
+      if (ActivityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ActivityId);
+      }
+      size += takenRewardList_.CalculateSize(_repeated_takenRewardList_codec);
+      if (Unk3300GCEAKEMMJEA != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GCEAKEMMJEA);
+      }
+      size += activityCoinMap_.CalculateSize(_map_activityCoinMap_codec);
+      if (FirstDayStartTime != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(FirstDayStartTime);
+      }
+      if (Unk3300ABJKLALKLDG != false) {
+        size += 2 + 1;
+      }
+      if (Unk3300DMILOONBELH != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DMILOONBELH);
+      }
+      if (Unk3300CBCEHLJJOGI != false) {
+        size += 2 + 1;
+      }
+      if (BeginTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BeginTime);
+      }
+      if (Unk3300MDBDPIBEGGH != false) {
+        size += 1 + 1;
+      }
+      size += wishGiftNumMap_.CalculateSize(_map_wishGiftNumMap_codec);
+      if (EndTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
+      }
+      size += unk3300HKKNIHNBHAE_.CalculateSize(_repeated_unk3300HKKNIHNBHAE_codec);
       if (detailCase_ == DetailOneofCase.SamLampInfo) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(SamLampInfo);
       }
@@ -2611,6 +2716,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (detailCase_ == DetailOneofCase.EffigyChallengeInfo) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(EffigyChallengeInfo);
       }
+      if (detailCase_ == DetailOneofCase.CoinCollectInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(CoinCollectInfo);
+      }
+      if (detailCase_ == DetailOneofCase.BrickBreakerInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(BrickBreakerInfo);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -2623,61 +2734,61 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.Unk3300MJNPGEKLOCG != false) {
+        Unk3300MJNPGEKLOCG = other.Unk3300MJNPGEKLOCG;
+      }
       if (other.IsFinished != false) {
         IsFinished = other.IsFinished;
-      }
-      if (other.ActivityType != 0) {
-        ActivityType = other.ActivityType;
-      }
-      if (other.BeginTime != 0) {
-        BeginTime = other.BeginTime;
-      }
-      takenRewardList_.Add(other.takenRewardList_);
-      if (other.IsHidden != false) {
-        IsHidden = other.IsHidden;
-      }
-      if (other.IsQuickOpen != false) {
-        IsQuickOpen = other.IsQuickOpen;
-      }
-      meetCondList_.Add(other.meetCondList_);
-      activityCoinMap_.Add(other.activityCoinMap_);
-      if (other.IsBannerCleared != false) {
-        IsBannerCleared = other.IsBannerCleared;
       }
       if (other.CurScore != 0) {
         CurScore = other.CurScore;
       }
-      if (other.FirstDayStartTime != 0) {
-        FirstDayStartTime = other.FirstDayStartTime;
-      }
-      if (other.ActivityId != 0) {
-        ActivityId = other.ActivityId;
-      }
-      if (other.IsPlayOpenAnim != false) {
-        IsPlayOpenAnim = other.IsPlayOpenAnim;
-      }
-      if (other.EndTime != 0) {
-        EndTime = other.EndTime;
-      }
-      if (other.ScoreLimit != 0) {
-        ScoreLimit = other.ScoreLimit;
-      }
-      wishGiftNumMap_.Add(other.wishGiftNumMap_);
-      if (other.SelectedAvatarRewardId != 0) {
-        SelectedAvatarRewardId = other.SelectedAvatarRewardId;
-      }
-      if (other.IsCommonContentClosed != false) {
-        IsCommonContentClosed = other.IsCommonContentClosed;
-      }
-      expireCondList_.Add(other.expireCondList_);
-      activityPushTipsDataList_.Add(other.activityPushTipsDataList_);
-      watcherInfoList_.Add(other.watcherInfoList_);
       if (other.ScheduleId != 0) {
         ScheduleId = other.ScheduleId;
       }
-      if (other.IsStarting != false) {
-        IsStarting = other.IsStarting;
+      if (other.Unk3300JAEALAIOOID != 0) {
+        Unk3300JAEALAIOOID = other.Unk3300JAEALAIOOID;
       }
+      if (other.Unk3300ICNJJKDHPCH != false) {
+        Unk3300ICNJJKDHPCH = other.Unk3300ICNJJKDHPCH;
+      }
+      unk3300BGNIBLKCPCA_.Add(other.unk3300BGNIBLKCPCA_);
+      if (other.Unk3300NEPKLLBJFKK != false) {
+        Unk3300NEPKLLBJFKK = other.Unk3300NEPKLLBJFKK;
+      }
+      watcherInfoList_.Add(other.watcherInfoList_);
+      activityPushTipsDataList_.Add(other.activityPushTipsDataList_);
+      if (other.ActivityId != 0) {
+        ActivityId = other.ActivityId;
+      }
+      takenRewardList_.Add(other.takenRewardList_);
+      if (other.Unk3300GCEAKEMMJEA != 0) {
+        Unk3300GCEAKEMMJEA = other.Unk3300GCEAKEMMJEA;
+      }
+      activityCoinMap_.Add(other.activityCoinMap_);
+      if (other.FirstDayStartTime != 0) {
+        FirstDayStartTime = other.FirstDayStartTime;
+      }
+      if (other.Unk3300ABJKLALKLDG != false) {
+        Unk3300ABJKLALKLDG = other.Unk3300ABJKLALKLDG;
+      }
+      if (other.Unk3300DMILOONBELH != 0) {
+        Unk3300DMILOONBELH = other.Unk3300DMILOONBELH;
+      }
+      if (other.Unk3300CBCEHLJJOGI != false) {
+        Unk3300CBCEHLJJOGI = other.Unk3300CBCEHLJJOGI;
+      }
+      if (other.BeginTime != 0) {
+        BeginTime = other.BeginTime;
+      }
+      if (other.Unk3300MDBDPIBEGGH != false) {
+        Unk3300MDBDPIBEGGH = other.Unk3300MDBDPIBEGGH;
+      }
+      wishGiftNumMap_.Add(other.wishGiftNumMap_);
+      if (other.EndTime != 0) {
+        EndTime = other.EndTime;
+      }
+      unk3300HKKNIHNBHAE_.Add(other.unk3300HKKNIHNBHAE_);
       switch (other.DetailCase) {
         case DetailOneofCase.SamLampInfo:
           if (SamLampInfo == null) {
@@ -3017,7 +3128,7 @@ namespace Weedwacker.Shared.Network.Proto {
           break;
         case DetailOneofCase.VintageInfo:
           if (VintageInfo == null) {
-            VintageInfo = new global::Weedwacker.Shared.Network.Proto.VintageDetailInfo();
+            VintageInfo = new global::Weedwacker.Shared.Network.Proto.VintageActivityDetailInfo();
           }
           VintageInfo.MergeFrom(other.VintageInfo);
           break;
@@ -3045,6 +3156,18 @@ namespace Weedwacker.Shared.Network.Proto {
           }
           EffigyChallengeInfo.MergeFrom(other.EffigyChallengeInfo);
           break;
+        case DetailOneofCase.CoinCollectInfo:
+          if (CoinCollectInfo == null) {
+            CoinCollectInfo = new global::Weedwacker.Shared.Network.Proto.CoinCollectDetailInfo();
+          }
+          CoinCollectInfo.MergeFrom(other.CoinCollectInfo);
+          break;
+        case DetailOneofCase.BrickBreakerInfo:
+          if (BrickBreakerInfo == null) {
+            BrickBreakerInfo = new global::Weedwacker.Shared.Network.Proto.BrickBreakerDetailInfo();
+          }
+          BrickBreakerInfo.MergeFrom(other.BrickBreakerInfo);
+          break;
       }
 
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -3062,37 +3185,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            global::Weedwacker.Shared.Network.Proto.TrialAvatarActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.TrialAvatarActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.TrialAvatarInfo) {
-              subBuilder.MergeFrom(TrialAvatarInfo);
-            }
-            input.ReadMessage(subBuilder);
-            TrialAvatarInfo = subBuilder;
+          case 8: {
+            BeginTime = input.ReadUInt32();
             break;
           }
           case 18: {
-            watcherInfoList_.AddEntriesFrom(input, _repeated_watcherInfoList_codec);
-            break;
-          }
-          case 26:
-          case 24: {
-            expireCondList_.AddEntriesFrom(input, _repeated_expireCondList_codec);
-            break;
-          }
-          case 32: {
-            ActivityType = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            EndTime = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            IsFinished = input.ReadBool();
-            break;
-          }
-          case 58: {
             global::Weedwacker.Shared.Network.Proto.SeaLampActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.SeaLampActivityDetailInfo();
             if (detailCase_ == DetailOneofCase.SamLampInfo) {
               subBuilder.MergeFrom(SamLampInfo);
@@ -3101,20 +3198,37 @@ namespace Weedwacker.Shared.Network.Proto {
             SamLampInfo = subBuilder;
             break;
           }
+          case 24: {
+            Unk3300DMILOONBELH = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            global::Weedwacker.Shared.Network.Proto.TrialAvatarActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.TrialAvatarActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.TrialAvatarInfo) {
+              subBuilder.MergeFrom(TrialAvatarInfo);
+            }
+            input.ReadMessage(subBuilder);
+            TrialAvatarInfo = subBuilder;
+            break;
+          }
+          case 42:
+          case 40: {
+            unk3300HKKNIHNBHAE_.AddEntriesFrom(input, _repeated_unk3300HKKNIHNBHAE_codec);
+            break;
+          }
+          case 50: {
+            watcherInfoList_.AddEntriesFrom(input, _repeated_watcherInfoList_codec);
+            break;
+          }
+          case 56: {
+            ScheduleId = input.ReadUInt32();
+            break;
+          }
           case 64: {
-            BeginTime = input.ReadUInt32();
+            IsFinished = input.ReadBool();
             break;
           }
-          case 72: {
-            IsStarting = input.ReadBool();
-            break;
-          }
-          case 82:
-          case 80: {
-            meetCondList_.AddEntriesFrom(input, _repeated_meetCondList_codec);
-            break;
-          }
-          case 90: {
+          case 74: {
             global::Weedwacker.Shared.Network.Proto.SalesmanActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.SalesmanActivityDetailInfo();
             if (detailCase_ == DetailOneofCase.SalesmanInfo) {
               subBuilder.MergeFrom(SalesmanInfo);
@@ -3123,15 +3237,28 @@ namespace Weedwacker.Shared.Network.Proto {
             SalesmanInfo = subBuilder;
             break;
           }
+          case 80: {
+            EndTime = input.ReadUInt32();
+            break;
+          }
+          case 90:
+          case 88: {
+            unk3300BGNIBLKCPCA_.AddEntriesFrom(input, _repeated_unk3300BGNIBLKCPCA_codec);
+            break;
+          }
           case 96: {
-            ActivityId = input.ReadUInt32();
+            Unk3300MDBDPIBEGGH = input.ReadBool();
             break;
           }
           case 104: {
-            IsPlayOpenAnim = input.ReadBool();
+            ActivityId = input.ReadUInt32();
             break;
           }
-          case 114: {
+          case 112: {
+            Unk3300ICNJJKDHPCH = input.ReadBool();
+            break;
+          }
+          case 122: {
             global::Weedwacker.Shared.Network.Proto.CrucibleActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.CrucibleActivityDetailInfo();
             if (detailCase_ == DetailOneofCase.CrucibleInfo) {
               subBuilder.MergeFrom(CrucibleInfo);
@@ -3140,217 +3267,11 @@ namespace Weedwacker.Shared.Network.Proto {
             CrucibleInfo = subBuilder;
             break;
           }
-          case 120: {
-            ScheduleId = input.ReadUInt32();
-            break;
-          }
-          case 434: {
-            global::Weedwacker.Shared.Network.Proto.PlantFlowerActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.PlantFlowerActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.PlantFlowerInfo) {
-              subBuilder.MergeFrom(PlantFlowerInfo);
-            }
-            input.ReadMessage(subBuilder);
-            PlantFlowerInfo = subBuilder;
-            break;
-          }
-          case 816: {
-            IsBannerCleared = input.ReadBool();
-            break;
-          }
-          case 1250: {
-            global::Weedwacker.Shared.Network.Proto.MistTrialActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.MistTrialActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.MistTrialActivityInfo) {
-              subBuilder.MergeFrom(MistTrialActivityInfo);
-            }
-            input.ReadMessage(subBuilder);
-            MistTrialActivityInfo = subBuilder;
-            break;
-          }
-          case 1554: {
-            global::Weedwacker.Shared.Network.Proto.MichiaeMatsuriActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.MichiaeMatsuriActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.MichiaeMatsuriInfo) {
-              subBuilder.MergeFrom(MichiaeMatsuriInfo);
-            }
-            input.ReadMessage(subBuilder);
-            MichiaeMatsuriInfo = subBuilder;
-            break;
-          }
-          case 1618: {
-            global::Weedwacker.Shared.Network.Proto.ExpeditionActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.ExpeditionActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.ExpeditionInfo) {
-              subBuilder.MergeFrom(ExpeditionInfo);
-            }
-            input.ReadMessage(subBuilder);
-            ExpeditionInfo = subBuilder;
-            break;
-          }
-          case 1754: {
-            global::Weedwacker.Shared.Network.Proto.RoguelikeDungeonActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.RoguelikeDungeonActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.RoguelikeDungeonInfo) {
-              subBuilder.MergeFrom(RoguelikeDungeonInfo);
-            }
-            input.ReadMessage(subBuilder);
-            RoguelikeDungeonInfo = subBuilder;
-            break;
-          }
-          case 2626: {
-            global::Weedwacker.Shared.Network.Proto.PhotoActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.PhotoActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.PhotoInfo) {
-              subBuilder.MergeFrom(PhotoInfo);
-            }
-            input.ReadMessage(subBuilder);
-            PhotoInfo = subBuilder;
-            break;
-          }
-          case 2634:
-          case 2632: {
-            takenRewardList_.AddEntriesFrom(input, _repeated_takenRewardList_codec);
-            break;
-          }
-          case 2818: {
-            global::Weedwacker.Shared.Network.Proto.WindFieldDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.WindFieldDetailInfo();
-            if (detailCase_ == DetailOneofCase.WindFieldInfo) {
-              subBuilder.MergeFrom(WindFieldInfo);
-            }
-            input.ReadMessage(subBuilder);
-            WindFieldInfo = subBuilder;
-            break;
-          }
-          case 3130: {
-            global::Weedwacker.Shared.Network.Proto.EffigyActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.EffigyActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.EffigyInfo) {
-              subBuilder.MergeFrom(EffigyInfo);
-            }
-            input.ReadMessage(subBuilder);
-            EffigyInfo = subBuilder;
-            break;
-          }
-          case 3226: {
-            global::Weedwacker.Shared.Network.Proto.DigActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.DigActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.DigInfo) {
-              subBuilder.MergeFrom(DigInfo);
-            }
-            input.ReadMessage(subBuilder);
-            DigInfo = subBuilder;
-            break;
-          }
-          case 3418: {
-            global::Weedwacker.Shared.Network.Proto.HideAndSeekActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.HideAndSeekActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.HideAndSeekInfo) {
-              subBuilder.MergeFrom(HideAndSeekInfo);
-            }
-            input.ReadMessage(subBuilder);
-            HideAndSeekInfo = subBuilder;
-            break;
-          }
-          case 3562: {
-            global::Weedwacker.Shared.Network.Proto.VintageDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.VintageDetailInfo();
-            if (detailCase_ == DetailOneofCase.VintageInfo) {
-              subBuilder.MergeFrom(VintageInfo);
-            }
-            input.ReadMessage(subBuilder);
-            VintageInfo = subBuilder;
-            break;
-          }
-          case 3682: {
-            global::Weedwacker.Shared.Network.Proto.MusicGameActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.MusicGameActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.MusicGameInfo) {
-              subBuilder.MergeFrom(MusicGameInfo);
-            }
-            input.ReadMessage(subBuilder);
-            MusicGameInfo = subBuilder;
-            break;
-          }
-          case 3922: {
-            global::Weedwacker.Shared.Network.Proto.FungusFighterDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FungusFighterDetailInfo();
-            if (detailCase_ == DetailOneofCase.FungusFighterInfo) {
-              subBuilder.MergeFrom(FungusFighterInfo);
-            }
-            input.ReadMessage(subBuilder);
-            FungusFighterInfo = subBuilder;
-            break;
-          }
-          case 3930: {
-            global::Weedwacker.Shared.Network.Proto.HachiActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.HachiActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.HachiInfo) {
-              subBuilder.MergeFrom(HachiInfo);
-            }
-            input.ReadMessage(subBuilder);
-            HachiInfo = subBuilder;
-            break;
-          }
-          case 3954: {
-            global::Weedwacker.Shared.Network.Proto.SeaLampActivityInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.SeaLampActivityInfo();
-            if (detailCase_ == DetailOneofCase.SeaLampInfo) {
-              subBuilder.MergeFrom(SeaLampInfo);
-            }
-            input.ReadMessage(subBuilder);
-            SeaLampInfo = subBuilder;
-            break;
-          }
-          case 4458: {
-            global::Weedwacker.Shared.Network.Proto.AsterActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.AsterActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.AsterInfo) {
-              subBuilder.MergeFrom(AsterInfo);
-            }
-            input.ReadMessage(subBuilder);
-            AsterInfo = subBuilder;
-            break;
-          }
-          case 4736: {
-            FirstDayStartTime = input.ReadUInt32();
-            break;
-          }
-          case 4978: {
-            global::Weedwacker.Shared.Network.Proto.SummerTimeV2DetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.SummerTimeV2DetailInfo();
-            if (detailCase_ == DetailOneofCase.SummerTimeV2Info) {
-              subBuilder.MergeFrom(SummerTimeV2Info);
-            }
-            input.ReadMessage(subBuilder);
-            SummerTimeV2Info = subBuilder;
-            break;
-          }
-          case 5458: {
+          case 290: {
             activityCoinMap_.AddEntriesFrom(input, _map_activityCoinMap_codec);
             break;
           }
-          case 5626: {
-            global::Weedwacker.Shared.Network.Proto.UgcActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.UgcActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.UgcInfo) {
-              subBuilder.MergeFrom(UgcInfo);
-            }
-            input.ReadMessage(subBuilder);
-            UgcInfo = subBuilder;
-            break;
-          }
-          case 5778: {
-            global::Weedwacker.Shared.Network.Proto.GearActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.GearActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.GearInfo) {
-              subBuilder.MergeFrom(GearInfo);
-            }
-            input.ReadMessage(subBuilder);
-            GearInfo = subBuilder;
-            break;
-          }
-          case 6002: {
-            global::Weedwacker.Shared.Network.Proto.IrodoriActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.IrodoriActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.IrodoriInfo) {
-              subBuilder.MergeFrom(IrodoriInfo);
-            }
-            input.ReadMessage(subBuilder);
-            IrodoriInfo = subBuilder;
-            break;
-          }
-          case 6138: {
-            global::Weedwacker.Shared.Network.Proto.BounceConjuringActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.BounceConjuringActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.BounceConjuringInfo) {
-              subBuilder.MergeFrom(BounceConjuringInfo);
-            }
-            input.ReadMessage(subBuilder);
-            BounceConjuringInfo = subBuilder;
-            break;
-          }
-          case 6354: {
+          case 514: {
             global::Weedwacker.Shared.Network.Proto.BlitzRushActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.BlitzRushActivityDetailInfo();
             if (detailCase_ == DetailOneofCase.BlitzRushInfo) {
               subBuilder.MergeFrom(BlitzRushInfo);
@@ -3359,87 +3280,7 @@ namespace Weedwacker.Shared.Network.Proto {
             BlitzRushInfo = subBuilder;
             break;
           }
-          case 6498: {
-            global::Weedwacker.Shared.Network.Proto.RogueDiaryActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.RogueDiaryActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.RogueDiaryInfo) {
-              subBuilder.MergeFrom(RogueDiaryInfo);
-            }
-            input.ReadMessage(subBuilder);
-            RogueDiaryInfo = subBuilder;
-            break;
-          }
-          case 6514: {
-            global::Weedwacker.Shared.Network.Proto.LunaRiteDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.LunaRiteDetailInfo();
-            if (detailCase_ == DetailOneofCase.LunaRiteInfo) {
-              subBuilder.MergeFrom(LunaRiteInfo);
-            }
-            input.ReadMessage(subBuilder);
-            LunaRiteInfo = subBuilder;
-            break;
-          }
-          case 6602: {
-            global::Weedwacker.Shared.Network.Proto.GachaActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.GachaActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.GachaInfo) {
-              subBuilder.MergeFrom(GachaInfo);
-            }
-            input.ReadMessage(subBuilder);
-            GachaInfo = subBuilder;
-            break;
-          }
-          case 6858: {
-            global::Weedwacker.Shared.Network.Proto.FleurFairActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FleurFairActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.FleurFairInfo) {
-              subBuilder.MergeFrom(FleurFairInfo);
-            }
-            input.ReadMessage(subBuilder);
-            FleurFairInfo = subBuilder;
-            break;
-          }
-          case 6874: {
-            global::Weedwacker.Shared.Network.Proto.ArenaChallengeActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.ArenaChallengeActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.ArenaChallengeInfo) {
-              subBuilder.MergeFrom(ArenaChallengeInfo);
-            }
-            input.ReadMessage(subBuilder);
-            ArenaChallengeInfo = subBuilder;
-            break;
-          }
-          case 6914: {
-            activityPushTipsDataList_.AddEntriesFrom(input, _repeated_activityPushTipsDataList_codec);
-            break;
-          }
-          case 7352: {
-            IsHidden = input.ReadBool();
-            break;
-          }
-          case 7418: {
-            global::Weedwacker.Shared.Network.Proto.ChessActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.ChessActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.ChessInfo) {
-              subBuilder.MergeFrom(ChessInfo);
-            }
-            input.ReadMessage(subBuilder);
-            ChessInfo = subBuilder;
-            break;
-          }
-          case 7730: {
-            global::Weedwacker.Shared.Network.Proto.TreasureSeelieActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.TreasureSeelieActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.TreasureSeelieInfo) {
-              subBuilder.MergeFrom(TreasureSeelieInfo);
-            }
-            input.ReadMessage(subBuilder);
-            TreasureSeelieInfo = subBuilder;
-            break;
-          }
-          case 8122: {
-            global::Weedwacker.Shared.Network.Proto.ChannelerSlabActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.ChannelerSlabInfo) {
-              subBuilder.MergeFrom(ChannelerSlabInfo);
-            }
-            input.ReadMessage(subBuilder);
-            ChannelerSlabInfo = subBuilder;
-            break;
-          }
-          case 8202: {
+          case 1866: {
             global::Weedwacker.Shared.Network.Proto.EffigyChallengeV2DetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.EffigyChallengeV2DetailInfo();
             if (detailCase_ == DetailOneofCase.EffigyChallengeInfo) {
               subBuilder.MergeFrom(EffigyChallengeInfo);
@@ -3448,217 +3289,7 @@ namespace Weedwacker.Shared.Network.Proto {
             EffigyChallengeInfo = subBuilder;
             break;
           }
-          case 8346: {
-            global::Weedwacker.Shared.Network.Proto.InstableSprayDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.InstableSprayDetailInfo();
-            if (detailCase_ == DetailOneofCase.InstableSprayInfo) {
-              subBuilder.MergeFrom(InstableSprayInfo);
-            }
-            input.ReadMessage(subBuilder);
-            InstableSprayInfo = subBuilder;
-            break;
-          }
-          case 8626: {
-            global::Weedwacker.Shared.Network.Proto.RockBoardExploreDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.RockBoardExploreDetailInfo();
-            if (detailCase_ == DetailOneofCase.RockBoardExploreInfo) {
-              subBuilder.MergeFrom(RockBoardExploreInfo);
-            }
-            input.ReadMessage(subBuilder);
-            RockBoardExploreInfo = subBuilder;
-            break;
-          }
-          case 8666: {
-            global::Weedwacker.Shared.Network.Proto.WinterCampActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.WinterCampActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.WinterCampInfo) {
-              subBuilder.MergeFrom(WinterCampInfo);
-            }
-            input.ReadMessage(subBuilder);
-            WinterCampInfo = subBuilder;
-            break;
-          }
-          case 8738: {
-            global::Weedwacker.Shared.Network.Proto.DeliveryActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.DeliveryActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.DeliveryInfo) {
-              subBuilder.MergeFrom(DeliveryInfo);
-            }
-            input.ReadMessage(subBuilder);
-            DeliveryInfo = subBuilder;
-            break;
-          }
-          case 8906: {
-            global::Weedwacker.Shared.Network.Proto.EchoShellDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.EchoShellDetailInfo();
-            if (detailCase_ == DetailOneofCase.EchoShellInfo) {
-              subBuilder.MergeFrom(EchoShellInfo);
-            }
-            input.ReadMessage(subBuilder);
-            EchoShellInfo = subBuilder;
-            break;
-          }
-          case 8914: {
-            global::Weedwacker.Shared.Network.Proto.TreasureMapActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.TreasureMapActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.TreasureMapInfo) {
-              subBuilder.MergeFrom(TreasureMapInfo);
-            }
-            input.ReadMessage(subBuilder);
-            TreasureMapInfo = subBuilder;
-            break;
-          }
-          case 9258: {
-            global::Weedwacker.Shared.Network.Proto.MuqadasPotionActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.MuqadasPotionActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.MuqadasPotionInfo) {
-              subBuilder.MergeFrom(MuqadasPotionInfo);
-            }
-            input.ReadMessage(subBuilder);
-            MuqadasPotionInfo = subBuilder;
-            break;
-          }
-          case 9810: {
-            global::Weedwacker.Shared.Network.Proto.CrystalLinkActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.CrystalLinkActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.CrystalLinkInfo) {
-              subBuilder.MergeFrom(CrystalLinkInfo);
-            }
-            input.ReadMessage(subBuilder);
-            CrystalLinkInfo = subBuilder;
-            break;
-          }
-          case 10090: {
-            global::Weedwacker.Shared.Network.Proto.SumoActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.SumoActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.SumoInfo) {
-              subBuilder.MergeFrom(SumoInfo);
-            }
-            input.ReadMessage(subBuilder);
-            SumoInfo = subBuilder;
-            break;
-          }
-          case 10186: {
-            global::Weedwacker.Shared.Network.Proto.PotionActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.PotionActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.PotionInfo) {
-              subBuilder.MergeFrom(PotionInfo);
-            }
-            input.ReadMessage(subBuilder);
-            PotionInfo = subBuilder;
-            break;
-          }
-          case 10320: {
-            SelectedAvatarRewardId = input.ReadUInt32();
-            break;
-          }
-          case 10466: {
-            global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.LuminanceStoneChallengeInfo) {
-              subBuilder.MergeFrom(LuminanceStoneChallengeInfo);
-            }
-            input.ReadMessage(subBuilder);
-            LuminanceStoneChallengeInfo = subBuilder;
-            break;
-          }
-          case 10922: {
-            global::Weedwacker.Shared.Network.Proto.FlightActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FlightActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.FlightInfo) {
-              subBuilder.MergeFrom(FlightInfo);
-            }
-            input.ReadMessage(subBuilder);
-            FlightInfo = subBuilder;
-            break;
-          }
-          case 10978: {
-            global::Weedwacker.Shared.Network.Proto.SummerTimeDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.SummerTimeDetailInfo();
-            if (detailCase_ == DetailOneofCase.SummerTimeInfo) {
-              subBuilder.MergeFrom(SummerTimeInfo);
-            }
-            input.ReadMessage(subBuilder);
-            SummerTimeInfo = subBuilder;
-            break;
-          }
-          case 11194: {
-            wishGiftNumMap_.AddEntriesFrom(input, _map_wishGiftNumMap_codec);
-            break;
-          }
-          case 11290: {
-            global::Weedwacker.Shared.Network.Proto.FindHilichurlDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FindHilichurlDetailInfo();
-            if (detailCase_ == DetailOneofCase.FindHilichurlInfo) {
-              subBuilder.MergeFrom(FindHilichurlInfo);
-            }
-            input.ReadMessage(subBuilder);
-            FindHilichurlInfo = subBuilder;
-            break;
-          }
-          case 11592: {
-            IsQuickOpen = input.ReadBool();
-            break;
-          }
-          case 11970: {
-            global::Weedwacker.Shared.Network.Proto.CharAmusementDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.CharAmusementDetailInfo();
-            if (detailCase_ == DetailOneofCase.CharAmusementInfo) {
-              subBuilder.MergeFrom(CharAmusementInfo);
-            }
-            input.ReadMessage(subBuilder);
-            CharAmusementInfo = subBuilder;
-            break;
-          }
-          case 12706: {
-            global::Weedwacker.Shared.Network.Proto.MoonfinTrialActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.MoonfinTrialActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.MoonfinTrialInfo) {
-              subBuilder.MergeFrom(MoonfinTrialInfo);
-            }
-            input.ReadMessage(subBuilder);
-            MoonfinTrialInfo = subBuilder;
-            break;
-          }
-          case 13402: {
-            global::Weedwacker.Shared.Network.Proto.WaterSpiritActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.WaterSpiritActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.WaterSpiritInfo) {
-              subBuilder.MergeFrom(WaterSpiritInfo);
-            }
-            input.ReadMessage(subBuilder);
-            WaterSpiritInfo = subBuilder;
-            break;
-          }
-          case 13802: {
-            global::Weedwacker.Shared.Network.Proto.BartenderActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.BartenderActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.BartenderInfo) {
-              subBuilder.MergeFrom(BartenderInfo);
-            }
-            input.ReadMessage(subBuilder);
-            BartenderInfo = subBuilder;
-            break;
-          }
-          case 13818: {
-            global::Weedwacker.Shared.Network.Proto.DragonSpineActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.DragonSpineActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.DragonSpineInfo) {
-              subBuilder.MergeFrom(DragonSpineInfo);
-            }
-            input.ReadMessage(subBuilder);
-            DragonSpineInfo = subBuilder;
-            break;
-          }
-          case 14370: {
-            global::Weedwacker.Shared.Network.Proto.TanukiTravelActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.TanukiTravelActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.TanukiTravelActivityInfo) {
-              subBuilder.MergeFrom(TanukiTravelActivityInfo);
-            }
-            input.ReadMessage(subBuilder);
-            TanukiTravelActivityInfo = subBuilder;
-            break;
-          }
-          case 14738: {
-            global::Weedwacker.Shared.Network.Proto.BuoyantCombatDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.BuoyantCombatDetailInfo();
-            if (detailCase_ == DetailOneofCase.BuoyantCombatInfo) {
-              subBuilder.MergeFrom(BuoyantCombatInfo);
-            }
-            input.ReadMessage(subBuilder);
-            BuoyantCombatInfo = subBuilder;
-            break;
-          }
-          case 14954: {
-            global::Weedwacker.Shared.Network.Proto.BlessingActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.BlessingActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.BlessingInfo) {
-              subBuilder.MergeFrom(BlessingInfo);
-            }
-            input.ReadMessage(subBuilder);
-            BlessingInfo = subBuilder;
-            break;
-          }
-          case 15010: {
+          case 1898: {
             global::Weedwacker.Shared.Network.Proto.LanternRiteActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.LanternRiteActivityDetailInfo();
             if (detailCase_ == DetailOneofCase.LanternRiteActivityInfo) {
               subBuilder.MergeFrom(LanternRiteActivityInfo);
@@ -3667,7 +3298,150 @@ namespace Weedwacker.Shared.Network.Proto {
             LanternRiteActivityInfo = subBuilder;
             break;
           }
-          case 15082: {
+          case 1978: {
+            global::Weedwacker.Shared.Network.Proto.SeaLampActivityInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.SeaLampActivityInfo();
+            if (detailCase_ == DetailOneofCase.SeaLampInfo) {
+              subBuilder.MergeFrom(SeaLampInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SeaLampInfo = subBuilder;
+            break;
+          }
+          case 2880: {
+            Unk3300MJNPGEKLOCG = input.ReadBool();
+            break;
+          }
+          case 3026: {
+            global::Weedwacker.Shared.Network.Proto.FindHilichurlDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FindHilichurlDetailInfo();
+            if (detailCase_ == DetailOneofCase.FindHilichurlInfo) {
+              subBuilder.MergeFrom(FindHilichurlInfo);
+            }
+            input.ReadMessage(subBuilder);
+            FindHilichurlInfo = subBuilder;
+            break;
+          }
+          case 3290: {
+            global::Weedwacker.Shared.Network.Proto.SummerTimeV2DetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.SummerTimeV2DetailInfo();
+            if (detailCase_ == DetailOneofCase.SummerTimeV2Info) {
+              subBuilder.MergeFrom(SummerTimeV2Info);
+            }
+            input.ReadMessage(subBuilder);
+            SummerTimeV2Info = subBuilder;
+            break;
+          }
+          case 3458: {
+            global::Weedwacker.Shared.Network.Proto.MistTrialActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.MistTrialActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.MistTrialActivityInfo) {
+              subBuilder.MergeFrom(MistTrialActivityInfo);
+            }
+            input.ReadMessage(subBuilder);
+            MistTrialActivityInfo = subBuilder;
+            break;
+          }
+          case 3554: {
+            global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.LuminanceStoneChallengeInfo) {
+              subBuilder.MergeFrom(LuminanceStoneChallengeInfo);
+            }
+            input.ReadMessage(subBuilder);
+            LuminanceStoneChallengeInfo = subBuilder;
+            break;
+          }
+          case 3746: {
+            global::Weedwacker.Shared.Network.Proto.WindFieldDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.WindFieldDetailInfo();
+            if (detailCase_ == DetailOneofCase.WindFieldInfo) {
+              subBuilder.MergeFrom(WindFieldInfo);
+            }
+            input.ReadMessage(subBuilder);
+            WindFieldInfo = subBuilder;
+            break;
+          }
+          case 4042: {
+            global::Weedwacker.Shared.Network.Proto.SumoActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.SumoActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.SumoInfo) {
+              subBuilder.MergeFrom(SumoInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SumoInfo = subBuilder;
+            break;
+          }
+          case 4090: {
+            global::Weedwacker.Shared.Network.Proto.HachiActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.HachiActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.HachiInfo) {
+              subBuilder.MergeFrom(HachiInfo);
+            }
+            input.ReadMessage(subBuilder);
+            HachiInfo = subBuilder;
+            break;
+          }
+          case 4306: {
+            global::Weedwacker.Shared.Network.Proto.ArenaChallengeActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.ArenaChallengeActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.ArenaChallengeInfo) {
+              subBuilder.MergeFrom(ArenaChallengeInfo);
+            }
+            input.ReadMessage(subBuilder);
+            ArenaChallengeInfo = subBuilder;
+            break;
+          }
+          case 4410: {
+            global::Weedwacker.Shared.Network.Proto.BartenderActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.BartenderActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.BartenderInfo) {
+              subBuilder.MergeFrom(BartenderInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BartenderInfo = subBuilder;
+            break;
+          }
+          case 4482: {
+            global::Weedwacker.Shared.Network.Proto.RogueDiaryActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.RogueDiaryActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.RogueDiaryInfo) {
+              subBuilder.MergeFrom(RogueDiaryInfo);
+            }
+            input.ReadMessage(subBuilder);
+            RogueDiaryInfo = subBuilder;
+            break;
+          }
+          case 4970: {
+            global::Weedwacker.Shared.Network.Proto.CharAmusementDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.CharAmusementDetailInfo();
+            if (detailCase_ == DetailOneofCase.CharAmusementInfo) {
+              subBuilder.MergeFrom(CharAmusementInfo);
+            }
+            input.ReadMessage(subBuilder);
+            CharAmusementInfo = subBuilder;
+            break;
+          }
+          case 5082: {
+            global::Weedwacker.Shared.Network.Proto.WaterSpiritActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.WaterSpiritActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.WaterSpiritInfo) {
+              subBuilder.MergeFrom(WaterSpiritInfo);
+            }
+            input.ReadMessage(subBuilder);
+            WaterSpiritInfo = subBuilder;
+            break;
+          }
+          case 5490: {
+            global::Weedwacker.Shared.Network.Proto.BuoyantCombatDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.BuoyantCombatDetailInfo();
+            if (detailCase_ == DetailOneofCase.BuoyantCombatInfo) {
+              subBuilder.MergeFrom(BuoyantCombatInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BuoyantCombatInfo = subBuilder;
+            break;
+          }
+          case 5576: {
+            Unk3300GCEAKEMMJEA = input.ReadUInt32();
+            break;
+          }
+          case 5594: {
+            global::Weedwacker.Shared.Network.Proto.WinterCampActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.WinterCampActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.WinterCampInfo) {
+              subBuilder.MergeFrom(WinterCampInfo);
+            }
+            input.ReadMessage(subBuilder);
+            WinterCampInfo = subBuilder;
+            break;
+          }
+          case 5922: {
             global::Weedwacker.Shared.Network.Proto.IslandPartyDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.IslandPartyDetailInfo();
             if (detailCase_ == DetailOneofCase.IslandPartyInfo) {
               subBuilder.MergeFrom(IslandPartyInfo);
@@ -3676,7 +3450,20 @@ namespace Weedwacker.Shared.Network.Proto {
             IslandPartyInfo = subBuilder;
             break;
           }
-          case 15130: {
+          case 6130: {
+            global::Weedwacker.Shared.Network.Proto.MoonfinTrialActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.MoonfinTrialActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.MoonfinTrialInfo) {
+              subBuilder.MergeFrom(MoonfinTrialInfo);
+            }
+            input.ReadMessage(subBuilder);
+            MoonfinTrialInfo = subBuilder;
+            break;
+          }
+          case 6288: {
+            FirstDayStartTime = input.ReadUInt32();
+            break;
+          }
+          case 6314: {
             global::Weedwacker.Shared.Network.Proto.SpiceActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.SpiceActivityDetailInfo();
             if (detailCase_ == DetailOneofCase.SpiceInfo) {
               subBuilder.MergeFrom(SpiceInfo);
@@ -3685,11 +3472,328 @@ namespace Weedwacker.Shared.Network.Proto {
             SpiceInfo = subBuilder;
             break;
           }
-          case 15248: {
+          case 6498: {
+            global::Weedwacker.Shared.Network.Proto.CrystalLinkActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.CrystalLinkActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.CrystalLinkInfo) {
+              subBuilder.MergeFrom(CrystalLinkInfo);
+            }
+            input.ReadMessage(subBuilder);
+            CrystalLinkInfo = subBuilder;
+            break;
+          }
+          case 6714: {
+            global::Weedwacker.Shared.Network.Proto.HideAndSeekActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.HideAndSeekActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.HideAndSeekInfo) {
+              subBuilder.MergeFrom(HideAndSeekInfo);
+            }
+            input.ReadMessage(subBuilder);
+            HideAndSeekInfo = subBuilder;
+            break;
+          }
+          case 6770: {
+            global::Weedwacker.Shared.Network.Proto.ChannelerSlabActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.ChannelerSlabInfo) {
+              subBuilder.MergeFrom(ChannelerSlabInfo);
+            }
+            input.ReadMessage(subBuilder);
+            ChannelerSlabInfo = subBuilder;
+            break;
+          }
+          case 7378: {
+            global::Weedwacker.Shared.Network.Proto.BounceConjuringActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.BounceConjuringActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.BounceConjuringInfo) {
+              subBuilder.MergeFrom(BounceConjuringInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BounceConjuringInfo = subBuilder;
+            break;
+          }
+          case 7514: {
+            wishGiftNumMap_.AddEntriesFrom(input, _map_wishGiftNumMap_codec);
+            break;
+          }
+          case 7762: {
+            global::Weedwacker.Shared.Network.Proto.RoguelikeDungeonActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.RoguelikeDungeonActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.RoguelikeDungeonInfo) {
+              subBuilder.MergeFrom(RoguelikeDungeonInfo);
+            }
+            input.ReadMessage(subBuilder);
+            RoguelikeDungeonInfo = subBuilder;
+            break;
+          }
+          case 8050: {
+            global::Weedwacker.Shared.Network.Proto.ChessActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.ChessActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.ChessInfo) {
+              subBuilder.MergeFrom(ChessInfo);
+            }
+            input.ReadMessage(subBuilder);
+            ChessInfo = subBuilder;
+            break;
+          }
+          case 8258: {
+            global::Weedwacker.Shared.Network.Proto.TreasureSeelieActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.TreasureSeelieActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.TreasureSeelieInfo) {
+              subBuilder.MergeFrom(TreasureSeelieInfo);
+            }
+            input.ReadMessage(subBuilder);
+            TreasureSeelieInfo = subBuilder;
+            break;
+          }
+          case 8450: {
+            global::Weedwacker.Shared.Network.Proto.IrodoriActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.IrodoriActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.IrodoriInfo) {
+              subBuilder.MergeFrom(IrodoriInfo);
+            }
+            input.ReadMessage(subBuilder);
+            IrodoriInfo = subBuilder;
+            break;
+          }
+          case 9130: {
+            global::Weedwacker.Shared.Network.Proto.DeliveryActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.DeliveryActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.DeliveryInfo) {
+              subBuilder.MergeFrom(DeliveryInfo);
+            }
+            input.ReadMessage(subBuilder);
+            DeliveryInfo = subBuilder;
+            break;
+          }
+          case 9162: {
+            global::Weedwacker.Shared.Network.Proto.InstableSprayDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.InstableSprayDetailInfo();
+            if (detailCase_ == DetailOneofCase.InstableSprayInfo) {
+              subBuilder.MergeFrom(InstableSprayInfo);
+            }
+            input.ReadMessage(subBuilder);
+            InstableSprayInfo = subBuilder;
+            break;
+          }
+          case 9298: {
+            global::Weedwacker.Shared.Network.Proto.EchoShellDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.EchoShellDetailInfo();
+            if (detailCase_ == DetailOneofCase.EchoShellInfo) {
+              subBuilder.MergeFrom(EchoShellInfo);
+            }
+            input.ReadMessage(subBuilder);
+            EchoShellInfo = subBuilder;
+            break;
+          }
+          case 9458: {
+            global::Weedwacker.Shared.Network.Proto.UgcActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.UgcActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.UgcInfo) {
+              subBuilder.MergeFrom(UgcInfo);
+            }
+            input.ReadMessage(subBuilder);
+            UgcInfo = subBuilder;
+            break;
+          }
+          case 10122: {
+            global::Weedwacker.Shared.Network.Proto.RockBoardExploreDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.RockBoardExploreDetailInfo();
+            if (detailCase_ == DetailOneofCase.RockBoardExploreInfo) {
+              subBuilder.MergeFrom(RockBoardExploreInfo);
+            }
+            input.ReadMessage(subBuilder);
+            RockBoardExploreInfo = subBuilder;
+            break;
+          }
+          case 10144: {
             CurScore = input.ReadUInt32();
             break;
           }
-          case 15290: {
+          case 10194: {
+            global::Weedwacker.Shared.Network.Proto.PlantFlowerActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.PlantFlowerActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.PlantFlowerInfo) {
+              subBuilder.MergeFrom(PlantFlowerInfo);
+            }
+            input.ReadMessage(subBuilder);
+            PlantFlowerInfo = subBuilder;
+            break;
+          }
+          case 10378: {
+            global::Weedwacker.Shared.Network.Proto.GachaActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.GachaActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.GachaInfo) {
+              subBuilder.MergeFrom(GachaInfo);
+            }
+            input.ReadMessage(subBuilder);
+            GachaInfo = subBuilder;
+            break;
+          }
+          case 10466: {
+            global::Weedwacker.Shared.Network.Proto.VintageActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.VintageActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.VintageInfo) {
+              subBuilder.MergeFrom(VintageInfo);
+            }
+            input.ReadMessage(subBuilder);
+            VintageInfo = subBuilder;
+            break;
+          }
+          case 10482: {
+            global::Weedwacker.Shared.Network.Proto.DragonSpineActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.DragonSpineActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.DragonSpineInfo) {
+              subBuilder.MergeFrom(DragonSpineInfo);
+            }
+            input.ReadMessage(subBuilder);
+            DragonSpineInfo = subBuilder;
+            break;
+          }
+          case 10786: {
+            global::Weedwacker.Shared.Network.Proto.TanukiTravelActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.TanukiTravelActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.TanukiTravelActivityInfo) {
+              subBuilder.MergeFrom(TanukiTravelActivityInfo);
+            }
+            input.ReadMessage(subBuilder);
+            TanukiTravelActivityInfo = subBuilder;
+            break;
+          }
+          case 10994: {
+            global::Weedwacker.Shared.Network.Proto.EffigyActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.EffigyActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.EffigyInfo) {
+              subBuilder.MergeFrom(EffigyInfo);
+            }
+            input.ReadMessage(subBuilder);
+            EffigyInfo = subBuilder;
+            break;
+          }
+          case 11000: {
+            Unk3300CBCEHLJJOGI = input.ReadBool();
+            break;
+          }
+          case 11578: {
+            global::Weedwacker.Shared.Network.Proto.FleurFairActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FleurFairActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.FleurFairInfo) {
+              subBuilder.MergeFrom(FleurFairInfo);
+            }
+            input.ReadMessage(subBuilder);
+            FleurFairInfo = subBuilder;
+            break;
+          }
+          case 11858: {
+            global::Weedwacker.Shared.Network.Proto.GearActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.GearActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.GearInfo) {
+              subBuilder.MergeFrom(GearInfo);
+            }
+            input.ReadMessage(subBuilder);
+            GearInfo = subBuilder;
+            break;
+          }
+          case 11888: {
+            Unk3300ABJKLALKLDG = input.ReadBool();
+            break;
+          }
+          case 12178: {
+            global::Weedwacker.Shared.Network.Proto.BrickBreakerDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.BrickBreakerDetailInfo();
+            if (detailCase_ == DetailOneofCase.BrickBreakerInfo) {
+              subBuilder.MergeFrom(BrickBreakerInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BrickBreakerInfo = subBuilder;
+            break;
+          }
+          case 12362: {
+            global::Weedwacker.Shared.Network.Proto.LunaRiteDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.LunaRiteDetailInfo();
+            if (detailCase_ == DetailOneofCase.LunaRiteInfo) {
+              subBuilder.MergeFrom(LunaRiteInfo);
+            }
+            input.ReadMessage(subBuilder);
+            LunaRiteInfo = subBuilder;
+            break;
+          }
+          case 12538: {
+            global::Weedwacker.Shared.Network.Proto.PotionActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.PotionActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.PotionInfo) {
+              subBuilder.MergeFrom(PotionInfo);
+            }
+            input.ReadMessage(subBuilder);
+            PotionInfo = subBuilder;
+            break;
+          }
+          case 13160: {
+            Unk3300NEPKLLBJFKK = input.ReadBool();
+            break;
+          }
+          case 13298: {
+            global::Weedwacker.Shared.Network.Proto.MuqadasPotionActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.MuqadasPotionActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.MuqadasPotionInfo) {
+              subBuilder.MergeFrom(MuqadasPotionInfo);
+            }
+            input.ReadMessage(subBuilder);
+            MuqadasPotionInfo = subBuilder;
+            break;
+          }
+          case 14018: {
+            global::Weedwacker.Shared.Network.Proto.ExpeditionActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.ExpeditionActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.ExpeditionInfo) {
+              subBuilder.MergeFrom(ExpeditionInfo);
+            }
+            input.ReadMessage(subBuilder);
+            ExpeditionInfo = subBuilder;
+            break;
+          }
+          case 14058: {
+            global::Weedwacker.Shared.Network.Proto.FungusFighterDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FungusFighterDetailInfo();
+            if (detailCase_ == DetailOneofCase.FungusFighterInfo) {
+              subBuilder.MergeFrom(FungusFighterInfo);
+            }
+            input.ReadMessage(subBuilder);
+            FungusFighterInfo = subBuilder;
+            break;
+          }
+          case 14578: {
+            global::Weedwacker.Shared.Network.Proto.PhotoActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.PhotoActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.PhotoInfo) {
+              subBuilder.MergeFrom(PhotoInfo);
+            }
+            input.ReadMessage(subBuilder);
+            PhotoInfo = subBuilder;
+            break;
+          }
+          case 14714: {
+            global::Weedwacker.Shared.Network.Proto.MichiaeMatsuriActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.MichiaeMatsuriActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.MichiaeMatsuriInfo) {
+              subBuilder.MergeFrom(MichiaeMatsuriInfo);
+            }
+            input.ReadMessage(subBuilder);
+            MichiaeMatsuriInfo = subBuilder;
+            break;
+          }
+          case 14898: {
+            global::Weedwacker.Shared.Network.Proto.DigActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.DigActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.DigInfo) {
+              subBuilder.MergeFrom(DigInfo);
+            }
+            input.ReadMessage(subBuilder);
+            DigInfo = subBuilder;
+            break;
+          }
+          case 14938: {
+            activityPushTipsDataList_.AddEntriesFrom(input, _repeated_activityPushTipsDataList_codec);
+            break;
+          }
+          case 14960: {
+            Unk3300JAEALAIOOID = input.ReadUInt32();
+            break;
+          }
+          case 15114:
+          case 15112: {
+            takenRewardList_.AddEntriesFrom(input, _repeated_takenRewardList_codec);
+            break;
+          }
+          case 15282: {
+            global::Weedwacker.Shared.Network.Proto.SummerTimeDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.SummerTimeDetailInfo();
+            if (detailCase_ == DetailOneofCase.SummerTimeInfo) {
+              subBuilder.MergeFrom(SummerTimeInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SummerTimeInfo = subBuilder;
+            break;
+          }
+          case 15402: {
+            global::Weedwacker.Shared.Network.Proto.TreasureMapActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.TreasureMapActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.TreasureMapInfo) {
+              subBuilder.MergeFrom(TreasureMapInfo);
+            }
+            input.ReadMessage(subBuilder);
+            TreasureMapInfo = subBuilder;
+            break;
+          }
+          case 15426: {
             global::Weedwacker.Shared.Network.Proto.GravenInnocenceDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.GravenInnocenceDetailInfo();
             if (detailCase_ == DetailOneofCase.GravenInnocenceInfo) {
               subBuilder.MergeFrom(GravenInnocenceInfo);
@@ -3698,12 +3802,49 @@ namespace Weedwacker.Shared.Network.Proto {
             GravenInnocenceInfo = subBuilder;
             break;
           }
-          case 15664: {
-            ScoreLimit = input.ReadUInt32();
+          case 15698: {
+            global::Weedwacker.Shared.Network.Proto.BlessingActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.BlessingActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.BlessingInfo) {
+              subBuilder.MergeFrom(BlessingInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BlessingInfo = subBuilder;
             break;
           }
-          case 15704: {
-            IsCommonContentClosed = input.ReadBool();
+          case 15818: {
+            global::Weedwacker.Shared.Network.Proto.AsterActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.AsterActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.AsterInfo) {
+              subBuilder.MergeFrom(AsterInfo);
+            }
+            input.ReadMessage(subBuilder);
+            AsterInfo = subBuilder;
+            break;
+          }
+          case 15914: {
+            global::Weedwacker.Shared.Network.Proto.MusicGameActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.MusicGameActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.MusicGameInfo) {
+              subBuilder.MergeFrom(MusicGameInfo);
+            }
+            input.ReadMessage(subBuilder);
+            MusicGameInfo = subBuilder;
+            break;
+          }
+          case 16018: {
+            global::Weedwacker.Shared.Network.Proto.CoinCollectDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.CoinCollectDetailInfo();
+            if (detailCase_ == DetailOneofCase.CoinCollectInfo) {
+              subBuilder.MergeFrom(CoinCollectInfo);
+            }
+            input.ReadMessage(subBuilder);
+            CoinCollectInfo = subBuilder;
+            break;
+          }
+          case 16090: {
+            global::Weedwacker.Shared.Network.Proto.FlightActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FlightActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.FlightInfo) {
+              subBuilder.MergeFrom(FlightInfo);
+            }
+            input.ReadMessage(subBuilder);
+            FlightInfo = subBuilder;
             break;
           }
         }
@@ -3721,37 +3862,11 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            global::Weedwacker.Shared.Network.Proto.TrialAvatarActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.TrialAvatarActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.TrialAvatarInfo) {
-              subBuilder.MergeFrom(TrialAvatarInfo);
-            }
-            input.ReadMessage(subBuilder);
-            TrialAvatarInfo = subBuilder;
+          case 8: {
+            BeginTime = input.ReadUInt32();
             break;
           }
           case 18: {
-            watcherInfoList_.AddEntriesFrom(ref input, _repeated_watcherInfoList_codec);
-            break;
-          }
-          case 26:
-          case 24: {
-            expireCondList_.AddEntriesFrom(ref input, _repeated_expireCondList_codec);
-            break;
-          }
-          case 32: {
-            ActivityType = input.ReadUInt32();
-            break;
-          }
-          case 40: {
-            EndTime = input.ReadUInt32();
-            break;
-          }
-          case 48: {
-            IsFinished = input.ReadBool();
-            break;
-          }
-          case 58: {
             global::Weedwacker.Shared.Network.Proto.SeaLampActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.SeaLampActivityDetailInfo();
             if (detailCase_ == DetailOneofCase.SamLampInfo) {
               subBuilder.MergeFrom(SamLampInfo);
@@ -3760,20 +3875,37 @@ namespace Weedwacker.Shared.Network.Proto {
             SamLampInfo = subBuilder;
             break;
           }
+          case 24: {
+            Unk3300DMILOONBELH = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            global::Weedwacker.Shared.Network.Proto.TrialAvatarActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.TrialAvatarActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.TrialAvatarInfo) {
+              subBuilder.MergeFrom(TrialAvatarInfo);
+            }
+            input.ReadMessage(subBuilder);
+            TrialAvatarInfo = subBuilder;
+            break;
+          }
+          case 42:
+          case 40: {
+            unk3300HKKNIHNBHAE_.AddEntriesFrom(ref input, _repeated_unk3300HKKNIHNBHAE_codec);
+            break;
+          }
+          case 50: {
+            watcherInfoList_.AddEntriesFrom(ref input, _repeated_watcherInfoList_codec);
+            break;
+          }
+          case 56: {
+            ScheduleId = input.ReadUInt32();
+            break;
+          }
           case 64: {
-            BeginTime = input.ReadUInt32();
+            IsFinished = input.ReadBool();
             break;
           }
-          case 72: {
-            IsStarting = input.ReadBool();
-            break;
-          }
-          case 82:
-          case 80: {
-            meetCondList_.AddEntriesFrom(ref input, _repeated_meetCondList_codec);
-            break;
-          }
-          case 90: {
+          case 74: {
             global::Weedwacker.Shared.Network.Proto.SalesmanActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.SalesmanActivityDetailInfo();
             if (detailCase_ == DetailOneofCase.SalesmanInfo) {
               subBuilder.MergeFrom(SalesmanInfo);
@@ -3782,15 +3914,28 @@ namespace Weedwacker.Shared.Network.Proto {
             SalesmanInfo = subBuilder;
             break;
           }
+          case 80: {
+            EndTime = input.ReadUInt32();
+            break;
+          }
+          case 90:
+          case 88: {
+            unk3300BGNIBLKCPCA_.AddEntriesFrom(ref input, _repeated_unk3300BGNIBLKCPCA_codec);
+            break;
+          }
           case 96: {
-            ActivityId = input.ReadUInt32();
+            Unk3300MDBDPIBEGGH = input.ReadBool();
             break;
           }
           case 104: {
-            IsPlayOpenAnim = input.ReadBool();
+            ActivityId = input.ReadUInt32();
             break;
           }
-          case 114: {
+          case 112: {
+            Unk3300ICNJJKDHPCH = input.ReadBool();
+            break;
+          }
+          case 122: {
             global::Weedwacker.Shared.Network.Proto.CrucibleActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.CrucibleActivityDetailInfo();
             if (detailCase_ == DetailOneofCase.CrucibleInfo) {
               subBuilder.MergeFrom(CrucibleInfo);
@@ -3799,217 +3944,11 @@ namespace Weedwacker.Shared.Network.Proto {
             CrucibleInfo = subBuilder;
             break;
           }
-          case 120: {
-            ScheduleId = input.ReadUInt32();
-            break;
-          }
-          case 434: {
-            global::Weedwacker.Shared.Network.Proto.PlantFlowerActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.PlantFlowerActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.PlantFlowerInfo) {
-              subBuilder.MergeFrom(PlantFlowerInfo);
-            }
-            input.ReadMessage(subBuilder);
-            PlantFlowerInfo = subBuilder;
-            break;
-          }
-          case 816: {
-            IsBannerCleared = input.ReadBool();
-            break;
-          }
-          case 1250: {
-            global::Weedwacker.Shared.Network.Proto.MistTrialActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.MistTrialActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.MistTrialActivityInfo) {
-              subBuilder.MergeFrom(MistTrialActivityInfo);
-            }
-            input.ReadMessage(subBuilder);
-            MistTrialActivityInfo = subBuilder;
-            break;
-          }
-          case 1554: {
-            global::Weedwacker.Shared.Network.Proto.MichiaeMatsuriActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.MichiaeMatsuriActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.MichiaeMatsuriInfo) {
-              subBuilder.MergeFrom(MichiaeMatsuriInfo);
-            }
-            input.ReadMessage(subBuilder);
-            MichiaeMatsuriInfo = subBuilder;
-            break;
-          }
-          case 1618: {
-            global::Weedwacker.Shared.Network.Proto.ExpeditionActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.ExpeditionActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.ExpeditionInfo) {
-              subBuilder.MergeFrom(ExpeditionInfo);
-            }
-            input.ReadMessage(subBuilder);
-            ExpeditionInfo = subBuilder;
-            break;
-          }
-          case 1754: {
-            global::Weedwacker.Shared.Network.Proto.RoguelikeDungeonActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.RoguelikeDungeonActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.RoguelikeDungeonInfo) {
-              subBuilder.MergeFrom(RoguelikeDungeonInfo);
-            }
-            input.ReadMessage(subBuilder);
-            RoguelikeDungeonInfo = subBuilder;
-            break;
-          }
-          case 2626: {
-            global::Weedwacker.Shared.Network.Proto.PhotoActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.PhotoActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.PhotoInfo) {
-              subBuilder.MergeFrom(PhotoInfo);
-            }
-            input.ReadMessage(subBuilder);
-            PhotoInfo = subBuilder;
-            break;
-          }
-          case 2634:
-          case 2632: {
-            takenRewardList_.AddEntriesFrom(ref input, _repeated_takenRewardList_codec);
-            break;
-          }
-          case 2818: {
-            global::Weedwacker.Shared.Network.Proto.WindFieldDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.WindFieldDetailInfo();
-            if (detailCase_ == DetailOneofCase.WindFieldInfo) {
-              subBuilder.MergeFrom(WindFieldInfo);
-            }
-            input.ReadMessage(subBuilder);
-            WindFieldInfo = subBuilder;
-            break;
-          }
-          case 3130: {
-            global::Weedwacker.Shared.Network.Proto.EffigyActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.EffigyActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.EffigyInfo) {
-              subBuilder.MergeFrom(EffigyInfo);
-            }
-            input.ReadMessage(subBuilder);
-            EffigyInfo = subBuilder;
-            break;
-          }
-          case 3226: {
-            global::Weedwacker.Shared.Network.Proto.DigActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.DigActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.DigInfo) {
-              subBuilder.MergeFrom(DigInfo);
-            }
-            input.ReadMessage(subBuilder);
-            DigInfo = subBuilder;
-            break;
-          }
-          case 3418: {
-            global::Weedwacker.Shared.Network.Proto.HideAndSeekActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.HideAndSeekActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.HideAndSeekInfo) {
-              subBuilder.MergeFrom(HideAndSeekInfo);
-            }
-            input.ReadMessage(subBuilder);
-            HideAndSeekInfo = subBuilder;
-            break;
-          }
-          case 3562: {
-            global::Weedwacker.Shared.Network.Proto.VintageDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.VintageDetailInfo();
-            if (detailCase_ == DetailOneofCase.VintageInfo) {
-              subBuilder.MergeFrom(VintageInfo);
-            }
-            input.ReadMessage(subBuilder);
-            VintageInfo = subBuilder;
-            break;
-          }
-          case 3682: {
-            global::Weedwacker.Shared.Network.Proto.MusicGameActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.MusicGameActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.MusicGameInfo) {
-              subBuilder.MergeFrom(MusicGameInfo);
-            }
-            input.ReadMessage(subBuilder);
-            MusicGameInfo = subBuilder;
-            break;
-          }
-          case 3922: {
-            global::Weedwacker.Shared.Network.Proto.FungusFighterDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FungusFighterDetailInfo();
-            if (detailCase_ == DetailOneofCase.FungusFighterInfo) {
-              subBuilder.MergeFrom(FungusFighterInfo);
-            }
-            input.ReadMessage(subBuilder);
-            FungusFighterInfo = subBuilder;
-            break;
-          }
-          case 3930: {
-            global::Weedwacker.Shared.Network.Proto.HachiActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.HachiActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.HachiInfo) {
-              subBuilder.MergeFrom(HachiInfo);
-            }
-            input.ReadMessage(subBuilder);
-            HachiInfo = subBuilder;
-            break;
-          }
-          case 3954: {
-            global::Weedwacker.Shared.Network.Proto.SeaLampActivityInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.SeaLampActivityInfo();
-            if (detailCase_ == DetailOneofCase.SeaLampInfo) {
-              subBuilder.MergeFrom(SeaLampInfo);
-            }
-            input.ReadMessage(subBuilder);
-            SeaLampInfo = subBuilder;
-            break;
-          }
-          case 4458: {
-            global::Weedwacker.Shared.Network.Proto.AsterActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.AsterActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.AsterInfo) {
-              subBuilder.MergeFrom(AsterInfo);
-            }
-            input.ReadMessage(subBuilder);
-            AsterInfo = subBuilder;
-            break;
-          }
-          case 4736: {
-            FirstDayStartTime = input.ReadUInt32();
-            break;
-          }
-          case 4978: {
-            global::Weedwacker.Shared.Network.Proto.SummerTimeV2DetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.SummerTimeV2DetailInfo();
-            if (detailCase_ == DetailOneofCase.SummerTimeV2Info) {
-              subBuilder.MergeFrom(SummerTimeV2Info);
-            }
-            input.ReadMessage(subBuilder);
-            SummerTimeV2Info = subBuilder;
-            break;
-          }
-          case 5458: {
+          case 290: {
             activityCoinMap_.AddEntriesFrom(ref input, _map_activityCoinMap_codec);
             break;
           }
-          case 5626: {
-            global::Weedwacker.Shared.Network.Proto.UgcActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.UgcActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.UgcInfo) {
-              subBuilder.MergeFrom(UgcInfo);
-            }
-            input.ReadMessage(subBuilder);
-            UgcInfo = subBuilder;
-            break;
-          }
-          case 5778: {
-            global::Weedwacker.Shared.Network.Proto.GearActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.GearActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.GearInfo) {
-              subBuilder.MergeFrom(GearInfo);
-            }
-            input.ReadMessage(subBuilder);
-            GearInfo = subBuilder;
-            break;
-          }
-          case 6002: {
-            global::Weedwacker.Shared.Network.Proto.IrodoriActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.IrodoriActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.IrodoriInfo) {
-              subBuilder.MergeFrom(IrodoriInfo);
-            }
-            input.ReadMessage(subBuilder);
-            IrodoriInfo = subBuilder;
-            break;
-          }
-          case 6138: {
-            global::Weedwacker.Shared.Network.Proto.BounceConjuringActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.BounceConjuringActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.BounceConjuringInfo) {
-              subBuilder.MergeFrom(BounceConjuringInfo);
-            }
-            input.ReadMessage(subBuilder);
-            BounceConjuringInfo = subBuilder;
-            break;
-          }
-          case 6354: {
+          case 514: {
             global::Weedwacker.Shared.Network.Proto.BlitzRushActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.BlitzRushActivityDetailInfo();
             if (detailCase_ == DetailOneofCase.BlitzRushInfo) {
               subBuilder.MergeFrom(BlitzRushInfo);
@@ -4018,87 +3957,7 @@ namespace Weedwacker.Shared.Network.Proto {
             BlitzRushInfo = subBuilder;
             break;
           }
-          case 6498: {
-            global::Weedwacker.Shared.Network.Proto.RogueDiaryActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.RogueDiaryActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.RogueDiaryInfo) {
-              subBuilder.MergeFrom(RogueDiaryInfo);
-            }
-            input.ReadMessage(subBuilder);
-            RogueDiaryInfo = subBuilder;
-            break;
-          }
-          case 6514: {
-            global::Weedwacker.Shared.Network.Proto.LunaRiteDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.LunaRiteDetailInfo();
-            if (detailCase_ == DetailOneofCase.LunaRiteInfo) {
-              subBuilder.MergeFrom(LunaRiteInfo);
-            }
-            input.ReadMessage(subBuilder);
-            LunaRiteInfo = subBuilder;
-            break;
-          }
-          case 6602: {
-            global::Weedwacker.Shared.Network.Proto.GachaActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.GachaActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.GachaInfo) {
-              subBuilder.MergeFrom(GachaInfo);
-            }
-            input.ReadMessage(subBuilder);
-            GachaInfo = subBuilder;
-            break;
-          }
-          case 6858: {
-            global::Weedwacker.Shared.Network.Proto.FleurFairActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FleurFairActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.FleurFairInfo) {
-              subBuilder.MergeFrom(FleurFairInfo);
-            }
-            input.ReadMessage(subBuilder);
-            FleurFairInfo = subBuilder;
-            break;
-          }
-          case 6874: {
-            global::Weedwacker.Shared.Network.Proto.ArenaChallengeActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.ArenaChallengeActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.ArenaChallengeInfo) {
-              subBuilder.MergeFrom(ArenaChallengeInfo);
-            }
-            input.ReadMessage(subBuilder);
-            ArenaChallengeInfo = subBuilder;
-            break;
-          }
-          case 6914: {
-            activityPushTipsDataList_.AddEntriesFrom(ref input, _repeated_activityPushTipsDataList_codec);
-            break;
-          }
-          case 7352: {
-            IsHidden = input.ReadBool();
-            break;
-          }
-          case 7418: {
-            global::Weedwacker.Shared.Network.Proto.ChessActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.ChessActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.ChessInfo) {
-              subBuilder.MergeFrom(ChessInfo);
-            }
-            input.ReadMessage(subBuilder);
-            ChessInfo = subBuilder;
-            break;
-          }
-          case 7730: {
-            global::Weedwacker.Shared.Network.Proto.TreasureSeelieActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.TreasureSeelieActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.TreasureSeelieInfo) {
-              subBuilder.MergeFrom(TreasureSeelieInfo);
-            }
-            input.ReadMessage(subBuilder);
-            TreasureSeelieInfo = subBuilder;
-            break;
-          }
-          case 8122: {
-            global::Weedwacker.Shared.Network.Proto.ChannelerSlabActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.ChannelerSlabInfo) {
-              subBuilder.MergeFrom(ChannelerSlabInfo);
-            }
-            input.ReadMessage(subBuilder);
-            ChannelerSlabInfo = subBuilder;
-            break;
-          }
-          case 8202: {
+          case 1866: {
             global::Weedwacker.Shared.Network.Proto.EffigyChallengeV2DetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.EffigyChallengeV2DetailInfo();
             if (detailCase_ == DetailOneofCase.EffigyChallengeInfo) {
               subBuilder.MergeFrom(EffigyChallengeInfo);
@@ -4107,217 +3966,7 @@ namespace Weedwacker.Shared.Network.Proto {
             EffigyChallengeInfo = subBuilder;
             break;
           }
-          case 8346: {
-            global::Weedwacker.Shared.Network.Proto.InstableSprayDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.InstableSprayDetailInfo();
-            if (detailCase_ == DetailOneofCase.InstableSprayInfo) {
-              subBuilder.MergeFrom(InstableSprayInfo);
-            }
-            input.ReadMessage(subBuilder);
-            InstableSprayInfo = subBuilder;
-            break;
-          }
-          case 8626: {
-            global::Weedwacker.Shared.Network.Proto.RockBoardExploreDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.RockBoardExploreDetailInfo();
-            if (detailCase_ == DetailOneofCase.RockBoardExploreInfo) {
-              subBuilder.MergeFrom(RockBoardExploreInfo);
-            }
-            input.ReadMessage(subBuilder);
-            RockBoardExploreInfo = subBuilder;
-            break;
-          }
-          case 8666: {
-            global::Weedwacker.Shared.Network.Proto.WinterCampActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.WinterCampActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.WinterCampInfo) {
-              subBuilder.MergeFrom(WinterCampInfo);
-            }
-            input.ReadMessage(subBuilder);
-            WinterCampInfo = subBuilder;
-            break;
-          }
-          case 8738: {
-            global::Weedwacker.Shared.Network.Proto.DeliveryActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.DeliveryActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.DeliveryInfo) {
-              subBuilder.MergeFrom(DeliveryInfo);
-            }
-            input.ReadMessage(subBuilder);
-            DeliveryInfo = subBuilder;
-            break;
-          }
-          case 8906: {
-            global::Weedwacker.Shared.Network.Proto.EchoShellDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.EchoShellDetailInfo();
-            if (detailCase_ == DetailOneofCase.EchoShellInfo) {
-              subBuilder.MergeFrom(EchoShellInfo);
-            }
-            input.ReadMessage(subBuilder);
-            EchoShellInfo = subBuilder;
-            break;
-          }
-          case 8914: {
-            global::Weedwacker.Shared.Network.Proto.TreasureMapActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.TreasureMapActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.TreasureMapInfo) {
-              subBuilder.MergeFrom(TreasureMapInfo);
-            }
-            input.ReadMessage(subBuilder);
-            TreasureMapInfo = subBuilder;
-            break;
-          }
-          case 9258: {
-            global::Weedwacker.Shared.Network.Proto.MuqadasPotionActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.MuqadasPotionActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.MuqadasPotionInfo) {
-              subBuilder.MergeFrom(MuqadasPotionInfo);
-            }
-            input.ReadMessage(subBuilder);
-            MuqadasPotionInfo = subBuilder;
-            break;
-          }
-          case 9810: {
-            global::Weedwacker.Shared.Network.Proto.CrystalLinkActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.CrystalLinkActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.CrystalLinkInfo) {
-              subBuilder.MergeFrom(CrystalLinkInfo);
-            }
-            input.ReadMessage(subBuilder);
-            CrystalLinkInfo = subBuilder;
-            break;
-          }
-          case 10090: {
-            global::Weedwacker.Shared.Network.Proto.SumoActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.SumoActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.SumoInfo) {
-              subBuilder.MergeFrom(SumoInfo);
-            }
-            input.ReadMessage(subBuilder);
-            SumoInfo = subBuilder;
-            break;
-          }
-          case 10186: {
-            global::Weedwacker.Shared.Network.Proto.PotionActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.PotionActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.PotionInfo) {
-              subBuilder.MergeFrom(PotionInfo);
-            }
-            input.ReadMessage(subBuilder);
-            PotionInfo = subBuilder;
-            break;
-          }
-          case 10320: {
-            SelectedAvatarRewardId = input.ReadUInt32();
-            break;
-          }
-          case 10466: {
-            global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.LuminanceStoneChallengeInfo) {
-              subBuilder.MergeFrom(LuminanceStoneChallengeInfo);
-            }
-            input.ReadMessage(subBuilder);
-            LuminanceStoneChallengeInfo = subBuilder;
-            break;
-          }
-          case 10922: {
-            global::Weedwacker.Shared.Network.Proto.FlightActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FlightActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.FlightInfo) {
-              subBuilder.MergeFrom(FlightInfo);
-            }
-            input.ReadMessage(subBuilder);
-            FlightInfo = subBuilder;
-            break;
-          }
-          case 10978: {
-            global::Weedwacker.Shared.Network.Proto.SummerTimeDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.SummerTimeDetailInfo();
-            if (detailCase_ == DetailOneofCase.SummerTimeInfo) {
-              subBuilder.MergeFrom(SummerTimeInfo);
-            }
-            input.ReadMessage(subBuilder);
-            SummerTimeInfo = subBuilder;
-            break;
-          }
-          case 11194: {
-            wishGiftNumMap_.AddEntriesFrom(ref input, _map_wishGiftNumMap_codec);
-            break;
-          }
-          case 11290: {
-            global::Weedwacker.Shared.Network.Proto.FindHilichurlDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FindHilichurlDetailInfo();
-            if (detailCase_ == DetailOneofCase.FindHilichurlInfo) {
-              subBuilder.MergeFrom(FindHilichurlInfo);
-            }
-            input.ReadMessage(subBuilder);
-            FindHilichurlInfo = subBuilder;
-            break;
-          }
-          case 11592: {
-            IsQuickOpen = input.ReadBool();
-            break;
-          }
-          case 11970: {
-            global::Weedwacker.Shared.Network.Proto.CharAmusementDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.CharAmusementDetailInfo();
-            if (detailCase_ == DetailOneofCase.CharAmusementInfo) {
-              subBuilder.MergeFrom(CharAmusementInfo);
-            }
-            input.ReadMessage(subBuilder);
-            CharAmusementInfo = subBuilder;
-            break;
-          }
-          case 12706: {
-            global::Weedwacker.Shared.Network.Proto.MoonfinTrialActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.MoonfinTrialActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.MoonfinTrialInfo) {
-              subBuilder.MergeFrom(MoonfinTrialInfo);
-            }
-            input.ReadMessage(subBuilder);
-            MoonfinTrialInfo = subBuilder;
-            break;
-          }
-          case 13402: {
-            global::Weedwacker.Shared.Network.Proto.WaterSpiritActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.WaterSpiritActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.WaterSpiritInfo) {
-              subBuilder.MergeFrom(WaterSpiritInfo);
-            }
-            input.ReadMessage(subBuilder);
-            WaterSpiritInfo = subBuilder;
-            break;
-          }
-          case 13802: {
-            global::Weedwacker.Shared.Network.Proto.BartenderActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.BartenderActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.BartenderInfo) {
-              subBuilder.MergeFrom(BartenderInfo);
-            }
-            input.ReadMessage(subBuilder);
-            BartenderInfo = subBuilder;
-            break;
-          }
-          case 13818: {
-            global::Weedwacker.Shared.Network.Proto.DragonSpineActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.DragonSpineActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.DragonSpineInfo) {
-              subBuilder.MergeFrom(DragonSpineInfo);
-            }
-            input.ReadMessage(subBuilder);
-            DragonSpineInfo = subBuilder;
-            break;
-          }
-          case 14370: {
-            global::Weedwacker.Shared.Network.Proto.TanukiTravelActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.TanukiTravelActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.TanukiTravelActivityInfo) {
-              subBuilder.MergeFrom(TanukiTravelActivityInfo);
-            }
-            input.ReadMessage(subBuilder);
-            TanukiTravelActivityInfo = subBuilder;
-            break;
-          }
-          case 14738: {
-            global::Weedwacker.Shared.Network.Proto.BuoyantCombatDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.BuoyantCombatDetailInfo();
-            if (detailCase_ == DetailOneofCase.BuoyantCombatInfo) {
-              subBuilder.MergeFrom(BuoyantCombatInfo);
-            }
-            input.ReadMessage(subBuilder);
-            BuoyantCombatInfo = subBuilder;
-            break;
-          }
-          case 14954: {
-            global::Weedwacker.Shared.Network.Proto.BlessingActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.BlessingActivityDetailInfo();
-            if (detailCase_ == DetailOneofCase.BlessingInfo) {
-              subBuilder.MergeFrom(BlessingInfo);
-            }
-            input.ReadMessage(subBuilder);
-            BlessingInfo = subBuilder;
-            break;
-          }
-          case 15010: {
+          case 1898: {
             global::Weedwacker.Shared.Network.Proto.LanternRiteActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.LanternRiteActivityDetailInfo();
             if (detailCase_ == DetailOneofCase.LanternRiteActivityInfo) {
               subBuilder.MergeFrom(LanternRiteActivityInfo);
@@ -4326,7 +3975,150 @@ namespace Weedwacker.Shared.Network.Proto {
             LanternRiteActivityInfo = subBuilder;
             break;
           }
-          case 15082: {
+          case 1978: {
+            global::Weedwacker.Shared.Network.Proto.SeaLampActivityInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.SeaLampActivityInfo();
+            if (detailCase_ == DetailOneofCase.SeaLampInfo) {
+              subBuilder.MergeFrom(SeaLampInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SeaLampInfo = subBuilder;
+            break;
+          }
+          case 2880: {
+            Unk3300MJNPGEKLOCG = input.ReadBool();
+            break;
+          }
+          case 3026: {
+            global::Weedwacker.Shared.Network.Proto.FindHilichurlDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FindHilichurlDetailInfo();
+            if (detailCase_ == DetailOneofCase.FindHilichurlInfo) {
+              subBuilder.MergeFrom(FindHilichurlInfo);
+            }
+            input.ReadMessage(subBuilder);
+            FindHilichurlInfo = subBuilder;
+            break;
+          }
+          case 3290: {
+            global::Weedwacker.Shared.Network.Proto.SummerTimeV2DetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.SummerTimeV2DetailInfo();
+            if (detailCase_ == DetailOneofCase.SummerTimeV2Info) {
+              subBuilder.MergeFrom(SummerTimeV2Info);
+            }
+            input.ReadMessage(subBuilder);
+            SummerTimeV2Info = subBuilder;
+            break;
+          }
+          case 3458: {
+            global::Weedwacker.Shared.Network.Proto.MistTrialActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.MistTrialActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.MistTrialActivityInfo) {
+              subBuilder.MergeFrom(MistTrialActivityInfo);
+            }
+            input.ReadMessage(subBuilder);
+            MistTrialActivityInfo = subBuilder;
+            break;
+          }
+          case 3554: {
+            global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.LuminanceStoneChallengeActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.LuminanceStoneChallengeInfo) {
+              subBuilder.MergeFrom(LuminanceStoneChallengeInfo);
+            }
+            input.ReadMessage(subBuilder);
+            LuminanceStoneChallengeInfo = subBuilder;
+            break;
+          }
+          case 3746: {
+            global::Weedwacker.Shared.Network.Proto.WindFieldDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.WindFieldDetailInfo();
+            if (detailCase_ == DetailOneofCase.WindFieldInfo) {
+              subBuilder.MergeFrom(WindFieldInfo);
+            }
+            input.ReadMessage(subBuilder);
+            WindFieldInfo = subBuilder;
+            break;
+          }
+          case 4042: {
+            global::Weedwacker.Shared.Network.Proto.SumoActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.SumoActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.SumoInfo) {
+              subBuilder.MergeFrom(SumoInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SumoInfo = subBuilder;
+            break;
+          }
+          case 4090: {
+            global::Weedwacker.Shared.Network.Proto.HachiActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.HachiActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.HachiInfo) {
+              subBuilder.MergeFrom(HachiInfo);
+            }
+            input.ReadMessage(subBuilder);
+            HachiInfo = subBuilder;
+            break;
+          }
+          case 4306: {
+            global::Weedwacker.Shared.Network.Proto.ArenaChallengeActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.ArenaChallengeActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.ArenaChallengeInfo) {
+              subBuilder.MergeFrom(ArenaChallengeInfo);
+            }
+            input.ReadMessage(subBuilder);
+            ArenaChallengeInfo = subBuilder;
+            break;
+          }
+          case 4410: {
+            global::Weedwacker.Shared.Network.Proto.BartenderActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.BartenderActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.BartenderInfo) {
+              subBuilder.MergeFrom(BartenderInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BartenderInfo = subBuilder;
+            break;
+          }
+          case 4482: {
+            global::Weedwacker.Shared.Network.Proto.RogueDiaryActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.RogueDiaryActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.RogueDiaryInfo) {
+              subBuilder.MergeFrom(RogueDiaryInfo);
+            }
+            input.ReadMessage(subBuilder);
+            RogueDiaryInfo = subBuilder;
+            break;
+          }
+          case 4970: {
+            global::Weedwacker.Shared.Network.Proto.CharAmusementDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.CharAmusementDetailInfo();
+            if (detailCase_ == DetailOneofCase.CharAmusementInfo) {
+              subBuilder.MergeFrom(CharAmusementInfo);
+            }
+            input.ReadMessage(subBuilder);
+            CharAmusementInfo = subBuilder;
+            break;
+          }
+          case 5082: {
+            global::Weedwacker.Shared.Network.Proto.WaterSpiritActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.WaterSpiritActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.WaterSpiritInfo) {
+              subBuilder.MergeFrom(WaterSpiritInfo);
+            }
+            input.ReadMessage(subBuilder);
+            WaterSpiritInfo = subBuilder;
+            break;
+          }
+          case 5490: {
+            global::Weedwacker.Shared.Network.Proto.BuoyantCombatDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.BuoyantCombatDetailInfo();
+            if (detailCase_ == DetailOneofCase.BuoyantCombatInfo) {
+              subBuilder.MergeFrom(BuoyantCombatInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BuoyantCombatInfo = subBuilder;
+            break;
+          }
+          case 5576: {
+            Unk3300GCEAKEMMJEA = input.ReadUInt32();
+            break;
+          }
+          case 5594: {
+            global::Weedwacker.Shared.Network.Proto.WinterCampActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.WinterCampActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.WinterCampInfo) {
+              subBuilder.MergeFrom(WinterCampInfo);
+            }
+            input.ReadMessage(subBuilder);
+            WinterCampInfo = subBuilder;
+            break;
+          }
+          case 5922: {
             global::Weedwacker.Shared.Network.Proto.IslandPartyDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.IslandPartyDetailInfo();
             if (detailCase_ == DetailOneofCase.IslandPartyInfo) {
               subBuilder.MergeFrom(IslandPartyInfo);
@@ -4335,7 +4127,20 @@ namespace Weedwacker.Shared.Network.Proto {
             IslandPartyInfo = subBuilder;
             break;
           }
-          case 15130: {
+          case 6130: {
+            global::Weedwacker.Shared.Network.Proto.MoonfinTrialActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.MoonfinTrialActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.MoonfinTrialInfo) {
+              subBuilder.MergeFrom(MoonfinTrialInfo);
+            }
+            input.ReadMessage(subBuilder);
+            MoonfinTrialInfo = subBuilder;
+            break;
+          }
+          case 6288: {
+            FirstDayStartTime = input.ReadUInt32();
+            break;
+          }
+          case 6314: {
             global::Weedwacker.Shared.Network.Proto.SpiceActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.SpiceActivityDetailInfo();
             if (detailCase_ == DetailOneofCase.SpiceInfo) {
               subBuilder.MergeFrom(SpiceInfo);
@@ -4344,11 +4149,328 @@ namespace Weedwacker.Shared.Network.Proto {
             SpiceInfo = subBuilder;
             break;
           }
-          case 15248: {
+          case 6498: {
+            global::Weedwacker.Shared.Network.Proto.CrystalLinkActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.CrystalLinkActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.CrystalLinkInfo) {
+              subBuilder.MergeFrom(CrystalLinkInfo);
+            }
+            input.ReadMessage(subBuilder);
+            CrystalLinkInfo = subBuilder;
+            break;
+          }
+          case 6714: {
+            global::Weedwacker.Shared.Network.Proto.HideAndSeekActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.HideAndSeekActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.HideAndSeekInfo) {
+              subBuilder.MergeFrom(HideAndSeekInfo);
+            }
+            input.ReadMessage(subBuilder);
+            HideAndSeekInfo = subBuilder;
+            break;
+          }
+          case 6770: {
+            global::Weedwacker.Shared.Network.Proto.ChannelerSlabActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.ChannelerSlabActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.ChannelerSlabInfo) {
+              subBuilder.MergeFrom(ChannelerSlabInfo);
+            }
+            input.ReadMessage(subBuilder);
+            ChannelerSlabInfo = subBuilder;
+            break;
+          }
+          case 7378: {
+            global::Weedwacker.Shared.Network.Proto.BounceConjuringActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.BounceConjuringActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.BounceConjuringInfo) {
+              subBuilder.MergeFrom(BounceConjuringInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BounceConjuringInfo = subBuilder;
+            break;
+          }
+          case 7514: {
+            wishGiftNumMap_.AddEntriesFrom(ref input, _map_wishGiftNumMap_codec);
+            break;
+          }
+          case 7762: {
+            global::Weedwacker.Shared.Network.Proto.RoguelikeDungeonActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.RoguelikeDungeonActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.RoguelikeDungeonInfo) {
+              subBuilder.MergeFrom(RoguelikeDungeonInfo);
+            }
+            input.ReadMessage(subBuilder);
+            RoguelikeDungeonInfo = subBuilder;
+            break;
+          }
+          case 8050: {
+            global::Weedwacker.Shared.Network.Proto.ChessActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.ChessActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.ChessInfo) {
+              subBuilder.MergeFrom(ChessInfo);
+            }
+            input.ReadMessage(subBuilder);
+            ChessInfo = subBuilder;
+            break;
+          }
+          case 8258: {
+            global::Weedwacker.Shared.Network.Proto.TreasureSeelieActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.TreasureSeelieActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.TreasureSeelieInfo) {
+              subBuilder.MergeFrom(TreasureSeelieInfo);
+            }
+            input.ReadMessage(subBuilder);
+            TreasureSeelieInfo = subBuilder;
+            break;
+          }
+          case 8450: {
+            global::Weedwacker.Shared.Network.Proto.IrodoriActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.IrodoriActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.IrodoriInfo) {
+              subBuilder.MergeFrom(IrodoriInfo);
+            }
+            input.ReadMessage(subBuilder);
+            IrodoriInfo = subBuilder;
+            break;
+          }
+          case 9130: {
+            global::Weedwacker.Shared.Network.Proto.DeliveryActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.DeliveryActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.DeliveryInfo) {
+              subBuilder.MergeFrom(DeliveryInfo);
+            }
+            input.ReadMessage(subBuilder);
+            DeliveryInfo = subBuilder;
+            break;
+          }
+          case 9162: {
+            global::Weedwacker.Shared.Network.Proto.InstableSprayDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.InstableSprayDetailInfo();
+            if (detailCase_ == DetailOneofCase.InstableSprayInfo) {
+              subBuilder.MergeFrom(InstableSprayInfo);
+            }
+            input.ReadMessage(subBuilder);
+            InstableSprayInfo = subBuilder;
+            break;
+          }
+          case 9298: {
+            global::Weedwacker.Shared.Network.Proto.EchoShellDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.EchoShellDetailInfo();
+            if (detailCase_ == DetailOneofCase.EchoShellInfo) {
+              subBuilder.MergeFrom(EchoShellInfo);
+            }
+            input.ReadMessage(subBuilder);
+            EchoShellInfo = subBuilder;
+            break;
+          }
+          case 9458: {
+            global::Weedwacker.Shared.Network.Proto.UgcActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.UgcActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.UgcInfo) {
+              subBuilder.MergeFrom(UgcInfo);
+            }
+            input.ReadMessage(subBuilder);
+            UgcInfo = subBuilder;
+            break;
+          }
+          case 10122: {
+            global::Weedwacker.Shared.Network.Proto.RockBoardExploreDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.RockBoardExploreDetailInfo();
+            if (detailCase_ == DetailOneofCase.RockBoardExploreInfo) {
+              subBuilder.MergeFrom(RockBoardExploreInfo);
+            }
+            input.ReadMessage(subBuilder);
+            RockBoardExploreInfo = subBuilder;
+            break;
+          }
+          case 10144: {
             CurScore = input.ReadUInt32();
             break;
           }
-          case 15290: {
+          case 10194: {
+            global::Weedwacker.Shared.Network.Proto.PlantFlowerActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.PlantFlowerActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.PlantFlowerInfo) {
+              subBuilder.MergeFrom(PlantFlowerInfo);
+            }
+            input.ReadMessage(subBuilder);
+            PlantFlowerInfo = subBuilder;
+            break;
+          }
+          case 10378: {
+            global::Weedwacker.Shared.Network.Proto.GachaActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.GachaActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.GachaInfo) {
+              subBuilder.MergeFrom(GachaInfo);
+            }
+            input.ReadMessage(subBuilder);
+            GachaInfo = subBuilder;
+            break;
+          }
+          case 10466: {
+            global::Weedwacker.Shared.Network.Proto.VintageActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.VintageActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.VintageInfo) {
+              subBuilder.MergeFrom(VintageInfo);
+            }
+            input.ReadMessage(subBuilder);
+            VintageInfo = subBuilder;
+            break;
+          }
+          case 10482: {
+            global::Weedwacker.Shared.Network.Proto.DragonSpineActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.DragonSpineActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.DragonSpineInfo) {
+              subBuilder.MergeFrom(DragonSpineInfo);
+            }
+            input.ReadMessage(subBuilder);
+            DragonSpineInfo = subBuilder;
+            break;
+          }
+          case 10786: {
+            global::Weedwacker.Shared.Network.Proto.TanukiTravelActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.TanukiTravelActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.TanukiTravelActivityInfo) {
+              subBuilder.MergeFrom(TanukiTravelActivityInfo);
+            }
+            input.ReadMessage(subBuilder);
+            TanukiTravelActivityInfo = subBuilder;
+            break;
+          }
+          case 10994: {
+            global::Weedwacker.Shared.Network.Proto.EffigyActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.EffigyActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.EffigyInfo) {
+              subBuilder.MergeFrom(EffigyInfo);
+            }
+            input.ReadMessage(subBuilder);
+            EffigyInfo = subBuilder;
+            break;
+          }
+          case 11000: {
+            Unk3300CBCEHLJJOGI = input.ReadBool();
+            break;
+          }
+          case 11578: {
+            global::Weedwacker.Shared.Network.Proto.FleurFairActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FleurFairActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.FleurFairInfo) {
+              subBuilder.MergeFrom(FleurFairInfo);
+            }
+            input.ReadMessage(subBuilder);
+            FleurFairInfo = subBuilder;
+            break;
+          }
+          case 11858: {
+            global::Weedwacker.Shared.Network.Proto.GearActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.GearActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.GearInfo) {
+              subBuilder.MergeFrom(GearInfo);
+            }
+            input.ReadMessage(subBuilder);
+            GearInfo = subBuilder;
+            break;
+          }
+          case 11888: {
+            Unk3300ABJKLALKLDG = input.ReadBool();
+            break;
+          }
+          case 12178: {
+            global::Weedwacker.Shared.Network.Proto.BrickBreakerDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.BrickBreakerDetailInfo();
+            if (detailCase_ == DetailOneofCase.BrickBreakerInfo) {
+              subBuilder.MergeFrom(BrickBreakerInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BrickBreakerInfo = subBuilder;
+            break;
+          }
+          case 12362: {
+            global::Weedwacker.Shared.Network.Proto.LunaRiteDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.LunaRiteDetailInfo();
+            if (detailCase_ == DetailOneofCase.LunaRiteInfo) {
+              subBuilder.MergeFrom(LunaRiteInfo);
+            }
+            input.ReadMessage(subBuilder);
+            LunaRiteInfo = subBuilder;
+            break;
+          }
+          case 12538: {
+            global::Weedwacker.Shared.Network.Proto.PotionActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.PotionActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.PotionInfo) {
+              subBuilder.MergeFrom(PotionInfo);
+            }
+            input.ReadMessage(subBuilder);
+            PotionInfo = subBuilder;
+            break;
+          }
+          case 13160: {
+            Unk3300NEPKLLBJFKK = input.ReadBool();
+            break;
+          }
+          case 13298: {
+            global::Weedwacker.Shared.Network.Proto.MuqadasPotionActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.MuqadasPotionActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.MuqadasPotionInfo) {
+              subBuilder.MergeFrom(MuqadasPotionInfo);
+            }
+            input.ReadMessage(subBuilder);
+            MuqadasPotionInfo = subBuilder;
+            break;
+          }
+          case 14018: {
+            global::Weedwacker.Shared.Network.Proto.ExpeditionActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.ExpeditionActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.ExpeditionInfo) {
+              subBuilder.MergeFrom(ExpeditionInfo);
+            }
+            input.ReadMessage(subBuilder);
+            ExpeditionInfo = subBuilder;
+            break;
+          }
+          case 14058: {
+            global::Weedwacker.Shared.Network.Proto.FungusFighterDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FungusFighterDetailInfo();
+            if (detailCase_ == DetailOneofCase.FungusFighterInfo) {
+              subBuilder.MergeFrom(FungusFighterInfo);
+            }
+            input.ReadMessage(subBuilder);
+            FungusFighterInfo = subBuilder;
+            break;
+          }
+          case 14578: {
+            global::Weedwacker.Shared.Network.Proto.PhotoActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.PhotoActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.PhotoInfo) {
+              subBuilder.MergeFrom(PhotoInfo);
+            }
+            input.ReadMessage(subBuilder);
+            PhotoInfo = subBuilder;
+            break;
+          }
+          case 14714: {
+            global::Weedwacker.Shared.Network.Proto.MichiaeMatsuriActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.MichiaeMatsuriActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.MichiaeMatsuriInfo) {
+              subBuilder.MergeFrom(MichiaeMatsuriInfo);
+            }
+            input.ReadMessage(subBuilder);
+            MichiaeMatsuriInfo = subBuilder;
+            break;
+          }
+          case 14898: {
+            global::Weedwacker.Shared.Network.Proto.DigActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.DigActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.DigInfo) {
+              subBuilder.MergeFrom(DigInfo);
+            }
+            input.ReadMessage(subBuilder);
+            DigInfo = subBuilder;
+            break;
+          }
+          case 14938: {
+            activityPushTipsDataList_.AddEntriesFrom(ref input, _repeated_activityPushTipsDataList_codec);
+            break;
+          }
+          case 14960: {
+            Unk3300JAEALAIOOID = input.ReadUInt32();
+            break;
+          }
+          case 15114:
+          case 15112: {
+            takenRewardList_.AddEntriesFrom(ref input, _repeated_takenRewardList_codec);
+            break;
+          }
+          case 15282: {
+            global::Weedwacker.Shared.Network.Proto.SummerTimeDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.SummerTimeDetailInfo();
+            if (detailCase_ == DetailOneofCase.SummerTimeInfo) {
+              subBuilder.MergeFrom(SummerTimeInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SummerTimeInfo = subBuilder;
+            break;
+          }
+          case 15402: {
+            global::Weedwacker.Shared.Network.Proto.TreasureMapActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.TreasureMapActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.TreasureMapInfo) {
+              subBuilder.MergeFrom(TreasureMapInfo);
+            }
+            input.ReadMessage(subBuilder);
+            TreasureMapInfo = subBuilder;
+            break;
+          }
+          case 15426: {
             global::Weedwacker.Shared.Network.Proto.GravenInnocenceDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.GravenInnocenceDetailInfo();
             if (detailCase_ == DetailOneofCase.GravenInnocenceInfo) {
               subBuilder.MergeFrom(GravenInnocenceInfo);
@@ -4357,12 +4479,49 @@ namespace Weedwacker.Shared.Network.Proto {
             GravenInnocenceInfo = subBuilder;
             break;
           }
-          case 15664: {
-            ScoreLimit = input.ReadUInt32();
+          case 15698: {
+            global::Weedwacker.Shared.Network.Proto.BlessingActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.BlessingActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.BlessingInfo) {
+              subBuilder.MergeFrom(BlessingInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BlessingInfo = subBuilder;
             break;
           }
-          case 15704: {
-            IsCommonContentClosed = input.ReadBool();
+          case 15818: {
+            global::Weedwacker.Shared.Network.Proto.AsterActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.AsterActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.AsterInfo) {
+              subBuilder.MergeFrom(AsterInfo);
+            }
+            input.ReadMessage(subBuilder);
+            AsterInfo = subBuilder;
+            break;
+          }
+          case 15914: {
+            global::Weedwacker.Shared.Network.Proto.MusicGameActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.MusicGameActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.MusicGameInfo) {
+              subBuilder.MergeFrom(MusicGameInfo);
+            }
+            input.ReadMessage(subBuilder);
+            MusicGameInfo = subBuilder;
+            break;
+          }
+          case 16018: {
+            global::Weedwacker.Shared.Network.Proto.CoinCollectDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.CoinCollectDetailInfo();
+            if (detailCase_ == DetailOneofCase.CoinCollectInfo) {
+              subBuilder.MergeFrom(CoinCollectInfo);
+            }
+            input.ReadMessage(subBuilder);
+            CoinCollectInfo = subBuilder;
+            break;
+          }
+          case 16090: {
+            global::Weedwacker.Shared.Network.Proto.FlightActivityDetailInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.FlightActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.FlightInfo) {
+              subBuilder.MergeFrom(FlightInfo);
+            }
+            input.ReadMessage(subBuilder);
+            FlightInfo = subBuilder;
             break;
           }
         }

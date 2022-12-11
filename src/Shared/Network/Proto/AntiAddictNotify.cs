@@ -24,13 +24,13 @@ namespace Weedwacker.Shared.Network.Proto {
     static AntiAddictNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZBbnRpQWRkaWN0Tm90aWZ5LnByb3RvIkAKEEFudGlBZGRpY3ROb3RpZnkS",
-            "EAoIbXNnX3R5cGUYBiABKAUSCwoDbXNnGAMgASgJEg0KBWxldmVsGAUgASgJ",
-            "QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChZBbnRpQWRkaWN0Tm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvIkAKEEFudGlBZGRpY3ROb3RpZnkSDQoFbGV2ZWwYBCAB",
+            "KAkSCwoDbXNnGAcgASgJEhAKCG1zZ190eXBlGAIgASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AntiAddictNotify), global::Weedwacker.Shared.Network.Proto.AntiAddictNotify.Parser, new[]{ "MsgType", "Msg", "Level" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.AntiAddictNotify), global::Weedwacker.Shared.Network.Proto.AntiAddictNotify.Parser, new[]{ "Level", "Msg", "MsgType" }, null, null, null, null)
           }));
     }
     #endregion
@@ -38,9 +38,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 180
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 174;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class AntiAddictNotify : pb::IMessage<AntiAddictNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -76,9 +80,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AntiAddictNotify(AntiAddictNotify other) : this() {
-      msgType_ = other.msgType_;
-      msg_ = other.msg_;
       level_ = other.level_;
+      msg_ = other.msg_;
+      msgType_ = other.msgType_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,20 +92,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new AntiAddictNotify(this);
     }
 
-    /// <summary>Field number for the "msg_type" field.</summary>
-    public const int MsgTypeFieldNumber = 6;
-    private int msgType_;
+    /// <summary>Field number for the "level" field.</summary>
+    public const int LevelFieldNumber = 4;
+    private string level_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int MsgType {
-      get { return msgType_; }
+    public string Level {
+      get { return level_; }
       set {
-        msgType_ = value;
+        level_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     /// <summary>Field number for the "msg" field.</summary>
-    public const int MsgFieldNumber = 3;
+    public const int MsgFieldNumber = 7;
     private string msg_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -112,15 +116,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "level" field.</summary>
-    public const int LevelFieldNumber = 5;
-    private string level_ = "";
+    /// <summary>Field number for the "msg_type" field.</summary>
+    public const int MsgTypeFieldNumber = 2;
+    private int msgType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Level {
-      get { return level_; }
+    public int MsgType {
+      get { return msgType_; }
       set {
-        level_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        msgType_ = value;
       }
     }
 
@@ -139,9 +143,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (MsgType != other.MsgType) return false;
-      if (Msg != other.Msg) return false;
       if (Level != other.Level) return false;
+      if (Msg != other.Msg) return false;
+      if (MsgType != other.MsgType) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -149,9 +153,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (MsgType != 0) hash ^= MsgType.GetHashCode();
-      if (Msg.Length != 0) hash ^= Msg.GetHashCode();
       if (Level.Length != 0) hash ^= Level.GetHashCode();
+      if (Msg.Length != 0) hash ^= Msg.GetHashCode();
+      if (MsgType != 0) hash ^= MsgType.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -170,17 +174,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Msg.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Msg);
+      if (MsgType != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(MsgType);
       }
       if (Level.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(34);
         output.WriteString(Level);
       }
-      if (MsgType != 0) {
-        output.WriteRawTag(48);
-        output.WriteInt32(MsgType);
+      if (Msg.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(Msg);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -192,17 +196,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Msg.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Msg);
+      if (MsgType != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(MsgType);
       }
       if (Level.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(34);
         output.WriteString(Level);
       }
-      if (MsgType != 0) {
-        output.WriteRawTag(48);
-        output.WriteInt32(MsgType);
+      if (Msg.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(Msg);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -214,14 +218,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (MsgType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MsgType);
+      if (Level.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Level);
       }
       if (Msg.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Msg);
       }
-      if (Level.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Level);
+      if (MsgType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MsgType);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -235,14 +239,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.MsgType != 0) {
-        MsgType = other.MsgType;
+      if (other.Level.Length != 0) {
+        Level = other.Level;
       }
       if (other.Msg.Length != 0) {
         Msg = other.Msg;
       }
-      if (other.Level.Length != 0) {
-        Level = other.Level;
+      if (other.MsgType != 0) {
+        MsgType = other.MsgType;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -259,16 +263,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
-            Msg = input.ReadString();
+          case 16: {
+            MsgType = input.ReadInt32();
             break;
           }
-          case 42: {
+          case 34: {
             Level = input.ReadString();
             break;
           }
-          case 48: {
-            MsgType = input.ReadInt32();
+          case 58: {
+            Msg = input.ReadString();
             break;
           }
         }
@@ -286,16 +290,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
-            Msg = input.ReadString();
+          case 16: {
+            MsgType = input.ReadInt32();
             break;
           }
-          case 42: {
+          case 34: {
             Level = input.ReadString();
             break;
           }
-          case 48: {
-            MsgType = input.ReadInt32();
+          case 58: {
+            Msg = input.ReadString();
             break;
           }
         }

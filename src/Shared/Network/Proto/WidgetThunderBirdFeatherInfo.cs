@@ -24,10 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static WidgetThunderBirdFeatherInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJXaWRnZXRUaHVuZGVyQmlyZEZlYXRoZXJJbmZvLnByb3RvIjYKHFdpZGdl",
-            "dFRodW5kZXJCaXJkRmVhdGhlckluZm8SFgoOZW50aXR5X2lkX2xpc3QYBCAD",
-            "KA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3Rv",
-            "Mw=="));
+            "CiJXaWRnZXRUaHVuZGVyQmlyZEZlYXRoZXJJbmZvLnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIjYKHFdpZGdldFRodW5kZXJCaXJk",
+            "RmVhdGhlckluZm8SFgoOZW50aXR5X2lkX2xpc3QYCSADKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,9 +82,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "entity_id_list" field.</summary>
-    public const int EntityIdListFieldNumber = 4;
+    public const int EntityIdListFieldNumber = 9;
     private static readonly pb::FieldCodec<uint> _repeated_entityIdList_codec
-        = pb::FieldCodec.ForUInt32(34);
+        = pb::FieldCodec.ForUInt32(74);
     private readonly pbc::RepeatedField<uint> entityIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -186,8 +185,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 34:
-          case 32: {
+          case 74:
+          case 72: {
             entityIdList_.AddEntriesFrom(input, _repeated_entityIdList_codec);
             break;
           }
@@ -206,8 +205,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 34:
-          case 32: {
+          case 74:
+          case 72: {
             entityIdList_.AddEntriesFrom(ref input, _repeated_entityIdList_codec);
             break;
           }

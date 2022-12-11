@@ -25,10 +25,10 @@ namespace Weedwacker.Shared.Network.Proto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cj5BYmlsaXR5TWl4aW5Eb0FjdGlvbkJ5U2VsZk1vZGlmaWVyRWxlbWVudER1",
-            "cmFiaWxpdHlSYXRpby5wcm90byJZCjhBYmlsaXR5TWl4aW5Eb0FjdGlvbkJ5",
-            "U2VsZk1vZGlmaWVyRWxlbWVudER1cmFiaWxpdHlSYXRpbxIdChVsYXN0X2R1",
-            "cmFiaWxpdHlfcmF0aW8YCSABKAJCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
-            "dHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "cmFiaWxpdHlSYXRpby5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90byJZCjhBYmlsaXR5TWl4aW5Eb0FjdGlvbkJ5U2VsZk1vZGlmaWVy",
+            "RWxlbWVudER1cmFiaWxpdHlSYXRpbxIdChVsYXN0X2R1cmFiaWxpdHlfcmF0",
+            "aW8YDiABKAJiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,7 +84,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "last_durability_ratio" field.</summary>
-    public const int LastDurabilityRatioFieldNumber = 9;
+    public const int LastDurabilityRatioFieldNumber = 14;
     private float lastDurabilityRatio_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -138,7 +138,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (LastDurabilityRatio != 0F) {
-        output.WriteRawTag(77);
+        output.WriteRawTag(117);
         output.WriteFloat(LastDurabilityRatio);
       }
       if (_unknownFields != null) {
@@ -152,7 +152,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (LastDurabilityRatio != 0F) {
-        output.WriteRawTag(77);
+        output.WriteRawTag(117);
         output.WriteFloat(LastDurabilityRatio);
       }
       if (_unknownFields != null) {
@@ -198,7 +198,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 77: {
+          case 117: {
             LastDurabilityRatio = input.ReadFloat();
             break;
           }
@@ -217,7 +217,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 77: {
+          case 117: {
             LastDurabilityRatio = input.ReadFloat();
             break;
           }

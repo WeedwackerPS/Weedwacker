@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static BounceConjuringChapterInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBCb3VuY2VDb25qdXJpbmdDaGFwdGVySW5mby5wcm90byJXChpCb3VuY2VD",
-            "b25qdXJpbmdDaGFwdGVySW5mbxISCgpiZXN0X3Njb3JlGAwgASgNEhEKCW9w",
-            "ZW5fdGltZRgJIAEoDRISCgpjaGFwdGVyX2lkGA0gASgNQiKqAh9XZWVkd2Fj",
-            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiBCb3VuY2VDb25qdXJpbmdDaGFwdGVySW5mby5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byJXChpCb3VuY2VDb25qdXJpbmdDaGFw",
+            "dGVySW5mbxISCgpiZXN0X3Njb3JlGAMgASgNEhEKCW9wZW5fdGltZRgCIAEo",
+            "DRISCgpjaGFwdGVyX2lkGAsgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "best_score" field.</summary>
-    public const int BestScoreFieldNumber = 12;
+    public const int BestScoreFieldNumber = 3;
     private uint bestScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -97,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "open_time" field.</summary>
-    public const int OpenTimeFieldNumber = 9;
+    public const int OpenTimeFieldNumber = 2;
     private uint openTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,7 +109,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "chapter_id" field.</summary>
-    public const int ChapterIdFieldNumber = 13;
+    public const int ChapterIdFieldNumber = 11;
     private uint chapterId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -167,15 +167,15 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (OpenTime != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(16);
         output.WriteUInt32(OpenTime);
       }
       if (BestScore != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(24);
         output.WriteUInt32(BestScore);
       }
       if (ChapterId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(88);
         output.WriteUInt32(ChapterId);
       }
       if (_unknownFields != null) {
@@ -189,15 +189,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (OpenTime != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(16);
         output.WriteUInt32(OpenTime);
       }
       if (BestScore != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(24);
         output.WriteUInt32(BestScore);
       }
       if (ChapterId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(88);
         output.WriteUInt32(ChapterId);
       }
       if (_unknownFields != null) {
@@ -255,15 +255,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 72: {
+          case 16: {
             OpenTime = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 24: {
             BestScore = input.ReadUInt32();
             break;
           }
-          case 104: {
+          case 88: {
             ChapterId = input.ReadUInt32();
             break;
           }
@@ -282,15 +282,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 72: {
+          case 16: {
             OpenTime = input.ReadUInt32();
             break;
           }
-          case 96: {
+          case 24: {
             BestScore = input.ReadUInt32();
             break;
           }
-          case 104: {
+          case 88: {
             ChapterId = input.ReadUInt32();
             break;
           }

@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static LanternRiteDoFireworksReformReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVMYW50ZXJuUml0ZURvRmlyZXdvcmtzUmVmb3JtUmVxLnByb3RvIm4KH0xh",
-            "bnRlcm5SaXRlRG9GaXJld29ya3NSZWZvcm1SZXESEAoIc3RhZ2VfaWQYDCAB",
-            "KA0SEAoIc2tpbGxfaWQYCyABKA0SFAoMY2hhbGxlbmdlX2lkGAogASgNEhEK",
-            "CWZhY3Rvcl9pZBgNIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
-            "ay5Qcm90b2IGcHJvdG8z"));
+            "CiVMYW50ZXJuUml0ZURvRmlyZXdvcmtzUmVmb3JtUmVxLnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIm4KH0xhbnRlcm5SaXRlRG9G",
+            "aXJld29ya3NSZWZvcm1SZXESEAoIc3RhZ2VfaWQYDyABKA0SFAoMY2hhbGxl",
+            "bmdlX2lkGA0gASgNEhEKCWZhY3Rvcl9pZBgJIAEoDRIQCghza2lsbF9pZBgE",
+            "IAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.LanternRiteDoFireworksReformReq), global::Weedwacker.Shared.Network.Proto.LanternRiteDoFireworksReformReq.Parser, new[]{ "StageId", "SkillId", "ChallengeId", "FactorId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.LanternRiteDoFireworksReformReq), global::Weedwacker.Shared.Network.Proto.LanternRiteDoFireworksReformReq.Parser, new[]{ "StageId", "ChallengeId", "FactorId", "SkillId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8226
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8517;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class LanternRiteDoFireworksReformReq : pb::IMessage<LanternRiteDoFireworksReformReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,9 +84,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LanternRiteDoFireworksReformReq(LanternRiteDoFireworksReformReq other) : this() {
       stageId_ = other.stageId_;
-      skillId_ = other.skillId_;
       challengeId_ = other.challengeId_;
       factorId_ = other.factorId_;
+      skillId_ = other.skillId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "stage_id" field.</summary>
-    public const int StageIdFieldNumber = 12;
+    public const int StageIdFieldNumber = 15;
     private uint stageId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,20 +108,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "skill_id" field.</summary>
-    public const int SkillIdFieldNumber = 11;
-    private uint skillId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SkillId {
-      get { return skillId_; }
-      set {
-        skillId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "challenge_id" field.</summary>
-    public const int ChallengeIdFieldNumber = 10;
+    public const int ChallengeIdFieldNumber = 13;
     private uint challengeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -129,7 +121,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "factor_id" field.</summary>
-    public const int FactorIdFieldNumber = 13;
+    public const int FactorIdFieldNumber = 9;
     private uint factorId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -137,6 +129,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return factorId_; }
       set {
         factorId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "skill_id" field.</summary>
+    public const int SkillIdFieldNumber = 4;
+    private uint skillId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SkillId {
+      get { return skillId_; }
+      set {
+        skillId_ = value;
       }
     }
 
@@ -156,9 +160,9 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (StageId != other.StageId) return false;
-      if (SkillId != other.SkillId) return false;
       if (ChallengeId != other.ChallengeId) return false;
       if (FactorId != other.FactorId) return false;
+      if (SkillId != other.SkillId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -167,9 +171,9 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (StageId != 0) hash ^= StageId.GetHashCode();
-      if (SkillId != 0) hash ^= SkillId.GetHashCode();
       if (ChallengeId != 0) hash ^= ChallengeId.GetHashCode();
       if (FactorId != 0) hash ^= FactorId.GetHashCode();
+      if (SkillId != 0) hash ^= SkillId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -188,21 +192,21 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ChallengeId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(ChallengeId);
-      }
       if (SkillId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(32);
         output.WriteUInt32(SkillId);
       }
-      if (StageId != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(StageId);
-      }
       if (FactorId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(72);
         output.WriteUInt32(FactorId);
+      }
+      if (ChallengeId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(ChallengeId);
+      }
+      if (StageId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(StageId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -214,21 +218,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ChallengeId != 0) {
-        output.WriteRawTag(80);
-        output.WriteUInt32(ChallengeId);
-      }
       if (SkillId != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(32);
         output.WriteUInt32(SkillId);
       }
-      if (StageId != 0) {
-        output.WriteRawTag(96);
-        output.WriteUInt32(StageId);
-      }
       if (FactorId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(72);
         output.WriteUInt32(FactorId);
+      }
+      if (ChallengeId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(ChallengeId);
+      }
+      if (StageId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(StageId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -243,14 +247,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (StageId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
       }
-      if (SkillId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillId);
-      }
       if (ChallengeId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeId);
       }
       if (FactorId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FactorId);
+      }
+      if (SkillId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -267,14 +271,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.StageId != 0) {
         StageId = other.StageId;
       }
-      if (other.SkillId != 0) {
-        SkillId = other.SkillId;
-      }
       if (other.ChallengeId != 0) {
         ChallengeId = other.ChallengeId;
       }
       if (other.FactorId != 0) {
         FactorId = other.FactorId;
+      }
+      if (other.SkillId != 0) {
+        SkillId = other.SkillId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -291,20 +295,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 80: {
-            ChallengeId = input.ReadUInt32();
-            break;
-          }
-          case 88: {
+          case 32: {
             SkillId = input.ReadUInt32();
             break;
           }
-          case 96: {
-            StageId = input.ReadUInt32();
+          case 72: {
+            FactorId = input.ReadUInt32();
             break;
           }
           case 104: {
-            FactorId = input.ReadUInt32();
+            ChallengeId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            StageId = input.ReadUInt32();
             break;
           }
         }
@@ -322,20 +326,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 80: {
-            ChallengeId = input.ReadUInt32();
-            break;
-          }
-          case 88: {
+          case 32: {
             SkillId = input.ReadUInt32();
             break;
           }
-          case 96: {
-            StageId = input.ReadUInt32();
+          case 72: {
+            FactorId = input.ReadUInt32();
             break;
           }
           case 104: {
-            FactorId = input.ReadUInt32();
+            ChallengeId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            StageId = input.ReadUInt32();
             break;
           }
         }

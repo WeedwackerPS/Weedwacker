@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static MassiveWaterInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZNYXNzaXZlV2F0ZXJJbmZvLnByb3RvIh4KEE1hc3NpdmVXYXRlckluZm8S",
-            "CgoCaWQYASABKANCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
-            "dG9iBnByb3RvMw=="));
+            "ChZNYXNzaXZlV2F0ZXJJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvIh4KEE1hc3NpdmVXYXRlckluZm8SCgoCaWQYASABKANi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

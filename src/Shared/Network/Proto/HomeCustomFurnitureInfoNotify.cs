@@ -24,20 +24,21 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeCustomFurnitureInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNIb21lQ3VzdG9tRnVybml0dXJlSW5mb05vdGlmeS5wcm90bxodSG9tZUN1",
-            "c3RvbUZ1cm5pdHVyZUluZm8ucHJvdG8iqAIKHUhvbWVDdXN0b21GdXJuaXR1",
-            "cmVJbmZvTm90aWZ5EiQKHGRlbGV0ZV9jdXN0b21fZnVybml0dXJlX2xpc3QY",
-            "BCADKA0SYgocdXNlZF9zdWJfZnVybml0dXJlX2NvdW50X21hcBgPIAMoCzI8",
-            "LkhvbWVDdXN0b21GdXJuaXR1cmVJbmZvTm90aWZ5LlVzZWRTdWJGdXJuaXR1",
-            "cmVDb3VudE1hcEVudHJ5EjwKGmN1c3RvbV9mdXJuaXR1cmVfaW5mb19saXN0",
-            "GAsgAygLMhguSG9tZUN1c3RvbUZ1cm5pdHVyZUluZm8aPwodVXNlZFN1YkZ1",
-            "cm5pdHVyZUNvdW50TWFwRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIg",
-            "ASgNOgI4AUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IG",
-            "cHJvdG8z"));
+            "CiNIb21lQ3VzdG9tRnVybml0dXJlSW5mb05vdGlmeS5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxodSG9tZUN1c3RvbUZ1cm5pdHVy",
+            "ZUluZm8ucHJvdG8i6QIKHUhvbWVDdXN0b21GdXJuaXR1cmVJbmZvTm90aWZ5",
+            "EiQKHGRlbGV0ZV9jdXN0b21fZnVybml0dXJlX2xpc3QYDSADKA0SXAoaY3Vz",
+            "dG9tX2Z1cm5pdHVyZV9pbmZvX2xpc3QYDyADKAsyOC5XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvLkhvbWVDdXN0b21GdXJuaXR1cmVJbmZvEoIB",
+            "Chx1c2VkX3N1Yl9mdXJuaXR1cmVfY291bnRfbWFwGAMgAygLMlwuV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5Ib21lQ3VzdG9tRnVybml0dXJl",
+            "SW5mb05vdGlmeS5Vc2VkU3ViRnVybml0dXJlQ291bnRNYXBFbnRyeRo/Ch1V",
+            "c2VkU3ViRnVybml0dXJlQ291bnRNYXBFbnRyeRILCgNrZXkYASABKA0SDQoF",
+            "dmFsdWUYAiABKA06AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HomeCustomFurnitureInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeCustomFurnitureInfoNotify), global::Weedwacker.Shared.Network.Proto.HomeCustomFurnitureInfoNotify.Parser, new[]{ "DeleteCustomFurnitureList", "UsedSubFurnitureCountMap", "CustomFurnitureInfoList" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeCustomFurnitureInfoNotify), global::Weedwacker.Shared.Network.Proto.HomeCustomFurnitureInfoNotify.Parser, new[]{ "DeleteCustomFurnitureList", "CustomFurnitureInfoList", "UsedSubFurnitureCountMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -45,9 +46,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4712
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4888;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class HomeCustomFurnitureInfoNotify : pb::IMessage<HomeCustomFurnitureInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -84,8 +89,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeCustomFurnitureInfoNotify(HomeCustomFurnitureInfoNotify other) : this() {
       deleteCustomFurnitureList_ = other.deleteCustomFurnitureList_.Clone();
-      usedSubFurnitureCountMap_ = other.usedSubFurnitureCountMap_.Clone();
       customFurnitureInfoList_ = other.customFurnitureInfoList_.Clone();
+      usedSubFurnitureCountMap_ = other.usedSubFurnitureCountMap_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -96,9 +101,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "delete_custom_furniture_list" field.</summary>
-    public const int DeleteCustomFurnitureListFieldNumber = 4;
+    public const int DeleteCustomFurnitureListFieldNumber = 13;
     private static readonly pb::FieldCodec<uint> _repeated_deleteCustomFurnitureList_codec
-        = pb::FieldCodec.ForUInt32(34);
+        = pb::FieldCodec.ForUInt32(106);
     private readonly pbc::RepeatedField<uint> deleteCustomFurnitureList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -106,26 +111,26 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return deleteCustomFurnitureList_; }
     }
 
-    /// <summary>Field number for the "used_sub_furniture_count_map" field.</summary>
-    public const int UsedSubFurnitureCountMapFieldNumber = 15;
-    private static readonly pbc::MapField<uint, uint>.Codec _map_usedSubFurnitureCountMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 122);
-    private readonly pbc::MapField<uint, uint> usedSubFurnitureCountMap_ = new pbc::MapField<uint, uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, uint> UsedSubFurnitureCountMap {
-      get { return usedSubFurnitureCountMap_; }
-    }
-
     /// <summary>Field number for the "custom_furniture_info_list" field.</summary>
-    public const int CustomFurnitureInfoListFieldNumber = 11;
+    public const int CustomFurnitureInfoListFieldNumber = 15;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeCustomFurnitureInfo> _repeated_customFurnitureInfoList_codec
-        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.HomeCustomFurnitureInfo.Parser);
+        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.HomeCustomFurnitureInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeCustomFurnitureInfo> customFurnitureInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeCustomFurnitureInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeCustomFurnitureInfo> CustomFurnitureInfoList {
       get { return customFurnitureInfoList_; }
+    }
+
+    /// <summary>Field number for the "used_sub_furniture_count_map" field.</summary>
+    public const int UsedSubFurnitureCountMapFieldNumber = 3;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_usedSubFurnitureCountMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 26);
+    private readonly pbc::MapField<uint, uint> usedSubFurnitureCountMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> UsedSubFurnitureCountMap {
+      get { return usedSubFurnitureCountMap_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -144,8 +149,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if(!deleteCustomFurnitureList_.Equals(other.deleteCustomFurnitureList_)) return false;
-      if (!UsedSubFurnitureCountMap.Equals(other.UsedSubFurnitureCountMap)) return false;
       if(!customFurnitureInfoList_.Equals(other.customFurnitureInfoList_)) return false;
+      if (!UsedSubFurnitureCountMap.Equals(other.UsedSubFurnitureCountMap)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -154,8 +159,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= deleteCustomFurnitureList_.GetHashCode();
-      hash ^= UsedSubFurnitureCountMap.GetHashCode();
       hash ^= customFurnitureInfoList_.GetHashCode();
+      hash ^= UsedSubFurnitureCountMap.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -174,9 +179,9 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      usedSubFurnitureCountMap_.WriteTo(output, _map_usedSubFurnitureCountMap_codec);
       deleteCustomFurnitureList_.WriteTo(output, _repeated_deleteCustomFurnitureList_codec);
       customFurnitureInfoList_.WriteTo(output, _repeated_customFurnitureInfoList_codec);
-      usedSubFurnitureCountMap_.WriteTo(output, _map_usedSubFurnitureCountMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -187,9 +192,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      usedSubFurnitureCountMap_.WriteTo(ref output, _map_usedSubFurnitureCountMap_codec);
       deleteCustomFurnitureList_.WriteTo(ref output, _repeated_deleteCustomFurnitureList_codec);
       customFurnitureInfoList_.WriteTo(ref output, _repeated_customFurnitureInfoList_codec);
-      usedSubFurnitureCountMap_.WriteTo(ref output, _map_usedSubFurnitureCountMap_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -201,8 +206,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public int CalculateSize() {
       int size = 0;
       size += deleteCustomFurnitureList_.CalculateSize(_repeated_deleteCustomFurnitureList_codec);
-      size += usedSubFurnitureCountMap_.CalculateSize(_map_usedSubFurnitureCountMap_codec);
       size += customFurnitureInfoList_.CalculateSize(_repeated_customFurnitureInfoList_codec);
+      size += usedSubFurnitureCountMap_.CalculateSize(_map_usedSubFurnitureCountMap_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -216,8 +221,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return;
       }
       deleteCustomFurnitureList_.Add(other.deleteCustomFurnitureList_);
-      usedSubFurnitureCountMap_.Add(other.usedSubFurnitureCountMap_);
       customFurnitureInfoList_.Add(other.customFurnitureInfoList_);
+      usedSubFurnitureCountMap_.Add(other.usedSubFurnitureCountMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -233,17 +238,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 34:
-          case 32: {
+          case 26: {
+            usedSubFurnitureCountMap_.AddEntriesFrom(input, _map_usedSubFurnitureCountMap_codec);
+            break;
+          }
+          case 106:
+          case 104: {
             deleteCustomFurnitureList_.AddEntriesFrom(input, _repeated_deleteCustomFurnitureList_codec);
             break;
           }
-          case 90: {
-            customFurnitureInfoList_.AddEntriesFrom(input, _repeated_customFurnitureInfoList_codec);
-            break;
-          }
           case 122: {
-            usedSubFurnitureCountMap_.AddEntriesFrom(input, _map_usedSubFurnitureCountMap_codec);
+            customFurnitureInfoList_.AddEntriesFrom(input, _repeated_customFurnitureInfoList_codec);
             break;
           }
         }
@@ -261,17 +266,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 34:
-          case 32: {
+          case 26: {
+            usedSubFurnitureCountMap_.AddEntriesFrom(ref input, _map_usedSubFurnitureCountMap_codec);
+            break;
+          }
+          case 106:
+          case 104: {
             deleteCustomFurnitureList_.AddEntriesFrom(ref input, _repeated_deleteCustomFurnitureList_codec);
             break;
           }
-          case 90: {
-            customFurnitureInfoList_.AddEntriesFrom(ref input, _repeated_customFurnitureInfoList_codec);
-            break;
-          }
           case 122: {
-            usedSubFurnitureCountMap_.AddEntriesFrom(ref input, _map_usedSubFurnitureCountMap_codec);
+            customFurnitureInfoList_.AddEntriesFrom(ref input, _repeated_customFurnitureInfoList_codec);
             break;
           }
         }

@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static AbilityMixinFieldEntityCountChangeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CihBYmlsaXR5TWl4aW5GaWVsZEVudGl0eUNvdW50Q2hhbmdlLnByb3RvIkAK",
-            "IkFiaWxpdHlNaXhpbkZpZWxkRW50aXR5Q291bnRDaGFuZ2USGgoSZmllbGRf",
-            "ZW50aXR5X2NvdW50GA4gASgNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
-            "b3JrLlByb3RvYgZwcm90bzM="));
+            "CihBYmlsaXR5TWl4aW5GaWVsZEVudGl0eUNvdW50Q2hhbmdlLnByb3RvEh9X",
+            "ZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIkAKIkFiaWxpdHlNaXhp",
+            "bkZpZWxkRW50aXR5Q291bnRDaGFuZ2USGgoSZmllbGRfZW50aXR5X2NvdW50",
+            "GAggASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "field_entity_count" field.</summary>
-    public const int FieldEntityCountFieldNumber = 14;
+    public const int FieldEntityCountFieldNumber = 8;
     private uint fieldEntityCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -137,7 +137,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (FieldEntityCount != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(64);
         output.WriteUInt32(FieldEntityCount);
       }
       if (_unknownFields != null) {
@@ -151,7 +151,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (FieldEntityCount != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(64);
         output.WriteUInt32(FieldEntityCount);
       }
       if (_unknownFields != null) {
@@ -197,7 +197,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 112: {
+          case 64: {
             FieldEntityCount = input.ReadUInt32();
             break;
           }
@@ -216,7 +216,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 112: {
+          case 64: {
             FieldEntityCount = input.ReadUInt32();
             break;
           }

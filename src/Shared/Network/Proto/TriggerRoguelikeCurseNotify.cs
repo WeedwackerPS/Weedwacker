@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static TriggerRoguelikeCurseNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiFUcmlnZ2VyUm9ndWVsaWtlQ3Vyc2VOb3RpZnkucHJvdG8ifwobVHJpZ2dl",
-            "clJvZ3VlbGlrZUN1cnNlTm90aWZ5EhkKEWVmZmVjdF9wYXJhbV9saXN0GA4g",
-            "AygNEhYKDmN1cnNlX2dyb3VwX2lkGAkgASgNEhgKEGlzX3RyaWdnZXJfY3Vy",
-            "c2UYDSABKAgSEwoLY3Vyc2VfbGV2ZWwYAyABKA1CIqoCH1dlZWR3YWNrZXIu",
-            "U2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiFUcmlnZ2VyUm9ndWVsaWtlQ3Vyc2VOb3RpZnkucHJvdG8SH1dlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8ijAEKG1RyaWdnZXJSb2d1ZWxpa2VD",
+            "dXJzZU5vdGlmeRIbChNVbmszMzAwX1BPTElFTkJDTkxGGAcgASgNEhsKE1Vu",
+            "azMzMDBfTEpISklCRFBCQkMYCiABKA0SGAoQaXNfdHJpZ2dlcl9jdXJzZRgL",
+            "IAEoCBIZChFlZmZlY3RfcGFyYW1fbGlzdBgJIAMoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TriggerRoguelikeCurseNotify), global::Weedwacker.Shared.Network.Proto.TriggerRoguelikeCurseNotify.Parser, new[]{ "EffectParamList", "CurseGroupId", "IsTriggerCurse", "CurseLevel" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.TriggerRoguelikeCurseNotify), global::Weedwacker.Shared.Network.Proto.TriggerRoguelikeCurseNotify.Parser, new[]{ "Unk3300POLIENBCNLF", "Unk3300LJHJIBDPBBC", "IsTriggerCurse", "EffectParamList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8412
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8965;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class TriggerRoguelikeCurseNotify : pb::IMessage<TriggerRoguelikeCurseNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,10 +82,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TriggerRoguelikeCurseNotify(TriggerRoguelikeCurseNotify other) : this() {
-      effectParamList_ = other.effectParamList_.Clone();
-      curseGroupId_ = other.curseGroupId_;
+      unk3300POLIENBCNLF_ = other.unk3300POLIENBCNLF_;
+      unk3300LJHJIBDPBBC_ = other.unk3300LJHJIBDPBBC_;
       isTriggerCurse_ = other.isTriggerCurse_;
-      curseLevel_ = other.curseLevel_;
+      effectParamList_ = other.effectParamList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,31 +95,32 @@ namespace Weedwacker.Shared.Network.Proto {
       return new TriggerRoguelikeCurseNotify(this);
     }
 
-    /// <summary>Field number for the "effect_param_list" field.</summary>
-    public const int EffectParamListFieldNumber = 14;
-    private static readonly pb::FieldCodec<uint> _repeated_effectParamList_codec
-        = pb::FieldCodec.ForUInt32(114);
-    private readonly pbc::RepeatedField<uint> effectParamList_ = new pbc::RepeatedField<uint>();
+    /// <summary>Field number for the "Unk3300_POLIENBCNLF" field.</summary>
+    public const int Unk3300POLIENBCNLFFieldNumber = 7;
+    private uint unk3300POLIENBCNLF_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> EffectParamList {
-      get { return effectParamList_; }
+    public uint Unk3300POLIENBCNLF {
+      get { return unk3300POLIENBCNLF_; }
+      set {
+        unk3300POLIENBCNLF_ = value;
+      }
     }
 
-    /// <summary>Field number for the "curse_group_id" field.</summary>
-    public const int CurseGroupIdFieldNumber = 9;
-    private uint curseGroupId_;
+    /// <summary>Field number for the "Unk3300_LJHJIBDPBBC" field.</summary>
+    public const int Unk3300LJHJIBDPBBCFieldNumber = 10;
+    private uint unk3300LJHJIBDPBBC_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurseGroupId {
-      get { return curseGroupId_; }
+    public uint Unk3300LJHJIBDPBBC {
+      get { return unk3300LJHJIBDPBBC_; }
       set {
-        curseGroupId_ = value;
+        unk3300LJHJIBDPBBC_ = value;
       }
     }
 
     /// <summary>Field number for the "is_trigger_curse" field.</summary>
-    public const int IsTriggerCurseFieldNumber = 13;
+    public const int IsTriggerCurseFieldNumber = 11;
     private bool isTriggerCurse_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -126,16 +131,15 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "curse_level" field.</summary>
-    public const int CurseLevelFieldNumber = 3;
-    private uint curseLevel_;
+    /// <summary>Field number for the "effect_param_list" field.</summary>
+    public const int EffectParamListFieldNumber = 9;
+    private static readonly pb::FieldCodec<uint> _repeated_effectParamList_codec
+        = pb::FieldCodec.ForUInt32(74);
+    private readonly pbc::RepeatedField<uint> effectParamList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CurseLevel {
-      get { return curseLevel_; }
-      set {
-        curseLevel_ = value;
-      }
+    public pbc::RepeatedField<uint> EffectParamList {
+      get { return effectParamList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -153,10 +157,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!effectParamList_.Equals(other.effectParamList_)) return false;
-      if (CurseGroupId != other.CurseGroupId) return false;
+      if (Unk3300POLIENBCNLF != other.Unk3300POLIENBCNLF) return false;
+      if (Unk3300LJHJIBDPBBC != other.Unk3300LJHJIBDPBBC) return false;
       if (IsTriggerCurse != other.IsTriggerCurse) return false;
-      if (CurseLevel != other.CurseLevel) return false;
+      if(!effectParamList_.Equals(other.effectParamList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -164,10 +168,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= effectParamList_.GetHashCode();
-      if (CurseGroupId != 0) hash ^= CurseGroupId.GetHashCode();
+      if (Unk3300POLIENBCNLF != 0) hash ^= Unk3300POLIENBCNLF.GetHashCode();
+      if (Unk3300LJHJIBDPBBC != 0) hash ^= Unk3300LJHJIBDPBBC.GetHashCode();
       if (IsTriggerCurse != false) hash ^= IsTriggerCurse.GetHashCode();
-      if (CurseLevel != 0) hash ^= CurseLevel.GetHashCode();
+      hash ^= effectParamList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -186,19 +190,19 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (CurseLevel != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(CurseLevel);
-      }
-      if (CurseGroupId != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(CurseGroupId);
-      }
-      if (IsTriggerCurse != false) {
-        output.WriteRawTag(104);
-        output.WriteBool(IsTriggerCurse);
+      if (Unk3300POLIENBCNLF != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300POLIENBCNLF);
       }
       effectParamList_.WriteTo(output, _repeated_effectParamList_codec);
+      if (Unk3300LJHJIBDPBBC != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300LJHJIBDPBBC);
+      }
+      if (IsTriggerCurse != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(IsTriggerCurse);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -209,19 +213,19 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (CurseLevel != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(CurseLevel);
-      }
-      if (CurseGroupId != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(CurseGroupId);
-      }
-      if (IsTriggerCurse != false) {
-        output.WriteRawTag(104);
-        output.WriteBool(IsTriggerCurse);
+      if (Unk3300POLIENBCNLF != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300POLIENBCNLF);
       }
       effectParamList_.WriteTo(ref output, _repeated_effectParamList_codec);
+      if (Unk3300LJHJIBDPBBC != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300LJHJIBDPBBC);
+      }
+      if (IsTriggerCurse != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(IsTriggerCurse);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -232,16 +236,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += effectParamList_.CalculateSize(_repeated_effectParamList_codec);
-      if (CurseGroupId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurseGroupId);
+      if (Unk3300POLIENBCNLF != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300POLIENBCNLF);
+      }
+      if (Unk3300LJHJIBDPBBC != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LJHJIBDPBBC);
       }
       if (IsTriggerCurse != false) {
         size += 1 + 1;
       }
-      if (CurseLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurseLevel);
-      }
+      size += effectParamList_.CalculateSize(_repeated_effectParamList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -254,16 +258,16 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      effectParamList_.Add(other.effectParamList_);
-      if (other.CurseGroupId != 0) {
-        CurseGroupId = other.CurseGroupId;
+      if (other.Unk3300POLIENBCNLF != 0) {
+        Unk3300POLIENBCNLF = other.Unk3300POLIENBCNLF;
+      }
+      if (other.Unk3300LJHJIBDPBBC != 0) {
+        Unk3300LJHJIBDPBBC = other.Unk3300LJHJIBDPBBC;
       }
       if (other.IsTriggerCurse != false) {
         IsTriggerCurse = other.IsTriggerCurse;
       }
-      if (other.CurseLevel != 0) {
-        CurseLevel = other.CurseLevel;
-      }
+      effectParamList_.Add(other.effectParamList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -279,21 +283,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            CurseLevel = input.ReadUInt32();
+          case 56: {
+            Unk3300POLIENBCNLF = input.ReadUInt32();
             break;
           }
+          case 74:
           case 72: {
-            CurseGroupId = input.ReadUInt32();
-            break;
-          }
-          case 104: {
-            IsTriggerCurse = input.ReadBool();
-            break;
-          }
-          case 114:
-          case 112: {
             effectParamList_.AddEntriesFrom(input, _repeated_effectParamList_codec);
+            break;
+          }
+          case 80: {
+            Unk3300LJHJIBDPBBC = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            IsTriggerCurse = input.ReadBool();
             break;
           }
         }
@@ -311,21 +315,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            CurseLevel = input.ReadUInt32();
+          case 56: {
+            Unk3300POLIENBCNLF = input.ReadUInt32();
             break;
           }
+          case 74:
           case 72: {
-            CurseGroupId = input.ReadUInt32();
-            break;
-          }
-          case 104: {
-            IsTriggerCurse = input.ReadBool();
-            break;
-          }
-          case 114:
-          case 112: {
             effectParamList_.AddEntriesFrom(ref input, _repeated_effectParamList_codec);
+            break;
+          }
+          case 80: {
+            Unk3300LJHJIBDPBBC = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            IsTriggerCurse = input.ReadBool();
             break;
           }
         }

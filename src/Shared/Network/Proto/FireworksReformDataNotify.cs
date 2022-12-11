@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static FireworksReformDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9GaXJld29ya3NSZWZvcm1EYXRhTm90aWZ5LnByb3RvGhlGaXJld29ya3NS",
-            "ZWZvcm1EYXRhLnByb3RvIlUKGUZpcmV3b3Jrc1JlZm9ybURhdGFOb3RpZnkS",
-            "OAoaZmlyZXdvcmtzX3JlZm9ybV9kYXRhX2xpc3QYBiADKAsyFC5GaXJld29y",
-            "a3NSZWZvcm1EYXRhQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
-            "b3RvYgZwcm90bzM="));
+            "Ch9GaXJld29ya3NSZWZvcm1EYXRhTm90aWZ5LnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvGhlGaXJld29ya3NSZWZvcm1EYXRhLnBy",
+            "b3RvInUKGUZpcmV3b3Jrc1JlZm9ybURhdGFOb3RpZnkSWAoaZmlyZXdvcmtz",
+            "X3JlZm9ybV9kYXRhX2xpc3QYCSADKAsyNC5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLkZpcmV3b3Jrc1JlZm9ybURhdGFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FireworksReformDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 6033
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5908;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class FireworksReformDataNotify : pb::IMessage<FireworksReformDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "fireworks_reform_data_list" field.</summary>
-    public const int FireworksReformDataListFieldNumber = 6;
+    public const int FireworksReformDataListFieldNumber = 9;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.FireworksReformData> _repeated_fireworksReformDataList_codec
-        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.FireworksReformData.Parser);
+        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.FireworksReformData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FireworksReformData> fireworksReformDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FireworksReformData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -192,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 50: {
+          case 74: {
             fireworksReformDataList_.AddEntriesFrom(input, _repeated_fireworksReformDataList_codec);
             break;
           }
@@ -211,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 50: {
+          case 74: {
             fireworksReformDataList_.AddEntriesFrom(ref input, _repeated_fireworksReformDataList_codec);
             break;
           }

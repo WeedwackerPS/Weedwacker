@@ -24,18 +24,19 @@ namespace Weedwacker.Shared.Network.Proto {
     static DragonSpineActivityDetailInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNEcmFnb25TcGluZUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxocRHJhZ29u",
-            "U3BpbmVDaGFwdGVySW5mby5wcm90byL1AQodRHJhZ29uU3BpbmVBY3Rpdml0",
-            "eURldGFpbEluZm8SGQoRaXNfY29udGVudF9jbG9zZWQYCiABKAgSMgoRY2hh",
-            "cHRlcl9pbmZvX2xpc3QYBCADKAsyFy5EcmFnb25TcGluZUNoYXB0ZXJJbmZv",
-            "EhwKFHdlYXBvbl9lbmhhbmNlX2xldmVsGAIgASgNEhsKE2NvbnRlbnRfZmlu",
-            "aXNoX3RpbWUYDyABKA0SGgoSc2hpbW1lcmluZ19lc3NlbmNlGA0gASgNEhQK",
-            "DHdhcm1fZXNzZW5jZRgLIAEoDRIYChB3b25kcm91c19lc3NlbmNlGAcgASgN",
-            "QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiNEcmFnb25TcGluZUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxocRHJhZ29uU3BpbmVDaGFwdGVy",
+            "SW5mby5wcm90byKgAgodRHJhZ29uU3BpbmVBY3Rpdml0eURldGFpbEluZm8S",
+            "GQoRaXNfY29udGVudF9jbG9zZWQYCSABKAgSGwoTVW5rMzMwMF9GT0hKREdD",
+            "QUtFSxgDIAEoDRIbChNVbmszMzAwX1BQQUJPRk1JR05NGAogASgNElIKEWNo",
+            "YXB0ZXJfaW5mb19saXN0GAcgAygLMjcuV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5EcmFnb25TcGluZUNoYXB0ZXJJbmZvEhsKE1VuazMzMDBf",
+            "TkVPQ01HSkNFT0oYBCABKA0SGwoTVW5rMzMwMF9JTUxLSUpBT0FERhgMIAEo",
+            "DRIcChR3ZWFwb25fZW5oYW5jZV9sZXZlbBgIIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.DragonSpineChapterInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DragonSpineActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.DragonSpineActivityDetailInfo.Parser, new[]{ "IsContentClosed", "ChapterInfoList", "WeaponEnhanceLevel", "ContentFinishTime", "ShimmeringEssence", "WarmEssence", "WondrousEssence" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.DragonSpineActivityDetailInfo), global::Weedwacker.Shared.Network.Proto.DragonSpineActivityDetailInfo.Parser, new[]{ "IsContentClosed", "Unk3300FOHJDGCAKEK", "Unk3300PPABOFMIGNM", "ChapterInfoList", "Unk3300NEOCMGJCEOJ", "Unk3300IMLKIJAOADF", "WeaponEnhanceLevel" }, null, null, null, null)
           }));
     }
     #endregion
@@ -77,12 +78,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DragonSpineActivityDetailInfo(DragonSpineActivityDetailInfo other) : this() {
       isContentClosed_ = other.isContentClosed_;
+      unk3300FOHJDGCAKEK_ = other.unk3300FOHJDGCAKEK_;
+      unk3300PPABOFMIGNM_ = other.unk3300PPABOFMIGNM_;
       chapterInfoList_ = other.chapterInfoList_.Clone();
+      unk3300NEOCMGJCEOJ_ = other.unk3300NEOCMGJCEOJ_;
+      unk3300IMLKIJAOADF_ = other.unk3300IMLKIJAOADF_;
       weaponEnhanceLevel_ = other.weaponEnhanceLevel_;
-      contentFinishTime_ = other.contentFinishTime_;
-      shimmeringEssence_ = other.shimmeringEssence_;
-      warmEssence_ = other.warmEssence_;
-      wondrousEssence_ = other.wondrousEssence_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_content_closed" field.</summary>
-    public const int IsContentClosedFieldNumber = 10;
+    public const int IsContentClosedFieldNumber = 9;
     private bool isContentClosed_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,10 +105,34 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "Unk3300_FOHJDGCAKEK" field.</summary>
+    public const int Unk3300FOHJDGCAKEKFieldNumber = 3;
+    private uint unk3300FOHJDGCAKEK_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300FOHJDGCAKEK {
+      get { return unk3300FOHJDGCAKEK_; }
+      set {
+        unk3300FOHJDGCAKEK_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_PPABOFMIGNM" field.</summary>
+    public const int Unk3300PPABOFMIGNMFieldNumber = 10;
+    private uint unk3300PPABOFMIGNM_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300PPABOFMIGNM {
+      get { return unk3300PPABOFMIGNM_; }
+      set {
+        unk3300PPABOFMIGNM_ = value;
+      }
+    }
+
     /// <summary>Field number for the "chapter_info_list" field.</summary>
-    public const int ChapterInfoListFieldNumber = 4;
+    public const int ChapterInfoListFieldNumber = 7;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.DragonSpineChapterInfo> _repeated_chapterInfoList_codec
-        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.DragonSpineChapterInfo.Parser);
+        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.DragonSpineChapterInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DragonSpineChapterInfo> chapterInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.DragonSpineChapterInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,8 +140,32 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return chapterInfoList_; }
     }
 
+    /// <summary>Field number for the "Unk3300_NEOCMGJCEOJ" field.</summary>
+    public const int Unk3300NEOCMGJCEOJFieldNumber = 4;
+    private uint unk3300NEOCMGJCEOJ_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300NEOCMGJCEOJ {
+      get { return unk3300NEOCMGJCEOJ_; }
+      set {
+        unk3300NEOCMGJCEOJ_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_IMLKIJAOADF" field.</summary>
+    public const int Unk3300IMLKIJAOADFFieldNumber = 12;
+    private uint unk3300IMLKIJAOADF_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300IMLKIJAOADF {
+      get { return unk3300IMLKIJAOADF_; }
+      set {
+        unk3300IMLKIJAOADF_ = value;
+      }
+    }
+
     /// <summary>Field number for the "weapon_enhance_level" field.</summary>
-    public const int WeaponEnhanceLevelFieldNumber = 2;
+    public const int WeaponEnhanceLevelFieldNumber = 8;
     private uint weaponEnhanceLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -124,54 +173,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return weaponEnhanceLevel_; }
       set {
         weaponEnhanceLevel_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "content_finish_time" field.</summary>
-    public const int ContentFinishTimeFieldNumber = 15;
-    private uint contentFinishTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ContentFinishTime {
-      get { return contentFinishTime_; }
-      set {
-        contentFinishTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "shimmering_essence" field.</summary>
-    public const int ShimmeringEssenceFieldNumber = 13;
-    private uint shimmeringEssence_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ShimmeringEssence {
-      get { return shimmeringEssence_; }
-      set {
-        shimmeringEssence_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "warm_essence" field.</summary>
-    public const int WarmEssenceFieldNumber = 11;
-    private uint warmEssence_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint WarmEssence {
-      get { return warmEssence_; }
-      set {
-        warmEssence_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "wondrous_essence" field.</summary>
-    public const int WondrousEssenceFieldNumber = 7;
-    private uint wondrousEssence_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint WondrousEssence {
-      get { return wondrousEssence_; }
-      set {
-        wondrousEssence_ = value;
       }
     }
 
@@ -191,12 +192,12 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (IsContentClosed != other.IsContentClosed) return false;
+      if (Unk3300FOHJDGCAKEK != other.Unk3300FOHJDGCAKEK) return false;
+      if (Unk3300PPABOFMIGNM != other.Unk3300PPABOFMIGNM) return false;
       if(!chapterInfoList_.Equals(other.chapterInfoList_)) return false;
+      if (Unk3300NEOCMGJCEOJ != other.Unk3300NEOCMGJCEOJ) return false;
+      if (Unk3300IMLKIJAOADF != other.Unk3300IMLKIJAOADF) return false;
       if (WeaponEnhanceLevel != other.WeaponEnhanceLevel) return false;
-      if (ContentFinishTime != other.ContentFinishTime) return false;
-      if (ShimmeringEssence != other.ShimmeringEssence) return false;
-      if (WarmEssence != other.WarmEssence) return false;
-      if (WondrousEssence != other.WondrousEssence) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -205,12 +206,12 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
+      if (Unk3300FOHJDGCAKEK != 0) hash ^= Unk3300FOHJDGCAKEK.GetHashCode();
+      if (Unk3300PPABOFMIGNM != 0) hash ^= Unk3300PPABOFMIGNM.GetHashCode();
       hash ^= chapterInfoList_.GetHashCode();
+      if (Unk3300NEOCMGJCEOJ != 0) hash ^= Unk3300NEOCMGJCEOJ.GetHashCode();
+      if (Unk3300IMLKIJAOADF != 0) hash ^= Unk3300IMLKIJAOADF.GetHashCode();
       if (WeaponEnhanceLevel != 0) hash ^= WeaponEnhanceLevel.GetHashCode();
-      if (ContentFinishTime != 0) hash ^= ContentFinishTime.GetHashCode();
-      if (ShimmeringEssence != 0) hash ^= ShimmeringEssence.GetHashCode();
-      if (WarmEssence != 0) hash ^= WarmEssence.GetHashCode();
-      if (WondrousEssence != 0) hash ^= WondrousEssence.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -229,30 +230,30 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (WeaponEnhanceLevel != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(WeaponEnhanceLevel);
+      if (Unk3300FOHJDGCAKEK != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300FOHJDGCAKEK);
+      }
+      if (Unk3300NEOCMGJCEOJ != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300NEOCMGJCEOJ);
       }
       chapterInfoList_.WriteTo(output, _repeated_chapterInfoList_codec);
-      if (WondrousEssence != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(WondrousEssence);
+      if (WeaponEnhanceLevel != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(WeaponEnhanceLevel);
       }
       if (IsContentClosed != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(72);
         output.WriteBool(IsContentClosed);
       }
-      if (WarmEssence != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(WarmEssence);
+      if (Unk3300PPABOFMIGNM != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300PPABOFMIGNM);
       }
-      if (ShimmeringEssence != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(ShimmeringEssence);
-      }
-      if (ContentFinishTime != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(ContentFinishTime);
+      if (Unk3300IMLKIJAOADF != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300IMLKIJAOADF);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -264,30 +265,30 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (WeaponEnhanceLevel != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(WeaponEnhanceLevel);
+      if (Unk3300FOHJDGCAKEK != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300FOHJDGCAKEK);
+      }
+      if (Unk3300NEOCMGJCEOJ != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300NEOCMGJCEOJ);
       }
       chapterInfoList_.WriteTo(ref output, _repeated_chapterInfoList_codec);
-      if (WondrousEssence != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(WondrousEssence);
+      if (WeaponEnhanceLevel != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(WeaponEnhanceLevel);
       }
       if (IsContentClosed != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(72);
         output.WriteBool(IsContentClosed);
       }
-      if (WarmEssence != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(WarmEssence);
+      if (Unk3300PPABOFMIGNM != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300PPABOFMIGNM);
       }
-      if (ShimmeringEssence != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(ShimmeringEssence);
-      }
-      if (ContentFinishTime != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(ContentFinishTime);
+      if (Unk3300IMLKIJAOADF != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300IMLKIJAOADF);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -302,21 +303,21 @@ namespace Weedwacker.Shared.Network.Proto {
       if (IsContentClosed != false) {
         size += 1 + 1;
       }
+      if (Unk3300FOHJDGCAKEK != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FOHJDGCAKEK);
+      }
+      if (Unk3300PPABOFMIGNM != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PPABOFMIGNM);
+      }
       size += chapterInfoList_.CalculateSize(_repeated_chapterInfoList_codec);
+      if (Unk3300NEOCMGJCEOJ != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NEOCMGJCEOJ);
+      }
+      if (Unk3300IMLKIJAOADF != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300IMLKIJAOADF);
+      }
       if (WeaponEnhanceLevel != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WeaponEnhanceLevel);
-      }
-      if (ContentFinishTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ContentFinishTime);
-      }
-      if (ShimmeringEssence != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ShimmeringEssence);
-      }
-      if (WarmEssence != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WarmEssence);
-      }
-      if (WondrousEssence != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WondrousEssence);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -333,21 +334,21 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.IsContentClosed != false) {
         IsContentClosed = other.IsContentClosed;
       }
+      if (other.Unk3300FOHJDGCAKEK != 0) {
+        Unk3300FOHJDGCAKEK = other.Unk3300FOHJDGCAKEK;
+      }
+      if (other.Unk3300PPABOFMIGNM != 0) {
+        Unk3300PPABOFMIGNM = other.Unk3300PPABOFMIGNM;
+      }
       chapterInfoList_.Add(other.chapterInfoList_);
+      if (other.Unk3300NEOCMGJCEOJ != 0) {
+        Unk3300NEOCMGJCEOJ = other.Unk3300NEOCMGJCEOJ;
+      }
+      if (other.Unk3300IMLKIJAOADF != 0) {
+        Unk3300IMLKIJAOADF = other.Unk3300IMLKIJAOADF;
+      }
       if (other.WeaponEnhanceLevel != 0) {
         WeaponEnhanceLevel = other.WeaponEnhanceLevel;
-      }
-      if (other.ContentFinishTime != 0) {
-        ContentFinishTime = other.ContentFinishTime;
-      }
-      if (other.ShimmeringEssence != 0) {
-        ShimmeringEssence = other.ShimmeringEssence;
-      }
-      if (other.WarmEssence != 0) {
-        WarmEssence = other.WarmEssence;
-      }
-      if (other.WondrousEssence != 0) {
-        WondrousEssence = other.WondrousEssence;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -364,32 +365,32 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            WeaponEnhanceLevel = input.ReadUInt32();
+          case 24: {
+            Unk3300FOHJDGCAKEK = input.ReadUInt32();
             break;
           }
-          case 34: {
+          case 32: {
+            Unk3300NEOCMGJCEOJ = input.ReadUInt32();
+            break;
+          }
+          case 58: {
             chapterInfoList_.AddEntriesFrom(input, _repeated_chapterInfoList_codec);
             break;
           }
-          case 56: {
-            WondrousEssence = input.ReadUInt32();
+          case 64: {
+            WeaponEnhanceLevel = input.ReadUInt32();
             break;
           }
-          case 80: {
+          case 72: {
             IsContentClosed = input.ReadBool();
             break;
           }
-          case 88: {
-            WarmEssence = input.ReadUInt32();
+          case 80: {
+            Unk3300PPABOFMIGNM = input.ReadUInt32();
             break;
           }
-          case 104: {
-            ShimmeringEssence = input.ReadUInt32();
-            break;
-          }
-          case 120: {
-            ContentFinishTime = input.ReadUInt32();
+          case 96: {
+            Unk3300IMLKIJAOADF = input.ReadUInt32();
             break;
           }
         }
@@ -407,32 +408,32 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            WeaponEnhanceLevel = input.ReadUInt32();
+          case 24: {
+            Unk3300FOHJDGCAKEK = input.ReadUInt32();
             break;
           }
-          case 34: {
+          case 32: {
+            Unk3300NEOCMGJCEOJ = input.ReadUInt32();
+            break;
+          }
+          case 58: {
             chapterInfoList_.AddEntriesFrom(ref input, _repeated_chapterInfoList_codec);
             break;
           }
-          case 56: {
-            WondrousEssence = input.ReadUInt32();
+          case 64: {
+            WeaponEnhanceLevel = input.ReadUInt32();
             break;
           }
-          case 80: {
+          case 72: {
             IsContentClosed = input.ReadBool();
             break;
           }
-          case 88: {
-            WarmEssence = input.ReadUInt32();
+          case 80: {
+            Unk3300PPABOFMIGNM = input.ReadUInt32();
             break;
           }
-          case 104: {
-            ShimmeringEssence = input.ReadUInt32();
-            break;
-          }
-          case 120: {
-            ContentFinishTime = input.ReadUInt32();
+          case 96: {
+            Unk3300IMLKIJAOADF = input.ReadUInt32();
             break;
           }
         }

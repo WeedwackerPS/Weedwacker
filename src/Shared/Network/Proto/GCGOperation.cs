@@ -24,21 +24,27 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGOperationReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJHQ0dPcGVyYXRpb24ucHJvdG8aGEdDR09wZXJhdGlvbkF0dGFjay5wcm90",
-            "bxofR0NHT3BlcmF0aW9uT25TdGFnZVNlbGVjdC5wcm90bxoWR0NHT3BlcmF0",
-            "aW9uUGFzcy5wcm90bxoaR0NHT3BlcmF0aW9uUGxheUNhcmQucHJvdG8aGEdD",
-            "R09wZXJhdGlvblJlYm9vdC5wcm90bxoYR0NHT3BlcmF0aW9uUmVkcmF3LnBy",
-            "b3RvGhhHQ0dPcGVyYXRpb25SZXJvbGwucHJvdG8aG0dDR09wZXJhdGlvblN1",
-            "cnJlbmRlci5wcm90byL7AgoMR0NHT3BlcmF0aW9uEigKCW9wX3JlZHJhdxgK",
-            "IAEoCzITLkdDR09wZXJhdGlvblJlZHJhd0gAEjgKEm9wX3NlbGVjdF9vbl9z",
-            "dGFnZRgEIAEoCzIaLkdDR09wZXJhdGlvbk9uU3RhZ2VTZWxlY3RIABIoCglv",
-            "cF9yZXJvbGwYCSABKAsyEy5HQ0dPcGVyYXRpb25SZXJvbGxIABIoCglvcF9h",
-            "dHRhY2sYCyABKAsyEy5HQ0dPcGVyYXRpb25BdHRhY2tIABIkCgdvcF9wYXNz",
-            "GA8gASgLMhEuR0NHT3BlcmF0aW9uUGFzc0gAEi0KDG9wX3BsYXlfY2FyZBgC",
-            "IAEoCzIVLkdDR09wZXJhdGlvblBsYXlDYXJkSAASKAoJb3BfcmVib290GAUg",
-            "ASgLMhMuR0NHT3BlcmF0aW9uUmVib290SAASLgoMb3Bfc3VycmVuZGVyGAEg",
-            "ASgLMhYuR0NHT3BlcmF0aW9uU3VycmVuZGVySABCBAoCb3BCIqoCH1dlZWR3",
-            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChJHQ0dPcGVyYXRpb24ucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8aGEdDR09wZXJhdGlvbkF0dGFjay5wcm90bxofR0NHT3BlcmF0",
+            "aW9uT25TdGFnZVNlbGVjdC5wcm90bxoWR0NHT3BlcmF0aW9uUGFzcy5wcm90",
+            "bxoaR0NHT3BlcmF0aW9uUGxheUNhcmQucHJvdG8aGEdDR09wZXJhdGlvblJl",
+            "Ym9vdC5wcm90bxoYR0NHT3BlcmF0aW9uUmVkcmF3LnByb3RvGhhHQ0dPcGVy",
+            "YXRpb25SZXJvbGwucHJvdG8aG0dDR09wZXJhdGlvblN1cnJlbmRlci5wcm90",
+            "byL7BAoMR0NHT3BlcmF0aW9uEkgKCW9wX3JlZHJhdxgDIAEoCzIzLldlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uR0NHT3BlcmF0aW9uUmVkcmF3",
+            "SAASWAoSb3Bfc2VsZWN0X29uX3N0YWdlGAkgASgLMjouV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90by5HQ0dPcGVyYXRpb25PblN0YWdlU2VsZWN0",
+            "SAASSAoJb3BfcmVyb2xsGAQgASgLMjMuV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5HQ0dPcGVyYXRpb25SZXJvbGxIABJICglvcF9hdHRhY2sY",
+            "ByABKAsyMy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkdDR09w",
+            "ZXJhdGlvbkF0dGFja0gAEkQKB29wX3Bhc3MYBiABKAsyMS5XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvLkdDR09wZXJhdGlvblBhc3NIABJNCgxv",
+            "cF9wbGF5X2NhcmQYDyABKAsyNS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
+            "LlByb3RvLkdDR09wZXJhdGlvblBsYXlDYXJkSAASSAoJb3BfcmVib290GAUg",
+            "ASgLMjMuV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5HQ0dPcGVy",
+            "YXRpb25SZWJvb3RIABJOCgxvcF9zdXJyZW5kZXIYCiABKAsyNi5XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkdDR09wZXJhdGlvblN1cnJlbmRl",
+            "ckgAQgQKAm9wYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGOperationAttackReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGOperationOnStageSelectReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGOperationPassReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGOperationPlayCardReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGOperationRebootReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGOperationRedrawReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGOperationRerollReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.GCGOperationSurrenderReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -120,7 +126,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "op_redraw" field.</summary>
-    public const int OpRedrawFieldNumber = 10;
+    public const int OpRedrawFieldNumber = 3;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGOperationRedraw OpRedraw {
@@ -132,7 +138,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "op_select_on_stage" field.</summary>
-    public const int OpSelectOnStageFieldNumber = 4;
+    public const int OpSelectOnStageFieldNumber = 9;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGOperationOnStageSelect OpSelectOnStage {
@@ -144,7 +150,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "op_reroll" field.</summary>
-    public const int OpRerollFieldNumber = 9;
+    public const int OpRerollFieldNumber = 4;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGOperationReroll OpReroll {
@@ -156,7 +162,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "op_attack" field.</summary>
-    public const int OpAttackFieldNumber = 11;
+    public const int OpAttackFieldNumber = 7;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGOperationAttack OpAttack {
@@ -168,7 +174,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "op_pass" field.</summary>
-    public const int OpPassFieldNumber = 15;
+    public const int OpPassFieldNumber = 6;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGOperationPass OpPass {
@@ -180,7 +186,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "op_play_card" field.</summary>
-    public const int OpPlayCardFieldNumber = 2;
+    public const int OpPlayCardFieldNumber = 15;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGOperationPlayCard OpPlayCard {
@@ -204,7 +210,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "op_surrender" field.</summary>
-    public const int OpSurrenderFieldNumber = 1;
+    public const int OpSurrenderFieldNumber = 10;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.GCGOperationSurrender OpSurrender {
@@ -219,14 +225,14 @@ namespace Weedwacker.Shared.Network.Proto {
     /// <summary>Enum of possible cases for the "op" oneof.</summary>
     public enum OpOneofCase {
       None = 0,
-      OpRedraw = 10,
-      OpSelectOnStage = 4,
-      OpReroll = 9,
-      OpAttack = 11,
-      OpPass = 15,
-      OpPlayCard = 2,
+      OpRedraw = 3,
+      OpSelectOnStage = 9,
+      OpReroll = 4,
+      OpAttack = 7,
+      OpPass = 6,
+      OpPlayCard = 15,
       OpReboot = 5,
-      OpSurrender = 1,
+      OpSurrender = 10,
     }
     private OpOneofCase opCase_ = OpOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -300,37 +306,37 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (opCase_ == OpOneofCase.OpSurrender) {
-        output.WriteRawTag(10);
-        output.WriteMessage(OpSurrender);
+      if (opCase_ == OpOneofCase.OpRedraw) {
+        output.WriteRawTag(26);
+        output.WriteMessage(OpRedraw);
       }
-      if (opCase_ == OpOneofCase.OpPlayCard) {
-        output.WriteRawTag(18);
-        output.WriteMessage(OpPlayCard);
-      }
-      if (opCase_ == OpOneofCase.OpSelectOnStage) {
+      if (opCase_ == OpOneofCase.OpReroll) {
         output.WriteRawTag(34);
-        output.WriteMessage(OpSelectOnStage);
+        output.WriteMessage(OpReroll);
       }
       if (opCase_ == OpOneofCase.OpReboot) {
         output.WriteRawTag(42);
         output.WriteMessage(OpReboot);
       }
-      if (opCase_ == OpOneofCase.OpReroll) {
-        output.WriteRawTag(74);
-        output.WriteMessage(OpReroll);
-      }
-      if (opCase_ == OpOneofCase.OpRedraw) {
-        output.WriteRawTag(82);
-        output.WriteMessage(OpRedraw);
+      if (opCase_ == OpOneofCase.OpPass) {
+        output.WriteRawTag(50);
+        output.WriteMessage(OpPass);
       }
       if (opCase_ == OpOneofCase.OpAttack) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(58);
         output.WriteMessage(OpAttack);
       }
-      if (opCase_ == OpOneofCase.OpPass) {
+      if (opCase_ == OpOneofCase.OpSelectOnStage) {
+        output.WriteRawTag(74);
+        output.WriteMessage(OpSelectOnStage);
+      }
+      if (opCase_ == OpOneofCase.OpSurrender) {
+        output.WriteRawTag(82);
+        output.WriteMessage(OpSurrender);
+      }
+      if (opCase_ == OpOneofCase.OpPlayCard) {
         output.WriteRawTag(122);
-        output.WriteMessage(OpPass);
+        output.WriteMessage(OpPlayCard);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -342,37 +348,37 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (opCase_ == OpOneofCase.OpSurrender) {
-        output.WriteRawTag(10);
-        output.WriteMessage(OpSurrender);
+      if (opCase_ == OpOneofCase.OpRedraw) {
+        output.WriteRawTag(26);
+        output.WriteMessage(OpRedraw);
       }
-      if (opCase_ == OpOneofCase.OpPlayCard) {
-        output.WriteRawTag(18);
-        output.WriteMessage(OpPlayCard);
-      }
-      if (opCase_ == OpOneofCase.OpSelectOnStage) {
+      if (opCase_ == OpOneofCase.OpReroll) {
         output.WriteRawTag(34);
-        output.WriteMessage(OpSelectOnStage);
+        output.WriteMessage(OpReroll);
       }
       if (opCase_ == OpOneofCase.OpReboot) {
         output.WriteRawTag(42);
         output.WriteMessage(OpReboot);
       }
-      if (opCase_ == OpOneofCase.OpReroll) {
-        output.WriteRawTag(74);
-        output.WriteMessage(OpReroll);
-      }
-      if (opCase_ == OpOneofCase.OpRedraw) {
-        output.WriteRawTag(82);
-        output.WriteMessage(OpRedraw);
+      if (opCase_ == OpOneofCase.OpPass) {
+        output.WriteRawTag(50);
+        output.WriteMessage(OpPass);
       }
       if (opCase_ == OpOneofCase.OpAttack) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(58);
         output.WriteMessage(OpAttack);
       }
-      if (opCase_ == OpOneofCase.OpPass) {
+      if (opCase_ == OpOneofCase.OpSelectOnStage) {
+        output.WriteRawTag(74);
+        output.WriteMessage(OpSelectOnStage);
+      }
+      if (opCase_ == OpOneofCase.OpSurrender) {
+        output.WriteRawTag(82);
+        output.WriteMessage(OpSurrender);
+      }
+      if (opCase_ == OpOneofCase.OpPlayCard) {
         output.WriteRawTag(122);
-        output.WriteMessage(OpPass);
+        output.WriteMessage(OpPlayCard);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -486,31 +492,22 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            global::Weedwacker.Shared.Network.Proto.GCGOperationSurrender subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGOperationSurrender();
-            if (opCase_ == OpOneofCase.OpSurrender) {
-              subBuilder.MergeFrom(OpSurrender);
+          case 26: {
+            global::Weedwacker.Shared.Network.Proto.GCGOperationRedraw subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGOperationRedraw();
+            if (opCase_ == OpOneofCase.OpRedraw) {
+              subBuilder.MergeFrom(OpRedraw);
             }
             input.ReadMessage(subBuilder);
-            OpSurrender = subBuilder;
-            break;
-          }
-          case 18: {
-            global::Weedwacker.Shared.Network.Proto.GCGOperationPlayCard subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGOperationPlayCard();
-            if (opCase_ == OpOneofCase.OpPlayCard) {
-              subBuilder.MergeFrom(OpPlayCard);
-            }
-            input.ReadMessage(subBuilder);
-            OpPlayCard = subBuilder;
+            OpRedraw = subBuilder;
             break;
           }
           case 34: {
-            global::Weedwacker.Shared.Network.Proto.GCGOperationOnStageSelect subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGOperationOnStageSelect();
-            if (opCase_ == OpOneofCase.OpSelectOnStage) {
-              subBuilder.MergeFrom(OpSelectOnStage);
+            global::Weedwacker.Shared.Network.Proto.GCGOperationReroll subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGOperationReroll();
+            if (opCase_ == OpOneofCase.OpReroll) {
+              subBuilder.MergeFrom(OpReroll);
             }
             input.ReadMessage(subBuilder);
-            OpSelectOnStage = subBuilder;
+            OpReroll = subBuilder;
             break;
           }
           case 42: {
@@ -522,25 +519,16 @@ namespace Weedwacker.Shared.Network.Proto {
             OpReboot = subBuilder;
             break;
           }
-          case 74: {
-            global::Weedwacker.Shared.Network.Proto.GCGOperationReroll subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGOperationReroll();
-            if (opCase_ == OpOneofCase.OpReroll) {
-              subBuilder.MergeFrom(OpReroll);
+          case 50: {
+            global::Weedwacker.Shared.Network.Proto.GCGOperationPass subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGOperationPass();
+            if (opCase_ == OpOneofCase.OpPass) {
+              subBuilder.MergeFrom(OpPass);
             }
             input.ReadMessage(subBuilder);
-            OpReroll = subBuilder;
+            OpPass = subBuilder;
             break;
           }
-          case 82: {
-            global::Weedwacker.Shared.Network.Proto.GCGOperationRedraw subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGOperationRedraw();
-            if (opCase_ == OpOneofCase.OpRedraw) {
-              subBuilder.MergeFrom(OpRedraw);
-            }
-            input.ReadMessage(subBuilder);
-            OpRedraw = subBuilder;
-            break;
-          }
-          case 90: {
+          case 58: {
             global::Weedwacker.Shared.Network.Proto.GCGOperationAttack subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGOperationAttack();
             if (opCase_ == OpOneofCase.OpAttack) {
               subBuilder.MergeFrom(OpAttack);
@@ -549,13 +537,31 @@ namespace Weedwacker.Shared.Network.Proto {
             OpAttack = subBuilder;
             break;
           }
-          case 122: {
-            global::Weedwacker.Shared.Network.Proto.GCGOperationPass subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGOperationPass();
-            if (opCase_ == OpOneofCase.OpPass) {
-              subBuilder.MergeFrom(OpPass);
+          case 74: {
+            global::Weedwacker.Shared.Network.Proto.GCGOperationOnStageSelect subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGOperationOnStageSelect();
+            if (opCase_ == OpOneofCase.OpSelectOnStage) {
+              subBuilder.MergeFrom(OpSelectOnStage);
             }
             input.ReadMessage(subBuilder);
-            OpPass = subBuilder;
+            OpSelectOnStage = subBuilder;
+            break;
+          }
+          case 82: {
+            global::Weedwacker.Shared.Network.Proto.GCGOperationSurrender subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGOperationSurrender();
+            if (opCase_ == OpOneofCase.OpSurrender) {
+              subBuilder.MergeFrom(OpSurrender);
+            }
+            input.ReadMessage(subBuilder);
+            OpSurrender = subBuilder;
+            break;
+          }
+          case 122: {
+            global::Weedwacker.Shared.Network.Proto.GCGOperationPlayCard subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGOperationPlayCard();
+            if (opCase_ == OpOneofCase.OpPlayCard) {
+              subBuilder.MergeFrom(OpPlayCard);
+            }
+            input.ReadMessage(subBuilder);
+            OpPlayCard = subBuilder;
             break;
           }
         }
@@ -573,31 +579,22 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            global::Weedwacker.Shared.Network.Proto.GCGOperationSurrender subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGOperationSurrender();
-            if (opCase_ == OpOneofCase.OpSurrender) {
-              subBuilder.MergeFrom(OpSurrender);
+          case 26: {
+            global::Weedwacker.Shared.Network.Proto.GCGOperationRedraw subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGOperationRedraw();
+            if (opCase_ == OpOneofCase.OpRedraw) {
+              subBuilder.MergeFrom(OpRedraw);
             }
             input.ReadMessage(subBuilder);
-            OpSurrender = subBuilder;
-            break;
-          }
-          case 18: {
-            global::Weedwacker.Shared.Network.Proto.GCGOperationPlayCard subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGOperationPlayCard();
-            if (opCase_ == OpOneofCase.OpPlayCard) {
-              subBuilder.MergeFrom(OpPlayCard);
-            }
-            input.ReadMessage(subBuilder);
-            OpPlayCard = subBuilder;
+            OpRedraw = subBuilder;
             break;
           }
           case 34: {
-            global::Weedwacker.Shared.Network.Proto.GCGOperationOnStageSelect subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGOperationOnStageSelect();
-            if (opCase_ == OpOneofCase.OpSelectOnStage) {
-              subBuilder.MergeFrom(OpSelectOnStage);
+            global::Weedwacker.Shared.Network.Proto.GCGOperationReroll subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGOperationReroll();
+            if (opCase_ == OpOneofCase.OpReroll) {
+              subBuilder.MergeFrom(OpReroll);
             }
             input.ReadMessage(subBuilder);
-            OpSelectOnStage = subBuilder;
+            OpReroll = subBuilder;
             break;
           }
           case 42: {
@@ -609,25 +606,16 @@ namespace Weedwacker.Shared.Network.Proto {
             OpReboot = subBuilder;
             break;
           }
-          case 74: {
-            global::Weedwacker.Shared.Network.Proto.GCGOperationReroll subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGOperationReroll();
-            if (opCase_ == OpOneofCase.OpReroll) {
-              subBuilder.MergeFrom(OpReroll);
+          case 50: {
+            global::Weedwacker.Shared.Network.Proto.GCGOperationPass subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGOperationPass();
+            if (opCase_ == OpOneofCase.OpPass) {
+              subBuilder.MergeFrom(OpPass);
             }
             input.ReadMessage(subBuilder);
-            OpReroll = subBuilder;
+            OpPass = subBuilder;
             break;
           }
-          case 82: {
-            global::Weedwacker.Shared.Network.Proto.GCGOperationRedraw subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGOperationRedraw();
-            if (opCase_ == OpOneofCase.OpRedraw) {
-              subBuilder.MergeFrom(OpRedraw);
-            }
-            input.ReadMessage(subBuilder);
-            OpRedraw = subBuilder;
-            break;
-          }
-          case 90: {
+          case 58: {
             global::Weedwacker.Shared.Network.Proto.GCGOperationAttack subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGOperationAttack();
             if (opCase_ == OpOneofCase.OpAttack) {
               subBuilder.MergeFrom(OpAttack);
@@ -636,13 +624,31 @@ namespace Weedwacker.Shared.Network.Proto {
             OpAttack = subBuilder;
             break;
           }
-          case 122: {
-            global::Weedwacker.Shared.Network.Proto.GCGOperationPass subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGOperationPass();
-            if (opCase_ == OpOneofCase.OpPass) {
-              subBuilder.MergeFrom(OpPass);
+          case 74: {
+            global::Weedwacker.Shared.Network.Proto.GCGOperationOnStageSelect subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGOperationOnStageSelect();
+            if (opCase_ == OpOneofCase.OpSelectOnStage) {
+              subBuilder.MergeFrom(OpSelectOnStage);
             }
             input.ReadMessage(subBuilder);
-            OpPass = subBuilder;
+            OpSelectOnStage = subBuilder;
+            break;
+          }
+          case 82: {
+            global::Weedwacker.Shared.Network.Proto.GCGOperationSurrender subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGOperationSurrender();
+            if (opCase_ == OpOneofCase.OpSurrender) {
+              subBuilder.MergeFrom(OpSurrender);
+            }
+            input.ReadMessage(subBuilder);
+            OpSurrender = subBuilder;
+            break;
+          }
+          case 122: {
+            global::Weedwacker.Shared.Network.Proto.GCGOperationPlayCard subBuilder = new global::Weedwacker.Shared.Network.Proto.GCGOperationPlayCard();
+            if (opCase_ == OpOneofCase.OpPlayCard) {
+              subBuilder.MergeFrom(OpPlayCard);
+            }
+            input.ReadMessage(subBuilder);
+            OpPlayCard = subBuilder;
             break;
           }
         }

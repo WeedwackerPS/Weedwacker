@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static CustomDungeonVerifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlDdXN0b21EdW5nZW9uVmVyaWZ5LnByb3RvImkKE0N1c3RvbUR1bmdlb25W",
-            "ZXJpZnkSFAoMZHVuZ2Vvbl9ndWlkGAMgASgEEgsKA3VpZBgPIAEoDRIRCgl0",
-            "aW1lc3RhbXAYBCABKA0SDgoGcmVnaW9uGAsgASgJEgwKBGxhbmcYDSABKA1C",
-            "IqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChlDdXN0b21EdW5nZW9uVmVyaWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvImkKE0N1c3RvbUR1bmdlb25WZXJpZnkSCwoDdWlk",
+            "GAMgASgNEg4KBnJlZ2lvbhgNIAEoCRIRCgl0aW1lc3RhbXAYBSABKA0SFAoM",
+            "ZHVuZ2Vvbl9ndWlkGAEgASgEEgwKBGxhbmcYBiABKA1iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CustomDungeonVerify), global::Weedwacker.Shared.Network.Proto.CustomDungeonVerify.Parser, new[]{ "DungeonGuid", "Uid", "Timestamp", "Region", "Lang" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CustomDungeonVerify), global::Weedwacker.Shared.Network.Proto.CustomDungeonVerify.Parser, new[]{ "Uid", "Region", "Timestamp", "DungeonGuid", "Lang" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,10 +72,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CustomDungeonVerify(CustomDungeonVerify other) : this() {
-      dungeonGuid_ = other.dungeonGuid_;
       uid_ = other.uid_;
-      timestamp_ = other.timestamp_;
       region_ = other.region_;
+      timestamp_ = other.timestamp_;
+      dungeonGuid_ = other.dungeonGuid_;
       lang_ = other.lang_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -86,20 +86,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new CustomDungeonVerify(this);
     }
 
-    /// <summary>Field number for the "dungeon_guid" field.</summary>
-    public const int DungeonGuidFieldNumber = 3;
-    private ulong dungeonGuid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong DungeonGuid {
-      get { return dungeonGuid_; }
-      set {
-        dungeonGuid_ = value;
-      }
-    }
-
     /// <summary>Field number for the "uid" field.</summary>
-    public const int UidFieldNumber = 15;
+    public const int UidFieldNumber = 3;
     private uint uid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,20 +98,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "timestamp" field.</summary>
-    public const int TimestampFieldNumber = 4;
-    private uint timestamp_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Timestamp {
-      get { return timestamp_; }
-      set {
-        timestamp_ = value;
-      }
-    }
-
     /// <summary>Field number for the "region" field.</summary>
-    public const int RegionFieldNumber = 11;
+    public const int RegionFieldNumber = 13;
     private string region_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -134,8 +110,32 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "timestamp" field.</summary>
+    public const int TimestampFieldNumber = 5;
+    private uint timestamp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Timestamp {
+      get { return timestamp_; }
+      set {
+        timestamp_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dungeon_guid" field.</summary>
+    public const int DungeonGuidFieldNumber = 1;
+    private ulong dungeonGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong DungeonGuid {
+      get { return dungeonGuid_; }
+      set {
+        dungeonGuid_ = value;
+      }
+    }
+
     /// <summary>Field number for the "lang" field.</summary>
-    public const int LangFieldNumber = 13;
+    public const int LangFieldNumber = 6;
     private uint lang_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -161,10 +161,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (DungeonGuid != other.DungeonGuid) return false;
       if (Uid != other.Uid) return false;
-      if (Timestamp != other.Timestamp) return false;
       if (Region != other.Region) return false;
+      if (Timestamp != other.Timestamp) return false;
+      if (DungeonGuid != other.DungeonGuid) return false;
       if (Lang != other.Lang) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -173,10 +173,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (DungeonGuid != 0UL) hash ^= DungeonGuid.GetHashCode();
       if (Uid != 0) hash ^= Uid.GetHashCode();
-      if (Timestamp != 0) hash ^= Timestamp.GetHashCode();
       if (Region.Length != 0) hash ^= Region.GetHashCode();
+      if (Timestamp != 0) hash ^= Timestamp.GetHashCode();
+      if (DungeonGuid != 0UL) hash ^= DungeonGuid.GetHashCode();
       if (Lang != 0) hash ^= Lang.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -197,24 +197,24 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (DungeonGuid != 0UL) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(8);
         output.WriteUInt64(DungeonGuid);
       }
+      if (Uid != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Uid);
+      }
       if (Timestamp != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteUInt32(Timestamp);
       }
-      if (Region.Length != 0) {
-        output.WriteRawTag(90);
-        output.WriteString(Region);
-      }
       if (Lang != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(48);
         output.WriteUInt32(Lang);
       }
-      if (Uid != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(Uid);
+      if (Region.Length != 0) {
+        output.WriteRawTag(106);
+        output.WriteString(Region);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -227,24 +227,24 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (DungeonGuid != 0UL) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(8);
         output.WriteUInt64(DungeonGuid);
       }
+      if (Uid != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Uid);
+      }
       if (Timestamp != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteUInt32(Timestamp);
       }
-      if (Region.Length != 0) {
-        output.WriteRawTag(90);
-        output.WriteString(Region);
-      }
       if (Lang != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(48);
         output.WriteUInt32(Lang);
       }
-      if (Uid != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(Uid);
+      if (Region.Length != 0) {
+        output.WriteRawTag(106);
+        output.WriteString(Region);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -256,17 +256,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (DungeonGuid != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(DungeonGuid);
-      }
       if (Uid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
+      }
+      if (Region.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Region);
       }
       if (Timestamp != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Timestamp);
       }
-      if (Region.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Region);
+      if (DungeonGuid != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(DungeonGuid);
       }
       if (Lang != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Lang);
@@ -283,17 +283,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.DungeonGuid != 0UL) {
-        DungeonGuid = other.DungeonGuid;
-      }
       if (other.Uid != 0) {
         Uid = other.Uid;
+      }
+      if (other.Region.Length != 0) {
+        Region = other.Region;
       }
       if (other.Timestamp != 0) {
         Timestamp = other.Timestamp;
       }
-      if (other.Region.Length != 0) {
-        Region = other.Region;
+      if (other.DungeonGuid != 0UL) {
+        DungeonGuid = other.DungeonGuid;
       }
       if (other.Lang != 0) {
         Lang = other.Lang;
@@ -313,24 +313,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
+          case 8: {
             DungeonGuid = input.ReadUInt64();
             break;
           }
-          case 32: {
+          case 24: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 40: {
             Timestamp = input.ReadUInt32();
             break;
           }
-          case 90: {
-            Region = input.ReadString();
-            break;
-          }
-          case 104: {
+          case 48: {
             Lang = input.ReadUInt32();
             break;
           }
-          case 120: {
-            Uid = input.ReadUInt32();
+          case 106: {
+            Region = input.ReadString();
             break;
           }
         }
@@ -348,24 +348,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
+          case 8: {
             DungeonGuid = input.ReadUInt64();
             break;
           }
-          case 32: {
+          case 24: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 40: {
             Timestamp = input.ReadUInt32();
             break;
           }
-          case 90: {
-            Region = input.ReadString();
-            break;
-          }
-          case 104: {
+          case 48: {
             Lang = input.ReadUInt32();
             break;
           }
-          case 120: {
-            Uid = input.ReadUInt32();
+          case 106: {
+            Region = input.ReadString();
             break;
           }
         }

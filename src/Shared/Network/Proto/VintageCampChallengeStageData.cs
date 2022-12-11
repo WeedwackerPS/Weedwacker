@@ -24,20 +24,21 @@ namespace Weedwacker.Shared.Network.Proto {
     static VintageCampChallengeStageDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNWaW50YWdlQ2FtcENoYWxsZW5nZVN0YWdlRGF0YS5wcm90bxojVmludGFn",
-            "ZUNhbXBDaGFsbGVuZ2VMZXZlbERhdGEucHJvdG8iowIKHVZpbnRhZ2VDYW1w",
-            "Q2hhbGxlbmdlU3RhZ2VEYXRhEg8KB2lzX29wZW4YBSABKAgSGgoSbWF4X2Zp",
-            "bmlzaGVkX2xldmVsGAsgASgNEhEKCW9wZW5fdGltZRgDIAEoDRIRCglpc19m",
-            "aW5pc2gYCiABKAgSEAoIc3RhZ2VfaWQYBCABKA0SSAoOY2FtcF9sZXZlbF9t",
-            "YXAYAiADKAsyMC5WaW50YWdlQ2FtcENoYWxsZW5nZVN0YWdlRGF0YS5DYW1w",
-            "TGV2ZWxNYXBFbnRyeRpTChFDYW1wTGV2ZWxNYXBFbnRyeRILCgNrZXkYASAB",
-            "KA0SLQoFdmFsdWUYAiABKAsyHi5WaW50YWdlQ2FtcENoYWxsZW5nZUxldmVs",
-            "RGF0YToCOAFCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9i",
-            "BnByb3RvMw=="));
+            "CiNWaW50YWdlQ2FtcENoYWxsZW5nZVN0YWdlRGF0YS5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxojVmludGFnZUNhbXBDaGFsbGVu",
+            "Z2VMZXZlbERhdGEucHJvdG8i4wIKHVZpbnRhZ2VDYW1wQ2hhbGxlbmdlU3Rh",
+            "Z2VEYXRhEhoKEm1heF9maW5pc2hlZF9sZXZlbBgEIAEoDRIRCglpc19maW5p",
+            "c2gYDiABKAgSaAoOY2FtcF9sZXZlbF9tYXAYBiADKAsyUC5XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvLlZpbnRhZ2VDYW1wQ2hhbGxlbmdlU3Rh",
+            "Z2VEYXRhLkNhbXBMZXZlbE1hcEVudHJ5Eg8KB2lzX29wZW4YAiABKAgSEAoI",
+            "c3RhZ2VfaWQYDSABKA0SEQoJb3Blbl90aW1lGAcgASgNGnMKEUNhbXBMZXZl",
+            "bE1hcEVudHJ5EgsKA2tleRgBIAEoDRJNCgV2YWx1ZRgCIAEoCzI+LldlZWR3",
+            "YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uVmludGFnZUNhbXBDaGFsbGVu",
+            "Z2VMZXZlbERhdGE6AjgBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VintageCampChallengeLevelDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.VintageCampChallengeStageData), global::Weedwacker.Shared.Network.Proto.VintageCampChallengeStageData.Parser, new[]{ "IsOpen", "MaxFinishedLevel", "OpenTime", "IsFinish", "StageId", "CampLevelMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.VintageCampChallengeStageData), global::Weedwacker.Shared.Network.Proto.VintageCampChallengeStageData.Parser, new[]{ "MaxFinishedLevel", "IsFinish", "CampLevelMap", "IsOpen", "StageId", "OpenTime" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -78,12 +79,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public VintageCampChallengeStageData(VintageCampChallengeStageData other) : this() {
-      isOpen_ = other.isOpen_;
       maxFinishedLevel_ = other.maxFinishedLevel_;
-      openTime_ = other.openTime_;
       isFinish_ = other.isFinish_;
-      stageId_ = other.stageId_;
       campLevelMap_ = other.campLevelMap_.Clone();
+      isOpen_ = other.isOpen_;
+      stageId_ = other.stageId_;
+      openTime_ = other.openTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,20 +94,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new VintageCampChallengeStageData(this);
     }
 
-    /// <summary>Field number for the "is_open" field.</summary>
-    public const int IsOpenFieldNumber = 5;
-    private bool isOpen_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsOpen {
-      get { return isOpen_; }
-      set {
-        isOpen_ = value;
-      }
-    }
-
     /// <summary>Field number for the "max_finished_level" field.</summary>
-    public const int MaxFinishedLevelFieldNumber = 11;
+    public const int MaxFinishedLevelFieldNumber = 4;
     private uint maxFinishedLevel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -117,20 +106,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "open_time" field.</summary>
-    public const int OpenTimeFieldNumber = 3;
-    private uint openTime_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint OpenTime {
-      get { return openTime_; }
-      set {
-        openTime_ = value;
-      }
-    }
-
     /// <summary>Field number for the "is_finish" field.</summary>
-    public const int IsFinishFieldNumber = 10;
+    public const int IsFinishFieldNumber = 14;
     private bool isFinish_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -141,8 +118,31 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "camp_level_map" field.</summary>
+    public const int CampLevelMapFieldNumber = 6;
+    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.VintageCampChallengeLevelData>.Codec _map_campLevelMap_codec
+        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.VintageCampChallengeLevelData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.VintageCampChallengeLevelData.Parser), 50);
+    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.VintageCampChallengeLevelData> campLevelMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.VintageCampChallengeLevelData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.VintageCampChallengeLevelData> CampLevelMap {
+      get { return campLevelMap_; }
+    }
+
+    /// <summary>Field number for the "is_open" field.</summary>
+    public const int IsOpenFieldNumber = 2;
+    private bool isOpen_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsOpen {
+      get { return isOpen_; }
+      set {
+        isOpen_ = value;
+      }
+    }
+
     /// <summary>Field number for the "stage_id" field.</summary>
-    public const int StageIdFieldNumber = 4;
+    public const int StageIdFieldNumber = 13;
     private uint stageId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -153,15 +153,16 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "camp_level_map" field.</summary>
-    public const int CampLevelMapFieldNumber = 2;
-    private static readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.VintageCampChallengeLevelData>.Codec _map_campLevelMap_codec
-        = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.VintageCampChallengeLevelData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.VintageCampChallengeLevelData.Parser), 18);
-    private readonly pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.VintageCampChallengeLevelData> campLevelMap_ = new pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.VintageCampChallengeLevelData>();
+    /// <summary>Field number for the "open_time" field.</summary>
+    public const int OpenTimeFieldNumber = 7;
+    private uint openTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<uint, global::Weedwacker.Shared.Network.Proto.VintageCampChallengeLevelData> CampLevelMap {
-      get { return campLevelMap_; }
+    public uint OpenTime {
+      get { return openTime_; }
+      set {
+        openTime_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -179,12 +180,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsOpen != other.IsOpen) return false;
       if (MaxFinishedLevel != other.MaxFinishedLevel) return false;
-      if (OpenTime != other.OpenTime) return false;
       if (IsFinish != other.IsFinish) return false;
-      if (StageId != other.StageId) return false;
       if (!CampLevelMap.Equals(other.CampLevelMap)) return false;
+      if (IsOpen != other.IsOpen) return false;
+      if (StageId != other.StageId) return false;
+      if (OpenTime != other.OpenTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -192,12 +193,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsOpen != false) hash ^= IsOpen.GetHashCode();
       if (MaxFinishedLevel != 0) hash ^= MaxFinishedLevel.GetHashCode();
-      if (OpenTime != 0) hash ^= OpenTime.GetHashCode();
       if (IsFinish != false) hash ^= IsFinish.GetHashCode();
-      if (StageId != 0) hash ^= StageId.GetHashCode();
       hash ^= CampLevelMap.GetHashCode();
+      if (IsOpen != false) hash ^= IsOpen.GetHashCode();
+      if (StageId != 0) hash ^= StageId.GetHashCode();
+      if (OpenTime != 0) hash ^= OpenTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -216,26 +217,26 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (IsOpen != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(IsOpen);
+      }
+      if (MaxFinishedLevel != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(MaxFinishedLevel);
+      }
       campLevelMap_.WriteTo(output, _map_campLevelMap_codec);
       if (OpenTime != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(56);
         output.WriteUInt32(OpenTime);
       }
       if (StageId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(104);
         output.WriteUInt32(StageId);
       }
-      if (IsOpen != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(IsOpen);
-      }
       if (IsFinish != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(112);
         output.WriteBool(IsFinish);
-      }
-      if (MaxFinishedLevel != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(MaxFinishedLevel);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -247,26 +248,26 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (IsOpen != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(IsOpen);
+      }
+      if (MaxFinishedLevel != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(MaxFinishedLevel);
+      }
       campLevelMap_.WriteTo(ref output, _map_campLevelMap_codec);
       if (OpenTime != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(56);
         output.WriteUInt32(OpenTime);
       }
       if (StageId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(104);
         output.WriteUInt32(StageId);
       }
-      if (IsOpen != false) {
-        output.WriteRawTag(40);
-        output.WriteBool(IsOpen);
-      }
       if (IsFinish != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(112);
         output.WriteBool(IsFinish);
-      }
-      if (MaxFinishedLevel != 0) {
-        output.WriteRawTag(88);
-        output.WriteUInt32(MaxFinishedLevel);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -278,22 +279,22 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsOpen != false) {
-        size += 1 + 1;
-      }
       if (MaxFinishedLevel != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxFinishedLevel);
       }
-      if (OpenTime != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OpenTime);
-      }
       if (IsFinish != false) {
+        size += 1 + 1;
+      }
+      size += campLevelMap_.CalculateSize(_map_campLevelMap_codec);
+      if (IsOpen != false) {
         size += 1 + 1;
       }
       if (StageId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
       }
-      size += campLevelMap_.CalculateSize(_map_campLevelMap_codec);
+      if (OpenTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OpenTime);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -306,22 +307,22 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsOpen != false) {
-        IsOpen = other.IsOpen;
-      }
       if (other.MaxFinishedLevel != 0) {
         MaxFinishedLevel = other.MaxFinishedLevel;
-      }
-      if (other.OpenTime != 0) {
-        OpenTime = other.OpenTime;
       }
       if (other.IsFinish != false) {
         IsFinish = other.IsFinish;
       }
+      campLevelMap_.Add(other.campLevelMap_);
+      if (other.IsOpen != false) {
+        IsOpen = other.IsOpen;
+      }
       if (other.StageId != 0) {
         StageId = other.StageId;
       }
-      campLevelMap_.Add(other.campLevelMap_);
+      if (other.OpenTime != 0) {
+        OpenTime = other.OpenTime;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -337,28 +338,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
-            campLevelMap_.AddEntriesFrom(input, _map_campLevelMap_codec);
-            break;
-          }
-          case 24: {
-            OpenTime = input.ReadUInt32();
-            break;
-          }
-          case 32: {
-            StageId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
+          case 16: {
             IsOpen = input.ReadBool();
             break;
           }
-          case 80: {
-            IsFinish = input.ReadBool();
+          case 32: {
+            MaxFinishedLevel = input.ReadUInt32();
             break;
           }
-          case 88: {
-            MaxFinishedLevel = input.ReadUInt32();
+          case 50: {
+            campLevelMap_.AddEntriesFrom(input, _map_campLevelMap_codec);
+            break;
+          }
+          case 56: {
+            OpenTime = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            StageId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            IsFinish = input.ReadBool();
             break;
           }
         }
@@ -376,28 +377,28 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
-            campLevelMap_.AddEntriesFrom(ref input, _map_campLevelMap_codec);
-            break;
-          }
-          case 24: {
-            OpenTime = input.ReadUInt32();
-            break;
-          }
-          case 32: {
-            StageId = input.ReadUInt32();
-            break;
-          }
-          case 40: {
+          case 16: {
             IsOpen = input.ReadBool();
             break;
           }
-          case 80: {
-            IsFinish = input.ReadBool();
+          case 32: {
+            MaxFinishedLevel = input.ReadUInt32();
             break;
           }
-          case 88: {
-            MaxFinishedLevel = input.ReadUInt32();
+          case 50: {
+            campLevelMap_.AddEntriesFrom(ref input, _map_campLevelMap_codec);
+            break;
+          }
+          case 56: {
+            OpenTime = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            StageId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            IsFinish = input.ReadBool();
             break;
           }
         }

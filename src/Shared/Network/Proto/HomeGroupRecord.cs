@@ -24,18 +24,21 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeGroupRecordReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVIb21lR3JvdXBSZWNvcmQucHJvdG8aF0hvbWVCYWxsb29uUmVjb3JkLnBy",
-            "b3RvGhZIb21lUmFjaW5nUmVjb3JkLnByb3RvGhVIb21lU3Rha2VSZWNvcmQu",
-            "cHJvdG8aHlNlZWtGdXJuaXR1cmVHYWxsZXJ5SW5mby5wcm90byKGAgoPSG9t",
-            "ZUdyb3VwUmVjb3JkEhAKCGdyb3VwX2lkGAUgASgNEjEKE3JhY2luZ19nYWxs",
-            "ZXJ5X2luZm8Y0wMgASgLMhEuSG9tZVJhY2luZ1JlY29yZEgAEjMKFGJhbGxv",
-            "b25fZ2FsbGVyeV9pbmZvGIILIAEoCzISLkhvbWVCYWxsb29uUmVjb3JkSAAS",
-            "LAoPc3Rha2VfcGxheV9pbmZvGNsCIAEoCzIQLkhvbWVTdGFrZVJlY29yZEgA",
-            "EkEKG3NlZWtfZnVybml0dXJlX2dhbGxlcnlfaW5mbxieDiABKAsyGS5TZWVr",
-            "RnVybml0dXJlR2FsbGVyeUluZm9IAEIICgZkZXRhaWxCIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChVIb21lR3JvdXBSZWNvcmQucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8aF0hvbWVCYWxsb29uUmVjb3JkLnByb3RvGhZIb21lUmFj",
+            "aW5nUmVjb3JkLnByb3RvGiBIb21lU2Vla0Z1cm5pdHVyZUFsbFJlY29yZC5w",
+            "cm90bxoVSG9tZVN0YWtlUmVjb3JkLnByb3RvIogDCg9Ib21lR3JvdXBSZWNv",
+            "cmQSEAoIZ3JvdXBfaWQYDyABKA0SUQoTcmFjaW5nX2dhbGxlcnlfaW5mbxjD",
+            "BiABKAsyMS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkhvbWVS",
+            "YWNpbmdSZWNvcmRIABJTChRiYWxsb29uX2dhbGxlcnlfaW5mbxjWBSABKAsy",
+            "Mi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkhvbWVCYWxsb29u",
+            "UmVjb3JkSAASTAoPc3Rha2VfcGxheV9pbmZvGJoOIAEoCzIwLldlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uSG9tZVN0YWtlUmVjb3JkSAASYwob",
+            "c2Vla19mdXJuaXR1cmVfZ2FsbGVyeV9pbmZvGPICIAEoCzI7LldlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uSG9tZVNlZWtGdXJuaXR1cmVBbGxS",
+            "ZWNvcmRIAEIICgZkZXRhaWxiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HomeBalloonRecordReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.HomeRacingRecordReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.HomeStakeRecordReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.SeekFurnitureGalleryInfoReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HomeBalloonRecordReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.HomeRacingRecordReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.HomeSeekFurnitureAllRecordReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.HomeStakeRecordReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeGroupRecord), global::Weedwacker.Shared.Network.Proto.HomeGroupRecord.Parser, new[]{ "GroupId", "RacingGalleryInfo", "BalloonGalleryInfo", "StakePlayInfo", "SeekFurnitureGalleryInfo" }, new[]{ "Detail" }, null, null, null)
           }));
@@ -104,7 +107,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "group_id" field.</summary>
-    public const int GroupIdFieldNumber = 5;
+    public const int GroupIdFieldNumber = 15;
     private uint groupId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -116,7 +119,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "racing_gallery_info" field.</summary>
-    public const int RacingGalleryInfoFieldNumber = 467;
+    public const int RacingGalleryInfoFieldNumber = 835;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.HomeRacingRecord RacingGalleryInfo {
@@ -128,7 +131,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "balloon_gallery_info" field.</summary>
-    public const int BalloonGalleryInfoFieldNumber = 1410;
+    public const int BalloonGalleryInfoFieldNumber = 726;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.HomeBalloonRecord BalloonGalleryInfo {
@@ -140,7 +143,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "stake_play_info" field.</summary>
-    public const int StakePlayInfoFieldNumber = 347;
+    public const int StakePlayInfoFieldNumber = 1818;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Weedwacker.Shared.Network.Proto.HomeStakeRecord StakePlayInfo {
@@ -152,11 +155,11 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "seek_furniture_gallery_info" field.</summary>
-    public const int SeekFurnitureGalleryInfoFieldNumber = 1822;
+    public const int SeekFurnitureGalleryInfoFieldNumber = 370;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.SeekFurnitureGalleryInfo SeekFurnitureGalleryInfo {
-      get { return detailCase_ == DetailOneofCase.SeekFurnitureGalleryInfo ? (global::Weedwacker.Shared.Network.Proto.SeekFurnitureGalleryInfo) detail_ : null; }
+    public global::Weedwacker.Shared.Network.Proto.HomeSeekFurnitureAllRecord SeekFurnitureGalleryInfo {
+      get { return detailCase_ == DetailOneofCase.SeekFurnitureGalleryInfo ? (global::Weedwacker.Shared.Network.Proto.HomeSeekFurnitureAllRecord) detail_ : null; }
       set {
         detail_ = value;
         detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.SeekFurnitureGalleryInfo;
@@ -167,10 +170,10 @@ namespace Weedwacker.Shared.Network.Proto {
     /// <summary>Enum of possible cases for the "detail" oneof.</summary>
     public enum DetailOneofCase {
       None = 0,
-      RacingGalleryInfo = 467,
-      BalloonGalleryInfo = 1410,
-      StakePlayInfo = 347,
-      SeekFurnitureGalleryInfo = 1822,
+      RacingGalleryInfo = 835,
+      BalloonGalleryInfo = 726,
+      StakePlayInfo = 1818,
+      SeekFurnitureGalleryInfo = 370,
     }
     private DetailOneofCase detailCase_ = DetailOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -239,24 +242,24 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (GroupId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(120);
         output.WriteUInt32(GroupId);
       }
-      if (detailCase_ == DetailOneofCase.StakePlayInfo) {
-        output.WriteRawTag(218, 21);
-        output.WriteMessage(StakePlayInfo);
-      }
-      if (detailCase_ == DetailOneofCase.RacingGalleryInfo) {
-        output.WriteRawTag(154, 29);
-        output.WriteMessage(RacingGalleryInfo);
+      if (detailCase_ == DetailOneofCase.SeekFurnitureGalleryInfo) {
+        output.WriteRawTag(146, 23);
+        output.WriteMessage(SeekFurnitureGalleryInfo);
       }
       if (detailCase_ == DetailOneofCase.BalloonGalleryInfo) {
-        output.WriteRawTag(146, 88);
+        output.WriteRawTag(178, 45);
         output.WriteMessage(BalloonGalleryInfo);
       }
-      if (detailCase_ == DetailOneofCase.SeekFurnitureGalleryInfo) {
-        output.WriteRawTag(242, 113);
-        output.WriteMessage(SeekFurnitureGalleryInfo);
+      if (detailCase_ == DetailOneofCase.RacingGalleryInfo) {
+        output.WriteRawTag(154, 52);
+        output.WriteMessage(RacingGalleryInfo);
+      }
+      if (detailCase_ == DetailOneofCase.StakePlayInfo) {
+        output.WriteRawTag(210, 113);
+        output.WriteMessage(StakePlayInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -269,24 +272,24 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (GroupId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(120);
         output.WriteUInt32(GroupId);
       }
-      if (detailCase_ == DetailOneofCase.StakePlayInfo) {
-        output.WriteRawTag(218, 21);
-        output.WriteMessage(StakePlayInfo);
-      }
-      if (detailCase_ == DetailOneofCase.RacingGalleryInfo) {
-        output.WriteRawTag(154, 29);
-        output.WriteMessage(RacingGalleryInfo);
+      if (detailCase_ == DetailOneofCase.SeekFurnitureGalleryInfo) {
+        output.WriteRawTag(146, 23);
+        output.WriteMessage(SeekFurnitureGalleryInfo);
       }
       if (detailCase_ == DetailOneofCase.BalloonGalleryInfo) {
-        output.WriteRawTag(146, 88);
+        output.WriteRawTag(178, 45);
         output.WriteMessage(BalloonGalleryInfo);
       }
-      if (detailCase_ == DetailOneofCase.SeekFurnitureGalleryInfo) {
-        output.WriteRawTag(242, 113);
-        output.WriteMessage(SeekFurnitureGalleryInfo);
+      if (detailCase_ == DetailOneofCase.RacingGalleryInfo) {
+        output.WriteRawTag(154, 52);
+        output.WriteMessage(RacingGalleryInfo);
+      }
+      if (detailCase_ == DetailOneofCase.StakePlayInfo) {
+        output.WriteRawTag(210, 113);
+        output.WriteMessage(StakePlayInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -349,7 +352,7 @@ namespace Weedwacker.Shared.Network.Proto {
           break;
         case DetailOneofCase.SeekFurnitureGalleryInfo:
           if (SeekFurnitureGalleryInfo == null) {
-            SeekFurnitureGalleryInfo = new global::Weedwacker.Shared.Network.Proto.SeekFurnitureGalleryInfo();
+            SeekFurnitureGalleryInfo = new global::Weedwacker.Shared.Network.Proto.HomeSeekFurnitureAllRecord();
           }
           SeekFurnitureGalleryInfo.MergeFrom(other.SeekFurnitureGalleryInfo);
           break;
@@ -370,29 +373,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
+          case 120: {
             GroupId = input.ReadUInt32();
             break;
           }
-          case 2778: {
-            global::Weedwacker.Shared.Network.Proto.HomeStakeRecord subBuilder = new global::Weedwacker.Shared.Network.Proto.HomeStakeRecord();
-            if (detailCase_ == DetailOneofCase.StakePlayInfo) {
-              subBuilder.MergeFrom(StakePlayInfo);
+          case 2962: {
+            global::Weedwacker.Shared.Network.Proto.HomeSeekFurnitureAllRecord subBuilder = new global::Weedwacker.Shared.Network.Proto.HomeSeekFurnitureAllRecord();
+            if (detailCase_ == DetailOneofCase.SeekFurnitureGalleryInfo) {
+              subBuilder.MergeFrom(SeekFurnitureGalleryInfo);
             }
             input.ReadMessage(subBuilder);
-            StakePlayInfo = subBuilder;
+            SeekFurnitureGalleryInfo = subBuilder;
             break;
           }
-          case 3738: {
-            global::Weedwacker.Shared.Network.Proto.HomeRacingRecord subBuilder = new global::Weedwacker.Shared.Network.Proto.HomeRacingRecord();
-            if (detailCase_ == DetailOneofCase.RacingGalleryInfo) {
-              subBuilder.MergeFrom(RacingGalleryInfo);
-            }
-            input.ReadMessage(subBuilder);
-            RacingGalleryInfo = subBuilder;
-            break;
-          }
-          case 11282: {
+          case 5810: {
             global::Weedwacker.Shared.Network.Proto.HomeBalloonRecord subBuilder = new global::Weedwacker.Shared.Network.Proto.HomeBalloonRecord();
             if (detailCase_ == DetailOneofCase.BalloonGalleryInfo) {
               subBuilder.MergeFrom(BalloonGalleryInfo);
@@ -401,13 +395,22 @@ namespace Weedwacker.Shared.Network.Proto {
             BalloonGalleryInfo = subBuilder;
             break;
           }
-          case 14578: {
-            global::Weedwacker.Shared.Network.Proto.SeekFurnitureGalleryInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.SeekFurnitureGalleryInfo();
-            if (detailCase_ == DetailOneofCase.SeekFurnitureGalleryInfo) {
-              subBuilder.MergeFrom(SeekFurnitureGalleryInfo);
+          case 6682: {
+            global::Weedwacker.Shared.Network.Proto.HomeRacingRecord subBuilder = new global::Weedwacker.Shared.Network.Proto.HomeRacingRecord();
+            if (detailCase_ == DetailOneofCase.RacingGalleryInfo) {
+              subBuilder.MergeFrom(RacingGalleryInfo);
             }
             input.ReadMessage(subBuilder);
-            SeekFurnitureGalleryInfo = subBuilder;
+            RacingGalleryInfo = subBuilder;
+            break;
+          }
+          case 14546: {
+            global::Weedwacker.Shared.Network.Proto.HomeStakeRecord subBuilder = new global::Weedwacker.Shared.Network.Proto.HomeStakeRecord();
+            if (detailCase_ == DetailOneofCase.StakePlayInfo) {
+              subBuilder.MergeFrom(StakePlayInfo);
+            }
+            input.ReadMessage(subBuilder);
+            StakePlayInfo = subBuilder;
             break;
           }
         }
@@ -425,29 +428,20 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
+          case 120: {
             GroupId = input.ReadUInt32();
             break;
           }
-          case 2778: {
-            global::Weedwacker.Shared.Network.Proto.HomeStakeRecord subBuilder = new global::Weedwacker.Shared.Network.Proto.HomeStakeRecord();
-            if (detailCase_ == DetailOneofCase.StakePlayInfo) {
-              subBuilder.MergeFrom(StakePlayInfo);
+          case 2962: {
+            global::Weedwacker.Shared.Network.Proto.HomeSeekFurnitureAllRecord subBuilder = new global::Weedwacker.Shared.Network.Proto.HomeSeekFurnitureAllRecord();
+            if (detailCase_ == DetailOneofCase.SeekFurnitureGalleryInfo) {
+              subBuilder.MergeFrom(SeekFurnitureGalleryInfo);
             }
             input.ReadMessage(subBuilder);
-            StakePlayInfo = subBuilder;
+            SeekFurnitureGalleryInfo = subBuilder;
             break;
           }
-          case 3738: {
-            global::Weedwacker.Shared.Network.Proto.HomeRacingRecord subBuilder = new global::Weedwacker.Shared.Network.Proto.HomeRacingRecord();
-            if (detailCase_ == DetailOneofCase.RacingGalleryInfo) {
-              subBuilder.MergeFrom(RacingGalleryInfo);
-            }
-            input.ReadMessage(subBuilder);
-            RacingGalleryInfo = subBuilder;
-            break;
-          }
-          case 11282: {
+          case 5810: {
             global::Weedwacker.Shared.Network.Proto.HomeBalloonRecord subBuilder = new global::Weedwacker.Shared.Network.Proto.HomeBalloonRecord();
             if (detailCase_ == DetailOneofCase.BalloonGalleryInfo) {
               subBuilder.MergeFrom(BalloonGalleryInfo);
@@ -456,13 +450,22 @@ namespace Weedwacker.Shared.Network.Proto {
             BalloonGalleryInfo = subBuilder;
             break;
           }
-          case 14578: {
-            global::Weedwacker.Shared.Network.Proto.SeekFurnitureGalleryInfo subBuilder = new global::Weedwacker.Shared.Network.Proto.SeekFurnitureGalleryInfo();
-            if (detailCase_ == DetailOneofCase.SeekFurnitureGalleryInfo) {
-              subBuilder.MergeFrom(SeekFurnitureGalleryInfo);
+          case 6682: {
+            global::Weedwacker.Shared.Network.Proto.HomeRacingRecord subBuilder = new global::Weedwacker.Shared.Network.Proto.HomeRacingRecord();
+            if (detailCase_ == DetailOneofCase.RacingGalleryInfo) {
+              subBuilder.MergeFrom(RacingGalleryInfo);
             }
             input.ReadMessage(subBuilder);
-            SeekFurnitureGalleryInfo = subBuilder;
+            RacingGalleryInfo = subBuilder;
+            break;
+          }
+          case 14546: {
+            global::Weedwacker.Shared.Network.Proto.HomeStakeRecord subBuilder = new global::Weedwacker.Shared.Network.Proto.HomeStakeRecord();
+            if (detailCase_ == DetailOneofCase.StakePlayInfo) {
+              subBuilder.MergeFrom(StakePlayInfo);
+            }
+            input.ReadMessage(subBuilder);
+            StakePlayInfo = subBuilder;
             break;
           }
         }

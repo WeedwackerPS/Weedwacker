@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static FireworksLaunchDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9GaXJld29ya3NMYXVuY2hEYXRhTm90aWZ5LnByb3RvGh9GaXJld29ya3NM",
-            "YXVuY2hTY2hlbWVEYXRhLnByb3RvIm0KGUZpcmV3b3Jrc0xhdW5jaERhdGFO",
-            "b3RpZnkSNAoQc2NoZW1lX2RhdGFfbGlzdBgMIAMoCzIaLkZpcmV3b3Jrc0xh",
-            "dW5jaFNjaGVtZURhdGESGgoSbGFzdF91c2Vfc2NoZW1lX2lkGAQgASgNQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "Ch9GaXJld29ya3NMYXVuY2hEYXRhTm90aWZ5LnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvGh9GaXJld29ya3NMYXVuY2hTY2hlbWVE",
+            "YXRhLnByb3RvIo0BChlGaXJld29ya3NMYXVuY2hEYXRhTm90aWZ5ElQKEHNj",
+            "aGVtZV9kYXRhX2xpc3QYCCADKAsyOi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLkZpcmV3b3Jrc0xhdW5jaFNjaGVtZURhdGESGgoSbGFzdF91",
+            "c2Vfc2NoZW1lX2lkGA8gASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FireworksLaunchSchemeDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5928
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5917;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class FireworksLaunchDataNotify : pb::IMessage<FireworksLaunchDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -90,9 +95,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "scheme_data_list" field.</summary>
-    public const int SchemeDataListFieldNumber = 12;
+    public const int SchemeDataListFieldNumber = 8;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.FireworksLaunchSchemeData> _repeated_schemeDataList_codec
-        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.FireworksLaunchSchemeData.Parser);
+        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.FireworksLaunchSchemeData.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FireworksLaunchSchemeData> schemeDataList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FireworksLaunchSchemeData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "last_use_scheme_id" field.</summary>
-    public const int LastUseSchemeIdFieldNumber = 4;
+    public const int LastUseSchemeIdFieldNumber = 15;
     private uint lastUseSchemeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -156,11 +161,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      schemeDataList_.WriteTo(output, _repeated_schemeDataList_codec);
       if (LastUseSchemeId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(120);
         output.WriteUInt32(LastUseSchemeId);
       }
-      schemeDataList_.WriteTo(output, _repeated_schemeDataList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -171,11 +176,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      schemeDataList_.WriteTo(ref output, _repeated_schemeDataList_codec);
       if (LastUseSchemeId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(120);
         output.WriteUInt32(LastUseSchemeId);
       }
-      schemeDataList_.WriteTo(ref output, _repeated_schemeDataList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -221,12 +226,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 32: {
-            LastUseSchemeId = input.ReadUInt32();
+          case 66: {
+            schemeDataList_.AddEntriesFrom(input, _repeated_schemeDataList_codec);
             break;
           }
-          case 98: {
-            schemeDataList_.AddEntriesFrom(input, _repeated_schemeDataList_codec);
+          case 120: {
+            LastUseSchemeId = input.ReadUInt32();
             break;
           }
         }
@@ -244,12 +249,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 32: {
-            LastUseSchemeId = input.ReadUInt32();
+          case 66: {
+            schemeDataList_.AddEntriesFrom(ref input, _repeated_schemeDataList_codec);
             break;
           }
-          case 98: {
-            schemeDataList_.AddEntriesFrom(ref input, _repeated_schemeDataList_codec);
+          case 120: {
+            LastUseSchemeId = input.ReadUInt32();
             break;
           }
         }

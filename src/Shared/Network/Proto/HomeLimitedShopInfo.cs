@@ -24,16 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeLimitedShopInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlIb21lTGltaXRlZFNob3BJbmZvLnByb3RvGgxWZWN0b3IucHJvdG8iqQEK",
-            "E0hvbWVMaW1pdGVkU2hvcEluZm8SFwoPbmV4dF9jbG9zZV90aW1lGAkgASgH",
-            "EhwKFG5leHRfZ3Vlc3Rfb3Blbl90aW1lGAsgASgHEhoKCWRqaW5uX3JvdBgH",
-            "IAEoCzIHLlZlY3RvchILCgN1aWQYBCABKA0SFgoObmV4dF9vcGVuX3RpbWUY",
-            "BiABKAcSGgoJZGppbm5fcG9zGAIgASgLMgcuVmVjdG9yQiKqAh9XZWVkd2Fj",
-            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChlIb21lTGltaXRlZFNob3BJbmZvLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvGgxWZWN0b3IucHJvdG8i6QEKE0hvbWVMaW1pdGVk",
+            "U2hvcEluZm8SCwoDdWlkGAkgASgNEhwKFG5leHRfZ3Vlc3Rfb3Blbl90aW1l",
+            "GAggASgHEjoKCWRqaW5uX3JvdBgLIAEoCzInLldlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8uVmVjdG9yEhYKDm5leHRfb3Blbl90aW1lGAUgASgH",
+            "EjoKCWRqaW5uX3BvcxgCIAEoCzInLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
+            "cmsuUHJvdG8uVmVjdG9yEhcKD25leHRfY2xvc2VfdGltZRgPIAEoB2IGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeLimitedShopInfo), global::Weedwacker.Shared.Network.Proto.HomeLimitedShopInfo.Parser, new[]{ "NextCloseTime", "NextGuestOpenTime", "DjinnRot", "Uid", "NextOpenTime", "DjinnPos" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeLimitedShopInfo), global::Weedwacker.Shared.Network.Proto.HomeLimitedShopInfo.Parser, new[]{ "Uid", "NextGuestOpenTime", "DjinnRot", "NextOpenTime", "DjinnPos", "NextCloseTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,12 +76,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeLimitedShopInfo(HomeLimitedShopInfo other) : this() {
-      nextCloseTime_ = other.nextCloseTime_;
+      uid_ = other.uid_;
       nextGuestOpenTime_ = other.nextGuestOpenTime_;
       djinnRot_ = other.djinnRot_ != null ? other.djinnRot_.Clone() : null;
-      uid_ = other.uid_;
       nextOpenTime_ = other.nextOpenTime_;
       djinnPos_ = other.djinnPos_ != null ? other.djinnPos_.Clone() : null;
+      nextCloseTime_ = other.nextCloseTime_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,20 +91,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new HomeLimitedShopInfo(this);
     }
 
-    /// <summary>Field number for the "next_close_time" field.</summary>
-    public const int NextCloseTimeFieldNumber = 9;
-    private uint nextCloseTime_;
+    /// <summary>Field number for the "uid" field.</summary>
+    public const int UidFieldNumber = 9;
+    private uint uid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint NextCloseTime {
-      get { return nextCloseTime_; }
+    public uint Uid {
+      get { return uid_; }
       set {
-        nextCloseTime_ = value;
+        uid_ = value;
       }
     }
 
     /// <summary>Field number for the "next_guest_open_time" field.</summary>
-    public const int NextGuestOpenTimeFieldNumber = 11;
+    public const int NextGuestOpenTimeFieldNumber = 8;
     private uint nextGuestOpenTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,7 +116,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "djinn_rot" field.</summary>
-    public const int DjinnRotFieldNumber = 7;
+    public const int DjinnRotFieldNumber = 11;
     private global::Weedwacker.Shared.Network.Proto.Vector djinnRot_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -125,20 +127,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "uid" field.</summary>
-    public const int UidFieldNumber = 4;
-    private uint uid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Uid {
-      get { return uid_; }
-      set {
-        uid_ = value;
-      }
-    }
-
     /// <summary>Field number for the "next_open_time" field.</summary>
-    public const int NextOpenTimeFieldNumber = 6;
+    public const int NextOpenTimeFieldNumber = 5;
     private uint nextOpenTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -161,6 +151,18 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "next_close_time" field.</summary>
+    public const int NextCloseTimeFieldNumber = 15;
+    private uint nextCloseTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint NextCloseTime {
+      get { return nextCloseTime_; }
+      set {
+        nextCloseTime_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -176,12 +178,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (NextCloseTime != other.NextCloseTime) return false;
+      if (Uid != other.Uid) return false;
       if (NextGuestOpenTime != other.NextGuestOpenTime) return false;
       if (!object.Equals(DjinnRot, other.DjinnRot)) return false;
-      if (Uid != other.Uid) return false;
       if (NextOpenTime != other.NextOpenTime) return false;
       if (!object.Equals(DjinnPos, other.DjinnPos)) return false;
+      if (NextCloseTime != other.NextCloseTime) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -189,12 +191,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (NextCloseTime != 0) hash ^= NextCloseTime.GetHashCode();
+      if (Uid != 0) hash ^= Uid.GetHashCode();
       if (NextGuestOpenTime != 0) hash ^= NextGuestOpenTime.GetHashCode();
       if (djinnRot_ != null) hash ^= DjinnRot.GetHashCode();
-      if (Uid != 0) hash ^= Uid.GetHashCode();
       if (NextOpenTime != 0) hash ^= NextOpenTime.GetHashCode();
       if (djinnPos_ != null) hash ^= DjinnPos.GetHashCode();
+      if (NextCloseTime != 0) hash ^= NextCloseTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -217,25 +219,25 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(18);
         output.WriteMessage(DjinnPos);
       }
-      if (Uid != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(Uid);
-      }
       if (NextOpenTime != 0) {
-        output.WriteRawTag(53);
+        output.WriteRawTag(45);
         output.WriteFixed32(NextOpenTime);
       }
+      if (NextGuestOpenTime != 0) {
+        output.WriteRawTag(69);
+        output.WriteFixed32(NextGuestOpenTime);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Uid);
+      }
       if (djinnRot_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(90);
         output.WriteMessage(DjinnRot);
       }
       if (NextCloseTime != 0) {
-        output.WriteRawTag(77);
+        output.WriteRawTag(125);
         output.WriteFixed32(NextCloseTime);
-      }
-      if (NextGuestOpenTime != 0) {
-        output.WriteRawTag(93);
-        output.WriteFixed32(NextGuestOpenTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -251,25 +253,25 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteRawTag(18);
         output.WriteMessage(DjinnPos);
       }
-      if (Uid != 0) {
-        output.WriteRawTag(32);
-        output.WriteUInt32(Uid);
-      }
       if (NextOpenTime != 0) {
-        output.WriteRawTag(53);
+        output.WriteRawTag(45);
         output.WriteFixed32(NextOpenTime);
       }
+      if (NextGuestOpenTime != 0) {
+        output.WriteRawTag(69);
+        output.WriteFixed32(NextGuestOpenTime);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Uid);
+      }
       if (djinnRot_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(90);
         output.WriteMessage(DjinnRot);
       }
       if (NextCloseTime != 0) {
-        output.WriteRawTag(77);
+        output.WriteRawTag(125);
         output.WriteFixed32(NextCloseTime);
-      }
-      if (NextGuestOpenTime != 0) {
-        output.WriteRawTag(93);
-        output.WriteFixed32(NextGuestOpenTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -281,8 +283,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (NextCloseTime != 0) {
-        size += 1 + 4;
+      if (Uid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
       }
       if (NextGuestOpenTime != 0) {
         size += 1 + 4;
@@ -290,14 +292,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (djinnRot_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(DjinnRot);
       }
-      if (Uid != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
-      }
       if (NextOpenTime != 0) {
         size += 1 + 4;
       }
       if (djinnPos_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(DjinnPos);
+      }
+      if (NextCloseTime != 0) {
+        size += 1 + 4;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -311,8 +313,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.NextCloseTime != 0) {
-        NextCloseTime = other.NextCloseTime;
+      if (other.Uid != 0) {
+        Uid = other.Uid;
       }
       if (other.NextGuestOpenTime != 0) {
         NextGuestOpenTime = other.NextGuestOpenTime;
@@ -323,9 +325,6 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         DjinnRot.MergeFrom(other.DjinnRot);
       }
-      if (other.Uid != 0) {
-        Uid = other.Uid;
-      }
       if (other.NextOpenTime != 0) {
         NextOpenTime = other.NextOpenTime;
       }
@@ -334,6 +333,9 @@ namespace Weedwacker.Shared.Network.Proto {
           DjinnPos = new global::Weedwacker.Shared.Network.Proto.Vector();
         }
         DjinnPos.MergeFrom(other.DjinnPos);
+      }
+      if (other.NextCloseTime != 0) {
+        NextCloseTime = other.NextCloseTime;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -357,27 +359,27 @@ namespace Weedwacker.Shared.Network.Proto {
             input.ReadMessage(DjinnPos);
             break;
           }
-          case 32: {
-            Uid = input.ReadUInt32();
-            break;
-          }
-          case 53: {
+          case 45: {
             NextOpenTime = input.ReadFixed32();
             break;
           }
-          case 58: {
+          case 69: {
+            NextGuestOpenTime = input.ReadFixed32();
+            break;
+          }
+          case 72: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 90: {
             if (djinnRot_ == null) {
               DjinnRot = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(DjinnRot);
             break;
           }
-          case 77: {
+          case 125: {
             NextCloseTime = input.ReadFixed32();
-            break;
-          }
-          case 93: {
-            NextGuestOpenTime = input.ReadFixed32();
             break;
           }
         }
@@ -402,27 +404,27 @@ namespace Weedwacker.Shared.Network.Proto {
             input.ReadMessage(DjinnPos);
             break;
           }
-          case 32: {
-            Uid = input.ReadUInt32();
-            break;
-          }
-          case 53: {
+          case 45: {
             NextOpenTime = input.ReadFixed32();
             break;
           }
-          case 58: {
+          case 69: {
+            NextGuestOpenTime = input.ReadFixed32();
+            break;
+          }
+          case 72: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 90: {
             if (djinnRot_ == null) {
               DjinnRot = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(DjinnRot);
             break;
           }
-          case 77: {
+          case 125: {
             NextCloseTime = input.ReadFixed32();
-            break;
-          }
-          case 93: {
-            NextGuestOpenTime = input.ReadFixed32();
             break;
           }
         }

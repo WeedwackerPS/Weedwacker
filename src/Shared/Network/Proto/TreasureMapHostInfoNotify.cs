@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static TreasureMapHostInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9UcmVhc3VyZU1hcEhvc3RJbmZvTm90aWZ5LnByb3RvIj0KGVRyZWFzdXJl",
-            "TWFwSG9zdEluZm9Ob3RpZnkSIAoYbXBfY2hhbGxlbmdlX3JlZ2lvbl9saXN0",
-            "GAggAygNQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZw",
-            "cm90bzM="));
+            "Ch9UcmVhc3VyZU1hcEhvc3RJbmZvTm90aWZ5LnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvIj0KGVRyZWFzdXJlTWFwSG9zdEluZm9O",
+            "b3RpZnkSIAoYbXBfY2hhbGxlbmdlX3JlZ2lvbl9saXN0GAEgAygNYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8681
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8296;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class TreasureMapHostInfoNotify : pb::IMessage<TreasureMapHostInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,9 +92,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "mp_challenge_region_list" field.</summary>
-    public const int MpChallengeRegionListFieldNumber = 8;
+    public const int MpChallengeRegionListFieldNumber = 1;
     private static readonly pb::FieldCodec<uint> _repeated_mpChallengeRegionList_codec
-        = pb::FieldCodec.ForUInt32(66);
+        = pb::FieldCodec.ForUInt32(10);
     private readonly pbc::RepeatedField<uint> mpChallengeRegionList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -191,8 +195,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 66:
-          case 64: {
+          case 10:
+          case 8: {
             mpChallengeRegionList_.AddEntriesFrom(input, _repeated_mpChallengeRegionList_codec);
             break;
           }
@@ -211,8 +215,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 66:
-          case 64: {
+          case 10:
+          case 8: {
             mpChallengeRegionList_.AddEntriesFrom(ref input, _repeated_mpChallengeRegionList_codec);
             break;
           }

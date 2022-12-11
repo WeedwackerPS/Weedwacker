@@ -24,16 +24,17 @@ namespace Weedwacker.Shared.Network.Proto {
     static PotionEnterDungeonNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5Qb3Rpb25FbnRlckR1bmdlb25Ob3RpZnkucHJvdG8aGVBvdGlvbkR1bmdl",
-            "b25BdmF0YXIucHJvdG8inAEKGFBvdGlvbkVudGVyRHVuZ2Vvbk5vdGlmeRIQ",
-            "CghzdGFnZV9pZBgNIAEoDRIYChBkaWZmaWN1bHR5X2xldmVsGAcgASgNEjEK",
-            "E2R1bmdlb25fYXZhdGFyX2xpc3QYBiADKAsyFC5Qb3Rpb25EdW5nZW9uQXZh",
-            "dGFyEhAKCGxldmVsX2lkGAggASgNEg8KB21vZGVfaWQYBSABKA1CIqoCH1dl",
-            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch5Qb3Rpb25FbnRlckR1bmdlb25Ob3RpZnkucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8aGVBvdGlvbkR1bmdlb25BdmF0YXIucHJv",
+            "dG8ivAEKGFBvdGlvbkVudGVyRHVuZ2Vvbk5vdGlmeRIPCgdtb2RlX2lkGAsg",
+            "ASgNEhAKCGxldmVsX2lkGAMgASgNElEKE2R1bmdlb25fYXZhdGFyX2xpc3QY",
+            "ASADKAsyNC5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlBvdGlv",
+            "bkR1bmdlb25BdmF0YXISGAoQZGlmZmljdWx0eV9sZXZlbBgOIAEoDRIQCghz",
+            "dGFnZV9pZBgKIAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.PotionDungeonAvatarReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PotionEnterDungeonNotify), global::Weedwacker.Shared.Network.Proto.PotionEnterDungeonNotify.Parser, new[]{ "StageId", "DifficultyLevel", "DungeonAvatarList", "LevelId", "ModeId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.PotionEnterDungeonNotify), global::Weedwacker.Shared.Network.Proto.PotionEnterDungeonNotify.Parser, new[]{ "ModeId", "LevelId", "DungeonAvatarList", "DifficultyLevel", "StageId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +42,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8531
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8777;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class PotionEnterDungeonNotify : pb::IMessage<PotionEnterDungeonNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,11 +84,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PotionEnterDungeonNotify(PotionEnterDungeonNotify other) : this() {
-      stageId_ = other.stageId_;
-      difficultyLevel_ = other.difficultyLevel_;
-      dungeonAvatarList_ = other.dungeonAvatarList_.Clone();
-      levelId_ = other.levelId_;
       modeId_ = other.modeId_;
+      levelId_ = other.levelId_;
+      dungeonAvatarList_ = other.dungeonAvatarList_.Clone();
+      difficultyLevel_ = other.difficultyLevel_;
+      stageId_ = other.stageId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,43 +98,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new PotionEnterDungeonNotify(this);
     }
 
-    /// <summary>Field number for the "stage_id" field.</summary>
-    public const int StageIdFieldNumber = 13;
-    private uint stageId_;
+    /// <summary>Field number for the "mode_id" field.</summary>
+    public const int ModeIdFieldNumber = 11;
+    private uint modeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint StageId {
-      get { return stageId_; }
+    public uint ModeId {
+      get { return modeId_; }
       set {
-        stageId_ = value;
+        modeId_ = value;
       }
-    }
-
-    /// <summary>Field number for the "difficulty_level" field.</summary>
-    public const int DifficultyLevelFieldNumber = 7;
-    private uint difficultyLevel_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint DifficultyLevel {
-      get { return difficultyLevel_; }
-      set {
-        difficultyLevel_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "dungeon_avatar_list" field.</summary>
-    public const int DungeonAvatarListFieldNumber = 6;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.PotionDungeonAvatar> _repeated_dungeonAvatarList_codec
-        = pb::FieldCodec.ForMessage(50, global::Weedwacker.Shared.Network.Proto.PotionDungeonAvatar.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PotionDungeonAvatar> dungeonAvatarList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PotionDungeonAvatar>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PotionDungeonAvatar> DungeonAvatarList {
-      get { return dungeonAvatarList_; }
     }
 
     /// <summary>Field number for the "level_id" field.</summary>
-    public const int LevelIdFieldNumber = 8;
+    public const int LevelIdFieldNumber = 3;
     private uint levelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -140,15 +122,38 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "mode_id" field.</summary>
-    public const int ModeIdFieldNumber = 5;
-    private uint modeId_;
+    /// <summary>Field number for the "dungeon_avatar_list" field.</summary>
+    public const int DungeonAvatarListFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.PotionDungeonAvatar> _repeated_dungeonAvatarList_codec
+        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.PotionDungeonAvatar.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PotionDungeonAvatar> dungeonAvatarList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PotionDungeonAvatar>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ModeId {
-      get { return modeId_; }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PotionDungeonAvatar> DungeonAvatarList {
+      get { return dungeonAvatarList_; }
+    }
+
+    /// <summary>Field number for the "difficulty_level" field.</summary>
+    public const int DifficultyLevelFieldNumber = 14;
+    private uint difficultyLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint DifficultyLevel {
+      get { return difficultyLevel_; }
       set {
-        modeId_ = value;
+        difficultyLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "stage_id" field.</summary>
+    public const int StageIdFieldNumber = 10;
+    private uint stageId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint StageId {
+      get { return stageId_; }
+      set {
+        stageId_ = value;
       }
     }
 
@@ -167,11 +172,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (StageId != other.StageId) return false;
-      if (DifficultyLevel != other.DifficultyLevel) return false;
-      if(!dungeonAvatarList_.Equals(other.dungeonAvatarList_)) return false;
-      if (LevelId != other.LevelId) return false;
       if (ModeId != other.ModeId) return false;
+      if (LevelId != other.LevelId) return false;
+      if(!dungeonAvatarList_.Equals(other.dungeonAvatarList_)) return false;
+      if (DifficultyLevel != other.DifficultyLevel) return false;
+      if (StageId != other.StageId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -179,11 +184,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (StageId != 0) hash ^= StageId.GetHashCode();
-      if (DifficultyLevel != 0) hash ^= DifficultyLevel.GetHashCode();
-      hash ^= dungeonAvatarList_.GetHashCode();
-      if (LevelId != 0) hash ^= LevelId.GetHashCode();
       if (ModeId != 0) hash ^= ModeId.GetHashCode();
+      if (LevelId != 0) hash ^= LevelId.GetHashCode();
+      hash ^= dungeonAvatarList_.GetHashCode();
+      if (DifficultyLevel != 0) hash ^= DifficultyLevel.GetHashCode();
+      if (StageId != 0) hash ^= StageId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -202,22 +207,22 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ModeId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(ModeId);
-      }
       dungeonAvatarList_.WriteTo(output, _repeated_dungeonAvatarList_codec);
-      if (DifficultyLevel != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(DifficultyLevel);
-      }
       if (LevelId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(24);
         output.WriteUInt32(LevelId);
       }
       if (StageId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(80);
         output.WriteUInt32(StageId);
+      }
+      if (ModeId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(ModeId);
+      }
+      if (DifficultyLevel != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(DifficultyLevel);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -229,22 +234,22 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ModeId != 0) {
-        output.WriteRawTag(40);
-        output.WriteUInt32(ModeId);
-      }
       dungeonAvatarList_.WriteTo(ref output, _repeated_dungeonAvatarList_codec);
-      if (DifficultyLevel != 0) {
-        output.WriteRawTag(56);
-        output.WriteUInt32(DifficultyLevel);
-      }
       if (LevelId != 0) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(24);
         output.WriteUInt32(LevelId);
       }
       if (StageId != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(80);
         output.WriteUInt32(StageId);
+      }
+      if (ModeId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(ModeId);
+      }
+      if (DifficultyLevel != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(DifficultyLevel);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -256,18 +261,18 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (StageId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
+      if (ModeId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ModeId);
       }
-      if (DifficultyLevel != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DifficultyLevel);
-      }
-      size += dungeonAvatarList_.CalculateSize(_repeated_dungeonAvatarList_codec);
       if (LevelId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
       }
-      if (ModeId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ModeId);
+      size += dungeonAvatarList_.CalculateSize(_repeated_dungeonAvatarList_codec);
+      if (DifficultyLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DifficultyLevel);
+      }
+      if (StageId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -281,18 +286,18 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.StageId != 0) {
-        StageId = other.StageId;
+      if (other.ModeId != 0) {
+        ModeId = other.ModeId;
       }
-      if (other.DifficultyLevel != 0) {
-        DifficultyLevel = other.DifficultyLevel;
-      }
-      dungeonAvatarList_.Add(other.dungeonAvatarList_);
       if (other.LevelId != 0) {
         LevelId = other.LevelId;
       }
-      if (other.ModeId != 0) {
-        ModeId = other.ModeId;
+      dungeonAvatarList_.Add(other.dungeonAvatarList_);
+      if (other.DifficultyLevel != 0) {
+        DifficultyLevel = other.DifficultyLevel;
+      }
+      if (other.StageId != 0) {
+        StageId = other.StageId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -309,24 +314,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
-            ModeId = input.ReadUInt32();
-            break;
-          }
-          case 50: {
+          case 10: {
             dungeonAvatarList_.AddEntriesFrom(input, _repeated_dungeonAvatarList_codec);
             break;
           }
-          case 56: {
-            DifficultyLevel = input.ReadUInt32();
-            break;
-          }
-          case 64: {
+          case 24: {
             LevelId = input.ReadUInt32();
             break;
           }
-          case 104: {
+          case 80: {
             StageId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            ModeId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            DifficultyLevel = input.ReadUInt32();
             break;
           }
         }
@@ -344,24 +349,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
-            ModeId = input.ReadUInt32();
-            break;
-          }
-          case 50: {
+          case 10: {
             dungeonAvatarList_.AddEntriesFrom(ref input, _repeated_dungeonAvatarList_codec);
             break;
           }
-          case 56: {
-            DifficultyLevel = input.ReadUInt32();
-            break;
-          }
-          case 64: {
+          case 24: {
             LevelId = input.ReadUInt32();
             break;
           }
-          case 104: {
+          case 80: {
             StageId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            ModeId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            DifficultyLevel = input.ReadUInt32();
             break;
           }
         }

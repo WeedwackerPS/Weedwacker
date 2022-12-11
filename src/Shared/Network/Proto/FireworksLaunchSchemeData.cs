@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static FireworksLaunchSchemeDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9GaXJld29ya3NMYXVuY2hTY2hlbWVEYXRhLnByb3RvGhpGaXJld29ya3NM",
-            "YXVuY2hQYXJhbS5wcm90byJ7ChlGaXJld29ya3NMYXVuY2hTY2hlbWVEYXRh",
-            "EhEKCXNjaGVtZV9pZBgDIAEoDRIZChFmaXJld29ya3NfaWRfbGlzdBgCIAMo",
-            "DRIwChFsYXVuY2hfcGFyYW1fbGlzdBgHIAMoCzIVLkZpcmV3b3Jrc0xhdW5j",
-            "aFBhcmFtQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZw",
-            "cm90bzM="));
+            "Ch9GaXJld29ya3NMYXVuY2hTY2hlbWVEYXRhLnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvGhpGaXJld29ya3NMYXVuY2hQYXJhbS5w",
+            "cm90byKbAQoZRmlyZXdvcmtzTGF1bmNoU2NoZW1lRGF0YRJQChFsYXVuY2hf",
+            "cGFyYW1fbGlzdBgIIAMoCzI1LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsu",
+            "UHJvdG8uRmlyZXdvcmtzTGF1bmNoUGFyYW0SGQoRZmlyZXdvcmtzX2lkX2xp",
+            "c3QYDCADKA0SEQoJc2NoZW1lX2lkGAIgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FireworksLaunchParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FireworksLaunchSchemeData), global::Weedwacker.Shared.Network.Proto.FireworksLaunchSchemeData.Parser, new[]{ "SchemeId", "FireworksIdList", "LaunchParamList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FireworksLaunchSchemeData), global::Weedwacker.Shared.Network.Proto.FireworksLaunchSchemeData.Parser, new[]{ "LaunchParamList", "FireworksIdList", "SchemeId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,9 +74,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FireworksLaunchSchemeData(FireworksLaunchSchemeData other) : this() {
-      schemeId_ = other.schemeId_;
-      fireworksIdList_ = other.fireworksIdList_.Clone();
       launchParamList_ = other.launchParamList_.Clone();
+      fireworksIdList_ = other.fireworksIdList_.Clone();
+      schemeId_ = other.schemeId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -86,8 +86,30 @@ namespace Weedwacker.Shared.Network.Proto {
       return new FireworksLaunchSchemeData(this);
     }
 
+    /// <summary>Field number for the "launch_param_list" field.</summary>
+    public const int LaunchParamListFieldNumber = 8;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.FireworksLaunchParam> _repeated_launchParamList_codec
+        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.FireworksLaunchParam.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FireworksLaunchParam> launchParamList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FireworksLaunchParam>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FireworksLaunchParam> LaunchParamList {
+      get { return launchParamList_; }
+    }
+
+    /// <summary>Field number for the "fireworks_id_list" field.</summary>
+    public const int FireworksIdListFieldNumber = 12;
+    private static readonly pb::FieldCodec<uint> _repeated_fireworksIdList_codec
+        = pb::FieldCodec.ForUInt32(98);
+    private readonly pbc::RepeatedField<uint> fireworksIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> FireworksIdList {
+      get { return fireworksIdList_; }
+    }
+
     /// <summary>Field number for the "scheme_id" field.</summary>
-    public const int SchemeIdFieldNumber = 3;
+    public const int SchemeIdFieldNumber = 2;
     private uint schemeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -96,28 +118,6 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         schemeId_ = value;
       }
-    }
-
-    /// <summary>Field number for the "fireworks_id_list" field.</summary>
-    public const int FireworksIdListFieldNumber = 2;
-    private static readonly pb::FieldCodec<uint> _repeated_fireworksIdList_codec
-        = pb::FieldCodec.ForUInt32(18);
-    private readonly pbc::RepeatedField<uint> fireworksIdList_ = new pbc::RepeatedField<uint>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<uint> FireworksIdList {
-      get { return fireworksIdList_; }
-    }
-
-    /// <summary>Field number for the "launch_param_list" field.</summary>
-    public const int LaunchParamListFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.FireworksLaunchParam> _repeated_launchParamList_codec
-        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.FireworksLaunchParam.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FireworksLaunchParam> launchParamList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FireworksLaunchParam>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.FireworksLaunchParam> LaunchParamList {
-      get { return launchParamList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -135,9 +135,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (SchemeId != other.SchemeId) return false;
-      if(!fireworksIdList_.Equals(other.fireworksIdList_)) return false;
       if(!launchParamList_.Equals(other.launchParamList_)) return false;
+      if(!fireworksIdList_.Equals(other.fireworksIdList_)) return false;
+      if (SchemeId != other.SchemeId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -145,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (SchemeId != 0) hash ^= SchemeId.GetHashCode();
-      hash ^= fireworksIdList_.GetHashCode();
       hash ^= launchParamList_.GetHashCode();
+      hash ^= fireworksIdList_.GetHashCode();
+      if (SchemeId != 0) hash ^= SchemeId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -166,12 +166,12 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      fireworksIdList_.WriteTo(output, _repeated_fireworksIdList_codec);
       if (SchemeId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(16);
         output.WriteUInt32(SchemeId);
       }
       launchParamList_.WriteTo(output, _repeated_launchParamList_codec);
+      fireworksIdList_.WriteTo(output, _repeated_fireworksIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -182,12 +182,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      fireworksIdList_.WriteTo(ref output, _repeated_fireworksIdList_codec);
       if (SchemeId != 0) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(16);
         output.WriteUInt32(SchemeId);
       }
       launchParamList_.WriteTo(ref output, _repeated_launchParamList_codec);
+      fireworksIdList_.WriteTo(ref output, _repeated_fireworksIdList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -198,11 +198,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += launchParamList_.CalculateSize(_repeated_launchParamList_codec);
+      size += fireworksIdList_.CalculateSize(_repeated_fireworksIdList_codec);
       if (SchemeId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SchemeId);
       }
-      size += fireworksIdList_.CalculateSize(_repeated_fireworksIdList_codec);
-      size += launchParamList_.CalculateSize(_repeated_launchParamList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -215,11 +215,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      launchParamList_.Add(other.launchParamList_);
+      fireworksIdList_.Add(other.fireworksIdList_);
       if (other.SchemeId != 0) {
         SchemeId = other.SchemeId;
       }
-      fireworksIdList_.Add(other.fireworksIdList_);
-      launchParamList_.Add(other.launchParamList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -235,17 +235,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18:
           case 16: {
-            fireworksIdList_.AddEntriesFrom(input, _repeated_fireworksIdList_codec);
-            break;
-          }
-          case 24: {
             SchemeId = input.ReadUInt32();
             break;
           }
-          case 58: {
+          case 66: {
             launchParamList_.AddEntriesFrom(input, _repeated_launchParamList_codec);
+            break;
+          }
+          case 98:
+          case 96: {
+            fireworksIdList_.AddEntriesFrom(input, _repeated_fireworksIdList_codec);
             break;
           }
         }
@@ -263,17 +263,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18:
           case 16: {
-            fireworksIdList_.AddEntriesFrom(ref input, _repeated_fireworksIdList_codec);
-            break;
-          }
-          case 24: {
             SchemeId = input.ReadUInt32();
             break;
           }
-          case 58: {
+          case 66: {
             launchParamList_.AddEntriesFrom(ref input, _repeated_launchParamList_codec);
+            break;
+          }
+          case 98:
+          case 96: {
+            fireworksIdList_.AddEntriesFrom(ref input, _repeated_fireworksIdList_codec);
             break;
           }
         }

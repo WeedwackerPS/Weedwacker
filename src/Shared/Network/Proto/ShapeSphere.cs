@@ -24,9 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static ShapeSphereReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChFTaGFwZVNwaGVyZS5wcm90bxoMVmVjdG9yLnByb3RvIjYKC1NoYXBlU3Bo",
-            "ZXJlEhcKBmNlbnRlchgBIAEoCzIHLlZlY3RvchIOCgZyYWRpdXMYAiABKAJC",
-            "IqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChFTaGFwZVNwaGVyZS5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
+            "ay5Qcm90bxoMVmVjdG9yLnByb3RvIlYKC1NoYXBlU3BoZXJlEjcKBmNlbnRl",
+            "chgBIAEoCzInLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uVmVj",
+            "dG9yEg4KBnJhZGl1cxgCIAEoAmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

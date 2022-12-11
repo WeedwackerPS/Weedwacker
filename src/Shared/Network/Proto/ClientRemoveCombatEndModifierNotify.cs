@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static ClientRemoveCombatEndModifierNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CilDbGllbnRSZW1vdmVDb21iYXRFbmRNb2RpZmllck5vdGlmeS5wcm90byJD",
-            "CiNDbGllbnRSZW1vdmVDb21iYXRFbmRNb2RpZmllck5vdGlmeRIcChRjb21i",
-            "YXRfZW5kX3R5cGVfbGlzdBgHIAMoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQu",
-            "TmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "CilDbGllbnRSZW1vdmVDb21iYXRFbmRNb2RpZmllck5vdGlmeS5wcm90bxIf",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90byJDCiNDbGllbnRSZW1v",
+            "dmVDb21iYXRFbmRNb2RpZmllck5vdGlmeRIcChRjb21iYXRfZW5kX3R5cGVf",
+            "bGlzdBgKIAMoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 1182
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1190;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class ClientRemoveCombatEndModifierNotify : pb::IMessage<ClientRemoveCombatEndModifierNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "combat_end_type_list" field.</summary>
-    public const int CombatEndTypeListFieldNumber = 7;
+    public const int CombatEndTypeListFieldNumber = 10;
     private static readonly pb::FieldCodec<uint> _repeated_combatEndTypeList_codec
-        = pb::FieldCodec.ForUInt32(58);
+        = pb::FieldCodec.ForUInt32(82);
     private readonly pbc::RepeatedField<uint> combatEndTypeList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -192,8 +196,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 58:
-          case 56: {
+          case 82:
+          case 80: {
             combatEndTypeList_.AddEntriesFrom(input, _repeated_combatEndTypeList_codec);
             break;
           }
@@ -212,8 +216,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 58:
-          case 56: {
+          case 82:
+          case 80: {
             combatEndTypeList_.AddEntriesFrom(ref input, _repeated_combatEndTypeList_codec);
             break;
           }

@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static WidgetCaptureAnimalReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxXaWRnZXRDYXB0dXJlQW5pbWFsUmVxLnByb3RvGgxWZWN0b3IucHJvdG8i",
-            "VgoWV2lkZ2V0Q2FwdHVyZUFuaW1hbFJlcRIUCgNwb3MYCiABKAsyBy5WZWN0",
-            "b3ISEQoJZW50aXR5X2lkGA8gASgNEhMKC21hdGVyaWFsX2lkGAYgASgNQiKq",
-            "Ah9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChxXaWRnZXRDYXB0dXJlQW5pbWFsUmVxLnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGgxWZWN0b3IucHJvdG8idgoWV2lkZ2V0Q2Fw",
+            "dHVyZUFuaW1hbFJlcRIRCgllbnRpdHlfaWQYBiABKA0SEwoLbWF0ZXJpYWxf",
+            "aWQYAyABKA0SNAoDcG9zGAEgASgLMicuV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5WZWN0b3JiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WidgetCaptureAnimalReq), global::Weedwacker.Shared.Network.Proto.WidgetCaptureAnimalReq.Parser, new[]{ "Pos", "EntityId", "MaterialId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WidgetCaptureAnimalReq), global::Weedwacker.Shared.Network.Proto.WidgetCaptureAnimalReq.Parser, new[]{ "EntityId", "MaterialId", "Pos" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,10 +40,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4256
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4279;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class WidgetCaptureAnimalReq : pb::IMessage<WidgetCaptureAnimalReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +83,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public WidgetCaptureAnimalReq(WidgetCaptureAnimalReq other) : this() {
-      pos_ = other.pos_ != null ? other.pos_.Clone() : null;
       entityId_ = other.entityId_;
       materialId_ = other.materialId_;
+      pos_ = other.pos_ != null ? other.pos_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,20 +95,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new WidgetCaptureAnimalReq(this);
     }
 
-    /// <summary>Field number for the "pos" field.</summary>
-    public const int PosFieldNumber = 10;
-    private global::Weedwacker.Shared.Network.Proto.Vector pos_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector Pos {
-      get { return pos_; }
-      set {
-        pos_ = value;
-      }
-    }
-
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 15;
+    public const int EntityIdFieldNumber = 6;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -115,7 +108,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "material_id" field.</summary>
-    public const int MaterialIdFieldNumber = 6;
+    public const int MaterialIdFieldNumber = 3;
     private uint materialId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,6 +116,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return materialId_; }
       set {
         materialId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "pos" field.</summary>
+    public const int PosFieldNumber = 1;
+    private global::Weedwacker.Shared.Network.Proto.Vector pos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector Pos {
+      get { return pos_; }
+      set {
+        pos_ = value;
       }
     }
 
@@ -141,9 +146,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(Pos, other.Pos)) return false;
       if (EntityId != other.EntityId) return false;
       if (MaterialId != other.MaterialId) return false;
+      if (!object.Equals(Pos, other.Pos)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,9 +156,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (pos_ != null) hash ^= Pos.GetHashCode();
       if (EntityId != 0) hash ^= EntityId.GetHashCode();
       if (MaterialId != 0) hash ^= MaterialId.GetHashCode();
+      if (pos_ != null) hash ^= Pos.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,16 +177,16 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (MaterialId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(MaterialId);
-      }
       if (pos_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(10);
         output.WriteMessage(Pos);
       }
+      if (MaterialId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(MaterialId);
+      }
       if (EntityId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(48);
         output.WriteUInt32(EntityId);
       }
       if (_unknownFields != null) {
@@ -194,16 +199,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (MaterialId != 0) {
-        output.WriteRawTag(48);
-        output.WriteUInt32(MaterialId);
-      }
       if (pos_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(10);
         output.WriteMessage(Pos);
       }
+      if (MaterialId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(MaterialId);
+      }
       if (EntityId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(48);
         output.WriteUInt32(EntityId);
       }
       if (_unknownFields != null) {
@@ -216,14 +221,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (pos_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pos);
-      }
       if (EntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
       }
       if (MaterialId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaterialId);
+      }
+      if (pos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pos);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -237,17 +242,17 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.pos_ != null) {
-        if (pos_ == null) {
-          Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
-        }
-        Pos.MergeFrom(other.Pos);
-      }
       if (other.EntityId != 0) {
         EntityId = other.EntityId;
       }
       if (other.MaterialId != 0) {
         MaterialId = other.MaterialId;
+      }
+      if (other.pos_ != null) {
+        if (pos_ == null) {
+          Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
+        }
+        Pos.MergeFrom(other.Pos);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -264,18 +269,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
-            MaterialId = input.ReadUInt32();
-            break;
-          }
-          case 82: {
+          case 10: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Pos);
             break;
           }
-          case 120: {
+          case 24: {
+            MaterialId = input.ReadUInt32();
+            break;
+          }
+          case 48: {
             EntityId = input.ReadUInt32();
             break;
           }
@@ -294,18 +299,18 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
-            MaterialId = input.ReadUInt32();
-            break;
-          }
-          case 82: {
+          case 10: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Pos);
             break;
           }
-          case 120: {
+          case 24: {
+            MaterialId = input.ReadUInt32();
+            break;
+          }
+          case 48: {
             EntityId = input.ReadUInt32();
             break;
           }

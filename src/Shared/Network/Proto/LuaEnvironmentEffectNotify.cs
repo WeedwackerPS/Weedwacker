@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static LuaEnvironmentEffectNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBMdWFFbnZpcm9ubWVudEVmZmVjdE5vdGlmeS5wcm90byJyChpMdWFFbnZp",
-            "cm9ubWVudEVmZmVjdE5vdGlmeRIMCgR0eXBlGAEgASgNEhYKDmludF9wYXJh",
-            "bV9saXN0GAwgAygFEhQKDGVmZmVjdF9hbGlhcxgDIAEoCRIYChBmbG9hdF9w",
-            "YXJhbV9saXN0GA4gAygCQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
-            "LlByb3RvYgZwcm90bzM="));
+            "CiBMdWFFbnZpcm9ubWVudEVmZmVjdE5vdGlmeS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90byJyChpMdWFFbnZpcm9ubWVudEVmZmVj",
+            "dE5vdGlmeRIMCgR0eXBlGAggASgNEhYKDmludF9wYXJhbV9saXN0GAogAygF",
+            "EhQKDGVmZmVjdF9hbGlhcxgDIAEoCRIYChBmbG9hdF9wYXJhbV9saXN0GAwg",
+            "AygCYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3408
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3083;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class LuaEnvironmentEffectNotify : pb::IMessage<LuaEnvironmentEffectNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -92,7 +96,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "type" field.</summary>
-    public const int TypeFieldNumber = 1;
+    public const int TypeFieldNumber = 8;
     private uint type_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -104,9 +108,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "int_param_list" field.</summary>
-    public const int IntParamListFieldNumber = 12;
+    public const int IntParamListFieldNumber = 10;
     private static readonly pb::FieldCodec<int> _repeated_intParamList_codec
-        = pb::FieldCodec.ForInt32(98);
+        = pb::FieldCodec.ForInt32(82);
     private readonly pbc::RepeatedField<int> intParamList_ = new pbc::RepeatedField<int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -127,9 +131,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "float_param_list" field.</summary>
-    public const int FloatParamListFieldNumber = 14;
+    public const int FloatParamListFieldNumber = 12;
     private static readonly pb::FieldCodec<float> _repeated_floatParamList_codec
-        = pb::FieldCodec.ForFloat(114);
+        = pb::FieldCodec.ForFloat(98);
     private readonly pbc::RepeatedField<float> floatParamList_ = new pbc::RepeatedField<float>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -185,13 +189,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Type != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(Type);
-      }
       if (EffectAlias.Length != 0) {
         output.WriteRawTag(26);
         output.WriteString(EffectAlias);
+      }
+      if (Type != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Type);
       }
       intParamList_.WriteTo(output, _repeated_intParamList_codec);
       floatParamList_.WriteTo(output, _repeated_floatParamList_codec);
@@ -205,13 +209,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Type != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(Type);
-      }
       if (EffectAlias.Length != 0) {
         output.WriteRawTag(26);
         output.WriteString(EffectAlias);
+      }
+      if (Type != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Type);
       }
       intParamList_.WriteTo(ref output, _repeated_intParamList_codec);
       floatParamList_.WriteTo(ref output, _repeated_floatParamList_codec);
@@ -268,21 +272,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            Type = input.ReadUInt32();
-            break;
-          }
           case 26: {
             EffectAlias = input.ReadString();
             break;
           }
-          case 98:
-          case 96: {
+          case 64: {
+            Type = input.ReadUInt32();
+            break;
+          }
+          case 82:
+          case 80: {
             intParamList_.AddEntriesFrom(input, _repeated_intParamList_codec);
             break;
           }
-          case 114:
-          case 117: {
+          case 98:
+          case 101: {
             floatParamList_.AddEntriesFrom(input, _repeated_floatParamList_codec);
             break;
           }
@@ -301,21 +305,21 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            Type = input.ReadUInt32();
-            break;
-          }
           case 26: {
             EffectAlias = input.ReadString();
             break;
           }
-          case 98:
-          case 96: {
+          case 64: {
+            Type = input.ReadUInt32();
+            break;
+          }
+          case 82:
+          case 80: {
             intParamList_.AddEntriesFrom(ref input, _repeated_intParamList_codec);
             break;
           }
-          case 114:
-          case 117: {
+          case 98:
+          case 101: {
             floatParamList_.AddEntriesFrom(ref input, _repeated_floatParamList_codec);
             break;
           }

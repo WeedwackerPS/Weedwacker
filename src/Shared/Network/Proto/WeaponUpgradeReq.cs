@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static WeaponUpgradeReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZXZWFwb25VcGdyYWRlUmVxLnByb3RvGg9JdGVtUGFyYW0ucHJvdG8icgoQ",
-            "V2VhcG9uVXBncmFkZVJlcRIdChVmb29kX3dlYXBvbl9ndWlkX2xpc3QYASAD",
-            "KAQSIwoPaXRlbV9wYXJhbV9saXN0GA8gAygLMgouSXRlbVBhcmFtEhoKEnRh",
-            "cmdldF93ZWFwb25fZ3VpZBgEIAEoBEIiqgIfV2VlZHdhY2tlci5TaGFyZWQu",
-            "TmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChZXZWFwb25VcGdyYWRlUmVxLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvGg9JdGVtUGFyYW0ucHJvdG8ikgEKEFdlYXBvblVwZ3Jh",
+            "ZGVSZXESQwoPaXRlbV9wYXJhbV9saXN0GAIgAygLMiouV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90by5JdGVtUGFyYW0SHQoVZm9vZF93ZWFwb25f",
+            "Z3VpZF9saXN0GA4gAygEEhoKEnRhcmdldF93ZWFwb25fZ3VpZBgDIAEoBGIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ItemParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WeaponUpgradeReq), global::Weedwacker.Shared.Network.Proto.WeaponUpgradeReq.Parser, new[]{ "FoodWeaponGuidList", "ItemParamList", "TargetWeaponGuid" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WeaponUpgradeReq), global::Weedwacker.Shared.Network.Proto.WeaponUpgradeReq.Parser, new[]{ "ItemParamList", "FoodWeaponGuidList", "TargetWeaponGuid" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 639
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 616;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class WeaponUpgradeReq : pb::IMessage<WeaponUpgradeReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,8 +84,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public WeaponUpgradeReq(WeaponUpgradeReq other) : this() {
-      foodWeaponGuidList_ = other.foodWeaponGuidList_.Clone();
       itemParamList_ = other.itemParamList_.Clone();
+      foodWeaponGuidList_ = other.foodWeaponGuidList_.Clone();
       targetWeaponGuid_ = other.targetWeaponGuid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -91,21 +96,10 @@ namespace Weedwacker.Shared.Network.Proto {
       return new WeaponUpgradeReq(this);
     }
 
-    /// <summary>Field number for the "food_weapon_guid_list" field.</summary>
-    public const int FoodWeaponGuidListFieldNumber = 1;
-    private static readonly pb::FieldCodec<ulong> _repeated_foodWeaponGuidList_codec
-        = pb::FieldCodec.ForUInt64(10);
-    private readonly pbc::RepeatedField<ulong> foodWeaponGuidList_ = new pbc::RepeatedField<ulong>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<ulong> FoodWeaponGuidList {
-      get { return foodWeaponGuidList_; }
-    }
-
     /// <summary>Field number for the "item_param_list" field.</summary>
-    public const int ItemParamListFieldNumber = 15;
+    public const int ItemParamListFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_itemParamList_codec
-        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
+        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> itemParamList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -113,8 +107,19 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return itemParamList_; }
     }
 
+    /// <summary>Field number for the "food_weapon_guid_list" field.</summary>
+    public const int FoodWeaponGuidListFieldNumber = 14;
+    private static readonly pb::FieldCodec<ulong> _repeated_foodWeaponGuidList_codec
+        = pb::FieldCodec.ForUInt64(114);
+    private readonly pbc::RepeatedField<ulong> foodWeaponGuidList_ = new pbc::RepeatedField<ulong>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<ulong> FoodWeaponGuidList {
+      get { return foodWeaponGuidList_; }
+    }
+
     /// <summary>Field number for the "target_weapon_guid" field.</summary>
-    public const int TargetWeaponGuidFieldNumber = 4;
+    public const int TargetWeaponGuidFieldNumber = 3;
     private ulong targetWeaponGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -140,8 +145,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!foodWeaponGuidList_.Equals(other.foodWeaponGuidList_)) return false;
       if(!itemParamList_.Equals(other.itemParamList_)) return false;
+      if(!foodWeaponGuidList_.Equals(other.foodWeaponGuidList_)) return false;
       if (TargetWeaponGuid != other.TargetWeaponGuid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -150,8 +155,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= foodWeaponGuidList_.GetHashCode();
       hash ^= itemParamList_.GetHashCode();
+      hash ^= foodWeaponGuidList_.GetHashCode();
       if (TargetWeaponGuid != 0UL) hash ^= TargetWeaponGuid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -171,12 +176,12 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      foodWeaponGuidList_.WriteTo(output, _repeated_foodWeaponGuidList_codec);
+      itemParamList_.WriteTo(output, _repeated_itemParamList_codec);
       if (TargetWeaponGuid != 0UL) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(24);
         output.WriteUInt64(TargetWeaponGuid);
       }
-      itemParamList_.WriteTo(output, _repeated_itemParamList_codec);
+      foodWeaponGuidList_.WriteTo(output, _repeated_foodWeaponGuidList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -187,12 +192,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      foodWeaponGuidList_.WriteTo(ref output, _repeated_foodWeaponGuidList_codec);
+      itemParamList_.WriteTo(ref output, _repeated_itemParamList_codec);
       if (TargetWeaponGuid != 0UL) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(24);
         output.WriteUInt64(TargetWeaponGuid);
       }
-      itemParamList_.WriteTo(ref output, _repeated_itemParamList_codec);
+      foodWeaponGuidList_.WriteTo(ref output, _repeated_foodWeaponGuidList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -203,8 +208,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += foodWeaponGuidList_.CalculateSize(_repeated_foodWeaponGuidList_codec);
       size += itemParamList_.CalculateSize(_repeated_itemParamList_codec);
+      size += foodWeaponGuidList_.CalculateSize(_repeated_foodWeaponGuidList_codec);
       if (TargetWeaponGuid != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(TargetWeaponGuid);
       }
@@ -220,8 +225,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      foodWeaponGuidList_.Add(other.foodWeaponGuidList_);
       itemParamList_.Add(other.itemParamList_);
+      foodWeaponGuidList_.Add(other.foodWeaponGuidList_);
       if (other.TargetWeaponGuid != 0UL) {
         TargetWeaponGuid = other.TargetWeaponGuid;
       }
@@ -240,17 +245,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10:
-          case 8: {
-            foodWeaponGuidList_.AddEntriesFrom(input, _repeated_foodWeaponGuidList_codec);
+          case 18: {
+            itemParamList_.AddEntriesFrom(input, _repeated_itemParamList_codec);
             break;
           }
-          case 32: {
+          case 24: {
             TargetWeaponGuid = input.ReadUInt64();
             break;
           }
-          case 122: {
-            itemParamList_.AddEntriesFrom(input, _repeated_itemParamList_codec);
+          case 114:
+          case 112: {
+            foodWeaponGuidList_.AddEntriesFrom(input, _repeated_foodWeaponGuidList_codec);
             break;
           }
         }
@@ -268,17 +273,17 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10:
-          case 8: {
-            foodWeaponGuidList_.AddEntriesFrom(ref input, _repeated_foodWeaponGuidList_codec);
+          case 18: {
+            itemParamList_.AddEntriesFrom(ref input, _repeated_itemParamList_codec);
             break;
           }
-          case 32: {
+          case 24: {
             TargetWeaponGuid = input.ReadUInt64();
             break;
           }
-          case 122: {
-            itemParamList_.AddEntriesFrom(ref input, _repeated_itemParamList_codec);
+          case 114:
+          case 112: {
+            foodWeaponGuidList_.AddEntriesFrom(ref input, _repeated_foodWeaponGuidList_codec);
             break;
           }
         }

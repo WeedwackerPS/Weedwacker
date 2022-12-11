@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static BlessingScanRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVCbGVzc2luZ1NjYW5Sc3AucHJvdG8iUQoPQmxlc3NpbmdTY2FuUnNwEhMK",
-            "C3NjYW5fcGljX2lkGAQgASgNEg8KB3JldGNvZGUYCyABKAUSGAoQY3VyX2Rh",
-            "eV9zY2FuX251bRgBIAEoDUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29y",
-            "ay5Qcm90b2IGcHJvdG8z"));
+            "ChVCbGVzc2luZ1NjYW5Sc3AucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVkLk5l",
+            "dHdvcmsuUHJvdG8iUQoPQmxlc3NpbmdTY2FuUnNwEg8KB3JldGNvZGUYDSAB",
+            "KAUSGAoQY3VyX2RheV9zY2FuX251bRgLIAEoDRITCgtzY2FuX3BpY19pZBgM",
+            "IAEoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BlessingScanRsp), global::Weedwacker.Shared.Network.Proto.BlessingScanRsp.Parser, new[]{ "ScanPicId", "Retcode", "CurDayScanNum" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BlessingScanRsp), global::Weedwacker.Shared.Network.Proto.BlessingScanRsp.Parser, new[]{ "Retcode", "CurDayScanNum", "ScanPicId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2093
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2166;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class BlessingScanRsp : pb::IMessage<BlessingScanRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,9 +81,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BlessingScanRsp(BlessingScanRsp other) : this() {
-      scanPicId_ = other.scanPicId_;
       retcode_ = other.retcode_;
       curDayScanNum_ = other.curDayScanNum_;
+      scanPicId_ = other.scanPicId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,20 +93,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new BlessingScanRsp(this);
     }
 
-    /// <summary>Field number for the "scan_pic_id" field.</summary>
-    public const int ScanPicIdFieldNumber = 4;
-    private uint scanPicId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ScanPicId {
-      get { return scanPicId_; }
-      set {
-        scanPicId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 11;
+    public const int RetcodeFieldNumber = 13;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -114,7 +106,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "cur_day_scan_num" field.</summary>
-    public const int CurDayScanNumFieldNumber = 1;
+    public const int CurDayScanNumFieldNumber = 11;
     private uint curDayScanNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,6 +114,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return curDayScanNum_; }
       set {
         curDayScanNum_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "scan_pic_id" field.</summary>
+    public const int ScanPicIdFieldNumber = 12;
+    private uint scanPicId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ScanPicId {
+      get { return scanPicId_; }
+      set {
+        scanPicId_ = value;
       }
     }
 
@@ -140,9 +144,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (ScanPicId != other.ScanPicId) return false;
       if (Retcode != other.Retcode) return false;
       if (CurDayScanNum != other.CurDayScanNum) return false;
+      if (ScanPicId != other.ScanPicId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,9 +154,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (ScanPicId != 0) hash ^= ScanPicId.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (CurDayScanNum != 0) hash ^= CurDayScanNum.GetHashCode();
+      if (ScanPicId != 0) hash ^= ScanPicId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -172,15 +176,15 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (CurDayScanNum != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(88);
         output.WriteUInt32(CurDayScanNum);
       }
       if (ScanPicId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(96);
         output.WriteUInt32(ScanPicId);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(104);
         output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
@@ -194,15 +198,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (CurDayScanNum != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(88);
         output.WriteUInt32(CurDayScanNum);
       }
       if (ScanPicId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(96);
         output.WriteUInt32(ScanPicId);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(104);
         output.WriteInt32(Retcode);
       }
       if (_unknownFields != null) {
@@ -215,14 +219,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (ScanPicId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScanPicId);
-      }
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (CurDayScanNum != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurDayScanNum);
+      }
+      if (ScanPicId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScanPicId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -236,14 +240,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.ScanPicId != 0) {
-        ScanPicId = other.ScanPicId;
-      }
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
       if (other.CurDayScanNum != 0) {
         CurDayScanNum = other.CurDayScanNum;
+      }
+      if (other.ScanPicId != 0) {
+        ScanPicId = other.ScanPicId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -260,15 +264,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 88: {
             CurDayScanNum = input.ReadUInt32();
             break;
           }
-          case 32: {
+          case 96: {
             ScanPicId = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 104: {
             Retcode = input.ReadInt32();
             break;
           }
@@ -287,15 +291,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 88: {
             CurDayScanNum = input.ReadUInt32();
             break;
           }
-          case 32: {
+          case 96: {
             ScanPicId = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 104: {
             Retcode = input.ReadInt32();
             break;
           }

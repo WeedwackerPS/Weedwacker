@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static GetAllH5ActivityInfoRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1HZXRBbGxINUFjdGl2aXR5SW5mb1JzcC5wcm90bxoUSDVBY3Rpdml0eUlu",
-            "Zm8ucHJvdG8ifAoXR2V0QWxsSDVBY3Rpdml0eUluZm9Sc3ASLgoVaDVfYWN0",
-            "aXZpdHlfaW5mb19saXN0GA8gAygLMg8uSDVBY3Rpdml0eUluZm8SDwoHcmV0",
-            "Y29kZRgFIAEoBRIgChhjbGllbnRfcmVkX2RvdF90aW1lc3RhbXAYDCABKA1C",
-            "IqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "Ch1HZXRBbGxINUFjdGl2aXR5SW5mb1JzcC5wcm90bxIfV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90bxoUSDVBY3Rpdml0eUluZm8ucHJvdG8inAEK",
+            "F0dldEFsbEg1QWN0aXZpdHlJbmZvUnNwEiAKGGNsaWVudF9yZWRfZG90X3Rp",
+            "bWVzdGFtcBgDIAEoDRJOChVoNV9hY3Rpdml0eV9pbmZvX2xpc3QYBSADKAsy",
+            "Ly5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkg1QWN0aXZpdHlJ",
+            "bmZvEg8KB3JldGNvZGUYDiABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.H5ActivityInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetAllH5ActivityInfoRsp), global::Weedwacker.Shared.Network.Proto.GetAllH5ActivityInfoRsp.Parser, new[]{ "H5ActivityInfoList", "Retcode", "ClientRedDotTimestamp" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GetAllH5ActivityInfoRsp), global::Weedwacker.Shared.Network.Proto.GetAllH5ActivityInfoRsp.Parser, new[]{ "ClientRedDotTimestamp", "H5ActivityInfoList", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5676
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5692;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GetAllH5ActivityInfoRsp : pb::IMessage<GetAllH5ActivityInfoRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +83,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetAllH5ActivityInfoRsp(GetAllH5ActivityInfoRsp other) : this() {
+      clientRedDotTimestamp_ = other.clientRedDotTimestamp_;
       h5ActivityInfoList_ = other.h5ActivityInfoList_.Clone();
       retcode_ = other.retcode_;
-      clientRedDotTimestamp_ = other.clientRedDotTimestamp_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,10 +95,22 @@ namespace Weedwacker.Shared.Network.Proto {
       return new GetAllH5ActivityInfoRsp(this);
     }
 
+    /// <summary>Field number for the "client_red_dot_timestamp" field.</summary>
+    public const int ClientRedDotTimestampFieldNumber = 3;
+    private uint clientRedDotTimestamp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ClientRedDotTimestamp {
+      get { return clientRedDotTimestamp_; }
+      set {
+        clientRedDotTimestamp_ = value;
+      }
+    }
+
     /// <summary>Field number for the "h5_activity_info_list" field.</summary>
-    public const int H5ActivityInfoListFieldNumber = 15;
+    public const int H5ActivityInfoListFieldNumber = 5;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.H5ActivityInfo> _repeated_h5ActivityInfoList_codec
-        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.H5ActivityInfo.Parser);
+        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.H5ActivityInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.H5ActivityInfo> h5ActivityInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.H5ActivityInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +119,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 5;
+    public const int RetcodeFieldNumber = 14;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,18 +127,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return retcode_; }
       set {
         retcode_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "client_red_dot_timestamp" field.</summary>
-    public const int ClientRedDotTimestampFieldNumber = 12;
-    private uint clientRedDotTimestamp_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint ClientRedDotTimestamp {
-      get { return clientRedDotTimestamp_; }
-      set {
-        clientRedDotTimestamp_ = value;
       }
     }
 
@@ -140,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (ClientRedDotTimestamp != other.ClientRedDotTimestamp) return false;
       if(!h5ActivityInfoList_.Equals(other.h5ActivityInfoList_)) return false;
       if (Retcode != other.Retcode) return false;
-      if (ClientRedDotTimestamp != other.ClientRedDotTimestamp) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,9 +155,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (ClientRedDotTimestamp != 0) hash ^= ClientRedDotTimestamp.GetHashCode();
       hash ^= h5ActivityInfoList_.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      if (ClientRedDotTimestamp != 0) hash ^= ClientRedDotTimestamp.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -171,15 +176,15 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Retcode != 0) {
-        output.WriteRawTag(40);
-        output.WriteInt32(Retcode);
-      }
       if (ClientRedDotTimestamp != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(24);
         output.WriteUInt32(ClientRedDotTimestamp);
       }
       h5ActivityInfoList_.WriteTo(output, _repeated_h5ActivityInfoList_codec);
+      if (Retcode != 0) {
+        output.WriteRawTag(112);
+        output.WriteInt32(Retcode);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -190,15 +195,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Retcode != 0) {
-        output.WriteRawTag(40);
-        output.WriteInt32(Retcode);
-      }
       if (ClientRedDotTimestamp != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(24);
         output.WriteUInt32(ClientRedDotTimestamp);
       }
       h5ActivityInfoList_.WriteTo(ref output, _repeated_h5ActivityInfoList_codec);
+      if (Retcode != 0) {
+        output.WriteRawTag(112);
+        output.WriteInt32(Retcode);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -209,12 +214,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (ClientRedDotTimestamp != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ClientRedDotTimestamp);
+      }
       size += h5ActivityInfoList_.CalculateSize(_repeated_h5ActivityInfoList_codec);
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
-      if (ClientRedDotTimestamp != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ClientRedDotTimestamp);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -228,12 +233,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.ClientRedDotTimestamp != 0) {
+        ClientRedDotTimestamp = other.ClientRedDotTimestamp;
+      }
       h5ActivityInfoList_.Add(other.h5ActivityInfoList_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
-      }
-      if (other.ClientRedDotTimestamp != 0) {
-        ClientRedDotTimestamp = other.ClientRedDotTimestamp;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -250,16 +255,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 96: {
+          case 24: {
             ClientRedDotTimestamp = input.ReadUInt32();
             break;
           }
-          case 122: {
+          case 42: {
             h5ActivityInfoList_.AddEntriesFrom(input, _repeated_h5ActivityInfoList_codec);
+            break;
+          }
+          case 112: {
+            Retcode = input.ReadInt32();
             break;
           }
         }
@@ -277,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 96: {
+          case 24: {
             ClientRedDotTimestamp = input.ReadUInt32();
             break;
           }
-          case 122: {
+          case 42: {
             h5ActivityInfoList_.AddEntriesFrom(ref input, _repeated_h5ActivityInfoList_codec);
+            break;
+          }
+          case 112: {
+            Retcode = input.ReadInt32();
             break;
           }
         }

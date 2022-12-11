@@ -24,14 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGGameBriefDataNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxHQ0dHYW1lQnJpZWZEYXRhTm90aWZ5LnByb3RvGhZHQ0dHYW1lQnJpZWZE",
-            "YXRhLnByb3RvIkMKFkdDR0dhbWVCcmllZkRhdGFOb3RpZnkSKQoOZ2NnX2Jy",
-            "aWVmX2RhdGEYCiABKAsyES5HQ0dHYW1lQnJpZWZEYXRhQiKqAh9XZWVkd2Fj",
-            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChxHQ0dHYW1lQnJpZWZEYXRhTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvGhZHQ0dHYW1lQnJpZWZEYXRhLnByb3RvIngK",
+            "FkdDR0dhbWVCcmllZkRhdGFOb3RpZnkSSQoOZ2NnX2JyaWVmX2RhdGEYAyAB",
+            "KAsyMS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkdDR0dhbWVC",
+            "cmllZkRhdGESEwoLaXNfbmV3X2dhbWUYBCABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGGameBriefDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGGameBriefDataNotify), global::Weedwacker.Shared.Network.Proto.GCGGameBriefDataNotify.Parser, new[]{ "GcgBriefData" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.GCGGameBriefDataNotify), global::Weedwacker.Shared.Network.Proto.GCGGameBriefDataNotify.Parser, new[]{ "GcgBriefData", "IsNewGame" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 7539
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 7824;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class GCGGameBriefDataNotify : pb::IMessage<GCGGameBriefDataNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,6 +83,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGGameBriefDataNotify(GCGGameBriefDataNotify other) : this() {
       gcgBriefData_ = other.gcgBriefData_ != null ? other.gcgBriefData_.Clone() : null;
+      isNewGame_ = other.isNewGame_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "gcg_brief_data" field.</summary>
-    public const int GcgBriefDataFieldNumber = 10;
+    public const int GcgBriefDataFieldNumber = 3;
     private global::Weedwacker.Shared.Network.Proto.GCGGameBriefData gcgBriefData_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -96,6 +102,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return gcgBriefData_; }
       set {
         gcgBriefData_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_new_game" field.</summary>
+    public const int IsNewGameFieldNumber = 4;
+    private bool isNewGame_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsNewGame {
+      get { return isNewGame_; }
+      set {
+        isNewGame_ = value;
       }
     }
 
@@ -115,6 +133,7 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (!object.Equals(GcgBriefData, other.GcgBriefData)) return false;
+      if (IsNewGame != other.IsNewGame) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -123,6 +142,7 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (gcgBriefData_ != null) hash ^= GcgBriefData.GetHashCode();
+      if (IsNewGame != false) hash ^= IsNewGame.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -142,8 +162,12 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (gcgBriefData_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(26);
         output.WriteMessage(GcgBriefData);
+      }
+      if (IsNewGame != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(IsNewGame);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -156,8 +180,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (gcgBriefData_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(26);
         output.WriteMessage(GcgBriefData);
+      }
+      if (IsNewGame != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(IsNewGame);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -171,6 +199,9 @@ namespace Weedwacker.Shared.Network.Proto {
       int size = 0;
       if (gcgBriefData_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(GcgBriefData);
+      }
+      if (IsNewGame != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -190,6 +221,9 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         GcgBriefData.MergeFrom(other.GcgBriefData);
       }
+      if (other.IsNewGame != false) {
+        IsNewGame = other.IsNewGame;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -205,11 +239,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 82: {
+          case 26: {
             if (gcgBriefData_ == null) {
               GcgBriefData = new global::Weedwacker.Shared.Network.Proto.GCGGameBriefData();
             }
             input.ReadMessage(GcgBriefData);
+            break;
+          }
+          case 32: {
+            IsNewGame = input.ReadBool();
             break;
           }
         }
@@ -227,11 +265,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 82: {
+          case 26: {
             if (gcgBriefData_ == null) {
               GcgBriefData = new global::Weedwacker.Shared.Network.Proto.GCGGameBriefData();
             }
             input.ReadMessage(GcgBriefData);
+            break;
+          }
+          case 32: {
+            IsNewGame = input.ReadBool();
             break;
           }
         }

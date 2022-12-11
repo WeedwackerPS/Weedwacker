@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneGalleryCharAmusementInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNTY2VuZUdhbGxlcnlDaGFyQW11c2VtZW50SW5mby5wcm90byKDAQodU2Nl",
-            "bmVHYWxsZXJ5Q2hhckFtdXNlbWVudEluZm8SFQoNaXNfbGFzdF9sZXZlbBgC",
-            "IAEoCBIRCgltYXhfc2NvcmUYCSABKA0SEQoJY3VyX3Njb3JlGA4gASgNEhEK",
-            "CWlzX2ZpbmlzaBgKIAEoCBISCgppc19zdWNjZXNzGAEgASgIQiKqAh9XZWVk",
-            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiNTY2VuZUdhbGxlcnlDaGFyQW11c2VtZW50SW5mby5wcm90bxIfV2VlZHdh",
+            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90byKDAQodU2NlbmVHYWxsZXJ5Q2hh",
+            "ckFtdXNlbWVudEluZm8SEgoKaXNfc3VjY2VzcxgNIAEoCBIRCgltYXhfc2Nv",
+            "cmUYCyABKA0SEQoJY3VyX3Njb3JlGAkgASgNEhUKDWlzX2xhc3RfbGV2ZWwY",
+            "CiABKAgSEQoJaXNfZmluaXNoGA4gASgIYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneGalleryCharAmusementInfo), global::Weedwacker.Shared.Network.Proto.SceneGalleryCharAmusementInfo.Parser, new[]{ "IsLastLevel", "MaxScore", "CurScore", "IsFinish", "IsSuccess" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SceneGalleryCharAmusementInfo), global::Weedwacker.Shared.Network.Proto.SceneGalleryCharAmusementInfo.Parser, new[]{ "IsSuccess", "MaxScore", "CurScore", "IsLastLevel", "IsFinish" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,11 +73,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SceneGalleryCharAmusementInfo(SceneGalleryCharAmusementInfo other) : this() {
-      isLastLevel_ = other.isLastLevel_;
+      isSuccess_ = other.isSuccess_;
       maxScore_ = other.maxScore_;
       curScore_ = other.curScore_;
+      isLastLevel_ = other.isLastLevel_;
       isFinish_ = other.isFinish_;
-      isSuccess_ = other.isSuccess_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -87,20 +87,20 @@ namespace Weedwacker.Shared.Network.Proto {
       return new SceneGalleryCharAmusementInfo(this);
     }
 
-    /// <summary>Field number for the "is_last_level" field.</summary>
-    public const int IsLastLevelFieldNumber = 2;
-    private bool isLastLevel_;
+    /// <summary>Field number for the "is_success" field.</summary>
+    public const int IsSuccessFieldNumber = 13;
+    private bool isSuccess_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsLastLevel {
-      get { return isLastLevel_; }
+    public bool IsSuccess {
+      get { return isSuccess_; }
       set {
-        isLastLevel_ = value;
+        isSuccess_ = value;
       }
     }
 
     /// <summary>Field number for the "max_score" field.</summary>
-    public const int MaxScoreFieldNumber = 9;
+    public const int MaxScoreFieldNumber = 11;
     private uint maxScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -112,7 +112,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "cur_score" field.</summary>
-    public const int CurScoreFieldNumber = 14;
+    public const int CurScoreFieldNumber = 9;
     private uint curScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -123,8 +123,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "is_last_level" field.</summary>
+    public const int IsLastLevelFieldNumber = 10;
+    private bool isLastLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsLastLevel {
+      get { return isLastLevel_; }
+      set {
+        isLastLevel_ = value;
+      }
+    }
+
     /// <summary>Field number for the "is_finish" field.</summary>
-    public const int IsFinishFieldNumber = 10;
+    public const int IsFinishFieldNumber = 14;
     private bool isFinish_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -132,18 +144,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return isFinish_; }
       set {
         isFinish_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "is_success" field.</summary>
-    public const int IsSuccessFieldNumber = 1;
-    private bool isSuccess_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsSuccess {
-      get { return isSuccess_; }
-      set {
-        isSuccess_ = value;
       }
     }
 
@@ -162,11 +162,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsLastLevel != other.IsLastLevel) return false;
+      if (IsSuccess != other.IsSuccess) return false;
       if (MaxScore != other.MaxScore) return false;
       if (CurScore != other.CurScore) return false;
+      if (IsLastLevel != other.IsLastLevel) return false;
       if (IsFinish != other.IsFinish) return false;
-      if (IsSuccess != other.IsSuccess) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -174,11 +174,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsLastLevel != false) hash ^= IsLastLevel.GetHashCode();
+      if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
       if (MaxScore != 0) hash ^= MaxScore.GetHashCode();
       if (CurScore != 0) hash ^= CurScore.GetHashCode();
+      if (IsLastLevel != false) hash ^= IsLastLevel.GetHashCode();
       if (IsFinish != false) hash ^= IsFinish.GetHashCode();
-      if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -197,25 +197,25 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsSuccess != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(IsSuccess);
+      if (CurScore != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(CurScore);
       }
       if (IsLastLevel != false) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(80);
         output.WriteBool(IsLastLevel);
       }
       if (MaxScore != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(88);
         output.WriteUInt32(MaxScore);
       }
-      if (IsFinish != false) {
-        output.WriteRawTag(80);
-        output.WriteBool(IsFinish);
+      if (IsSuccess != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsSuccess);
       }
-      if (CurScore != 0) {
+      if (IsFinish != false) {
         output.WriteRawTag(112);
-        output.WriteUInt32(CurScore);
+        output.WriteBool(IsFinish);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -227,25 +227,25 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsSuccess != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(IsSuccess);
+      if (CurScore != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(CurScore);
       }
       if (IsLastLevel != false) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(80);
         output.WriteBool(IsLastLevel);
       }
       if (MaxScore != 0) {
-        output.WriteRawTag(72);
+        output.WriteRawTag(88);
         output.WriteUInt32(MaxScore);
       }
-      if (IsFinish != false) {
-        output.WriteRawTag(80);
-        output.WriteBool(IsFinish);
+      if (IsSuccess != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsSuccess);
       }
-      if (CurScore != 0) {
+      if (IsFinish != false) {
         output.WriteRawTag(112);
-        output.WriteUInt32(CurScore);
+        output.WriteBool(IsFinish);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -257,7 +257,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsLastLevel != false) {
+      if (IsSuccess != false) {
         size += 1 + 1;
       }
       if (MaxScore != 0) {
@@ -266,10 +266,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (CurScore != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurScore);
       }
-      if (IsFinish != false) {
+      if (IsLastLevel != false) {
         size += 1 + 1;
       }
-      if (IsSuccess != false) {
+      if (IsFinish != false) {
         size += 1 + 1;
       }
       if (_unknownFields != null) {
@@ -284,8 +284,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsLastLevel != false) {
-        IsLastLevel = other.IsLastLevel;
+      if (other.IsSuccess != false) {
+        IsSuccess = other.IsSuccess;
       }
       if (other.MaxScore != 0) {
         MaxScore = other.MaxScore;
@@ -293,11 +293,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.CurScore != 0) {
         CurScore = other.CurScore;
       }
+      if (other.IsLastLevel != false) {
+        IsLastLevel = other.IsLastLevel;
+      }
       if (other.IsFinish != false) {
         IsFinish = other.IsFinish;
-      }
-      if (other.IsSuccess != false) {
-        IsSuccess = other.IsSuccess;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -314,24 +314,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            IsSuccess = input.ReadBool();
-            break;
-          }
-          case 16: {
-            IsLastLevel = input.ReadBool();
-            break;
-          }
           case 72: {
-            MaxScore = input.ReadUInt32();
+            CurScore = input.ReadUInt32();
             break;
           }
           case 80: {
-            IsFinish = input.ReadBool();
+            IsLastLevel = input.ReadBool();
+            break;
+          }
+          case 88: {
+            MaxScore = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            IsSuccess = input.ReadBool();
             break;
           }
           case 112: {
-            CurScore = input.ReadUInt32();
+            IsFinish = input.ReadBool();
             break;
           }
         }
@@ -349,24 +349,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            IsSuccess = input.ReadBool();
-            break;
-          }
-          case 16: {
-            IsLastLevel = input.ReadBool();
-            break;
-          }
           case 72: {
-            MaxScore = input.ReadUInt32();
+            CurScore = input.ReadUInt32();
             break;
           }
           case 80: {
-            IsFinish = input.ReadBool();
+            IsLastLevel = input.ReadBool();
+            break;
+          }
+          case 88: {
+            MaxScore = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            IsSuccess = input.ReadBool();
             break;
           }
           case 112: {
-            CurScore = input.ReadUInt32();
+            IsFinish = input.ReadBool();
             break;
           }
         }

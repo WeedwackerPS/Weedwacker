@@ -24,16 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static WorldPlayerInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtXb3JsZFBsYXllckluZm9Ob3RpZnkucHJvdG8aFk9ubGluZVBsYXllcklu",
-            "Zm8ucHJvdG8aFlBsYXllcldpZGdldEluZm8ucHJvdG8ikQEKFVdvcmxkUGxh",
-            "eWVySW5mb05vdGlmeRIyChdwbGF5ZXJfd2lkZ2V0X2luZm9fbGlzdBgIIAMo",
-            "CzIRLlBsYXllcldpZGdldEluZm8SKwoQcGxheWVyX2luZm9fbGlzdBgOIAMo",
-            "CzIRLk9ubGluZVBsYXllckluZm8SFwoPcGxheWVyX3VpZF9saXN0GAsgAygN",
-            "QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChtXb3JsZFBsYXllckluZm9Ob3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8aFk9ubGluZVBsYXllckluZm8ucHJvdG8aFlBs",
+            "YXllcldpZGdldEluZm8ucHJvdG8i0QEKFVdvcmxkUGxheWVySW5mb05vdGlm",
+            "eRJSChdwbGF5ZXJfd2lkZ2V0X2luZm9fbGlzdBgHIAMoCzIxLldlZWR3YWNr",
+            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uUGxheWVyV2lkZ2V0SW5mbxIXCg9w",
+            "bGF5ZXJfdWlkX2xpc3QYDCADKA0SSwoQcGxheWVyX2luZm9fbGlzdBgPIAMo",
+            "CzIxLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uT25saW5lUGxh",
+            "eWVySW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfoReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.PlayerWidgetInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WorldPlayerInfoNotify), global::Weedwacker.Shared.Network.Proto.WorldPlayerInfoNotify.Parser, new[]{ "PlayerWidgetInfoList", "PlayerInfoList", "PlayerUidList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.WorldPlayerInfoNotify), global::Weedwacker.Shared.Network.Proto.WorldPlayerInfoNotify.Parser, new[]{ "PlayerWidgetInfoList", "PlayerUidList", "PlayerInfoList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,10 +43,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3116
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3150;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class WorldPlayerInfoNotify : pb::IMessage<WorldPlayerInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -81,8 +87,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public WorldPlayerInfoNotify(WorldPlayerInfoNotify other) : this() {
       playerWidgetInfoList_ = other.playerWidgetInfoList_.Clone();
-      playerInfoList_ = other.playerInfoList_.Clone();
       playerUidList_ = other.playerUidList_.Clone();
+      playerInfoList_ = other.playerInfoList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,9 +99,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "player_widget_info_list" field.</summary>
-    public const int PlayerWidgetInfoListFieldNumber = 8;
+    public const int PlayerWidgetInfoListFieldNumber = 7;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.PlayerWidgetInfo> _repeated_playerWidgetInfoList_codec
-        = pb::FieldCodec.ForMessage(66, global::Weedwacker.Shared.Network.Proto.PlayerWidgetInfo.Parser);
+        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.PlayerWidgetInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PlayerWidgetInfo> playerWidgetInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.PlayerWidgetInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,26 +109,26 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return playerWidgetInfoList_; }
     }
 
-    /// <summary>Field number for the "player_info_list" field.</summary>
-    public const int PlayerInfoListFieldNumber = 14;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo> _repeated_playerInfoList_codec
-        = pb::FieldCodec.ForMessage(114, global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo> playerInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo> PlayerInfoList {
-      get { return playerInfoList_; }
-    }
-
     /// <summary>Field number for the "player_uid_list" field.</summary>
-    public const int PlayerUidListFieldNumber = 11;
+    public const int PlayerUidListFieldNumber = 12;
     private static readonly pb::FieldCodec<uint> _repeated_playerUidList_codec
-        = pb::FieldCodec.ForUInt32(90);
+        = pb::FieldCodec.ForUInt32(98);
     private readonly pbc::RepeatedField<uint> playerUidList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<uint> PlayerUidList {
       get { return playerUidList_; }
+    }
+
+    /// <summary>Field number for the "player_info_list" field.</summary>
+    public const int PlayerInfoListFieldNumber = 15;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo> _repeated_playerInfoList_codec
+        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo> playerInfoList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.OnlinePlayerInfo> PlayerInfoList {
+      get { return playerInfoList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -141,8 +147,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if(!playerWidgetInfoList_.Equals(other.playerWidgetInfoList_)) return false;
-      if(!playerInfoList_.Equals(other.playerInfoList_)) return false;
       if(!playerUidList_.Equals(other.playerUidList_)) return false;
+      if(!playerInfoList_.Equals(other.playerInfoList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,8 +157,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= playerWidgetInfoList_.GetHashCode();
-      hash ^= playerInfoList_.GetHashCode();
       hash ^= playerUidList_.GetHashCode();
+      hash ^= playerInfoList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -198,8 +204,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public int CalculateSize() {
       int size = 0;
       size += playerWidgetInfoList_.CalculateSize(_repeated_playerWidgetInfoList_codec);
-      size += playerInfoList_.CalculateSize(_repeated_playerInfoList_codec);
       size += playerUidList_.CalculateSize(_repeated_playerUidList_codec);
+      size += playerInfoList_.CalculateSize(_repeated_playerInfoList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -213,8 +219,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return;
       }
       playerWidgetInfoList_.Add(other.playerWidgetInfoList_);
-      playerInfoList_.Add(other.playerInfoList_);
       playerUidList_.Add(other.playerUidList_);
+      playerInfoList_.Add(other.playerInfoList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -230,16 +236,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 66: {
+          case 58: {
             playerWidgetInfoList_.AddEntriesFrom(input, _repeated_playerWidgetInfoList_codec);
             break;
           }
-          case 90:
-          case 88: {
+          case 98:
+          case 96: {
             playerUidList_.AddEntriesFrom(input, _repeated_playerUidList_codec);
             break;
           }
-          case 114: {
+          case 122: {
             playerInfoList_.AddEntriesFrom(input, _repeated_playerInfoList_codec);
             break;
           }
@@ -258,16 +264,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 66: {
+          case 58: {
             playerWidgetInfoList_.AddEntriesFrom(ref input, _repeated_playerWidgetInfoList_codec);
             break;
           }
-          case 90:
-          case 88: {
+          case 98:
+          case 96: {
             playerUidList_.AddEntriesFrom(ref input, _repeated_playerUidList_codec);
             break;
           }
-          case 114: {
+          case 122: {
             playerInfoList_.AddEntriesFrom(ref input, _repeated_playerInfoList_codec);
             break;
           }

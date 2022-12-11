@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static CalcWeaponUpgradeReturnItemsRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVDYWxjV2VhcG9uVXBncmFkZVJldHVybkl0ZW1zUnNwLnByb3RvGg9JdGVt",
-            "UGFyYW0ucHJvdG8icwofQ2FsY1dlYXBvblVwZ3JhZGVSZXR1cm5JdGVtc1Jz",
-            "cBIjCg9pdGVtX3BhcmFtX2xpc3QYBCADKAsyCi5JdGVtUGFyYW0SDwoHcmV0",
-            "Y29kZRgPIAEoBRIaChJ0YXJnZXRfd2VhcG9uX2d1aWQYCCABKARCIqoCH1dl",
-            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiVDYWxjV2VhcG9uVXBncmFkZVJldHVybkl0ZW1zUnNwLnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGg9JdGVtUGFyYW0ucHJvdG8i",
+            "kwEKH0NhbGNXZWFwb25VcGdyYWRlUmV0dXJuSXRlbXNSc3ASGgoSdGFyZ2V0",
+            "X3dlYXBvbl9ndWlkGAMgASgEEkMKD2l0ZW1fcGFyYW1fbGlzdBgKIAMoCzIq",
+            "LldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uSXRlbVBhcmFtEg8K",
+            "B3JldGNvZGUYBCABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ItemParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CalcWeaponUpgradeReturnItemsRsp), global::Weedwacker.Shared.Network.Proto.CalcWeaponUpgradeReturnItemsRsp.Parser, new[]{ "ItemParamList", "Retcode", "TargetWeaponGuid" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.CalcWeaponUpgradeReturnItemsRsp), global::Weedwacker.Shared.Network.Proto.CalcWeaponUpgradeReturnItemsRsp.Parser, new[]{ "TargetWeaponGuid", "ItemParamList", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 684
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 652;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class CalcWeaponUpgradeReturnItemsRsp : pb::IMessage<CalcWeaponUpgradeReturnItemsRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,9 +83,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CalcWeaponUpgradeReturnItemsRsp(CalcWeaponUpgradeReturnItemsRsp other) : this() {
+      targetWeaponGuid_ = other.targetWeaponGuid_;
       itemParamList_ = other.itemParamList_.Clone();
       retcode_ = other.retcode_;
-      targetWeaponGuid_ = other.targetWeaponGuid_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,10 +95,22 @@ namespace Weedwacker.Shared.Network.Proto {
       return new CalcWeaponUpgradeReturnItemsRsp(this);
     }
 
+    /// <summary>Field number for the "target_weapon_guid" field.</summary>
+    public const int TargetWeaponGuidFieldNumber = 3;
+    private ulong targetWeaponGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong TargetWeaponGuid {
+      get { return targetWeaponGuid_; }
+      set {
+        targetWeaponGuid_ = value;
+      }
+    }
+
     /// <summary>Field number for the "item_param_list" field.</summary>
-    public const int ItemParamListFieldNumber = 4;
+    public const int ItemParamListFieldNumber = 10;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_itemParamList_codec
-        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
+        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> itemParamList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +119,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 15;
+    public const int RetcodeFieldNumber = 4;
     private int retcode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,18 +127,6 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return retcode_; }
       set {
         retcode_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "target_weapon_guid" field.</summary>
-    public const int TargetWeaponGuidFieldNumber = 8;
-    private ulong targetWeaponGuid_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong TargetWeaponGuid {
-      get { return targetWeaponGuid_; }
-      set {
-        targetWeaponGuid_ = value;
       }
     }
 
@@ -140,9 +145,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (TargetWeaponGuid != other.TargetWeaponGuid) return false;
       if(!itemParamList_.Equals(other.itemParamList_)) return false;
       if (Retcode != other.Retcode) return false;
-      if (TargetWeaponGuid != other.TargetWeaponGuid) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,9 +155,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (TargetWeaponGuid != 0UL) hash ^= TargetWeaponGuid.GetHashCode();
       hash ^= itemParamList_.GetHashCode();
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      if (TargetWeaponGuid != 0UL) hash ^= TargetWeaponGuid.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -171,15 +176,15 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      itemParamList_.WriteTo(output, _repeated_itemParamList_codec);
       if (TargetWeaponGuid != 0UL) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(24);
         output.WriteUInt64(TargetWeaponGuid);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(32);
         output.WriteInt32(Retcode);
       }
+      itemParamList_.WriteTo(output, _repeated_itemParamList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -190,15 +195,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      itemParamList_.WriteTo(ref output, _repeated_itemParamList_codec);
       if (TargetWeaponGuid != 0UL) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(24);
         output.WriteUInt64(TargetWeaponGuid);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(32);
         output.WriteInt32(Retcode);
       }
+      itemParamList_.WriteTo(ref output, _repeated_itemParamList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -209,12 +214,12 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (TargetWeaponGuid != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(TargetWeaponGuid);
+      }
       size += itemParamList_.CalculateSize(_repeated_itemParamList_codec);
       if (Retcode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
-      if (TargetWeaponGuid != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(TargetWeaponGuid);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -228,12 +233,12 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      if (other.TargetWeaponGuid != 0UL) {
+        TargetWeaponGuid = other.TargetWeaponGuid;
+      }
       itemParamList_.Add(other.itemParamList_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
-      }
-      if (other.TargetWeaponGuid != 0UL) {
-        TargetWeaponGuid = other.TargetWeaponGuid;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -250,16 +255,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 34: {
-            itemParamList_.AddEntriesFrom(input, _repeated_itemParamList_codec);
-            break;
-          }
-          case 64: {
+          case 24: {
             TargetWeaponGuid = input.ReadUInt64();
             break;
           }
-          case 120: {
+          case 32: {
             Retcode = input.ReadInt32();
+            break;
+          }
+          case 82: {
+            itemParamList_.AddEntriesFrom(input, _repeated_itemParamList_codec);
             break;
           }
         }
@@ -277,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 34: {
-            itemParamList_.AddEntriesFrom(ref input, _repeated_itemParamList_codec);
-            break;
-          }
-          case 64: {
+          case 24: {
             TargetWeaponGuid = input.ReadUInt64();
             break;
           }
-          case 120: {
+          case 32: {
             Retcode = input.ReadInt32();
+            break;
+          }
+          case 82: {
+            itemParamList_.AddEntriesFrom(ref input, _repeated_itemParamList_codec);
             break;
           }
         }

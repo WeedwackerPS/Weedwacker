@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static SetEquipLockStateRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChpTZXRFcXVpcExvY2tTdGF0ZVJzcC5wcm90byJVChRTZXRFcXVpcExvY2tT",
-            "dGF0ZVJzcBIZChF0YXJnZXRfZXF1aXBfZ3VpZBgOIAEoBBIPCgdyZXRjb2Rl",
-            "GA0gASgFEhEKCWlzX2xvY2tlZBgKIAEoCEIiqgIfV2VlZHdhY2tlci5TaGFy",
-            "ZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChpTZXRFcXVpcExvY2tTdGF0ZVJzcC5wcm90bxIfV2VlZHdhY2tlci5TaGFy",
+            "ZWQuTmV0d29yay5Qcm90byJVChRTZXRFcXVpcExvY2tTdGF0ZVJzcBIZChF0",
+            "YXJnZXRfZXF1aXBfZ3VpZBgBIAEoBBIRCglpc19sb2NrZWQYAyABKAgSDwoH",
+            "cmV0Y29kZRgMIAEoBWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SetEquipLockStateRsp), global::Weedwacker.Shared.Network.Proto.SetEquipLockStateRsp.Parser, new[]{ "TargetEquipGuid", "Retcode", "IsLocked" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SetEquipLockStateRsp), global::Weedwacker.Shared.Network.Proto.SetEquipLockStateRsp.Parser, new[]{ "TargetEquipGuid", "IsLocked", "Retcode" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 668
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 688;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class SetEquipLockStateRsp : pb::IMessage<SetEquipLockStateRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -78,8 +82,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SetEquipLockStateRsp(SetEquipLockStateRsp other) : this() {
       targetEquipGuid_ = other.targetEquipGuid_;
-      retcode_ = other.retcode_;
       isLocked_ = other.isLocked_;
+      retcode_ = other.retcode_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -90,7 +94,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "target_equip_guid" field.</summary>
-    public const int TargetEquipGuidFieldNumber = 14;
+    public const int TargetEquipGuidFieldNumber = 1;
     private ulong targetEquipGuid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,20 +105,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 13;
-    private int retcode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
-      }
-    }
-
     /// <summary>Field number for the "is_locked" field.</summary>
-    public const int IsLockedFieldNumber = 10;
+    public const int IsLockedFieldNumber = 3;
     private bool isLocked_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -122,6 +114,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return isLocked_; }
       set {
         isLocked_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 12;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
       }
     }
 
@@ -141,8 +145,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (TargetEquipGuid != other.TargetEquipGuid) return false;
-      if (Retcode != other.Retcode) return false;
       if (IsLocked != other.IsLocked) return false;
+      if (Retcode != other.Retcode) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -151,8 +155,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (TargetEquipGuid != 0UL) hash ^= TargetEquipGuid.GetHashCode();
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (IsLocked != false) hash ^= IsLocked.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -171,17 +175,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (TargetEquipGuid != 0UL) {
+        output.WriteRawTag(8);
+        output.WriteUInt64(TargetEquipGuid);
+      }
       if (IsLocked != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(24);
         output.WriteBool(IsLocked);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(96);
         output.WriteInt32(Retcode);
-      }
-      if (TargetEquipGuid != 0UL) {
-        output.WriteRawTag(112);
-        output.WriteUInt64(TargetEquipGuid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -193,17 +197,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (TargetEquipGuid != 0UL) {
+        output.WriteRawTag(8);
+        output.WriteUInt64(TargetEquipGuid);
+      }
       if (IsLocked != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(24);
         output.WriteBool(IsLocked);
       }
       if (Retcode != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(96);
         output.WriteInt32(Retcode);
-      }
-      if (TargetEquipGuid != 0UL) {
-        output.WriteRawTag(112);
-        output.WriteUInt64(TargetEquipGuid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -218,11 +222,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (TargetEquipGuid != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(TargetEquipGuid);
       }
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-      }
       if (IsLocked != false) {
         size += 1 + 1;
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -239,11 +243,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.TargetEquipGuid != 0UL) {
         TargetEquipGuid = other.TargetEquipGuid;
       }
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
-      }
       if (other.IsLocked != false) {
         IsLocked = other.IsLocked;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -260,16 +264,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 80: {
+          case 8: {
+            TargetEquipGuid = input.ReadUInt64();
+            break;
+          }
+          case 24: {
             IsLocked = input.ReadBool();
             break;
           }
-          case 104: {
+          case 96: {
             Retcode = input.ReadInt32();
-            break;
-          }
-          case 112: {
-            TargetEquipGuid = input.ReadUInt64();
             break;
           }
         }
@@ -287,16 +291,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 80: {
+          case 8: {
+            TargetEquipGuid = input.ReadUInt64();
+            break;
+          }
+          case 24: {
             IsLocked = input.ReadBool();
             break;
           }
-          case 104: {
+          case 96: {
             Retcode = input.ReadInt32();
-            break;
-          }
-          case 112: {
-            TargetEquipGuid = input.ReadUInt64();
             break;
           }
         }

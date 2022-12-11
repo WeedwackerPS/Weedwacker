@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static BattlePassRewardTagReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlCYXR0bGVQYXNzUmV3YXJkVGFnLnByb3RvGhxCYXR0bGVQYXNzVW5sb2Nr",
-            "U3RhdHVzLnByb3RvImcKE0JhdHRsZVBhc3NSZXdhcmRUYWcSDQoFbGV2ZWwY",
-            "BCABKA0SLgoNdW5sb2NrX3N0YXR1cxgCIAEoDjIXLkJhdHRsZVBhc3NVbmxv",
-            "Y2tTdGF0dXMSEQoJcmV3YXJkX2lkGAcgASgNQiKqAh9XZWVkd2Fja2VyLlNo",
-            "YXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChlCYXR0bGVQYXNzUmV3YXJkVGFnLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvGhxCYXR0bGVQYXNzVW5sb2NrU3RhdHVzLnByb3Rv",
+            "IocBChNCYXR0bGVQYXNzUmV3YXJkVGFnEk4KDXVubG9ja19zdGF0dXMYCyAB",
+            "KA4yNy5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLkJhdHRsZVBh",
+            "c3NVbmxvY2tTdGF0dXMSEQoJcmV3YXJkX2lkGAQgASgNEg0KBWxldmVsGAEg",
+            "ASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatusReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BattlePassRewardTag), global::Weedwacker.Shared.Network.Proto.BattlePassRewardTag.Parser, new[]{ "Level", "UnlockStatus", "RewardId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.BattlePassRewardTag), global::Weedwacker.Shared.Network.Proto.BattlePassRewardTag.Parser, new[]{ "UnlockStatus", "RewardId", "Level" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,9 +74,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BattlePassRewardTag(BattlePassRewardTag other) : this() {
-      level_ = other.level_;
       unlockStatus_ = other.unlockStatus_;
       rewardId_ = other.rewardId_;
+      level_ = other.level_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,20 +86,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new BattlePassRewardTag(this);
     }
 
-    /// <summary>Field number for the "level" field.</summary>
-    public const int LevelFieldNumber = 4;
-    private uint level_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Level {
-      get { return level_; }
-      set {
-        level_ = value;
-      }
-    }
-
     /// <summary>Field number for the "unlock_status" field.</summary>
-    public const int UnlockStatusFieldNumber = 2;
+    public const int UnlockStatusFieldNumber = 11;
     private global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatus unlockStatus_ = global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatus.Invalid;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -110,7 +99,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "reward_id" field.</summary>
-    public const int RewardIdFieldNumber = 7;
+    public const int RewardIdFieldNumber = 4;
     private uint rewardId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -118,6 +107,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return rewardId_; }
       set {
         rewardId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "level" field.</summary>
+    public const int LevelFieldNumber = 1;
+    private uint level_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Level {
+      get { return level_; }
+      set {
+        level_ = value;
       }
     }
 
@@ -136,9 +137,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Level != other.Level) return false;
       if (UnlockStatus != other.UnlockStatus) return false;
       if (RewardId != other.RewardId) return false;
+      if (Level != other.Level) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -146,9 +147,9 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Level != 0) hash ^= Level.GetHashCode();
       if (UnlockStatus != global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatus.Invalid) hash ^= UnlockStatus.GetHashCode();
       if (RewardId != 0) hash ^= RewardId.GetHashCode();
+      if (Level != 0) hash ^= Level.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -167,17 +168,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (UnlockStatus != global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatus.Invalid) {
-        output.WriteRawTag(16);
-        output.WriteEnum((int) UnlockStatus);
-      }
       if (Level != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(8);
         output.WriteUInt32(Level);
       }
       if (RewardId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(32);
         output.WriteUInt32(RewardId);
+      }
+      if (UnlockStatus != global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatus.Invalid) {
+        output.WriteRawTag(88);
+        output.WriteEnum((int) UnlockStatus);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -189,17 +190,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (UnlockStatus != global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatus.Invalid) {
-        output.WriteRawTag(16);
-        output.WriteEnum((int) UnlockStatus);
-      }
       if (Level != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(8);
         output.WriteUInt32(Level);
       }
       if (RewardId != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(32);
         output.WriteUInt32(RewardId);
+      }
+      if (UnlockStatus != global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatus.Invalid) {
+        output.WriteRawTag(88);
+        output.WriteEnum((int) UnlockStatus);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -211,14 +212,14 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Level != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Level);
-      }
       if (UnlockStatus != global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatus.Invalid) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) UnlockStatus);
       }
       if (RewardId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RewardId);
+      }
+      if (Level != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Level);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -232,14 +233,14 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.Level != 0) {
-        Level = other.Level;
-      }
       if (other.UnlockStatus != global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatus.Invalid) {
         UnlockStatus = other.UnlockStatus;
       }
       if (other.RewardId != 0) {
         RewardId = other.RewardId;
+      }
+      if (other.Level != 0) {
+        Level = other.Level;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -256,16 +257,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            UnlockStatus = (global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatus) input.ReadEnum();
-            break;
-          }
-          case 32: {
+          case 8: {
             Level = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 32: {
             RewardId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            UnlockStatus = (global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatus) input.ReadEnum();
             break;
           }
         }
@@ -283,16 +284,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            UnlockStatus = (global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatus) input.ReadEnum();
-            break;
-          }
-          case 32: {
+          case 8: {
             Level = input.ReadUInt32();
             break;
           }
-          case 56: {
+          case 32: {
             RewardId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            UnlockStatus = (global::Weedwacker.Shared.Network.Proto.BattlePassUnlockStatus) input.ReadEnum();
             break;
           }
         }

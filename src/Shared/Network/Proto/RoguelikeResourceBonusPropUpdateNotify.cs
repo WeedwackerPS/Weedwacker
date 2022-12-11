@@ -25,9 +25,9 @@ namespace Weedwacker.Shared.Network.Proto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CixSb2d1ZWxpa2VSZXNvdXJjZUJvbnVzUHJvcFVwZGF0ZU5vdGlmeS5wcm90",
-            "byJFCiZSb2d1ZWxpa2VSZXNvdXJjZUJvbnVzUHJvcFVwZGF0ZU5vdGlmeRIb",
-            "ChNib251c19yZXNvdXJjZV9wcm9wGAwgASgCQiKqAh9XZWVkd2Fja2VyLlNo",
-            "YXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90byJFCiZSb2d1ZWxp",
+            "a2VSZXNvdXJjZUJvbnVzUHJvcFVwZGF0ZU5vdGlmeRIbChNib251c19yZXNv",
+            "dXJjZV9wcm9wGAUgASgCYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8555
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8426;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class RoguelikeResourceBonusPropUpdateNotify : pb::IMessage<RoguelikeResourceBonusPropUpdateNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,7 +92,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "bonus_resource_prop" field.</summary>
-    public const int BonusResourcePropFieldNumber = 12;
+    public const int BonusResourcePropFieldNumber = 5;
     private float bonusResourceProp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -142,7 +146,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (BonusResourceProp != 0F) {
-        output.WriteRawTag(101);
+        output.WriteRawTag(45);
         output.WriteFloat(BonusResourceProp);
       }
       if (_unknownFields != null) {
@@ -156,7 +160,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (BonusResourceProp != 0F) {
-        output.WriteRawTag(101);
+        output.WriteRawTag(45);
         output.WriteFloat(BonusResourceProp);
       }
       if (_unknownFields != null) {
@@ -202,7 +206,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 101: {
+          case 45: {
             BonusResourceProp = input.ReadFloat();
             break;
           }
@@ -221,7 +225,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 101: {
+          case 45: {
             BonusResourceProp = input.ReadFloat();
             break;
           }

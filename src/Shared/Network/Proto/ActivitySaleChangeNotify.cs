@@ -24,14 +24,14 @@ namespace Weedwacker.Shared.Network.Proto {
     static ActivitySaleChangeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5BY3Rpdml0eVNhbGVDaGFuZ2VOb3RpZnkucHJvdG8iPQoYQWN0aXZpdHlT",
-            "YWxlQ2hhbmdlTm90aWZ5Eg8KB3NhbGVfaWQYBSABKA0SEAoIaXNfY2xvc2UY",
-            "ASABKAhCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "Ch5BY3Rpdml0eVNhbGVDaGFuZ2VOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIu",
+            "U2hhcmVkLk5ldHdvcmsuUHJvdG8iPQoYQWN0aXZpdHlTYWxlQ2hhbmdlTm90",
+            "aWZ5EhAKCGlzX2Nsb3NlGA4gASgIEg8KB3NhbGVfaWQYCCABKA1iBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ActivitySaleChangeNotify), global::Weedwacker.Shared.Network.Proto.ActivitySaleChangeNotify.Parser, new[]{ "SaleId", "IsClose" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.ActivitySaleChangeNotify), global::Weedwacker.Shared.Network.Proto.ActivitySaleChangeNotify.Parser, new[]{ "IsClose", "SaleId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2071
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2012;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class ActivitySaleChangeNotify : pb::IMessage<ActivitySaleChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -77,8 +81,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ActivitySaleChangeNotify(ActivitySaleChangeNotify other) : this() {
-      saleId_ = other.saleId_;
       isClose_ = other.isClose_;
+      saleId_ = other.saleId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,20 +92,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new ActivitySaleChangeNotify(this);
     }
 
-    /// <summary>Field number for the "sale_id" field.</summary>
-    public const int SaleIdFieldNumber = 5;
-    private uint saleId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint SaleId {
-      get { return saleId_; }
-      set {
-        saleId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "is_close" field.</summary>
-    public const int IsCloseFieldNumber = 1;
+    public const int IsCloseFieldNumber = 14;
     private bool isClose_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,6 +101,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return isClose_; }
       set {
         isClose_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "sale_id" field.</summary>
+    public const int SaleIdFieldNumber = 8;
+    private uint saleId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SaleId {
+      get { return saleId_; }
+      set {
+        saleId_ = value;
       }
     }
 
@@ -127,8 +131,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (SaleId != other.SaleId) return false;
       if (IsClose != other.IsClose) return false;
+      if (SaleId != other.SaleId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -136,8 +140,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (SaleId != 0) hash ^= SaleId.GetHashCode();
       if (IsClose != false) hash ^= IsClose.GetHashCode();
+      if (SaleId != 0) hash ^= SaleId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -156,13 +160,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsClose != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(IsClose);
-      }
       if (SaleId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(64);
         output.WriteUInt32(SaleId);
+      }
+      if (IsClose != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(IsClose);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -174,13 +178,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsClose != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(IsClose);
-      }
       if (SaleId != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(64);
         output.WriteUInt32(SaleId);
+      }
+      if (IsClose != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(IsClose);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -192,11 +196,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (SaleId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SaleId);
-      }
       if (IsClose != false) {
         size += 1 + 1;
+      }
+      if (SaleId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SaleId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -210,11 +214,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.SaleId != 0) {
-        SaleId = other.SaleId;
-      }
       if (other.IsClose != false) {
         IsClose = other.IsClose;
+      }
+      if (other.SaleId != 0) {
+        SaleId = other.SaleId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -231,12 +235,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            IsClose = input.ReadBool();
+          case 64: {
+            SaleId = input.ReadUInt32();
             break;
           }
-          case 40: {
-            SaleId = input.ReadUInt32();
+          case 112: {
+            IsClose = input.ReadBool();
             break;
           }
         }
@@ -254,12 +258,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            IsClose = input.ReadBool();
+          case 64: {
+            SaleId = input.ReadUInt32();
             break;
           }
-          case 40: {
-            SaleId = input.ReadUInt32();
+          case 112: {
+            IsClose = input.ReadBool();
             break;
           }
         }

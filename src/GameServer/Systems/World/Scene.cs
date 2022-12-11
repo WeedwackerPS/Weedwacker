@@ -13,6 +13,7 @@ using Weedwacker.GameServer.Systems.Avatar;
 using Weedwacker.GameServer.Systems.Script.Scene;
 using Weedwacker.Shared.Network.Proto;
 using static Weedwacker.GameServer.Systems.Script.Scene.SceneGroup;
+using EnterReason = Weedwacker.GameServer.Enums.EnterReason;
 
 namespace Weedwacker.GameServer.Systems.World
 {

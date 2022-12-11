@@ -24,11 +24,12 @@ namespace Weedwacker.Shared.Network.Proto {
     static ActivityScheduleInfoNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBBY3Rpdml0eVNjaGVkdWxlSW5mb05vdGlmeS5wcm90bxoaQWN0aXZpdHlT",
-            "Y2hlZHVsZUluZm8ucHJvdG8idAoaQWN0aXZpdHlTY2hlZHVsZUluZm9Ob3Rp",
-            "ZnkSNQoWYWN0aXZpdHlfc2NoZWR1bGVfbGlzdBgMIAMoCzIVLkFjdGl2aXR5",
-            "U2NoZWR1bGVJbmZvEh8KF3JlbWFpbl9mbHlfc2VhX2xhbXBfbnVtGAYgASgN",
-            "QiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "CiBBY3Rpdml0eVNjaGVkdWxlSW5mb05vdGlmeS5wcm90bxIfV2VlZHdhY2tl",
+            "ci5TaGFyZWQuTmV0d29yay5Qcm90bxoaQWN0aXZpdHlTY2hlZHVsZUluZm8u",
+            "cHJvdG8ilAEKGkFjdGl2aXR5U2NoZWR1bGVJbmZvTm90aWZ5ElUKFmFjdGl2",
+            "aXR5X3NjaGVkdWxlX2xpc3QYASADKAsyNS5XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvLkFjdGl2aXR5U2NoZWR1bGVJbmZvEh8KF3JlbWFpbl9m",
+            "bHlfc2VhX2xhbXBfbnVtGA0gASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.ActivityScheduleInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 2073
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2124;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class ActivityScheduleInfoNotify : pb::IMessage<ActivityScheduleInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,9 +96,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "activity_schedule_list" field.</summary>
-    public const int ActivityScheduleListFieldNumber = 12;
+    public const int ActivityScheduleListFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ActivityScheduleInfo> _repeated_activityScheduleList_codec
-        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.ActivityScheduleInfo.Parser);
+        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.ActivityScheduleInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityScheduleInfo> activityScheduleList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ActivityScheduleInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -102,7 +107,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "remain_fly_sea_lamp_num" field.</summary>
-    public const int RemainFlySeaLampNumFieldNumber = 6;
+    public const int RemainFlySeaLampNumFieldNumber = 13;
     private uint remainFlySeaLampNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,11 +162,11 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      activityScheduleList_.WriteTo(output, _repeated_activityScheduleList_codec);
       if (RemainFlySeaLampNum != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(104);
         output.WriteUInt32(RemainFlySeaLampNum);
       }
-      activityScheduleList_.WriteTo(output, _repeated_activityScheduleList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -172,11 +177,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      activityScheduleList_.WriteTo(ref output, _repeated_activityScheduleList_codec);
       if (RemainFlySeaLampNum != 0) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(104);
         output.WriteUInt32(RemainFlySeaLampNum);
       }
-      activityScheduleList_.WriteTo(ref output, _repeated_activityScheduleList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -222,12 +227,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 48: {
-            RemainFlySeaLampNum = input.ReadUInt32();
+          case 10: {
+            activityScheduleList_.AddEntriesFrom(input, _repeated_activityScheduleList_codec);
             break;
           }
-          case 98: {
-            activityScheduleList_.AddEntriesFrom(input, _repeated_activityScheduleList_codec);
+          case 104: {
+            RemainFlySeaLampNum = input.ReadUInt32();
             break;
           }
         }
@@ -245,12 +250,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 48: {
-            RemainFlySeaLampNum = input.ReadUInt32();
+          case 10: {
+            activityScheduleList_.AddEntriesFrom(ref input, _repeated_activityScheduleList_codec);
             break;
           }
-          case 98: {
-            activityScheduleList_.AddEntriesFrom(ref input, _repeated_activityScheduleList_codec);
+          case 104: {
+            RemainFlySeaLampNum = input.ReadUInt32();
             break;
           }
         }

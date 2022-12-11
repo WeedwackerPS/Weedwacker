@@ -24,15 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static VehicleInteractReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhWZWhpY2xlSW50ZXJhY3RSZXEucHJvdG8aGVZlaGljbGVJbnRlcmFjdFR5",
-            "cGUucHJvdG8iYQoSVmVoaWNsZUludGVyYWN0UmVxEisKDWludGVyYWN0X3R5",
-            "cGUYCCABKA4yFC5WZWhpY2xlSW50ZXJhY3RUeXBlEgsKA3BvcxgMIAEoDRIR",
-            "CgllbnRpdHlfaWQYDyABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdv",
-            "cmsuUHJvdG9iBnByb3RvMw=="));
+            "ChhWZWhpY2xlSW50ZXJhY3RSZXEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aGVZlaGljbGVJbnRlcmFjdFR5cGUucHJvdG8igQEK",
+            "ElZlaGljbGVJbnRlcmFjdFJlcRJLCg1pbnRlcmFjdF90eXBlGAMgASgOMjQu",
+            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5WZWhpY2xlSW50ZXJh",
+            "Y3RUeXBlEhEKCWVudGl0eV9pZBgLIAEoDRILCgNwb3MYBCABKA1iBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.VehicleInteractTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.VehicleInteractReq), global::Weedwacker.Shared.Network.Proto.VehicleInteractReq.Parser, new[]{ "InteractType", "Pos", "EntityId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.VehicleInteractReq), global::Weedwacker.Shared.Network.Proto.VehicleInteractReq.Parser, new[]{ "InteractType", "EntityId", "Pos" }, null, null, null, null)
           }));
     }
     #endregion
@@ -40,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 865
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 889;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class VehicleInteractReq : pb::IMessage<VehicleInteractReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,8 +85,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public VehicleInteractReq(VehicleInteractReq other) : this() {
       interactType_ = other.interactType_;
-      pos_ = other.pos_;
       entityId_ = other.entityId_;
+      pos_ = other.pos_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -92,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "interact_type" field.</summary>
-    public const int InteractTypeFieldNumber = 8;
+    public const int InteractTypeFieldNumber = 3;
     private global::Weedwacker.Shared.Network.Proto.VehicleInteractType interactType_ = global::Weedwacker.Shared.Network.Proto.VehicleInteractType.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -103,20 +108,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "pos" field.</summary>
-    public const int PosFieldNumber = 12;
-    private uint pos_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Pos {
-      get { return pos_; }
-      set {
-        pos_ = value;
-      }
-    }
-
     /// <summary>Field number for the "entity_id" field.</summary>
-    public const int EntityIdFieldNumber = 15;
+    public const int EntityIdFieldNumber = 11;
     private uint entityId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -124,6 +117,18 @@ namespace Weedwacker.Shared.Network.Proto {
       get { return entityId_; }
       set {
         entityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "pos" field.</summary>
+    public const int PosFieldNumber = 4;
+    private uint pos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Pos {
+      get { return pos_; }
+      set {
+        pos_ = value;
       }
     }
 
@@ -143,8 +148,8 @@ namespace Weedwacker.Shared.Network.Proto {
         return true;
       }
       if (InteractType != other.InteractType) return false;
-      if (Pos != other.Pos) return false;
       if (EntityId != other.EntityId) return false;
+      if (Pos != other.Pos) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -153,8 +158,8 @@ namespace Weedwacker.Shared.Network.Proto {
     public override int GetHashCode() {
       int hash = 1;
       if (InteractType != global::Weedwacker.Shared.Network.Proto.VehicleInteractType.None) hash ^= InteractType.GetHashCode();
-      if (Pos != 0) hash ^= Pos.GetHashCode();
       if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      if (Pos != 0) hash ^= Pos.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -174,15 +179,15 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (InteractType != global::Weedwacker.Shared.Network.Proto.VehicleInteractType.None) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(24);
         output.WriteEnum((int) InteractType);
       }
       if (Pos != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(32);
         output.WriteUInt32(Pos);
       }
       if (EntityId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(88);
         output.WriteUInt32(EntityId);
       }
       if (_unknownFields != null) {
@@ -196,15 +201,15 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (InteractType != global::Weedwacker.Shared.Network.Proto.VehicleInteractType.None) {
-        output.WriteRawTag(64);
+        output.WriteRawTag(24);
         output.WriteEnum((int) InteractType);
       }
       if (Pos != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(32);
         output.WriteUInt32(Pos);
       }
       if (EntityId != 0) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(88);
         output.WriteUInt32(EntityId);
       }
       if (_unknownFields != null) {
@@ -220,11 +225,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (InteractType != global::Weedwacker.Shared.Network.Proto.VehicleInteractType.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) InteractType);
       }
-      if (Pos != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Pos);
-      }
       if (EntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
+      }
+      if (Pos != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Pos);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -241,11 +246,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other.InteractType != global::Weedwacker.Shared.Network.Proto.VehicleInteractType.None) {
         InteractType = other.InteractType;
       }
-      if (other.Pos != 0) {
-        Pos = other.Pos;
-      }
       if (other.EntityId != 0) {
         EntityId = other.EntityId;
+      }
+      if (other.Pos != 0) {
+        Pos = other.Pos;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -262,15 +267,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 64: {
+          case 24: {
             InteractType = (global::Weedwacker.Shared.Network.Proto.VehicleInteractType) input.ReadEnum();
             break;
           }
-          case 96: {
+          case 32: {
             Pos = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 88: {
             EntityId = input.ReadUInt32();
             break;
           }
@@ -289,15 +294,15 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 64: {
+          case 24: {
             InteractType = (global::Weedwacker.Shared.Network.Proto.VehicleInteractType) input.ReadEnum();
             break;
           }
-          case 96: {
+          case 32: {
             Pos = input.ReadUInt32();
             break;
           }
-          case 120: {
+          case 88: {
             EntityId = input.ReadUInt32();
             break;
           }

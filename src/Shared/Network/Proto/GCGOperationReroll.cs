@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGOperationRerollReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhHQ0dPcGVyYXRpb25SZXJvbGwucHJvdG8iLQoSR0NHT3BlcmF0aW9uUmVy",
-            "b2xsEhcKD2RpY2VfaW5kZXhfbGlzdBgMIAMoDUIiqgIfV2VlZHdhY2tlci5T",
-            "aGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChhHQ0dPcGVyYXRpb25SZXJvbGwucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8iLQoSR0NHT3BlcmF0aW9uUmVyb2xsEhcKD2RpY2Vf",
+            "aW5kZXhfbGlzdBgHIAMoDWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -82,9 +82,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "dice_index_list" field.</summary>
-    public const int DiceIndexListFieldNumber = 12;
+    public const int DiceIndexListFieldNumber = 7;
     private static readonly pb::FieldCodec<uint> _repeated_diceIndexList_codec
-        = pb::FieldCodec.ForUInt32(98);
+        = pb::FieldCodec.ForUInt32(58);
     private readonly pbc::RepeatedField<uint> diceIndexList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -185,8 +185,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 98:
-          case 96: {
+          case 58:
+          case 56: {
             diceIndexList_.AddEntriesFrom(input, _repeated_diceIndexList_codec);
             break;
           }
@@ -205,8 +205,8 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 98:
-          case 96: {
+          case 58:
+          case 56: {
             diceIndexList_.AddEntriesFrom(ref input, _repeated_diceIndexList_codec);
             break;
           }

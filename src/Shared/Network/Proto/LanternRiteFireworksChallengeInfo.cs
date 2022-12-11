@@ -24,15 +24,15 @@ namespace Weedwacker.Shared.Network.Proto {
     static LanternRiteFireworksChallengeInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CidMYW50ZXJuUml0ZUZpcmV3b3Jrc0NoYWxsZW5nZUluZm8ucHJvdG8iZAoh",
-            "TGFudGVyblJpdGVGaXJld29ya3NDaGFsbGVuZ2VJbmZvEhUKDWlzX2Z1bGxf",
-            "c2NvcmUYDSABKAgSEgoKYmVzdF9zY29yZRgHIAEoDRIUCgxjaGFsbGVuZ2Vf",
-            "aWQYAyABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9i",
-            "BnByb3RvMw=="));
+            "CidMYW50ZXJuUml0ZUZpcmV3b3Jrc0NoYWxsZW5nZUluZm8ucHJvdG8SH1dl",
+            "ZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8iZAohTGFudGVyblJpdGVG",
+            "aXJld29ya3NDaGFsbGVuZ2VJbmZvEhIKCmJlc3Rfc2NvcmUYAiABKA0SFQoN",
+            "aXNfZnVsbF9zY29yZRgDIAEoCBIUCgxjaGFsbGVuZ2VfaWQYDCABKA1iBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.LanternRiteFireworksChallengeInfo), global::Weedwacker.Shared.Network.Proto.LanternRiteFireworksChallengeInfo.Parser, new[]{ "IsFullScore", "BestScore", "ChallengeId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.LanternRiteFireworksChallengeInfo), global::Weedwacker.Shared.Network.Proto.LanternRiteFireworksChallengeInfo.Parser, new[]{ "BestScore", "IsFullScore", "ChallengeId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,8 +73,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LanternRiteFireworksChallengeInfo(LanternRiteFireworksChallengeInfo other) : this() {
-      isFullScore_ = other.isFullScore_;
       bestScore_ = other.bestScore_;
+      isFullScore_ = other.isFullScore_;
       challengeId_ = other.challengeId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -85,20 +85,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new LanternRiteFireworksChallengeInfo(this);
     }
 
-    /// <summary>Field number for the "is_full_score" field.</summary>
-    public const int IsFullScoreFieldNumber = 13;
-    private bool isFullScore_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsFullScore {
-      get { return isFullScore_; }
-      set {
-        isFullScore_ = value;
-      }
-    }
-
     /// <summary>Field number for the "best_score" field.</summary>
-    public const int BestScoreFieldNumber = 7;
+    public const int BestScoreFieldNumber = 2;
     private uint bestScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,8 +97,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "is_full_score" field.</summary>
+    public const int IsFullScoreFieldNumber = 3;
+    private bool isFullScore_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsFullScore {
+      get { return isFullScore_; }
+      set {
+        isFullScore_ = value;
+      }
+    }
+
     /// <summary>Field number for the "challenge_id" field.</summary>
-    public const int ChallengeIdFieldNumber = 3;
+    public const int ChallengeIdFieldNumber = 12;
     private uint challengeId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -136,8 +136,8 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsFullScore != other.IsFullScore) return false;
       if (BestScore != other.BestScore) return false;
+      if (IsFullScore != other.IsFullScore) return false;
       if (ChallengeId != other.ChallengeId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -146,8 +146,8 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsFullScore != false) hash ^= IsFullScore.GetHashCode();
       if (BestScore != 0) hash ^= BestScore.GetHashCode();
+      if (IsFullScore != false) hash ^= IsFullScore.GetHashCode();
       if (ChallengeId != 0) hash ^= ChallengeId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -167,17 +167,17 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (ChallengeId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(ChallengeId);
-      }
       if (BestScore != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(16);
         output.WriteUInt32(BestScore);
       }
       if (IsFullScore != false) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(24);
         output.WriteBool(IsFullScore);
+      }
+      if (ChallengeId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(ChallengeId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -189,17 +189,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (ChallengeId != 0) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(ChallengeId);
-      }
       if (BestScore != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(16);
         output.WriteUInt32(BestScore);
       }
       if (IsFullScore != false) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(24);
         output.WriteBool(IsFullScore);
+      }
+      if (ChallengeId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(ChallengeId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -211,11 +211,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsFullScore != false) {
-        size += 1 + 1;
-      }
       if (BestScore != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BestScore);
+      }
+      if (IsFullScore != false) {
+        size += 1 + 1;
       }
       if (ChallengeId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeId);
@@ -232,11 +232,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsFullScore != false) {
-        IsFullScore = other.IsFullScore;
-      }
       if (other.BestScore != 0) {
         BestScore = other.BestScore;
+      }
+      if (other.IsFullScore != false) {
+        IsFullScore = other.IsFullScore;
       }
       if (other.ChallengeId != 0) {
         ChallengeId = other.ChallengeId;
@@ -256,16 +256,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 24: {
-            ChallengeId = input.ReadUInt32();
-            break;
-          }
-          case 56: {
+          case 16: {
             BestScore = input.ReadUInt32();
             break;
           }
-          case 104: {
+          case 24: {
             IsFullScore = input.ReadBool();
+            break;
+          }
+          case 96: {
+            ChallengeId = input.ReadUInt32();
             break;
           }
         }
@@ -283,16 +283,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 24: {
-            ChallengeId = input.ReadUInt32();
-            break;
-          }
-          case 56: {
+          case 16: {
             BestScore = input.ReadUInt32();
             break;
           }
-          case 104: {
+          case 24: {
             IsFullScore = input.ReadBool();
+            break;
+          }
+          case 96: {
+            ChallengeId = input.ReadUInt32();
             break;
           }
         }

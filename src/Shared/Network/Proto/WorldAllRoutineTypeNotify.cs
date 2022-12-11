@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static WorldAllRoutineTypeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9Xb3JsZEFsbFJvdXRpbmVUeXBlTm90aWZ5LnByb3RvGhpXb3JsZFJvdXRp",
-            "bmVUeXBlSW5mby5wcm90byJTChlXb3JsZEFsbFJvdXRpbmVUeXBlTm90aWZ5",
-            "EjYKF3dvcmxkX3JvdXRpbmVfdHlwZV9saXN0GAwgAygLMhUuV29ybGRSb3V0",
-            "aW5lVHlwZUluZm9CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
-            "dG9iBnByb3RvMw=="));
+            "Ch9Xb3JsZEFsbFJvdXRpbmVUeXBlTm90aWZ5LnByb3RvEh9XZWVkd2Fja2Vy",
+            "LlNoYXJlZC5OZXR3b3JrLlByb3RvGhpXb3JsZFJvdXRpbmVUeXBlSW5mby5w",
+            "cm90byJzChlXb3JsZEFsbFJvdXRpbmVUeXBlTm90aWZ5ElYKF3dvcmxkX3Jv",
+            "dXRpbmVfdHlwZV9saXN0GAkgAygLMjUuV2VlZHdhY2tlci5TaGFyZWQuTmV0",
+            "d29yay5Qcm90by5Xb3JsZFJvdXRpbmVUeXBlSW5mb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.WorldRoutineTypeInfoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 3518
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 3541;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class WorldAllRoutineTypeNotify : pb::IMessage<WorldAllRoutineTypeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "world_routine_type_list" field.</summary>
-    public const int WorldRoutineTypeListFieldNumber = 12;
+    public const int WorldRoutineTypeListFieldNumber = 9;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.WorldRoutineTypeInfo> _repeated_worldRoutineTypeList_codec
-        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.WorldRoutineTypeInfo.Parser);
+        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.WorldRoutineTypeInfo.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WorldRoutineTypeInfo> worldRoutineTypeList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.WorldRoutineTypeInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -192,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 98: {
+          case 74: {
             worldRoutineTypeList_.AddEntriesFrom(input, _repeated_worldRoutineTypeList_codec);
             break;
           }
@@ -211,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 98: {
+          case 74: {
             worldRoutineTypeList_.AddEntriesFrom(ref input, _repeated_worldRoutineTypeList_codec);
             break;
           }

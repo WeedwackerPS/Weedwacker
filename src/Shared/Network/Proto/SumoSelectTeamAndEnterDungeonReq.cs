@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static SumoSelectTeamAndEnterDungeonReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiZTdW1vU2VsZWN0VGVhbUFuZEVudGVyRHVuZ2VvblJlcS5wcm90bxoSU3Vt",
-            "b1RlYW1EYXRhLnByb3RvIoIBCiBTdW1vU2VsZWN0VGVhbUFuZEVudGVyRHVu",
-            "Z2VvblJlcRITCgthY3Rpdml0eV9pZBgBIAEoDRIQCghzdGFnZV9pZBgHIAEo",
-            "DRIVCg1kaWZmaWN1bHR5X2lkGAQgASgNEiAKCXRlYW1fbGlzdBgKIAMoCzIN",
-            "LlN1bW9UZWFtRGF0YUIiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
-            "cm90b2IGcHJvdG8z"));
+            "CiZTdW1vU2VsZWN0VGVhbUFuZEVudGVyRHVuZ2VvblJlcS5wcm90bxIfV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90bxoSU3Vtb1RlYW1EYXRhLnBy",
+            "b3RvIqIBCiBTdW1vU2VsZWN0VGVhbUFuZEVudGVyRHVuZ2VvblJlcRJACgl0",
+            "ZWFtX2xpc3QYDyADKAsyLS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
+            "b3RvLlN1bW9UZWFtRGF0YRITCgthY3Rpdml0eV9pZBgBIAEoDRIVCg1kaWZm",
+            "aWN1bHR5X2lkGAUgASgNEhAKCHN0YWdlX2lkGAcgASgNYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.SumoTeamDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SumoSelectTeamAndEnterDungeonReq), global::Weedwacker.Shared.Network.Proto.SumoSelectTeamAndEnterDungeonReq.Parser, new[]{ "ActivityId", "StageId", "DifficultyId", "TeamList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.SumoSelectTeamAndEnterDungeonReq), global::Weedwacker.Shared.Network.Proto.SumoSelectTeamAndEnterDungeonReq.Parser, new[]{ "TeamList", "ActivityId", "DifficultyId", "StageId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,10 +41,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 8215
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8978;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class SumoSelectTeamAndEnterDungeonReq : pb::IMessage<SumoSelectTeamAndEnterDungeonReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -80,10 +84,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SumoSelectTeamAndEnterDungeonReq(SumoSelectTeamAndEnterDungeonReq other) : this() {
-      activityId_ = other.activityId_;
-      stageId_ = other.stageId_;
-      difficultyId_ = other.difficultyId_;
       teamList_ = other.teamList_.Clone();
+      activityId_ = other.activityId_;
+      difficultyId_ = other.difficultyId_;
+      stageId_ = other.stageId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -91,6 +95,17 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SumoSelectTeamAndEnterDungeonReq Clone() {
       return new SumoSelectTeamAndEnterDungeonReq(this);
+    }
+
+    /// <summary>Field number for the "team_list" field.</summary>
+    public const int TeamListFieldNumber = 15;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.SumoTeamData> _repeated_teamList_codec
+        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.SumoTeamData.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SumoTeamData> teamList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SumoTeamData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SumoTeamData> TeamList {
+      get { return teamList_; }
     }
 
     /// <summary>Field number for the "activity_id" field.</summary>
@@ -105,20 +120,8 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "stage_id" field.</summary>
-    public const int StageIdFieldNumber = 7;
-    private uint stageId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint StageId {
-      get { return stageId_; }
-      set {
-        stageId_ = value;
-      }
-    }
-
     /// <summary>Field number for the "difficulty_id" field.</summary>
-    public const int DifficultyIdFieldNumber = 4;
+    public const int DifficultyIdFieldNumber = 5;
     private uint difficultyId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -129,15 +132,16 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "team_list" field.</summary>
-    public const int TeamListFieldNumber = 10;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.SumoTeamData> _repeated_teamList_codec
-        = pb::FieldCodec.ForMessage(82, global::Weedwacker.Shared.Network.Proto.SumoTeamData.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SumoTeamData> teamList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SumoTeamData>();
+    /// <summary>Field number for the "stage_id" field.</summary>
+    public const int StageIdFieldNumber = 7;
+    private uint stageId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.SumoTeamData> TeamList {
-      get { return teamList_; }
+    public uint StageId {
+      get { return stageId_; }
+      set {
+        stageId_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -155,10 +159,10 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (ActivityId != other.ActivityId) return false;
-      if (StageId != other.StageId) return false;
-      if (DifficultyId != other.DifficultyId) return false;
       if(!teamList_.Equals(other.teamList_)) return false;
+      if (ActivityId != other.ActivityId) return false;
+      if (DifficultyId != other.DifficultyId) return false;
+      if (StageId != other.StageId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -166,10 +170,10 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (ActivityId != 0) hash ^= ActivityId.GetHashCode();
-      if (StageId != 0) hash ^= StageId.GetHashCode();
-      if (DifficultyId != 0) hash ^= DifficultyId.GetHashCode();
       hash ^= teamList_.GetHashCode();
+      if (ActivityId != 0) hash ^= ActivityId.GetHashCode();
+      if (DifficultyId != 0) hash ^= DifficultyId.GetHashCode();
+      if (StageId != 0) hash ^= StageId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -193,7 +197,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteUInt32(ActivityId);
       }
       if (DifficultyId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteUInt32(DifficultyId);
       }
       if (StageId != 0) {
@@ -216,7 +220,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteUInt32(ActivityId);
       }
       if (DifficultyId != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteUInt32(DifficultyId);
       }
       if (StageId != 0) {
@@ -234,16 +238,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      size += teamList_.CalculateSize(_repeated_teamList_codec);
       if (ActivityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ActivityId);
-      }
-      if (StageId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
       }
       if (DifficultyId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DifficultyId);
       }
-      size += teamList_.CalculateSize(_repeated_teamList_codec);
+      if (StageId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -256,16 +260,16 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
+      teamList_.Add(other.teamList_);
       if (other.ActivityId != 0) {
         ActivityId = other.ActivityId;
-      }
-      if (other.StageId != 0) {
-        StageId = other.StageId;
       }
       if (other.DifficultyId != 0) {
         DifficultyId = other.DifficultyId;
       }
-      teamList_.Add(other.teamList_);
+      if (other.StageId != 0) {
+        StageId = other.StageId;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -285,7 +289,7 @@ namespace Weedwacker.Shared.Network.Proto {
             ActivityId = input.ReadUInt32();
             break;
           }
-          case 32: {
+          case 40: {
             DifficultyId = input.ReadUInt32();
             break;
           }
@@ -293,7 +297,7 @@ namespace Weedwacker.Shared.Network.Proto {
             StageId = input.ReadUInt32();
             break;
           }
-          case 82: {
+          case 122: {
             teamList_.AddEntriesFrom(input, _repeated_teamList_codec);
             break;
           }
@@ -316,7 +320,7 @@ namespace Weedwacker.Shared.Network.Proto {
             ActivityId = input.ReadUInt32();
             break;
           }
-          case 32: {
+          case 40: {
             DifficultyId = input.ReadUInt32();
             break;
           }
@@ -324,7 +328,7 @@ namespace Weedwacker.Shared.Network.Proto {
             StageId = input.ReadUInt32();
             break;
           }
-          case 82: {
+          case 122: {
             teamList_.AddEntriesFrom(ref input, _repeated_teamList_codec);
             break;
           }

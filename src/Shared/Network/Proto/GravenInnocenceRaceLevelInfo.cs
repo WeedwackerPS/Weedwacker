@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static GravenInnocenceRaceLevelInfoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJHcmF2ZW5Jbm5vY2VuY2VSYWNlTGV2ZWxJbmZvLnByb3RvIlQKHEdyYXZl",
-            "bklubm9jZW5jZVJhY2VMZXZlbEluZm8SEAoIbGV2ZWxfaWQYDSABKA0SEQoJ",
-            "bWF4X3Njb3JlGA4gASgNEg8KB2lzX29wZW4YASABKAhCIqoCH1dlZWR3YWNr",
-            "ZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "CiJHcmF2ZW5Jbm5vY2VuY2VSYWNlTGV2ZWxJbmZvLnByb3RvEh9XZWVkd2Fj",
+            "a2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvIlQKHEdyYXZlbklubm9jZW5jZVJh",
+            "Y2VMZXZlbEluZm8SEAoIbGV2ZWxfaWQYDCABKA0SEQoJbWF4X3Njb3JlGAUg",
+            "ASgNEg8KB2lzX29wZW4YAiABKAhiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -85,7 +85,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "level_id" field.</summary>
-    public const int LevelIdFieldNumber = 13;
+    public const int LevelIdFieldNumber = 12;
     private uint levelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -97,7 +97,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "max_score" field.</summary>
-    public const int MaxScoreFieldNumber = 14;
+    public const int MaxScoreFieldNumber = 5;
     private uint maxScore_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -109,7 +109,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_open" field.</summary>
-    public const int IsOpenFieldNumber = 1;
+    public const int IsOpenFieldNumber = 2;
     private bool isOpen_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -167,16 +167,16 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (IsOpen != false) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(16);
         output.WriteBool(IsOpen);
       }
-      if (LevelId != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(LevelId);
-      }
       if (MaxScore != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(40);
         output.WriteUInt32(MaxScore);
+      }
+      if (LevelId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(LevelId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -189,16 +189,16 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (IsOpen != false) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(16);
         output.WriteBool(IsOpen);
       }
-      if (LevelId != 0) {
-        output.WriteRawTag(104);
-        output.WriteUInt32(LevelId);
-      }
       if (MaxScore != 0) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(40);
         output.WriteUInt32(MaxScore);
+      }
+      if (LevelId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(LevelId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -255,16 +255,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 16: {
             IsOpen = input.ReadBool();
             break;
           }
-          case 104: {
-            LevelId = input.ReadUInt32();
+          case 40: {
+            MaxScore = input.ReadUInt32();
             break;
           }
-          case 112: {
-            MaxScore = input.ReadUInt32();
+          case 96: {
+            LevelId = input.ReadUInt32();
             break;
           }
         }
@@ -282,16 +282,16 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
+          case 16: {
             IsOpen = input.ReadBool();
             break;
           }
-          case 104: {
-            LevelId = input.ReadUInt32();
+          case 40: {
+            MaxScore = input.ReadUInt32();
             break;
           }
-          case 112: {
-            MaxScore = input.ReadUInt32();
+          case 96: {
+            LevelId = input.ReadUInt32();
             break;
           }
         }

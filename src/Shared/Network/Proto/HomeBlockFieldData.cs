@@ -24,16 +24,18 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeBlockFieldDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhIb21lQmxvY2tGaWVsZERhdGEucHJvdG8aG0hvbWVCbG9ja1N1YkZpZWxk",
-            "RGF0YS5wcm90bxoMVmVjdG9yLnByb3RvIpQBChJIb21lQmxvY2tGaWVsZERh",
-            "dGESFAoDcm90GA8gASgLMgcuVmVjdG9yEhQKA3BvcxgEIAEoCzIHLlZlY3Rv",
-            "chIMCgRndWlkGAkgASgNEhQKDGZ1cm5pdHVyZV9pZBgBIAEoDRIuCg5zdWJf",
-            "ZmllbGRfbGlzdBgHIAMoCzIWLkhvbWVCbG9ja1N1YkZpZWxkRGF0YUIiqgIf",
-            "V2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "ChhIb21lQmxvY2tGaWVsZERhdGEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aG0hvbWVCbG9ja1N1YkZpZWxkRGF0YS5wcm90bxoM",
+            "VmVjdG9yLnByb3RvIvQBChJIb21lQmxvY2tGaWVsZERhdGESTgoOc3ViX2Zp",
+            "ZWxkX2xpc3QYBCADKAsyNi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3JrLlBy",
+            "b3RvLkhvbWVCbG9ja1N1YkZpZWxkRGF0YRIMCgRndWlkGA8gASgNEjQKA3Bv",
+            "cxgIIAEoCzInLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uVmVj",
+            "dG9yEhQKDGZ1cm5pdHVyZV9pZBgMIAEoDRI0CgNyb3QYDSABKAsyJy5XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvLlZlY3RvcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HomeBlockSubFieldDataReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeBlockFieldData), global::Weedwacker.Shared.Network.Proto.HomeBlockFieldData.Parser, new[]{ "Rot", "Pos", "Guid", "FurnitureId", "SubFieldList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.HomeBlockFieldData), global::Weedwacker.Shared.Network.Proto.HomeBlockFieldData.Parser, new[]{ "SubFieldList", "Guid", "Pos", "FurnitureId", "Rot" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,11 +76,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HomeBlockFieldData(HomeBlockFieldData other) : this() {
-      rot_ = other.rot_ != null ? other.rot_.Clone() : null;
-      pos_ = other.pos_ != null ? other.pos_.Clone() : null;
-      guid_ = other.guid_;
-      furnitureId_ = other.furnitureId_;
       subFieldList_ = other.subFieldList_.Clone();
+      guid_ = other.guid_;
+      pos_ = other.pos_ != null ? other.pos_.Clone() : null;
+      furnitureId_ = other.furnitureId_;
+      rot_ = other.rot_ != null ? other.rot_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,32 +90,19 @@ namespace Weedwacker.Shared.Network.Proto {
       return new HomeBlockFieldData(this);
     }
 
-    /// <summary>Field number for the "rot" field.</summary>
-    public const int RotFieldNumber = 15;
-    private global::Weedwacker.Shared.Network.Proto.Vector rot_;
+    /// <summary>Field number for the "sub_field_list" field.</summary>
+    public const int SubFieldListFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeBlockSubFieldData> _repeated_subFieldList_codec
+        = pb::FieldCodec.ForMessage(34, global::Weedwacker.Shared.Network.Proto.HomeBlockSubFieldData.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeBlockSubFieldData> subFieldList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeBlockSubFieldData>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector Rot {
-      get { return rot_; }
-      set {
-        rot_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "pos" field.</summary>
-    public const int PosFieldNumber = 4;
-    private global::Weedwacker.Shared.Network.Proto.Vector pos_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.Vector Pos {
-      get { return pos_; }
-      set {
-        pos_ = value;
-      }
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeBlockSubFieldData> SubFieldList {
+      get { return subFieldList_; }
     }
 
     /// <summary>Field number for the "guid" field.</summary>
-    public const int GuidFieldNumber = 9;
+    public const int GuidFieldNumber = 15;
     private uint guid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -124,8 +113,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "pos" field.</summary>
+    public const int PosFieldNumber = 8;
+    private global::Weedwacker.Shared.Network.Proto.Vector pos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.Vector Pos {
+      get { return pos_; }
+      set {
+        pos_ = value;
+      }
+    }
+
     /// <summary>Field number for the "furniture_id" field.</summary>
-    public const int FurnitureIdFieldNumber = 1;
+    public const int FurnitureIdFieldNumber = 12;
     private uint furnitureId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -136,15 +137,16 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "sub_field_list" field.</summary>
-    public const int SubFieldListFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeBlockSubFieldData> _repeated_subFieldList_codec
-        = pb::FieldCodec.ForMessage(58, global::Weedwacker.Shared.Network.Proto.HomeBlockSubFieldData.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeBlockSubFieldData> subFieldList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeBlockSubFieldData>();
+    /// <summary>Field number for the "rot" field.</summary>
+    public const int RotFieldNumber = 13;
+    private global::Weedwacker.Shared.Network.Proto.Vector rot_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeBlockSubFieldData> SubFieldList {
-      get { return subFieldList_; }
+    public global::Weedwacker.Shared.Network.Proto.Vector Rot {
+      get { return rot_; }
+      set {
+        rot_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -162,11 +164,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(Rot, other.Rot)) return false;
-      if (!object.Equals(Pos, other.Pos)) return false;
-      if (Guid != other.Guid) return false;
-      if (FurnitureId != other.FurnitureId) return false;
       if(!subFieldList_.Equals(other.subFieldList_)) return false;
+      if (Guid != other.Guid) return false;
+      if (!object.Equals(Pos, other.Pos)) return false;
+      if (FurnitureId != other.FurnitureId) return false;
+      if (!object.Equals(Rot, other.Rot)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -174,11 +176,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (rot_ != null) hash ^= Rot.GetHashCode();
-      if (pos_ != null) hash ^= Pos.GetHashCode();
-      if (Guid != 0) hash ^= Guid.GetHashCode();
-      if (FurnitureId != 0) hash ^= FurnitureId.GetHashCode();
       hash ^= subFieldList_.GetHashCode();
+      if (Guid != 0) hash ^= Guid.GetHashCode();
+      if (pos_ != null) hash ^= Pos.GetHashCode();
+      if (FurnitureId != 0) hash ^= FurnitureId.GetHashCode();
+      if (rot_ != null) hash ^= Rot.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -197,22 +199,22 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (FurnitureId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(FurnitureId);
-      }
+      subFieldList_.WriteTo(output, _repeated_subFieldList_codec);
       if (pos_ != null) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(66);
         output.WriteMessage(Pos);
       }
-      subFieldList_.WriteTo(output, _repeated_subFieldList_codec);
-      if (Guid != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(Guid);
+      if (FurnitureId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(FurnitureId);
       }
       if (rot_ != null) {
-        output.WriteRawTag(122);
+        output.WriteRawTag(106);
         output.WriteMessage(Rot);
+      }
+      if (Guid != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Guid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -224,22 +226,22 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (FurnitureId != 0) {
-        output.WriteRawTag(8);
-        output.WriteUInt32(FurnitureId);
-      }
+      subFieldList_.WriteTo(ref output, _repeated_subFieldList_codec);
       if (pos_ != null) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(66);
         output.WriteMessage(Pos);
       }
-      subFieldList_.WriteTo(ref output, _repeated_subFieldList_codec);
-      if (Guid != 0) {
-        output.WriteRawTag(72);
-        output.WriteUInt32(Guid);
+      if (FurnitureId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(FurnitureId);
       }
       if (rot_ != null) {
-        output.WriteRawTag(122);
+        output.WriteRawTag(106);
         output.WriteMessage(Rot);
+      }
+      if (Guid != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Guid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -251,19 +253,19 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (rot_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Rot);
+      size += subFieldList_.CalculateSize(_repeated_subFieldList_codec);
+      if (Guid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Guid);
       }
       if (pos_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pos);
       }
-      if (Guid != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Guid);
-      }
       if (FurnitureId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FurnitureId);
       }
-      size += subFieldList_.CalculateSize(_repeated_subFieldList_codec);
+      if (rot_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Rot);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -276,11 +278,9 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.rot_ != null) {
-        if (rot_ == null) {
-          Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
-        }
-        Rot.MergeFrom(other.Rot);
+      subFieldList_.Add(other.subFieldList_);
+      if (other.Guid != 0) {
+        Guid = other.Guid;
       }
       if (other.pos_ != null) {
         if (pos_ == null) {
@@ -288,13 +288,15 @@ namespace Weedwacker.Shared.Network.Proto {
         }
         Pos.MergeFrom(other.Pos);
       }
-      if (other.Guid != 0) {
-        Guid = other.Guid;
-      }
       if (other.FurnitureId != 0) {
         FurnitureId = other.FurnitureId;
       }
-      subFieldList_.Add(other.subFieldList_);
+      if (other.rot_ != null) {
+        if (rot_ == null) {
+          Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
+        }
+        Rot.MergeFrom(other.Rot);
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -310,30 +312,30 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            FurnitureId = input.ReadUInt32();
+          case 34: {
+            subFieldList_.AddEntriesFrom(input, _repeated_subFieldList_codec);
             break;
           }
-          case 34: {
+          case 66: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Pos);
             break;
           }
-          case 58: {
-            subFieldList_.AddEntriesFrom(input, _repeated_subFieldList_codec);
+          case 96: {
+            FurnitureId = input.ReadUInt32();
             break;
           }
-          case 72: {
-            Guid = input.ReadUInt32();
-            break;
-          }
-          case 122: {
+          case 106: {
             if (rot_ == null) {
               Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Rot);
+            break;
+          }
+          case 120: {
+            Guid = input.ReadUInt32();
             break;
           }
         }
@@ -351,30 +353,30 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            FurnitureId = input.ReadUInt32();
+          case 34: {
+            subFieldList_.AddEntriesFrom(ref input, _repeated_subFieldList_codec);
             break;
           }
-          case 34: {
+          case 66: {
             if (pos_ == null) {
               Pos = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Pos);
             break;
           }
-          case 58: {
-            subFieldList_.AddEntriesFrom(ref input, _repeated_subFieldList_codec);
+          case 96: {
+            FurnitureId = input.ReadUInt32();
             break;
           }
-          case 72: {
-            Guid = input.ReadUInt32();
-            break;
-          }
-          case 122: {
+          case 106: {
             if (rot_ == null) {
               Rot = new global::Weedwacker.Shared.Network.Proto.Vector();
             }
             input.ReadMessage(Rot);
+            break;
+          }
+          case 120: {
+            Guid = input.ReadUInt32();
             break;
           }
         }

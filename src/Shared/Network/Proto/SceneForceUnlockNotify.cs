@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static SceneForceUnlockNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxTY2VuZUZvcmNlVW5sb2NrTm90aWZ5LnByb3RvIj8KFlNjZW5lRm9yY2VV",
-            "bmxvY2tOb3RpZnkSDgoGaXNfYWRkGAogASgIEhUKDWZvcmNlX2lkX2xpc3QY",
-            "AiADKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnBy",
-            "b3RvMw=="));
+            "ChxTY2VuZUZvcmNlVW5sb2NrTm90aWZ5LnByb3RvEh9XZWVkd2Fja2VyLlNo",
+            "YXJlZC5OZXR3b3JrLlByb3RvIj8KFlNjZW5lRm9yY2VVbmxvY2tOb3RpZnkS",
+            "DgoGaXNfYWRkGA8gASgIEhUKDWZvcmNlX2lkX2xpc3QYCyADKA1iBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,9 +39,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 206
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 210;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class SceneForceUnlockNotify : pb::IMessage<SceneForceUnlockNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "is_add" field.</summary>
-    public const int IsAddFieldNumber = 10;
+    public const int IsAddFieldNumber = 15;
     private bool isAdd_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,9 +105,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "force_id_list" field.</summary>
-    public const int ForceIdListFieldNumber = 2;
+    public const int ForceIdListFieldNumber = 11;
     private static readonly pb::FieldCodec<uint> _repeated_forceIdList_codec
-        = pb::FieldCodec.ForUInt32(18);
+        = pb::FieldCodec.ForUInt32(90);
     private readonly pbc::RepeatedField<uint> forceIdList_ = new pbc::RepeatedField<uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -157,7 +161,7 @@ namespace Weedwacker.Shared.Network.Proto {
     #else
       forceIdList_.WriteTo(output, _repeated_forceIdList_codec);
       if (IsAdd != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(120);
         output.WriteBool(IsAdd);
       }
       if (_unknownFields != null) {
@@ -172,7 +176,7 @@ namespace Weedwacker.Shared.Network.Proto {
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       forceIdList_.WriteTo(ref output, _repeated_forceIdList_codec);
       if (IsAdd != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(120);
         output.WriteBool(IsAdd);
       }
       if (_unknownFields != null) {
@@ -220,12 +224,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18:
-          case 16: {
+          case 90:
+          case 88: {
             forceIdList_.AddEntriesFrom(input, _repeated_forceIdList_codec);
             break;
           }
-          case 80: {
+          case 120: {
             IsAdd = input.ReadBool();
             break;
           }
@@ -244,12 +248,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18:
-          case 16: {
+          case 90:
+          case 88: {
             forceIdList_.AddEntriesFrom(ref input, _repeated_forceIdList_codec);
             break;
           }
-          case 80: {
+          case 120: {
             IsAdd = input.ReadBool();
             break;
           }

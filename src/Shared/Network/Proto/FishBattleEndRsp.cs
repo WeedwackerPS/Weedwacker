@@ -24,23 +24,27 @@ namespace Weedwacker.Shared.Network.Proto {
     static FishBattleEndRspReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZGaXNoQmF0dGxlRW5kUnNwLnByb3RvGhZGaXNoQmF0dGxlUmVzdWx0LnBy",
-            "b3RvGg9JdGVtUGFyYW0ucHJvdG8iwAMKEEZpc2hCYXR0bGVFbmRSc3ASFQoN",
-            "aXNfZ290X3Jld2FyZBgKIAEoCBIkChByZXdhcmRfaXRlbV9saXN0GAsgAygL",
-            "MgouSXRlbVBhcmFtEiQKEHRhbGVudF9pdGVtX2xpc3QYDSADKAsyCi5JdGVt",
-            "UGFyYW0SIgoOZHJvcF9pdGVtX2xpc3QYCSADKAsyCi5JdGVtUGFyYW0SDwoH",
-            "cmV0Y29kZRgHIAEoBRI+ChBub19yZXdhcmRfcmVhc29uGA4gASgOMiQuRmlz",
-            "aEJhdHRsZUVuZFJzcC5GaXNoTm9SZXdhcmRSZWFzb24SKAoNYmF0dGxlX3Jl",
-            "c3VsdBgGIAEoDjIRLkZpc2hCYXR0bGVSZXN1bHQiqQEKEkZpc2hOb1Jld2Fy",
-            "ZFJlYXNvbhIeChpGSVNIX05PX1JFV0FSRF9SRUFTT05fTk9ORRAAEigKJEZJ",
-            "U0hfTk9fUkVXQVJEX1JFQVNPTl9BQ1RJVklUWV9MSU1JVBABEiMKH0ZJU0hf",
-            "Tk9fUkVXQVJEX1JFQVNPTl9CQUdfTElNSVQQAhIkCiBGSVNIX05PX1JFV0FS",
-            "RF9SRUFTT05fUE9PTF9MSU1JVBADQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5O",
-            "ZXR3b3JrLlByb3RvYgZwcm90bzM="));
+            "ChZGaXNoQmF0dGxlRW5kUnNwLnByb3RvEh9XZWVkd2Fja2VyLlNoYXJlZC5O",
+            "ZXR3b3JrLlByb3RvGhZGaXNoQmF0dGxlUmVzdWx0LnByb3RvGg9JdGVtUGFy",
+            "YW0ucHJvdG8i6AQKEEZpc2hCYXR0bGVFbmRSc3ASSAoNYmF0dGxlX3Jlc3Vs",
+            "dBgGIAEoDjIxLldlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG8uRmlz",
+            "aEJhdHRsZVJlc3VsdBJeChBub19yZXdhcmRfcmVhc29uGAIgASgOMkQuV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5GaXNoQmF0dGxlRW5kUnNw",
+            "LkZpc2hOb1Jld2FyZFJlYXNvbhIPCgdyZXRjb2RlGAkgASgFEkcKE1VuazMz",
+            "MDBfQUJCQkdPQkRKRUMYDCADKAsyKi5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLkl0ZW1QYXJhbRIVCg1pc19nb3RfcmV3YXJkGAggASgIEkcK",
+            "E1VuazMzMDBfTURDS0tQR05LR0wYASADKAsyKi5XZWVkd2Fja2VyLlNoYXJl",
+            "ZC5OZXR3b3JrLlByb3RvLkl0ZW1QYXJhbRJEChByZXdhcmRfaXRlbV9saXN0",
+            "GA8gAygLMiouV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90by5JdGVt",
+            "UGFyYW0iqQEKEkZpc2hOb1Jld2FyZFJlYXNvbhIeChpGSVNIX05PX1JFV0FS",
+            "RF9SRUFTT05fTk9ORRAAEigKJEZJU0hfTk9fUkVXQVJEX1JFQVNPTl9BQ1RJ",
+            "VklUWV9MSU1JVBABEiMKH0ZJU0hfTk9fUkVXQVJEX1JFQVNPTl9CQUdfTElN",
+            "SVQQAhIkCiBGSVNIX05PX1JFV0FSRF9SRUFTT05fUE9PTF9MSU1JVBADYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.FishBattleResultReflection.Descriptor, global::Weedwacker.Shared.Network.Proto.ItemParamReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FishBattleEndRsp), global::Weedwacker.Shared.Network.Proto.FishBattleEndRsp.Parser, new[]{ "IsGotReward", "RewardItemList", "TalentItemList", "DropItemList", "Retcode", "NoRewardReason", "BattleResult" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.FishBattleEndRsp.Types.FishNoRewardReason) }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.FishBattleEndRsp), global::Weedwacker.Shared.Network.Proto.FishBattleEndRsp.Parser, new[]{ "BattleResult", "NoRewardReason", "Retcode", "Unk3300ABBBGOBDJEC", "IsGotReward", "Unk3300MDCKKPGNKGL", "RewardItemList" }, null, new[]{ typeof(global::Weedwacker.Shared.Network.Proto.FishBattleEndRsp.Types.FishNoRewardReason) }, null, null)
           }));
     }
     #endregion
@@ -48,9 +52,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5842
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5845;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class FishBattleEndRsp : pb::IMessage<FishBattleEndRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -86,13 +94,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FishBattleEndRsp(FishBattleEndRsp other) : this() {
-      isGotReward_ = other.isGotReward_;
-      rewardItemList_ = other.rewardItemList_.Clone();
-      talentItemList_ = other.talentItemList_.Clone();
-      dropItemList_ = other.dropItemList_.Clone();
-      retcode_ = other.retcode_;
-      noRewardReason_ = other.noRewardReason_;
       battleResult_ = other.battleResult_;
+      noRewardReason_ = other.noRewardReason_;
+      retcode_ = other.retcode_;
+      unk3300ABBBGOBDJEC_ = other.unk3300ABBBGOBDJEC_.Clone();
+      isGotReward_ = other.isGotReward_;
+      unk3300MDCKKPGNKGL_ = other.unk3300MDCKKPGNKGL_.Clone();
+      rewardItemList_ = other.rewardItemList_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -100,75 +108,6 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public FishBattleEndRsp Clone() {
       return new FishBattleEndRsp(this);
-    }
-
-    /// <summary>Field number for the "is_got_reward" field.</summary>
-    public const int IsGotRewardFieldNumber = 10;
-    private bool isGotReward_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsGotReward {
-      get { return isGotReward_; }
-      set {
-        isGotReward_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "reward_item_list" field.</summary>
-    public const int RewardItemListFieldNumber = 11;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_rewardItemList_codec
-        = pb::FieldCodec.ForMessage(90, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> rewardItemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> RewardItemList {
-      get { return rewardItemList_; }
-    }
-
-    /// <summary>Field number for the "talent_item_list" field.</summary>
-    public const int TalentItemListFieldNumber = 13;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_talentItemList_codec
-        = pb::FieldCodec.ForMessage(106, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> talentItemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> TalentItemList {
-      get { return talentItemList_; }
-    }
-
-    /// <summary>Field number for the "drop_item_list" field.</summary>
-    public const int DropItemListFieldNumber = 9;
-    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_dropItemList_codec
-        = pb::FieldCodec.ForMessage(74, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
-    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> dropItemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> DropItemList {
-      get { return dropItemList_; }
-    }
-
-    /// <summary>Field number for the "retcode" field.</summary>
-    public const int RetcodeFieldNumber = 7;
-    private int retcode_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Retcode {
-      get { return retcode_; }
-      set {
-        retcode_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "no_reward_reason" field.</summary>
-    public const int NoRewardReasonFieldNumber = 14;
-    private global::Weedwacker.Shared.Network.Proto.FishBattleEndRsp.Types.FishNoRewardReason noRewardReason_ = global::Weedwacker.Shared.Network.Proto.FishBattleEndRsp.Types.FishNoRewardReason.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Weedwacker.Shared.Network.Proto.FishBattleEndRsp.Types.FishNoRewardReason NoRewardReason {
-      get { return noRewardReason_; }
-      set {
-        noRewardReason_ = value;
-      }
     }
 
     /// <summary>Field number for the "battle_result" field.</summary>
@@ -181,6 +120,75 @@ namespace Weedwacker.Shared.Network.Proto {
       set {
         battleResult_ = value;
       }
+    }
+
+    /// <summary>Field number for the "no_reward_reason" field.</summary>
+    public const int NoRewardReasonFieldNumber = 2;
+    private global::Weedwacker.Shared.Network.Proto.FishBattleEndRsp.Types.FishNoRewardReason noRewardReason_ = global::Weedwacker.Shared.Network.Proto.FishBattleEndRsp.Types.FishNoRewardReason.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Weedwacker.Shared.Network.Proto.FishBattleEndRsp.Types.FishNoRewardReason NoRewardReason {
+      get { return noRewardReason_; }
+      set {
+        noRewardReason_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 9;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_ABBBGOBDJEC" field.</summary>
+    public const int Unk3300ABBBGOBDJECFieldNumber = 12;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_unk3300ABBBGOBDJEC_codec
+        = pb::FieldCodec.ForMessage(98, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> unk3300ABBBGOBDJEC_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> Unk3300ABBBGOBDJEC {
+      get { return unk3300ABBBGOBDJEC_; }
+    }
+
+    /// <summary>Field number for the "is_got_reward" field.</summary>
+    public const int IsGotRewardFieldNumber = 8;
+    private bool isGotReward_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsGotReward {
+      get { return isGotReward_; }
+      set {
+        isGotReward_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_MDCKKPGNKGL" field.</summary>
+    public const int Unk3300MDCKKPGNKGLFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_unk3300MDCKKPGNKGL_codec
+        = pb::FieldCodec.ForMessage(10, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> unk3300MDCKKPGNKGL_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> Unk3300MDCKKPGNKGL {
+      get { return unk3300MDCKKPGNKGL_; }
+    }
+
+    /// <summary>Field number for the "reward_item_list" field.</summary>
+    public const int RewardItemListFieldNumber = 15;
+    private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.ItemParam> _repeated_rewardItemList_codec
+        = pb::FieldCodec.ForMessage(122, global::Weedwacker.Shared.Network.Proto.ItemParam.Parser);
+    private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> rewardItemList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.ItemParam> RewardItemList {
+      get { return rewardItemList_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -198,13 +206,13 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (IsGotReward != other.IsGotReward) return false;
-      if(!rewardItemList_.Equals(other.rewardItemList_)) return false;
-      if(!talentItemList_.Equals(other.talentItemList_)) return false;
-      if(!dropItemList_.Equals(other.dropItemList_)) return false;
-      if (Retcode != other.Retcode) return false;
-      if (NoRewardReason != other.NoRewardReason) return false;
       if (BattleResult != other.BattleResult) return false;
+      if (NoRewardReason != other.NoRewardReason) return false;
+      if (Retcode != other.Retcode) return false;
+      if(!unk3300ABBBGOBDJEC_.Equals(other.unk3300ABBBGOBDJEC_)) return false;
+      if (IsGotReward != other.IsGotReward) return false;
+      if(!unk3300MDCKKPGNKGL_.Equals(other.unk3300MDCKKPGNKGL_)) return false;
+      if(!rewardItemList_.Equals(other.rewardItemList_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -212,13 +220,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (IsGotReward != false) hash ^= IsGotReward.GetHashCode();
-      hash ^= rewardItemList_.GetHashCode();
-      hash ^= talentItemList_.GetHashCode();
-      hash ^= dropItemList_.GetHashCode();
-      if (Retcode != 0) hash ^= Retcode.GetHashCode();
-      if (NoRewardReason != global::Weedwacker.Shared.Network.Proto.FishBattleEndRsp.Types.FishNoRewardReason.None) hash ^= NoRewardReason.GetHashCode();
       if (BattleResult != global::Weedwacker.Shared.Network.Proto.FishBattleResult.None) hash ^= BattleResult.GetHashCode();
+      if (NoRewardReason != global::Weedwacker.Shared.Network.Proto.FishBattleEndRsp.Types.FishNoRewardReason.None) hash ^= NoRewardReason.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      hash ^= unk3300ABBBGOBDJEC_.GetHashCode();
+      if (IsGotReward != false) hash ^= IsGotReward.GetHashCode();
+      hash ^= unk3300MDCKKPGNKGL_.GetHashCode();
+      hash ^= rewardItemList_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -237,25 +245,25 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      unk3300MDCKKPGNKGL_.WriteTo(output, _repeated_unk3300MDCKKPGNKGL_codec);
+      if (NoRewardReason != global::Weedwacker.Shared.Network.Proto.FishBattleEndRsp.Types.FishNoRewardReason.None) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) NoRewardReason);
+      }
       if (BattleResult != global::Weedwacker.Shared.Network.Proto.FishBattleResult.None) {
         output.WriteRawTag(48);
         output.WriteEnum((int) BattleResult);
       }
-      if (Retcode != 0) {
-        output.WriteRawTag(56);
-        output.WriteInt32(Retcode);
-      }
-      dropItemList_.WriteTo(output, _repeated_dropItemList_codec);
       if (IsGotReward != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(64);
         output.WriteBool(IsGotReward);
       }
-      rewardItemList_.WriteTo(output, _repeated_rewardItemList_codec);
-      talentItemList_.WriteTo(output, _repeated_talentItemList_codec);
-      if (NoRewardReason != global::Weedwacker.Shared.Network.Proto.FishBattleEndRsp.Types.FishNoRewardReason.None) {
-        output.WriteRawTag(112);
-        output.WriteEnum((int) NoRewardReason);
+      if (Retcode != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(Retcode);
       }
+      unk3300ABBBGOBDJEC_.WriteTo(output, _repeated_unk3300ABBBGOBDJEC_codec);
+      rewardItemList_.WriteTo(output, _repeated_rewardItemList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -266,25 +274,25 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      unk3300MDCKKPGNKGL_.WriteTo(ref output, _repeated_unk3300MDCKKPGNKGL_codec);
+      if (NoRewardReason != global::Weedwacker.Shared.Network.Proto.FishBattleEndRsp.Types.FishNoRewardReason.None) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) NoRewardReason);
+      }
       if (BattleResult != global::Weedwacker.Shared.Network.Proto.FishBattleResult.None) {
         output.WriteRawTag(48);
         output.WriteEnum((int) BattleResult);
       }
-      if (Retcode != 0) {
-        output.WriteRawTag(56);
-        output.WriteInt32(Retcode);
-      }
-      dropItemList_.WriteTo(ref output, _repeated_dropItemList_codec);
       if (IsGotReward != false) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(64);
         output.WriteBool(IsGotReward);
       }
-      rewardItemList_.WriteTo(ref output, _repeated_rewardItemList_codec);
-      talentItemList_.WriteTo(ref output, _repeated_talentItemList_codec);
-      if (NoRewardReason != global::Weedwacker.Shared.Network.Proto.FishBattleEndRsp.Types.FishNoRewardReason.None) {
-        output.WriteRawTag(112);
-        output.WriteEnum((int) NoRewardReason);
+      if (Retcode != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(Retcode);
       }
+      unk3300ABBBGOBDJEC_.WriteTo(ref output, _repeated_unk3300ABBBGOBDJEC_codec);
+      rewardItemList_.WriteTo(ref output, _repeated_rewardItemList_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -295,21 +303,21 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (IsGotReward != false) {
-        size += 1 + 1;
-      }
-      size += rewardItemList_.CalculateSize(_repeated_rewardItemList_codec);
-      size += talentItemList_.CalculateSize(_repeated_talentItemList_codec);
-      size += dropItemList_.CalculateSize(_repeated_dropItemList_codec);
-      if (Retcode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      if (BattleResult != global::Weedwacker.Shared.Network.Proto.FishBattleResult.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) BattleResult);
       }
       if (NoRewardReason != global::Weedwacker.Shared.Network.Proto.FishBattleEndRsp.Types.FishNoRewardReason.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) NoRewardReason);
       }
-      if (BattleResult != global::Weedwacker.Shared.Network.Proto.FishBattleResult.None) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) BattleResult);
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
       }
+      size += unk3300ABBBGOBDJEC_.CalculateSize(_repeated_unk3300ABBBGOBDJEC_codec);
+      if (IsGotReward != false) {
+        size += 1 + 1;
+      }
+      size += unk3300MDCKKPGNKGL_.CalculateSize(_repeated_unk3300MDCKKPGNKGL_codec);
+      size += rewardItemList_.CalculateSize(_repeated_rewardItemList_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -322,21 +330,21 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.IsGotReward != false) {
-        IsGotReward = other.IsGotReward;
-      }
-      rewardItemList_.Add(other.rewardItemList_);
-      talentItemList_.Add(other.talentItemList_);
-      dropItemList_.Add(other.dropItemList_);
-      if (other.Retcode != 0) {
-        Retcode = other.Retcode;
+      if (other.BattleResult != global::Weedwacker.Shared.Network.Proto.FishBattleResult.None) {
+        BattleResult = other.BattleResult;
       }
       if (other.NoRewardReason != global::Weedwacker.Shared.Network.Proto.FishBattleEndRsp.Types.FishNoRewardReason.None) {
         NoRewardReason = other.NoRewardReason;
       }
-      if (other.BattleResult != global::Weedwacker.Shared.Network.Proto.FishBattleResult.None) {
-        BattleResult = other.BattleResult;
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
       }
+      unk3300ABBBGOBDJEC_.Add(other.unk3300ABBBGOBDJEC_);
+      if (other.IsGotReward != false) {
+        IsGotReward = other.IsGotReward;
+      }
+      unk3300MDCKKPGNKGL_.Add(other.unk3300MDCKKPGNKGL_);
+      rewardItemList_.Add(other.rewardItemList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -352,32 +360,32 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 10: {
+            unk3300MDCKKPGNKGL_.AddEntriesFrom(input, _repeated_unk3300MDCKKPGNKGL_codec);
+            break;
+          }
+          case 16: {
+            NoRewardReason = (global::Weedwacker.Shared.Network.Proto.FishBattleEndRsp.Types.FishNoRewardReason) input.ReadEnum();
+            break;
+          }
           case 48: {
             BattleResult = (global::Weedwacker.Shared.Network.Proto.FishBattleResult) input.ReadEnum();
             break;
           }
-          case 56: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 74: {
-            dropItemList_.AddEntriesFrom(input, _repeated_dropItemList_codec);
-            break;
-          }
-          case 80: {
+          case 64: {
             IsGotReward = input.ReadBool();
             break;
           }
-          case 90: {
+          case 72: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 98: {
+            unk3300ABBBGOBDJEC_.AddEntriesFrom(input, _repeated_unk3300ABBBGOBDJEC_codec);
+            break;
+          }
+          case 122: {
             rewardItemList_.AddEntriesFrom(input, _repeated_rewardItemList_codec);
-            break;
-          }
-          case 106: {
-            talentItemList_.AddEntriesFrom(input, _repeated_talentItemList_codec);
-            break;
-          }
-          case 112: {
-            NoRewardReason = (global::Weedwacker.Shared.Network.Proto.FishBattleEndRsp.Types.FishNoRewardReason) input.ReadEnum();
             break;
           }
         }
@@ -395,32 +403,32 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 10: {
+            unk3300MDCKKPGNKGL_.AddEntriesFrom(ref input, _repeated_unk3300MDCKKPGNKGL_codec);
+            break;
+          }
+          case 16: {
+            NoRewardReason = (global::Weedwacker.Shared.Network.Proto.FishBattleEndRsp.Types.FishNoRewardReason) input.ReadEnum();
+            break;
+          }
           case 48: {
             BattleResult = (global::Weedwacker.Shared.Network.Proto.FishBattleResult) input.ReadEnum();
             break;
           }
-          case 56: {
-            Retcode = input.ReadInt32();
-            break;
-          }
-          case 74: {
-            dropItemList_.AddEntriesFrom(ref input, _repeated_dropItemList_codec);
-            break;
-          }
-          case 80: {
+          case 64: {
             IsGotReward = input.ReadBool();
             break;
           }
-          case 90: {
+          case 72: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 98: {
+            unk3300ABBBGOBDJEC_.AddEntriesFrom(ref input, _repeated_unk3300ABBBGOBDJEC_codec);
+            break;
+          }
+          case 122: {
             rewardItemList_.AddEntriesFrom(ref input, _repeated_rewardItemList_codec);
-            break;
-          }
-          case 106: {
-            talentItemList_.AddEntriesFrom(ref input, _repeated_talentItemList_codec);
-            break;
-          }
-          case 112: {
-            NoRewardReason = (global::Weedwacker.Shared.Network.Proto.FishBattleEndRsp.Types.FishNoRewardReason) input.ReadEnum();
             break;
           }
         }

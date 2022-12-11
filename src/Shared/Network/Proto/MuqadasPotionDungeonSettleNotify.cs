@@ -24,16 +24,16 @@ namespace Weedwacker.Shared.Network.Proto {
     static MuqadasPotionDungeonSettleNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiZNdXFhZGFzUG90aW9uRHVuZ2VvblNldHRsZU5vdGlmeS5wcm90byKUAQog",
-            "TXVxYWRhc1BvdGlvbkR1bmdlb25TZXR0bGVOb3RpZnkSEwoLZmluYWxfc2Nv",
-            "cmUYCyABKA0SHgoWY2FwdHVyZV93ZWFrbmVzc19jb3VudBgPIAEoDRISCgpp",
-            "c19zdWNjZXNzGAYgASgIEhAKCGxldmVsX2lkGAogASgNEhUKDWlzX25ld19y",
-            "ZWNvcmQYAiABKAhCIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
-            "dG9iBnByb3RvMw=="));
+            "CiZNdXFhZGFzUG90aW9uRHVuZ2VvblNldHRsZU5vdGlmeS5wcm90bxIfV2Vl",
+            "ZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90byKUAQogTXVxYWRhc1BvdGlv",
+            "bkR1bmdlb25TZXR0bGVOb3RpZnkSEgoKaXNfc3VjY2VzcxgBIAEoCBIVCg1p",
+            "c19uZXdfcmVjb3JkGAUgASgIEhAKCGxldmVsX2lkGAggASgNEh4KFmNhcHR1",
+            "cmVfd2Vha25lc3NfY291bnQYAyABKA0SEwoLZmluYWxfc2NvcmUYCSABKA1i",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MuqadasPotionDungeonSettleNotify), global::Weedwacker.Shared.Network.Proto.MuqadasPotionDungeonSettleNotify.Parser, new[]{ "FinalScore", "CaptureWeaknessCount", "IsSuccess", "LevelId", "IsNewRecord" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Weedwacker.Shared.Network.Proto.MuqadasPotionDungeonSettleNotify), global::Weedwacker.Shared.Network.Proto.MuqadasPotionDungeonSettleNotify.Parser, new[]{ "IsSuccess", "IsNewRecord", "LevelId", "CaptureWeaknessCount", "FinalScore" }, null, null, null, null)
           }));
     }
     #endregion
@@ -41,9 +41,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 20005
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 22734;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class MuqadasPotionDungeonSettleNotify : pb::IMessage<MuqadasPotionDungeonSettleNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -79,11 +83,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public MuqadasPotionDungeonSettleNotify(MuqadasPotionDungeonSettleNotify other) : this() {
-      finalScore_ = other.finalScore_;
-      captureWeaknessCount_ = other.captureWeaknessCount_;
       isSuccess_ = other.isSuccess_;
-      levelId_ = other.levelId_;
       isNewRecord_ = other.isNewRecord_;
+      levelId_ = other.levelId_;
+      captureWeaknessCount_ = other.captureWeaknessCount_;
+      finalScore_ = other.finalScore_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,32 +97,8 @@ namespace Weedwacker.Shared.Network.Proto {
       return new MuqadasPotionDungeonSettleNotify(this);
     }
 
-    /// <summary>Field number for the "final_score" field.</summary>
-    public const int FinalScoreFieldNumber = 11;
-    private uint finalScore_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint FinalScore {
-      get { return finalScore_; }
-      set {
-        finalScore_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "capture_weakness_count" field.</summary>
-    public const int CaptureWeaknessCountFieldNumber = 15;
-    private uint captureWeaknessCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint CaptureWeaknessCount {
-      get { return captureWeaknessCount_; }
-      set {
-        captureWeaknessCount_ = value;
-      }
-    }
-
     /// <summary>Field number for the "is_success" field.</summary>
-    public const int IsSuccessFieldNumber = 6;
+    public const int IsSuccessFieldNumber = 1;
     private bool isSuccess_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -129,8 +109,20 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
+    /// <summary>Field number for the "is_new_record" field.</summary>
+    public const int IsNewRecordFieldNumber = 5;
+    private bool isNewRecord_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsNewRecord {
+      get { return isNewRecord_; }
+      set {
+        isNewRecord_ = value;
+      }
+    }
+
     /// <summary>Field number for the "level_id" field.</summary>
-    public const int LevelIdFieldNumber = 10;
+    public const int LevelIdFieldNumber = 8;
     private uint levelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -141,15 +133,27 @@ namespace Weedwacker.Shared.Network.Proto {
       }
     }
 
-    /// <summary>Field number for the "is_new_record" field.</summary>
-    public const int IsNewRecordFieldNumber = 2;
-    private bool isNewRecord_;
+    /// <summary>Field number for the "capture_weakness_count" field.</summary>
+    public const int CaptureWeaknessCountFieldNumber = 3;
+    private uint captureWeaknessCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IsNewRecord {
-      get { return isNewRecord_; }
+    public uint CaptureWeaknessCount {
+      get { return captureWeaknessCount_; }
       set {
-        isNewRecord_ = value;
+        captureWeaknessCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "final_score" field.</summary>
+    public const int FinalScoreFieldNumber = 9;
+    private uint finalScore_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint FinalScore {
+      get { return finalScore_; }
+      set {
+        finalScore_ = value;
       }
     }
 
@@ -168,11 +172,11 @@ namespace Weedwacker.Shared.Network.Proto {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (FinalScore != other.FinalScore) return false;
-      if (CaptureWeaknessCount != other.CaptureWeaknessCount) return false;
       if (IsSuccess != other.IsSuccess) return false;
-      if (LevelId != other.LevelId) return false;
       if (IsNewRecord != other.IsNewRecord) return false;
+      if (LevelId != other.LevelId) return false;
+      if (CaptureWeaknessCount != other.CaptureWeaknessCount) return false;
+      if (FinalScore != other.FinalScore) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -180,11 +184,11 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (FinalScore != 0) hash ^= FinalScore.GetHashCode();
-      if (CaptureWeaknessCount != 0) hash ^= CaptureWeaknessCount.GetHashCode();
       if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
-      if (LevelId != 0) hash ^= LevelId.GetHashCode();
       if (IsNewRecord != false) hash ^= IsNewRecord.GetHashCode();
+      if (LevelId != 0) hash ^= LevelId.GetHashCode();
+      if (CaptureWeaknessCount != 0) hash ^= CaptureWeaknessCount.GetHashCode();
+      if (FinalScore != 0) hash ^= FinalScore.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -203,25 +207,25 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (IsNewRecord != false) {
-        output.WriteRawTag(16);
-        output.WriteBool(IsNewRecord);
-      }
       if (IsSuccess != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(8);
         output.WriteBool(IsSuccess);
       }
+      if (CaptureWeaknessCount != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(CaptureWeaknessCount);
+      }
+      if (IsNewRecord != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(IsNewRecord);
+      }
       if (LevelId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(64);
         output.WriteUInt32(LevelId);
       }
       if (FinalScore != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(72);
         output.WriteUInt32(FinalScore);
-      }
-      if (CaptureWeaknessCount != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(CaptureWeaknessCount);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -233,25 +237,25 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IsNewRecord != false) {
-        output.WriteRawTag(16);
-        output.WriteBool(IsNewRecord);
-      }
       if (IsSuccess != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(8);
         output.WriteBool(IsSuccess);
       }
+      if (CaptureWeaknessCount != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(CaptureWeaknessCount);
+      }
+      if (IsNewRecord != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(IsNewRecord);
+      }
       if (LevelId != 0) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(64);
         output.WriteUInt32(LevelId);
       }
       if (FinalScore != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(72);
         output.WriteUInt32(FinalScore);
-      }
-      if (CaptureWeaknessCount != 0) {
-        output.WriteRawTag(120);
-        output.WriteUInt32(CaptureWeaknessCount);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -263,20 +267,20 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (FinalScore != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinalScore);
-      }
-      if (CaptureWeaknessCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CaptureWeaknessCount);
-      }
       if (IsSuccess != false) {
+        size += 1 + 1;
+      }
+      if (IsNewRecord != false) {
         size += 1 + 1;
       }
       if (LevelId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
       }
-      if (IsNewRecord != false) {
-        size += 1 + 1;
+      if (CaptureWeaknessCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CaptureWeaknessCount);
+      }
+      if (FinalScore != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinalScore);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -290,20 +294,20 @@ namespace Weedwacker.Shared.Network.Proto {
       if (other == null) {
         return;
       }
-      if (other.FinalScore != 0) {
-        FinalScore = other.FinalScore;
-      }
-      if (other.CaptureWeaknessCount != 0) {
-        CaptureWeaknessCount = other.CaptureWeaknessCount;
-      }
       if (other.IsSuccess != false) {
         IsSuccess = other.IsSuccess;
+      }
+      if (other.IsNewRecord != false) {
+        IsNewRecord = other.IsNewRecord;
       }
       if (other.LevelId != 0) {
         LevelId = other.LevelId;
       }
-      if (other.IsNewRecord != false) {
-        IsNewRecord = other.IsNewRecord;
+      if (other.CaptureWeaknessCount != 0) {
+        CaptureWeaknessCount = other.CaptureWeaknessCount;
+      }
+      if (other.FinalScore != 0) {
+        FinalScore = other.FinalScore;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -320,24 +324,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 16: {
-            IsNewRecord = input.ReadBool();
-            break;
-          }
-          case 48: {
+          case 8: {
             IsSuccess = input.ReadBool();
             break;
           }
-          case 80: {
+          case 24: {
+            CaptureWeaknessCount = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            IsNewRecord = input.ReadBool();
+            break;
+          }
+          case 64: {
             LevelId = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 72: {
             FinalScore = input.ReadUInt32();
-            break;
-          }
-          case 120: {
-            CaptureWeaknessCount = input.ReadUInt32();
             break;
           }
         }
@@ -355,24 +359,24 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 16: {
-            IsNewRecord = input.ReadBool();
-            break;
-          }
-          case 48: {
+          case 8: {
             IsSuccess = input.ReadBool();
             break;
           }
-          case 80: {
+          case 24: {
+            CaptureWeaknessCount = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            IsNewRecord = input.ReadBool();
+            break;
+          }
+          case 64: {
             LevelId = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 72: {
             FinalScore = input.ReadUInt32();
-            break;
-          }
-          case 120: {
-            CaptureWeaknessCount = input.ReadUInt32();
             break;
           }
         }

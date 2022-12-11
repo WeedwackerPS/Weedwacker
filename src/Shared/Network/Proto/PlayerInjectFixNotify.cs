@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static PlayerInjectFixNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtQbGF5ZXJJbmplY3RGaXhOb3RpZnkucHJvdG8iNwoVUGxheWVySW5qZWN0",
-            "Rml4Tm90aWZ5EgoKAmlkGA0gASgNEhIKCmluamVjdF9maXgYCiABKAxCIqoC",
-            "H1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJvdG9iBnByb3RvMw=="));
+            "ChtQbGF5ZXJJbmplY3RGaXhOb3RpZnkucHJvdG8SH1dlZWR3YWNrZXIuU2hh",
+            "cmVkLk5ldHdvcmsuUHJvdG8iNwoVUGxheWVySW5qZWN0Rml4Tm90aWZ5EgoK",
+            "AmlkGAsgASgNEhIKCmluamVjdF9maXgYDCABKAxiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -38,9 +38,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 132
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 165;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class PlayerInjectFixNotify : pb::IMessage<PlayerInjectFixNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -88,7 +92,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 13;
+    public const int IdFieldNumber = 11;
     private uint id_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -100,7 +104,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "inject_fix" field.</summary>
-    public const int InjectFixFieldNumber = 10;
+    public const int InjectFixFieldNumber = 12;
     private pb::ByteString injectFix_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -155,13 +159,13 @@ namespace Weedwacker.Shared.Network.Proto {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (InjectFix.Length != 0) {
-        output.WriteRawTag(82);
-        output.WriteBytes(InjectFix);
-      }
       if (Id != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(88);
         output.WriteUInt32(Id);
+      }
+      if (InjectFix.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteBytes(InjectFix);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -173,13 +177,13 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (InjectFix.Length != 0) {
-        output.WriteRawTag(82);
-        output.WriteBytes(InjectFix);
-      }
       if (Id != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(88);
         output.WriteUInt32(Id);
+      }
+      if (InjectFix.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteBytes(InjectFix);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -230,12 +234,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 82: {
-            InjectFix = input.ReadBytes();
+          case 88: {
+            Id = input.ReadUInt32();
             break;
           }
-          case 104: {
-            Id = input.ReadUInt32();
+          case 98: {
+            InjectFix = input.ReadBytes();
             break;
           }
         }
@@ -253,12 +257,12 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 82: {
-            InjectFix = input.ReadBytes();
+          case 88: {
+            Id = input.ReadUInt32();
             break;
           }
-          case 104: {
-            Id = input.ReadUInt32();
+          case 98: {
+            InjectFix = input.ReadBytes();
             break;
           }
         }

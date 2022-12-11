@@ -25,12 +25,13 @@ namespace Weedwacker.Shared.Network.Proto {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CixJbkJhdHRsZU1lY2hhbmljdXNCdWlsZGluZ1BvaW50c05vdGlmeS5wcm90",
-            "byLSAQomSW5CYXR0bGVNZWNoYW5pY3VzQnVpbGRpbmdQb2ludHNOb3RpZnkS",
-            "aAoacGxheWVyX2J1aWxkaW5nX3BvaW50c19tYXAYBCADKAsyRC5JbkJhdHRs",
-            "ZU1lY2hhbmljdXNCdWlsZGluZ1BvaW50c05vdGlmeS5QbGF5ZXJCdWlsZGlu",
-            "Z1BvaW50c01hcEVudHJ5Gj4KHFBsYXllckJ1aWxkaW5nUG9pbnRzTWFwRW50",
-            "cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AUIiqgIfV2VlZHdh",
-            "Y2tlci5TaGFyZWQuTmV0d29yay5Qcm90b2IGcHJvdG8z"));
+            "bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90byLzAQomSW5CYXR0",
+            "bGVNZWNoYW5pY3VzQnVpbGRpbmdQb2ludHNOb3RpZnkSiAEKGnBsYXllcl9i",
+            "dWlsZGluZ19wb2ludHNfbWFwGAwgAygLMmQuV2VlZHdhY2tlci5TaGFyZWQu",
+            "TmV0d29yay5Qcm90by5JbkJhdHRsZU1lY2hhbmljdXNCdWlsZGluZ1BvaW50",
+            "c05vdGlmeS5QbGF5ZXJCdWlsZGluZ1BvaW50c01hcEVudHJ5Gj4KHFBsYXll",
+            "ckJ1aWxkaW5nUG9pbnRzTWFwRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVl",
+            "GAIgASgNOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -42,9 +43,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 5303
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5361;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class InBattleMechanicusBuildingPointsNotify : pb::IMessage<InBattleMechanicusBuildingPointsNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -91,9 +96,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "player_building_points_map" field.</summary>
-    public const int PlayerBuildingPointsMapFieldNumber = 4;
+    public const int PlayerBuildingPointsMapFieldNumber = 12;
     private static readonly pbc::MapField<uint, uint>.Codec _map_playerBuildingPointsMap_codec
-        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 34);
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 98);
     private readonly pbc::MapField<uint, uint> playerBuildingPointsMap_ = new pbc::MapField<uint, uint>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -194,7 +199,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 34: {
+          case 98: {
             playerBuildingPointsMap_.AddEntriesFrom(input, _map_playerBuildingPointsMap_codec);
             break;
           }
@@ -213,7 +218,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 34: {
+          case 98: {
             playerBuildingPointsMap_.AddEntriesFrom(ref input, _map_playerBuildingPointsMap_codec);
             break;
           }

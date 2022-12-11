@@ -24,9 +24,9 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGTokenReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg5HQ0dUb2tlbi5wcm90byImCghHQ0dUb2tlbhINCgV2YWx1ZRgLIAEoDRIL",
-            "CgNrZXkYBCABKA1CIqoCH1dlZWR3YWNrZXIuU2hhcmVkLk5ldHdvcmsuUHJv",
-            "dG9iBnByb3RvMw=="));
+            "Cg5HQ0dUb2tlbi5wcm90bxIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Q",
+            "cm90byImCghHQ0dUb2tlbhINCgV2YWx1ZRgOIAEoDRILCgNrZXkYBCABKA1i",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +83,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "value" field.</summary>
-    public const int ValueFieldNumber = 11;
+    public const int ValueFieldNumber = 14;
     private uint value_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -155,7 +155,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteUInt32(Key);
       }
       if (Value != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(112);
         output.WriteUInt32(Value);
       }
       if (_unknownFields != null) {
@@ -173,7 +173,7 @@ namespace Weedwacker.Shared.Network.Proto {
         output.WriteUInt32(Key);
       }
       if (Value != 0) {
-        output.WriteRawTag(88);
+        output.WriteRawTag(112);
         output.WriteUInt32(Value);
       }
       if (_unknownFields != null) {
@@ -229,7 +229,7 @@ namespace Weedwacker.Shared.Network.Proto {
             Key = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 112: {
             Value = input.ReadUInt32();
             break;
           }
@@ -252,7 +252,7 @@ namespace Weedwacker.Shared.Network.Proto {
             Key = input.ReadUInt32();
             break;
           }
-          case 88: {
+          case 112: {
             Value = input.ReadUInt32();
             break;
           }

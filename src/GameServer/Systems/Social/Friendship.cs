@@ -18,7 +18,7 @@ namespace Weedwacker.GameServer.Systems.Social
                 ProfilePicture = FriendProfile.HeadImage,
                 WorldLevel = (uint)FriendProfile.WorldLevel,
                 Signature = FriendProfile.Signature,
-                OnlineState = GameServer.OnlinePlayers.ContainsKey(FriendUid) ? FriendOnlineState.Online : FriendOnlineState.FreiendDisconnect,
+                OnlineState = GameServer.OnlinePlayers.ContainsKey(FriendUid) ? FriendOnlineState.Online : FriendOnlineState.Disconnect,
                 LastActiveTime = (uint)FriendProfile.LastActiveTime,
                 NameCardId = (uint)FriendProfile.NameCardId,
                 Param = (uint)FriendProfile.DaysSinceLastLogin,

@@ -24,11 +24,11 @@ namespace Weedwacker.Shared.Network.Proto {
     static HomeLimitedShopInfoChangeNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVIb21lTGltaXRlZFNob3BJbmZvQ2hhbmdlTm90aWZ5LnByb3RvGhpIb21l",
-            "TGltaXRlZFNob3BHb29kcy5wcm90byJMCh9Ib21lTGltaXRlZFNob3BJbmZv",
-            "Q2hhbmdlTm90aWZ5EikKCmdvb2RzX2xpc3QYBSADKAsyFS5Ib21lTGltaXRl",
-            "ZFNob3BHb29kc0IiqgIfV2VlZHdhY2tlci5TaGFyZWQuTmV0d29yay5Qcm90",
-            "b2IGcHJvdG8z"));
+            "CiVIb21lTGltaXRlZFNob3BJbmZvQ2hhbmdlTm90aWZ5LnByb3RvEh9XZWVk",
+            "d2Fja2VyLlNoYXJlZC5OZXR3b3JrLlByb3RvGhpIb21lTGltaXRlZFNob3BH",
+            "b29kcy5wcm90byJsCh9Ib21lTGltaXRlZFNob3BJbmZvQ2hhbmdlTm90aWZ5",
+            "EkkKCmdvb2RzX2xpc3QYAiADKAsyNS5XZWVkd2Fja2VyLlNoYXJlZC5OZXR3",
+            "b3JrLlByb3RvLkhvbWVMaW1pdGVkU2hvcEdvb2RzYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.HomeLimitedShopGoodsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,9 +40,13 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 4790
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4790;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
   /// </summary>
   public sealed partial class HomeLimitedShopInfoChangeNotify : pb::IMessage<HomeLimitedShopInfoChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,9 +93,9 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "goods_list" field.</summary>
-    public const int GoodsListFieldNumber = 5;
+    public const int GoodsListFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Weedwacker.Shared.Network.Proto.HomeLimitedShopGoods> _repeated_goodsList_codec
-        = pb::FieldCodec.ForMessage(42, global::Weedwacker.Shared.Network.Proto.HomeLimitedShopGoods.Parser);
+        = pb::FieldCodec.ForMessage(18, global::Weedwacker.Shared.Network.Proto.HomeLimitedShopGoods.Parser);
     private readonly pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeLimitedShopGoods> goodsList_ = new pbc::RepeatedField<global::Weedwacker.Shared.Network.Proto.HomeLimitedShopGoods>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -192,7 +196,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 42: {
+          case 18: {
             goodsList_.AddEntriesFrom(input, _repeated_goodsList_codec);
             break;
           }
@@ -211,7 +215,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 42: {
+          case 18: {
             goodsList_.AddEntriesFrom(ref input, _repeated_goodsList_codec);
             break;
           }

@@ -24,10 +24,10 @@ namespace Weedwacker.Shared.Network.Proto {
     static GCGSettleOptionReqReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhHQ0dTZXR0bGVPcHRpb25SZXEucHJvdG8aFUdDR1NldHRsZU9wdGlvbi5w",
-            "cm90byI2ChJHQ0dTZXR0bGVPcHRpb25SZXESIAoGb3B0aW9uGAUgASgOMhAu",
-            "R0NHU2V0dGxlT3B0aW9uQiKqAh9XZWVkd2Fja2VyLlNoYXJlZC5OZXR3b3Jr",
-            "LlByb3RvYgZwcm90bzM="));
+            "ChhHQ0dTZXR0bGVPcHRpb25SZXEucHJvdG8SH1dlZWR3YWNrZXIuU2hhcmVk",
+            "Lk5ldHdvcmsuUHJvdG8aFUdDR1NldHRsZU9wdGlvbi5wcm90byJWChJHQ0dT",
+            "ZXR0bGVPcHRpb25SZXESQAoGb3B0aW9uGAkgASgOMjAuV2VlZHdhY2tlci5T",
+            "aGFyZWQuTmV0d29yay5Qcm90by5HQ0dTZXR0bGVPcHRpb25iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Weedwacker.Shared.Network.Proto.GCGSettleOptionReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -39,10 +39,14 @@ namespace Weedwacker.Shared.Network.Proto {
   }
   #region Messages
   /// <summary>
-  /// CmdId: 7124
-  /// EnetChannelId: 0
-  /// EnetIsReliable: true
-  /// IsAllowClient: true
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 7600;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
   /// </summary>
   public sealed partial class GCGSettleOptionReq : pb::IMessage<GCGSettleOptionReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -89,7 +93,7 @@ namespace Weedwacker.Shared.Network.Proto {
     }
 
     /// <summary>Field number for the "option" field.</summary>
-    public const int OptionFieldNumber = 5;
+    public const int OptionFieldNumber = 9;
     private global::Weedwacker.Shared.Network.Proto.GCGSettleOption option_ = global::Weedwacker.Shared.Network.Proto.GCGSettleOption.OptNone;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -143,7 +147,7 @@ namespace Weedwacker.Shared.Network.Proto {
       output.WriteRawMessage(this);
     #else
       if (Option != global::Weedwacker.Shared.Network.Proto.GCGSettleOption.OptNone) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(72);
         output.WriteEnum((int) Option);
       }
       if (_unknownFields != null) {
@@ -157,7 +161,7 @@ namespace Weedwacker.Shared.Network.Proto {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (Option != global::Weedwacker.Shared.Network.Proto.GCGSettleOption.OptNone) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(72);
         output.WriteEnum((int) Option);
       }
       if (_unknownFields != null) {
@@ -203,7 +207,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 40: {
+          case 72: {
             Option = (global::Weedwacker.Shared.Network.Proto.GCGSettleOption) input.ReadEnum();
             break;
           }
@@ -222,7 +226,7 @@ namespace Weedwacker.Shared.Network.Proto {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 40: {
+          case 72: {
             Option = (global::Weedwacker.Shared.Network.Proto.GCGSettleOption) input.ReadEnum();
             break;
           }
