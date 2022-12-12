@@ -60,6 +60,7 @@ namespace Weedwacker.GameServer.Enums
         MiracleRing = 51,
         Foundation = 52,
         WidgetGadget = 53,
-        PlaceHolder = 99
+        PlaceHolder = 99,
+        Vehicle = 9999, // unknown value
     }
 }

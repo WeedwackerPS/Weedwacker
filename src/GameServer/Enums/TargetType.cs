@@ -13,6 +13,7 @@ namespace Weedwacker.GameServer.Enums
         Applier,
         Alliance,
         CurTeamAvatars,
+        CurLocalAvatar,
         AllPlayerAvatars,
         Self,
         SelfAttackTarget,
@@ -23,5 +24,6 @@ namespace Weedwacker.GameServer.Enums
         Team,
         Enemy,
         Target,
+        TargetTeam,
     }
 }

@@ -11,6 +11,10 @@ namespace Weedwacker.GameServer.Enums
         CLIMATE_CLOUDY,
         CLIMATE_MIST,
         CLIMATE_RAIN,
-        CLIMATE_THUNDERSTORM
+        CLIMATE_THUNDERSTORM,
+        Cold,
+        ColdMonster, // wtf
+        SeaMist,
+        HeroCourse, // is this really climate type?
     }
 }

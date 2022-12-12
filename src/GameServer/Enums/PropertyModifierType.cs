@@ -64,5 +64,10 @@ namespace Weedwacker.GameServer.Enums
         Actor_ElecAddHurtExtraDelta,
         Actor_DefenseIgnoreRatio,
         Actor_IceAddHurtExtraDelta,
+        Actor_RecoverStaminaRatio,
+        Actor_HpThresholdRatio,
+        Actor_FlyOverallSpeedRatio,
+        Actor_ElemReactMeltDelta,
+        Actor_BulletMoveSpeedRatio,
     }
 }

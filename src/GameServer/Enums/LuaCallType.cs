@@ -4,5 +4,9 @@
     {
         CurChallengeGroup,
         CurGalleryControlGroup,
+        CurScenePlay,
+        FromGroup,
+        SpecificGroup,
+        AbilityGroupSourceGroup,
     }
 }
