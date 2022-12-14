@@ -3,7 +3,12 @@
     internal enum TowerType
     {
         None,
+        Simple,
         Mine,
         Electric,
+        Fire,
+        Ice,
+        Water,
+        Wind,
     }
 }

@@ -15,5 +15,6 @@ namespace Weedwacker.GameServer.Enums
         Overlap,
         Refresh,
         RefreshUniqueDurability,
+        RefreshAndAddDurability,
     }
 }

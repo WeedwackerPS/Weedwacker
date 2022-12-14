@@ -69,5 +69,6 @@ namespace Weedwacker.GameServer.Enums
         Actor_FlyOverallSpeedRatio,
         Actor_ElemReactMeltDelta,
         Actor_BulletMoveSpeedRatio,
+        Actor_ElemReactExplodeDelta,
     }
 }

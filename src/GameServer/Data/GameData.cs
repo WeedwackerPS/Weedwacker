@@ -124,7 +124,9 @@ namespace Weedwacker.GameServer.Data
                     typeof(ElementOuterGlowEffectMixin), typeof(TDPlayMixin), typeof(DoActionOnGlobalValueChangeMixin), typeof(ConnectLineMixin), typeof(TDPlayMixinV2),
                     typeof(ApplyModifierWithSharedDurabilityMixin), typeof(ElementShieldMixin), typeof(ChangeLockTypeMixin), typeof(PlayerUidNotifyMixin), typeof(AttachToGadgetStateMutexMixin),
                     typeof(AttachToPlayStageMixin), typeof(MultiBadmintonShootMixin), typeof(DynamicCollisionMixin), typeof(AttachModifierToTargetDistanceMixin), typeof(ChargeBarMixin),
-                    typeof(AttachToWidgetStateMixin), typeof(AttachModifierByActivityGachaStageMixin), typeof(PlatformMoveMixin),
+                    typeof(AttachToWidgetStateMixin), typeof(AttachModifierByActivityGachaStageMixin), typeof(PlatformMoveMixin), typeof(ModifyCameraMaxDistanceMixin),
+                    typeof(InteractTriggerAbilityMixin), typeof(GadgetChargeMixin), typeof(RocketJumpMixin), typeof(GadgetUpgradeChainMixin), typeof(AttachToAIAlertnessMixin),
+                    typeof(AttackHittingSceneMixin), typeof(ElementConvertToChargeBarValueMixin), typeof(DigAttachModifierToTargetDistanceMixin),
                     // Actions
                     typeof(SetAnimatorTrigger), typeof(SetAnimatorInt), typeof(SetAnimatorBool), typeof(SetCameraLockTime), typeof(ResetAnimatorTrigger), typeof(RemoveModifier),
                     typeof(ApplyModifier), typeof(TriggerBullet), typeof(EntityDoSkill), typeof(AvatarSkillStart), typeof(Predicated), typeof(SetGlobalValue), typeof(AttachModifier),
@@ -149,7 +151,10 @@ namespace Weedwacker.GameServer.Data
                     typeof(RemoveServerBuff), typeof(ChangeEnviroWeather), typeof(ModifyVehicleSkillCD), typeof(AddClimateMeter), typeof(FireEffectFirework), typeof(ShowProgressBarAction),
                     typeof(AttachEffectFirework), typeof(ChangeUGCRayTag), typeof(AddRegionalPlayVarValue), typeof(DoWidgetSystemAction), typeof(ShowScreenEffect), typeof(SetExtraAbilityEnable),
                     typeof(PushPos), typeof(GetPos), typeof(AddGlobalValueToTarget), typeof(ClearPos), typeof(SetExtraAbilityState), typeof(SetGlobalValueByTargetDistance), typeof(SectorCityManeuver),
-                    typeof(ChangeGadgetUIInteractHint), typeof(KillPlayEntity), typeof(ElementAttachForActivityGacha),
+                    typeof(ChangeGadgetUIInteractHint), typeof(KillPlayEntity), typeof(ElementAttachForActivityGacha), typeof(AddChargeBarValue), typeof(ClearLocalGadgets),
+                    typeof(EnablePositionSynchronization), typeof(ActTimeSlow), typeof(GetInteractIdToGlobalValue), typeof(FireChargeBarEffect), typeof(EnableGadgetSpecialCamera),
+                    typeof(ServerLuaTriggerEvent), typeof(TriggerThrowEquipPart), typeof(ShowTextMap), typeof(TriggerCreateGadgetToEquipPart), typeof(SetChargeBarValue),
+                    typeof(PushInterActionByConfigPath), typeof(ClearGlobalPos), typeof(RefreshUICombatBarLayout), typeof(CalcDvalinS04RebornPoint), typeof(SetAISkillCDMultiplier),
                     // Predicate
                     typeof(ByAny), typeof(ByAnimatorInt), typeof(ByLocalAvatarStamina), typeof(ByEntityAppearVisionType), typeof(ByTargetGlobalValue),typeof(ByTargetPositionToSelfPosition),
                     typeof(ByCurrentSceneId), typeof(ByEntityTypes), typeof(ByIsTargetCamp), typeof(ByCurTeamHasFeatureTag), typeof(ByTargetHPRatio), typeof(BySkillReady), typeof(ByItemNumber),
@@ -160,6 +165,7 @@ namespace Weedwacker.GameServer.Data
                     typeof(ByHitStrikeType), typeof(ByHitCritical), typeof(ByTargetConfigID), typeof(ByHitBoxType), typeof(ByAttackType), typeof(ByMonsterAirState), typeof(ByTargetGadgetState),
                     typeof(ByHitElementDurability), typeof(ByAvatarIsHost), typeof(ByHasFeatureTag), typeof(ByEntityIsAlive), typeof(ByHasModifier), typeof(ByLocalAvatarStaminaRatio),
                     typeof(ByTargetInArea), typeof(ByHasTag), typeof(ByCurrentSceneTypes), typeof(ByIsGadgetExistAround), typeof(ByHostOrGuest), typeof(ByBigTeamHasElementType),
+                    typeof(ByHasLevelTag),
                     // BornType
                     typeof(ConfigBornByTarget), typeof(ConfigBornByAttachPoint), typeof(ConfigBornBySelf), typeof(ConfigBornByCollisionPoint), typeof(ConfigBornBySelectedPoint),
                     typeof(ConfigBornByGlobalValue), typeof(ConfigBornBySelfOwner), typeof(ConfigBornByTargetLinearPoint), typeof(ConfigBornByHitPoint),

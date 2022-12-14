@@ -17,7 +17,7 @@ namespace Weedwacker.GameServer.Data.Common
             [JsonProperty] public readonly object? bonusCriticalHurt;
             [JsonProperty] public readonly object damagePercentageRatio;
             [JsonProperty] public readonly ElementType elementType;
-            [JsonProperty] public readonly float elementDurability;
+            [JsonProperty] public readonly object elementDurability;
         }
 
         public class HitPattern
