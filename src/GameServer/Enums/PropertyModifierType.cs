@@ -70,5 +70,12 @@ namespace Weedwacker.GameServer.Enums
         Actor_ElemReactMeltDelta,
         Actor_BulletMoveSpeedRatio,
         Actor_ElemReactExplodeDelta,
+        Actor_ElemReactSwirlFireDelta,
+        Actor_ElemReactSwirlIceDelta,
+        Actor_ElemReactSwirlElectricDelta,
+        Actor_ElemReactSConductDelta,
+        Actor_ElemReactBurnDelta,
+        Actor_GrassAddHurtDelta,
+        Entity_MassRatio,
     }
 }

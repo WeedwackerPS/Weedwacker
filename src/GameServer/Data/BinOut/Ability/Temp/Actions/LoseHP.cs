@@ -4,7 +4,7 @@ using Weedwacker.GameServer.Systems.World;
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class LoseHP : BaseAction
+    internal class LoseHP : ConfigAbilityAction
     {
         [JsonProperty] public readonly TargetType target;
         [JsonProperty] public readonly bool doOffStage;

@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class EnablePositionSynchronization : BaseAction
+    internal class EnablePositionSynchronization : ConfigAbilityAction
     {
         [JsonProperty] public readonly bool canBeHandledOnRecover;
         [JsonProperty] public readonly bool enable;

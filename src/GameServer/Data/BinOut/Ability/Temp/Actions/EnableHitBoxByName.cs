@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class EnableHitBoxByName : BaseAction
+    internal class EnableHitBoxByName : ConfigAbilityAction
     {
         [JsonProperty] public readonly bool doOffStage;
         [JsonProperty] public readonly string[] hitBoxNames;

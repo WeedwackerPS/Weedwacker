@@ -3,7 +3,7 @@ using Weedwacker.GameServer.Data.Common;
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class DamageByAttackValue : BaseAction
+    internal class DamageByAttackValue : ConfigAbilityAction
     {
         [JsonProperty] public readonly string target;
         [JsonProperty] public readonly BaseSelectTargetType? otherTargets;

@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class SetMaterialParamFloatByTransform : BaseAction
+    internal class SetMaterialParamFloatByTransform : ConfigAbilityAction
     {
         [JsonProperty] public readonly string matName;
         [JsonProperty] public readonly string patternName;

@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class PushPos : BaseAction
+    internal class PushPos : ConfigAbilityAction
     {
         [JsonProperty] public readonly BaseBornType posType;
     }

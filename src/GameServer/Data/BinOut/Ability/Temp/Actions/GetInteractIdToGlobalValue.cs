@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class GetInteractIdToGlobalValue : BaseAction
+    internal class GetInteractIdToGlobalValue : ConfigAbilityAction
     {
         [JsonProperty] public readonly string key;
     }

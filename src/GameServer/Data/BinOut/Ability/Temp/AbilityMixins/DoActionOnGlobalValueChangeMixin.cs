@@ -5,6 +5,6 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
     internal class DoActionOnGlobalValueChangeMixin : BaseAbilityMixin
     {
         [JsonProperty] public readonly string globalValueKey;
-        [JsonProperty] public readonly BaseAction[] actions;
+        [JsonProperty] public readonly ConfigAbilityAction[] actions;
     }
 }

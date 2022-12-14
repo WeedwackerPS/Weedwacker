@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class ChangeEnviroWeather : BaseAction
+    internal class ChangeEnviroWeather : ConfigAbilityAction
     {
         [JsonProperty] public readonly int areaId;
         [JsonProperty] public readonly int climateType;

@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class SetGlobalValueByTargetDistance : BaseAction
+    internal class SetGlobalValueByTargetDistance : ConfigAbilityAction
 	{
 		[JsonProperty] public readonly string key;
 		[JsonProperty] public readonly BaseSelectTargetType otherTargets;

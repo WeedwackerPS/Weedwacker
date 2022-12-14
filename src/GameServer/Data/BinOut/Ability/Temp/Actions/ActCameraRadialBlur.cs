@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class ActCameraRadialBlur : BaseAction
+    internal class ActCameraRadialBlur : ConfigAbilityAction
     {
         [JsonProperty] public readonly Blur cameraRadialBlur;
 

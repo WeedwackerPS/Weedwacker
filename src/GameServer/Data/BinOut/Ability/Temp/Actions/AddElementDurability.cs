@@ -3,7 +3,7 @@ using Weedwacker.GameServer.Enums;
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class AddElementDurability : BaseAction
+    internal class AddElementDurability : ConfigAbilityAction
     {
         [JsonProperty] public readonly TargetType target;
         [JsonProperty] public readonly bool doOffStage;

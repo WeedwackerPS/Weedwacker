@@ -8,6 +8,6 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
         [JsonProperty] public readonly AvatarEventType onEvent;
         [JsonProperty] public readonly string type;
         [JsonProperty] public readonly BasePredicate[] predicates;
-        [JsonProperty] public readonly BaseAction[] actions;
+        [JsonProperty] public readonly ConfigAbilityAction[] actions;
     }
 }

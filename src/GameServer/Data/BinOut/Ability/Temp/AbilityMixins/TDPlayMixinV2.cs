@@ -10,6 +10,6 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
         [JsonProperty] public readonly int baseAttackRange;
         [JsonProperty] public readonly int bulletID;
         [JsonProperty] public readonly BaseBornType born;
-        [JsonProperty] public readonly BaseAction[] onFireActions;
+        [JsonProperty] public readonly ConfigAbilityAction[] onFireActions;
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class SetAISkillCDMultiplier : BaseAction
+    internal class SetAISkillCDMultiplier : ConfigAbilityAction
     {
         [JsonProperty] public readonly float multiplier;
     }

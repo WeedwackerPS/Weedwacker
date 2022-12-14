@@ -2,10 +2,10 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class Randomed : BaseAction
+    internal class Randomed : ConfigAbilityAction
     {
         [JsonProperty] public readonly object chance;
-        [JsonProperty] public readonly BaseAction[] successActions;
-        [JsonProperty] public readonly BaseAction[] failActions;
+        [JsonProperty] public readonly ConfigAbilityAction[] successActions;
+        [JsonProperty] public readonly ConfigAbilityAction[] failActions;
     }
 }

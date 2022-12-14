@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class DropSubfield : BaseAction
+    internal class DropSubfield : ConfigAbilityAction
     {
         [JsonProperty] public readonly string subfieldName;
     }

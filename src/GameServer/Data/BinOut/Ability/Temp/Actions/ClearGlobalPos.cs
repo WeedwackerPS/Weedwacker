@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class ClearGlobalPos : BaseAction
+    internal class ClearGlobalPos : ConfigAbilityAction
     {
         [JsonProperty] public readonly string key;
         [JsonProperty] public readonly bool setTarget;

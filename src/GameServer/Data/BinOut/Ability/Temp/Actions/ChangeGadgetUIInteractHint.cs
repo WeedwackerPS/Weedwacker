@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class ChangeGadgetUIInteractHint : BaseAction
+    internal class ChangeGadgetUIInteractHint : ConfigAbilityAction
     {
         [JsonProperty] public readonly string hintTextMapId;
         [JsonProperty] public readonly bool canBeHandledOnRecover;

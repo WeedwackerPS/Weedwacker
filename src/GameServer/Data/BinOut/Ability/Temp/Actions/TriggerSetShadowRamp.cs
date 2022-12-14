@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class TriggerSetShadowRamp : BaseAction
+    internal class TriggerSetShadowRamp : ConfigAbilityAction
     {
         [JsonProperty] public readonly bool useShadowRamp;
         [JsonProperty] public readonly bool? doOffStage;

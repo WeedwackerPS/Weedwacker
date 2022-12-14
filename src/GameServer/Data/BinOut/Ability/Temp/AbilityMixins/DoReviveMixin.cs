@@ -4,6 +4,6 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
 {
     internal class DoReviveMixin : BaseAbilityMixin
     {
-        [JsonProperty] public readonly BaseAction[] onReviveActions;
+        [JsonProperty] public readonly ConfigAbilityAction[] onReviveActions;
     }
 }

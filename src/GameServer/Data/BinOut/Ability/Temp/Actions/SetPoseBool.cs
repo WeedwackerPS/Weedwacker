@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class SetPoseBool : BaseAction
+    internal class SetPoseBool : ConfigAbilityAction
     {
         [JsonProperty] public readonly string boolID;
         [JsonProperty] public readonly bool value;

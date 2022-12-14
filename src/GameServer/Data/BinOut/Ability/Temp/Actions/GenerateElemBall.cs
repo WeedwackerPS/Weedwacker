@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class GenerateElemBall : BaseAction
+    internal class GenerateElemBall : ConfigAbilityAction
     {
         [JsonProperty] public readonly int configID;
         [JsonProperty] public readonly BaseBornType born;

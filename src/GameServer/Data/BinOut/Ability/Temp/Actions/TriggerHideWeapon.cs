@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class TriggerHideWeapon : BaseAction
+    internal class TriggerHideWeapon : ConfigAbilityAction
     {
         [JsonProperty] public readonly bool doOffStage;
         [JsonProperty] public readonly bool visible;

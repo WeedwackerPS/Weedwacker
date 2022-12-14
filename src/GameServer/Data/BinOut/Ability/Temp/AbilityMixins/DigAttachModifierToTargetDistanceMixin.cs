@@ -6,7 +6,7 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
 	{
 		[JsonProperty] public readonly int targetID;
 		[JsonProperty] public readonly float distance;
-		[JsonProperty] public readonly BaseAction[] foundActionArray;
-		[JsonProperty] public readonly BaseAction[] unfoundActionArray;
+		[JsonProperty] public readonly ConfigAbilityAction[] foundActionArray;
+		[JsonProperty] public readonly ConfigAbilityAction[] unfoundActionArray;
     }
 }

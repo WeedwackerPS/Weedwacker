@@ -7,6 +7,6 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
     {
         [JsonProperty] public readonly ElementType[] elementTypes;
         [JsonProperty] public readonly bool doWhenEnergyMax;
-        [JsonProperty] public readonly BaseAction[] onGainEnergyByBall;
+        [JsonProperty] public readonly ConfigAbilityAction[] onGainEnergyByBall;
     }
 }

@@ -4,6 +4,6 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
 {
     internal class OnParentAbilityStartMixin : BaseAbilityMixin
     {
-        [JsonProperty] public readonly BaseAction[] actionList;
+        [JsonProperty] public readonly ConfigAbilityAction[] actionList;
     }
 }

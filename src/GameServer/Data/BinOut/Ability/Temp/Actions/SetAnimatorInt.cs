@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class SetAnimatorInt : BaseAction
+    internal class SetAnimatorInt : ConfigAbilityAction
     {
         [JsonProperty] public readonly BasePredicate[] predicates;
         [JsonProperty] public readonly string intID;

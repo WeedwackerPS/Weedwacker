@@ -16,7 +16,7 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp
             Type = type;
         }
 
-        public void InitializeActionLocalIds(BaseAction[]? actions, IDictionary<uint, IInvocation> localIdToInvocationMap)
+        public void InitializeActionLocalIds(ConfigAbilityAction[]? actions, IDictionary<uint, IInvocation> localIdToInvocationMap)
         {
             if (actions == null) return;
             ActionIndex = 0;

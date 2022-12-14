@@ -8,6 +8,6 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
         [JsonProperty] public readonly string opParam;
         [JsonProperty] public readonly int opType;
         [JsonProperty] public readonly LogicType logic;
-        [JsonProperty] public readonly BaseAction[] actions;
+        [JsonProperty] public readonly ConfigAbilityAction[] actions;
     }
 }

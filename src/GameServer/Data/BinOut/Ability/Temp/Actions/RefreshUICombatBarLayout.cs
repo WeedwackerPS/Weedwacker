@@ -1,6 +1,6 @@
 ﻿namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class RefreshUICombatBarLayout : BaseAction
+    internal class RefreshUICombatBarLayout : ConfigAbilityAction
     {
     }
 }

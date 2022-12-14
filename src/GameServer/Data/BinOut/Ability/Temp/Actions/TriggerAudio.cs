@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class TriggerAudio : BaseAction
+    internal class TriggerAudio : ConfigAbilityAction
     {
         [JsonProperty] public readonly BaseEventOp operation;
     }

@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class SetAvatarCanShakeOff : BaseAction
+    internal class SetAvatarCanShakeOff : ConfigAbilityAction
     {
         [JsonProperty] public readonly bool canShakeOff;
     }

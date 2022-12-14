@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class DungeonFogEffects : BaseAction
+    internal class DungeonFogEffects : ConfigAbilityAction
     {
         [JsonProperty] public readonly bool muteRemoteAction;
         [JsonProperty] public readonly bool? enable;

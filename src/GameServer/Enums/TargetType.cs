@@ -12,6 +12,7 @@ namespace Weedwacker.GameServer.Enums
         AllExceptSelf,
         Applier,
         Alliance,
+        BigTeam,
         CurTeamAvatars,
         CurLocalAvatar,
         AllPlayerAvatars,

@@ -3,7 +3,7 @@ using Weedwacker.GameServer.Enums;
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class FixedAvatarRushMove : BaseAction
+    internal class FixedAvatarRushMove : ConfigAbilityAction
     {
         [JsonProperty] public readonly TargetType target;
         [JsonProperty] public readonly BaseBornType toPos;

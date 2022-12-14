@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class SetChargeBarValue : BaseAction
+    internal class SetChargeBarValue : ConfigAbilityAction
     {
         [JsonProperty] public readonly float value;
     }

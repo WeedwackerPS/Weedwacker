@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class SetAvatarHitBuckets : BaseAction
+    internal class SetAvatarHitBuckets : ConfigAbilityAction
     {
         [JsonProperty] public readonly OverrideSetting overrideAvatarHitBucketSetting;
 

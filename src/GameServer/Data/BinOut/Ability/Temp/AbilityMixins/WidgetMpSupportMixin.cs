@@ -4,6 +4,6 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
 {
     internal class WidgetMpSupportMixin : BaseAbilityMixin
     {
-        [JsonProperty] public readonly BaseAction[] succActions;
+        [JsonProperty] public readonly ConfigAbilityAction[] succActions;
     }
 }

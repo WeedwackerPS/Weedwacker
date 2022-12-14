@@ -14,7 +14,10 @@ namespace Weedwacker.GameServer.Enums
         CLIMATE_THUNDERSTORM,
         Cold,
         ColdMonster, // wtf
+        HotMonster, // oh
         SeaMist,
+        TatariRegion,
+        TsurumiRegionalMist,
         HeroCourse, // is this really climate type?
     }
 }

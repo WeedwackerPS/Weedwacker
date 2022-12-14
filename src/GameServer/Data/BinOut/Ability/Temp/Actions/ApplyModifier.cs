@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class ApplyModifier : BaseAction
+    internal class ApplyModifier : ConfigAbilityAction
     {
         [JsonProperty] public readonly string? target;
         [JsonProperty] public readonly bool doOffStage;

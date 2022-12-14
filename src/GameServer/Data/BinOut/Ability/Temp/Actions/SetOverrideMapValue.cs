@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class SetOverrideMapValue : BaseAction
+    internal class SetOverrideMapValue : ConfigAbilityAction
     {
         [JsonProperty] public readonly BaseSelectTargetType otherTargets;
         [JsonProperty] public readonly BasePredicate[] predicates;

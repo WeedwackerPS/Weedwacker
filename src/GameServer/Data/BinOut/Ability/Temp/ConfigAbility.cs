@@ -10,19 +10,19 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp
         [JsonProperty] public readonly Dictionary<string, float>? abilitySpecials;
         [JsonProperty] public readonly BaseAbilityMixin[]? abilityMixins;
         [JsonProperty] public readonly Dictionary<string, AbilityModifier>? modifiers;
-        [JsonProperty] public readonly BaseAction[]? onAdded;
-        [JsonProperty] public readonly BaseAction[]? onRemoved;
-        [JsonProperty] public readonly BaseAction[]? onAbilityStart;
-        [JsonProperty] public readonly BaseAction[]? onKill;
-        [JsonProperty] public readonly BaseAction[]? onFieldEnter;
-        [JsonProperty] public readonly BaseAction[]? onExit;
-        [JsonProperty] public readonly BaseAction[]? onAttach;
-        [JsonProperty] public readonly BaseAction[]? onDetach;
-        [JsonProperty] public readonly BaseAction[]? onAvatarIn;
-        [JsonProperty] public readonly BaseAction[]? onAvatarOut;
-        [JsonProperty] public readonly BaseAction[]? onTriggerAvatarRay;
-        [JsonProperty] public readonly BaseAction[]? onVehicleIn;
-        [JsonProperty] public readonly BaseAction[]? onVehicleOut;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onAdded;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onRemoved;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onAbilityStart;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onKill;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onFieldEnter;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onExit;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onAttach;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onDetach;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onAvatarIn;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onAvatarOut;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onTriggerAvatarRay;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onVehicleIn;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onVehicleOut;
         [JsonProperty] public readonly bool isDynamicAbility; // if true, disable this ability by default. Enable via ConfigTalent AddAbility     
 
         [JsonIgnore] public ConcurrentDictionary<uint, IInvocation> LocalIdToInvocationMap;

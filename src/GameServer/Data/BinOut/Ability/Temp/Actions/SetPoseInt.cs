@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class SetPoseInt : BaseAction
+    internal class SetPoseInt : ConfigAbilityAction
     {
         [JsonProperty] public readonly string intID;
         [JsonProperty] public readonly int value;

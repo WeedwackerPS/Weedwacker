@@ -4,6 +4,6 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
 {
     internal class StageReadyMixin : BaseAbilityMixin
     {
-        [JsonProperty] public readonly BaseAction[] onStageReady;
+        [JsonProperty] public readonly ConfigAbilityAction[] onStageReady;
     }
 }

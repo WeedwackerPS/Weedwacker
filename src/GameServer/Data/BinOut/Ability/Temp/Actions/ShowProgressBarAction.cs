@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class ShowProgressBarAction : BaseAction
+    internal class ShowProgressBarAction : ConfigAbilityAction
     {
         [JsonProperty] public readonly bool show;
     }

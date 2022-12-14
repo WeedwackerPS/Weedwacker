@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class AvatarCameraParam : BaseAction
+    internal class AvatarCameraParam : ConfigAbilityAction
     {
         [JsonProperty] public readonly CamParam cameraParam;
 

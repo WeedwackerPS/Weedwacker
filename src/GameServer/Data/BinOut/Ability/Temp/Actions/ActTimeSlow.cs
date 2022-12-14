@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class ActTimeSlow : BaseAction
+    internal class ActTimeSlow : ConfigAbilityAction
     {
         [JsonProperty] public readonly TimeSlow timeSlow;
 

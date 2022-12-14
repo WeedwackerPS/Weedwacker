@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class AvatarSkillStart : BaseAction
+    internal class AvatarSkillStart : ConfigAbilityAction
     {
         [JsonProperty] public readonly int overtime;
         [JsonProperty] public readonly object cdRatio;

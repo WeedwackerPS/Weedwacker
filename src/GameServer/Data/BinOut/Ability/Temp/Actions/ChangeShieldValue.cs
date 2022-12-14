@@ -3,7 +3,7 @@ using Weedwacker.GameServer.Enums;
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class ChangeShieldValue : BaseAction
+    internal class ChangeShieldValue : ConfigAbilityAction
     {
         [JsonProperty] public readonly TargetType target;
         [JsonProperty] public readonly string modifierName;

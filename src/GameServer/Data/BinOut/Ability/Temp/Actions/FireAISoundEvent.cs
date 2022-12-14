@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class FireAISoundEvent : BaseAction
+    internal class FireAISoundEvent : ConfigAbilityAction
     {
         [JsonProperty] public readonly float volume;
     }

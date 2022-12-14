@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class EnableAIStealthy : BaseAction
+    internal class EnableAIStealthy : ConfigAbilityAction
     {
         [JsonProperty] public readonly bool enable;
     }

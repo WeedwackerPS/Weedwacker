@@ -4,7 +4,7 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
 {
     internal class OnAvatarUseSkillMixin : BaseAbilityMixin
     {
-        [JsonProperty] public readonly BaseAction[] onTriggerSkill;
+        [JsonProperty] public readonly ConfigAbilityAction[] onTriggerSkill;
         [JsonProperty] public readonly float clearSkillIdDelay;
     }
 }
