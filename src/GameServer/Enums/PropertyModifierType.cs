@@ -76,6 +76,14 @@ namespace Weedwacker.GameServer.Enums
         Actor_ElemReactSConductDelta,
         Actor_ElemReactBurnDelta,
         Actor_GrassAddHurtDelta,
+        Actor_FireMuteHurtDelta,
+        Actor_ElecMuteHurtDelta,
+        Actor_WaterMuteHurtDelta,
+        Actor_GrassMuteHurtDelta,
+        Actor_WindMuteHurtDelta,
+        Actor_IceMuteHurtDelta,
+        Actor_RockMuteHurtDelta,
+        Actor_PhysicalMuteHurtDelta,
         Entity_MassRatio,
     }
 }

@@ -58,6 +58,7 @@ namespace Weedwacker.GameServer.Data
         public readonly static ConcurrentDictionary<string, ConfigAbilityContainer[]> ConfigAbilityEquipMap = new(); // file name
         public readonly static ConcurrentDictionary<string, ConfigAbilityContainer[]> ConfigAbilityGadgetMap = new(); // file name
         public readonly static ConcurrentDictionary<string, ConfigAbilityContainer[]> ConfigAbilityLevelMap = new(); // file name
+        public readonly static ConcurrentDictionary<string, ConfigAbilityContainer[]> ConfigAbilityMonsterAffixMap = new(); // file name
         public readonly static ConcurrentDictionary<string, ConfigAbilityContainer[]> ConfigAbilityQuestMap = new(); // file name
         public readonly static ConcurrentDictionary<string, ConfigAbilityContainer[]> ConfigAbilityTeamMap = new(); // file name
         public readonly static ConcurrentDictionary<string, ConfigAvatar> ConfigAvatarMap = new();
@@ -135,7 +136,8 @@ namespace Weedwacker.GameServer.Data
                     typeof(InteractTriggerAbilityMixin), typeof(GadgetChargeMixin), typeof(RocketJumpMixin), typeof(GadgetUpgradeChainMixin), typeof(AttachToAIAlertnessMixin),
                     typeof(AttackHittingSceneMixin), typeof(ElementConvertToChargeBarValueMixin), typeof(DigAttachModifierToTargetDistanceMixin), typeof(SteerAttackMixin),
                     typeof(DoActionByPoseIDMixin), typeof(ExcludeGravityMixin), typeof(ModifyElementDecrateMixin), typeof(VelocityForceMixin), typeof(MonsterDefendMixin),
-                    typeof(RigidBodyFreezeMixin),
+                    typeof(RigidBodyFreezeMixin), typeof(ServerCreateGadgetOnKillMixin), typeof(TriggerResistDamageTextMixin), typeof(DiePatternSwitchMixin), typeof(BillboardFixedMarkMixin),
+                    typeof(ServerFinishWatcherMixin), typeof(RejectAttackMixinV2), typeof(BillboardMarkMixin), typeof(OverrideMonsterMoveSpeedRatioMixin),
                     // Actions
                     typeof(SetAnimatorTrigger), typeof(SetAnimatorInt), typeof(SetAnimatorBool), typeof(SetCameraLockTime), typeof(ResetAnimatorTrigger), typeof(RemoveModifier),
                     typeof(ApplyModifier), typeof(TriggerBullet), typeof(EntityDoSkill), typeof(AvatarSkillStart), typeof(Predicated), typeof(SetGlobalValue), typeof(AttachModifier),
@@ -167,7 +169,7 @@ namespace Weedwacker.GameServer.Data
                     typeof(ForceEnableShakeOffButton), typeof(AttachElementTypeResistance), typeof(EquipAffixStart), typeof(GetTeamTotalMaxEnergyToOverridemap), typeof(ReTriggerAISkillInitialCD),
                     typeof(SetAIHitFeeling), typeof(SetNeuronEnable), typeof(TryFindBlinkPoint), typeof(FixedMonsterRushMove), typeof(TurnDirectionToPos), typeof(TryFindBlinkPointByBorn),
                     typeof(ResetAIThreatBroadcastRange), typeof(ConfigAbilityAction), typeof(SetAISkillCDAvailableNow), typeof(SetEntityScale), typeof(ServerMonsterLog), typeof(SetAISkillGCD),
-                    typeof(UseSkillEliteSet),
+                    typeof(UseSkillEliteSet), typeof(ResetAIResistTauntLevel), typeof(SetCanDieImmediately),
                     // Predicate
                     typeof(ByAny), typeof(ByAnimatorInt), typeof(ByLocalAvatarStamina), typeof(ByEntityAppearVisionType), typeof(ByTargetGlobalValue),typeof(ByTargetPositionToSelfPosition),
                     typeof(ByCurrentSceneId), typeof(ByEntityTypes), typeof(ByIsTargetCamp), typeof(ByCurTeamHasFeatureTag), typeof(ByTargetHPRatio), typeof(BySkillReady), typeof(ByItemNumber),
@@ -178,7 +180,7 @@ namespace Weedwacker.GameServer.Data
                     typeof(ByHitStrikeType), typeof(ByHitCritical), typeof(ByTargetConfigID), typeof(ByHitBoxType), typeof(ByAttackType), typeof(ByMonsterAirState), typeof(ByTargetGadgetState),
                     typeof(ByHitElementDurability), typeof(ByAvatarIsHost), typeof(ByHasFeatureTag), typeof(ByEntityIsAlive), typeof(ByHasModifier), typeof(ByLocalAvatarStaminaRatio),
                     typeof(ByTargetInArea), typeof(ByHasTag), typeof(ByCurrentSceneTypes), typeof(ByIsGadgetExistAround), typeof(ByHostOrGuest), typeof(ByBigTeamHasElementType),
-                    typeof(ByHasLevelTag), typeof(ByHasShield), typeof(ByEquipAffixReady), typeof(ByTargetElement), typeof(ByCurTeamHasElementType),
+                    typeof(ByHasLevelTag), typeof(ByHasShield), typeof(ByEquipAffixReady), typeof(ByTargetElement), typeof(ByCurTeamHasElementType), typeof(ByHitBoxName), typeof(ByHitImpulse),
                     // BornType
                     typeof(ConfigBornByTarget), typeof(ConfigBornByAttachPoint), typeof(ConfigBornBySelf), typeof(ConfigBornByCollisionPoint), typeof(ConfigBornBySelectedPoint),
                     typeof(ConfigBornByGlobalValue), typeof(ConfigBornBySelfOwner), typeof(ConfigBornByTargetLinearPoint), typeof(ConfigBornByHitPoint), typeof(ConfigBornByPredicatePoint),
@@ -412,6 +414,7 @@ namespace Weedwacker.GameServer.Data
                 LoadBinOutFolder(Path.Combine(binPath, "Ability", "Temp", "EquipAbilities"), ConfigAbilityEquipMap, false),
                 LoadBinOutFolder(Path.Combine(binPath, "Ability", "Temp", "GadgetAbilities"), ConfigAbilityGadgetMap, false),
                 LoadBinOutFolder(Path.Combine(binPath, "Ability", "Temp", "LevelAbilities"), ConfigAbilityLevelMap, false),
+                LoadBinOutFolder(Path.Combine(binPath, "Ability", "Temp", "MonsterAffixAbilities"), ConfigAbilityMonsterAffixMap, false),
                 LoadBinOutFolder(Path.Combine(binPath, "Ability", "Temp", "QuestAbilities"), ConfigAbilityQuestMap, false),
                 LoadBinOutFolder(Path.Combine(binPath, "Ability", "Temp", "TeamAbilities"), ConfigAbilityTeamMap, false),
                 LoadBinOutFolder(Path.Combine(binPath, "Scene", "SceneNpcBorn"), o => o.sceneId,  SceneNpcBornDataMap),
