@@ -26,5 +26,6 @@ namespace Weedwacker.GameServer.Enums
         Enemy,
         Target,
         TargetTeam,
+        MPLevel,
     }
 }

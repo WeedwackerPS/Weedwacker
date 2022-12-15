@@ -84,6 +84,8 @@ namespace Weedwacker.GameServer.Enums
         Actor_IceMuteHurtDelta,
         Actor_RockMuteHurtDelta,
         Actor_PhysicalMuteHurtDelta,
+        Actor_CriticalHurtDelta,
+        Actor_FlyForwardSpeedMaxRatio,
         Entity_MassRatio,
     }
 }

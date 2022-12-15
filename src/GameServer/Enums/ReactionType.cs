@@ -14,6 +14,7 @@ namespace Weedwacker.GameServer.Enums
         CrystallizeWater,
         Explode,
         Freeze,
+        FrozenBroken,
         Melt,
         Shock,
         Stream,

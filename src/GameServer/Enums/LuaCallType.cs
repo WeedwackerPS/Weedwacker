@@ -5,6 +5,7 @@
         CurChallengeGroup,
         CurGalleryControlGroup,
         CurScenePlay,
+        CurRogueBossGroup,
         FromGroup,
         SpecificGroup,
         AbilityGroupSourceGroup,

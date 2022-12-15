@@ -53,6 +53,7 @@ namespace Weedwacker.GameServer.Data
         //---------------------------------------------------------------------------------------------------------------------------------//
         public readonly static ConcurrentDictionary<string, AbilityGroupData> AbilityGroupDataMap = new(); // skillDepotAbilityGroup name
         public readonly static SortedList<int, AvatarHeroEntityData> AvatarHeroEntityDataMap = new();
+        public readonly static ConcurrentDictionary<string, ConfigAbilityContainer[]> ConfigAbilityActivityMap = new(); // file name
         public readonly static ConcurrentDictionary<string, ConfigAbilityContainer[]> ConfigAbilityAnimalMap = new(); // file name
         public readonly static ConcurrentDictionary<string, ConfigAbilityContainer[]> ConfigAbilityChallengeMap = new(); // file name
         public readonly static ConcurrentDictionary<string, ConfigAbilityContainer[]> ConfigAbilityEquipMap = new(); // file name
@@ -137,7 +138,9 @@ namespace Weedwacker.GameServer.Data
                     typeof(AttackHittingSceneMixin), typeof(ElementConvertToChargeBarValueMixin), typeof(DigAttachModifierToTargetDistanceMixin), typeof(SteerAttackMixin),
                     typeof(DoActionByPoseIDMixin), typeof(ExcludeGravityMixin), typeof(ModifyElementDecrateMixin), typeof(VelocityForceMixin), typeof(MonsterDefendMixin),
                     typeof(RigidBodyFreezeMixin), typeof(ServerCreateGadgetOnKillMixin), typeof(TriggerResistDamageTextMixin), typeof(DiePatternSwitchMixin), typeof(BillboardFixedMarkMixin),
-                    typeof(ServerFinishWatcherMixin), typeof(RejectAttackMixinV2), typeof(BillboardMarkMixin), typeof(OverrideMonsterMoveSpeedRatioMixin),
+                    typeof(ServerFinishWatcherMixin), typeof(RejectAttackMixinV2), typeof(BillboardMarkMixin), typeof(OverrideMonsterMoveSpeedRatioMixin), typeof(AddAvatarInCDMixin),
+                    typeof(DoActionByEntityKillMixin), typeof(SetSkillCanUseInStateMixin), typeof(EntityInVisibleMixin), typeof(LocalAvatarsMixin), typeof(EntityDitherMixin),
+                    typeof(HideAvatarSkillMixin), typeof(EntityDisplacementMixin),
                     // Actions
                     typeof(SetAnimatorTrigger), typeof(SetAnimatorInt), typeof(SetAnimatorBool), typeof(SetCameraLockTime), typeof(ResetAnimatorTrigger), typeof(RemoveModifier),
                     typeof(ApplyModifier), typeof(TriggerBullet), typeof(EntityDoSkill), typeof(AvatarSkillStart), typeof(Predicated), typeof(SetGlobalValue), typeof(AttachModifier),
@@ -169,7 +172,7 @@ namespace Weedwacker.GameServer.Data
                     typeof(ForceEnableShakeOffButton), typeof(AttachElementTypeResistance), typeof(EquipAffixStart), typeof(GetTeamTotalMaxEnergyToOverridemap), typeof(ReTriggerAISkillInitialCD),
                     typeof(SetAIHitFeeling), typeof(SetNeuronEnable), typeof(TryFindBlinkPoint), typeof(FixedMonsterRushMove), typeof(TurnDirectionToPos), typeof(TryFindBlinkPointByBorn),
                     typeof(ResetAIThreatBroadcastRange), typeof(ConfigAbilityAction), typeof(SetAISkillCDAvailableNow), typeof(SetEntityScale), typeof(ServerMonsterLog), typeof(SetAISkillGCD),
-                    typeof(UseSkillEliteSet), typeof(ResetAIResistTauntLevel), typeof(SetCanDieImmediately),
+                    typeof(UseSkillEliteSet), typeof(ResetAIResistTauntLevel), typeof(SetCanDieImmediately), typeof(TriggerCrystalLinkAbility), typeof(ApplyCrystalModifier),
                     // Predicate
                     typeof(ByAny), typeof(ByAnimatorInt), typeof(ByLocalAvatarStamina), typeof(ByEntityAppearVisionType), typeof(ByTargetGlobalValue),typeof(ByTargetPositionToSelfPosition),
                     typeof(ByCurrentSceneId), typeof(ByEntityTypes), typeof(ByIsTargetCamp), typeof(ByCurTeamHasFeatureTag), typeof(ByTargetHPRatio), typeof(BySkillReady), typeof(ByItemNumber),
@@ -408,6 +411,7 @@ namespace Weedwacker.GameServer.Data
                 LoadExcel(excelPath, o => Tuple.Create(o.weaponPromoteId, o.promoteLevel), WeaponPromoteDataMap),
                 LoadExcel(excelPath, o => o.areaId, WeatherDataMap),
 
+                LoadBinOutFolder(Path.Combine(binPath, "Ability", "Temp", "ActivityAbilities"), ConfigAbilityActivityMap, false),
                 LoadBinOutFolder(Path.Combine(binPath, "Ability", "Temp", "AnimalAbilities"), ConfigAbilityAnimalMap, false),
                 LoadBinOutFolder(Path.Combine(binPath, "Ability", "Temp", "AvatarAbilities"), ConfigAbilityAvatarMap, false),
                 LoadBinOutFolder(Path.Combine(binPath, "Ability", "Temp", "ChallengeAbilities"), ConfigAbilityChallengeMap, false),

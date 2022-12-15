@@ -8,6 +8,7 @@ namespace Weedwacker.GameServer.Enums
     {
         None,
         HP,
+        HPUp,
         HPDown,
         ChestOpen,
         PickItem,
