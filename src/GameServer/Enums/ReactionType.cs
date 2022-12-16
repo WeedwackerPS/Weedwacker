@@ -23,5 +23,7 @@ namespace Weedwacker.GameServer.Enums
         SwirlFire,
         SwirlIce,
         SwirlWater,
+        Overgrow,
+        Overdose,
     }
 }

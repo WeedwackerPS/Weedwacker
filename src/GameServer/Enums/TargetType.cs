@@ -27,5 +27,8 @@ namespace Weedwacker.GameServer.Enums
         Target,
         TargetTeam,
         MPLevel,
+        OwnerCamp,
+        CasterOriginOwner,
+        TargetOriginOwner,
     }
 }

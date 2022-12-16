@@ -12,5 +12,17 @@ namespace Weedwacker.GameServer.Enums
         NORMAL,
         CatFeedPoint,
         DogFeedPoint,
+        AureaePoint,
+        SleepPoint,
+        OceanidMovePoint,
+        SitPoint,
+        PreachPoint,
+        ThreatPoint,
+        MakingPoint,
+        DancingPoint,
+        TrainingPoint,
+        SurroundPoint,
+        BuildingPoint,
+        SearchPoint,
     }
 }

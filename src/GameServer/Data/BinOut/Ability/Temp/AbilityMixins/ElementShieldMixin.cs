@@ -7,6 +7,6 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
     {
         [JsonProperty] public readonly ElementType elementType;
         [JsonProperty] public readonly float shieldHPRatio;
-        [JsonProperty] public readonly float damageRatio;
+        [JsonProperty] public readonly object damageRatio;
     }
 }

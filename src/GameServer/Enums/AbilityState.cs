@@ -8,6 +8,7 @@ namespace Weedwacker.GameServer.Enums
     {
         None,
         ElementBurning,
+        ElementElectric,
         ElementFire,
         ElementFreeze,
         ElementFrozen,
@@ -18,5 +19,6 @@ namespace Weedwacker.GameServer.Enums
         Limbo,
         LockHP,
         MuteTaunt,
+        Struggle,
     }
 }

@@ -8,5 +8,7 @@ namespace Weedwacker.GameServer.Enums
     {
         RushMoveType,
         InertiaType,
+        RetreatAirType,
+        WindZoneType,
     }
 }
