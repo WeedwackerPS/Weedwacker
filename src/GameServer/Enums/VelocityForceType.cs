@@ -10,5 +10,7 @@ namespace Weedwacker.GameServer.Enums
         InertiaType,
         RetreatAirType,
         WindZoneType,
+        LightCoreTypeNormal,
+        LightCoreTypeAccelerate,
     }
 }

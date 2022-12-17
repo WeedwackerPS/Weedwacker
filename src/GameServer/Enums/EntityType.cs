@@ -61,6 +61,8 @@ namespace Weedwacker.GameServer.Enums
         Foundation = 52,
         WidgetGadget = 53,
         PlaceHolder = 99,
-        Vehicle = 9999, // unknown value
+        // unknown values
+        Vehicle, 
+        FishRod,
     }
 }

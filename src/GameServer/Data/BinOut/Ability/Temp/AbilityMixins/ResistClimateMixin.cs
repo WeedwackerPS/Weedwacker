@@ -9,6 +9,6 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
         [JsonProperty] public readonly ClimateType[] climateTypes;
         [JsonProperty] public readonly string source;
         [JsonProperty] public readonly string trend;
-        [JsonProperty] public readonly float ratio;
+        [JsonProperty] public readonly object ratio;
     }
 }

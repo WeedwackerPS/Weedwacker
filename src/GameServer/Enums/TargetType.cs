@@ -30,5 +30,6 @@ namespace Weedwacker.GameServer.Enums
         OwnerCamp,
         CasterOriginOwner,
         TargetOriginOwner,
+        Vehicle,
     }
 }

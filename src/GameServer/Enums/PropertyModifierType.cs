@@ -87,6 +87,15 @@ namespace Weedwacker.GameServer.Enums
         Actor_CriticalHurtDelta,
         Actor_FlyForwardSpeedMaxRatio,
         Actor_WeightDelta,
+        Actor_AniDamageDelta,
+        Actor_HitHeadDmgRatio,
+        Actor_FlyBackSpeedMaxRatio,
+        Actor_ElemReactFrozenBrokenDelta,
+        Actor_FlyHorizontalSpeedMaxRatio,
+        Actor_FlyRotationAngularVelocityRatio,
+        Actor_FlyDownSpeedRatio,
+        Actor_MaxStaminaDelta,
         Entity_MassRatio,
+        Entity_ChargeSpeedRatioDelta,
     }
 }

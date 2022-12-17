@@ -53,6 +53,7 @@ namespace Weedwacker.GameServer.Data
         //---------------------------------------------------------------------------------------------------------------------------------//
         public readonly static ConcurrentDictionary<string, AbilityGroupData> AbilityGroupDataMap = new(); // skillDepotAbilityGroup name
         public readonly static SortedList<int, AvatarHeroEntityData> AvatarHeroEntityDataMap = new();
+        public readonly static ConcurrentDictionary<string, ConfigAbilityContainer[]> ConfigAbilityMap = new(); // file name
         public readonly static ConcurrentDictionary<string, ConfigAbilityContainer[]> ConfigAbilityActivityMap = new(); // file name
         public readonly static ConcurrentDictionary<string, ConfigAbilityContainer[]> ConfigAbilityAnimalMap = new(); // file name
         public readonly static ConcurrentDictionary<string, ConfigAbilityContainer[]> ConfigAbilityChallengeMap = new(); // file name
@@ -148,7 +149,13 @@ namespace Weedwacker.GameServer.Data
                     typeof(AttachActionToModifierMixin), typeof(SetAnimationPauseByAbilityStateMixin), typeof(EnableCharacterMoveOnWaterMixin), typeof(ScenePropSyncMixin),
                     typeof(AttachToElementTypeMixin), typeof(TileAttackManagerMixin), typeof(AnimatorRotationCompensateMixin), typeof(AttachModifierToClimateMeterMixin),
                     typeof(SendPostionToShaderCutMixin), typeof(FixDvalinS04MoveMixin), typeof(SteerAttackMoveMixin), typeof(ClampDamageReceivedMixin), typeof(AvatarLockForwardFlyMixin),
-                    typeof(DoActionBySelfModifierElementDurabilityRatioMixin), typeof(BoxClampWindZoneMixin), typeof(DvalinS01BoxMoxeMixin),
+                    typeof(DoActionBySelfModifierElementDurabilityRatioMixin), typeof(BoxClampWindZoneMixin), typeof(DvalinS01BoxMoxeMixin), typeof(HomeworldServerEventMixin),
+                    typeof(WatcherSystemMixin), typeof(UGCTimeControlMixin), typeof(CollisionMixin), typeof(WidgetCDSyncMixin), typeof(FishingAimParabolaMixin), typeof(MonsterReadyMixin),
+                    typeof(AttachModifierToSurfaceTypeMixin), typeof(DebugMixin), typeof(OverrideStickElemUIMixin), typeof(DoActionByRayTagMixin), typeof(SelfAddDurabilityMixin),
+                    typeof(RelyOnElementMixin), typeof(TriggerBeHitSupportMixin), typeof(TileAttackMixin), typeof(ElectricCoreLineMixin), typeof(TileComplexManagerMixin),
+                    typeof(StreamingModifierMixin), typeof(ElectricCoreMoveMixin), typeof(DoTileActionManagerMixin), typeof(AttachModifierToSelfGlobalValueAndTalkStateMixin),
+                    typeof(ElementReactionShockMixin), typeof(EnableSprintInBlackMudMixin), typeof(AttachModifierToSelfGlobalValueAndTalkStateNoInitMixin),
+                    typeof(AttackCostElementMixin),
                     // Actions
                     typeof(SetAnimatorTrigger), typeof(SetAnimatorInt), typeof(SetAnimatorBool), typeof(SetCameraLockTime), typeof(ResetAnimatorTrigger), typeof(RemoveModifier),
                     typeof(ApplyModifier), typeof(TriggerBullet), typeof(EntityDoSkill), typeof(AvatarSkillStart), typeof(Predicated), typeof(SetGlobalValue), typeof(AttachModifier),
@@ -187,7 +194,11 @@ namespace Weedwacker.GameServer.Data
                     typeof(SetUICombatBarAsh), typeof(AttachBulletAimPoint), typeof(SetSkillAnchor), typeof(IgnoreMoveColToRockCol), typeof(DestroyTile), typeof(SetUICombatBarSpark),
                     typeof(SetRegionalPlayVarValue), typeof(CreateTile), typeof(SyncEntityPositionByNormalizedTime), typeof(SetSpecialCamera), typeof(SetKeepInAirVelocityForce), typeof(SyncToStageScript),
                     typeof(EnableAvatarFlyStateTrail), typeof(ToNearstAnchorPoint), typeof(DoBlinkByGlobalPos), typeof(ForceAirStateFly), typeof(PushDvalinS01Process), typeof(TriggerPlayerDie),
-                    typeof(SetDvalinS01FlyState), typeof(RegistToStageScript), typeof(AttachUIEffect),
+                    typeof(SetDvalinS01FlyState), typeof(RegistToStageScript), typeof(AttachUIEffect), typeof(TriggerGadgetInteractive), typeof(GuidePaimonDisappearEnd), typeof(SetPaimonLookAtAvatar),
+                    typeof(TriggerUGCGadgetMove), typeof(PaimonAction), typeof(SetPaimonTempOffset), typeof(FireFishingEvent), typeof(AvatarEnterViewBias), typeof(WidgetSkillStart),
+                    typeof(AvatarExitViewBias), typeof(CaptureAnimal), typeof(AvatarShareCDSkillStart), typeof(SetPaimonLookAtCamera), typeof(UpdateReactionDamage), typeof(ApplyLevelModifier),
+                    typeof(FireEffectForStorm), typeof(SendEvtElectricCoreMoveEnterP1), typeof(SendEvtElectricCoreMoveInterrupt), typeof(DoTileAction), typeof(SetCrashDamage),
+                    typeof(SetCrystalShieldHpToOverrideMap), typeof(FireGainCrystalSeedEvent),
                     // Predicate
                     typeof(ByAny), typeof(ByAnimatorInt), typeof(ByLocalAvatarStamina), typeof(ByEntityAppearVisionType), typeof(ByTargetGlobalValue),typeof(ByTargetPositionToSelfPosition),
                     typeof(ByCurrentSceneId), typeof(ByEntityTypes), typeof(ByIsTargetCamp), typeof(ByCurTeamHasFeatureTag), typeof(ByTargetHPRatio), typeof(BySkillReady), typeof(ByItemNumber),
@@ -199,17 +210,18 @@ namespace Weedwacker.GameServer.Data
                     typeof(ByHitElementDurability), typeof(ByAvatarIsHost), typeof(ByHasFeatureTag), typeof(ByEntityIsAlive), typeof(ByHasModifier), typeof(ByLocalAvatarStaminaRatio),
                     typeof(ByTargetInArea), typeof(ByHasTag), typeof(ByCurrentSceneTypes), typeof(ByIsGadgetExistAround), typeof(ByHostOrGuest), typeof(ByBigTeamHasElementType), typeof(ByDungeonSettled),
                     typeof(ByHasLevelTag), typeof(ByHasShield), typeof(ByEquipAffixReady), typeof(ByTargetElement), typeof(ByCurTeamHasElementType), typeof(ByHitBoxName), typeof(ByHitImpulse),
-                    typeof(BySceneSurfaceType), typeof(ByHasShieldV2), typeof(ByAnimatorFloat), typeof(ByTargetLayoutArea), typeof(ByEnergy), typeof(ByStageIsReadyTemp),
-                    typeof(BySelfForwardAndTargetPosition), typeof(ByFindBlinkPointSuccess),
+                    typeof(BySceneSurfaceType), typeof(ByHasShieldV2), typeof(ByAnimatorFloat), typeof(ByTargetLayoutArea), typeof(ByEnergy), typeof(ByStageIsReadyTemp), typeof(ByScenePropState),
+                    typeof(BySelfForwardAndTargetPosition), typeof(ByFindBlinkPointSuccess), typeof(ByElementTriggerEntityType), typeof(ByElementReactionType), typeof(ByElementReactionSourceType),
                     // BornType
                     typeof(ConfigBornByTarget), typeof(ConfigBornByAttachPoint), typeof(ConfigBornBySelf), typeof(ConfigBornByCollisionPoint), typeof(ConfigBornBySelectedPoint),
                     typeof(ConfigBornByGlobalValue), typeof(ConfigBornBySelfOwner), typeof(ConfigBornByTargetLinearPoint), typeof(ConfigBornByHitPoint), typeof(ConfigBornByPredicatePoint),
-                    typeof(ConfigBornByTeleportToPoint), typeof(ConfigBornByActionPoint), typeof(ConfigBornByWorld), typeof(ConfigBornByFollowEffectOverPos),
+                    typeof(ConfigBornByTeleportToPoint), typeof(ConfigBornByActionPoint), typeof(ConfigBornByWorld), typeof(ConfigBornByFollowEffectOverPos), typeof(ConfigBornByStormLightning),
+                    typeof(ConfigBornByElementPos),
                     // DirectionType
                     typeof(ConfigDirectionByAttachPoint),
                     // SelectTargetType
                     typeof(SelectTargetsByEquipParts), typeof(SelectTargetsByShape), typeof(SelectTargetsByChildren), typeof(SelectTargetsByTag), typeof(SelectTargetsByLCTrigger),
-                    typeof(SelectTargetsBySelfGroup), typeof(SelectActionPointByID),
+                    typeof(SelectTargetsBySelfGroup), typeof(SelectActionPointByID), typeof(SelectTargetsByChildrenEntityType),
                     // AttackPattern
                     typeof(ConfigAttackSphere), typeof(ConfigAttackCircle), typeof(ConfigAttackBox),
                     // EventOp
@@ -295,12 +307,6 @@ namespace Weedwacker.GameServer.Data
                 }
                 else
                 {
-                    /*
-                    var fileData = Serializer.Deserialize<Obj>(jr);
-                    // Use the name (without ".json") of the file as the key
-                    map.Add(Regex.Replace(filePath.Name, "\\.json", ""), fileData);
-
-                    */
                     try
                     {
                         var fileData = Serializer.Deserialize<Obj>(jr);
@@ -428,6 +434,7 @@ namespace Weedwacker.GameServer.Data
                 LoadExcel(excelPath, o => Tuple.Create(o.weaponPromoteId, o.promoteLevel), WeaponPromoteDataMap),
                 LoadExcel(excelPath, o => o.areaId, WeatherDataMap),
 
+                LoadBinOutFolder(Path.Combine(binPath, "Ability", "Temp"), ConfigAbilityMap, false),
                 LoadBinOutFolder(Path.Combine(binPath, "Ability", "Temp", "ActivityAbilities"), ConfigAbilityActivityMap, false),
                 LoadBinOutFolder(Path.Combine(binPath, "Ability", "Temp", "AnimalAbilities"), ConfigAbilityAnimalMap, false),
                 LoadBinOutFolder(Path.Combine(binPath, "Ability", "Temp", "AvatarAbilities"), ConfigAbilityAvatarMap, false),
