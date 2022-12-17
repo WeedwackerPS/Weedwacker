@@ -38,7 +38,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
 
                 // Update Database
                 var filter = Builders<InventoryManager>.Filter.Where(w => w.OwnerId == Owner.GameUid);
-                var update = Builders<InventoryManager>.Update.Set($"{mongoPathToItems}.{material.ItemId}", newMaterial);
+                var update = Builders<InventoryManager>.Update.Set($"{mongoPathToItems}.{itemId}", newMaterial);
                 await DatabaseManager.UpdateInventoryAsync(filter, update);
 
                 //TODO update codex
