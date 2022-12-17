@@ -12,7 +12,7 @@ namespace Weedwacker.GameServer.Packet.Send
             BuildHeader(0);
 
             PlayerPropNotify proto = new();
-            proto.PropMap.Add((uint)prop, new PropValue() { Type = (uint)prop, Val = player.PlayerProperties[prop] });
+            proto.PropMap.Add((uint)prop, new PropValue() { Type = (uint)prop, Ival = player.PlayerProperties[prop], Val = player.PlayerProperties[prop] });
 
             Data = proto.ToByteArray();
         }
