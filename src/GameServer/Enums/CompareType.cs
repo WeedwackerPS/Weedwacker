@@ -7,7 +7,12 @@ namespace Weedwacker.GameServer.Enums
     public enum CompareType
     {
         None,
+        Lesser,
+        LesserOrEqual,
+        MoreThan,
+        Greater,
         XYZ,
         XZ,
+        Y,
     }
 }

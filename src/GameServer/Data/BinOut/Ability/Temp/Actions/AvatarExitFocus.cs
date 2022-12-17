@@ -1,6 +1,6 @@
 ﻿namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class AvatarExitFocus : BaseAction
+    internal class AvatarExitFocus : ConfigAbilityAction
     {
     }
 }

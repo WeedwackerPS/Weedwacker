@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class EnableRocketJump : BaseAction
+    internal class EnableRocketJump : ConfigAbilityAction
     {
         [JsonProperty] public readonly bool canBeHandledOnRecover;
         [JsonProperty] public readonly bool enable;

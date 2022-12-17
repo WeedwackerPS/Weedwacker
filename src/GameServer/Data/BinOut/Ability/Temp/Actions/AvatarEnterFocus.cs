@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class AvatarEnterFocus : BaseAction
+    internal class AvatarEnterFocus : ConfigAbilityAction
     {
         [JsonProperty] public readonly FollowLower cameraFollowLower;
         [JsonProperty] public readonly FollowUpper cameraFollowUpper;

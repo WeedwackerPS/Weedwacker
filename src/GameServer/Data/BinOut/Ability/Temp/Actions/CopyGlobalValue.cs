@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class CopyGlobalValue : BaseAction
+    internal class CopyGlobalValue : ConfigAbilityAction
     {
         [JsonProperty] public readonly string dstTarget;
         [JsonProperty] public readonly string srcKey;

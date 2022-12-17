@@ -9,7 +9,7 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
         [JsonProperty] public readonly float maxValue;
         [JsonProperty] public readonly float minValue;
         [JsonProperty] public readonly float addValue;
-        [JsonProperty] public readonly BaseAction reviveAction;
-        [JsonProperty] public readonly Dictionary<ElementType, BaseAction> fireEffectActions;
+        [JsonProperty] public readonly ConfigAbilityAction reviveAction;
+        [JsonProperty] public readonly Dictionary<ElementType, ConfigAbilityAction> fireEffectActions;
     }
 }

@@ -3,7 +3,7 @@ using Weedwacker.GameServer.Enums;
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class CreateMovingPlatform : BaseAction
+    internal class CreateMovingPlatform : ConfigAbilityAction
     {
         [JsonProperty] public readonly bool lifeByOwnerIsAlive;
         [JsonProperty] public readonly BaseBornType born;

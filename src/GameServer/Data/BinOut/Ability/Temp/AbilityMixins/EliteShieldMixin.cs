@@ -9,6 +9,6 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
         [JsonProperty] public readonly object shieldHPRatio;
         [JsonProperty] public readonly object shieldHP;
         [JsonProperty] public readonly string showDamageText;
-        [JsonProperty] public readonly BaseAction[] onShieldBroken;
+        [JsonProperty] public readonly ConfigAbilityAction[] onShieldBroken;
     }
 }

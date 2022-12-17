@@ -7,8 +7,8 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
     {
         [JsonProperty] public readonly TargetType campTargetType;
         [JsonProperty] public readonly BasePredicate[] targetPredicates;
-        [JsonProperty] public readonly BaseAction[] onFieldEnter;
-        [JsonProperty] public readonly BaseAction[] onFieldExit;
+        [JsonProperty] public readonly ConfigAbilityAction[] onFieldEnter;
+        [JsonProperty] public readonly ConfigAbilityAction[] onFieldExit;
 
     }
 }

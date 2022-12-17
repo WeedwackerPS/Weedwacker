@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class DebugLog : BaseAction
+    internal class DebugLog : ConfigAbilityAction
     {
         [JsonProperty] public readonly string content;
     }

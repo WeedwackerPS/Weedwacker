@@ -4,7 +4,7 @@ using Weedwacker.GameServer.Enums;
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class TriggerAttackEvent : BaseAction
+    internal class TriggerAttackEvent : ConfigAbilityAction
     {
         [JsonProperty] public readonly TargetType targetType;
         [JsonProperty] public readonly bool doOffStage;

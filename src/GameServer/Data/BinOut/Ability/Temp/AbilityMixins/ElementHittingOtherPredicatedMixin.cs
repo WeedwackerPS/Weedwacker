@@ -11,7 +11,7 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
         public class ElementPredicateds
         {
             [JsonProperty] public readonly ElementType[] elementTypeArr;
-            [JsonProperty] public readonly BaseAction[] successActions;
+            [JsonProperty] public readonly ConfigAbilityAction[] successActions;
         }
     }
 }

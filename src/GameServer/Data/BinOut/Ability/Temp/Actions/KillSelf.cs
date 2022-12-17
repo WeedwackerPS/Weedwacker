@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class KillSelf : BaseAction
+    internal class KillSelf : ConfigAbilityAction
     {
         [JsonProperty] public readonly BasePredicate[] predicates;
     }

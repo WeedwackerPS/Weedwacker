@@ -14,6 +14,7 @@ namespace Weedwacker.GameServer.Enums
         CrystallizeWater,
         Explode,
         Freeze,
+        FrozenBroken,
         Melt,
         Shock,
         Stream,
@@ -22,5 +23,7 @@ namespace Weedwacker.GameServer.Enums
         SwirlFire,
         SwirlIce,
         SwirlWater,
+        Overgrow,
+        Overdose,
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp
 {
-    internal abstract class BaseAction : IInvocation
+    internal class ConfigAbilityAction : IInvocation
     {
         public virtual async Task Invoke(string abilityName, BaseEntity srcEntity, SceneEntity? targetEntity = null)
         {

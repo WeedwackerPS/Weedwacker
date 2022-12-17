@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class AddAvatarSkillInfo : BaseAction
+    internal class AddAvatarSkillInfo : ConfigAbilityAction
     {
         [JsonProperty] public readonly int overtime;
     }

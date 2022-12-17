@@ -7,8 +7,8 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
         [JsonProperty] public readonly string[] attackTags;
         [JsonProperty] public readonly object damageExtra;
         [JsonProperty] public readonly object maxModifyCount;
-        [JsonProperty] public readonly BaseAction[] successActions;
-        [JsonProperty] public readonly BaseAction[] maxCountActions;
+        [JsonProperty] public readonly ConfigAbilityAction[] successActions;
+        [JsonProperty] public readonly ConfigAbilityAction[] maxCountActions;
         [JsonProperty] public readonly BasePredicate[] predicates;
     }
 }

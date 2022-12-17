@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class ControlEmotion : BaseAction
+    internal class ControlEmotion : ConfigAbilityAction
     {
         [JsonProperty] public readonly bool doOffStage;
         [JsonProperty] public readonly bool toggleBlink;

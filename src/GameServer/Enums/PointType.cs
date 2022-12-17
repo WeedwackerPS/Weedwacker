@@ -9,6 +9,20 @@ namespace Weedwacker.GameServer.Enums
         NONE,
         PORTAL,
         TOWER,
-        NORMAL
+        NORMAL,
+        CatFeedPoint,
+        DogFeedPoint,
+        AureaePoint,
+        SleepPoint,
+        OceanidMovePoint,
+        SitPoint,
+        PreachPoint,
+        ThreatPoint,
+        MakingPoint,
+        DancingPoint,
+        TrainingPoint,
+        SurroundPoint,
+        BuildingPoint,
+        SearchPoint,
     }
 }

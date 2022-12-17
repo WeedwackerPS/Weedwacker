@@ -1,6 +1,6 @@
 ﻿namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class ActCameraShake : BaseAction
+    internal class ActCameraShake : ConfigAbilityAction
     {
     }
 }

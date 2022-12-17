@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class SetEmissionScaler : BaseAction
+    internal class SetEmissionScaler : ConfigAbilityAction
     {
         [JsonProperty] public readonly bool doOffStage;
         [JsonProperty] public readonly string materialType;

@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class RemoveModifier : BaseAction
+    internal class RemoveModifier : ConfigAbilityAction
     {
         [JsonProperty] public readonly string modifierName;
     }

@@ -2,10 +2,10 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class Predicated : BaseAction
+    internal class Predicated : ConfigAbilityAction
     {
         [JsonProperty] public readonly BasePredicate[] targetPredicates;
-        [JsonProperty] public readonly BaseAction[] successActions;
-        [JsonProperty] public readonly BaseAction[] failActions;
+        [JsonProperty] public readonly ConfigAbilityAction[] successActions;
+        [JsonProperty] public readonly ConfigAbilityAction[] failActions;
     }
 }

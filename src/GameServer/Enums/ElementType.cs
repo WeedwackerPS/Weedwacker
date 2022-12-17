@@ -16,6 +16,7 @@ namespace Weedwacker.GameServer.Enums
         Electric = 7,
         Grass = 8,
         Frozen,
-        Default = 255
+        Default = 255,
+        VehicleMuteIce, //wtf
     }
 }

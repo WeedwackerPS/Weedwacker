@@ -7,6 +7,6 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Predicates
     {
         [JsonProperty] public readonly LogicType logic;
         [JsonProperty] public readonly CompareType? compareType;
-        [JsonProperty] public readonly float value;
+        [JsonProperty] public readonly object value;
     }
 }

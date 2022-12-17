@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class FireHitEffect : BaseAction
+    internal class FireHitEffect : ConfigAbilityAction
     {
         [JsonProperty] public readonly string hitEntity;
         [JsonProperty] public readonly HitScene hitScene;

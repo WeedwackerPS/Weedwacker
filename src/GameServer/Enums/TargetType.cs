@@ -12,7 +12,9 @@ namespace Weedwacker.GameServer.Enums
         AllExceptSelf,
         Applier,
         Alliance,
+        BigTeam,
         CurTeamAvatars,
+        CurLocalAvatar,
         AllPlayerAvatars,
         Self,
         SelfAttackTarget,
@@ -23,5 +25,11 @@ namespace Weedwacker.GameServer.Enums
         Team,
         Enemy,
         Target,
+        TargetTeam,
+        MPLevel,
+        OwnerCamp,
+        CasterOriginOwner,
+        TargetOriginOwner,
+        Vehicle,
     }
 }

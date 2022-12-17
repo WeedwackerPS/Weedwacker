@@ -3,8 +3,8 @@ using Weedwacker.GameServer.Enums;
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class ResetAnimatorTrigger : BaseAction
+    internal class ResetAnimatorTrigger : ConfigAbilityAction
     {
-        [JsonProperty] public readonly TriggerID triggerID;
+        [JsonProperty] public readonly string triggerID;
     }
 }

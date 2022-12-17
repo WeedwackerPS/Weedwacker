@@ -3,7 +3,7 @@ using Weedwacker.GameServer.Enums;
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class RemoveVelocityForce : BaseAction
+    internal class RemoveVelocityForce : ConfigAbilityAction
     {
         [JsonProperty] public readonly VelocityForceType[] forces;
     }

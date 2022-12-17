@@ -3,7 +3,7 @@ using Weedwacker.GameServer.Enums;
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class GetFightProperty : BaseAction
+    internal class GetFightProperty : ConfigAbilityAction
     {
         [JsonProperty] public readonly TargetType fightPropSourceTarget;
         [JsonProperty] public readonly FightProperty fightProp;

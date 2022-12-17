@@ -14,24 +14,24 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp
         [JsonProperty] public readonly object elementDurability;
         [JsonProperty] public readonly object thinkInterval;
         [JsonProperty] public readonly BaseAbilityMixin[]? modifierMixins;
-        [JsonProperty] public readonly BaseAction[]? onAdded;
-        [JsonProperty] public readonly BaseAction[]? onRemoved;
-        [JsonProperty] public readonly BaseAction[]? onBeingHit;
-        [JsonProperty] public readonly BaseAction[]? onAttackLanded;
-        [JsonProperty] public readonly BaseAction[]? onHittingOther;
-        [JsonProperty] public readonly BaseAction[]? onThinkInterval;
-        [JsonProperty] public readonly BaseAction[]? onKill;
-        [JsonProperty] public readonly BaseAction[]? onCrash;
-        [JsonProperty] public readonly BaseAction[]? onAvatarIn;
-        [JsonProperty] public readonly BaseAction[]? onAvatarOut;
-        [JsonProperty] public readonly BaseAction[]? onReconnect;
-        [JsonProperty] public readonly BaseAction[]? onChangeAuthority;
-        [JsonProperty] public readonly BaseAction[]? onVehicleIn;
-        [JsonProperty] public readonly BaseAction[]? onVehicleOut;
-        [JsonProperty] public readonly BaseAction[]? onZoneEnter;
-        [JsonProperty] public readonly BaseAction[]? onZoneExit;
-        [JsonProperty] public readonly BaseAction[]? onHeal;
-        [JsonProperty] public readonly BaseAction[]? onBeingHealed;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onAdded;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onRemoved;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onBeingHit;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onAttackLanded;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onHittingOther;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onThinkInterval;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onKill;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onCrash;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onAvatarIn;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onAvatarOut;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onReconnect;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onChangeAuthority;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onVehicleIn;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onVehicleOut;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onZoneEnter;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onZoneExit;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onHeal;
+        [JsonProperty] public readonly ConfigAbilityAction[]? onBeingHealed;
 
         internal async Task Initialize(LocalIdGenerator idGenerator, IDictionary<uint, IInvocation> localIdToInvocationMap)
         {
@@ -71,7 +71,7 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp
                 tasks2.Add(modifierMixins[i].Initialize(idGenerator, localIdToInvocationMap));
             }
         }
-        private async Task InitializeActionSubCategory(uint modifierIndex, ushort configIndex, BaseAction[]? actions, IDictionary<uint, IInvocation> localIdToInvocationMap)
+        private async Task InitializeActionSubCategory(uint modifierIndex, ushort configIndex, ConfigAbilityAction[]? actions, IDictionary<uint, IInvocation> localIdToInvocationMap)
         {
             if (actions == null) return;
             await Task.Yield();

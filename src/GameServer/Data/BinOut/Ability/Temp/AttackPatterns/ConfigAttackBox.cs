@@ -9,9 +9,9 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AttackPatterns
 
         public class Size
         {
-            [JsonProperty] public readonly float x;
-            [JsonProperty] public readonly float y;
-            [JsonProperty] public readonly float z;
+            [JsonProperty] public readonly object x;
+            [JsonProperty] public readonly object y;
+            [JsonProperty] public readonly object z;
         }
     }
 }

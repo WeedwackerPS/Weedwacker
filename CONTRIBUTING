@@ -4,4 +4,4 @@ Code written in c++, lua, and any .NET languages may be accepted, as long as the
 
 Target exactly one thing with each PR.
 Avoid overlap/conflicts with other open pull requests.
-Duplicate pull requests will not be considered. Consider making an enhancement after the original PR is merged
+Duplicate pull requests will normally not be considered. Consider making an enhancement after the original PR is merged

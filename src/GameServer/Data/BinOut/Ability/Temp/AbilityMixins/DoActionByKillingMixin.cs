@@ -5,6 +5,6 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
     internal class DoActionByKillingMixin : BaseAbilityMixin
     {
         [JsonProperty] public readonly double detectWindow;
-        [JsonProperty] public readonly BaseAction[] onKill;
+        [JsonProperty] public readonly ConfigAbilityAction[] onKill;
     }
 }

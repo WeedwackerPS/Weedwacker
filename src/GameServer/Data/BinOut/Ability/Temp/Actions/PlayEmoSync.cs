@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
-    internal class PlayEmoSync : BaseAction
+    internal class PlayEmoSync : ConfigAbilityAction
     {
         [JsonProperty] public readonly string emoSyncAssetPath;
     }

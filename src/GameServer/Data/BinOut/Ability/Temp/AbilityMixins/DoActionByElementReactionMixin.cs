@@ -7,6 +7,6 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
     {
         [JsonProperty] public readonly EntityType[] entityTypes;
         [JsonProperty] public readonly ReactionType[] reactionTypes;
-        [JsonProperty] public readonly BaseAction[]? actions;
+        [JsonProperty] public readonly ConfigAbilityAction[]? actions;
     }
 }
