@@ -11,7 +11,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
 
         public MaterialItem(ulong guid, int itemId, int count) : base(guid, itemId, count)
         {
-
+            Count = count;
         }
 
         public override Item ToProto()
