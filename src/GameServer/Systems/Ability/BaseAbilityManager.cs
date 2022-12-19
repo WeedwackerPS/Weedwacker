@@ -129,7 +129,7 @@ namespace Weedwacker.GameServer.Systems.Ability
             {
                 if (!GameServer.Configuration.Server.AbilityInvArgBlacklist.Contains(invoke.ArgumentType))
                 {
-                    Connection.LogAbilityInvocation("RECV ability invoke: ", invoke, info.GetType(), Owner.EntityId);
+                    Connection.LogAbilityInvocation(false, invoke, info.GetType(), Owner.EntityId);
                 }
             }
 #endif

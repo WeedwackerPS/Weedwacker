@@ -1,12 +1,15 @@
 ﻿using System.Buffers;
 using System.Net;
+using System.Net.Sockets;
 using System.Reflection;
 using Google.Protobuf.Reflection;
 using KcpSharp;
+using MongoDB.Driver;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Weedwacker.GameServer.Enums;
 using Weedwacker.GameServer.Packet;
+using Weedwacker.GameServer.Packet.Recorder.Model;
 using Weedwacker.GameServer.Systems.Player;
 using Weedwacker.Shared.Enums;
 using Weedwacker.Shared.Network.Proto;
@@ -68,43 +71,94 @@ namespace Weedwacker.GameServer
         }
 
 #if DEBUG
-        public static void LogPacket(string sendOrRecv, ushort opcode, byte[] payload)
+        public static void LogPacket(bool isSend, ushort opcode, byte[] payload,string Tag = "")
         {
             //Logger.DebugWriteLine($"{sendOrRecv}: {Enum.GetName(typeof(OpCode), opcode)}({opcode})\r\n{Convert.ToHexString(payload)}");
-            var typ = AppDomain.CurrentDomain.GetAssemblies().
-           SingleOrDefault(assembly => assembly.GetName().Name == "Shared").GetTypes().First(t => t.Name == $"{Enum.GetName(typeof(OpCode), opcode)}"); //get the type using the packet name
-            var descriptor = (MessageDescriptor)typ.GetProperty("Descriptor", BindingFlags.Public | BindingFlags.Static).GetValue(null, null); // get the static property Descriptor
-            var packet = descriptor.Parser.ParseFrom(payload);
-            var formatter = Google.Protobuf.JsonFormatter.Default;
-            var asJson = formatter.Format(packet);
-            Logger.DebugWriteLine($"{sendOrRecv}: {Enum.GetName(typeof(OpCode), opcode)}({opcode})\r\n{asJson}");
-            if (GameServer.Configuration.Server.KeepLog)
+            try
             {
-                File.WriteAllText($"{GameServer.Configuration.Server.LogLocation}\\{LogIndex++}_Packet_{packet.GetType().Name}.json", JValue.Parse(asJson).ToString(Formatting.Indented));
+                var typ = AppDomain.CurrentDomain.GetAssemblies().
+                    SingleOrDefault(assembly => assembly.GetName().Name == "Shared").GetTypes().First(t => t.Name == $"{Enum.GetName(typeof(OpCode), opcode)}"); //get the type using the packet name
+                var descriptor = (MessageDescriptor)typ.GetProperty("Descriptor", BindingFlags.Public | BindingFlags.Static).GetValue(null, null); // get the static property Descriptor
+                var packet = descriptor.Parser.ParseFrom(payload);
+                var formatter = Google.Protobuf.JsonFormatter.Default;
+                var asJson = formatter.Format(packet);
+
+                if (GameServer.Configuration.Server.KeepLog)
+                {
+                    File.WriteAllText($"{GameServer.Configuration.Server.LogLocation}\\{LogIndex++}_Packet_{packet.GetType().Name}.json", JValue.Parse(asJson).ToString(Formatting.Indented));
+                }
+
+
+                if (GameServer.Configuration.Server.ShowPacketInWeb)
+                {
+
+                    new FrontedPacketRsp(packet: packet, protoName: descriptor.Name,
+                        length: payload.Length,
+                        id: opcode.ToString(), fromCilent: !isSend,
+                        tag:Tag).Send();
+                }
+                else
+                {
+
+                    var sendOrRecv = isSend ? "SEND:" : "RECV:";
+
+                    Logger.DebugWriteLine($"{sendOrRecv}: {Enum.GetName(typeof(OpCode), opcode)}({opcode})\r\n{asJson}");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                //unknown typ
+                Logger.DebugWriteWarningLine($"Unknown opcode: {opcode}");
             }
         }
 
-        internal static void LogCombatInvocation(string sendOrRecv, CombatInvokeEntry entry, Type invocType)
+        internal static void LogCombatInvocation(bool isSend, CombatInvokeEntry entry, Type invocType)
         {
             var descriptor = (MessageDescriptor)invocType.GetProperty("Descriptor", BindingFlags.Public | BindingFlags.Static).GetValue(null, null); // get the static property Descriptor
             var invoc = descriptor.Parser.ParseFrom(entry.CombatData);
             var formatter = Google.Protobuf.JsonFormatter.Default;
             var asJson = formatter.Format(invoc);
-            Logger.DebugWriteLine($"{sendOrRecv} {entry.ForwardType} | {entry.ArgumentType}: \r\n{asJson}");
+            if (GameServer.Configuration.Server.ShowPacketInWeb)
+            {
+                new FrontedPacketRsp(packet: invoc, protoName: descriptor.Name,
+                        length: 0,
+                        id: "", fromCilent: !isSend,
+                        tag: $"CombatInvoke").Send();
+            }
+            else
+            {
+                var sendOrRecv = isSend ? "SEND:" : "RECV combat invoke:";
+
+                Logger.DebugWriteLine($"{sendOrRecv} {entry.ForwardType} | {entry.ArgumentType}: \r\n{asJson}");
+            }
             if (GameServer.Configuration.Server.KeepLog)
             {
                 File.WriteAllText($"{GameServer.Configuration.Server.LogLocation}\\{LogIndex++}_CInv_{entry.ArgumentType}.json", JValue.Parse(asJson).ToString(Formatting.Indented));
             }
         }
 
-        internal static void LogAbilityInvocation(string sendOrRecv, AbilityInvokeEntry entry, Type invocType, uint entityId)
+        internal static void LogAbilityInvocation(bool isSend, AbilityInvokeEntry entry, Type invocType, uint entityId)
         {
             var descriptor = (MessageDescriptor)invocType.GetProperty("Descriptor", BindingFlags.Public | BindingFlags.Static).GetValue(null, null); // get the static property Descriptor
             var invoc = descriptor.Parser.ParseFrom(entry.AbilityData);
             var formatter = Google.Protobuf.JsonFormatter.Default;
             var asJson = formatter.Format(invoc);
             var headJson = formatter.Format(entry.Head);
-            Logger.DebugWriteLine($"{sendOrRecv} {entry.Head} | {entry.ForwardType} | {entry.ArgumentType}: \r\n{asJson}");
+
+            if (GameServer.Configuration.Server.ShowPacketInWeb)
+            {
+                new FrontedPacketRsp(packet: invoc, protoName: descriptor.Name,
+                        length: 0,
+                        id: "", fromCilent: !isSend,
+                        tag: $"AbilityInvoke").Send();
+            }
+            else
+            {
+                var sendOrRecv = isSend ? "SEND:" : "RECV ability invoke:";
+
+                Logger.DebugWriteLine($"{sendOrRecv} {entry.Head} | {entry.ForwardType} | {entry.ArgumentType}: \r\n{asJson}");
+            }
             if (GameServer.Configuration.Server.KeepLog)
             {
                 File.WriteAllText($"{GameServer.Configuration.Server.LogLocation}\\{LogIndex++}_AInv_Head_{entityId}_{entry.ArgumentType}.json", JValue.Parse(headJson).ToString(Formatting.Indented));
@@ -209,6 +263,12 @@ namespace Weedwacker.GameServer
 #endif
                         return; // Bad packet
                     }
+
+
+
+
+                    bool handled = await HandlePacketAsync(opcode, header, payload);
+
 #if DEBUG
                     // Log packet
                     ServerDebugMode debugMode = GameServer.Configuration.Server.LogPackets;
@@ -227,10 +287,11 @@ namespace Weedwacker.GameServer
                     else
                         goto NotLog;
                     Log:
-                    LogPacket("RECV", opcode, payload);
+                    // receive
+                    LogPacket(false, opcode, payload, handled?"":"Unhandled");
                 NotLog:
 #endif
-                    bool handled = await HandlePacketAsync(opcode, header, payload);
+
 
 #if DEBUG
                     // Log unhandled packets
@@ -333,14 +394,14 @@ namespace Weedwacker.GameServer
             {
                 case Shared.Enums.ServerDebugMode.ALL:
                     {
-                        LogPacket("SEND", packet.Opcode, packet.Data);
+                        LogPacket(true, packet.Opcode, packet.Data);
                         break;
                     }
                 case Shared.Enums.ServerDebugMode.WHITELIST:
                     {
                         if (GameServer.Configuration.Server.DebugWhitelist.Contains((OpCode)packet.Opcode))
                         {
-                            LogPacket("SEND", packet.Opcode, packet.Data);
+                            LogPacket(true, packet.Opcode, packet.Data);
                         }
                         break;
                     }
@@ -348,7 +409,7 @@ namespace Weedwacker.GameServer
                     {
                         if (!GameServer.Configuration.Server.DebugBlacklist.Contains((OpCode)packet.Opcode))
                         {
-                            LogPacket("SEND", packet.Opcode, packet.Data);
+                            LogPacket(true, packet.Opcode, packet.Data);
                         }
                         break;
                     }

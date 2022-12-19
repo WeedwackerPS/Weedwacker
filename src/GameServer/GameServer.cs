@@ -3,6 +3,7 @@ using System.Timers;
 using Newtonsoft.Json;
 using Weedwacker.GameServer.Data;
 using Weedwacker.GameServer.Data.BinOut.Ability.Temp;
+using Weedwacker.GameServer.Packet.Recorder;
 using Weedwacker.GameServer.Systems.Avatar;
 using Weedwacker.GameServer.Systems.World;
 using Weedwacker.Shared.Authentication;
@@ -64,6 +65,12 @@ namespace Weedwacker.GameServer
                 {
                     file.Delete();
                 }
+            }
+
+            // Enable log
+            if (Configuration.Server.ShowPacketInWeb)
+            {
+                new PacketRecorder().Start(Configuration.Server.PacketRecordRoot);
             }
 #endif
             await GameData.LoadAllResourcesAsync(Configuration.structure.Resources);

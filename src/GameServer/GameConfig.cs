@@ -35,6 +35,8 @@ namespace Weedwacker.GameServer
                 OpCode.ClientAbilityChangeNotify,
             };
             public bool KeepLog = true;
+            public bool ShowPacketInWeb = true;
+            public string PacketRecordRoot = "..\\..\\..\\PacketRecorderRoot\\";
             public string LogLocation = ".\\packetLogs";
             public bool LogCombatInvocations = true;
             public CombatTypeArgument[] CombatArgTypeBlacklist = new[] { CombatTypeArgument.EntityMove };

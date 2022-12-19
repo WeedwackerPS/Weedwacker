@@ -31,7 +31,9 @@ namespace Weedwacker.GameServer.Packet.Recv
                 else
                     goto NotLog;
                 Log:
-                Connection.LogPacket("RECV in Union", cmdOpcode, cmdPayload);
+                //Connection.LogPacket("RECV in Union", cmdOpcode, cmdPayload);
+                Connection.LogPacket(false, cmdOpcode, cmdPayload);
+
             NotLog:
 #endif
                 // Handle the subPacket
