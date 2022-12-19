@@ -24,7 +24,7 @@ namespace Weedwacker.GameServer.Packet.Recorder.Model
                 //rec.length = length;
                 rec.packetID = id;
 
-                rec.source = fromCilent? "client": "server";
+                rec.source = fromCilent;
 
                 this.data = new PacketRecord[] { rec };
                 this.cmd = cmd;
@@ -78,7 +78,7 @@ namespace Weedwacker.GameServer.Packet.Recorder.Model
 
         public byte[]? packet { get; set; }
 
-        public string source { get; set; }
+        public bool source { get; set; }
 
         [JsonProperty("object")]
         public Object obj { get; set; }
