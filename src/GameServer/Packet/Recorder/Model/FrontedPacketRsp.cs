@@ -15,7 +15,7 @@ namespace Weedwacker.GameServer.Packet.Recorder.Model
 {
     internal class FrontedPacketRsp
     {
-        public FrontedPacketRsp(IMessage packet,string protoName,long length,string id, bool fromCilent, string cmd = "PacketNotify")
+        public FrontedPacketRsp(IMessage packet,string protoName,long length,string id, bool fromCilent,string tag = "", string cmd = "PacketNotify")
         {
             try
             {
@@ -25,6 +25,7 @@ namespace Weedwacker.GameServer.Packet.Recorder.Model
                 rec.packetID = id;
 
                 rec.source = fromCilent;
+                rec.tag = tag;
 
                 this.data = new PacketRecord[] { rec };
                 this.cmd = cmd;
@@ -66,6 +67,8 @@ namespace Weedwacker.GameServer.Packet.Recorder.Model
 
     public class PacketRecord
     {
+        public string tag { get; set; }
+
         public PacketRecord(object obj)
         {
             this.obj = obj;
