@@ -24,6 +24,7 @@ namespace Weedwacker.GameServer.Commands
             Give();
             OpenState();
             Spawn();
+            UnlockMap();
 
         }
     }
