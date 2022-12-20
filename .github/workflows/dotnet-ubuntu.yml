@@ -1,4 +1,4 @@
-name: .NET Core Desktop Windows Builder
+name: .NET Core Desktop Ubuntu Builder
 
 on:
   push:
