@@ -52,10 +52,9 @@ jobs:
       run: dotnet build src/GameServer/GameServer.csproj  --configuration Release --no-restore
    
     - name: Make Dir
-      run: |
-          pwd
-         mkdir Weedwacker
-          ls
+      run: pwd
+       #  mkdir Weedwacker
+        #  ls
       
     - name: Copy Gameserver to work
       run: cp -r D:\a\Weedwacker\Weedwacker\bin\Release\GameServer D:\a\Weedwacker\Weedwacker\Weedwacker
