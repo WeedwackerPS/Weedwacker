@@ -66,6 +66,7 @@ namespace Weedwacker.GameServer.Commands
                 {
                     await GameServer.OnlinePlayers[guid].Player.OpenStateManager.SetOpenStateAsync(i, 1);
                 }
+                console.WriteLine("Unlocked");
             }
             return;
         }
