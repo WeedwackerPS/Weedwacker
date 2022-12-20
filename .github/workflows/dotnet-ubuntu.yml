@@ -36,6 +36,13 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
+  
+    - name: Setup cmake
+      uses: jwlawson/actions-setup-cmake@v1.13
+      with:
+        cmake-version: '3.16.x'
+    - name: Use cmake
+      run: cmake --version
 
     - uses: nuget/setup-nuget@v1
       with:
@@ -52,30 +59,31 @@ jobs:
       run: dotnet build src/GameServer/GameServer.csproj  --configuration Release --no-restore
    
     - name: Make Dir
-      run: pwd
+      run: mkdir Weedwacker
        #  mkdir Weedwacker
         #  ls
       
     - name: Copy Gameserver to work
-      run: cp -r D:\a\Weedwacker\Weedwacker\bin\Release\GameServer D:\a\Weedwacker\Weedwacker\Weedwacker
+      run: cp -r Weedwacker/Weedwacker/bin/Release/GameServer Weedwacker/Weedwacker/Weedwacker
   
     - name: Copy key to game sr
-      run: cp -r D:\a\Weedwacker\Weedwacker\keys D:\a\Weedwacker\Weedwacker\Weedwacker
+      run: cp -r Weedwacker/Weedwacker/keys /Weedwacker/Weedwacker/Weedwacker
   
     - name: Copy https cer
-      run: cp -r D:\a\Weedwacker\Weedwacker\keystore.p12 D:\a\Weedwacker\Weedwacker\Weedwacker
+      run: cp -r Weedwacker/Weedwacker/keystore.p12 Weedwacker/Weedwacker/Weedwacker
   
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.1
       with:
-          path: D:\a\Weedwacker\Weedwacker\Weedwacker
+          path: Weedwacker/Weedwacker
           name: Weedwacker
   
     - name: List dir
       run: pwd
     
     - name: Zip GameServer
-      run: ls
+      run: zip -r -Z bzip2 weebwacker.zip Weedwacker/Weedwacker
+
     - name: List File
       run: ls
 
@@ -87,5 +95,5 @@ jobs:
           prerelease: false
           title: "Release Build"
           files: |
-                *.tar
+                *.zip
                 LICENSE.txt
