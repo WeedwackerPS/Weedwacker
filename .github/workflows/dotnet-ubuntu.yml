@@ -64,13 +64,13 @@ jobs:
         #  ls
       
     - name: Copy Gameserver to work
-      run: cp -r Weedwacker/Weedwacker/bin/Release/GameServer Weedwacker/Weedwacker/Weedwacker
+      run: cp -r Weedwacker/bin/Release/GameServer Weedwacker/Weedwacker
   
     - name: Copy key to game sr
-      run: cp -r Weedwacker/Weedwacker/keys /Weedwacker/Weedwacker/Weedwacker
+      run: cp -r Weedwacker/keys Weedwacker/Weedwacker
   
     - name: Copy https cer
-      run: cp -r Weedwacker/Weedwacker/keystore.p12 Weedwacker/Weedwacker/Weedwacker
+      run: cp -r Weedwacker/keystore.p12 Weedwacker/Weedwacker
   
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.1
