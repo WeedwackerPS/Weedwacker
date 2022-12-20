@@ -44,8 +44,8 @@ namespace Weedwacker.GameServer.Systems.Player
             var filter = Builders<ProgressManager>.Filter.Where(p => p.OwnerId == Owner.GameUid);
             var update = Builders<ProgressManager>.Update.Set(w => w.UnlockedScenePoints, UnlockedScenePoints);
             await DatabaseManager.UpdateProgressAsync(filter, update);
-            //await Owner.Invenrtory.AddItemByIdAynsc(201, 5, ActionReason.UnlockPointReward);
-            // await Owner.Inventory.AddItemByIdAsync(102, isStatue ? 50 : 10, ActionReason.UnlockPointReward);
+            //await Owner.Inventory.AddItemByIdAynsc(201, 5, ActionReason.UnlockPointReward);
+            //await Owner.Inventory.AddItemByIdAsync(102, isStatue ? 50 : 10, ActionReason.UnlockPointReward);
             await Owner.SendPacketAsync(new PacketScenePointUnlockNotify((uint)sceneId, (uint)pointId));
             return true;
         }
