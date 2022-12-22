@@ -95,6 +95,7 @@ namespace Weedwacker.GameServer.Data
         public readonly static ConcurrentDictionary<string, BaseConfigTalent[]> WeaponAffixConfigDataMap = new(); // openConfig
         public readonly static SortedList<int, WeaponCurveData> WeaponCurveDataMap = new(); // level
         public readonly static SortedList<Tuple<int, int>, WeaponPromoteData> WeaponPromoteDataMap = new(); // <weaponPromoteId, promoteLevel>
+        public readonly static SortedList<int, WeaponLevelData> WeaponLevelDataMap = new();  // level
         public readonly static SortedList<int, WeatherData> WeatherDataMap = new(); // areaId
 
         private readonly static SortedList<int, SceneInfo> SceneScripts = new();
@@ -422,6 +423,7 @@ namespace Weedwacker.GameServer.Data
                 LoadExcel(excelPath, o => o.id, ReliquaryAffixDataMap),
                 LoadExcel(excelPath, o => o.id, ReliquaryMainPropDataMap),
                 LoadExcel(excelPath, o => Tuple.Create(o.rank, o.level), ReliquaryLevelDataMap),
+                LoadExcel(excelPath, o => o.level, WeaponLevelDataMap),
                 LoadExcel(excelPath, o => o.setId, ReliquarySetDataMap),
                 LoadExcel(excelPath, o => o.rewardId, RewardDataMap),
                 LoadExcel(excelPath, o => o.id, SceneDataMap),
