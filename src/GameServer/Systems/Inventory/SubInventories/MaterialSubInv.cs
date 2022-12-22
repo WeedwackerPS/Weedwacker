@@ -191,10 +191,10 @@ namespace Weedwacker.GameServer.Systems.Inventory
             switch (data.materialType)
             {
                 case MaterialType.MATERIAL_WEAPON_EXP_STONE:
-                    return await Inventory.SubInventories[ItemType.ITEM_WEAPON].RemoveItemAsync(item);
+                    return await Inventory.SubInventories[ItemType.ITEM_WEAPON].RemoveItemAsync(item, count);
 
                 case MaterialType.MATERIAL_RELIQUARY_MATERIAL:
-                    return await Inventory.SubInventories[ItemType.ITEM_RELIQUARY].RemoveItemAsync(item);
+                    return await Inventory.SubInventories[ItemType.ITEM_RELIQUARY].RemoveItemAsync(item, count);
 
                 case MaterialType.MATERIAL_FURNITURE_FORMULA:
                 case MaterialType.MATERIAL_FURNITURE_SUITE_FORMULA:
