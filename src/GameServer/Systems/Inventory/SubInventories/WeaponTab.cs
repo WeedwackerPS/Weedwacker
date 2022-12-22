@@ -89,6 +89,12 @@ namespace Weedwacker.GameServer.Systems.Inventory
             return weapon;
         }
 
+        public async Task updateWeaponAsync(WeaponItem weapon)
+        {
+            var filter = Builders<InventoryManager>.Filter.Where(w => w.OwnerId == Owner.GameUid);
+            var update = Builders<InventoryManager>.Update.Set($"{mongoPathToItems}.{nameof(Items)}.{weapon.Id}", weapon);
+            await DatabaseManager.UpdateInventoryAsync(filter, update);
+        }
 
         internal override async Task<bool> RemoveItemAsync(GameItem item, int count = 1)
         {
@@ -107,7 +113,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
                 Items.Remove(weapon.Id);
                 return true;
             }
-            else if (UpgradeMaterials.TryGetValue((item as MaterialItem).ItemId, out MaterialItem material))
+            else if (UpgradeMaterials.TryGetValue(item.ItemId, out MaterialItem material))
             {
                 if (material.Count - count >= 1)
                 {
@@ -117,7 +123,6 @@ namespace Weedwacker.GameServer.Systems.Inventory
                     var filter = Builders<InventoryManager>.Filter.Where(w => w.OwnerId == Owner.GameUid);
                     var update = Builders<InventoryManager>.Update.Set($"{mongoPathToItems}.{nameof(UpgradeMaterials)}.{material.ItemId}.{nameof(GameItem.Count)}", material.Count);
                     await DatabaseManager.UpdateInventoryAsync(filter, update);
-
                     return true;
                 }
                 else if (material.Count - count == 0)
