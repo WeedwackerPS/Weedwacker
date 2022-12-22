@@ -98,7 +98,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
 
         internal override async Task<bool> RemoveItemAsync(GameItem item, int count = 1)
         {
-            if (Items.TryGetValue((item as WeaponItem).Id, out GameItem? weapon))
+            if (item is WeaponItem && Items.TryGetValue((item as WeaponItem).Id, out GameItem? weapon))
             {
                 if ((weapon as WeaponItem).EquippedAvatar != 0)
                 {
