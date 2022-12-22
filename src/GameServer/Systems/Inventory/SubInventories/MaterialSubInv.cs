@@ -231,5 +231,21 @@ namespace Weedwacker.GameServer.Systems.Inventory
                     return false;
             }
         }
+        public bool TryGetItemInSubInvById(int itemId, out GameItem? gameItem) //kinda ugly
+        {
+            if ((Inventory.SubInventories[ItemType.ITEM_WEAPON] as WeaponTab).UpgradeMaterials.TryGetValue(itemId, out MaterialItem materialItem))
+            {
+                gameItem = materialItem;
+                return true;
+            }           
+            if (!PromoteTab.Items.TryGetValue(itemId, out gameItem))
+                if (!FoodTab.Items.TryGetValue(itemId, out gameItem))
+                    if (!MaterialsTab.Items.TryGetValue(itemId, out gameItem))
+                        if (!GadgetTab.Items.TryGetValue(itemId, out gameItem))
+                            if (!QuestTab.Items.TryGetValue(itemId, out gameItem))
+                                if (!PreciousTab.Items.TryGetValue(itemId, out gameItem))
+                                    return false;
+            return true;
+        }
     }
 }
