@@ -4,6 +4,7 @@ using Weedwacker.GameServer.Data.Common;
 using Weedwacker.GameServer.Data.Excel;
 using Weedwacker.GameServer.Enums;
 using Weedwacker.GameServer.Packet.Send;
+using Weedwacker.Shared.Network.Proto;
 using Weedwacker.Shared.Utils;
 
 namespace Weedwacker.GameServer.Systems.Inventory
@@ -55,7 +56,126 @@ namespace Weedwacker.GameServer.Systems.Inventory
                     return 0;
             }
         }
+        public async Task upgradeWeaponAsync(ulong guid, List<ulong> foodWeaponGuidList, List<ItemParam> itemParamList)
+        {
+            WeaponItem weapon = GuidMap[guid] as WeaponItem;
+            List<ItemParam> leftoverOres = new List<ItemParam>(); //TODO
+            List<ItemParamData> xpMats = new List<ItemParamData>();
+            if (weapon is null || weapon.promoteData is null)
+                return;
+            int expGain = 0;
+            int expGainFree = 0;
+            foreach (var itemParam in itemParamList)
+            {               
+                var matData = GameData.ItemDataMap[(int)itemParam.ItemId] as MaterialData;
 
+                foreach(var x in matData.itemUse.Where(o => o.useOp == Enums.ItemUseOp.ITEM_USE_ADD_WEAPON_EXP))
+                {
+                    expGain += int.Parse(x.useParam[0]) * (int)itemParam.Count; //probably not the ideal way to go about it
+                    xpMats.Add(new ItemParamData((int)itemParam.ItemId, (int)itemParam.Count));
+
+                }
+            }
+            foreach (ulong matGuid in foodWeaponGuidList)
+            {
+                var mat = GuidMap[matGuid] as WeaponItem;
+                if (mat is null || mat.Locked)
+                    continue;
+                if (mat.TotalExp > 0)
+                {
+                    expGainFree += (mat.TotalExp * 4) / 5; //Only 80% cashback! 
+                }
+                expGain += mat.ItemData.weaponBaseExp;
+            }
+            int moraCost = expGain / 10;
+            expGain += expGainFree;
+            int exp = weapon.Exp;
+            int level = weapon.Level;
+            int oldLevel = level;
+            if (Owner.PlayerProperties.GetValueOrDefault(PlayerProperty.PROP_PLAYER_SCOIN) < moraCost)
+                return;
+            await Owner.PropManager.PayMoraAsync(moraCost); 
+            if (await RemoveItemsByParamData(xpMats))
+            {
+                int reqExp = GameData.WeaponLevelDataMap[level].requiredExps[weapon.ItemData.rankLevel-1];               
+                while (expGain > 0 && level < weapon.promoteData.unlockMaxLevel)
+                {
+                    int toGain = Math.Min(expGain, reqExp - exp);
+                    exp += toGain;
+                    weapon.setTotalExp(weapon.TotalExp + toGain);
+                    expGain -= toGain;
+                    if (exp >= reqExp)
+                    {
+                        exp = 0;
+                        level += 1;
+                        reqExp = GameData.WeaponLevelDataMap[level].requiredExps[weapon.ItemData.rankLevel-1];
+                    }
+                
+                }
+                weapon.setLevel(level);
+                weapon.setExp(exp);
+                await (SubInventories[ItemType.ITEM_WEAPON] as WeaponTab).updateWeaponAsync(weapon);
+                await Owner.SendPacketAsync(new PacketStoreItemChangeNotify(weapon));
+                await Owner.SendPacketAsync(new PacketWeaponUpgradeRsp(weapon, oldLevel, leftoverOres));
+            }
+        }
+
+        public async Task<bool> RemoveItemsByParamData(List<ItemParamData> itemDataList)
+        {
+            foreach (var itemData in itemDataList)
+            {
+                if(!await RemoveItemByParamData(itemData))
+                    return false;
+            }
+            return true;
+        }
+        public async Task<bool> RemoveItemByParamData(ItemParamData itemData)
+        {
+            bool result = false;
+            switch (GameData.ItemDataMap[itemData.id].itemType)
+            {
+                case ItemType.ITEM_RELIQUARY:
+                    if ((SubInventories[ItemType.ITEM_RELIQUARY] as RelicTab).Items.TryGetValue(itemData.id, out GameItem? relicItem))
+                    {
+                        result = await (SubInventories[ItemType.ITEM_RELIQUARY] as RelicTab).RemoveItemAsync(relicItem, itemData.count);
+                        if (relicItem.Count <= 0) await Owner.SendPacketAsync(new PacketStoreItemDelNotify(relicItem));
+                        else await Owner.SendPacketAsync(new PacketStoreItemChangeNotify(relicItem));
+                           
+                    }
+                    break;
+                case ItemType.ITEM_WEAPON:
+                    if ((SubInventories[ItemType.ITEM_WEAPON] as WeaponTab).Items.TryGetValue(itemData.id, out GameItem? weaponItem))
+                    {
+                        result = await (SubInventories[ItemType.ITEM_WEAPON] as WeaponTab).RemoveItemAsync(weaponItem, itemData.count);
+                        if (weaponItem.Count <= 0) await Owner.SendPacketAsync(new PacketStoreItemDelNotify(weaponItem));
+                        else await Owner.SendPacketAsync(new PacketStoreItemChangeNotify(weaponItem));
+                    }
+                    break;
+                case ItemType.ITEM_FURNITURE:
+                    if ((SubInventories[ItemType.ITEM_FURNITURE] as FurnitureTab).Items.TryGetValue(itemData.id, out GameItem? furnitureItem))
+                    {
+                        result = await (SubInventories[ItemType.ITEM_FURNITURE] as FurnitureTab).RemoveItemAsync(furnitureItem, itemData.count);
+                        if (furnitureItem.Count <= 0) await Owner.SendPacketAsync(new PacketStoreItemDelNotify(furnitureItem));
+                        else await Owner.SendPacketAsync(new PacketStoreItemChangeNotify(furnitureItem));
+                    }
+                    break;
+                case ItemType.ITEM_MATERIAL:
+                    if ((SubInventories[ItemType.ITEM_MATERIAL] as MaterialSubInv).TryGetItemInSubInvById(itemData.id, out GameItem? materialItem))
+                    {
+                        result = await (SubInventories[ItemType.ITEM_MATERIAL] as MaterialSubInv).RemoveItemAsync(materialItem, itemData.count);
+                        if (materialItem.Count <= 0) await Owner.SendPacketAsync(new PacketStoreItemDelNotify(materialItem));
+                        else await Owner.SendPacketAsync(new PacketStoreItemChangeNotify(materialItem));
+                    }
+                    break;
+                case ItemType.ITEM_VIRTUAL:
+                    result = await PayVirtualItemByParamDataAsync(itemData);
+                    break;
+                default:
+                    Logger.WriteErrorLine("Invalid item type!");
+                    break;
+            }
+            return result;
+        }
         // Used by reward lists
         public async Task<GameItem?> AddItemByParamDataAsync(ItemParamData itemParam, ActionReason reason)
         {
