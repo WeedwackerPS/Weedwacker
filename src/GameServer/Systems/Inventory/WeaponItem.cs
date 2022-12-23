@@ -19,7 +19,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
             Level = level;
             Refinement = refinement;
             PromoteLevel = GetMinPromoteLevel(Level);
-
+            
             if (ItemData.skillAffix != null)
             {
                 foreach (int skillAffix in ItemData.skillAffix)
@@ -48,7 +48,10 @@ namespace Weedwacker.GameServer.Systems.Inventory
             return false;
         }
 
-
+        public void Promote()
+        {
+            PromoteLevel += 1;
+        }
         public void setExp(int xp)
         {
             Exp = xp;

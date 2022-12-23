@@ -120,6 +120,26 @@ namespace Weedwacker.GameServer.Systems.Inventory
             }
         }
 
+        public async Task<bool> promoteWeaponAsync(ulong targetWeaponGuid)
+        {
+            WeaponItem weapon = GuidMap[targetWeaponGuid] as WeaponItem;
+            GameData.WeaponPromoteDataMap.TryGetValue(Tuple.Create(weapon.ItemData.weaponPromoteId, weapon.PromoteLevel + 1), out WeaponPromoteData? promoteData);
+            if (weapon is null || promoteData is null || Owner.PlayerProperties[PlayerProperty.PROP_PLAYER_LEVEL] < promoteData.requiredPlayerLevel)
+                return false;
+            if (Owner.PlayerProperties.GetValueOrDefault(PlayerProperty.PROP_PLAYER_SCOIN) < promoteData.coinCost)
+                return false;
+            await Owner.PropManager.PayMoraAsync(promoteData.coinCost);
+            if(await PayPromoteCostAsync(promoteData.costItems, ActionReason.WeaponPromote))
+            {
+                int oldPromote = weapon.PromoteLevel;
+                weapon.Promote();
+                await (SubInventories[ItemType.ITEM_WEAPON] as WeaponTab).updateWeaponAsync(weapon);
+                await Owner.SendPacketAsync(new PacketStoreItemChangeNotify(weapon));
+                await Owner.SendPacketAsync(new PacketWeaponPromoteRsp(weapon, oldPromote));
+                return true;
+            }
+            return false;
+        }
         public async Task<bool> RemoveItemsByParamData(List<ItemParamData> itemDataList)
         {
             foreach (var itemData in itemDataList)
