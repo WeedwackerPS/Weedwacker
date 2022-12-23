@@ -79,11 +79,10 @@ jobs:
           name: Weedwacker
   
     - name: List dir
-      run: |
-          ls
+      run: ls
     
     - name: Zip GameServer
-      run: zip -r -Z bzip2 weebwacker.zip Weedwacker/Weedwacker
+      run: zip -r -Z bzip2 Weedwacker.zip Weedwacker/Weedwacker
 
     - name: List File
       run: ls
