@@ -138,17 +138,14 @@ namespace Weedwacker.GameServer.Systems.Inventory
                     if ((SubInventories[ItemType.ITEM_RELIQUARY] as RelicTab).Items.TryGetValue(itemData.id, out GameItem? relicItem))
                     {
                         result = await (SubInventories[ItemType.ITEM_RELIQUARY] as RelicTab).RemoveItemAsync(relicItem, itemData.count);
-                        if (relicItem.Count <= 0) await Owner.SendPacketAsync(new PacketStoreItemDelNotify(relicItem));
-                        else await Owner.SendPacketAsync(new PacketStoreItemChangeNotify(relicItem));
-                           
+                        await Owner.SendPacketAsync(new PacketStoreItemDelNotify(relicItem));
                     }
                     break;
                 case ItemType.ITEM_WEAPON:
                     if ((SubInventories[ItemType.ITEM_WEAPON] as WeaponTab).Items.TryGetValue(itemData.id, out GameItem? weaponItem))
                     {
                         result = await (SubInventories[ItemType.ITEM_WEAPON] as WeaponTab).RemoveItemAsync(weaponItem, itemData.count);
-                        if (weaponItem.Count <= 0) await Owner.SendPacketAsync(new PacketStoreItemDelNotify(weaponItem));
-                        else await Owner.SendPacketAsync(new PacketStoreItemChangeNotify(weaponItem));
+                        await Owner.SendPacketAsync(new PacketStoreItemDelNotify(weaponItem));
                     }
                     break;
                 case ItemType.ITEM_FURNITURE:
@@ -285,7 +282,8 @@ namespace Weedwacker.GameServer.Systems.Inventory
             {
                 if (GameData.ItemDataMap[itemData.id].itemType == ItemType.ITEM_MATERIAL)
                 {
-                    var material = (SubInventories[ItemType.ITEM_MATERIAL] as MaterialSubInv).PromoteTab.Items[itemData.id];
+                    if (!(SubInventories[ItemType.ITEM_MATERIAL] as MaterialSubInv).TryGetItemInSubInvById(itemData.id, out GameItem? material))
+                        return false;
                     if (material.Count < itemData.count) return false; // insufficient materials
                     else materials.Add((material as MaterialItem), itemData.count);
                 }

@@ -237,7 +237,12 @@ namespace Weedwacker.GameServer.Systems.Inventory
             {
                 gameItem = materialItem;
                 return true;
-            }           
+            }
+            if ((Inventory.SubInventories[ItemType.ITEM_RELIQUARY] as RelicTab).UpgradeMaterials.TryGetValue(itemId, out materialItem))
+            {
+                gameItem = materialItem;
+                return true;
+            }
             if (!PromoteTab.Items.TryGetValue(itemId, out gameItem))
                 if (!FoodTab.Items.TryGetValue(itemId, out gameItem))
                     if (!MaterialsTab.Items.TryGetValue(itemId, out gameItem))
