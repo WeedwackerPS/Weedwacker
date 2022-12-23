@@ -58,25 +58,25 @@ jobs:
       run: mkdir Weedwacker
       
     - name: Copy Gameserver to work
-      run: cp -r D:\a\Weedwacker\Weedwacker\bin\Release\GameServer D:\a\Weedwacker\Weedwacker\Weedwacker
+      run: cp -r bin\Release\GameServer Weedwacker
   
     - name: Copy key to game sr
-      run: cp -r D:\a\Weedwacker\Weedwacker\keys D:\a\Weedwacker\Weedwacker\Weedwacker
+      run: cp -r keys Weedwacker
   
     - name: Copy https cer
-      run: cp -r D:\a\Weedwacker\Weedwacker\keystore.p12 D:\a\Weedwacker\Weedwacker\Weedwacker
+      run: cp -r keystore.p12 Weedwacker
   
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.1
       with:
-          path: D:\a\Weedwacker\Weedwacker\Weedwacker
+          path: Weedwacker
           name: Weedwacker
   
     - name: List dir
       run: pwd
     
     - name: Zip GameServer
-      run: tar -cvzf Weedwacker.tar "D:\a\Weedwacker\Weedwacker\Weedwacker"
+      run: tar -cvzf Weedwacker.tar Weedwacker
 
     - name: List File
       run: ls
@@ -85,7 +85,7 @@ jobs:
       uses: "marvinpinto/action-automatic-releases@latest"
       with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "false"
+          automatic_release_tag: "${{ secrets.VERSION_WIN }}"
           prerelease: false
           title: "Release Build"
           files: |
