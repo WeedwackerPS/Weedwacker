@@ -75,8 +75,9 @@ jobs:
     - name: List dir
       run: pwd
     
-    - name: Zip GameServer
-      run: PowerShell -Command "Compress-Archive -LiteralPath'D:\a\Weedwacker\Weedwacker\Weedwacker' -DestinationPath 'D:\a\Weedwacker\Weedwacker\Weedwacker.zip'"
+    - uses: edgarrc/action-7z@v1
+      with:
+         args: 7z a -tzip -mx=9 Weedwacker.zip Weedwacker
 
     - name: List File
       run: ls
