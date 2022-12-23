@@ -76,7 +76,7 @@ jobs:
       run: pwd
     
     - name: Zip GameServer
-      run: tar -cvzf Weedwacker.tar Weedwacker
+      run: PowerShell -Command "Compress-Archive -LiteralPath'D:\a\Weedwacker\Weedwacker\Weedwacker' -DestinationPath 'D:\a\Weedwacker\Weedwacker\Weedwacker.zip'"
 
     - name: List File
       run: ls
@@ -89,5 +89,5 @@ jobs:
           prerelease: false
           title: "Release Build"
           files: |
-                *.tar
-                LICENSE.txt
+                *.
+                LICENSE
