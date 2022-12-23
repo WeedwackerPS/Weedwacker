@@ -44,10 +44,10 @@ jobs:
     - name: Use cmake
       run: cmake --version
 
-    - uses: nuget/setup-nuget@v1
+    - uses: nuget/setup-nuget@v1.1.1
       with:
         nuget-api-key: ${{ secrets.NuGetAPIKey }}
-        nuget-version: '5.x'
+        nuget-version: '6.4.x'
     - run: nuget restore Weedwacker.sln
 
 
