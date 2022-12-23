@@ -75,9 +75,13 @@ jobs:
     - name: List dir
       run: pwd
     
-    - uses: edgarrc/action-7z@v1
+    - name: Archive Release
+      uses: TheDoctor0/zip-release@0.6.2
       with:
-         args: 7z a -tzip -mx=9 Weedwacker.zip Weedwacker
+        type: 'zip'
+        path: 'Weedwacker'
+        filename: 'Weedwacker.zip'
+        exclusions: '*.git* /*node_modules/* .editorconfig'
 
     - name: List File
       run: ls
