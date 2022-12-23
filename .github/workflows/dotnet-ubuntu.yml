@@ -79,7 +79,8 @@ jobs:
           name: Weedwacker
   
     - name: List dir
-      run: pwd
+      run: |
+          ls
     
     - name: Zip GameServer
       run: zip -r -Z bzip2 weebwacker.zip Weedwacker/Weedwacker
