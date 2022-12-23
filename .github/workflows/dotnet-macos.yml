@@ -2,9 +2,9 @@ name: .NET Core Desktop Apple Silicon Builder
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "bruh" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "bruh" ]
 
 jobs:
 
