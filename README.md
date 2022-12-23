@@ -1,3 +1,5 @@
+[![.NET Core Desktop Windows Runner](https://github.com/tathaha/Weedwacker/actions/workflows/dotnet-windows.yml/badge.svg)](https://github.com/tathaha/Weedwacker/actions/workflows/dotnet-windows.yml)
+[![.NET Core Desktop Ubuntu Builder](https://github.com/tathaha/Weedwacker/actions/workflows/dotnet-ubuntu.yml/badge.svg)](https://github.com/tathaha/Weedwacker/actions/workflows/dotnet-ubuntu.yml)
 # Weedwacker
 Private Server reimplementation of a certain anime game.
 Join us on our [discord](https://discord.gg/XJgJcf6nPf)!
@@ -26,7 +28,7 @@ View our [contributing guidelines](https://github.com/WeedwackerPS/Weedwacker/bl
 * [mhypbase patch](https://github.com/Jx2f/mhypbase) _(Optional)_: if you want to enable **Server.Account.UsePassword**, you need to patch yor cilent according to mhypbase project.
 ### Building:
 any .NET 6 compatible compiler
-
+or run on github action
 ### Running:
 Weedwacker has 2 different executables. one for the HTTP web server, one for the UDP game server
 - 1) Download and put at the root of the project the [resources](https://git.crepe.moe/tamilpp25/Grasscutter_Resources/-/tree/3.2/) folder

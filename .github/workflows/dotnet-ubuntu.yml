@@ -1,0 +1,99 @@
+name: .NET Core Desktop Ubuntu Builder
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    strategy:
+      matrix:
+        configuration: [Release]
+
+    
+    runs-on: [ubuntu-latest]  # For a list of available runner types, refer to                           
+     # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
+
+    env:
+      Solution_Name: Weedwacker.sln                         # Replace with your solution name, i.e. MyWpfApp.sln.
+      Test_Project_Path: src/GameServer/GameServer.csproj                 # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
+      Wap_Project_Directory: src/GameServer/GameServer.csproj    # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
+      Wap_Project_Path: src/GameServer/GameServer.csproj                   # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    
+    # Install the .NET Core workload
+    - name: Install .NET Core
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.0.x
+  
+    - name: Setup cmake
+      uses: jwlawson/actions-setup-cmake@v1.13
+      with:
+        cmake-version: '3.16.x'
+    - name: Use cmake
+      run: cmake --version
+
+    - uses: nuget/setup-nuget@v1
+      with:
+        nuget-api-key: ${{ secrets.NuGetAPIKey }}
+        nuget-version: '5.x'
+    - run: nuget restore Weedwacker.sln
+
+
+    # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
+    
+   
+    # Execute all unit tests in the solution
+    - name: Build
+      run: dotnet build src/GameServer/GameServer.csproj  --configuration Release --no-restore
+   
+    - name: Make Dir
+      run: |
+          mkdir Weedwacker
+          ls
+      
+    - name: Copy Gameserver to work
+      run: cp -r bin/Release/GameServer Weedwacker
+  
+    - name: Copy key to game sr
+      run: cp -r keys Weedwacker
+  
+    - name: Copy https cer
+      run: cp -r keystore.p12 Weedwacker
+  
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.1.1
+      with:
+          path: Weedwacker
+          name: Weedwacker
+  
+    - name: List dir
+      run: ls
+    
+    - name: Zip GameServer
+      run: zip -r -Z bzip2 Weedwacker.zip Weedwacker
+
+    - name: List File
+      run: ls
+
+    - name: Upload release asset
+      uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "${{ secrets.VERSION_UBUNTU }}"
+          prerelease: false
+          title: "Release Build"
+          files: |
+                *.zip
+                LICENSE.txt
