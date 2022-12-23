@@ -48,7 +48,7 @@ jobs:
       with:
         nuget-api-key: ${{ secrets.NuGetAPIKey }}
         nuget-version: '6.4.x'
-    - run: nuget restore Weedwacker.sln
+    - run: sudo nuget restore Weedwacker.sln
 
 
     # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
