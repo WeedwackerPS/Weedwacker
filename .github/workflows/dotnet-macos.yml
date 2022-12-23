@@ -43,13 +43,13 @@ jobs:
         cmake-version: '3.16.x'
     - name: Use cmake
       run: cmake --version
-
+    - run: sudo rm -r -f /Users/runner/.dotnet/sdk/5.0.408
     - uses: nuget/setup-nuget@v1.1.1
       with:
         nuget-api-key: ${{ secrets.NuGetAPIKey }}
         nuget-version: '6.4.x'
     - run: sudo nuget restore Weedwacker.sln
-    - run: sudo rm -r -f /Users/runner/.dotnet/sdk/5.0.408
+    
 
     # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
     
