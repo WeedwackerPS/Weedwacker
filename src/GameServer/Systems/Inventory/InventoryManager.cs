@@ -29,7 +29,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
             };
         }
 
-        private int GetVirtualItemValue(int itemId)
+        public int GetVirtualItemValue(int itemId)
         {
             switch (itemId)
             {
@@ -77,30 +77,24 @@ namespace Weedwacker.GameServer.Systems.Inventory
                     if ((SubInventories[ItemType.ITEM_RELIQUARY] as RelicTab).Items.TryGetValue(itemData.id, out GameItem? relicItem))
                     {
                         result = await (SubInventories[ItemType.ITEM_RELIQUARY] as RelicTab).RemoveItemAsync(relicItem, itemData.count);
-                        await Owner.SendPacketAsync(new PacketStoreItemDelNotify(relicItem));
                     }
                     break;
                 case ItemType.ITEM_WEAPON:
                     if ((SubInventories[ItemType.ITEM_WEAPON] as WeaponTab).Items.TryGetValue(itemData.id, out GameItem? weaponItem))
                     {
                         result = await (SubInventories[ItemType.ITEM_WEAPON] as WeaponTab).RemoveItemAsync(weaponItem, itemData.count);
-                        await Owner.SendPacketAsync(new PacketStoreItemDelNotify(weaponItem));
                     }
                     break;
                 case ItemType.ITEM_FURNITURE:
                     if ((SubInventories[ItemType.ITEM_FURNITURE] as FurnitureTab).Items.TryGetValue(itemData.id, out GameItem? furnitureItem))
                     {
                         result = await (SubInventories[ItemType.ITEM_FURNITURE] as FurnitureTab).RemoveItemAsync(furnitureItem, itemData.count);
-                        if (furnitureItem.Count <= 0) await Owner.SendPacketAsync(new PacketStoreItemDelNotify(furnitureItem));
-                        else await Owner.SendPacketAsync(new PacketStoreItemChangeNotify(furnitureItem));
                     }
                     break;
                 case ItemType.ITEM_MATERIAL:
                     if ((SubInventories[ItemType.ITEM_MATERIAL] as MaterialSubInv).TryGetItemInSubInvById(itemData.id, out GameItem? materialItem))
                     {
                         result = await (SubInventories[ItemType.ITEM_MATERIAL] as MaterialSubInv).RemoveItemAsync(materialItem, itemData.count);
-                        if (materialItem.Count <= 0) await Owner.SendPacketAsync(new PacketStoreItemDelNotify(materialItem));
-                        else await Owner.SendPacketAsync(new PacketStoreItemChangeNotify(materialItem));
                     }
                     break;
                 case ItemType.ITEM_VIRTUAL:
@@ -221,7 +215,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
                 {
                     if (GameData.ItemDataMap[itemData.id].itemType == ItemType.ITEM_MATERIAL)
                     {
-                        if (!(SubInventories[ItemType.ITEM_MATERIAL] as MaterialSubInv).TryGetItemInSubInvById(itemData.id, out GameItem? material))
+                        if (!(SubInventories[ItemType.ITEM_MATERIAL] as MaterialSubInv).PromoteTab.Items.TryGetValue(itemData.id, out GameItem? material))
                             return false;
                         if (material.Count < itemData.count) return false; // insufficient materials
                         else materials.Add(material as MaterialItem, itemData.count);
@@ -268,7 +262,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
                     return false;
             }
         }
-        private async Task<bool> PayVirtualItemByIdAsync(int itemId, int count, ActionReason reason = ActionReason.None)
+        public async Task<bool> PayVirtualItemByIdAsync(int itemId, int count, ActionReason reason = ActionReason.None)
         {
             switch (itemId)
             {
@@ -338,15 +332,6 @@ namespace Weedwacker.GameServer.Systems.Inventory
                 case ItemType.ITEM_MATERIAL:
                     result = await SubInventories[ItemType.ITEM_MATERIAL].RemoveItemAsync(item, count);
                     break;
-            }
-
-            if (item.Count <= 0)
-            {
-                await Owner.SendPacketAsync(new PacketStoreItemDelNotify(item));
-            }
-            else
-            {
-                await Owner.SendPacketAsync(new PacketStoreItemChangeNotify(item));
             }
 
             // Returns true on success
