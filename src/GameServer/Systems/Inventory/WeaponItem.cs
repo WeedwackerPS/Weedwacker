@@ -9,6 +9,19 @@ namespace Weedwacker.GameServer.Systems.Inventory
     {
         [BsonElement] public List<int>? Affixes { get; protected set; } = new();
         [BsonElement] public int Refinement { get; protected set; } = 0;
+
+        [BsonIgnore] private int _Level;
+        public override int Level 
+        {
+            get => _Level;
+            set
+            {
+                if (value <= promoteData.unlockMaxLevel)
+                {
+                    _Level = value;
+                }
+            }
+        }
         [BsonIgnore] public uint WeaponEntityId;
         [BsonIgnore] public new WeaponData ItemData => (WeaponData)GameData.ItemDataMap[ItemId];
         [BsonIgnore] public WeaponPromoteData promoteData => GameData.WeaponPromoteDataMap[Tuple.Create(ItemData.weaponPromoteId, PromoteLevel)];
@@ -38,28 +51,6 @@ namespace Weedwacker.GameServer.Systems.Inventory
             Count = 1;
         }
 
-        public bool setLevel(int level)
-        {
-            if (level <= promoteData.unlockMaxLevel)
-            {
-                Level = level;
-                return true;
-            }
-            return false;
-        }
-
-        public void Promote()
-        {
-            PromoteLevel += 1;
-        }
-        public void setExp(int xp)
-        {
-            Exp = xp;
-        }
-        public void setTotalExp(int totalExp)
-        {
-             TotalExp = totalExp;
-        }
 
         public Shared.Network.Proto.Weapon ToWeaponProto()
         {

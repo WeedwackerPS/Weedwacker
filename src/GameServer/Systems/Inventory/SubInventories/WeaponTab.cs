@@ -2,8 +2,12 @@
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
 using Weedwacker.GameServer.Data;
+using Weedwacker.GameServer.Data.Common;
+using Weedwacker.GameServer.Data.Excel;
 using Weedwacker.GameServer.Database;
 using Weedwacker.GameServer.Enums;
+using Weedwacker.GameServer.Packet.Send;
+using Weedwacker.Shared.Network.Proto;
 using Weedwacker.Shared.Utils;
 
 namespace Weedwacker.GameServer.Systems.Inventory
@@ -89,13 +93,104 @@ namespace Weedwacker.GameServer.Systems.Inventory
             return weapon;
         }
 
-        public async Task updateWeaponAsync(WeaponItem weapon)
+        public async Task updateWeaponAsync(WeaponItem weapon) //Levelups, promotes, refines all that stuff
         {
             var filter = Builders<InventoryManager>.Filter.Where(w => w.OwnerId == Owner.GameUid);
-            var update = Builders<InventoryManager>.Update.Set($"{mongoPathToItems}.{nameof(Items)}.{weapon.Id}", weapon);
+            var update = Builders<InventoryManager>.Update.
+                Set($"{mongoPathToItems}.{nameof(Items)}.{weapon.Id}.{nameof(weapon.Level)}", weapon.Level).
+                Set($"{mongoPathToItems}.{nameof(Items)}.{weapon.Id}.{nameof(weapon.Exp)}", weapon.Exp).
+                Set($"{mongoPathToItems}.{nameof(Items)}.{weapon.Id}.{nameof(weapon.PromoteLevel)}", weapon.PromoteLevel).
+                Set($"{mongoPathToItems}.{nameof(Items)}.{weapon.Id}.{nameof(weapon.TotalExp)}", weapon.TotalExp).
+                Set($"{mongoPathToItems}.{nameof(Items)}.{weapon.Id}.{nameof(weapon.Refinement)}", weapon.Refinement);
             await DatabaseManager.UpdateInventoryAsync(filter, update);
         }
 
+        public async Task<WeaponItem> upgradeWeaponAsync(ulong guid, List<ulong> foodWeaponGuidList, List<ItemParam> itemParamList) 
+        {
+            WeaponItem weapon = Inventory.GuidMap[guid] as WeaponItem;
+            List<ItemParam> leftoverOres = new(); //TODO
+            List<ItemParamData> xpMats = new();
+            List<GameItem> weaponItems = new();
+            if (weapon is null || weapon.promoteData is null)
+                return null;
+            int expGain = 0;
+            int expGainFree = 0;
+            foreach (var itemParam in itemParamList)
+            {
+                var matData = GameData.ItemDataMap[(int)itemParam.ItemId] as MaterialData;
+
+                foreach (var x in matData.itemUse.Where(o => o.useOp == Enums.ItemUseOp.ITEM_USE_ADD_WEAPON_EXP))
+                {
+                    expGain += int.Parse(x.useParam[0]) * (int)itemParam.Count; //probably not the ideal way to go about it
+                    xpMats.Add(new ItemParamData((int)itemParam.ItemId, (int)itemParam.Count));
+
+                }
+            }
+            foreach (ulong matGuid in foodWeaponGuidList)
+            {
+                var mat = Inventory.GuidMap[matGuid] as WeaponItem;            
+                if (mat is null || mat.Locked)
+                    continue;
+                weaponItems.Add(mat);
+                if (mat.TotalExp > 0)
+                {
+                    expGainFree += (mat.TotalExp * 4) / 5; //Only 80% cashback! 
+                }
+                expGain += mat.ItemData.weaponBaseExp;
+            }
+            int moraCost = expGain / 10;
+            expGain += expGainFree;
+            int exp = weapon.Exp;
+            int level = weapon.Level;
+            int oldLevel = level;
+            xpMats.Add(new ItemParamData(202, moraCost));
+            if (await Inventory.PayPromoteCostAsync(xpMats, ActionReason.WeaponUpgrade))
+            {
+                int reqExp = GameData.WeaponLevelDataMap[level].requiredExps[weapon.ItemData.rankLevel - 1];
+                while (expGain > 0 && level < weapon.promoteData.unlockMaxLevel)
+                {
+                    int toGain = Math.Min(expGain, reqExp - exp);
+                    exp += toGain;
+                    weapon.TotalExp += toGain;
+                    expGain -= toGain;
+                    if (exp >= reqExp)
+                    {
+                        exp = 0;
+                        level += 1;
+                        reqExp = GameData.WeaponLevelDataMap[level].requiredExps[weapon.ItemData.rankLevel - 1];
+                    }
+
+                }
+                foreach(var item in weaponItems)
+                {
+                    RemoveItemAsync(item);
+                    await Owner.SendPacketAsync(new PacketStoreItemDelNotify(item));
+                }
+                weapon.Level = level;
+                weapon.Exp = exp;
+                await updateWeaponAsync(weapon);
+                await Owner.SendPacketAsync(new PacketStoreItemChangeNotify(weapon));
+                return weapon;
+            }
+            return null;
+        }
+
+        public async Task<WeaponItem> promoteWeaponAsync(ulong targetWeaponGuid)
+        {
+            WeaponItem weapon = Inventory.GuidMap[targetWeaponGuid] as WeaponItem;
+            GameData.WeaponPromoteDataMap.TryGetValue(Tuple.Create(weapon.ItemData.weaponPromoteId, weapon.PromoteLevel + 1), out WeaponPromoteData? promoteData);
+            if (promoteData is null || Owner.PlayerProperties[PlayerProperty.PROP_PLAYER_LEVEL] < promoteData.requiredPlayerLevel)
+                return null;
+            List<ItemParamData> costItems = promoteData.costItems.ToList();
+            costItems.Add(new ItemParamData(202, promoteData.coinCost));
+            if(await Inventory.PayPromoteCostAsync(costItems, ActionReason.WeaponPromote))
+            {
+                weapon.PromoteLevel += 1;
+                await updateWeaponAsync(weapon);
+                await Owner.SendPacketAsync(new PacketStoreItemChangeNotify(weapon));
+            }
+            return weapon;
+        }
         internal override async Task<bool> RemoveItemAsync(GameItem item, int count = 1)
         {
             if (item is WeaponItem && Items.TryGetValue((item as WeaponItem).Id, out GameItem? weapon))

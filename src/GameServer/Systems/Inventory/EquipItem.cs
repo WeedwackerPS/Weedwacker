@@ -6,10 +6,10 @@ namespace Weedwacker.GameServer.Systems.Inventory
     internal abstract class EquipItem : GameItem
     {
         // Equips
-        public int Level { get; protected set; }
-        public int Exp { get; protected set; }
-        public int TotalExp { get; protected set; }
-        public int PromoteLevel { get; protected set; }
+        public virtual int Level { get; set; }
+        public virtual int Exp { get; set; }
+        public virtual int TotalExp { get; set; }
+        public virtual int PromoteLevel { get; set; }
         public bool Locked { get; protected set; }
         public int EquippedAvatar = 0; // AvatarId
 

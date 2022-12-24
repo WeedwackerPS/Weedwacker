@@ -56,99 +56,18 @@ namespace Weedwacker.GameServer.Systems.Inventory
                     return 0;
             }
         }
-        public async Task upgradeWeaponAsync(ulong guid, List<ulong> foodWeaponGuidList, List<ItemParam> itemParamList)
+        
+
+        public async Task<WeaponItem> promoteWeaponAsync(ulong targetWeaponGuid) // returns updated weapon
         {
-            WeaponItem weapon = GuidMap[guid] as WeaponItem;
-            List<ItemParam> leftoverOres = new List<ItemParam>(); //TODO
-            List<ItemParamData> xpMats = new List<ItemParamData>();
-            if (weapon is null || weapon.promoteData is null)
-                return;
-            int expGain = 0;
-            int expGainFree = 0;
-            foreach (var itemParam in itemParamList)
-            {               
-                var matData = GameData.ItemDataMap[(int)itemParam.ItemId] as MaterialData;
-
-                foreach(var x in matData.itemUse.Where(o => o.useOp == Enums.ItemUseOp.ITEM_USE_ADD_WEAPON_EXP))
-                {
-                    expGain += int.Parse(x.useParam[0]) * (int)itemParam.Count; //probably not the ideal way to go about it
-                    xpMats.Add(new ItemParamData((int)itemParam.ItemId, (int)itemParam.Count));
-
-                }
-            }
-            foreach (ulong matGuid in foodWeaponGuidList)
-            {
-                var mat = GuidMap[matGuid] as WeaponItem;
-                if (mat is null || mat.Locked)
-                    continue;
-                if (mat.TotalExp > 0)
-                {
-                    expGainFree += (mat.TotalExp * 4) / 5; //Only 80% cashback! 
-                }
-                expGain += mat.ItemData.weaponBaseExp;
-            }
-            int moraCost = expGain / 10;
-            expGain += expGainFree;
-            int exp = weapon.Exp;
-            int level = weapon.Level;
-            int oldLevel = level;
-            if (Owner.PlayerProperties.GetValueOrDefault(PlayerProperty.PROP_PLAYER_SCOIN) < moraCost)
-                return;
-            await Owner.PropManager.PayMoraAsync(moraCost); 
-            if (await RemoveItemsByParamData(xpMats))
-            {
-                int reqExp = GameData.WeaponLevelDataMap[level].requiredExps[weapon.ItemData.rankLevel-1];               
-                while (expGain > 0 && level < weapon.promoteData.unlockMaxLevel)
-                {
-                    int toGain = Math.Min(expGain, reqExp - exp);
-                    exp += toGain;
-                    weapon.setTotalExp(weapon.TotalExp + toGain);
-                    expGain -= toGain;
-                    if (exp >= reqExp)
-                    {
-                        exp = 0;
-                        level += 1;
-                        reqExp = GameData.WeaponLevelDataMap[level].requiredExps[weapon.ItemData.rankLevel-1];
-                    }
-                
-                }
-                weapon.setLevel(level);
-                weapon.setExp(exp);
-                await (SubInventories[ItemType.ITEM_WEAPON] as WeaponTab).updateWeaponAsync(weapon);
-                await Owner.SendPacketAsync(new PacketStoreItemChangeNotify(weapon));
-                await Owner.SendPacketAsync(new PacketWeaponUpgradeRsp(weapon, oldLevel, leftoverOres));
-            }
+            return await (SubInventories[ItemType.ITEM_WEAPON] as WeaponTab).promoteWeaponAsync(targetWeaponGuid);
         }
 
-        public async Task<bool> promoteWeaponAsync(ulong targetWeaponGuid)
+        public async Task<WeaponItem> upgradeWeaponAsync(ulong targetWeaponGuid, List<ulong> foodWeaponGuidList, List<ItemParam> itemParamList) //returns updated weapon
         {
-            WeaponItem weapon = GuidMap[targetWeaponGuid] as WeaponItem;
-            GameData.WeaponPromoteDataMap.TryGetValue(Tuple.Create(weapon.ItemData.weaponPromoteId, weapon.PromoteLevel + 1), out WeaponPromoteData? promoteData);
-            if (weapon is null || promoteData is null || Owner.PlayerProperties[PlayerProperty.PROP_PLAYER_LEVEL] < promoteData.requiredPlayerLevel)
-                return false;
-            if (Owner.PlayerProperties.GetValueOrDefault(PlayerProperty.PROP_PLAYER_SCOIN) < promoteData.coinCost)
-                return false;
-            await Owner.PropManager.PayMoraAsync(promoteData.coinCost);
-            if(await PayPromoteCostAsync(promoteData.costItems, ActionReason.WeaponPromote))
-            {
-                int oldPromote = weapon.PromoteLevel;
-                weapon.Promote();
-                await (SubInventories[ItemType.ITEM_WEAPON] as WeaponTab).updateWeaponAsync(weapon);
-                await Owner.SendPacketAsync(new PacketStoreItemChangeNotify(weapon));
-                await Owner.SendPacketAsync(new PacketWeaponPromoteRsp(weapon, oldPromote));
-                return true;
-            }
-            return false;
+            return await (SubInventories[ItemType.ITEM_WEAPON] as WeaponTab).upgradeWeaponAsync(targetWeaponGuid, foodWeaponGuidList, itemParamList);
         }
-        public async Task<bool> RemoveItemsByParamData(List<ItemParamData> itemDataList)
-        {
-            foreach (var itemData in itemDataList)
-            {
-                if(!await RemoveItemByParamData(itemData))
-                    return false;
-            }
-            return true;
-        }
+
         public async Task<bool> RemoveItemByParamData(ItemParamData itemData)
         {
             bool result = false;
@@ -298,21 +217,21 @@ namespace Weedwacker.GameServer.Systems.Inventory
         {
             Dictionary<MaterialItem, int> materials = new();
             Dictionary<int, int> virtualItems = new();
-            foreach (ItemParamData itemData in costItems)
-            {
-                if (GameData.ItemDataMap[itemData.id].itemType == ItemType.ITEM_MATERIAL)
+                foreach (ItemParamData itemData in costItems)
                 {
-                    if (!(SubInventories[ItemType.ITEM_MATERIAL] as MaterialSubInv).TryGetItemInSubInvById(itemData.id, out GameItem? material))
-                        return false;
-                    if (material.Count < itemData.count) return false; // insufficient materials
-                    else materials.Add((material as MaterialItem), itemData.count);
+                    if (GameData.ItemDataMap[itemData.id].itemType == ItemType.ITEM_MATERIAL)
+                    {
+                        if (!(SubInventories[ItemType.ITEM_MATERIAL] as MaterialSubInv).TryGetItemInSubInvById(itemData.id, out GameItem? material))
+                            return false;
+                        if (material.Count < itemData.count) return false; // insufficient materials
+                        else materials.Add(material as MaterialItem, itemData.count);
+                    }
+                    else if (GameData.ItemDataMap[itemData.id].itemType == ItemType.ITEM_VIRTUAL)
+                    {
+                        if (GetVirtualItemValue(itemData.id) < itemData.count) return false; // insufficient currency
+                        else virtualItems.Add(itemData.id, itemData.count);
+                    }
                 }
-                else if (GameData.ItemDataMap[itemData.id].itemType == ItemType.ITEM_VIRTUAL)
-                {
-                    if (GetVirtualItemValue(itemData.id) < itemData.count) return false; // insufficient currency
-                    else virtualItems.Add(itemData.id, GetVirtualItemValue(itemData.id));
-                }
-            }
             // We have the requisite amount for all items
             foreach (MaterialItem material in materials.Keys) await RemoveItemByGuid(material.Guid, materials[material]);
             foreach (int item in virtualItems.Keys) await PayVirtualItemByIdAsync(item, virtualItems[item]);
@@ -397,11 +316,11 @@ namespace Weedwacker.GameServer.Systems.Inventory
 
         public async Task<bool> RemoveItemByGuid(ulong guid, int count = 1)
         {
-            if (GuidMap.TryGetValue(guid, out GameItem? item))
+            if (!GuidMap.ContainsKey(guid)) //TryGetValue(guid, out GameItem? item) appears to occasionally return false despite a key being present
             {
                 return false;
             }
-
+            GameItem item = GuidMap[guid];
             // Was the operation successful?
             bool result = false;
 

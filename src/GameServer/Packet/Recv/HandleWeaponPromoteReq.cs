@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Weedwacker.GameServer.Enums;
+using Weedwacker.GameServer.Packet.Send;
+using Weedwacker.GameServer.Systems.Inventory;
 using Weedwacker.Shared.Network.Proto;
 
 namespace Weedwacker.GameServer.Packet.Recv
@@ -15,7 +17,9 @@ namespace Weedwacker.GameServer.Packet.Recv
         public override async Task HandleAsync(Connection session, byte[] header, byte[] payload)
         {
             WeaponPromoteReq req = WeaponPromoteReq.Parser.ParseFrom(payload);
-            await session.Player.Inventory.promoteWeaponAsync(req.TargetWeaponGuid);
+            int oldPromote = (session.Player.Inventory.GuidMap[req.TargetWeaponGuid] as WeaponItem).PromoteLevel;
+            WeaponItem weapon = await session.Player.Inventory.promoteWeaponAsync(req.TargetWeaponGuid);
+            await session.Player.SendPacketAsync(new PacketWeaponPromoteRsp(weapon, oldPromote));
         }
     }
 }
