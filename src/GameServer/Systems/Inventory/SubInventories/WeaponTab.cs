@@ -107,7 +107,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
             await Owner.SendPacketAsync(new PacketStoreItemChangeNotify(weapon));
         }
 
-        public async Task<WeaponItem> upgradeWeaponAsync(ulong guid, List<ulong> foodWeaponGuidList, List<ItemParam> itemParamList) 
+        public async Task<WeaponItem> upgradeWeaponAsync(ulong guid, IEnumerable<ulong> foodWeaponGuidList, IEnumerable<ItemParam> itemParamList) 
         {
             WeaponItem weapon = Inventory.GuidMap[guid] as WeaponItem;
             List<ItemParam> leftoverOres = new(); //TODO
@@ -228,6 +228,8 @@ namespace Weedwacker.GameServer.Systems.Inventory
                 await DatabaseManager.UpdateInventoryAsync(filter, update);
 
                 Items.Remove(weapon.Id);
+                Inventory.GuidMap.Remove(weapon.Guid);
+                weapon.Count = 0;
                 await Owner.SendPacketAsync(new PacketStoreItemDelNotify(weapon));
                 return true;
             }
@@ -253,6 +255,8 @@ namespace Weedwacker.GameServer.Systems.Inventory
                     await DatabaseManager.UpdateInventoryAsync(filter, update);
                     
                     UpgradeMaterials.Remove(material.ItemId);
+                    material.Count = 0;
+                    Inventory.GuidMap.Remove(material.Guid);
                     await Owner.SendPacketAsync(new PacketStoreItemDelNotify(material));
                     return true;
                 }

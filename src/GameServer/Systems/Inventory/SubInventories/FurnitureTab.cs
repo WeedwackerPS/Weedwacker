@@ -98,6 +98,8 @@ namespace Weedwacker.GameServer.Systems.Inventory
                     var update = Builders<InventoryManager>.Update.Unset($"{mongoPathToItems}.{nameof(Materials)}.{material.ItemId}");
                     await DatabaseManager.UpdateInventoryAsync(filter, update);
 
+                    material.Count = 0;
+                    Inventory.GuidMap.Remove(material.Guid);
                     Materials.Remove(material.ItemId);
                     await Owner.SendPacketAsync(new PacketStoreItemDelNotify(material));
                     return true;

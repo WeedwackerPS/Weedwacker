@@ -6,7 +6,7 @@ namespace Weedwacker.GameServer.Packet.Send
 {
     internal class PacketCalcWeaponUpgradeReturnItemsRsp : BasePacket
     {
-        public PacketCalcWeaponUpgradeReturnItemsRsp(ulong guid, List<ItemParam> returnItems) : base(OpCode.CalcWeaponUpgradeReturnItemsRsp)
+        public PacketCalcWeaponUpgradeReturnItemsRsp(ulong guid, IEnumerable<ItemParam> returnItems) : base(OpCode.CalcWeaponUpgradeReturnItemsRsp)
         {
             CalcWeaponUpgradeReturnItemsRsp proto = new()
             {

@@ -73,6 +73,8 @@ namespace Weedwacker.GameServer.Systems.Inventory
 
 
                     Items.Remove(material.ItemId);
+                    material.Count = 0;
+                    Inventory.GuidMap.Remove(material.Guid);
                     await Owner.SendPacketAsync(new PacketStoreItemDelNotify(material));
                     return true;
                 }

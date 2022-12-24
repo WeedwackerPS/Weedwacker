@@ -12,7 +12,7 @@ namespace Weedwacker.GameServer.Packet.Send
 {
     internal class PacketWeaponUpgradeRsp : BasePacket
     {
-        public PacketWeaponUpgradeRsp(WeaponItem item, int oldLevel, List<ItemParam> leftoverOres) : base(OpCode.WeaponUpgradeRsp)
+        public PacketWeaponUpgradeRsp(WeaponItem item, int oldLevel, IEnumerable<ItemParam> leftoverOres) : base(OpCode.WeaponUpgradeRsp)
         {
             WeaponUpgradeRsp proto = new()
             {

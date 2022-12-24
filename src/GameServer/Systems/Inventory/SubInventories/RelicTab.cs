@@ -102,6 +102,8 @@ namespace Weedwacker.GameServer.Systems.Inventory
                 await DatabaseManager.UpdateInventoryAsync(filter2, update2);
 
                 Items.Remove((relic as ReliquaryItem).Id);
+                Inventory.GuidMap.Remove(relic.Guid);
+                relic.Count = 0;
                 await Owner.SendPacketAsync(new PacketStoreItemDelNotify(relic));
                 return true;
             }
@@ -127,6 +129,8 @@ namespace Weedwacker.GameServer.Systems.Inventory
                     await DatabaseManager.UpdateInventoryAsync(filter2, update2);
                   
                     UpgradeMaterials.Remove(material.ItemId);
+                    material.Count = 0;
+                    Inventory.GuidMap.Remove(material.Guid);
                     await Owner.SendPacketAsync(new PacketStoreItemDelNotify(material));
                     return true;
                 }
