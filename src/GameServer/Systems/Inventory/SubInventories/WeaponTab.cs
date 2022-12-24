@@ -103,6 +103,8 @@ namespace Weedwacker.GameServer.Systems.Inventory
                 Set($"{mongoPathToItems}.{nameof(Items)}.{weapon.Id}.{nameof(weapon.TotalExp)}", weapon.TotalExp).
                 Set($"{mongoPathToItems}.{nameof(Items)}.{weapon.Id}.{nameof(weapon.Refinement)}", weapon.Refinement);
             await DatabaseManager.UpdateInventoryAsync(filter, update);
+
+            await Owner.SendPacketAsync(new PacketStoreItemChangeNotify(weapon));
         }
 
         public async Task<WeaponItem> upgradeWeaponAsync(ulong guid, List<ulong> foodWeaponGuidList, List<ItemParam> itemParamList) 
@@ -110,7 +112,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
             WeaponItem weapon = Inventory.GuidMap[guid] as WeaponItem;
             List<ItemParam> leftoverOres = new(); //TODO
             List<ItemParamData> xpMats = new();
-            List<GameItem> weaponItems = new();
+            List<WeaponItem> weaponItems = new();
             if (weapon is null || weapon.promoteData is null)
                 return null;
             int expGain = 0;
@@ -144,7 +146,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
             int level = weapon.Level;
             int oldLevel = level;
             xpMats.Add(new ItemParamData(202, moraCost));
-            if (await Inventory.PayPromoteCostAsync(xpMats, ActionReason.WeaponUpgrade))
+            if (await PayUpgradeCostAsync(xpMats, weaponItems))
             {
                 int reqExp = GameData.WeaponLevelDataMap[level].requiredExps[weapon.ItemData.rankLevel - 1];
                 while (expGain > 0 && level < weapon.promoteData.unlockMaxLevel)
@@ -161,11 +163,6 @@ namespace Weedwacker.GameServer.Systems.Inventory
                     }
 
                 }
-                foreach(var item in weaponItems)
-                {
-                    RemoveItemAsync(item);
-                    await Owner.SendPacketAsync(new PacketStoreItemDelNotify(item));
-                }
                 weapon.Level = level;
                 weapon.Exp = exp;
                 await updateWeaponAsync(weapon);
@@ -173,6 +170,32 @@ namespace Weedwacker.GameServer.Systems.Inventory
                 return weapon;
             }
             return null;
+        }
+
+        public async Task<bool> PayUpgradeCostAsync(IEnumerable<ItemParamData> costItems, IEnumerable<WeaponItem> foodWeapons)
+        {
+            Dictionary<MaterialItem, int> materials = new();
+            Dictionary<int, int> virtualItems = new();
+            foreach (ItemParamData itemData in costItems)
+            {
+                if (GameData.ItemDataMap[itemData.id].itemType == ItemType.ITEM_MATERIAL)
+                {
+                    if (!UpgradeMaterials.TryGetValue(itemData.id, out MaterialItem? material))
+                        return false;
+                    if (material.Count < itemData.count) return false; // insufficient materials
+                    else materials.Add(material, itemData.count);
+                }
+                else if (GameData.ItemDataMap[itemData.id].itemType == ItemType.ITEM_VIRTUAL)
+                {
+                    if (Inventory.GetVirtualItemValue(itemData.id) < itemData.count) return false; // insufficient currency
+                    else virtualItems.Add(itemData.id, itemData.count);
+                }
+            }
+            // We have the requisite amount for all items
+            foreach (var material in materials) await RemoveItemAsync(material.Key, material.Value);
+            foreach (int item in virtualItems.Keys) await Inventory.PayVirtualItemByIdAsync(item, virtualItems[item]);
+            foreach (var foodWeapon in foodWeapons) await RemoveItemAsync(foodWeapon);
+            return true;
         }
 
         public async Task<WeaponItem> promoteWeaponAsync(ulong targetWeaponGuid)
@@ -183,11 +206,10 @@ namespace Weedwacker.GameServer.Systems.Inventory
                 return null;
             List<ItemParamData> costItems = promoteData.costItems.ToList();
             costItems.Add(new ItemParamData(202, promoteData.coinCost));
-            if(await Inventory.PayPromoteCostAsync(costItems, ActionReason.WeaponPromote))
+            if(await Inventory.PayPromoteCostAsync(costItems))
             {
                 weapon.PromoteLevel += 1;
                 await updateWeaponAsync(weapon);
-                await Owner.SendPacketAsync(new PacketStoreItemChangeNotify(weapon));
             }
             return weapon;
         }
@@ -206,6 +228,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
                 await DatabaseManager.UpdateInventoryAsync(filter, update);
 
                 Items.Remove(weapon.Id);
+                await Owner.SendPacketAsync(new PacketStoreItemDelNotify(weapon));
                 return true;
             }
             else if (UpgradeMaterials.TryGetValue(item.ItemId, out MaterialItem material))
@@ -218,6 +241,8 @@ namespace Weedwacker.GameServer.Systems.Inventory
                     var filter = Builders<InventoryManager>.Filter.Where(w => w.OwnerId == Owner.GameUid);
                     var update = Builders<InventoryManager>.Update.Set($"{mongoPathToItems}.{nameof(UpgradeMaterials)}.{material.ItemId}.{nameof(GameItem.Count)}", material.Count);
                     await DatabaseManager.UpdateInventoryAsync(filter, update);
+
+                    await Owner.SendPacketAsync(new PacketStoreItemChangeNotify(material));
                     return true;
                 }
                 else if (material.Count - count == 0)
@@ -226,8 +251,9 @@ namespace Weedwacker.GameServer.Systems.Inventory
                     var filter = Builders<InventoryManager>.Filter.Where(w => w.OwnerId == Owner.GameUid);
                     var update = Builders<InventoryManager>.Update.Unset($"{mongoPathToItems}.{nameof(UpgradeMaterials)}.{material.ItemId}.{nameof(GameItem.Count)}");
                     await DatabaseManager.UpdateInventoryAsync(filter, update);
-
+                    
                     UpgradeMaterials.Remove(material.ItemId);
+                    await Owner.SendPacketAsync(new PacketStoreItemDelNotify(material));
                     return true;
                 }
                 else
