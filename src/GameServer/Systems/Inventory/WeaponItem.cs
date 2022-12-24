@@ -10,18 +10,6 @@ namespace Weedwacker.GameServer.Systems.Inventory
         [BsonElement] public List<int>? Affixes { get; protected set; } = new();
         [BsonElement] public int Refinement { get; protected set; } = 0;
 
-        [BsonIgnore] private int _Level;
-        public override int Level 
-        {
-            get => _Level;
-            set
-            {
-                if (value <= promoteData.unlockMaxLevel)
-                {
-                    _Level = value;
-                }
-            }
-        }
         [BsonIgnore] public uint WeaponEntityId;
         [BsonIgnore] public new WeaponData ItemData => (WeaponData)GameData.ItemDataMap[ItemId];
         [BsonIgnore] public WeaponPromoteData promoteData => GameData.WeaponPromoteDataMap[Tuple.Create(ItemData.weaponPromoteId, PromoteLevel)];
@@ -29,8 +17,8 @@ namespace Weedwacker.GameServer.Systems.Inventory
         public WeaponItem(ulong guid, int itemId, int uniqueId, int level = 1, int refinement = 0) : base(guid, itemId)
         {
             Id = uniqueId;
-            Level = level;
             Refinement = refinement;
+            Level = level;
             PromoteLevel = GetMinPromoteLevel(Level);
             
             if (ItemData.skillAffix != null)
