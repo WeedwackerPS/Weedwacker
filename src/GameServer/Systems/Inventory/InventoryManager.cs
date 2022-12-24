@@ -63,7 +63,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
             return await (SubInventories[ItemType.ITEM_WEAPON] as WeaponTab).promoteWeaponAsync(targetWeaponGuid);
         }
 
-        public async Task<WeaponItem> upgradeWeaponAsync(ulong targetWeaponGuid, List<ulong> foodWeaponGuidList, List<ItemParam> itemParamList) //returns updated weapon
+        public async Task<WeaponItem> upgradeWeaponAsync(ulong targetWeaponGuid, IEnumerable<ulong> foodWeaponGuidList, IEnumerable<ItemParam> itemParamList) //returns updated weapon
         {
             return await (SubInventories[ItemType.ITEM_WEAPON] as WeaponTab).upgradeWeaponAsync(targetWeaponGuid, foodWeaponGuidList, itemParamList);
         }
