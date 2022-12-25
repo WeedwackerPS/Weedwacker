@@ -6,6 +6,7 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
     {
         [JsonProperty] public readonly string? target;
         [JsonProperty] public readonly bool doOffStage;
+        [JsonProperty] public readonly bool? RotationDampTime;
         [JsonProperty] public readonly BaseSelectTargetType? otherTargets;
         [JsonProperty] public readonly string modifierName;
         [JsonProperty] public readonly BasePredicate[]? predicates;

@@ -10,7 +10,7 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
         [JsonProperty] public readonly string[] attackTags;
         [JsonProperty] public readonly string effectName;
         [JsonProperty] public readonly string effectAttachPoint;
-        [JsonProperty] public readonly int lineRange;
+        [JsonProperty] public readonly float lineRange;
         [JsonProperty] public readonly string attackChainReceiverKey;
     }
 }

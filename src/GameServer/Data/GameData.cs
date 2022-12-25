@@ -158,7 +158,7 @@ namespace Weedwacker.GameServer.Data
                     typeof(AttackCostElementMixin), typeof(CountCheckEventMixin), typeof(SwitchSkillIconMixin), typeof(DoActionBySelfElementReactionMixin),
                     typeof(AttachToStateGroupNormalizedTimeMixin), typeof(OverrideAvatarMoveSpeedRatioMixin), typeof(AttackChainReceiverMixin), typeof(AttackChainMixin),
                     typeof(ModifyBeHitDamageMixin), typeof(DoActionByAimMixin), typeof(NahidaAimNpcGatherMixin), typeof(DisableMotionBlurMixin), typeof(NahidaHollowFlowerMixin),
-                    typeof(HittingOtherMixin), 
+                    typeof(HittingOtherMixin), typeof(AvatarStrafeMixin), typeof(AvatarStrafeFuelMixin), typeof(OverrideHitImpulseMixin), 
 
                     // Actions
                     typeof(SetAnimatorTrigger), typeof(SetAnimatorInt), typeof(SetAnimatorBool), typeof(SetCameraLockTime), typeof(ResetAnimatorTrigger), typeof(RemoveModifier),
@@ -203,7 +203,8 @@ namespace Weedwacker.GameServer.Data
                     typeof(AvatarExitViewBias), typeof(CaptureAnimal), typeof(AvatarShareCDSkillStart), typeof(SetPaimonLookAtCamera), typeof(UpdateReactionDamage), typeof(ApplyLevelModifier),
                     typeof(FireEffectForStorm), typeof(SendEvtElectricCoreMoveEnterP1), typeof(SendEvtElectricCoreMoveInterrupt), typeof(DoTileAction), typeof(SetCrashDamage),
                     typeof(SetCrystalShieldHpToOverrideMap), typeof(FireGainCrystalSeedEvent), typeof(SetBulletTrackTarget), typeof(ManipulateStrafeStamina), typeof(SetCameraEntityDampRatio),
-                    typeof(TryTriggerTrampolineJump), typeof(NotifyNahidaTrigger), typeof(TriggerGatherCollect), typeof(SetTeamFightPropertyToOverrideMapKey),
+                    typeof(TryTriggerTrampolineJump), typeof(NotifyNahidaTrigger), typeof(TriggerGatherCollect), typeof(SetTeamFightPropertyToOverrideMapKey), typeof(GetStrafeStaminaToGlobalValue), 
+
 
                     // Predicate
                     typeof(ByAny), typeof(ByAnimatorInt), typeof(ByLocalAvatarStamina), typeof(ByEntityAppearVisionType), typeof(ByTargetGlobalValue),typeof(ByTargetPositionToSelfPosition),

@@ -10,6 +10,6 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
         [JsonProperty] public readonly string colliderNodeName;
         [JsonProperty] public readonly ConfigAbilityAction[] actionQueue;
         [JsonProperty] public readonly BasePredicate[] predicates;
-        [JsonProperty] public readonly AbilityModifier[] onRemoveActionQueue;
+        [JsonProperty] public readonly ConfigAbilityAction[] onRemoveActionQueue;
     }
 }
