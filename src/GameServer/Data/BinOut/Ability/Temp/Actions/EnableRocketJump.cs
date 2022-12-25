@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Weedwacker.GameServer.Data.BinOut.Ability.Temp.Predicates;
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
@@ -7,6 +8,7 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
         [JsonProperty] public readonly bool canBeHandledOnRecover;
         [JsonProperty] public readonly bool enable;
         [JsonProperty] public readonly Extension extention;
+        [JsonProperty] public readonly ByTrampolineType[] predicates;
 
         public class Extension
         {
