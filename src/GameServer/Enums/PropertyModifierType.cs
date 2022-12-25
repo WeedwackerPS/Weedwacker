@@ -97,5 +97,7 @@ namespace Weedwacker.GameServer.Enums
         Actor_MaxStaminaDelta,
         Entity_MassRatio,
         Entity_ChargeSpeedRatioDelta,
+        Actor_CriticalHurtExtraDelta,
+        Actor_ElemReactOvergrowVariationExtraDelta,
     }
 }

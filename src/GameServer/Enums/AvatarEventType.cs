@@ -12,5 +12,6 @@ namespace Weedwacker.GameServer.Enums
         HPDown,
         ChestOpen,
         PickItem,
+        Energy
     }
 }
