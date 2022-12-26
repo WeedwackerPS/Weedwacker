@@ -103,8 +103,6 @@ namespace Weedwacker.GameServer.Systems.Inventory
                 Set($"{mongoPathToItems}.{nameof(Items)}.{weapon.Id}.{nameof(weapon.TotalExp)}", weapon.TotalExp).
                 Set($"{mongoPathToItems}.{nameof(Items)}.{weapon.Id}.{nameof(weapon.Refinement)}", weapon.Refinement);
             await DatabaseManager.UpdateInventoryAsync(filter, update);
-
-            await Owner.SendPacketAsync(new PacketStoreItemChangeNotify(weapon));
         }
 
         public async Task<WeaponItem> upgradeWeaponAsync(ulong guid, IEnumerable<ulong> foodWeaponGuidList, IEnumerable<ItemParam> itemParamList) 
