@@ -93,25 +93,13 @@ namespace Weedwacker.GameServer.Systems.Inventory
             return weapon;
         }
 
-        public async Task updateWeaponAsync(WeaponItem weapon) //Levelups, promotes, refines all that stuff
-        {
-            var filter = Builders<InventoryManager>.Filter.Where(w => w.OwnerId == Owner.GameUid);
-            var update = Builders<InventoryManager>.Update.
-                Set($"{mongoPathToItems}.{nameof(Items)}.{weapon.Id}.{nameof(weapon.Level)}", weapon.Level).
-                Set($"{mongoPathToItems}.{nameof(Items)}.{weapon.Id}.{nameof(weapon.Exp)}", weapon.Exp).
-                Set($"{mongoPathToItems}.{nameof(Items)}.{weapon.Id}.{nameof(weapon.PromoteLevel)}", weapon.PromoteLevel).
-                Set($"{mongoPathToItems}.{nameof(Items)}.{weapon.Id}.{nameof(weapon.TotalExp)}", weapon.TotalExp).
-                Set($"{mongoPathToItems}.{nameof(Items)}.{weapon.Id}.{nameof(weapon.Refinement)}", weapon.Refinement);
-            await DatabaseManager.UpdateInventoryAsync(filter, update);
-        }
-
-        public async Task<WeaponItem> upgradeWeaponAsync(ulong guid, IEnumerable<ulong> foodWeaponGuidList, IEnumerable<ItemParam> itemParamList) 
+        public async Task<WeaponItem> UpgradeWeaponAsync(ulong guid, IEnumerable<ulong> foodWeaponGuidList, IEnumerable<ItemParam> itemParamList) 
         {
             WeaponItem weapon = Inventory.GuidMap[guid] as WeaponItem;
             List<ItemParam> leftoverOres = new(); //TODO
             List<ItemParamData> xpMats = new();
             List<WeaponItem> weaponItems = new();
-            if (weapon is null || weapon.promoteData is null)
+            if (weapon is null || weapon.PromoteData is null)
                 return null;
             int expGain = 0;
             int expGainFree = 0;
@@ -147,7 +135,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
             if (await PayUpgradeCostAsync(xpMats, weaponItems))
             {
                 int reqExp = GameData.WeaponLevelDataMap[level].requiredExps[weapon.ItemData.rankLevel - 1];
-                while (expGain > 0 && level < weapon.promoteData.unlockMaxLevel)
+                while (expGain > 0 && level < weapon.PromoteData.unlockMaxLevel)
                 {
                     int toGain = Math.Min(expGain, reqExp - exp);
                     exp += toGain;
@@ -163,7 +151,12 @@ namespace Weedwacker.GameServer.Systems.Inventory
                 }
                 weapon.Level = level;
                 weapon.Exp = exp;
-                await updateWeaponAsync(weapon);
+                var filter = Builders<InventoryManager>.Filter.Where(w => w.OwnerId == Owner.GameUid);
+                var update = Builders<InventoryManager>.Update.
+                    Set($"{mongoPathToItems}.{nameof(Items)}.{weapon.Id}.{nameof(weapon.Level)}", weapon.Level).
+                    Set($"{mongoPathToItems}.{nameof(Items)}.{weapon.Id}.{nameof(weapon.Exp)}", weapon.Exp).
+                    Set($"{mongoPathToItems}.{nameof(Items)}.{weapon.Id}.{nameof(weapon.TotalExp)}", weapon.TotalExp);
+                await DatabaseManager.UpdateInventoryAsync(filter, update);
                 await Owner.SendPacketAsync(new PacketStoreItemChangeNotify(weapon));
                 return weapon;
             }
@@ -196,7 +189,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
             return true;
         }
 
-        public async Task<WeaponItem> promoteWeaponAsync(ulong targetWeaponGuid)
+        public async Task<WeaponItem> PromoteWeaponAsync(ulong targetWeaponGuid)
         {
             WeaponItem weapon = Inventory.GuidMap[targetWeaponGuid] as WeaponItem;
             GameData.WeaponPromoteDataMap.TryGetValue(Tuple.Create(weapon.ItemData.weaponPromoteId, weapon.PromoteLevel + 1), out WeaponPromoteData? promoteData);
@@ -207,7 +200,9 @@ namespace Weedwacker.GameServer.Systems.Inventory
             if(await Inventory.PayPromoteCostAsync(costItems))
             {
                 weapon.PromoteLevel += 1;
-                await updateWeaponAsync(weapon);
+                var filter = Builders<InventoryManager>.Filter.Where(w => w.OwnerId == Owner.GameUid);
+                var update = Builders<InventoryManager>.Update.Set($"{mongoPathToItems}.{nameof(Items)}.{weapon.Id}.{nameof(weapon.PromoteLevel)}", weapon.PromoteLevel);
+                await DatabaseManager.UpdateInventoryAsync(filter, update);
             }
             return weapon;
         }

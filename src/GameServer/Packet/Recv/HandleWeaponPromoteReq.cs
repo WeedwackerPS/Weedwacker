@@ -18,7 +18,7 @@ namespace Weedwacker.GameServer.Packet.Recv
         {
             WeaponPromoteReq req = WeaponPromoteReq.Parser.ParseFrom(payload);
             int oldPromote = (session.Player.Inventory.GuidMap[req.TargetWeaponGuid] as WeaponItem).PromoteLevel;
-            WeaponItem weapon = await session.Player.Inventory.promoteWeaponAsync(req.TargetWeaponGuid);
+            WeaponItem weapon = await session.Player.Inventory.PromoteWeaponAsync(req.TargetWeaponGuid);
             await session.Player.SendPacketAsync(new PacketWeaponPromoteRsp(weapon, oldPromote));
         }
     }

@@ -58,14 +58,14 @@ namespace Weedwacker.GameServer.Systems.Inventory
         }
         
 
-        public async Task<WeaponItem> promoteWeaponAsync(ulong targetWeaponGuid) // returns updated weapon
+        public async Task<WeaponItem> PromoteWeaponAsync(ulong targetWeaponGuid) // returns updated weapon
         {
-            return await (SubInventories[ItemType.ITEM_WEAPON] as WeaponTab).promoteWeaponAsync(targetWeaponGuid);
+            return await (SubInventories[ItemType.ITEM_WEAPON] as WeaponTab).PromoteWeaponAsync(targetWeaponGuid);
         }
 
-        public async Task<WeaponItem> upgradeWeaponAsync(ulong targetWeaponGuid, IEnumerable<ulong> foodWeaponGuidList, IEnumerable<ItemParam> itemParamList) //returns updated weapon
+        public async Task<WeaponItem> UpgradeWeaponAsync(ulong targetWeaponGuid, IEnumerable<ulong> foodWeaponGuidList, IEnumerable<ItemParam> itemParamList) //returns updated weapon
         {
-            return await (SubInventories[ItemType.ITEM_WEAPON] as WeaponTab).upgradeWeaponAsync(targetWeaponGuid, foodWeaponGuidList, itemParamList);
+            return await (SubInventories[ItemType.ITEM_WEAPON] as WeaponTab).UpgradeWeaponAsync(targetWeaponGuid, foodWeaponGuidList, itemParamList);
         }
 
         public async Task<bool> RemoveItemByParamData(ItemParamData itemData)

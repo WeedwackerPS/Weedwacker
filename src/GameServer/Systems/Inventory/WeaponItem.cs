@@ -12,7 +12,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
 
         [BsonIgnore] public uint WeaponEntityId;
         [BsonIgnore] public new WeaponData ItemData => (WeaponData)GameData.ItemDataMap[ItemId];
-        [BsonIgnore] public WeaponPromoteData promoteData => GameData.WeaponPromoteDataMap[Tuple.Create(ItemData.weaponPromoteId, PromoteLevel)];
+        [BsonIgnore] public WeaponPromoteData PromoteData => GameData.WeaponPromoteDataMap[Tuple.Create(ItemData.weaponPromoteId, PromoteLevel)];
 
         public WeaponItem(ulong guid, int itemId, int uniqueId, int level = 1, int refinement = 0) : base(guid, itemId)
         {
