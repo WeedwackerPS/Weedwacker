@@ -12,7 +12,6 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
     {
         [JsonProperty] public readonly string Actor_ElementReactionCriticalDelta;
         [JsonProperty] public readonly bool ignoreEventInfo;
-        [JsonProperty] public readonly float NEFPGMGNGAK;
         [JsonProperty] public readonly ByAny[] predicates;
     }
 }

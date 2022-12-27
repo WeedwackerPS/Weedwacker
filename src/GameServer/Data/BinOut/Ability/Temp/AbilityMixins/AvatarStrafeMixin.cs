@@ -14,7 +14,6 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
             [JsonProperty] public readonly bool? useGravity;
             [JsonProperty] public readonly bool? useRootMotion;
             [JsonProperty] public readonly float? angularSpeed;
-            [JsonProperty] public readonly double? HAMCHMBFOIK;
         }
     }
 }

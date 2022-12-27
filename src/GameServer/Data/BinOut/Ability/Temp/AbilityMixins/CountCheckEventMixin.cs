@@ -5,8 +5,8 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
 {
     internal class CountCheckEventMixin : BaseAbilityMixin
     {
-        [JsonProperty] public readonly string EJKFMLLBPJM;
-        [JsonProperty] public readonly float EBHLJAPLEDL;
+        [JsonProperty] public readonly string eventKey;
+        [JsonProperty] public readonly float checkTime;
         [JsonProperty] public readonly int checkCount;
         [JsonProperty] public readonly ConfigAbilityAction[] actionQueue;
     }
