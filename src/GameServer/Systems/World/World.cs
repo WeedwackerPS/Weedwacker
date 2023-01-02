@@ -21,6 +21,7 @@ namespace Weedwacker.GameServer.Systems.World
         private uint NextPeerId = 0;
         public int WorldLevel { get; private set; }
         public bool IsMultiplayer { get; private set; } = false;
+        public uint HostPeerId => Host.PeerId;
 
         public World(Player.Player owner)
         {
@@ -29,12 +30,7 @@ namespace Weedwacker.GameServer.Systems.World
             AbilityManager = new WorldAbilityManager(this);
             WorldLevel = owner.Profile.WorldLevel;
             GameServer.RegisterWorld(this);
-        }
-
-        public uint GetHostPeerId()
-        {
-            return Host.PeerId;
-        }
+        }    
 
         public uint GetNextPeerId()
         {

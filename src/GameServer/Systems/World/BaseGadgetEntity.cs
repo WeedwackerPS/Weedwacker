@@ -46,10 +46,9 @@ namespace Weedwacker.GameServer.Systems.World
 
             SceneEntityInfo entityInfo = new SceneEntityInfo()
             {
-
                 EntityId = EntityId,
                 EntityType = ProtEntityType.Gadget,
-                MotionInfo = new MotionInfo() { Pos = new Shared.Network.Proto.Vector() { X = Position.X, Y = Position.Y, Z = Position.Z }, Rot = new Shared.Network.Proto.Vector() { X = Rotation.X, Y = Rotation.Y, Z = Rotation.Z }, Speed = new() },
+                MotionInfo = MotionInfo,
                 EntityClientData = new(),
                 EntityAuthorityInfo = authority,
                 LifeState = (uint)LifeState.LIFE_ALIVE
@@ -79,7 +78,7 @@ namespace Weedwacker.GameServer.Systems.World
                 ConfigId = ConfigId,
                 GadgetState = (uint)LiveState,
                 IsEnableInteract = true,
-                AuthorityPeerId = Scene.World.GetHostPeerId(),
+                AuthorityPeerId = Scene.World.HostPeerId,
                 DraftId = (uint)DraftId
             };
 

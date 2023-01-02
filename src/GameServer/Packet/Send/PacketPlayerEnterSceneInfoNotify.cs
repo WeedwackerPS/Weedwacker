@@ -25,7 +25,7 @@ namespace Weedwacker.GameServer.Packet.Send
 
             proto.MpLevelEntityInfo = new MPLevelEntityInfo()
             {
-                AuthorityPeerId = player.World.GetHostPeerId(),
+                AuthorityPeerId = player.World.HostPeerId,
                 AbilityInfo = new(), //TODO
                 EntityId = player.World.LevelEntityId
             };

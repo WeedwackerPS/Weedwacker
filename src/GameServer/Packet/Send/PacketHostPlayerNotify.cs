@@ -11,7 +11,7 @@ namespace Weedwacker.GameServer.Packet.Send
             HostPlayerNotify p = new()
             {
                 HostUid = (uint)world.Host.GameUid,
-                HostPeerId = world.GetHostPeerId()
+                HostPeerId = world.HostPeerId
             };
 
             Data = p.ToByteArray();

@@ -47,7 +47,7 @@ namespace Weedwacker.GameServer.Systems.Script
             var table = options as LuaTable;
             Logger.DebugWriteLine($"[LUA] Call SetWorktopOptionsByGroupId with {groupId},{configId},{PrintTable(table)}");
 
-            IEnumerable<ScriptEntity> entities = context.SceneScriptManager.Scene.ScriptEntities.Values.Where(w => w.GroupId == groupId && w.ConfigId == configId && w is GadgetWorktop);
+            IEnumerable<ScriptEntity> entities = context.SceneScriptManager.Scene.ScriptEntities.Values.Where(w => w.GroupId == groupId && w.ConfigId == configId && w is GadgetWorktopEntity);
 
             if (entities.Any())
             {
@@ -75,7 +75,7 @@ namespace Weedwacker.GameServer.Systems.Script
             IEnumerable<ScriptEntity> gadget = context.SceneScriptManager.Scene.ScriptEntities.Values
                     .Where(w => w.ConfigId == configId && w.GroupId == groupId);
 
-            if (!(gadget is GadgetWorktop worktop))
+            if (!(gadget is GadgetWorktopEntity worktop))
             {
                 return 1;
             }

@@ -24,6 +24,21 @@ namespace Weedwacker.GameServer.Systems.World
         // Abilities
         public Dictionary<string, float> MetaOverrideMap { get; protected set; }
         public Dictionary<int, string> MetaModifiers { get; protected set; }
+        protected MotionInfo MotionInfo
+        {
+            get
+            {
+                MotionInfo proto = new()
+                {
+                    Pos = new Shared.Network.Proto.Vector() { X = Position.X, Y = Position.Y, Z = Position.Z },
+                    Rot = new Shared.Network.Proto.Vector() { X = Rotation.X, Y = Rotation.Y, Z = Rotation.Z },
+                    Speed = new(), //TODO
+                    State = MotionState
+                };
+
+                return proto;
+            }
+        }
 
         public SceneEntity(Scene? scene)
         {
@@ -40,18 +55,6 @@ namespace Weedwacker.GameServer.Systems.World
         {
             MotionState = state;
             return true;
-        }
-        protected MotionInfo GetMotionInfo()
-        {
-            MotionInfo proto = new()
-            {
-                Pos = new Shared.Network.Proto.Vector() { X = Position.X, Y = Position.Y, Z = Position.Z },
-                Rot = new Shared.Network.Proto.Vector() { X = Rotation.X, Y = Rotation.Y, Z = Rotation.Z },
-                Speed = new(), //TODO
-                State = MotionState
-            };
-
-            return proto;
         }
 
         public virtual async Task<float> HealAsync(float amount)

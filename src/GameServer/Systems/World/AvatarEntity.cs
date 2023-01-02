@@ -218,7 +218,7 @@ namespace Weedwacker.GameServer.Systems.World
 
             if (Scene != null && Avatar.Owner.TeamManager.GetCurrentAvatarEntity() == this)
             {
-                entityInfo.MotionInfo = GetMotionInfo();
+                entityInfo.MotionInfo = MotionInfo;
             }
             else
             {

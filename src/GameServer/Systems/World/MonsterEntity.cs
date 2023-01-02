@@ -189,7 +189,7 @@ namespace Weedwacker.GameServer.Systems.World
             {
                 EntityId = EntityId,
                 EntityType = ProtEntityType.Monster,
-                MotionInfo = GetMotionInfo(),
+                MotionInfo = MotionInfo,
                 EntityClientData = new(),
                 EntityAuthorityInfo = authority,
                 LifeState = (uint)LiveState,

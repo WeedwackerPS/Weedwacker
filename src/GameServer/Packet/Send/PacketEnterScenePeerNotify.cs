@@ -12,7 +12,7 @@ namespace Weedwacker.GameServer.Packet.Send
             {
                 DestSceneId = (uint)player.SceneId,
                 PeerId = player.PeerId,
-                HostPeerId = player.World.GetHostPeerId(),
+                HostPeerId = player.World.HostPeerId,
                 EnterSceneToken = player.EnterSceneToken
             };
 

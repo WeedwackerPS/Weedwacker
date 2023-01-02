@@ -8,8 +8,8 @@ namespace Weedwacker.GameServer.Systems.World
     {
         public readonly Player.Player Owner;
 
-        public readonly int CampId;
-        public readonly int CampType;
+        public readonly uint CampId;
+        public readonly uint CampType;
         public readonly uint OwnerEntityId;
         public readonly uint TargetEntityId;
         public readonly bool AsyncLoad;
@@ -23,8 +23,8 @@ namespace Weedwacker.GameServer.Systems.World
             Position = new(notify.InitPos.X, notify.InitPos.Y, notify.InitPos.Z);
             Rotation = new(notify.InitEulerAngles.X, notify.InitEulerAngles.Y, notify.InitEulerAngles.Z);
             ConfigId = notify.ConfigId;
-            CampId = (int)notify.CampId;
-            CampType = (int)notify.CampType;
+            CampId = notify.CampId;
+            CampType = notify.CampType;
             OwnerEntityId = notify.PropOwnerEntityId;
             TargetEntityId = notify.TargetEntityId;
             //AsyncLoad = notify.IsAsyncLoad;
@@ -47,32 +47,7 @@ namespace Weedwacker.GameServer.Systems.World
 
         public override SceneEntityInfo ToProto()
         {
-            //TODO
-            EntityAuthorityInfo authority = new EntityAuthorityInfo()
-            {
-                AbilityInfo = new AbilitySyncStateInfo(),
-                RendererChangedInfo = new(),
-                AiInfo = new() { IsAiOpen = true, BornPos = new() },
-                BornPos = new()
-            };
-
-            SceneEntityInfo entityInfo = new SceneEntityInfo()
-            {
-                EntityId = EntityId,
-                EntityType = ProtEntityType.Gadget,
-                MotionInfo = GetMotionInfo(),
-                EntityClientData = new(),
-                EntityAuthorityInfo = authority,
-                LifeState = (uint)LifeState.LIFE_ALIVE
-            };
-            entityInfo.AnimatorParaList.Add(new AnimatorParameterValueInfoPair());
-
-            PropPair pair = new PropPair()
-            {
-                Type = (uint)PlayerProperty.PROP_LEVEL,
-                PropValue = new() { Type = (uint)PlayerProperty.PROP_LEVEL, Val = 1 }
-            };
-            entityInfo.PropList.Add(pair);
+            var info = base.ToProto();
 
             ClientGadgetInfo clientGadget = new ClientGadgetInfo()
             {
@@ -82,20 +57,11 @@ namespace Weedwacker.GameServer.Systems.World
                 TargetEntityId = TargetEntityId,
                 AsyncLoad = AsyncLoad
             };
+            info.Gadget.OwnerEntityId = OwnerEntityId;
+            info.Gadget.ClientGadget = clientGadget;
+            info.Gadget.PropOwnerEntityId = OwnerEntityId;
 
-            SceneGadgetInfo gadgetInfo = new SceneGadgetInfo()
-            {
-                GadgetId = (uint)GadgetId,
-                OwnerEntityId = OwnerEntityId,
-                IsEnableInteract = true,
-                ClientGadget = clientGadget,
-                PropOwnerEntityId = OwnerEntityId,
-                AuthorityPeerId = Scene.World.Host.PeerId
-            };
-
-            entityInfo.Gadget = gadgetInfo;
-
-            return entityInfo;
+            return info;
         }
     }
 }
