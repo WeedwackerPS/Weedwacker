@@ -46,7 +46,7 @@ namespace Weedwacker.GameServer.Packet.Recv
             // Loop attack queue and handle
             while (session.Player.AttackResults.Count > 0)
             {
-                session.Player.Scene.HandleAttackAsync(session.Player.AttackResults.Dequeue());
+                await session.Player.Scene.HandleAttackAsync(session.Player.AttackResults.Dequeue());
             }
         }
     }
