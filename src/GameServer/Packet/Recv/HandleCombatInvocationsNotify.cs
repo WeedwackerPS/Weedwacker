@@ -1,6 +1,7 @@
 ﻿using Google.Protobuf;
 using Weedwacker.GameServer.Enums;
 using Weedwacker.Shared.Network.Proto;
+using Weedwacker.Shared.Utils;
 
 namespace Weedwacker.GameServer.Packet.Recv
 {
@@ -22,8 +23,14 @@ namespace Weedwacker.GameServer.Packet.Recv
                     case CombatTypeArgument.EvtBeingHit:
                         info = EvtBeingHitInfo.Parser.ParseFrom(data);
                         var hitInfo = info as EvtBeingHitInfo;
-                        //TODO
+
+                        if (hitInfo != null)
+                        {
+                            handleEvtBeingHit(session, hitInfo);
+                        }
+
                         break;
+
                     case CombatTypeArgument.AnimatorStateChanged:
                         info = EvtAnimatorStateChangedInfo.Parser.ParseFrom(data);
                         //TODO
@@ -113,6 +120,12 @@ namespace Weedwacker.GameServer.Packet.Recv
                 }
 #endif
             }
+        }
+
+        private void handleEvtBeingHit(Connection session, EvtBeingHitInfo hitInfo)
+        {
+            // add to queue
+            session.Player.AttackResults.Enqueue(hitInfo.AttackResult);
         }
     }
 }

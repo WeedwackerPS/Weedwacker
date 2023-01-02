@@ -67,6 +67,8 @@ namespace Weedwacker.GameServer.Systems.Player
         [BsonIgnore] public InvokeNotifier<AbilityInvokeEntry> AbilityInvNotifyList;
         [BsonIgnore] public InvokeNotifier<AbilityInvokeEntry> ClientAbilityInitFinishNotifyList;
 
+        [BsonIgnore] public Queue<AttackResult> AttackResults;
+
         public Player(string heroName, string accountUid, int gameUid)
         {
             Profile = new(heroName);
@@ -107,6 +109,7 @@ namespace Weedwacker.GameServer.Systems.Player
             Session.State = SessionState.PICKING_CHARACTER;
             await Session.SendPacketAsync(new BasePacket(OpCode.DoSetPlayerBornDataNotify));
         }
+
         public ulong GetNextGameGuid()
         {
             ulong nextId = ++NextGuid;
@@ -167,7 +170,7 @@ namespace Weedwacker.GameServer.Systems.Player
 
         public async void OnTickAsync()
         {
-            if(Session == null)
+            if (Session == null)
             {
                 return;
             }
@@ -286,6 +289,9 @@ namespace Weedwacker.GameServer.Systems.Player
             CombatInvNotifyList = new(this, typeof(PacketCombatInvocationsNotify));
             AbilityInvNotifyList = new(this, typeof(PacketAbilityInvocationsNotify));
             ClientAbilityInitFinishNotifyList = new(this, typeof(PacketClientAbilityInitFinishNotify));
+
+            // Create new attack queue
+            AttackResults = new Queue<AttackResult>();
         }
         public bool IsInMultiplayer() { return World != null && World.IsMultiplayer; }
 
@@ -346,6 +352,8 @@ namespace Weedwacker.GameServer.Systems.Player
         {
             await Session.SendPacketAsync(packet);
         }
+
+
 
     }
 }
