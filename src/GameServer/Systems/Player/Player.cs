@@ -67,8 +67,6 @@ namespace Weedwacker.GameServer.Systems.Player
         [BsonIgnore] public InvokeNotifier<AbilityInvokeEntry> AbilityInvNotifyList;
         [BsonIgnore] public InvokeNotifier<AbilityInvokeEntry> ClientAbilityInitFinishNotifyList;
 
-        [BsonIgnore] public Queue<AttackResult> AttackResults;
-
         public Player(string heroName, string accountUid, int gameUid)
         {
             Profile = new(heroName);
@@ -289,10 +287,8 @@ namespace Weedwacker.GameServer.Systems.Player
             CombatInvNotifyList = new(this, typeof(PacketCombatInvocationsNotify));
             AbilityInvNotifyList = new(this, typeof(PacketAbilityInvocationsNotify));
             ClientAbilityInitFinishNotifyList = new(this, typeof(PacketClientAbilityInitFinishNotify));
-
-            // Create new attack queue
-            AttackResults = new Queue<AttackResult>();
         }
+
         public bool IsInMultiplayer() { return World != null && World.IsMultiplayer; }
 
         //TODO

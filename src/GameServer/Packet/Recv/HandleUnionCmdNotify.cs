@@ -42,12 +42,6 @@ namespace Weedwacker.GameServer.Packet.Recv
             await session.Player.AbilityInvNotifyList.NotifyAsync();
             await session.Player.CombatInvNotifyList.NotifyAsync();
             await session.Player.ClientAbilityInitFinishNotifyList.NotifyAsync();
-
-            // Loop attack queue and handle
-            while (session.Player.AttackResults.Count > 0)
-            {
-                await session.Player.Scene.HandleAttackAsync(session.Player.AttackResults.Dequeue());
-            }
         }
     }
 }

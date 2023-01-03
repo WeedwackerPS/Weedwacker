@@ -26,7 +26,7 @@ namespace Weedwacker.GameServer.Packet.Recv
 
                         if (hitInfo != null)
                         {
-                            handleEvtBeingHit(session, hitInfo);
+                            HandleEvtBeingHit(session, hitInfo);
                         }
 
                         break;
@@ -122,10 +122,9 @@ namespace Weedwacker.GameServer.Packet.Recv
             }
         }
 
-        private void handleEvtBeingHit(Connection session, EvtBeingHitInfo hitInfo)
+        private async Task HandleEvtBeingHit(Connection session, EvtBeingHitInfo hitInfo)
         {
-            // add to queue
-            session.Player.AttackResults.Enqueue(hitInfo.AttackResult);
+            await session.Player.Scene.HandleAttackAsync(hitInfo.AttackResult);
         }
     }
 }

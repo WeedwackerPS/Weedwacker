@@ -18,8 +18,6 @@ namespace Weedwacker.GameServer.Packet.Recv
             }
 
             // Create entity and summon in world
-            // TODO: Albedo elevator
-
             ClientGadgetEntity gadget = new ClientGadgetEntity(session.Player.Scene, session.Player, req);
 
             await session.Player.Scene.OnPlayerCreateGadget(gadget);
