@@ -352,18 +352,19 @@ namespace Weedwacker.GameServer.Systems.Player
             await Owner.Scene.ReplaceAvatarAsync(oldEntity, newEntity);
         }
 
-        public async Task OnAvatarDie(ulong dieGuid, PlayerDieType dieType)
+        public async Task OnAvatarDie(long dieGuid)
         {
             AvatarEntity deadAvatar = GetCurrentAvatarEntity();
 
-            if (deadAvatar.LiveState == LifeState.LIFE_ALIVE || deadAvatar.Avatar.Guid != dieGuid)
+            if (deadAvatar.LiveState == LifeState.LIFE_ALIVE || deadAvatar.EntityId != dieGuid)
             {
                 return;
             }
 
             uint killedBy = deadAvatar.KilledBy;
+            PlayerDieType killedType = deadAvatar.KilledType;
 
-            if (dieType == PlayerDieType.Drawn)
+            if (killedType == PlayerDieType.Drawn)
             {
                 //TODO
             }
@@ -387,7 +388,7 @@ namespace Weedwacker.GameServer.Systems.Player
                 if (replacement == null)
                 {
                     // No more living team members...
-                    await Owner.SendPacketAsync(new PacketWorldPlayerDieNotify(deadAvatar.EntityId, dieType, killedBy));
+                    await Owner.SendPacketAsync(new PacketWorldPlayerDieNotify(deadAvatar.EntityId, killedType, killedBy));
                 }
                 else
                 {
@@ -396,6 +397,8 @@ namespace Weedwacker.GameServer.Systems.Player
                     await Owner.Scene.AddEntityAsync(replacement);
                 }
             }
+
+            await Owner.SendPacketAsync(new PacketAvatarDieAnimationEndRsp(deadAvatar.EntityId, 0));
         }
 
         internal async Task SetCurrentTeam(uint teamId)

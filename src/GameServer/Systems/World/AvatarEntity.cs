@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using System;
+using System.Numerics;
 using Weedwacker.GameServer.Enums;
 using Weedwacker.GameServer.Packet.Send;
 using Weedwacker.GameServer.Systems.Ability;
@@ -14,6 +15,7 @@ namespace Weedwacker.GameServer.Systems.World
         public readonly Avatar.Avatar Avatar;
         public TeamInfo TeamInfo { get; private set; }
         public uint KilledBy { get; protected set; }
+        public PlayerDieType KilledType { get; protected set; }
         public override Vector3 Position { get => Avatar.Owner.Position; protected set => Avatar.Owner.Position = value; }
         public override Vector3 Rotation { get => Avatar.Owner.Rotation; protected set => Avatar.Owner.Rotation = value; }
         private float CachedLandingSpeed = 0;
@@ -75,12 +77,14 @@ namespace Weedwacker.GameServer.Systems.World
         private async Task HandleFallOnGround()
         {
         }
-        public override async Task OnDeathAsync(uint killerId = default)
+
+        public override async Task OnDeathAsync(uint killerId = default, PlayerDieType dieType = PlayerDieType.KillByMonster)
         {
             KilledBy = killerId;
+            KilledType = dieType;
+
             await ClearEnergy(ChangeEnergyReason.None);
         }
-
 
         public override async Task<float> HealAsync(float amount)
         {

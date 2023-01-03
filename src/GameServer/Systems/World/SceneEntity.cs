@@ -97,6 +97,8 @@ namespace Weedwacker.GameServer.Systems.World
             // Check if dead.
             if (isDead)
                 await Scene.KillEntityAsync(this, attackerId);
+                // Set state
+                LiveState = LifeState.LIFE_DEAD;
         }
 
         public virtual async Task SetHealthAsync(float newHP)
@@ -112,7 +114,7 @@ namespace Weedwacker.GameServer.Systems.World
             await Scene.BroadcastPacketAsync(new PacketEntityFightPropUpdateNotify(this, FightProperty.FIGHT_PROP_CUR_HP));
 
             if (newHP == 0f)
-                await OnDeathAsync();
+                await OnDeathAsync(default);
         }
 
         /**
@@ -153,6 +155,11 @@ namespace Weedwacker.GameServer.Systems.World
          * @param killerId Entity id of the entity that killed this entity
          */
         public virtual async Task OnDeathAsync(uint killerId = default)
+        {
+
+        }
+
+        public virtual async Task OnDeathAsync(uint killerId = default, PlayerDieType dieType = PlayerDieType.KillByMonster)
         {
 
         }
