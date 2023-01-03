@@ -78,7 +78,15 @@ namespace Weedwacker.GameServer.Systems.World
         {
         }
 
-        public override async Task OnDeathAsync(uint killerId = default, PlayerDieType dieType = PlayerDieType.KillByMonster)
+        public override async Task OnDeathAsync(uint killerId = default)
+        {
+            KilledBy = killerId;
+            KilledType = PlayerDieType.KillByMonster;
+
+            await ClearEnergy(ChangeEnergyReason.None);
+        }
+
+        public async Task OnDeathAsync(uint killerId = default, PlayerDieType dieType = PlayerDieType.KillByMonster)
         {
             KilledBy = killerId;
             KilledType = dieType;

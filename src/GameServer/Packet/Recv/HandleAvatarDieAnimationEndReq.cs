@@ -1,4 +1,5 @@
 ﻿using Weedwacker.GameServer.Enums;
+using Weedwacker.GameServer.Packet.Send;
 using Weedwacker.Shared.Network.Proto;
 
 namespace Weedwacker.GameServer.Packet.Recv
@@ -11,6 +12,8 @@ namespace Weedwacker.GameServer.Packet.Recv
             AvatarDieAnimationEndReq req = AvatarDieAnimationEndReq.Parser.ParseFrom(payload);
 
             await session.Player.TeamManager.OnAvatarDie((long)req.DieGuid);
+
+            await session.SendPacketAsync(new PacketAvatarDieAnimationEndRsp(req.DieGuid, 0));
         }
     }
 }

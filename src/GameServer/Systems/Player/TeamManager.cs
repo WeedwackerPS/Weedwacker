@@ -397,8 +397,6 @@ namespace Weedwacker.GameServer.Systems.Player
                     await Owner.Scene.AddEntityAsync(replacement);
                 }
             }
-
-            await Owner.SendPacketAsync(new PacketAvatarDieAnimationEndRsp(deadAvatar.EntityId, 0));
         }
 
         internal async Task SetCurrentTeam(uint teamId)
