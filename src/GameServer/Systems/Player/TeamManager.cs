@@ -24,7 +24,40 @@ namespace Weedwacker.GameServer.Systems.Player
         [BsonIgnore] public SortedList<int, AvatarEntity> ActiveTeam = new(); // index
 
         [BsonIgnore] public AbilitySyncStateInfo AbilitySyncState = new(); //TODO
+        [BsonIgnore] public ulong CurrentCharacterGuid => CurrentAvatarEntity.Avatar.Guid;
 
+        [BsonIgnore] public TeamInfo CurrentTeamInfo
+        {
+            get
+            {
+                if (Owner.IsInMultiplayer)
+                    return MpTeam;
+                else
+                    return Teams[CurrentTeamIndex];
+            }
+        }
+
+        [BsonIgnore] public TeamInfo CurrentSinglePlayerTeamInfo => Teams[CurrentTeamIndex];
+        [BsonIgnore] public AvatarEntity CurrentAvatarEntity => ActiveTeam[CurrentCharacterIndex];
+        [BsonIgnore] public bool IsSpawned => Owner.Scene != null && Owner.Scene.Entities.ContainsKey(CurrentAvatarEntity.EntityId);
+
+        [BsonIgnore] public int MaxTeamSize
+        {
+            get
+            {
+                if (Owner.IsInMultiplayer)
+                {
+                    int max = GameServer.Configuration.Server.GameOptions.AvatarLimits.MultiplayerTeam;
+                    if (Owner.World.Host == Owner)
+                    {
+                        return Math.Max(1, (int)Math.Ceiling(max / (double)Owner.World.Players.Count));
+                    }
+                    return Math.Max(1, (int)Math.Floor(max / (double)Owner.World.Players.Count));
+                }
+                else
+                    return GameServer.Configuration.Server.GameOptions.AvatarLimits.SinglePlayerTeam;
+            }
+        }
         public TeamManager(Player player)
         {
             Owner = player;
@@ -124,45 +157,10 @@ namespace Weedwacker.GameServer.Systems.Player
             }
             else return false;
         }
-        public ulong GetCurrentCharacterGuid()
-        {
-            return GetCurrentAvatarEntity().Avatar.Guid;
-        }
-
-        public TeamInfo GetCurrentTeamInfo()
-        {
-            if (Owner.IsInMultiplayer())
-                return MpTeam;
-            else
-                return Teams[CurrentTeamIndex];
-        }
-
-        public TeamInfo GetCurrentSinglePlayerTeamInfo() { return Teams[CurrentTeamIndex]; }
-        public AvatarEntity GetCurrentAvatarEntity() { return ActiveTeam[CurrentCharacterIndex]; }
-
-        public bool IsSpawned()
-        {
-            return Owner.Scene != null && Owner.Scene.Entities.ContainsKey(GetCurrentAvatarEntity().EntityId);
-        }
-
-        public int GetMaxTeamSize()
-        {
-            if (Owner.IsInMultiplayer())
-            {
-                int max = GameServer.Configuration.Server.GameOptions.AvatarLimits.MultiplayerTeam;
-                if (Owner.World.Host == Owner)
-                {
-                    return Math.Max(1, (int)Math.Ceiling(max / (double)Owner.World.Players.Count));
-                }
-                return Math.Max(1, (int)Math.Floor(max / (double)Owner.World.Players.Count));
-            }
-            else
-                return GameServer.Configuration.Server.GameOptions.AvatarLimits.SinglePlayerTeam;
-        }
 
         public async Task UpdateTeamEntitiesAsync()
         {
-            AvatarEntity currentEntity = GetCurrentAvatarEntity();
+            AvatarEntity currentEntity = CurrentAvatarEntity;
             int prevSelectedAvatarIndex = -1;
 
             // Create a copy of the active team
@@ -176,10 +174,10 @@ namespace Weedwacker.GameServer.Systems.Player
             ActiveTeam.Clear();
 
             // update ActiveTeam using the entries of the current TeamInfo
-            for (int i = 0; i < GetCurrentTeamInfo().AvatarInfo.Count; i++)
+            for (int i = 0; i < CurrentTeamInfo.AvatarInfo.Count; i++)
             {
-                if (GetCurrentTeamInfo().AvatarInfo[i] == null) continue;
-                int avatarId = GetCurrentTeamInfo().AvatarInfo[i].AvatarId;
+                if (CurrentTeamInfo.AvatarInfo[i] == null) continue;
+                int avatarId = CurrentTeamInfo.AvatarInfo[i].AvatarId;
 
                 if (previousTeam.TryGetValue(avatarId, out AvatarEntity? entity))
                 {
@@ -191,7 +189,7 @@ namespace Weedwacker.GameServer.Systems.Player
                 }
                 else
                 {
-                    entity = new AvatarEntity(GetCurrentTeamInfo(), Owner.Scene, Owner.Avatars.GetAvatarById(avatarId));
+                    entity = new AvatarEntity(CurrentTeamInfo, Owner.Scene, Owner.Avatars.GetAvatarById(avatarId));
                 }
 
                 ActiveTeam.Add(i, entity);
@@ -219,17 +217,17 @@ namespace Weedwacker.GameServer.Systems.Player
             ActiveTeam.AsParallel().ForAll(async w => await w.Value.Avatar.CurSkillDepot.SendAvatarSkillInfoNotify());
 
             // Check if character changed
-            if (currentEntity != GetCurrentAvatarEntity())
+            if (currentEntity != CurrentAvatarEntity)
             {
                 // Remove and Add
-                await Owner.Scene.ReplaceAvatarAsync(currentEntity, GetCurrentAvatarEntity());
+                await Owner.Scene.ReplaceAvatarAsync(currentEntity, CurrentAvatarEntity);
             }
         }
 
         public async Task SetupAvatarTeamAsync(int teamId, IList<ulong> list)
         {
             // Sanity checks
-            if (list.Count == 0 || list.Count > GetMaxTeamSize() || Owner.IsInMultiplayer())
+            if (list.Count == 0 || list.Count > MaxTeamSize || Owner.IsInMultiplayer)
             {
                 return;
             }
@@ -265,7 +263,7 @@ namespace Weedwacker.GameServer.Systems.Player
 
             await Owner.SendPacketAsync(new PacketAvatarTeamUpdateNotify(Owner));
 
-            if (teamId == GetTeamId(GetCurrentTeamInfo()))
+            if (teamId == GetTeamId(CurrentTeamInfo))
             {
                 await UpdateTeamEntitiesAsync();
             }
@@ -282,7 +280,7 @@ namespace Weedwacker.GameServer.Systems.Player
         public async Task SetupMpTeamAsync(List<ulong> list)
         {
             // Sanity checks
-            if (list.Count == 0 || list.Count > GetMaxTeamSize() || Owner.IsInMultiplayer())
+            if (list.Count == 0 || list.Count > MaxTeamSize || Owner.IsInMultiplayer)
             {
                 return;
             }
@@ -319,7 +317,7 @@ namespace Weedwacker.GameServer.Systems.Player
 
         public async Task ChangeAvatar(ulong guid)
         {
-            AvatarEntity oldEntity = GetCurrentAvatarEntity();
+            AvatarEntity oldEntity = CurrentAvatarEntity;
 
             if (guid == oldEntity.Avatar.Guid)
             {
@@ -352,18 +350,19 @@ namespace Weedwacker.GameServer.Systems.Player
             await Owner.Scene.ReplaceAvatarAsync(oldEntity, newEntity);
         }
 
-        public async Task OnAvatarDie(ulong dieGuid, PlayerDieType dieType)
+        public async Task OnAvatarDie(long dieGuid)
         {
-            AvatarEntity deadAvatar = GetCurrentAvatarEntity();
+            AvatarEntity deadAvatar = CurrentAvatarEntity;
 
-            if (deadAvatar.LiveState == LifeState.LIFE_ALIVE || deadAvatar.Avatar.Guid != dieGuid)
+            if (deadAvatar.LiveState == LifeState.LIFE_ALIVE || deadAvatar.EntityId != dieGuid)
             {
                 return;
             }
 
             uint killedBy = deadAvatar.KilledBy;
+            PlayerDieType killedType = deadAvatar.KilledType;
 
-            if (dieType == PlayerDieType.Drawn)
+            if (killedType == PlayerDieType.Drawn)
             {
                 //TODO
             }
@@ -387,7 +386,7 @@ namespace Weedwacker.GameServer.Systems.Player
                 if (replacement == null)
                 {
                     // No more living team members...
-                    await Owner.SendPacketAsync(new PacketWorldPlayerDieNotify(deadAvatar.EntityId, dieType, killedBy));
+                    await Owner.SendPacketAsync(new PacketWorldPlayerDieNotify(deadAvatar.EntityId, killedType, killedBy));
                 }
                 else
                 {
@@ -400,7 +399,7 @@ namespace Weedwacker.GameServer.Systems.Player
 
         internal async Task SetCurrentTeam(uint teamId)
         {
-            if (Owner.IsInMultiplayer())
+            if (Owner.IsInMultiplayer)
             {
                 return;
             }

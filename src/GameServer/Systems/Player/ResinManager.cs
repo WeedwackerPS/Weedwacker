@@ -39,9 +39,6 @@ namespace Weedwacker.GameServer.Systems.Player
 
             return true;
         }
-
-
-
         public async Task<bool> AddResinAsync(int amount)
         {
             // Check if resin enabled.

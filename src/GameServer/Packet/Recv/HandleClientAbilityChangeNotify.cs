@@ -18,6 +18,13 @@ namespace Weedwacker.GameServer.Packet.Recv
                     await entity.AbilityManager.HandleAbilityInvokeAsync(invoke);
                 }
             }
+            else if (session.Player.Scene.ScriptEntities.TryGetValue(p.EntityId, out ScriptEntity? scriptEntities))
+            {
+                foreach (var invoke in p.Invokes)
+                {
+                    await scriptEntities.AbilityManager.HandleAbilityInvokeAsync(invoke);
+                }
+            }
             else
             {
                 entity = session.Player.TeamManager.ActiveTeam.Values.Where(w => w.EntityId == p.EntityId).FirstOrDefault();

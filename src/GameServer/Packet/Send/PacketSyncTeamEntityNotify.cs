@@ -13,7 +13,7 @@ namespace Weedwacker.GameServer.Packet.Send
                 SceneId = (uint)player.SceneId
             };
 
-            if (player.IsInMultiplayer())
+            if (player.IsInMultiplayer)
             {
                 player.World.Players.Except(new Player[] { player }).AsParallel().ForAll(p =>
                 {

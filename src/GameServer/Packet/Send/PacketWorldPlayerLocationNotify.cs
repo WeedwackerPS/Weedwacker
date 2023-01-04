@@ -13,7 +13,7 @@ namespace Weedwacker.GameServer.Packet.Send
 
             foreach (Player p in world.Players)
             {
-                proto.PlayerWorldLocList.Add(new PlayerWorldLocationInfo() { SceneId = (uint)p.SceneId, PlayerLoc = p.GetPlayerLocationInfo() });
+                proto.PlayerWorldLocList.Add(new PlayerWorldLocationInfo() { SceneId = (uint)p.SceneId, PlayerLoc = p.PlayerLocationInfo });
             }
 
             Data = proto.ToByteArray();

@@ -25,7 +25,7 @@ namespace Weedwacker.GameServer.Systems.Social
                 IsGameSource = true,
                 PlatformType = PlatformType.Editor,
             };
-            if (GameServer.OnlinePlayers.TryGetValue(FriendUid, out Connection friendSession)) proto.IsMpModeAvailable = friendSession.Player.IsInMultiplayer();
+            if (GameServer.OnlinePlayers.TryGetValue(FriendUid, out Connection friendSession)) proto.IsMpModeAvailable = friendSession.Player.IsInMultiplayer;
 
             return proto;
         }

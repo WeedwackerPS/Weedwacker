@@ -13,9 +13,15 @@ namespace Weedwacker.GameServer.Packet.Recv
             AbilityInvocationsNotify proto = AbilityInvocationsNotify.Parser.ParseFrom(payload);
             foreach (var invoke in proto.Invokes)
             {
-                session.Player.AbilityInvNotifyList.AddEntry(invoke, invoke.ForwardType, invoke.ForwardPeer);
-                if (session.Player.Scene.Entities.TryGetValue(invoke.EntityId, out BaseEntity? entity))
+                if (session.Player.Scene.ScriptEntities.TryGetValue(invoke.EntityId, out ScriptEntity? scriptEntity) && scriptEntity.AbilityManager != null)
+                    await scriptEntity.AbilityManager.HandleAbilityInvokeAsync(invoke);
+
+                else if (session.Player.Scene.Entities.TryGetValue(invoke.EntityId, out BaseEntity? entity) && entity.AbilityManager != null)
                     await entity.AbilityManager.HandleAbilityInvokeAsync(invoke);
+
+                else if (invoke.EntityId == session.Player.World.LevelEntityId)
+                    await session.Player.World.AbilityManager.HandleAbilityInvokeAsync(invoke);
+
                 else if (invoke.EntityId == session.Player.World.LevelEntityId)
                     await session.Player.World.AbilityManager.HandleAbilityInvokeAsync(invoke);
                 else
@@ -23,6 +29,9 @@ namespace Weedwacker.GameServer.Packet.Recv
                     Logger.DebugWriteLine($"Failed to find entity {invoke.EntityId}");
                     break;
                 }
+
+                session.Player.AbilityInvNotifyList.AddEntry(invoke, invoke.ForwardType, invoke.ForwardPeer);
+
             }
         }
     }

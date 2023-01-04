@@ -17,7 +17,7 @@ namespace Weedwacker.GameServer.Packet.Send
                 {
                     Uid = (uint)p.GameUid,
                     PeerId = p.PeerId,
-                    Name = p.GetNickName(),
+                    Name = p.NickName,
                     SceneId = (uint)p.SceneId,
                     OnlinePlayerInfo = p.GetOnlinePlayerInfo()
                 };

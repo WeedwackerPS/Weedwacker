@@ -15,7 +15,7 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
         public override async Task Invoke(string abilityName, BaseEntity avatarr, SceneEntity? enemyTarget = null)
         {
             if (!(avatarr is AvatarEntity avatar)) return;
-            if (!doOffStage && avatar.Avatar.Owner.TeamManager.GetCurrentAvatarEntity() != avatar) return;
+            if (!doOffStage && avatar.Avatar.Owner.TeamManager.CurrentAvatarEntity != avatar) return;
 
             float curHP;
             float maxHP;

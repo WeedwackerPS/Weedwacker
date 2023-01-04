@@ -19,7 +19,7 @@ namespace Weedwacker.GameServer.Packet.Send
             SetUpAvatarTeamRsp p = new SetUpAvatarTeamRsp()
             {
                 TeamId = teamId,
-                CurAvatarGuid = player.TeamManager.GetCurrentCharacterGuid(),
+                CurAvatarGuid = player.TeamManager.CurrentCharacterGuid,
             };
             foreach (var g in guidList)
             {
@@ -36,7 +36,7 @@ namespace Weedwacker.GameServer.Packet.Send
             SetUpAvatarTeamRsp p = new SetUpAvatarTeamRsp()
             {
                 TeamId = teamId,
-                CurAvatarGuid = player.TeamManager.GetCurrentCharacterGuid(),
+                CurAvatarGuid = player.TeamManager.CurrentCharacterGuid,
             };
             foreach (var a in team.AvatarInfo.Values)
             {

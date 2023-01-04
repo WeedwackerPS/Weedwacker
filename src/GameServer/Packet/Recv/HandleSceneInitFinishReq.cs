@@ -16,7 +16,7 @@ namespace Weedwacker.GameServer.Packet.Recv
                 session.SendPacketAsync(new PacketWorldDataNotify(session.Player.World)),
                 session.SendPacketAsync(new PacketPlayerWorldSceneInfoListNotify(session.Player.Scene)),
                 session.SendPacketAsync(new PacketSceneForceUnlockNotify()),
-                session.SendPacketAsync(new PacketTeamResonanceChangeNotify(session.Player.TeamManager.GetCurrentTeamInfo())),
+                session.SendPacketAsync(new PacketTeamResonanceChangeNotify(session.Player.TeamManager.CurrentTeamInfo)),
                 session.SendPacketAsync(new BasePacket(OpCode.SceneDataNotify)),
                 session.SendPacketAsync(new PacketHostPlayerNotify(session.Player.World)),
                 session.SendPacketAsync(new PacketSceneTimeNotify(session.Player)),

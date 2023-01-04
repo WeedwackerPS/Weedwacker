@@ -195,7 +195,7 @@ namespace Weedwacker.GameServer.Systems.Player
             MotionInfo motionInfo = moveInfo.MotionInfo;
             MotionState motionState = motionInfo.State;
             uint notifyEntityId = moveInfo.EntityId;
-            uint currentAvatarEntityId = Owner.TeamManager.GetCurrentAvatarEntity().EntityId;
+            uint currentAvatarEntityId = Owner.TeamManager.CurrentAvatarEntity.EntityId;
             if (notifyEntityId != currentAvatarEntityId && notifyEntityId != VehicleId)
             {
                 return;
@@ -348,7 +348,7 @@ namespace Weedwacker.GameServer.Systems.Player
 
         private StaminaDelta GetFightConsumption()
         {
-            Avatar.Avatar currentAvatar = Owner.TeamManager.GetCurrentAvatarEntity().Avatar;
+            Avatar.Avatar currentAvatar = Owner.TeamManager.CurrentAvatarEntity.Avatar;
 
             return currentAvatar.Data.GeneralData.weaponType switch
             {

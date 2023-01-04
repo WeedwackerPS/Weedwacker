@@ -138,10 +138,7 @@ namespace Weedwacker.GameServer.Systems.World
             Time = (uint)time % 1440;
         }
 
-        public bool IsInScene(SceneEntity entity)
-        {
-            return Entities.ContainsKey(entity.EntityId);
-        }
+        public bool IsInScene(SceneEntity entity) => Entities.ContainsKey(entity.EntityId);
 
         public async Task UpdateActiveAreaWeathersAsync(Tuple<int, int> areaIDs)
         {
@@ -202,7 +199,7 @@ namespace Weedwacker.GameServer.Systems.World
         {
             await Task.Yield();
             // Add new entities for player
-            TeamInfo teamInfo = player.TeamManager.GetCurrentTeamInfo();
+            TeamInfo teamInfo = player.TeamManager.CurrentTeamInfo;
             player.TeamManager.ActiveTeam = new();
             foreach (var entry in teamInfo.AvatarInfo)
             {
@@ -215,17 +212,17 @@ namespace Weedwacker.GameServer.Systems.World
         public async Task SpawnPlayerAsync(Player.Player player)
         {
             var teamManager = player.TeamManager;
-            if (IsInScene(teamManager.GetCurrentAvatarEntity()))
+            if (IsInScene(teamManager.CurrentAvatarEntity))
             {
                 return;
             }
 
-            if (teamManager.GetCurrentAvatarEntity().FightProps[FightProperty.FIGHT_PROP_CUR_HP] <= 0f)
+            if (teamManager.CurrentAvatarEntity.FightProps[FightProperty.FIGHT_PROP_CUR_HP] <= 0f)
             {
-                teamManager.GetCurrentAvatarEntity().FightProps[FightProperty.FIGHT_PROP_CUR_HP] = 1f;
+                teamManager.                CurrentAvatarEntity.FightProps[FightProperty.FIGHT_PROP_CUR_HP] = 1f;
             }
 
-            await AddEntityAsync(teamManager.GetCurrentAvatarEntity());
+            await AddEntityAsync(teamManager.CurrentAvatarEntity);
 
             // Notify the client of any extra skill charges
             teamManager.ActiveTeam.AsParallel().ForAll(async x => await x.Value.Avatar.CurSkillDepot.SendAvatarSkillInfoNotify());
@@ -331,7 +328,7 @@ namespace Weedwacker.GameServer.Systems.World
         public async Task ShowOtherEntitiesAsync(Player.Player player)
         {
             List<SceneEntity> entities = new();
-            SceneEntity currentEntity = player.TeamManager.GetCurrentAvatarEntity();
+            SceneEntity currentEntity = player.TeamManager.CurrentAvatarEntity;
 
             foreach (SceneEntity entity in Entities.Values.Concat(ScriptEntities.Values).Where(w => w is SceneEntity))
             {
@@ -405,7 +402,7 @@ namespace Weedwacker.GameServer.Systems.World
             BornNotifyQueue.Clear();
         }
 
-        public int GetEntityLevel(int baseLevel, int worldLevelOverride)
+        public static int GetEntityLevel(int baseLevel, int worldLevelOverride)
         {
             int level = worldLevelOverride > 0 ? worldLevelOverride + baseLevel - 22 : baseLevel;
             level = level >= 100 ? 100 : level;

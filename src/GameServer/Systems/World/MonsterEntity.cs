@@ -111,11 +111,11 @@ namespace Weedwacker.GameServer.Systems.World
         }
 
 
-        public override async Task OnDeathAsync(uint killerId)
+        public override async Task OnDeathAsync(uint killerId = default, PlayerDieType dieType = PlayerDieType.None)
         {
             await base.OnDeathAsync(killerId); // Invoke base class's onDeath() method.
 
-
+            /*
             Scene.DeadSpawnedEntities.Add(SpawnInfo);
 
             //TODO challenge
@@ -129,6 +129,7 @@ namespace Weedwacker.GameServer.Systems.World
             }
             // Battle Pass trigger
             Scene.Players.ForEach(p => p.BattlePassManager.TriggerMission(WatcherTriggerType.TRIGGER_MONSTER_DIE, MonsterData.id, 1));
+            */
         }
 
         public async Task RecalcStatsAsync()

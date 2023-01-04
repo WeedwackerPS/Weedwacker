@@ -11,7 +11,7 @@ namespace Weedwacker.GameServer.Packet.Send
         {
             SceneTeamUpdateNotify proto = new SceneTeamUpdateNotify()
             {
-                IsInMp = player.IsInMultiplayer()
+                IsInMp = player.IsInMultiplayer
             };
 
             foreach (Player p in player.Scene.Players)
@@ -34,8 +34,8 @@ namespace Weedwacker.GameServer.Packet.Send
                         SceneEntityInfo = avatar.ToProto(),
                         WeaponGuid = avatar.Avatar.Weapon.Guid,
                         WeaponEntityId = avatar.Avatar.Weapon.WeaponEntityId,
-                        IsPlayerCurAvatar = p.TeamManager.GetCurrentAvatarEntity() == avatar,
-                        IsOnScene = p.TeamManager.GetCurrentAvatarEntity() == avatar, // might affect cutscenes. investigate
+                        IsPlayerCurAvatar = p.TeamManager.CurrentAvatarEntity == avatar,
+                        IsOnScene = p.TeamManager.CurrentAvatarEntity == avatar, // might affect cutscenes. investigate
                         AvatarAbilityInfo = avatarAbilityInfo,
                         WeaponAbilityInfo = weaponAbilityInfo,
                         AbilityControlBlock = avatar.GetAbilityControlBlock(),
@@ -43,7 +43,7 @@ namespace Weedwacker.GameServer.Packet.Send
                     };
 
 
-                    if (player.IsInMultiplayer())
+                    if (player.IsInMultiplayer)
                     {
                         avatarProto.AvatarInfo = avatar.Avatar.ToProto();
                         avatarProto.SceneAvatarInfo = avatar.GetSceneAvatarInfo();

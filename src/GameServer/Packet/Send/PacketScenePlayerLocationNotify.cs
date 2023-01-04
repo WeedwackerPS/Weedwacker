@@ -17,7 +17,7 @@ namespace Weedwacker.GameServer.Packet.Send
 
             foreach (Player p in scene.Players)
             {
-                proto.PlayerLocList.Add(p.GetPlayerLocationInfo());
+                proto.PlayerLocList.Add(p.PlayerLocationInfo);
             }
 
             Data = proto.ToByteArray();

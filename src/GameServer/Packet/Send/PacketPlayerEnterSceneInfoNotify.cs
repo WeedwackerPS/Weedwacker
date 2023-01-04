@@ -12,7 +12,7 @@ namespace Weedwacker.GameServer.Packet.Send
         {
             PlayerEnterSceneInfoNotify proto = new PlayerEnterSceneInfoNotify()
             {
-                CurAvatarEntityId = player.TeamManager.GetCurrentAvatarEntity().EntityId,
+                CurAvatarEntityId = player.TeamManager.CurrentAvatarEntity.EntityId,
                 EnterSceneToken = player.EnterSceneToken
             };
 

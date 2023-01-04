@@ -40,11 +40,6 @@ namespace Weedwacker.GameServer.Systems.World
             }
         }
 
-        public override async Task OnDeathAsync(uint killerId)
-        {
-            await base.OnDeathAsync(killerId); // Invoke base class's onDeath() method.
-        }
-
         public override SceneEntityInfo ToProto()
         {
             var info = base.ToProto();

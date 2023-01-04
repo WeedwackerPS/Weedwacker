@@ -22,7 +22,6 @@ namespace Weedwacker.GameServer.Systems.World
         public int WorldLevel { get; private set; }
         public bool IsMultiplayer { get; private set; } = false;
         public uint HostPeerId => Host.PeerId;
-
         public World(Player.Player owner)
         {
             Host = owner;
@@ -30,12 +29,8 @@ namespace Weedwacker.GameServer.Systems.World
             AbilityManager = new WorldAbilityManager(this);
             WorldLevel = owner.Profile.WorldLevel;
             GameServer.RegisterWorld(this);
-        }    
-
-        public uint GetNextPeerId()
-        {
-            return ++NextPeerId;
         }
+        public uint GetNextPeerId() => ++NextPeerId;
 
         public async Task<Scene?> GetSceneById(int sceneId)
         {
@@ -58,10 +53,7 @@ namespace Weedwacker.GameServer.Systems.World
             return null;
         }
 
-        public uint GetNextEntityId(EntityIdType idType)
-        {
-            return (uint)(((int)idType << 24) + ++NextEntityId);
-        }
+        public uint GetNextEntityId(EntityIdType idType) => (uint)(((int)idType << 24) + ++NextEntityId);
 
         public async Task<bool> AddPlayerAsync(Player.Player player, EnterReason reason, EnterType type = EnterType.Self, bool useDefaultBornPosition = false)
         {
@@ -88,7 +80,7 @@ namespace Weedwacker.GameServer.Systems.World
             // Copy main team to multiplayer team
             if (IsMultiplayer)
             {
-                player.TeamManager.MpTeam.CopyFrom(player.TeamManager.GetCurrentSinglePlayerTeamInfo(), player.TeamManager.GetMaxTeamSize());
+                player.TeamManager.MpTeam.CopyFrom(player.TeamManager.CurrentSinglePlayerTeamInfo, player.TeamManager.MaxTeamSize);
                 player.TeamManager.CurrentCharacterIndex = 0;
             }
 
@@ -184,7 +176,7 @@ namespace Weedwacker.GameServer.Systems.World
                 // Update team of all players since max players has been changed - Probably not the best way to do it
                 if (IsMultiplayer)
                 {
-                    player.TeamManager.MpTeam.CopyFrom(player.TeamManager.MpTeam, player.TeamManager.GetMaxTeamSize());
+                    player.TeamManager.MpTeam.CopyFrom(player.TeamManager.MpTeam, player.TeamManager.MaxTeamSize);
                     await player.TeamManager.UpdateTeamEntitiesAsync();
                 }
 
