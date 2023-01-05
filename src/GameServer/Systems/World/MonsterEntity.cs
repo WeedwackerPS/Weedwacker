@@ -4,13 +4,12 @@ using Weedwacker.GameServer.Data.Common;
 using Weedwacker.GameServer.Data.Excel;
 using Weedwacker.GameServer.Enums;
 using Weedwacker.GameServer.Systems.Ability;
-using Weedwacker.GameServer.Systems.Script;
 using Weedwacker.GameServer.Systems.Script.Scene;
 using Weedwacker.Shared.Network.Proto;
 
 namespace Weedwacker.GameServer.Systems.World
 {
-    internal class MonsterEntity : ScriptEntity
+    internal class MonsterEntity : SceneEntity, IScriptEntity
     {
         public readonly MonsterData MonsterData;
         public readonly SceneGroup.SpawnInfo? SpawnInfo;
@@ -18,6 +17,9 @@ namespace Weedwacker.GameServer.Systems.World
         public readonly uint RightWeaponEntityId;
         public readonly uint LeftWeaponEntityId;
         public int PoseId;
+        public uint BlockId { get; set; }
+        public uint GroupId { get; set; }
+        public uint ConfigId { get; set; }
 
         public static Task<MonsterEntity> CreateAsync(Scene scene, MonsterData monsterData, int level, SceneGroup.Monster spawnInfo, uint blockId, uint groupId)
         {
@@ -37,7 +39,7 @@ namespace Weedwacker.GameServer.Systems.World
             await RecalcStatsAsync();
             return this;
         }
-        private MonsterEntity(Scene scene, MonsterData monsterData, int level, SceneGroup.Monster? spawnInfo, uint blockId, uint groupId) : base(scene, blockId, groupId, spawnInfo.config_id)
+        private MonsterEntity(Scene scene, MonsterData monsterData, int level, SceneGroup.Monster? spawnInfo, uint blockId, uint groupId) : base(scene)
         {
 
             EntityId = scene.World.GetNextEntityId(EntityIdType.MONSTER);
@@ -47,6 +49,10 @@ namespace Weedwacker.GameServer.Systems.World
             Rotation = spawnInfo.rot;
             SpawnInfo = spawnInfo;
             Level = level;
+
+            BlockId = blockId;
+            GroupId = groupId;
+            ConfigId = spawnInfo.config_id;
 
             // Monster weapon
             if (monsterData.equips[0] != 0) RightWeaponEntityId = scene.World.GetNextEntityId(EntityIdType.WEAPON);

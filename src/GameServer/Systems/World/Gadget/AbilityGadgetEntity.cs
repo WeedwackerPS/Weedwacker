@@ -7,7 +7,7 @@ namespace Weedwacker.GameServer.Systems.World
         private uint CampId;
         private uint CampType;
         private uint TargetEntityId;
-        protected AbilityGadgetEntity(Scene? scene, uint blockId, uint groupId, uint configId) : base(scene, blockId, groupId, configId)
+        protected AbilityGadgetEntity(Scene? scene, uint blockId, uint groupId, uint configId) : base(scene)
         {
         }
 

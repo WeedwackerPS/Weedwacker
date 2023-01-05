@@ -1,9 +1,7 @@
-﻿using Weedwacker.GameServer.Enums;
-using Weedwacker.Shared.Network.Proto;
+﻿using Weedwacker.Shared.Network.Proto;
 
 namespace Weedwacker.GameServer.Systems.World
 {
-    // BOY I'M SURE HAPPY I DON'T HAVE TO DEAL WITH MULTIPLE INHERITANCE... WHAT A HEADACHE
     internal class ClientGadgetEntity : BaseGadgetEntity
     {
         public readonly Player.Player Owner;
@@ -13,7 +11,7 @@ namespace Weedwacker.GameServer.Systems.World
         public readonly uint OwnerEntityId;
         public readonly uint TargetEntityId;
         public readonly bool AsyncLoad;
-
+        public readonly uint ConfigId;
         public readonly uint OriginalOwnerEntityId;
 
         public ClientGadgetEntity(Scene scene, Player.Player player, EvtCreateGadgetNotify notify) : base(scene)

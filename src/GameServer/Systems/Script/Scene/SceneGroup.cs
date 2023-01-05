@@ -51,7 +51,7 @@ namespace Weedwacker.GameServer.Systems.Script.Scene
 
         internal async void OnUnload(World.Scene scene)
         {
-            IEnumerable<ScriptEntity> toUnload = scene.ScriptEntities.Values.Where(w => w.GroupId == group_id);
+            IEnumerable<SceneEntity> toUnload = scene.ScriptEntities.Values.Where(w => w.GroupId == group_id).Select(w => w as SceneEntity);
             await scene.RemoveEntitiesAsync(toUnload, Shared.Network.Proto.VisionType.Remove);
             Logger.DebugWriteLine($"Unloaded SceneGroup{group_id} monsters");
         }

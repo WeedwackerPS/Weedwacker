@@ -1,8 +1,5 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
-using System;
-using Weedwacker.GameServer.Data;
-using Weedwacker.GameServer.Data.BinOut.Scene.Point;
 using Weedwacker.GameServer.Database;
 using Weedwacker.GameServer.Enums;
 using Weedwacker.GameServer.Packet.Send;

@@ -25,7 +25,7 @@ namespace Weedwacker.GameServer.Systems.World
         public readonly List<Player.Player> Players = new();
         private HashSet<SceneGroup> LoadedGroups = new();
         public readonly ConcurrentDictionary<uint, BaseEntity> Entities = new(); // entityId
-        public readonly ConcurrentDictionary<uint, ScriptEntity> ScriptEntities = new(); // entityId
+        public readonly ConcurrentDictionary<uint, IScriptEntity> ScriptEntities = new(); // entityId
         public readonly HashSet<SpawnInfo> SpawnedEntities;
         public readonly HashSet<SpawnInfo> DeadSpawnedEntities;
         public int AutoCloseTime;
@@ -125,9 +125,9 @@ namespace Weedwacker.GameServer.Systems.World
             {
                 return entity;
             }
-            else if (ScriptEntities.TryGetValue(id, out ScriptEntity scriptEntity))
+            else if (ScriptEntities.TryGetValue(id, out IScriptEntity? scriptEntity))
             {
-                return scriptEntity;
+                return (BaseEntity?)scriptEntity;
             }
             else
                 return null;
@@ -259,15 +259,15 @@ namespace Weedwacker.GameServer.Systems.World
 
         private async Task AddEntityDirectly(SceneEntity entity)
         {
-            if (entity is ScriptEntity scriptEntity && scriptEntity.GroupId != 0 && !ScriptEntities.ContainsKey(entity.EntityId)) // need an extra check against client gadgets. Oh if only I could do multiple inheritance
+            if (entity is IScriptEntity scriptEntity && scriptEntity.GroupId != 0 && !ScriptEntities.ContainsKey(entity.EntityId))
             {
-                ScriptEntities.TryAdd(scriptEntity.EntityId, scriptEntity);
-                await entity.OnCreateAsync(); // Call entity create event
+                ScriptEntities.TryAdd(entity.EntityId, scriptEntity);
+                await entity.OnCreateAsync();
             }
             else if(!Entities.ContainsKey(entity.EntityId))
             {
                 Entities.TryAdd(entity.EntityId, entity);
-                await entity.OnCreateAsync(); // Call entity create event
+                await entity.OnCreateAsync();
             }
         }
 
@@ -302,7 +302,7 @@ namespace Weedwacker.GameServer.Systems.World
 
         public async Task<bool> RemoveEntityAsync(SceneEntity entity, Shared.Network.Proto.VisionType visionType = Shared.Network.Proto.VisionType.Die)
         {
-            if (ScriptEntities.Remove(entity.EntityId, out ScriptEntity idc) || Entities.Remove(entity.EntityId, out BaseEntity idc2))
+            if (ScriptEntities.Remove(entity.EntityId, out IScriptEntity idc) || Entities.Remove(entity.EntityId, out BaseEntity idc2))
             {
                 await BroadcastPacketAsync(new PacketSceneEntityDisappearNotify(entity, visionType));
                 return true;
@@ -311,7 +311,7 @@ namespace Weedwacker.GameServer.Systems.World
         }
         public async Task RemoveEntitiesAsync(IEnumerable<SceneEntity> entity, Shared.Network.Proto.VisionType visionType)
         {
-            var toRemove = entity.Where(w => ScriptEntities.Remove(w.EntityId, out ScriptEntity idc) || Entities.Remove(w.EntityId, out BaseEntity idc2));
+            var toRemove = entity.Where(w => ScriptEntities.Remove(w.EntityId, out IScriptEntity idc) || Entities.Remove(w.EntityId, out BaseEntity idc2));
             if (toRemove.Any())
             {
                 await BroadcastPacketAsync(new PacketSceneEntityDisappearNotify(toRemove, visionType));
@@ -330,7 +330,7 @@ namespace Weedwacker.GameServer.Systems.World
             List<SceneEntity> entities = new();
             SceneEntity currentEntity = player.TeamManager.CurrentAvatarEntity;
 
-            foreach (SceneEntity entity in Entities.Values.Concat(ScriptEntities.Values).Where(w => w is SceneEntity))
+            foreach (SceneEntity entity in Entities.Values.Concat(ScriptEntities.Values.Select(w => w as SceneEntity)))
             {
                 if (entity == currentEntity)
                 {

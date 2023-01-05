@@ -7,12 +7,12 @@ using Weedwacker.Shared.Utils;
 
 namespace Weedwacker.GameServer.Systems.World
 {
-    internal class ItemEntity : BaseGadgetEntity // Hur dur I can't do multiple inheritance
+    internal class ItemEntity : BaseGadgetEntity
     {
         public readonly ItemData ItemData;
         public readonly int Count;
         public readonly ulong Guid;
-        private readonly GameItem Item; // Will not use to store in the inventory, just to have easy access to GameItem::ToProto
+        private readonly GameItem Item; // DO NOT use to store in the inventory, just to have easy access to GameItem::ToProto
 
         public readonly bool Share;
 
@@ -67,45 +67,12 @@ namespace Weedwacker.GameServer.Systems.World
 
         public override SceneEntityInfo ToProto()
         {
-            //TODO
-            EntityAuthorityInfo authority = new EntityAuthorityInfo()
-            {
-                AbilityInfo = new(),
-                RendererChangedInfo = new(),
-                AiInfo = new() { IsAiOpen = true, BornPos = new() },
-                BornPos = new()
-            };
+            var info = base.ToProto();
 
-            //TODO
-            SceneEntityInfo entityInfo = new SceneEntityInfo()
-            {
-                EntityId = EntityId,
-                EntityType = ProtEntityType.Gadget,
-                MotionInfo = new() { Pos = new() { X = Position.X, Y = Position.Y, Z = Position.Z }, Rot = new() { X = Rotation.X, Y = Rotation.Y, Z = Rotation.Z }, Speed = new() },
-                EntityClientData = new(),
-                EntityAuthorityInfo = authority,
-                LifeState = 1,
-            };
-            entityInfo.AnimatorParaList.Add(new AnimatorParameterValueInfoPair());
+            info.Gadget.BornType = GadgetBornType.InAir;
+            info.Gadget.TrifleItem = Item.ToProto();
 
-            PropPair pair = new()
-            {
-                Type = (uint)PlayerProperty.PROP_LEVEL,
-                PropValue = new PropValue() { Type = (uint)PlayerProperty.PROP_LEVEL, Val = 1 }
-            };
-            entityInfo.PropList.Add(pair);
-
-            SceneGadgetInfo gadgetInfo = new SceneGadgetInfo()
-            {
-                GadgetId = (uint)GadgetId,
-                BornType = GadgetBornType.InAir,
-                IsEnableInteract = true,
-                TrifleItem = Item.ToProto(),
-                AuthorityPeerId = Scene.World.Host.PeerId
-            };
-            entityInfo.Gadget = gadgetInfo;
-
-            return entityInfo;
+            return info;
         }
     }
 }
