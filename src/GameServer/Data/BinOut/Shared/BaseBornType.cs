@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp
+namespace Weedwacker.GameServer.Data.BinOut.Shared
 {
     internal abstract class BaseBornType
     {

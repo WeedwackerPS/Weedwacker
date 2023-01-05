@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Weedwacker.GameServer.Data.BinOut.Shared;
 using Weedwacker.GameServer.Data.Common;
 using Weedwacker.GameServer.Enums;
 

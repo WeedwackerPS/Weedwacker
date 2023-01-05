@@ -6,7 +6,6 @@ using Weedwacker.GameServer.Data.BinOut.Ability.Temp;
 using Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins;
 using Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions;
 using Weedwacker.GameServer.Data.BinOut.Ability.Temp.AttackPatterns;
-using Weedwacker.GameServer.Data.BinOut.Ability.Temp.BornTypes;
 using Weedwacker.GameServer.Data.BinOut.Ability.Temp.Bullets;
 using Weedwacker.GameServer.Data.BinOut.Ability.Temp.DirectionTypes;
 using Weedwacker.GameServer.Data.BinOut.Ability.Temp.EventOps;
@@ -15,8 +14,11 @@ using Weedwacker.GameServer.Data.BinOut.Ability.Temp.SelectTargetType;
 using Weedwacker.GameServer.Data.BinOut.Ability.Temp.Shapes;
 using Weedwacker.GameServer.Data.BinOut.AbilityGroup;
 using Weedwacker.GameServer.Data.BinOut.Avatar;
+using Weedwacker.GameServer.Data.BinOut.Gadget;
+using Weedwacker.GameServer.Data.BinOut.GadgetPath;
 using Weedwacker.GameServer.Data.BinOut.Scene.Point;
 using Weedwacker.GameServer.Data.BinOut.Scene.SceneNpcBorn;
+using Weedwacker.GameServer.Data.BinOut.Shared.BornTypes;
 using Weedwacker.GameServer.Data.BinOut.Talent;
 using Weedwacker.GameServer.Data.Common;
 using Weedwacker.GameServer.Data.Excel;
@@ -66,11 +68,13 @@ namespace Weedwacker.GameServer.Data
         public readonly static ConcurrentDictionary<string, ConfigAbilityContainer[]> ConfigAbilityQuestMap = new(); // file name
         public readonly static ConcurrentDictionary<string, ConfigAbilityContainer[]> ConfigAbilityTeamMap = new(); // file name
         public readonly static ConcurrentDictionary<string, ConfigAvatar> ConfigAvatarMap = new();
+        public readonly static ConcurrentDictionary<string, ConfigGadget> ConfigGadgetMap = new();
         public readonly static SortedList<int, DungeonData> DungeonDataMap = new(); // id
         public readonly static SortedList<int, EnvAnimalGatherData> EnvAnimalGatherDataMap = new(); // animalId
         public readonly static SortedList<int, EquipAffixData> EquipAffixDataMap = new(); // affixId
         public readonly static SortedList<Tuple<int, int>, GatherData> GatherDataMap = new(); // <id, gadgetId>
         public readonly static SortedList<int, GadgetData> GadgetDataMap = new(); // id
+        public static GadgetPathData GadgetPathMap { get; private set; }
         public static GlobalCombatData GlobalCombatData { get; private set; }
         public readonly static SortedList<int, HomeWorldFurnitureData> HomeWorldFurnitureDataMap = new(); // id
         public readonly static SortedList<int, ItemData> ItemDataMap = new(); // id ItemData is subclassed, and loaded as MaterialData, ReliquaryData, and WeaponData
@@ -280,6 +284,7 @@ namespace Weedwacker.GameServer.Data
 
         static async Task LoadBinOutFolder<Obj, Key>(string path, Func<Obj, Key> keySelector, IDictionary<Key, Obj> map) where Key : notnull
         {
+            await Task.Yield();
             map.Clear();
             string[] filePaths = Directory.GetFiles(path, "*.json", SearchOption.TopDirectoryOnly);
             var tasks = new List<Task>();
@@ -298,6 +303,7 @@ namespace Weedwacker.GameServer.Data
 
         static async Task LoadBinOutFolder<Obj>(string path, IDictionary<string, Obj> map, bool isDictionaryJson = true)
         {
+            await Task.Yield();
             map.Clear();
             string[] filePaths = Directory.GetFiles(path, "*.json", SearchOption.TopDirectoryOnly);
             filePaths.AsParallel().ForAll(async file =>
@@ -388,7 +394,7 @@ namespace Weedwacker.GameServer.Data
             string binPath = Path.Combine(resourcesPath, "BinOutput/");
             ScriptPath = Path.Combine(resourcesPath, "Scripts/");
 
-            var file = Path.Combine(binPath, "Common", "ConfigGlobalCombat.json");
+            string file = Path.Combine(binPath, "Common", "ConfigGlobalCombat.json");
             FileInfo fi = new(file);
             using var sr = new StringReader(await File.ReadAllTextAsync(fi.FullName));
             using var jr = new JsonTextReader(sr);
@@ -460,6 +466,7 @@ namespace Weedwacker.GameServer.Data
                 LoadBinOutFolder(Path.Combine(binPath, "AbilityGroup"), AbilityGroupDataMap),
                 LoadBinOutFolder(Path.Combine(binPath, "Talent", "AvatarTalents"), AvatarTalentConfigDataMap, false),
                 LoadBinOutFolder(Path.Combine(binPath, "Avatar"), ConfigAvatarMap, false),
+                LoadBinOutFolder(Path.Combine(binPath, "Gadget"), ConfigGadgetMap, true),
                 LoadBinOutFolder(Path.Combine(binPath, "Talent", "EquipTalents"), WeaponAffixConfigDataMap),
                 LoadBinOutFolder(Path.Combine(binPath, "Talent", "RelicTalents"), RelicAffixConfigDataMap),
                 LoadBinOutFolder(Path.Combine(binPath, "Talent", "TeamTalents"), TeamResonanceConfigDataMap),

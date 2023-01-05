@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Weedwacker.GameServer.Data.BinOut.Shared;
 using Weedwacker.GameServer.Enums;
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
