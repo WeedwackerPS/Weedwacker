@@ -1,5 +1,8 @@
 ﻿using Newtonsoft.Json;
+using Weedwacker.GameServer.Data.BinOut.Gadget.ConfigGadgetPatternType;
+using Weedwacker.GameServer.Data.BinOut.Shared;
 using Weedwacker.GameServer.Data.BinOut.Shared.ConfigEntity;
+using Weedwacker.GameServer.Enums;
 
 namespace Weedwacker.GameServer.Data.BinOut.Gadget
 {
@@ -21,13 +24,35 @@ namespace Weedwacker.GameServer.Data.BinOut.Gadget
         [JsonProperty] public readonly ConfigTrigger field;
         [JsonProperty] public readonly ConfigTimer timer;
         [JsonProperty] public readonly ConfigMove move;
-
+        [JsonProperty] public readonly ConfigGadgetPattern gadget;
+        [JsonProperty] public readonly ConfigEquipment equipment;
+        [JsonProperty] public readonly ConfigNavigation navigation;
+        [JsonProperty] public readonly ConfigGadgetUi uiInteract;
+        [JsonProperty] public readonly ConfigGadgetMisc misc;
         public class ConfigTimer
         {
             [JsonProperty] public readonly bool lifeInfinite;
             [JsonProperty] public readonly float startCheckTime;
             [JsonProperty] public readonly float checkInterval;
             [JsonProperty] public readonly float lifeTime;
+        }
+
+        public class ConfigEquipment
+        {
+            [JsonProperty] public readonly string attachTo;
+            [JsonProperty] public readonly int subGadgetId;
+            [JsonProperty] public readonly string subAttachTo;
+            [JsonProperty] public readonly string auxToTrans;
+            [JsonProperty] public readonly EquipEntityType equipEntityType;
+            [JsonProperty] public readonly ConfigBladeElementFx bladeFx;
+            [JsonProperty] public readonly ConfigBowData bowData;
+
+            public class ConfigBowData
+            {
+                [JsonProperty] public readonly string bowRatioName;
+                [JsonProperty] public readonly Vector bowStringLoosePoint;
+                [JsonProperty] public readonly float bowStringMaxLen;
+            }
         }
     }
 }
