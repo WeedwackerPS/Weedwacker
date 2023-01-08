@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using Weedwacker.GameServer.Data.BinOut.Shared;
-using Weedwacker.GameServer.Data.Common;
 using Weedwacker.GameServer.Enums;
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
@@ -13,7 +12,7 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
         public class AttackTargetMapEvent
         {
             [JsonProperty] public readonly BaseAttackPattern attackPattern;
-            [JsonProperty] public readonly Dictionary<TargetType, AttackInfo> attackInfoMap;
+            [JsonProperty] public readonly Dictionary<TargetType, ConfigAttackInfo> attackInfoMap;
         }
     }
 }

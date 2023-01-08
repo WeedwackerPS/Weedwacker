@@ -4,7 +4,7 @@ using Weedwacker.GameServer.Enums;
 
 namespace Weedwacker.GameServer.Data.BinOut.Shared.BornTypes
 {
-    internal class ConfigBornByActionPoint : BaseBornType
+    internal class ConfigBornByActionPoint : ConfigBornType
     {
         [JsonProperty] public readonly PointType actionPointType;
         [JsonProperty] public readonly BaseSelectTargetType selectType;

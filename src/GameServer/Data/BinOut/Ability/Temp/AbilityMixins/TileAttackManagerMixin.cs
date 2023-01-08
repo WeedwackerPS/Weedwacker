@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using Weedwacker.GameServer.Data.Common;
+using Weedwacker.GameServer.Data.BinOut.Shared;
 using Weedwacker.GameServer.Enums;
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
@@ -10,6 +10,6 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
         [JsonProperty] public readonly TargetType campType;
         [JsonProperty] public readonly bool authorityHandle;
         [JsonProperty] public readonly float interval;
-        [JsonProperty] public readonly AttackInfo attackInfo;
+        [JsonProperty] public readonly ConfigAttackInfo attackInfo;
     }
 }

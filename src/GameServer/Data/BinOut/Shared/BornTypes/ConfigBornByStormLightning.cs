@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Shared.BornTypes
 {
-    internal class ConfigBornByStormLightning : BaseBornType
+    internal class ConfigBornByStormLightning : ConfigBornType
     {
         [JsonProperty] public readonly float hitHeightRatio;
         [JsonProperty] public readonly float selectRange;

@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Shared.BornTypes
 {
-    internal class ConfigBornByTargetLinearPoint : BaseBornType
+    internal class ConfigBornByTargetLinearPoint : ConfigBornType
     {
         [JsonProperty] public readonly float linearOffset;
         [JsonProperty] public readonly bool linearXZ;

@@ -10,6 +10,6 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 		[JsonProperty] public readonly float timeRange;
 		[JsonProperty] public readonly float minRange;
 		[JsonProperty] public readonly float maxRange;
-		[JsonProperty] public readonly BaseBornType toPos;
+		[JsonProperty] public readonly ConfigBornType toPos;
     }
 }

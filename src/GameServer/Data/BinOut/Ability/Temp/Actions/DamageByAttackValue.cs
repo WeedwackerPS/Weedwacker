@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using Weedwacker.GameServer.Data.BinOut.Shared;
-using Weedwacker.GameServer.Data.Common;
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 {
@@ -9,7 +8,7 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
         [JsonProperty] public readonly string target;
         [JsonProperty] public readonly BaseSelectTargetType? otherTargets;
         [JsonProperty] public readonly BasePredicate[] predicates;
-        [JsonProperty] public readonly BaseBornType? born;
-        [JsonProperty] public readonly AttackInfo attackInfo;
+        [JsonProperty] public readonly ConfigBornType? born;
+        [JsonProperty] public readonly ConfigAttackInfo attackInfo;
     }
 }

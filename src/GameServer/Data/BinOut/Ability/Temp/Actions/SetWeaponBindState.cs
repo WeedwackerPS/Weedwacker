@@ -7,6 +7,6 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
     {
         [JsonProperty] public readonly bool place;
         [JsonProperty] public readonly string equipPartName;
-        [JsonProperty] public readonly BaseBornType born;
+        [JsonProperty] public readonly ConfigBornType born;
     }
 }

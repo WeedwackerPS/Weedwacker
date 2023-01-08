@@ -2,7 +2,7 @@
 
 namespace Weedwacker.GameServer.Data.BinOut.Shared
 {
-    internal abstract class BaseBornType
+    internal abstract class ConfigBornType
     {
         [JsonProperty] public readonly OffSet? offset;
         public class OffSet

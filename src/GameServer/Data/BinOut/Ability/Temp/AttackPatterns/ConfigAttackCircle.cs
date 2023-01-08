@@ -8,7 +8,7 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AttackPatterns
     {
         [JsonProperty] public readonly object radius;
         [JsonProperty] public readonly TriggerType? triggerType;
-        [JsonProperty] public readonly BaseBornType? born;
+        [JsonProperty] public readonly ConfigBornType? born;
         [JsonProperty] public readonly float? secondHeight;
     }
 }

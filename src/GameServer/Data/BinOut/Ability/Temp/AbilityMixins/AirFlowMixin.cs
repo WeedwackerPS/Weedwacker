@@ -8,6 +8,6 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
     {
         [JsonProperty] public readonly int gadgetID;
         [JsonProperty] public readonly TargetType campTargetType;
-        [JsonProperty] public readonly BaseBornType born;
+        [JsonProperty] public readonly ConfigBornType born;
     }
 }

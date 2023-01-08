@@ -1,6 +1,6 @@
 ﻿namespace Weedwacker.GameServer.Data.BinOut.Shared.BornTypes
 {
-    internal class ConfigBornByElementPos : BaseBornType
+    internal class ConfigBornByElementPos : ConfigBornType
     {
     }
 }

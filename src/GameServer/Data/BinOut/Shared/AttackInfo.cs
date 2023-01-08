@@ -1,9 +1,9 @@
 ﻿using Newtonsoft.Json;
 using Weedwacker.GameServer.Enums;
 
-namespace Weedwacker.GameServer.Data.Common
+namespace Weedwacker.GameServer.Data.BinOut.Shared
 {
-    public class AttackInfo
+    public class ConfigAttackInfo
     {
         [JsonProperty] public readonly string attackTag;
         [JsonProperty] public readonly string attenuationTag;

@@ -8,7 +8,7 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
     {
         [JsonProperty] public readonly TargetType target;
         [JsonProperty] public readonly string key;
-        [JsonProperty] public readonly BaseBornType born;
+        [JsonProperty] public readonly ConfigBornType born;
         [JsonProperty] public readonly bool setTarget;
     }
 }

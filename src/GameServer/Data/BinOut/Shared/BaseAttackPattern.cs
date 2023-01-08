@@ -6,6 +6,6 @@ namespace Weedwacker.GameServer.Data.BinOut.Shared
     internal abstract class BaseAttackPattern
     {
         [JsonProperty] public readonly TriggerType triggerType;
-        [JsonProperty] public readonly BaseBornType born;
+        [JsonProperty] public readonly ConfigBornType born;
     }
 }
