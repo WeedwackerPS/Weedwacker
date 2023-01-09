@@ -4,7 +4,6 @@ using Weedwacker.GameServer.Data.Excel;
 using Weedwacker.GameServer.Systems.Avatar;
 using Weedwacker.GameServer.Systems.World;
 using Weedwacker.Shared.Network.Proto;
-using Weedwacker.Shared.Utils;
 
 namespace Weedwacker.GameServer.Systems.Ability
 {
@@ -14,7 +13,7 @@ namespace Weedwacker.GameServer.Systems.Ability
         private uint CurDepotId => CurDepot.DepotId;
         protected override Dictionary<uint, ConfigAbility> ConfigAbilityHashMap => CurDepot.Abilities;
 
-        public override Dictionary<string, Dictionary<string, float>?>? AbilitySpecials => CurDepot.AbilitySpecials;
+        public override Dictionary<uint, Dictionary<uint, float>?>? AbilitySpecials => CurDepot.AbilitySpecials;
 
         public override HashSet<string> ActiveDynamicAbilities => CurDepot.ActiveDynamicAbilities;
 

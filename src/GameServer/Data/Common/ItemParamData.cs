@@ -4,16 +4,12 @@ namespace Weedwacker.GameServer.Data.Common
 {
     public class ItemParamData
     {
-        [JsonProperty("id")]
-        public uint id { get; set; }
+        [JsonProperty("id")] public uint id { get; set; }
 
-        [JsonProperty("itemId")]
-        private uint itemId { set { id = value; } }
-        [JsonProperty("count")]
-        public int count { get; set; }
+        [JsonProperty("itemId")] private uint itemId { set { id = value; } }
+        [JsonProperty("count")] public int count { get; set; }
 
-        [JsonProperty("itemCount")]
-        private int itemCount { set { count = value; } }
+        [JsonProperty("itemCount")] private int itemCount { set { count = value; } }
 
         public ItemParamData(uint itemId, int count)
         {

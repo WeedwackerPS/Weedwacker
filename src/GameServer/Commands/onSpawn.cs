@@ -25,7 +25,7 @@ namespace Weedwacker.GameServer.Commands
             }
             else if (GameData.ItemDataMap.ContainsKey((uint)id))
             {
-                await scene.AddEntityAsync(new ItemEntity(scene, GameServer.OnlinePlayers[(uint)guid].Player, GameData.ItemDataMap[(uint)id], GameServer.OnlinePlayers[(uint)guid].Player.Position, 1));
+                await scene.AddEntityAsync(await ItemEntity.CreateAsync(scene, GameServer.OnlinePlayers[(uint)guid].Player, GameData.ItemDataMap[(uint)id], GameServer.OnlinePlayers[(uint)guid].Player.Position, 1));
             }
             else
                 goto ERROR;

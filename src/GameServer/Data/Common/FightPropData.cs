@@ -5,9 +5,7 @@ namespace Weedwacker.GameServer.Data.Common
 {
     public class FightPropData
     {
-        [JsonProperty]
-        public readonly FightProperty propType;
-        [JsonProperty]
-        public readonly float value;
+        [JsonProperty] public readonly FightProperty propType;
+        [JsonProperty] public readonly float value;
     }
 }

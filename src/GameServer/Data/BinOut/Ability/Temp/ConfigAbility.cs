@@ -4,7 +4,7 @@ using Weedwacker.GameServer.Enums;
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp
 {
-    internal class ConfigAbility : BaseConfigAbility
+    internal class ConfigAbility
     {
         [JsonProperty] public readonly string abilityName;
         [JsonProperty] public readonly Dictionary<string, float>? abilitySpecials;

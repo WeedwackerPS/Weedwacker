@@ -11,11 +11,10 @@ namespace Weedwacker.GameServer.Systems.Ability
         protected readonly BaseEntity Owner;
         protected Dictionary<uint, uint> InstanceToAbilityHashMap = new(); // <instancedAbilityId, abilityNameHash>
         protected abstract Dictionary<uint, ConfigAbility> ConfigAbilityHashMap { get; } // <abilityNameHash, configAbility>
-        public readonly Dictionary<uint, Dictionary<uint, float>> AbilitySpecialOverrideMap = new(); // <abilityNameHash, <abilitySpecialNameHash, value>>
-        public abstract Dictionary<string, Dictionary<string, float>?>? AbilitySpecials { get; }// <abilityName, <abilitySpecial, value>>
+        public readonly Dictionary<uint, Dictionary<uint, float>> AbilitySpecialOverrideMap = new(); // <abilityNameHash, <abilitySpecialHash, value>>
+        public abstract Dictionary<uint, Dictionary<uint, float>?>? AbilitySpecials { get; }// <abilityNameHash, <abilitySpecialHash, value>>
         public abstract HashSet<string> ActiveDynamicAbilities { get; }
         public abstract Dictionary<string, HashSet<string>> UnlockedTalentParams { get; }
-        protected Dictionary<uint, string> AbilitySpecialHashMap = new(); // <hash, abilitySpecialName>
 
         protected Dictionary<uint, float> GlobalValueHashMap = new(); // <hash, value> TODO map the hashes to variable names
         protected BaseAbilityManager(BaseEntity owner)
@@ -27,18 +26,19 @@ namespace Weedwacker.GameServer.Systems.Ability
         {
             foreach (var ability in AbilitySpecials)
             {
-                uint ablHash = Utils.AbilityHash(ability.Key);
+                uint ablHash = ability.Key;
                 AbilitySpecialOverrideMap[ablHash] = new();
                 if (ability.Value != null)
                 {
                     foreach (var special in ability.Value)
                     {
-                        AbilitySpecialOverrideMap[ablHash][Utils.AbilityHash(special.Key)] = special.Value;
-                        AbilitySpecialHashMap[Utils.AbilityHash(special.Key)] = special.Key;
+                        AbilitySpecialOverrideMap[ablHash][special.Key] = special.Value;
                     }
                 }
             }
         }
+
+
         public virtual async Task HandleAbilityInvokeAsync(AbilityInvokeEntry invoke)
         {
             IBufferMessage info = new AbilityMetaModifierChange();

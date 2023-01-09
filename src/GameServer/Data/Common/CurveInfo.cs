@@ -5,11 +5,8 @@ namespace Weedwacker.GameServer.Data.Common
 {
     public class CurveInfo
     {
-        [JsonProperty]
-        public readonly GrowCurveType type;
-        [JsonProperty]
-        public readonly ArithType arith;
-        [JsonProperty]
-        public readonly float value;
+        [JsonProperty] public readonly GrowCurveType type;
+        [JsonProperty] public readonly ArithType arith;
+        [JsonProperty] public readonly float value;
     }
 }

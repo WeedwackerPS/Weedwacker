@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using NLua;
 using Weedwacker.GameServer.Data.BinOut.Ability.Temp;
 using Weedwacker.GameServer.Data.BinOut.AbilityGroup;
+using Weedwacker.GameServer.Data.BinOut.AbilityPath;
 using Weedwacker.GameServer.Data.BinOut.Avatar;
 using Weedwacker.GameServer.Data.BinOut.Gadget;
 using Weedwacker.GameServer.Data.BinOut.GadgetPath;
@@ -45,6 +46,8 @@ namespace Weedwacker.GameServer.Data
         public readonly static Dictionary<uint, ProudSkillData> ProudSkillDataMap = new(); // proudSkillId
         //---------------------------------------------------------------------------------------------------------------------------------//
         public readonly static ConcurrentDictionary<string, AbilityGroupData> AbilityGroupDataMap = new(); // skillDepotAbilityGroup name
+        public static AbilityPathData AbilityPathMap { get; private set; }
+
         public readonly static Dictionary<uint, AvatarHeroEntityData> AvatarHeroEntityDataMap = new();
         public readonly static ConcurrentDictionary<string, ConfigAbilityContainer[]> ConfigAbilityMap = new(); // file name
         public readonly static ConcurrentDictionary<string, ConfigAbilityContainer[]> ConfigAbilityActivityMap = new(); // file name
@@ -271,7 +274,11 @@ namespace Weedwacker.GameServer.Data
             using var jr = new JsonTextReader(sr);
             GlobalCombatData = Serializer.Deserialize<GlobalCombatData>(jr);
 
-
+            string file2 = Path.Combine(binPath, "AbilityPath", "AbilityPathData.json");
+            FileInfo fi2 = new(file2);
+            using var sr2 = new StringReader(await File.ReadAllTextAsync(fi2.FullName));
+            using var jr2 = new JsonTextReader(sr2);
+            AbilityPathMap = Serializer.Deserialize<AbilityPathData>(jr2);
 
             await Task.WhenAll(new Task[]
             {

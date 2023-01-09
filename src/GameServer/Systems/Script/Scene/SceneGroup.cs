@@ -17,7 +17,7 @@ namespace Weedwacker.GameServer.Systems.Script.Scene
         public readonly uint group_id;
         public SortedDictionary<uint, Monster>? monsters;
         public SortedList<uint, Npc>? npcs;
-        public SortedList<uint, Gadget>? gadgets;
+        public Dictionary<uint, Gadget>? gadgets; // config_id
         public List<Region>? regions;
         public List<Trigger>? triggers;
         public List<Variable>? variables;
@@ -32,15 +32,20 @@ namespace Weedwacker.GameServer.Systems.Script.Scene
             {
                 Suite init_suite = suites[init_config.suite];
                 if (!init_suite.monsters.Any()) return;
-                var monsterEntities = new List<MonsterEntity>();
+                var entities = new List<SceneEntity>();
                 foreach (uint monsterIndex in init_suite.monsters)
                 {
                     Monster monster = monsters[monsterIndex];
                     var entity = await MonsterEntity.CreateAsync(scene, GameData.MonsterDataMap[monster.monster_id], monster.level, monster, BlockId, group_id);
-                    monsterEntities.Add(entity);
+                    entities.Add(entity);
                 }
-                await scene.AddEntitiesAsync(monsterEntities);
-                Logger.DebugWriteLine($"Loaded SceneGroup{group_id} init monsters");
+                foreach(uint configId in init_suite.gadgets)
+                {
+                    //var gadget = await BaseGadgetEntity.CreateAsync()
+                }
+
+                await scene.AddEntitiesAsync(entities);
+                Logger.DebugWriteLine($"Loaded SceneGroup{group_id} init_config");
             }
             catch(Exception e)
             {
@@ -286,7 +291,7 @@ namespace Weedwacker.GameServer.Systems.Script.Scene
             if (LuaState[$"_SCENE_GROUP{group_id}.{nameof(npcs)}"] != null)
                 npcs = new SortedList<uint, Npc>(LuaState.GetTableDict(LuaState.GetTable($"_SCENE_GROUP{group_id}.{nameof(npcs)}")).ToDictionary(w => (uint)(long)w.Key, w => new Npc(w.Value as LuaTable)));
             if (LuaState[$"_SCENE_GROUP{group_id}.{nameof(gadgets)}"] != null)
-                gadgets = new SortedList<uint, Gadget>(LuaState.GetTableDict(LuaState.GetTable($"_SCENE_GROUP{group_id}.{nameof(gadgets)}")).ToDictionary(w => (uint)(long)w.Key, w => new Gadget(w.Value as LuaTable)));
+                gadgets = LuaState.GetTableDict(LuaState.GetTable($"_SCENE_GROUP{group_id}.{nameof(gadgets)}")).ToDictionary(w => (uint)(long)w.Key, w => new Gadget(w.Value as LuaTable)).ToDictionary(w => w.Value.config_id, w => w.Value);
             if (LuaState[$"_SCENE_GROUP{group_id}.{nameof(regions)}"] != null)
                 regions = new List<Region>(LuaState.GetTableDict(LuaState.GetTable($"_SCENE_GROUP{group_id}.{nameof(regions)}")).Values.Select(w => new Region(w as LuaTable)));
             if (LuaState[$"_SCENE_GROUP{group_id}.{nameof(triggers)}"] != null)

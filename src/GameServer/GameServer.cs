@@ -89,27 +89,45 @@ namespace Weedwacker.GameServer
         private static void SetAbilityHashMap()
         {
             Dictionary<uint, string> hashMap = new();
-            foreach (var container in GameData.ConfigAbilityAvatarMap.Values)
+            foreach (var container in GameData.ConfigAbilityAvatarMap.Values.Concat(GameData.ConfigAbilityActivityMap.Values)
+                .Concat(GameData.ConfigAbilityAnimalMap.Values).Concat(GameData.ConfigAbilityChallengeMap.Values).Concat(GameData.ConfigAbilityEquipMap.Values)
+                .Concat(GameData.ConfigAbilityGadgetMap.Values).Concat(GameData.ConfigAbilityLevelMap.Values).Concat(GameData.ConfigAbilityMap.Values)
+                .Concat(GameData.ConfigAbilityMonsterAffixMap.Values).Concat(GameData.ConfigAbilityMonsterMap.Values).Concat(GameData.ConfigAbilityQATestMap.Values)
+                .Concat(GameData.ConfigAbilityQuestMap.Values).Concat(GameData.ConfigAbilityTeamMap.Values))
             {
                 foreach (var ability in container)
                 {
-                    var config = ability.Default as ConfigAbility;
-                    hashMap[(uint)Utils.AbilityHash(config.abilityName)] = config.abilityName;
+                    var config = ability.Default;
+                    hashMap[Utils.AbilityHash(config.abilityName)] = config.abilityName;
                     if (config.abilitySpecials != null)
                     {
                         foreach (string special in config.abilitySpecials.Keys)
                         {
-                            hashMap[(uint)Utils.AbilityHash(special)] = special;
+                            hashMap[Utils.AbilityHash(special)] = special;
                         }
                     }
                     if (config.modifiers != null)
                     {
                         foreach (string modifier in config.modifiers.Keys)
                         {
-                            hashMap[(uint)Utils.AbilityHash(modifier)] = modifier;
+                            hashMap[Utils.AbilityHash(modifier)] = modifier;
                         }
                     }
                 }
+            }
+
+            foreach (var config in GameData.ConfigAvatarMap.Values)
+            {
+                if (config.abilities == null) continue;
+                foreach (var ability in config.abilities)
+                    hashMap[Utils.AbilityHash(ability.abilityId)] = ability.abilityId;
+            }
+
+            foreach (var config in GameData.ConfigGadgetMap.Values)
+            {
+                if (config.abilities == null) continue;
+                foreach (var ability in config.abilities)
+                    hashMap[Utils.AbilityHash(ability.abilityId)] = ability.abilityId;
             }
             AbilityNameHashMap = hashMap;
         }

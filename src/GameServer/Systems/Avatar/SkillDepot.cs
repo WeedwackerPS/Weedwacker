@@ -28,7 +28,7 @@ namespace Weedwacker.GameServer.Systems.Avatar
         [BsonElement] public HashSet<uint> Talents { get; private set; } = new(); // talentId. last digit of id = constellationRank.
         [BsonIgnore] public Dictionary<string, HashSet<string>> UnlockedTalentParams = new(); // <abilityName, talentParams> Added by ConfigTalent UnlockTalentParam
         [BsonIgnore] public HashSet<string> ActiveDynamicAbilities { get; private set; } = new(); // abilityName
-        [BsonIgnore] public Dictionary<string, Dictionary<string, float>?>? AbilitySpecials { get; private set; } = new(); // <abilityName, <abilitySpecial, value>> Variables used in ConfigAbility_<Avatar>.json
+        [BsonIgnore] public Dictionary<uint, Dictionary<uint, float>?>? AbilitySpecials { get; private set; } = new(); // <abilityNameHash, <abilitySpecialHash, value>> Variables used in ConfigAbility_<Avatar>.json
         [BsonIgnore] public SortedList<uint, uint> ProudSkillExtraLevelMap { get; private set; } = new(); // <groupId,extraLevels> 
 
         public SkillDepot(Avatar avatar, uint depotId, Player.Player owner)
@@ -98,26 +98,25 @@ namespace Weedwacker.GameServer.Systems.Avatar
             ProudSkillExtraLevelMap = new();
             foreach (var configAbility in Character.Data.AbilityConfigMap[DepotId])
             {
-                if (configAbility.Default is ConfigAbility config)
-                    AbilitySpecials.Add(config.abilityName, config.abilitySpecials);
+                ConfigAbility config = configAbility.Default;
+                AbilitySpecials.Add(Utils.AbilityHash(config.abilityName), config.abilitySpecials.ToDictionary( w => Utils.AbilityHash(w.Key), w => w.Value));
             }
             if (Character.Data.AbilityHashMap.TryGetValue(DepotId, out Dictionary<uint, ConfigAbility>? hashMap))
                 Abilities = hashMap;
 
             foreach (ConfigAbilityContainer container in GameData.ConfigAbilityAvatarMap["ConfigAbility_Avatar_AllDefault"])
             {
-                if (container.Default is ConfigAbility config)
-                {
-                    Abilities[(uint)Utils.AbilityHash(config.abilityName)] = config;
-                }
+                ConfigAbility config = container.Default;
+                Abilities[Utils.AbilityHash(config.abilityName)] = config;
             }
             foreach (string abilityName in GameData.GlobalCombatData.defaultAbilities.defaultAvatarAbilities)
             {
                 foreach (ConfigAbilityContainer container in GameData.ConfigAbilityAvatarMap["ConfigAbility_Avatar_Common"])
                 {
-                    if (container.Default is ConfigAbility config && config.abilityName == abilityName)
+                    ConfigAbility config = container.Default;
+                    if (config.abilityName == abilityName)
                     {
-                        Abilities[(uint)Utils.AbilityHash(config.abilityName)] = config;
+                        Abilities[Utils.AbilityHash(config.abilityName)] = config;
                     }
                 }
             }

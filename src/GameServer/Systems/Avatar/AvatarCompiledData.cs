@@ -3,6 +3,7 @@ using Weedwacker.GameServer.Data;
 using Weedwacker.GameServer.Data.BinOut.Ability.Temp;
 using Weedwacker.GameServer.Data.BinOut.AbilityGroup;
 using Weedwacker.GameServer.Data.BinOut.Avatar;
+using Weedwacker.GameServer.Data.BinOut.Shared.ConfigEntity;
 using Weedwacker.GameServer.Data.BinOut.Talent;
 using Weedwacker.GameServer.Data.Common;
 using Weedwacker.GameServer.Data.Excel;
@@ -113,7 +114,7 @@ namespace Weedwacker.GameServer.Systems.Avatar
 
                     if (abilityData != null)
                     {
-                        foreach (TargetAbility ability in abilityData.targetAbilities.Concat(ConfigAvatar.abilities))
+                        foreach (ConfigEntityAbilityEntry ability in abilityData.targetAbilities.Concat(ConfigAvatar.abilities))
                         {
                             ConfigAbility? config = null;
                             foreach (var container in AbilityConfigMap[depot.id])
@@ -125,11 +126,11 @@ namespace Weedwacker.GameServer.Systems.Avatar
                                 }
                             }
                             if (config == null) continue;
-                            abilityHashMap[(uint)Utils.AbilityHash(ability.abilityName)] = config;
+                            abilityHashMap[Utils.AbilityHash(ability.abilityName)] = config;
                         }
                     }
                 }
-                foreach (TargetAbility ability in GameData.ConfigAvatarMap[$"ConfigAvatar_{AvatarName}"].abilities)
+                foreach (ConfigEntityAbilityEntry ability in GameData.ConfigAvatarMap[$"ConfigAvatar_{AvatarName}"].abilities)
                 {
                     ConfigAbility? config = null;
                     foreach (var container in AbilityConfigMap[depot.id])
@@ -141,7 +142,7 @@ namespace Weedwacker.GameServer.Systems.Avatar
                         }
                     }
                     if (config == null) continue;
-                    abilityHashMap[(uint)Utils.AbilityHash(ability.abilityName)] = config;
+                    abilityHashMap[Utils.AbilityHash(ability.abilityName)] = config;
                 }
                 AbilityHashMap.Add(depot.id, abilityHashMap);
             }
