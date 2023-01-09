@@ -19,9 +19,9 @@ namespace Weedwacker.GameServer
         private static readonly HttpClient client = new HttpClient(handler);
         private static System.Timers.Timer? TickTimer;
         public static GameConfig? Configuration;
-        public static SortedList<int, Connection> OnlinePlayers = new(); // <gameUid,connection>
+        public static SortedList<uint, Connection> OnlinePlayers = new(); // <gameUid,connection>
         private static HashSet<World> Worlds = new();
-        public static SortedList<int, AvatarCompiledData> AvatarInfo = new(); // <avatarId,data>
+        public static SortedList<uint, AvatarCompiledData> AvatarInfo = new(); // <avatarId,data>
         public static Dictionary<uint, string> AbilityNameHashMap;
         public static async Task<bool> VerifyToken(string accountUid, string token)
         {
@@ -41,7 +41,7 @@ namespace Weedwacker.GameServer
             Worlds.Add(world);
         }
 
-        public static AvatarCompiledData? GetAvatarInfo(int avatarId)
+        public static AvatarCompiledData? GetAvatarInfo(uint avatarId)
         {
             if (AvatarInfo.TryGetValue(avatarId, out AvatarCompiledData? avatarInfo))
             {
@@ -70,7 +70,7 @@ namespace Weedwacker.GameServer
             Crypto.LoadKeys(Configuration.structure.keys);
             await Database.DatabaseManager.Initialize();
 
-            foreach (int id in GameData.AvatarDataMap.Keys)
+            foreach (uint id in GameData.AvatarDataMap.Keys)
             {
                 AvatarInfo.Add(id, new AvatarCompiledData(id));
             }
@@ -144,16 +144,16 @@ namespace Weedwacker.GameServer
             return int.MaxValue;
         }
 
-        internal static async Task<SocialDetail?> GetSocialDetailByUid(int askerUid, uint reqUid)
+        internal static async Task<SocialDetail?> GetSocialDetailByUid(uint askerUid, uint reqUid)
         {
             SocialDetail socialDetail;
-            if (OnlinePlayers.TryGetValue((int)reqUid, out Connection session))
+            if (OnlinePlayers.TryGetValue(reqUid, out Connection session))
             {
                 return session.Player.SocialManager.GetSocialDetail(askerUid);
             }
             else
             {
-                var player = await Database.DatabaseManager.GetPlayerByGameUidAsync((int)reqUid);
+                var player = await Database.DatabaseManager.GetPlayerByGameUidAsync(reqUid);
                 if (player != null)
                     return player.SocialManager.GetSocialDetail(askerUid);
                 else

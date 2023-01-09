@@ -8,10 +8,8 @@ namespace Weedwacker.GameServer.Data
     [Resource("AvatarCurveExcelConfigData.json")]
     public class AvatarCurveData
     {
-        [JsonProperty]
-        public readonly int level;
-        [JsonProperty]
-        public readonly CurveInfo[] curveInfos;
+        [JsonProperty] public readonly uint level;
+        [JsonProperty] public readonly CurveInfo[] curveInfos;
 
         internal Tuple<ArithType, float> GetArith(GrowCurveType type)
         {

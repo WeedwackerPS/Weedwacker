@@ -5,9 +5,9 @@ namespace Weedwacker.GameServer.Packet.Send
 {
     internal class PacketAvatarGainCostumeNotify : BasePacket
     {
-        public PacketAvatarGainCostumeNotify(int costumeId) : base(Enums.OpCode.AvatarGainCostumeNotify)
+        public PacketAvatarGainCostumeNotify(uint costumeId) : base(Enums.OpCode.AvatarGainCostumeNotify)
         {
-            AvatarGainCostumeNotify proto = new AvatarGainCostumeNotify() { CostumeId = (uint)costumeId };
+            AvatarGainCostumeNotify proto = new AvatarGainCostumeNotify() { CostumeId = costumeId };
 
             Data = proto.ToByteArray();
         }

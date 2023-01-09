@@ -8,14 +8,14 @@ namespace Weedwacker.GameServer.Commands
     public static partial class ConsoleCommands
     {
         public static async Task OnGive(IConsole console,
-            int guid,int itemId,int count,int lvl, int refinement) // GameUid, itemID, count, level, refinement
+            int guid, int itemId, int count, int lvl, int refinement) // GameUid, itemID, count, level, refinement
         {
-            if (!GameServer.OnlinePlayers.ContainsKey(guid))
+            if (!GameServer.OnlinePlayers.ContainsKey((uint)guid))
             {
                 console.WriteLine("Player isn't online or doesn't exist");
                 return;
             }
-            if (!GameData.ItemDataMap.ContainsKey(itemId))
+            if (!GameData.ItemDataMap.ContainsKey((uint)itemId))
             {
                 console.WriteLine("invalid item id");
                 return;
@@ -36,16 +36,16 @@ namespace Weedwacker.GameServer.Commands
                 console.WriteLine("invalid refinement");
                 return;
             }
-            if (GameData.ItemDataMap[itemId].itemType == ItemType.ITEM_RELIQUARY || GameData.ItemDataMap[itemId].itemType == ItemType.ITEM_WEAPON)
+            if (GameData.ItemDataMap[(uint)itemId].itemType == ItemType.ITEM_RELIQUARY || GameData.ItemDataMap[(uint)itemId].itemType == ItemType.ITEM_WEAPON)
             {
                 for (int i = 0; i < count; i++)
                 {
-                    await GameServer.OnlinePlayers[guid].Player.Inventory.AddItemByIdAsync(itemId, 1, ActionReason.None, true, lvl, refinement - 1); //convert refinement to code value
+                    await GameServer.OnlinePlayers[(uint)guid].Player.Inventory.AddItemByIdAsync((uint)itemId, 1, ActionReason.None, true, (uint)lvl, (uint)refinement - 1); //convert refinement to code value
                 }   
             }
             else
             {
-                await GameServer.OnlinePlayers[guid].Player.Inventory.AddItemByIdAsync(itemId, count, ActionReason.None, true);
+                await GameServer.OnlinePlayers[(uint)guid].Player.Inventory.AddItemByIdAsync((uint)itemId, count, ActionReason.None, true);
             }
             console.WriteLine($"Added {count} item {itemId} to player {guid} at level {lvl} and refinement {refinement}");
             return;

@@ -18,7 +18,7 @@ namespace Weedwacker.GameServer.Packet.Recv
         {
             WeaponUpgradeReq req = WeaponUpgradeReq.Parser.ParseFrom(payload);
             List<ItemParam> leftoverOres = new(); //TODO
-            int oldLevel = (session.Player.Inventory.GuidMap[req.TargetWeaponGuid] as WeaponItem).Level;
+            uint oldLevel = (session.Player.Inventory.GuidMap[req.TargetWeaponGuid] as WeaponItem).Level;
             WeaponItem weapon = await session.Player.Inventory.UpgradeWeaponAsync(req.TargetWeaponGuid, req.FoodWeaponGuidList.ToList(), req.ItemParamList.ToList());
             await session.Player.SendPacketAsync(new PacketWeaponUpgradeRsp(weapon, oldLevel, leftoverOres));
         }

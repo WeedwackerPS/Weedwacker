@@ -7,7 +7,7 @@ namespace Weedwacker.GameServer.Systems.Shop
     internal class ShopManager
     {
         [BsonElement("_id")]
-        [BsonId] public int OwnerId { get; private set; }
+        [BsonId] public uint OwnerId { get; private set; }
         private Player.Player Owner;
         [BsonSerializer(typeof(IntSortedListSerializer<Shop>))]
         public SortedList<int, Shop> Shops = new(); // shopType

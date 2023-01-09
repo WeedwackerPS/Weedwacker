@@ -17,7 +17,7 @@ namespace Weedwacker.GameServer.Packet.Recv
         public override async Task HandleAsync(Connection session, byte[] header, byte[] payload)
         {
             WeaponPromoteReq req = WeaponPromoteReq.Parser.ParseFrom(payload);
-            int oldPromote = (session.Player.Inventory.GuidMap[req.TargetWeaponGuid] as WeaponItem).PromoteLevel;
+            uint oldPromote = (session.Player.Inventory.GuidMap[req.TargetWeaponGuid] as WeaponItem).PromoteLevel;
             WeaponItem weapon = await session.Player.Inventory.PromoteWeaponAsync(req.TargetWeaponGuid);
             await session.Player.SendPacketAsync(new PacketWeaponPromoteRsp(weapon, oldPromote));
         }

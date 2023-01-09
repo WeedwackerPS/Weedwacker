@@ -12,7 +12,7 @@ namespace Weedwacker.GameServer.Systems.Player
 {
     internal class TeamManager : BaseEntity
     {
-        [BsonId] public int OwnerId;
+        [BsonId] public uint OwnerId;
         private Player Owner;
         [BsonSerializer(typeof(IntSortedListSerializer<TeamInfo>))]
         [BsonElement] public SortedList<int, TeamInfo> Teams { get; private set; } = new(); // <index, team>
@@ -164,7 +164,7 @@ namespace Weedwacker.GameServer.Systems.Player
             int prevSelectedAvatarIndex = -1;
 
             // Create a copy of the active team
-            Dictionary<int, AvatarEntity> previousTeam = new(); // <avatarId, entity>
+            Dictionary<uint, AvatarEntity> previousTeam = new(); // <avatarId, entity>
             foreach (var entity in ActiveTeam)
             {
                 previousTeam.Add(entity.Value.Avatar.AvatarId, entity.Value);
@@ -177,7 +177,7 @@ namespace Weedwacker.GameServer.Systems.Player
             for (int i = 0; i < CurrentTeamInfo.AvatarInfo.Count; i++)
             {
                 if (CurrentTeamInfo.AvatarInfo[i] == null) continue;
-                int avatarId = CurrentTeamInfo.AvatarInfo[i].AvatarId;
+                uint avatarId = CurrentTeamInfo.AvatarInfo[i].AvatarId;
 
                 if (previousTeam.TryGetValue(avatarId, out AvatarEntity? entity))
                 {

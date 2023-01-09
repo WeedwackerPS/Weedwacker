@@ -34,11 +34,11 @@ namespace Weedwacker.GameServer.Systems.Inventory
         [BsonElement] public BattlePassTab BattlePassTab { get; private set; }
 
         //MATERIAL_NAMECARD
-        [BsonElement] public HashSet<int> NameCardList { get; private set; } = new();
+        [BsonElement] public HashSet<uint> NameCardList { get; private set; } = new();
         //MATERIAL_COSTUME
-        [BsonElement] public HashSet<int> CostumeList { get; private set; } = new();
+        [BsonElement] public HashSet<uint> CostumeList { get; private set; } = new();
         //MATERIAL_FLYCLOAK
-        [BsonElement] public HashSet<int> FlyCloakList { get; private set; } = new() { 140001 };
+        [BsonElement] public HashSet<uint> FlyCloakList { get; private set; } = new() { 140001 };
 
         public MaterialSubInv(Player.Player owner, InventoryManager inventory) : base(owner, inventory)
         {
@@ -67,7 +67,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
                     BattlePassTab.OnLoadAsync(owner, inventory)
                 });
         }
-        public async Task<bool> AddFlycloakAsync(int flycloakId)
+        public async Task<bool> AddFlycloakAsync(uint flycloakId)
         {
             if (FlyCloakList.Add(flycloakId))
             {
@@ -81,7 +81,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
             }
         }
 
-        public async Task<bool> AddCostumeAsync(int costumeId)
+        public async Task<bool> AddCostumeAsync(uint costumeId)
         {
             if (CostumeList.Add(costumeId))
             {
@@ -104,7 +104,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
             */
             return false;
         }
-        public override async Task<GameItem?> AddItemAsync(int itemId, int count = 1, int level = 1, int refinement = 0)
+        public override async Task<GameItem?> AddItemAsync(uint itemId, int count = 1, uint level = 1, uint refinement = 0)
         {
             MaterialData data = (MaterialData)GameData.ItemDataMap[itemId];
             List<BaseItemUse> ops = new();
@@ -231,7 +231,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
                     return false;
             }
         }
-        public bool TryGetItemInSubInvById(int itemId, out GameItem? result) 
+        public bool TryGetItemInSubInvById(uint itemId, out GameItem? result) 
         {
             MaterialData data = (MaterialData)GameData.ItemDataMap[itemId];
             result = null;

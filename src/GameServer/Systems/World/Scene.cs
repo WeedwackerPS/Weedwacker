@@ -21,7 +21,7 @@ namespace Weedwacker.GameServer.Systems.World
     {
         public readonly World World;
         public readonly SceneData SceneData;
-        public int SceneId => SceneData.id;
+        public uint SceneId => SceneData.id;
         public readonly List<Player.Player> Players = new();
         private HashSet<SceneGroup> LoadedGroups = new();
         public readonly ConcurrentDictionary<uint, BaseEntity> Entities = new(); // entityId
@@ -33,12 +33,12 @@ namespace Weedwacker.GameServer.Systems.World
         public SceneScriptManager ScriptManager { get; private set; }
         public readonly ScenePointData PointData;
         public readonly DungeonData? DungeonData;
-        public int PrevScene; // Id of the previous scene
-        public int PrevScenePoint;
-        public Dictionary<Tuple<int, int>, int> ActiveAreaWeathers; // <areaID1, areaID2> weatherId>
+        public uint PrevScene; // Id of the previous scene
+        public uint PrevScenePoint;
+        public Dictionary<Tuple<uint, uint>, uint> ActiveAreaWeathers; // <areaID1, areaID2> weatherId>
         public HashSet<uint> SceneTags; // TODO apply based on host's data
         private ConcurrentBag<SceneEntity> BornNotifyQueue = new();
-        private static Dictionary<int, Dictionary<SceneBlock, PointOctree<SceneGroup>>> GroupTrees;
+        private static Dictionary<uint, Dictionary<SceneBlock, PointOctree<SceneGroup>>> GroupTrees;
 
         public static Task<Scene> CreateAsync(World world, SceneData sceneData)
         {
@@ -140,13 +140,13 @@ namespace Weedwacker.GameServer.Systems.World
 
         public bool IsInScene(SceneEntity entity) => Entities.ContainsKey(entity.EntityId);
 
-        public async Task UpdateActiveAreaWeathersAsync(Tuple<int, int> areaIDs)
+        public async Task UpdateActiveAreaWeathersAsync(Tuple<uint, uint> areaIDs)
         {
             //TODO update based on host's weather and quest progression
             await BroadcastPacketAsync(new PacketSceneAreaWeatherNotify(ClimateType.CLIMATE_SUNNY, 1));
         }
 
-        public async Task AddPlayerAsync(Player.Player player, EnterReason reason, Vector3 newPosition, EnterType type = EnterType.Self, int oldSceneId = default, Vector3 oldPos = default, Vector3 newRot = default)
+        public async Task AddPlayerAsync(Player.Player player, EnterReason reason, Vector3 newPosition, EnterType type = EnterType.Self, uint oldSceneId = default, Vector3 oldPos = default, Vector3 newRot = default)
         {
             // Check if player already in
             if (Players.Contains(player))
@@ -330,7 +330,7 @@ namespace Weedwacker.GameServer.Systems.World
             List<SceneEntity> entities = new();
             SceneEntity currentEntity = player.TeamManager.CurrentAvatarEntity;
 
-            foreach (SceneEntity entity in Entities.Values.Concat(ScriptEntities.Values.Select(w => w as SceneEntity)))
+            foreach (SceneEntity entity in Entities.Values.Concat(ScriptEntities.Values.Select(w => w as SceneEntity)).Where(x => x is SceneEntity))
             {
                 if (entity == currentEntity)
                 {
@@ -469,7 +469,7 @@ namespace Weedwacker.GameServer.Systems.World
             }
         }
 
-        public async Task AddItemEntity(int itemId, int amount, SceneEntity bornForm)
+        public async Task AddItemEntity(uint itemId, int amount, SceneEntity bornForm)
         {
             if (!GameData.ItemDataMap.TryGetValue(itemId, out ItemData itemData))
             {

@@ -34,7 +34,7 @@ namespace Weedwacker.GameServer.Packet.Recv
                             bp.tranRot.FirstOrDefault(x => x.Key.Contains('z')).Value);
                     }
                     await session.Player.World.TransferPlayerToSceneAsync(session.Player, EnterReason.TransPoint,
-                        req.SceneId == (uint)session.Player.SceneId ? EnterType.Goto : EnterType.Jump, (int)req.SceneId,
+                        req.SceneId == (uint)session.Player.SceneId ? EnterType.Goto : EnterType.Jump, req.SceneId,
                         pos, rot, false);
                 }
                 else

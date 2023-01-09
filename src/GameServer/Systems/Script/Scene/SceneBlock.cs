@@ -8,7 +8,7 @@ namespace Weedwacker.GameServer.Systems.Script.Scene
     internal class SceneBlock
     {
         private Lua LuaState;
-        private int SceneId;
+        private uint SceneId;
         private uint BlockId;
 
         public SortedList<uint, SceneGroupInfo> groups; // index
@@ -27,7 +27,7 @@ namespace Weedwacker.GameServer.Systems.Script.Scene
             public List<Dictionary<string, uint>>? life_cycle; // list of pairs "from": number, and "to": number
             public bool dynamic_load => (bool?)Table[$"{nameof(dynamic_load)}"] ?? false;
             public uint load_strategy => (uint?)(long?)Table[$"{nameof(load_strategy)}"] ?? 0;
-            public int refresh_id => (int?)(long?)Table[$"{nameof(refresh_id)}"] ?? 0;
+            public uint refresh_id => (uint?)(long?)Table[$"{nameof(refresh_id)}"] ?? 0;
             public bool limit_drop => (bool?)Table[$"{nameof(limit_drop)}"] ?? false;
             public IsReplacable? is_replaceable;
             public bool force_unload_nodelay => (bool?)Table[$"{nameof(force_unload_nodelay)}"] ?? false;
@@ -81,7 +81,7 @@ namespace Weedwacker.GameServer.Systems.Script.Scene
             }
         }
 
-        internal static Task<SceneBlock?> CreateAsync(Lua lua, int sceneId, uint blockId, string scenePath)
+        internal static Task<SceneBlock?> CreateAsync(Lua lua, uint sceneId, uint blockId, string scenePath)
         {
             SceneBlock block = new(lua, sceneId, blockId);
             return block.InitializeAsync(scenePath);
@@ -124,7 +124,7 @@ namespace Weedwacker.GameServer.Systems.Script.Scene
             GroupsInfo.Add(groupId, group);
         }
 
-        private SceneBlock(Lua lua, int sceneId, uint blockId)
+        private SceneBlock(Lua lua, uint sceneId, uint blockId)
         {
             LuaState = lua;
             SceneId = sceneId;

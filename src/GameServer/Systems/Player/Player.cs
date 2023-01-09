@@ -20,15 +20,15 @@ namespace Weedwacker.GameServer.Systems.Player
         [BsonId]
         [BsonElement("_id")]
         public string AccountUid { get; private set; }
-        [BsonElement] public int GameUid { get; private set; }
+        [BsonElement] public uint GameUid { get; private set; }
         [BsonElement] public PlayerProfile Profile;
-        [BsonElement] public int MainCharacterId { get; private set; } = 0;
+        [BsonElement] public uint MainCharacterId { get; private set; } = 0;
         [BsonIgnore] public World.World? World;
         [BsonIgnore] public Scene? Scene { get; private set; }
-        [BsonElement] public int SceneId { get; private set; }
-        [BsonElement] public Tuple<int, int> WorldAreaIds { get; private set; } // <areaID1, areaID2>
-        [BsonElement] public int RegionId { get; private set; } = 1;
-        [BsonElement] public int WidgetId;
+        [BsonElement] public uint SceneId { get; private set; }
+        [BsonElement] public Tuple<uint, uint> WorldAreaIds { get; private set; } // <areaID1, areaID2>
+        [BsonElement] public uint RegionId { get; private set; } = 1;
+        [BsonElement] public uint WidgetId;
         [BsonIgnore] public uint PeerId;
         [BsonIgnore] public Vector3 Position;
         [BsonIgnore] public Vector3 Rotation;
@@ -71,7 +71,7 @@ namespace Weedwacker.GameServer.Systems.Player
         [BsonIgnore] public bool IsInMultiplayer => World != null && World.IsMultiplayer;
         [BsonIgnore] public PlayerLocationInfo PlayerLocationInfo => new() { Uid = (uint)GameUid, Pos = new() { X = Position.X, Y = Position.Y, Z = Position.Z }, Rot = new() { X = Rotation.X, Y = Rotation.Y, Z = Rotation.Z } };
 
-        public Player(string heroName, string accountUid, int gameUid)
+        public Player(string heroName, string accountUid, uint gameUid)
         {
             Profile = new(heroName);
 
@@ -118,7 +118,7 @@ namespace Weedwacker.GameServer.Systems.Player
             return ((ulong)GameUid << 32) + nextId;
         }
 
-        public async Task<bool> SetMainCharacter(int avatarId, string heroName)
+        public async Task<bool> SetMainCharacter(uint avatarId, string heroName)
         {
             if (GameData.AvatarHeroEntityDataMap.ContainsKey(avatarId) && MainCharacterId == 0)
             {
@@ -154,10 +154,10 @@ namespace Weedwacker.GameServer.Systems.Player
             if (areaType == 2)
             {
                 if (!isInit) await Scene.UpdateActiveAreaWeathersAsync(WorldAreaIds);
-                WorldAreaIds = Tuple.Create(WorldAreaIds.Item1, (int)areaID);
+                WorldAreaIds = Tuple.Create(WorldAreaIds.Item1, areaID);
             }
             else
-                WorldAreaIds = Tuple.Create((int)areaID, WorldAreaIds.Item2);
+                WorldAreaIds = Tuple.Create(areaID, WorldAreaIds.Item2);
 
             // Update Database
             var filter = Builders<Player>.Filter.Where(w => w.AccountUid == AccountUid);
@@ -212,7 +212,7 @@ namespace Weedwacker.GameServer.Systems.Player
         public async Task OnLoginAsync()
         {
             // Show opening cutscene if player has no avatars
-            if (Avatars.GetAvatarCount() == 0)
+            if (Avatars.Avatars.Count == 0)
             {
                 await OnCreate();
                 return;
@@ -232,7 +232,7 @@ namespace Weedwacker.GameServer.Systems.Player
             if (SceneId == 0 || Position == new Vector3(0, 0, 0)) // new player?
             {
                 SceneId = 3;
-                WorldAreaIds = Tuple.Create(1, 109); // beach
+                WorldAreaIds = Tuple.Create<uint, uint>(1, 109); // beach
                 await EnterWorldAreaAsync(1, 1, true);
                 await world.AddPlayerAsync(this, EnterReason.Login, EnterType.Self, true);
             }

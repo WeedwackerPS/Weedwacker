@@ -10,9 +10,9 @@ namespace Weedwacker.GameServer.Systems.Avatar
     {
         [BsonId]
         [BsonElement("_id")]
-        public int OwnerId { get; private set; } // GameUid
-        [BsonSerializer(typeof(IntDictionarySerializer<Avatar>))]
-        [BsonElement] public Dictionary<int, Avatar> Avatars { get; private set; }
+        public uint OwnerId { get; private set; } // GameUid
+        [BsonSerializer(typeof(UIntDictionarySerializer<Avatar>))]
+        [BsonElement] public Dictionary<uint, Avatar> Avatars { get; private set; }
         [BsonIgnore] private Player.Player Owner; // Loaded by DatabaseManager
         [BsonIgnore] public Dictionary<ulong, Avatar> AvatarsGuid { get; private set; } = new();
 
@@ -38,23 +38,17 @@ namespace Weedwacker.GameServer.Systems.Avatar
                 AvatarsGuid.Add(avatar.Guid, avatar);
             }
         }
-        public int GetAvatarCount()
+        public Avatar? GetAvatarById(uint id)
         {
-            return Avatars.Count;
-        }
-
-
-        public Avatar? GetAvatarById(int id)
-        {
-            return Avatars[id];
+            return Avatars.GetValueOrDefault(id, null);
         }
 
         public Avatar? GetAvatarByGuid(ulong id)
         {
-            return AvatarsGuid[id];
+            return AvatarsGuid.GetValueOrDefault(id, null);
         }
 
-        public bool HasAvatar(int id)
+        public bool HasAvatar(uint id)
         {
             return Avatars.ContainsKey(id);
         }

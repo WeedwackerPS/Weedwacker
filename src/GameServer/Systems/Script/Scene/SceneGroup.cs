@@ -11,7 +11,7 @@ namespace Weedwacker.GameServer.Systems.Script.Scene
     internal class SceneGroup
     {
         private Lua LuaState;
-        private int SceneId;
+        private uint SceneId;
         public readonly uint BlockId;
 
         public readonly uint group_id;
@@ -36,7 +36,7 @@ namespace Weedwacker.GameServer.Systems.Script.Scene
                 foreach (uint monsterIndex in init_suite.monsters)
                 {
                     Monster monster = monsters[monsterIndex];
-                    var entity = await MonsterEntity.CreateAsync(scene, GameData.MonsterDataMap[(int)monster.monster_id], (int)monster.level, monster, BlockId, group_id);
+                    var entity = await MonsterEntity.CreateAsync(scene, GameData.MonsterDataMap[monster.monster_id], monster.level, monster, BlockId, group_id);
                     monsterEntities.Add(entity);
                 }
                 await scene.AddEntitiesAsync(monsterEntities);
@@ -243,13 +243,13 @@ namespace Weedwacker.GameServer.Systems.Script.Scene
             public uint final_point;
         }
 
-        internal static Task<SceneGroup?> CreateAsync(Lua luaState, int sceneId, uint blockId, uint id, FileInfo fileInfo)
+        internal static Task<SceneGroup?> CreateAsync(Lua luaState, uint sceneId, uint blockId, uint id, FileInfo fileInfo)
         {
             SceneGroup group = new(luaState, sceneId, blockId, id);
             return group.InitializeAsync(fileInfo);
         }
 
-        private SceneGroup(Lua luaState, int sceneId, uint blockId, uint groupId)
+        private SceneGroup(Lua luaState, uint sceneId, uint blockId, uint groupId)
         {
             LuaState = luaState;
             SceneId = sceneId;

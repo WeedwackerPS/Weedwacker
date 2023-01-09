@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.CommandLine;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.CommandLine;
 using Weedwacker.Shared.Commands;
 using Weedwacker.Shared.Enums;
 
@@ -21,7 +16,7 @@ namespace Weedwacker.GameServer.Commands
 
             Command giveCommand = new Command("give", "Added item to player");
 
-            giveCommand.SetHandler(Weedwacker.GameServer.Commands.ConsoleCommands.OnGive,UserRank.Player,
+            giveCommand.SetHandler(ConsoleCommands.OnGive, UserRank.Player,
                 guidArgument, idArgument, countOption, levelOption, refinementOption);
 
             giveCommand.AddArgument(guidArgument);

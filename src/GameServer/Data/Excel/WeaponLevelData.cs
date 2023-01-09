@@ -1,15 +1,11 @@
-﻿
-using Newtonsoft.Json;
-using Weedwacker.GameServer.Enums;
+﻿using Newtonsoft.Json;
 
 namespace Weedwacker.GameServer.Data.Excel
 {
     [Resource("WeaponLevelExcelConfigData.json")]
     internal class WeaponLevelData : ItemData
     {
-        [JsonProperty]
-        public readonly int level;
-        [JsonProperty]
-        public readonly int[] requiredExps;
+        [JsonProperty] public readonly uint level;
+        [JsonProperty] public readonly uint[] requiredExps;
     }
 }

@@ -13,7 +13,7 @@ namespace Weedwacker.GameServer.Systems.World
     {
         public readonly MonsterData MonsterData;
         public readonly SceneGroup.SpawnInfo? SpawnInfo;
-        public readonly int Level;
+        public readonly uint Level;
         public readonly uint RightWeaponEntityId;
         public readonly uint LeftWeaponEntityId;
         public int PoseId;
@@ -21,13 +21,13 @@ namespace Weedwacker.GameServer.Systems.World
         public uint GroupId { get; set; }
         public uint ConfigId { get; set; }
 
-        public static Task<MonsterEntity> CreateAsync(Scene scene, MonsterData monsterData, int level, SceneGroup.Monster spawnInfo, uint blockId, uint groupId)
+        public static Task<MonsterEntity> CreateAsync(Scene scene, MonsterData monsterData, uint level, SceneGroup.Monster spawnInfo, uint blockId, uint groupId)
         {
             MonsterEntity ret = new MonsterEntity(scene, monsterData, level, spawnInfo, blockId, groupId);
             return ret.InitializeAsync();
         }
 
-        public static Task<MonsterEntity> CreateAsync(Scene scene, Player.Player targetPlayer, MonsterData monsterData, int level, Vector3 pos = default, Vector3 rot = default)
+        public static Task<MonsterEntity> CreateAsync(Scene scene, Player.Player targetPlayer, MonsterData monsterData, uint level, Vector3 pos = default, Vector3 rot = default)
         {
             var ret = new MonsterEntity(scene, targetPlayer, monsterData, level, pos, rot);
             return ret.InitializeAsync();
@@ -39,7 +39,7 @@ namespace Weedwacker.GameServer.Systems.World
             await RecalcStatsAsync();
             return this;
         }
-        private MonsterEntity(Scene scene, MonsterData monsterData, int level, SceneGroup.Monster? spawnInfo, uint blockId, uint groupId) : base(scene)
+        private MonsterEntity(Scene scene, MonsterData monsterData, uint level, SceneGroup.Monster? spawnInfo, uint blockId, uint groupId) : base(scene)
         {
 
             EntityId = scene.World.GetNextEntityId(EntityIdType.MONSTER);
@@ -59,7 +59,7 @@ namespace Weedwacker.GameServer.Systems.World
             if (monsterData.equips[1] != 0) LeftWeaponEntityId = scene.World.GetNextEntityId(EntityIdType.WEAPON);
         }
 
-        private MonsterEntity(Scene? scene, Player.Player targetPlayer, MonsterData monsterData, int level, Vector3 posOffset = default, Vector3 rotOffset = default) : base(scene)
+        private MonsterEntity(Scene? scene, Player.Player targetPlayer, MonsterData monsterData, uint level, Vector3 posOffset = default, Vector3 rotOffset = default) : base(scene)
         {
             EntityId = scene.World.GetNextEntityId(EntityIdType.MONSTER);
             MonsterData = monsterData;
@@ -81,7 +81,7 @@ namespace Weedwacker.GameServer.Systems.World
             {
                 return;
             }
-            List<Tuple<int, int>> items = new();
+            List<Tuple<uint, int>> items = new();
             gatherData.gatherItemId.AsParallel().ForAll(w => items.Add(Tuple.Create(w.id, w.count)));
             await player.Inventory.AddItemByIdManyAsync(items, ActionReason.SubfieldDrop);
 

@@ -3,38 +3,25 @@ using static Weedwacker.GameServer.Data.ResourceAttribute;
 
 namespace Weedwacker.GameServer.Data.Excel
 {
-    [Resource("AvatarSkillDepotExcelConfigData.json", LoadPriority.HIGH)]
+    [Resource("AvatarSkillDepotExcelConfigData.json")]
     internal class AvatarSkillDepotData
     {
-        [JsonProperty]
-        public readonly int id;
-        [JsonProperty]
-        public readonly int energySkill;
-        [JsonProperty]
-        public readonly int attackModeSkill;
-        [JsonProperty]
-        public readonly List<int>? skills;
-        [JsonProperty]
-        public readonly List<int>? subSkills;
-        [JsonProperty]
-        public readonly int leaderTalent;
-        [JsonProperty]
-        public readonly List<string>? extraAbilities;
-        [JsonProperty]
-        public readonly List<int>? talents;
-        [JsonProperty]
-        public readonly List<InherentProudSkillOpens>? inherentProudSkillOpens;
-        [JsonProperty]
-        public readonly string? talentStarName;
-        [JsonProperty]
-        public readonly string? skillDepotAbilityGroup;
+        [JsonProperty] public readonly uint id;
+        [JsonProperty] public readonly uint energySkill;
+        [JsonProperty] public readonly uint attackModeSkill;
+        [JsonProperty] public readonly uint[] skills;
+        [JsonProperty] public readonly uint[] subSkills;
+        [JsonProperty] public readonly uint leaderTalent;
+        [JsonProperty] public readonly string[] extraAbilities;
+        [JsonProperty] public readonly uint[] talents;
+        [JsonProperty] public readonly InherentProudSkillOpens[] inherentProudSkillOpens;
+        [JsonProperty] public readonly string? talentStarName;
+        [JsonProperty] public readonly string? skillDepotAbilityGroup;
 
         public class InherentProudSkillOpens
         {
-            [JsonProperty]
-            public readonly int? proudSkillGroupId;
-            [JsonProperty]
-            public readonly int? needAvatarPromoteLevel;
+            [JsonProperty] public readonly uint? proudSkillGroupId;
+            [JsonProperty] public readonly uint? needAvatarPromoteLevel;
         }
     }
 }

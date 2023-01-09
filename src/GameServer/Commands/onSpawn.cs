@@ -8,24 +8,24 @@ namespace Weedwacker.GameServer.Commands
     {
         public static async Task OnSpawn(IConsole console, int guid, int id) // GameUid, id
         {
-            if (!GameServer.OnlinePlayers.ContainsKey(guid))
+            if (!GameServer.OnlinePlayers.ContainsKey((uint)guid))
             {
                 Console.WriteLine("Player isn't online or doesn't exist");
                 return ;
             }
-            var scene = GameServer.OnlinePlayers[guid].Player.Scene;
+            var scene = GameServer.OnlinePlayers[(uint)guid].Player.Scene;
 
-            if (GameData.MonsterDataMap.ContainsKey(id))
+            if (GameData.MonsterDataMap.ContainsKey((uint)id))
             {
-                await scene.AddEntityAsync(await MonsterEntity.CreateAsync(scene, GameServer.OnlinePlayers[guid].Player, GameData.MonsterDataMap[id], 3));
+                await scene.AddEntityAsync(await MonsterEntity.CreateAsync(scene, GameServer.OnlinePlayers[(uint)guid].Player, GameData.MonsterDataMap[(uint)id], 3));
             }
-            else if (GameData.GadgetDataMap.ContainsKey(id))
+            else if (GameData.GadgetDataMap.ContainsKey((uint)id))
             {
                 //await scene.AddEntityAsync(new BaseGadgetEntity(scene, id));
             }
-            else if (GameData.ItemDataMap.ContainsKey(id))
+            else if (GameData.ItemDataMap.ContainsKey((uint)id))
             {
-                await scene.AddEntityAsync(new ItemEntity(scene, GameServer.OnlinePlayers[guid].Player, GameData.ItemDataMap[id], GameServer.OnlinePlayers[guid].Player.Position, 1));
+                await scene.AddEntityAsync(new ItemEntity(scene, GameServer.OnlinePlayers[(uint)guid].Player, GameData.ItemDataMap[(uint)id], GameServer.OnlinePlayers[(uint)guid].Player.Position, 1));
             }
             else
                 goto ERROR;

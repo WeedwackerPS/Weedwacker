@@ -7,20 +7,18 @@ namespace Weedwacker.GameServer.Systems.Shop
 {
     internal class ShopGoodInfo
     {
-        [BsonElement] public int GoodsId { get; private set; }
-        [BsonIgnore] public ShopGoodsData Data { get; private set; }
+        [BsonElement] public uint GoodsId { get; private set; }
+        [BsonIgnore] public ShopGoodsData Data => GameData.ShopGoodsDataMap[GoodsId];
         public int BoughtNum { get; private set; } = 0;
 
-        public ShopGoodInfo(int goodsId)
+        public ShopGoodInfo(uint goodsId)
         {
             GoodsId = goodsId;
-            Data = GameData.ShopGoodsDataMap[goodsId];
         }
 
         public ShopGoodInfo(ShopGoodsData data)
         {
             GoodsId = data.goodsId;
-            Data = data;
         }
 
         public void ResetBoughtNum()
@@ -29,7 +27,6 @@ namespace Weedwacker.GameServer.Systems.Shop
         }
         public Task OnLoadAsync()
         {
-            Data = GameData.ShopGoodsDataMap[GoodsId];
             return Task.CompletedTask;
         }
 
@@ -38,18 +35,18 @@ namespace Weedwacker.GameServer.Systems.Shop
             //TODO
             ShopGoods goods = new ShopGoods()
             {
-                GoodsId = (uint)GoodsId,
-                GoodsItem = new ItemParam() { ItemId = (uint)Data.itemId, Count = (uint)Data.itemCount },
+                GoodsId = GoodsId,
+                GoodsItem = new ItemParam() { ItemId = Data.itemId, Count = Data.itemCount },
                 Scoin = (uint)Data.costScoin,
                 Hcoin = (uint)Data.costHcoin,
                 Mcoin = (uint)Data.costMcoin,
-                BuyLimit = (uint)Data.buyLimit,
+                BuyLimit = Data.buyLimit,
                 //TODO
                 BeginTime = 0,
                 EndTime = 1924992000,
-                MinLevel = (uint)Data.minPlayerLevel,
-                MaxLevel = (uint)Data.maxPlayerLevel,
-                SecondarySheetId = (uint)Data.secondarySheetId,
+                MinLevel = Data.minPlayerLevel,
+                MaxLevel = Data.maxPlayerLevel,
+                SecondarySheetId = Data.secondarySheetId,
                 DisableType = 0, //TODO
 
             };

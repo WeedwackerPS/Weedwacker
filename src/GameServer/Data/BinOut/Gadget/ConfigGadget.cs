@@ -26,9 +26,7 @@ namespace Weedwacker.GameServer.Data.BinOut.Gadget
         [JsonProperty] public readonly ConfigMove move;
         [JsonProperty] public readonly ConfigGadgetPattern gadget;
         [JsonProperty] public readonly ConfigEquipment equipment;
-        [JsonProperty] public readonly ConfigNavigation navigation;
-        [JsonProperty] public readonly ConfigGadgetUi uiInteract;
-        [JsonProperty] public readonly ConfigGadgetMisc misc;
+        // there's a lot more fields
         public class ConfigTimer
         {
             [JsonProperty] public readonly bool lifeInfinite;

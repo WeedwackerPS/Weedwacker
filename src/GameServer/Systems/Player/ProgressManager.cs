@@ -10,7 +10,7 @@ namespace Weedwacker.GameServer.Systems.Player
     {
 
         [BsonElement("_id")]
-        [BsonId] public int OwnerId { get; private set; }
+        [BsonId] public uint OwnerId { get; private set; }
         private Player Owner;
         public Dictionary<OpenStateType, int> OpenStates = new(); // SET ONLY THROUGH THE OPENSTATEMANAGER
         public HashSet<int> UnlockedForgingBlueprints = new();

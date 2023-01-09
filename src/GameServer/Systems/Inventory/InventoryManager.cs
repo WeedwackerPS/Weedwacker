@@ -11,7 +11,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
 {
     internal class InventoryManager
     {
-        [BsonId] public int OwnerId; // GameUid
+        [BsonId] public uint OwnerId; // GameUid
         [BsonIgnore] private Player.Player Owner;
         [BsonElement] public Dictionary<ItemType, SubInventory> SubInventories { get; private set; }
 
@@ -29,7 +29,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
             };
         }
 
-        public int GetVirtualItemValue(int itemId)
+        public int GetVirtualItemValue(uint itemId)
         {
             switch (itemId)
             {
@@ -112,11 +112,11 @@ namespace Weedwacker.GameServer.Systems.Inventory
         public Task<GameItem?> AddItemByGuidAsync(ulong guid, int count = 1, ActionReason reason = ActionReason.None) =>
             AddItemByIdAsync(GuidMap[guid].ItemId, count, reason);
 
-        public async Task<List<GameItem>?> AddItemByIdManyAsync(IEnumerable<Tuple<int, int>> idAndCount, ActionReason reason = ActionReason.None)
+        public async Task<List<GameItem>?> AddItemByIdManyAsync(IEnumerable<Tuple<uint, int>> idAndCount, ActionReason reason = ActionReason.None)
         {
             List<GameItem> updatedItems = new();
 
-            foreach (Tuple<int, int> item in idAndCount)
+            foreach (Tuple<uint, int> item in idAndCount)
             {
                 //Add but don't notify the player yet
                 GameItem? gameItem = await AddItemByIdAsync(item.Item1, item.Item2, ActionReason.None, false);
@@ -138,7 +138,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
 
             return updatedItems;
         }
-        public async Task<GameItem?> AddItemByIdAsync(int itemId, int count = 1, ActionReason reason = ActionReason.None, bool notifyClient = true, int level = 1, int refinement = 0)
+        public async Task<GameItem?> AddItemByIdAsync(uint itemId, int count = 1, ActionReason reason = ActionReason.None, bool notifyClient = true, uint level = 1, uint refinement = 0)
         {
             ItemData itemData = GameData.ItemDataMap[itemId];
 
@@ -201,7 +201,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
         public async Task<bool> PayPromoteCostAsync(IEnumerable<ItemParamData> costItems, ActionReason reason = ActionReason.None)
         {
             Dictionary<MaterialItem, int> materials = new();
-            Dictionary<int, int> virtualItems = new();
+            Dictionary<uint, int> virtualItems = new();
                 foreach (ItemParamData itemData in costItems)
                 {
                     if (GameData.ItemDataMap[itemData.id].itemType == ItemType.ITEM_MATERIAL)
@@ -219,10 +219,10 @@ namespace Weedwacker.GameServer.Systems.Inventory
                 }
             // We have the requisite amount for all items
             foreach (MaterialItem material in materials.Keys) await RemoveItemByGuidAsync(material.Guid, materials[material]);
-            foreach (int item in virtualItems.Keys) await PayVirtualItemByIdAsync(item, virtualItems[item]);
+            foreach (uint item in virtualItems.Keys) await PayVirtualItemByIdAsync(item, virtualItems[item]);
             return true;
         }
-        private async Task<bool> AddVirtualItemByIdAsync(int itemId, int count)
+        private async Task<bool> AddVirtualItemByIdAsync(uint itemId, int count)
         {
             switch (itemId)
             {
@@ -253,7 +253,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
                     return false;
             }
         }
-        public async Task<bool> PayVirtualItemByIdAsync(int itemId, int count, ActionReason reason = ActionReason.None)
+        public async Task<bool> PayVirtualItemByIdAsync(uint itemId, int count, ActionReason reason = ActionReason.None)
         {
             switch (itemId)
             {

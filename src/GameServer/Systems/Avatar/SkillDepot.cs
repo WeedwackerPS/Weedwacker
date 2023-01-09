@@ -13,25 +13,25 @@ namespace Weedwacker.GameServer.Systems.Avatar
 {
     internal class SkillDepot
     {
-        [BsonElement] public int DepotId { get; private set; }
+        [BsonElement] public uint DepotId { get; private set; }
         [BsonIgnore] private Player.Player Owner; // Loaded by DatabaseManager
         [BsonIgnore] private Avatar Character; // Loaded by DatabaseManager
-        [BsonElement] public int EnergySkill { get; private set; } // Ultimate elemental ability (Q)
-        [BsonElement] public int EnergySkillLevel { get; private set; }
+        [BsonElement] public uint EnergySkill { get; private set; } // Ultimate elemental ability (Q)
+        [BsonElement] public uint EnergySkillLevel { get; private set; }
         [BsonElement] public ElementType? Element { get; private set; } // Stores current and max energy
         [BsonIgnore] public Dictionary<uint, ConfigAbility>? Abilities { get; private set; } // hash
-        [BsonElement] public SortedList<int, int> Skills { get; private set; } = new(); // <skillId,level>
-        [BsonElement] public SortedList<int, int> SubSkills { get; private set; } = new(); // <skillId,level>
-        [BsonElement] public SortedList<int, int> SkillExtraChargeMap { get; private set; } = new(); // Charges
+        [BsonElement] public SortedList<uint, uint> Skills { get; private set; } = new(); // <skillId,level>
+        [BsonElement] public SortedList<uint, uint> SubSkills { get; private set; } = new(); // <skillId,level>
+        [BsonElement] public SortedList<uint, uint> SkillExtraChargeMap { get; private set; } = new(); // Charges
         [BsonElement] public HashSet<ProudSkillData> InherentProudSkillOpens { get; private set; } = new();
         [BsonIgnore] public IEnumerable<ProudSkillData> TeamOpens => InherentProudSkillOpens.Where(w => w.effectiveForTeam == 1);
-        [BsonElement] public HashSet<int> Talents { get; private set; } = new(); // talentId. last digit of id = constellationRank.
+        [BsonElement] public HashSet<uint> Talents { get; private set; } = new(); // talentId. last digit of id = constellationRank.
         [BsonIgnore] public Dictionary<string, HashSet<string>> UnlockedTalentParams = new(); // <abilityName, talentParams> Added by ConfigTalent UnlockTalentParam
         [BsonIgnore] public HashSet<string> ActiveDynamicAbilities { get; private set; } = new(); // abilityName
         [BsonIgnore] public Dictionary<string, Dictionary<string, float>?>? AbilitySpecials { get; private set; } = new(); // <abilityName, <abilitySpecial, value>> Variables used in ConfigAbility_<Avatar>.json
-        [BsonIgnore] public SortedList<int, int> ProudSkillExtraLevelMap { get; private set; } = new(); // <groupId,extraLevels> 
+        [BsonIgnore] public SortedList<uint, uint> ProudSkillExtraLevelMap { get; private set; } = new(); // <groupId,extraLevels> 
 
-        public SkillDepot(Avatar avatar, int depotId, Player.Player owner)
+        public SkillDepot(Avatar avatar, uint depotId, Player.Player owner)
         {
             Owner = owner;
             Character = avatar;
@@ -73,7 +73,7 @@ namespace Weedwacker.GameServer.Systems.Avatar
                 Element.MaxEnergy = avatarInfo.SkillData[depotId][EnergySkill].costElemVal;
             }
 
-            foreach (int skillId in avatarInfo.SkillDepotData[depotId].skills)
+            foreach (uint skillId in avatarInfo.SkillDepotData[depotId].skills)
             {
                 if (skillId != 0) Skills.Add(skillId, 1);
             }
@@ -82,7 +82,7 @@ namespace Weedwacker.GameServer.Systems.Avatar
             foreach (int group in inherentProudSkillGroups)
             {
                 var idList = avatarInfo.ProudSkillData[depotId].Where(w => w.Value.proudSkillGroupId == group).ToDictionary(q => q.Key).Keys.ToList();
-                foreach (int id in idList)
+                foreach (uint id in idList)
                 {
                     InherentProudSkillOpens.Add(avatarInfo.ProudSkillData[depotId][id]);
                 }
@@ -135,20 +135,20 @@ namespace Weedwacker.GameServer.Systems.Avatar
             return (uint)Talents.Count;
         }
 
-        public List<int> GetSkillsAndEnergySkill()
+        public List<uint> GetSkillsAndEnergySkill()
         {
             var list = Skills.Values.Where(w => w > 0).ToList();
             list.Add(EnergySkill);
             return list;
 
         }
-        public Dictionary<int, int> GetSkillLevelMap()
+        public Dictionary<uint, uint> GetSkillLevelMap()
         {
-            Dictionary<int, int> skillz = new()
+            Dictionary<uint, uint> skillz = new()
             {
                 { EnergySkill, EnergySkillLevel }
             };
-            foreach (int skill in Skills.Keys)
+            foreach (uint skill in Skills.Keys)
             {
                 skillz.Add(skill, Skills[skill]);
             }
@@ -156,13 +156,13 @@ namespace Weedwacker.GameServer.Systems.Avatar
             return skillz;
         }
 
-        public async Task<bool> UpgradeSkill(int skillId)
+        public async Task<bool> UpgradeSkill(uint skillId)
         {
             AvatarSkillData skillData = GameServer.AvatarInfo[Character.AvatarId].SkillData[DepotId][skillId];
             if (skillData == null) return false;
 
             // Get data for next skill level
-            int newLevel = Skills.GetValueOrDefault(skillId, 0) + 1;
+            uint newLevel = Skills.GetValueOrDefault<uint, uint>(skillId, 0) + 1;
             if (newLevel > 10) return false;
 
             // Proud skill data
@@ -185,10 +185,10 @@ namespace Weedwacker.GameServer.Systems.Avatar
             await Owner.SendPacketAsync(new PacketAvatarSkillInfoNotify(Character.Guid, SkillExtraChargeMap));
         }
 
-        public async Task<bool> SetSkillLevel(int skillId, int level)
+        public async Task<bool> SetSkillLevel(uint skillId, uint level)
         {
             if (level < 0 || level > 15) return false;
-            int oldLevel = Skills.GetValueOrDefault(skillId, 0);
+            uint oldLevel = Skills.GetValueOrDefault<uint, uint>(skillId, 0);
             Skills[skillId] = level;
 
             // Update Database
@@ -201,7 +201,7 @@ namespace Weedwacker.GameServer.Systems.Avatar
 
             return true;
         }
-        private void AddTalent(int talentId)
+        private void AddTalent(uint talentId)
         {
             var talentData = Character.Data.TalentData[DepotId][talentId];
             Talents.Add(talentData.talentId);
@@ -210,7 +210,7 @@ namespace Weedwacker.GameServer.Systems.Avatar
                 config.Apply(Character.AsEntity.AbilityManager, talentData.paramList);
             }
         }
-        public async Task<bool> UnlockConstellation(int talentId, bool skipPayment = false)
+        public async Task<bool> UnlockConstellation(uint talentId, bool skipPayment = false)
         {
             // Get talent
             AvatarTalentData talentData = GameServer.AvatarInfo[Character.AvatarId].TalentData[DepotId][talentId];
