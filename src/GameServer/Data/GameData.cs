@@ -253,10 +253,8 @@ namespace Weedwacker.GameServer.Data
             ScriptPath = Path.Combine(resourcesPath, "Scripts/");
 
             string binout = "Weedwacker.GameServer.Data.BinOut";
+            var q = Assembly.GetExecutingAssembly().GetTypes().Where(t => t.Namespace != null && t.Namespace.StartsWith(binout));
 
-            var q = from t in Assembly.GetExecutingAssembly().GetTypes()
-                    where t.IsClass && t.Namespace != null && t.Namespace.StartsWith(binout)
-                    select t;
             var arr = q.ToArray();
             var binder = new KnownTypesBinder() { KnownTypes = q };
             Serializer.SerializationBinder = binder;
