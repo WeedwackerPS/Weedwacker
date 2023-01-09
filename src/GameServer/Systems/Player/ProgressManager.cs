@@ -1,8 +1,5 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
-using System;
-using Weedwacker.GameServer.Data;
-using Weedwacker.GameServer.Data.BinOut.Scene.Point;
 using Weedwacker.GameServer.Database;
 using Weedwacker.GameServer.Enums;
 using Weedwacker.GameServer.Packet.Send;
@@ -13,7 +10,7 @@ namespace Weedwacker.GameServer.Systems.Player
     {
 
         [BsonElement("_id")]
-        [BsonId] public int OwnerId { get; private set; }
+        [BsonId] public uint OwnerId { get; private set; }
         private Player Owner;
         public Dictionary<OpenStateType, int> OpenStates = new(); // SET ONLY THROUGH THE OPENSTATEMANAGER
         public HashSet<int> UnlockedForgingBlueprints = new();

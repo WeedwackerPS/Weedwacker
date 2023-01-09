@@ -16,13 +16,13 @@ namespace Weedwacker.GameServer.Systems.Script.Scene
         public DummyPoints? dummy_points; // load dummy points from Scene<sceneId>_dummy_points.lua
         public LuaTable routes_config;// => LuaState.GetTable("routes_config"); // load routes from ???
 
-        public static Task<SceneInfo> CreateAsync(Lua lua, int sceneId, string scriptPath)
+        public static Task<SceneInfo> CreateAsync(Lua lua, uint sceneId, string scriptPath)
         {
             var scene = new SceneInfo();
             return scene.InitializeAsync(lua, sceneId, scriptPath);
         }
 
-        private async Task<SceneInfo> InitializeAsync(Lua lua, int sceneId, string scriptPath)
+        private async Task<SceneInfo> InitializeAsync(Lua lua, uint sceneId, string scriptPath)
         {
             LuaState = lua;
             SceneId = SceneId;
@@ -82,7 +82,7 @@ namespace Weedwacker.GameServer.Systems.Script.Scene
             return this;
         }
 
-        private async Task AddBlock(int sceneId, uint blockId, string path)
+        private async Task AddBlock(uint sceneId, uint blockId, string path)
         {
             var block = await SceneBlock.CreateAsync(LuaState, sceneId, blockId, path);
             BlocksInfo.Add(blockId, block);

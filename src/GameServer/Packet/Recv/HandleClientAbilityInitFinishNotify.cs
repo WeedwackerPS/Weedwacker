@@ -15,8 +15,8 @@ namespace Weedwacker.GameServer.Packet.Recv
             {
                 session.Player.AbilityInvNotifyList.AddEntry(invoke, invoke.ForwardType, invoke.ForwardPeer);
 
-                if (session.Player.Scene.ScriptEntities.TryGetValue(invoke.EntityId, out ScriptEntity? scriptEntity) && scriptEntity.AbilityManager != null)
-                    await scriptEntity.AbilityManager.HandleAbilityInvokeAsync(invoke);
+                if (session.Player.Scene.ScriptEntities.TryGetValue(invoke.EntityId, out IScriptEntity? scriptEntity) && (scriptEntity as SceneEntity).AbilityManager != null)
+                    await (scriptEntity as SceneEntity).AbilityManager.HandleAbilityInvokeAsync(invoke);
 
                 else if (session.Player.Scene.Entities.TryGetValue(invoke.EntityId, out BaseEntity? entity) && entity.AbilityManager != null)
                     await entity.AbilityManager.HandleAbilityInvokeAsync(invoke);

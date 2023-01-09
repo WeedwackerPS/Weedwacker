@@ -8,7 +8,7 @@ namespace Weedwacker.GameServer.Packet.Send
     {
         public PacketWorldDataNotify(World world) : base(Enums.OpCode.WorldDataNotify)
         {
-            int worldLevel = world.WorldLevel;
+            uint worldLevel = world.WorldLevel;
             int isMp = world.IsMultiplayer ? 1 : 0;
 
             WorldDataNotify proto = new WorldDataNotify();

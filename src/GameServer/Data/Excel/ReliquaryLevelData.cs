@@ -6,10 +6,10 @@ namespace Weedwacker.GameServer.Data.Excel
     [Resource("ReliquaryLevelExcelConfigData.json")]
     internal class ReliquaryLevelData
     {
-        [JsonProperty] public readonly int rank;
-        [JsonProperty] public readonly int level;
-        [JsonProperty] public readonly int exp;
-        [JsonProperty] public readonly List<RelicLevelProperty> addProps;
+        [JsonProperty] public readonly uint rank;
+        [JsonProperty] public readonly uint level;
+        [JsonProperty] public readonly uint exp;
+        [JsonProperty] public readonly RelicLevelProperty[] addProps;
 
         public class RelicLevelProperty
         {

@@ -19,7 +19,7 @@ namespace Weedwacker.GameServer.Packet.Recv
             var ret = Retcode.RetFail;
             Vector3 rot = new();
             Vector3 pos = new();
-            int transToSceneId = 0;
+            uint transToSceneId = 0;
             if (GameData.ScenePointDataMap.TryGetValue($"scene{session.Player.SceneId}_point", out var spd))
             {
                 if (spd.points!.TryGetValue(req.PointId.ToString(), out var bp))

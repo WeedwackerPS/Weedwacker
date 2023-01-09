@@ -5,7 +5,7 @@ namespace Weedwacker.GameServer.Data.BinOut.Scene.SceneNpcBorn
 {
     internal class SceneNpcBornData
     {
-        [JsonProperty] public readonly int sceneId;
+        [JsonProperty] public readonly uint sceneId;
         [JsonProperty] public readonly BornPos[] bornPosList;
     }
 }

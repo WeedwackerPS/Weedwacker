@@ -6,9 +6,9 @@ namespace Weedwacker.GameServer.Data.Excel
     [Resource("SceneTagConfigData.json")]
     internal class SceneTagData
     {
-        [JsonProperty] public readonly int id;
+        [JsonProperty] public readonly uint id;
         [JsonProperty] public readonly string sceneTagName;
-        [JsonProperty] public readonly int sceneId;
+        [JsonProperty] public readonly uint sceneId;
         [JsonProperty] public readonly bool isDefaultValid;
         //TODO Missing one field 
         [JsonProperty] public readonly TagCond[] cond;

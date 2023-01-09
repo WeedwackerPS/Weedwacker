@@ -8,7 +8,7 @@ namespace Weedwacker.GameServer.Systems.Inventory.ItemUseOp
         protected Player.Player User;
         protected MaterialData ItemData;
 
-        public BaseItemUse(Player.Player user, int itemId)
+        public BaseItemUse(Player.Player user, uint itemId)
         {
             User = user;
             ItemData = (MaterialData)GameData.ItemDataMap[itemId];

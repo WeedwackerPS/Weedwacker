@@ -6,10 +6,10 @@ namespace Weedwacker.GameServer.Data.Excel
     [Resource("AvatarHeroEntityExcelConfigData.json")]
     internal class AvatarHeroEntityData
     {
-        [JsonProperty] public readonly int avatarId;
+        [JsonProperty] public readonly uint avatarId;
         [JsonProperty] public readonly BigInteger prefabPathHashSuffix;
-        [JsonProperty] public readonly int prefabPathHashPre;
+        [JsonProperty] public readonly uint prefabPathHashPre;
         [JsonProperty] public readonly long animatorConfigPathHashSuffix;
-        [JsonProperty] public readonly int animatorConfigPathHashPre;
+        [JsonProperty] public readonly uint animatorConfigPathHashPre;
     }
 }

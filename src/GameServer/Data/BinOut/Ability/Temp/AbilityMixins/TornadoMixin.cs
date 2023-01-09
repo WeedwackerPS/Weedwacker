@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Weedwacker.GameServer.Data.BinOut.Shared;
 using Weedwacker.GameServer.Enums;
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
@@ -8,7 +9,7 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
 		[JsonProperty] public readonly int enviroWindStrength;
 		[JsonProperty] public readonly int enviroWindRadius;
 		[JsonProperty] public readonly TargetType targetType;
-		[JsonProperty] public readonly BaseBornType born;
+		[JsonProperty] public readonly ConfigBornType born;
 		[JsonProperty] public readonly BasePredicate[] predicates;
 		[JsonProperty] public readonly BaseShape[] stageZone;
 	}

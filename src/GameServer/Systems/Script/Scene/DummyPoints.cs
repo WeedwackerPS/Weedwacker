@@ -9,9 +9,9 @@ namespace Weedwacker.GameServer.Systems.Script.Scene
     {
         public Dictionary<string, Position> dummy_points;
         private Lua LuaState;
-        private int SceneId;
+        private uint SceneId;
 
-        public static DummyPoints? Create(Lua luaState, int sceneId, string script)
+        public static DummyPoints? Create(Lua luaState, uint sceneId, string script)
         {
             var points = new DummyPoints(luaState, sceneId);
             return points.Initialize(script);
@@ -41,7 +41,7 @@ namespace Weedwacker.GameServer.Systems.Script.Scene
 
             return this;
         }
-        private DummyPoints(Lua luaState, int sceneId)
+        private DummyPoints(Lua luaState, uint sceneId)
         {
             LuaState = luaState;
             SceneId = sceneId;

@@ -14,10 +14,10 @@ namespace Weedwacker.GameServer.Packet.Recv
             string heroName = proto.NickName;
             uint avatarId = proto.AvatarId;
 
-            if (GameData.AvatarHeroEntityDataMap.ContainsKey((int)avatarId))
+            if (GameData.AvatarHeroEntityDataMap.ContainsKey(avatarId))
             {
-                var newAvatar = await Avatar.CreateAsync((int)avatarId, session.Player);
-                await session.Player.SetMainCharacter((int)avatarId, heroName);
+                var newAvatar = await Avatar.CreateAsync(avatarId, session.Player);
+                await session.Player.SetMainCharacter(avatarId, heroName);
                 await session.Player.Avatars.AddAvatar(newAvatar, false);
                 await session.Player.OnLoginAsync();
                 await session.SendPacketAsync(new BasePacket(OpCode.SetPlayerBornDataRsp));

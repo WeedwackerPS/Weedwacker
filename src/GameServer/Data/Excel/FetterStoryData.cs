@@ -5,19 +5,12 @@ namespace Weedwacker.GameServer.Data.Excel
     [Resource("FetterStoryExcelConfigData.json")]
     internal class FetterStoryData : FetterBaseClass
     {
-        [JsonProperty]
-        public readonly long storyTitleTextMapHash;
-        [JsonProperty]
-        public readonly long storyContextTextMapHash;
-        [JsonProperty]
-        public readonly long storyTitle2TextMapHash;
-        [JsonProperty]
-        public readonly long storyContext2TextMapHash;
-        [JsonProperty]
-        public readonly long[] tips;
-        [JsonProperty]
-        public readonly long storyTitleLockedTextMapHash;
-        [JsonProperty]
-        public readonly int avatarId;
+        [JsonProperty] public readonly ulong storyTitleTextMapHash;
+        [JsonProperty] public readonly ulong storyContextTextMapHash;
+        [JsonProperty] public readonly ulong storyTitle2TextMapHash;
+        [JsonProperty] public readonly ulong storyContext2TextMapHash;
+        [JsonProperty] public readonly ulong[] tips;
+        [JsonProperty] public readonly ulong storyTitleLockedTextMapHash;
+        [JsonProperty] public readonly uint avatarId;
     }
 }

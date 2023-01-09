@@ -6,7 +6,7 @@ namespace Weedwacker.GameServer.Data.Excel
     [Resource("EnvAnimalGatherExcelConfigData.json")]
     internal class EnvAnimalGatherData
     {
-        [JsonProperty] public readonly int animalId;
+        [JsonProperty] public readonly uint animalId;
         [JsonProperty] public readonly int areaId;
         [JsonProperty] public readonly EntityType entityType;
         [JsonProperty] public readonly GatherItem[] gatherItemId;
@@ -18,7 +18,7 @@ namespace Weedwacker.GameServer.Data.Excel
 
     public class GatherItem
     {
-        [JsonProperty] public readonly int id;
+        [JsonProperty] public readonly uint id;
         [JsonProperty] public readonly int count;
     }
 }

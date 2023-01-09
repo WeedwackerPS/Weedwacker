@@ -6,11 +6,19 @@ namespace Weedwacker.GameServer.Enums
     [JsonConverter(typeof(StringEnumConverter))]
     public enum VelocityForceType
     {
-        RushMoveType,
-        InertiaType,
+        RetreatType,
         RetreatAirType,
+        RushMoveType,
         WindZoneType,
+        AirflowType,
+        RiseType,
+        SpeedupType,
+        AirflowAccType,
+        InertiaType,
+        FixedRushMoveType,
         LightCoreTypeNormal,
         LightCoreTypeAccelerate,
+        GorouZoneType,
+        UgcDirectedForceType
     }
 }

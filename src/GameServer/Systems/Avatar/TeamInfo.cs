@@ -14,7 +14,7 @@ namespace Weedwacker.GameServer.Systems.Avatar
         [BsonSerializer(typeof(IntSortedListSerializer<Avatar>))]
         [BsonElement] public SortedList<int, Avatar?> AvatarInfo { get; private set; } = new(); // <index, avatar>> clone avatars for abyss teams
         public HashSet<TeamResonanceData> TeamResonances = new();
-        internal Dictionary<string, Dictionary<string, float>?>? AbilitySpecials = new(); // <abilityName, <abilitySpecial, value>>
+        internal Dictionary<uint, Dictionary<uint, float>?>? AbilitySpecials = new(); // <abilityName, <abilitySpecial, value>>
 
         [BsonElement] public bool IsTowerTeam { get; private set; } = false; //Don't allow any further team editing if it's an abyss team
         public TeamInfo(string name = "")

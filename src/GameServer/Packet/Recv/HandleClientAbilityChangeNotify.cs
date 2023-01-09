@@ -18,11 +18,11 @@ namespace Weedwacker.GameServer.Packet.Recv
                     await entity.AbilityManager.HandleAbilityInvokeAsync(invoke);
                 }
             }
-            else if (session.Player.Scene.ScriptEntities.TryGetValue(p.EntityId, out ScriptEntity? scriptEntities))
+            else if (session.Player.Scene.ScriptEntities.TryGetValue(p.EntityId, out IScriptEntity? scriptEntity))
             {
                 foreach (var invoke in p.Invokes)
                 {
-                    await scriptEntities.AbilityManager.HandleAbilityInvokeAsync(invoke);
+                    await (scriptEntity as SceneEntity).AbilityManager.HandleAbilityInvokeAsync(invoke);
                 }
             }
             else

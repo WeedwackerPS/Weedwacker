@@ -21,11 +21,11 @@ namespace Weedwacker.GameServer.Systems.World
     {
         public readonly World World;
         public readonly SceneData SceneData;
-        public int SceneId => SceneData.id;
+        public uint SceneId => SceneData.id;
         public readonly List<Player.Player> Players = new();
         private HashSet<SceneGroup> LoadedGroups = new();
         public readonly ConcurrentDictionary<uint, BaseEntity> Entities = new(); // entityId
-        public readonly ConcurrentDictionary<uint, ScriptEntity> ScriptEntities = new(); // entityId
+        public readonly ConcurrentDictionary<uint, IScriptEntity> ScriptEntities = new(); // entityId
         public readonly HashSet<SpawnInfo> SpawnedEntities;
         public readonly HashSet<SpawnInfo> DeadSpawnedEntities;
         public int AutoCloseTime;
@@ -33,12 +33,12 @@ namespace Weedwacker.GameServer.Systems.World
         public SceneScriptManager ScriptManager { get; private set; }
         public readonly ScenePointData PointData;
         public readonly DungeonData? DungeonData;
-        public int PrevScene; // Id of the previous scene
-        public int PrevScenePoint;
-        public Dictionary<Tuple<int, int>, int> ActiveAreaWeathers; // <areaID1, areaID2> weatherId>
+        public uint PrevScene; // Id of the previous scene
+        public uint PrevScenePoint;
+        public Dictionary<Tuple<uint, uint>, uint> ActiveAreaWeathers; // <areaID1, areaID2> weatherId>
         public HashSet<uint> SceneTags; // TODO apply based on host's data
         private ConcurrentBag<SceneEntity> BornNotifyQueue = new();
-        private static Dictionary<int, Dictionary<SceneBlock, PointOctree<SceneGroup>>> GroupTrees;
+        private static Dictionary<uint, Dictionary<SceneBlock, PointOctree<SceneGroup>>> GroupTrees;
 
         public static Task<Scene> CreateAsync(World world, SceneData sceneData)
         {
@@ -125,9 +125,9 @@ namespace Weedwacker.GameServer.Systems.World
             {
                 return entity;
             }
-            else if (ScriptEntities.TryGetValue(id, out ScriptEntity scriptEntity))
+            else if (ScriptEntities.TryGetValue(id, out IScriptEntity? scriptEntity))
             {
-                return scriptEntity;
+                return (BaseEntity?)scriptEntity;
             }
             else
                 return null;
@@ -140,13 +140,13 @@ namespace Weedwacker.GameServer.Systems.World
 
         public bool IsInScene(SceneEntity entity) => Entities.ContainsKey(entity.EntityId);
 
-        public async Task UpdateActiveAreaWeathersAsync(Tuple<int, int> areaIDs)
+        public async Task UpdateActiveAreaWeathersAsync(Tuple<uint, uint> areaIDs)
         {
             //TODO update based on host's weather and quest progression
             await BroadcastPacketAsync(new PacketSceneAreaWeatherNotify(ClimateType.CLIMATE_SUNNY, 1));
         }
 
-        public async Task AddPlayerAsync(Player.Player player, EnterReason reason, Vector3 newPosition, EnterType type = EnterType.Self, int oldSceneId = default, Vector3 oldPos = default, Vector3 newRot = default)
+        public async Task AddPlayerAsync(Player.Player player, EnterReason reason, Vector3 newPosition, EnterType type = EnterType.Self, uint oldSceneId = default, Vector3 oldPos = default, Vector3 newRot = default)
         {
             // Check if player already in
             if (Players.Contains(player))
@@ -259,15 +259,15 @@ namespace Weedwacker.GameServer.Systems.World
 
         private async Task AddEntityDirectly(SceneEntity entity)
         {
-            if (entity is ScriptEntity scriptEntity && scriptEntity.GroupId != 0 && !ScriptEntities.ContainsKey(entity.EntityId)) // need an extra check against client gadgets. Oh if only I could do multiple inheritance
+            if (entity is IScriptEntity scriptEntity && scriptEntity.GroupId != 0 && !ScriptEntities.ContainsKey(entity.EntityId))
             {
-                ScriptEntities.TryAdd(scriptEntity.EntityId, scriptEntity);
-                await entity.OnCreateAsync(); // Call entity create event
+                ScriptEntities.TryAdd(entity.EntityId, scriptEntity);
+                await entity.OnCreateAsync();
             }
             else if(!Entities.ContainsKey(entity.EntityId))
             {
                 Entities.TryAdd(entity.EntityId, entity);
-                await entity.OnCreateAsync(); // Call entity create event
+                await entity.OnCreateAsync();
             }
         }
 
@@ -302,7 +302,7 @@ namespace Weedwacker.GameServer.Systems.World
 
         public async Task<bool> RemoveEntityAsync(SceneEntity entity, Shared.Network.Proto.VisionType visionType = Shared.Network.Proto.VisionType.Die)
         {
-            if (ScriptEntities.Remove(entity.EntityId, out ScriptEntity idc) || Entities.Remove(entity.EntityId, out BaseEntity idc2))
+            if (ScriptEntities.Remove(entity.EntityId, out IScriptEntity idc) || Entities.Remove(entity.EntityId, out BaseEntity idc2))
             {
                 await BroadcastPacketAsync(new PacketSceneEntityDisappearNotify(entity, visionType));
                 return true;
@@ -311,7 +311,7 @@ namespace Weedwacker.GameServer.Systems.World
         }
         public async Task RemoveEntitiesAsync(IEnumerable<SceneEntity> entity, Shared.Network.Proto.VisionType visionType)
         {
-            var toRemove = entity.Where(w => ScriptEntities.Remove(w.EntityId, out ScriptEntity idc) || Entities.Remove(w.EntityId, out BaseEntity idc2));
+            var toRemove = entity.Where(w => ScriptEntities.Remove(w.EntityId, out IScriptEntity idc) || Entities.Remove(w.EntityId, out BaseEntity idc2));
             if (toRemove.Any())
             {
                 await BroadcastPacketAsync(new PacketSceneEntityDisappearNotify(toRemove, visionType));
@@ -330,7 +330,7 @@ namespace Weedwacker.GameServer.Systems.World
             List<SceneEntity> entities = new();
             SceneEntity currentEntity = player.TeamManager.CurrentAvatarEntity;
 
-            foreach (SceneEntity entity in Entities.Values.Concat(ScriptEntities.Values).Where(w => w is SceneEntity))
+            foreach (SceneEntity entity in Entities.Values.Concat(ScriptEntities.Values.Select(w => w as SceneEntity)).Where(x => x is SceneEntity))
             {
                 if (entity == currentEntity)
                 {
@@ -469,7 +469,7 @@ namespace Weedwacker.GameServer.Systems.World
             }
         }
 
-        public async Task AddItemEntity(int itemId, int amount, SceneEntity bornForm)
+        public async Task AddItemEntity(uint itemId, int amount, SceneEntity bornForm)
         {
             if (!GameData.ItemDataMap.TryGetValue(itemId, out ItemData itemData))
             {

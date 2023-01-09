@@ -7,13 +7,13 @@ namespace Weedwacker.GameServer.Packet.Send
 {
     internal class PacketWeaponPromoteRsp : BasePacket
     {
-        public PacketWeaponPromoteRsp(WeaponItem item, int oldPromoteLevel) : base(OpCode.WeaponPromoteRsp)
+        public PacketWeaponPromoteRsp(WeaponItem item, uint oldPromoteLevel) : base(OpCode.WeaponPromoteRsp)
         {
             WeaponPromoteRsp proto = new()
             {
                 TargetWeaponGuid = item.Guid,
-                OldPromoteLevel = (uint)oldPromoteLevel,
-                CurPromoteLevel = (uint)item.PromoteLevel
+                OldPromoteLevel = oldPromoteLevel,
+                CurPromoteLevel = item.PromoteLevel
             };
             Data = proto.ToByteArray();
         }

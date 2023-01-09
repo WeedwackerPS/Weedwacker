@@ -11,13 +11,13 @@ namespace Weedwacker.GameServer.Systems.Script.Scene
     internal class SceneGroup
     {
         private Lua LuaState;
-        private int SceneId;
+        private uint SceneId;
         public readonly uint BlockId;
 
         public readonly uint group_id;
         public SortedDictionary<uint, Monster>? monsters;
         public SortedList<uint, Npc>? npcs;
-        public SortedList<uint, Gadget>? gadgets;
+        public Dictionary<uint, Gadget>? gadgets; // config_id
         public List<Region>? regions;
         public List<Trigger>? triggers;
         public List<Variable>? variables;
@@ -32,15 +32,20 @@ namespace Weedwacker.GameServer.Systems.Script.Scene
             {
                 Suite init_suite = suites[init_config.suite];
                 if (!init_suite.monsters.Any()) return;
-                var monsterEntities = new List<MonsterEntity>();
+                var entities = new List<SceneEntity>();
                 foreach (uint monsterIndex in init_suite.monsters)
                 {
                     Monster monster = monsters[monsterIndex];
-                    var entity = await MonsterEntity.CreateAsync(scene, GameData.MonsterDataMap[(int)monster.monster_id], (int)monster.level, monster, BlockId, group_id);
-                    monsterEntities.Add(entity);
+                    var entity = await MonsterEntity.CreateAsync(scene, GameData.MonsterDataMap[monster.monster_id], monster.level, monster, BlockId, group_id);
+                    entities.Add(entity);
                 }
-                await scene.AddEntitiesAsync(monsterEntities);
-                Logger.DebugWriteLine($"Loaded SceneGroup{group_id} init monsters");
+                foreach(uint configId in init_suite.gadgets)
+                {
+                    //var gadget = await BaseGadgetEntity.CreateAsync()
+                }
+
+                await scene.AddEntitiesAsync(entities);
+                Logger.DebugWriteLine($"Loaded SceneGroup{group_id} init_config");
             }
             catch(Exception e)
             {
@@ -51,7 +56,7 @@ namespace Weedwacker.GameServer.Systems.Script.Scene
 
         internal async void OnUnload(World.Scene scene)
         {
-            IEnumerable<ScriptEntity> toUnload = scene.ScriptEntities.Values.Where(w => w.GroupId == group_id);
+            IEnumerable<SceneEntity> toUnload = scene.ScriptEntities.Values.Where(w => w.GroupId == group_id).Select(w => w as SceneEntity);
             await scene.RemoveEntitiesAsync(toUnload, Shared.Network.Proto.VisionType.Remove);
             Logger.DebugWriteLine($"Unloaded SceneGroup{group_id} monsters");
         }
@@ -243,13 +248,13 @@ namespace Weedwacker.GameServer.Systems.Script.Scene
             public uint final_point;
         }
 
-        internal static Task<SceneGroup?> CreateAsync(Lua luaState, int sceneId, uint blockId, uint id, FileInfo fileInfo)
+        internal static Task<SceneGroup?> CreateAsync(Lua luaState, uint sceneId, uint blockId, uint id, FileInfo fileInfo)
         {
             SceneGroup group = new(luaState, sceneId, blockId, id);
             return group.InitializeAsync(fileInfo);
         }
 
-        private SceneGroup(Lua luaState, int sceneId, uint blockId, uint groupId)
+        private SceneGroup(Lua luaState, uint sceneId, uint blockId, uint groupId)
         {
             LuaState = luaState;
             SceneId = sceneId;
@@ -286,7 +291,7 @@ namespace Weedwacker.GameServer.Systems.Script.Scene
             if (LuaState[$"_SCENE_GROUP{group_id}.{nameof(npcs)}"] != null)
                 npcs = new SortedList<uint, Npc>(LuaState.GetTableDict(LuaState.GetTable($"_SCENE_GROUP{group_id}.{nameof(npcs)}")).ToDictionary(w => (uint)(long)w.Key, w => new Npc(w.Value as LuaTable)));
             if (LuaState[$"_SCENE_GROUP{group_id}.{nameof(gadgets)}"] != null)
-                gadgets = new SortedList<uint, Gadget>(LuaState.GetTableDict(LuaState.GetTable($"_SCENE_GROUP{group_id}.{nameof(gadgets)}")).ToDictionary(w => (uint)(long)w.Key, w => new Gadget(w.Value as LuaTable)));
+                gadgets = LuaState.GetTableDict(LuaState.GetTable($"_SCENE_GROUP{group_id}.{nameof(gadgets)}")).ToDictionary(w => (uint)(long)w.Key, w => new Gadget(w.Value as LuaTable)).ToDictionary(w => w.Value.config_id, w => w.Value);
             if (LuaState[$"_SCENE_GROUP{group_id}.{nameof(regions)}"] != null)
                 regions = new List<Region>(LuaState.GetTableDict(LuaState.GetTable($"_SCENE_GROUP{group_id}.{nameof(regions)}")).Values.Select(w => new Region(w as LuaTable)));
             if (LuaState[$"_SCENE_GROUP{group_id}.{nameof(triggers)}"] != null)

@@ -6,10 +6,10 @@ namespace Weedwacker.GameServer.Data.Excel
     [Resource("OpenStateConfigData.json")]
     internal class OpenStateData
     {
-        [JsonProperty] public readonly int id; // maps to OpenStateType enum
+        [JsonProperty] public readonly uint id; // maps to OpenStateType enum
         [JsonProperty] public readonly bool defaultState;
         [JsonProperty] public readonly bool allowClientOpen;
-        [JsonProperty] public readonly int systemOpenUiId;
+        [JsonProperty] public readonly uint systemOpenUiId;
         [JsonProperty] public readonly OpenStateCond[] cond;
 
         public class OpenStateCond

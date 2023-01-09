@@ -14,7 +14,7 @@ namespace Weedwacker.GameServer.Systems.Script
         public static int SetGadgetStateByConfigId(ScriptLibContext context, int configId, int gadgetState)
         {
             Logger.DebugWriteLine($"[LUA] Call SetGadgetStateByConfigId with {configId},{gadgetState}");
-            IEnumerable<ScriptEntity> entities = context.SceneScriptManager.Scene.ScriptEntities.Values.Where(w => w.GetType() == typeof(ScriptGadgetEntity)).Where(s => s.ConfigId == configId);
+            IEnumerable<IScriptEntity> entities = context.SceneScriptManager.Scene.ScriptEntities.Values.Where(w => w.GetType() == typeof(ScriptGadgetEntity)).Where(s => s.ConfigId == configId);
 
             if (entities.Any())
             {
@@ -30,7 +30,7 @@ namespace Weedwacker.GameServer.Systems.Script
         {
             Logger.DebugWriteLine($"[LUA] Call SetGroupGadgetStateByConfigId with {groupId},{configId},{gadgetState}");
 
-            IEnumerable<ScriptEntity> entities = context.SceneScriptManager.Scene.ScriptEntities.Values.Where(w => w.GroupId == groupId && w is ScriptGadgetEntity);
+            IEnumerable<IScriptEntity> entities = context.SceneScriptManager.Scene.ScriptEntities.Values.Where(w => w.GroupId == groupId && w is ScriptGadgetEntity);
 
             if (entities.Any())
             {
@@ -47,7 +47,7 @@ namespace Weedwacker.GameServer.Systems.Script
             var table = options as LuaTable;
             Logger.DebugWriteLine($"[LUA] Call SetWorktopOptionsByGroupId with {groupId},{configId},{PrintTable(table)}");
 
-            IEnumerable<ScriptEntity> entities = context.SceneScriptManager.Scene.ScriptEntities.Values.Where(w => w.GroupId == groupId && w.ConfigId == configId && w is GadgetWorktop);
+            IEnumerable<IScriptEntity> entities = context.SceneScriptManager.Scene.ScriptEntities.Values.Where(w => w.GroupId == groupId && w.ConfigId == configId && w is GadgetWorktopEntity);
 
             if (entities.Any())
             {
@@ -72,10 +72,10 @@ namespace Weedwacker.GameServer.Systems.Script
         {
             Logger.DebugWriteLine($"[LUA] Call DelWorktopOptionByGroupId with {groupId},{configId},{option}");
 
-            IEnumerable<ScriptEntity> gadget = context.SceneScriptManager.Scene.ScriptEntities.Values
+            IEnumerable<IScriptEntity> gadget = context.SceneScriptManager.Scene.ScriptEntities.Values
                     .Where(w => w.ConfigId == configId && w.GroupId == groupId);
 
-            if (!(gadget is GadgetWorktop worktop))
+            if (!(gadget is GadgetWorktopEntity worktop))
             {
                 return 1;
             }
@@ -234,7 +234,7 @@ namespace Weedwacker.GameServer.Systems.Script
                 return 1;
             }
 
-            IEnumerable<ScriptEntity> entities = context.SceneScriptManager.Scene.ScriptEntities.Values.Where(w => w.ConfigId == configId);
+            IEnumerable<IScriptEntity> entities = context.SceneScriptManager.Scene.ScriptEntities.Values.Where(w => w.ConfigId == configId);
             if (!entities.Any())
             {
                 return 0;
@@ -481,13 +481,13 @@ namespace Weedwacker.GameServer.Systems.Script
         {
             Logger.DebugWriteLine($"[LUA] Call RemoveEntityByConfigId");
 
-            IEnumerable<ScriptEntity> entities = context.SceneScriptManager.Scene.ScriptEntities.Values
-                .Where(w => w.GroupId == groupId && w.ConfigId == configId && w.GetEntityType() == entityType);
+            IEnumerable<IScriptEntity> entities = context.SceneScriptManager.Scene.ScriptEntities.Values
+                .Where(w => w.GroupId == groupId && w.ConfigId == configId && (w as SceneEntity).GetEntityType() == entityType);
 
             if (entities.Any())
             {
                 foreach (var entity in entities)
-                    context.SceneScriptManager.Scene.RemoveEntityAsync(entity);
+                    context.SceneScriptManager.Scene.RemoveEntityAsync(entity as SceneEntity);
 
                 return 0;
             }

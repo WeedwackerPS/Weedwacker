@@ -18,7 +18,7 @@ namespace Weedwacker.GameServer.Systems.Player
 
         public async Task OnPlayerCreate()
         {
-            foreach (int openState in DEFAULT_OPEN_STATES)
+            foreach (uint openState in DEFAULT_OPEN_STATES)
             {
                 await SetOpenStateAsync(openState, 1);
             }
@@ -36,9 +36,9 @@ namespace Weedwacker.GameServer.Systems.Player
         }
 
         // Set of open states that are set per default for all accounts.
-        public static HashSet<int> DEFAULT_OPEN_STATES = new HashSet<int>(GameData.OpenStateDataMap.Where(w => w.Value.defaultState == true).Select(s => s.Key));
+        public static HashSet<uint> DEFAULT_OPEN_STATES = new HashSet<uint>(GameData.OpenStateDataMap.Where(w => w.Value.defaultState == true).Select(s => s.Key));
 
-        public async Task SetOpenStateAsync(int openState, int value, bool sendNotify = true)
+        public async Task SetOpenStateAsync(uint openState, int value, bool sendNotify = true)
         {
             int previousValue = Owner.ProgressManager.OpenStates.GetValueOrDefault((OpenStateType)openState, 0);
 
@@ -111,14 +111,14 @@ namespace Weedwacker.GameServer.Systems.Player
         **********/
         public async Task<bool> SetOpenStateFromClientAsync(uint openState, uint value)
         {
-            OpenStateData data = GameData.OpenStateDataMap[(int)openState];
+            OpenStateData data = GameData.OpenStateDataMap[openState];
 
             // Make sure that this is an open state that the client is allowed to set,
             // and that it doesn't have any further conditions attached.
             if (data != null && data.allowClientOpen && AreConditionsMet(data))
             {
                 // Set.
-                await SetOpenStateAsync((int)openState, (int)value);
+                await SetOpenStateAsync(openState, (int)value);
                 return true;
             }
             else

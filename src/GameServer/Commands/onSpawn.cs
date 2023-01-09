@@ -6,43 +6,33 @@ namespace Weedwacker.GameServer.Commands
 {
     public static partial class ConsoleCommands
     {
-        public static async Task OnSpawn(IConsole console,int guid, int id) // GameUid, id
+        public static async Task OnSpawn(IConsole console, int guid, int id) // GameUid, id
         {
-            if (!GameServer.OnlinePlayers.ContainsKey(guid))
+            if (!GameServer.OnlinePlayers.ContainsKey((uint)guid))
             {
                 Console.WriteLine("Player isn't online or doesn't exist");
                 return ;
             }
-            var scene = GameServer.OnlinePlayers[guid].Player.Scene;
+            var scene = GameServer.OnlinePlayers[(uint)guid].Player.Scene;
 
-#if false
-            if (args.Length >= 3 && !int.TryParse(args[2], out int posOffset))
+            if (GameData.MonsterDataMap.ContainsKey((uint)id))
             {
-                return "posOffset NAN";
+                await scene.AddEntityAsync(await MonsterEntity.CreateAsync(scene, GameServer.OnlinePlayers[(uint)guid].Player, GameData.MonsterDataMap[(uint)id], 3));
             }
-            if (args.Length >= 4 && !int.TryParse(args[3], out int rotOffset))
+            else if (GameData.GadgetDataMap.ContainsKey((uint)id))
             {
-                return "rotOffset NAN";
+                //await scene.AddEntityAsync(new BaseGadgetEntity(scene, id));
             }
-#endif
-            if (GameData.MonsterDataMap.ContainsKey(id))
+            else if (GameData.ItemDataMap.ContainsKey((uint)id))
             {
-                await scene.AddEntityAsync(await MonsterEntity.CreateAsync(scene, GameServer.OnlinePlayers[guid].Player, GameData.MonsterDataMap[id], 3));
-            }
-            else if (GameData.GadgetDataMap.ContainsKey(id))
-            {
-                await scene.AddEntityAsync(new BaseGadgetEntity(scene, id));
-            }
-            else if (GameData.ItemDataMap.ContainsKey(id))
-            {
-                await scene.AddEntityAsync(new ItemEntity(scene, GameServer.OnlinePlayers[guid].Player, GameData.ItemDataMap[id], GameServer.OnlinePlayers[guid].Player.Position, 1));
+                await scene.AddEntityAsync(await ItemEntity.CreateAsync(scene, GameServer.OnlinePlayers[(uint)guid].Player, GameData.ItemDataMap[(uint)id], GameServer.OnlinePlayers[(uint)guid].Player.Position, 1));
             }
             else
                 goto ERROR;
-            Console.WriteLine($"spawn entity {id} for player {guid}");
+            console.WriteLine($"spawn entity {id} for player {guid}");
             return ;
         ERROR:
-            Console.WriteLine($"could not find entity {id}");
+            console.WriteLine($"could not find entity {id}");
             return ;
         }
     }

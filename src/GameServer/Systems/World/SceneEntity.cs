@@ -9,8 +9,8 @@ namespace Weedwacker.GameServer.Systems.World
     {
         public readonly Scene? Scene;
 
-        public abstract Vector3 Position { get; protected set; }
-        public abstract Vector3 Rotation { get; protected set; }
+        public virtual Vector3 Position { get; protected set; }
+        public virtual Vector3 Rotation { get; protected set; }
         public Vector3 Speed { get; protected set; }
 
         public LifeState LiveState { get; protected set; }
@@ -28,6 +28,21 @@ namespace Weedwacker.GameServer.Systems.World
                 else return Scene.World;
             }
         }
+                protected MotionInfo MotionInfo
+        {
+            get
+            {
+                MotionInfo proto = new()
+                {
+                    Pos = new Shared.Network.Proto.Vector() { X = Position.X, Y = Position.Y, Z = Position.Z },
+                    Rot = new Shared.Network.Proto.Vector() { X = Rotation.X, Y = Rotation.Y, Z = Rotation.Z },
+                    Speed = new(), //TODO
+                    State = MotionState
+                };
+
+                return proto;
+            }
+        }
 
         public SceneEntity(Scene? scene)
         {
@@ -40,18 +55,6 @@ namespace Weedwacker.GameServer.Systems.World
         {
             MotionState = state;
             return true;
-        }
-        protected MotionInfo GetMotionInfo()
-        {
-            MotionInfo proto = new()
-            {
-                Pos = new Shared.Network.Proto.Vector() { X = Position.X, Y = Position.Y, Z = Position.Z },
-                Rot = new Shared.Network.Proto.Vector() { X = Rotation.X, Y = Rotation.Y, Z = Rotation.Z },
-                Speed = new(), //TODO
-                State = MotionState
-            };
-
-            return proto;
         }
 
         public virtual async Task<float> HealAsync(float amount)
@@ -117,11 +120,6 @@ namespace Weedwacker.GameServer.Systems.World
                 await OnDeathAsync(default);
         }
 
-        /**
-        * Move this entity to a new position.
-        * @param position The new position.
-        * @param rotation The new rotation.
-        */
         public virtual async Task MoveAsync(EntityMoveInfo moveInfo)
         {
             // Set the position and rotation.
@@ -130,29 +128,15 @@ namespace Weedwacker.GameServer.Systems.World
             if (moveInfo.MotionInfo.Rot != null)
                 Rotation = new Vector3(moveInfo.MotionInfo.Rot.X, moveInfo.MotionInfo.Rot.Y, moveInfo.MotionInfo.Rot.Z);
         }
-        /**
-         * Called when a player interacts with this entity
-         * @param player Player that is interacting with this entity
-         * @param interactReq Interact request protobuf data
-         */
         public virtual async Task OnInteractAsync(Player.Player player, GadgetInteractReq interactReq)
         {
 
         }
-
-
-        /**
-         * Called when this entity is added to the world
-         */
         public virtual async Task OnCreateAsync()
         {
 
         }
 
-        /**
-         * Called when this entity dies
-         * @param killerId Entity id of the entity that killed this entity
-         */
         public virtual async Task OnDeathAsync(uint killerId = default, PlayerDieType dieType = PlayerDieType.KillByMonster)
         {
 

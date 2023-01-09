@@ -8,7 +8,7 @@ namespace Weedwacker.GameServer.Data.Excel
     [Resource("WeaponCurveExcelConfigData.json")]
     internal class WeaponCurveData
     {
-        [JsonProperty] public readonly int level;
+        [JsonProperty] public readonly uint level;
         [JsonProperty] public readonly CurveInfo[] curveInfos;
 
         public Tuple<ArithType, float> GetArith(GrowCurveType type)

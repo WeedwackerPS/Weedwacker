@@ -6,9 +6,7 @@ namespace Weedwacker.GameServer.Data.Excel
     [Resource("RewardExcelConfigData.json")]
     public class RewardData
     {
-        [JsonProperty]
-        public readonly int rewardId;
-        [JsonProperty]
-        public readonly List<ItemParamData> rewardItemList;
+        [JsonProperty] public readonly uint rewardId;
+        [JsonProperty] public readonly ItemParamData[] rewardItemList;
     }
 }

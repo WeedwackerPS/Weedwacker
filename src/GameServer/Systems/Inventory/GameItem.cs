@@ -12,15 +12,15 @@ namespace Weedwacker.GameServer.Systems.Inventory
     {
         [BsonId]
         [BsonElement("_id")]
-        public int Id { get; protected set; }
-        [BsonElement] public int ItemId { get; protected set; }
+        public uint Id { get; protected set; }
+        [BsonElement] public uint ItemId { get; protected set; }
         public int Count;
         [BsonIgnore] public ulong Guid; // Player unique id. Generated each session
         [BsonIgnore] public bool IsNew { get; protected set; } = false;
         [BsonIgnore] public ItemData ItemData => GameData.ItemDataMap[ItemId];
 
 
-        public GameItem(ulong guid, int itemId, int count)
+        public GameItem(ulong guid, uint itemId, int count)
         {
             Guid = guid;
             ItemId = itemId;

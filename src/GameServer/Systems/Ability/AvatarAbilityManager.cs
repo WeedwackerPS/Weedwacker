@@ -4,17 +4,16 @@ using Weedwacker.GameServer.Data.Excel;
 using Weedwacker.GameServer.Systems.Avatar;
 using Weedwacker.GameServer.Systems.World;
 using Weedwacker.Shared.Network.Proto;
-using Weedwacker.Shared.Utils;
 
 namespace Weedwacker.GameServer.Systems.Ability
 {
     internal class AvatarAbilityManager : BaseAbilityManager
     {
         private SkillDepot CurDepot => (Owner as AvatarEntity).Avatar.CurSkillDepot;
-        private int CurDepotId => CurDepot.DepotId;
+        private uint CurDepotId => CurDepot.DepotId;
         protected override Dictionary<uint, ConfigAbility> ConfigAbilityHashMap => CurDepot.Abilities;
 
-        public override Dictionary<string, Dictionary<string, float>?>? AbilitySpecials => CurDepot.AbilitySpecials;
+        public override Dictionary<uint, Dictionary<uint, float>?>? AbilitySpecials => CurDepot.AbilitySpecials;
 
         public override HashSet<string> ActiveDynamicAbilities => CurDepot.ActiveDynamicAbilities;
 
@@ -50,8 +49,8 @@ namespace Weedwacker.GameServer.Systems.Ability
             }
             if (CurDepot.Element != null)
             {
-                int energySkill = CurDepot.EnergySkill;
-                int energySkillLevel = CurDepot.EnergySkillLevel;
+                uint energySkill = CurDepot.EnergySkill;
+                uint energySkillLevel = CurDepot.EnergySkillLevel;
                 AvatarSkillData skillData = (Owner as AvatarEntity).Avatar.Data.SkillData[CurDepotId][energySkill];
                 ProudSkillData proudSkill = (Owner as AvatarEntity).Avatar.Data.ProudSkillData[CurDepotId]
                     .Where(w => w.Value.proudSkillGroupId == skillData.proudSkillGroupId && w.Value.level == energySkillLevel).First().Value;

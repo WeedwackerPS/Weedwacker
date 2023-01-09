@@ -3,7 +3,7 @@
     [ItemUse(Enums.ItemUseOp.ITEM_USE_ACCEPT_QUEST)]
     internal class ItemUseAcceptQuest : BaseItemUse
     {
-        public ItemUseAcceptQuest(Player.Player user, int itemId) : base(user, itemId)
+        public ItemUseAcceptQuest(Player.Player user, uint itemId) : base(user, itemId)
         {
         }
 

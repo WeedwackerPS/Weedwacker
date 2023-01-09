@@ -61,11 +61,35 @@ namespace Weedwacker.GameServer.Database
             valueSerializer: BsonSerializer.SerializerRegistry.GetSerializer<int>());
             BsonSerializer.RegisterSerializer(IntToIntDictionarySerializer);
 
+            var UIntToIntDictionarySerializer = new DictionaryInterfaceImplementerSerializer<Dictionary<uint, int>>(
+            dictionaryRepresentation: DictionaryRepresentation.Document,
+            keySerializer: new UInt32Serializer(BsonType.String),
+            valueSerializer: BsonSerializer.SerializerRegistry.GetSerializer<int>());
+            BsonSerializer.RegisterSerializer(UIntToIntDictionarySerializer);
+
+            var UIntToUIntDictionarySerializer = new DictionaryInterfaceImplementerSerializer<Dictionary<uint, uint>>(
+            dictionaryRepresentation: DictionaryRepresentation.Document,
+            keySerializer: new UInt32Serializer(BsonType.String),
+            valueSerializer: BsonSerializer.SerializerRegistry.GetSerializer<uint>());
+            BsonSerializer.RegisterSerializer(UIntToUIntDictionarySerializer);
+
             var IntToIntSortedListSerializer = new DictionaryInterfaceImplementerSerializer<SortedList<int, int>>(
             dictionaryRepresentation: DictionaryRepresentation.Document,
             keySerializer: new Int32Serializer(BsonType.String),
             valueSerializer: BsonSerializer.SerializerRegistry.GetSerializer<int>());
             BsonSerializer.RegisterSerializer(IntToIntSortedListSerializer);
+
+            var UIntToIntSortedListSerializer = new DictionaryInterfaceImplementerSerializer<SortedList<uint, int>>(
+            dictionaryRepresentation: DictionaryRepresentation.Document,
+            keySerializer: new UInt32Serializer(BsonType.String),
+            valueSerializer: BsonSerializer.SerializerRegistry.GetSerializer<int>());
+            BsonSerializer.RegisterSerializer(UIntToIntSortedListSerializer);
+
+            var UIntToUIntSortedListSerializer = new DictionaryInterfaceImplementerSerializer<SortedList<uint, uint>>(
+            dictionaryRepresentation: DictionaryRepresentation.Document,
+            keySerializer: new UInt32Serializer(BsonType.String),
+            valueSerializer: BsonSerializer.SerializerRegistry.GetSerializer<uint>());
+            BsonSerializer.RegisterSerializer(UIntToUIntSortedListSerializer);
             /* Why is this not default behaviour??? */
 
             DbClient = new MongoClient(GameServer.Configuration.Database.ConnectionUri);
@@ -114,7 +138,7 @@ namespace Weedwacker.GameServer.Database
             await Task.WhenAll(tasks);
         }
 
-        public static async Task<Player?> CreatePlayerFromAccountUidAsync(string accountUid, string heroName = "", int gameUid = 0)
+        public static async Task<Player?> CreatePlayerFromAccountUidAsync(string accountUid, string heroName = "", uint gameUid = 0)
         {
             //Make sure there are no name or id collisions
             var queryResult = await Players.FindAsync(w => w.Profile.HeroName == heroName || w.AccountUid == accountUid || w.GameUid == gameUid);
@@ -129,7 +153,7 @@ namespace Weedwacker.GameServer.Database
             {
                 //Increment the counter
                 var filter = Builders<DatabaseProperties>.Filter.Eq(x => x.NextGameUid, Properties.NextGameUid); // All the documents with (NextUid = Properties.NextUid)
-                var update = Builders<DatabaseProperties>.Update.Inc(x => x.NextGameUid, 1); // Increment counter by 1
+                var update = Builders<DatabaseProperties>.Update.Inc<uint>(x => x.NextGameUid, 1); // Increment counter by 1
                 gameUid = Properties.NextGameUid++;
                 await Database.GetCollection<DatabaseProperties>("dbProperties").UpdateOneAsync(filter, update);
             }
@@ -167,7 +191,7 @@ namespace Weedwacker.GameServer.Database
         }
 
         // Don't create a player when requested by gameUid
-        public static async Task<Player?> GetPlayerByGameUidAsync(int gameUid)
+        public static async Task<Player?> GetPlayerByGameUidAsync(uint gameUid)
         {
             var player = await Players.Find(w => w.GameUid == gameUid).FirstOrDefaultAsync();
             if (player == null) return null;

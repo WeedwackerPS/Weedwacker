@@ -12,10 +12,10 @@ namespace Weedwacker.GameServer.Systems.Inventory
     {
         [BsonIgnore] public new const int InventoryLimit = 1500;
         private static string mongoPathToItems = $"{nameof(InventoryManager.SubInventories)}.{ItemType.ITEM_RELIQUARY}";
-        [BsonElement] private int NextRelicId = 0; // Is it possible to collect 4B items? O.o
+        [BsonElement] private uint NextRelicId = 0; // Is it possible to collect 4B items? O.o
         // Use Mongodb unique (for the player) id for the relics
-        [BsonSerializer(typeof(IntDictionarySerializer<MaterialItem>))]
-        public Dictionary<int, MaterialItem> UpgradeMaterials = new();
+        [BsonSerializer(typeof(UIntDictionarySerializer<MaterialItem>))]
+        public Dictionary<uint, MaterialItem> UpgradeMaterials = new();
 
         public RelicTab(Player.Player owner, InventoryManager inventory) : base(owner, inventory) { }
 
@@ -34,7 +34,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
             }
         }
 
-        public override async Task<GameItem> AddItemAsync(int itemId, int count = 1, int level = 1, int refinement = 0)
+        public override async Task<GameItem> AddItemAsync(uint itemId, int count = 1, uint level = 1, uint refinement = 0)
         {
             if (GameData.ItemDataMap[itemId].itemType == ItemType.ITEM_MATERIAL)
             {

@@ -7,19 +7,19 @@ namespace Weedwacker.GameServer.Data.Excel
     [Resource("ShopGoodsExcelConfigData.json")]
     internal class ShopGoodsData
     {
-        [JsonProperty] public readonly int goodsId;
-        [JsonProperty] public readonly long subTagNameTextMapHash;
-        [JsonProperty] public readonly int shopType;
-        [JsonProperty] public readonly int itemId;
-        [JsonProperty] public readonly int itemCount;
+        [JsonProperty] public readonly uint goodsId;
+        [JsonProperty] public readonly ulong subTagNameTextMapHash;
+        [JsonProperty] public readonly uint shopType;
+        [JsonProperty] public readonly uint itemId;
+        [JsonProperty] public readonly uint itemCount;
         [JsonProperty] public readonly int costScoin;
         [JsonProperty] public readonly int costHcoin;
         [JsonProperty] public readonly int costMcoin;
         [JsonProperty] public readonly ItemParamData[] costItems;
-        [JsonProperty] public readonly int minPlayerLevel;
-        [JsonProperty] public readonly int maxPlayerLevel;
-        [JsonProperty] public readonly int buyLimit;
-        [JsonProperty] public readonly int subTabId;
+        [JsonProperty] public readonly uint minPlayerLevel;
+        [JsonProperty] public readonly uint maxPlayerLevel;
+        [JsonProperty] public readonly uint buyLimit;
+        [JsonProperty] public readonly uint subTabId;
         [JsonProperty] public readonly ShopRefreshType refreshType;
         [JsonProperty] public readonly int refreshParam;
         [JsonProperty] public readonly string? beginTime;
@@ -28,9 +28,9 @@ namespace Weedwacker.GameServer.Data.Excel
         [JsonProperty] public readonly int preconditionParam;
         [JsonProperty] public readonly string[]? preconditionParamList;
         [JsonProperty] public readonly bool preconditionHidden;
-        [JsonProperty] public readonly int minShowLevel;
-        [JsonProperty] public readonly int sortLevel;
-        [JsonProperty] public readonly int secondarySheetId;
+        [JsonProperty] public readonly uint minShowLevel;
+        [JsonProperty] public readonly uint sortLevel;
+        [JsonProperty] public readonly uint secondarySheetId;
         //[JsonProperty] public readonly ??? platformTypeList;
     }
 }

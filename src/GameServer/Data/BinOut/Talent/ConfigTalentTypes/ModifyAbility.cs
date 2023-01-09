@@ -16,7 +16,7 @@ namespace Weedwacker.GameServer.Data.BinOut.Talent
         {
             try
             {
-                float special = abilityManager.AbilitySpecials[abilityName][paramSpecial];
+                float special = abilityManager.AbilitySpecials[Utils.AbilityHash(abilityName)][Utils.AbilityHash(paramSpecial)];
                 if (paramDelta is string deltaString)
                 {
                     string index = Regex.Replace(deltaString, "%", "");
@@ -38,7 +38,7 @@ namespace Weedwacker.GameServer.Data.BinOut.Talent
                         special *= (float)asD;
                 }
 
-                abilityManager.AbilitySpecials[abilityName][paramSpecial] = special;
+                abilityManager.AbilitySpecials[Utils.AbilityHash(abilityName)][Utils.AbilityHash(paramSpecial)] = special;
             }
             catch
             {

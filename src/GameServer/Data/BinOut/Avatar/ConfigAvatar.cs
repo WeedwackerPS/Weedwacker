@@ -1,10 +1,10 @@
 ﻿using Newtonsoft.Json;
-using Weedwacker.GameServer.Data.Common;
+using Weedwacker.GameServer.Data.BinOut.Shared.ConfigEntity;
 
 namespace Weedwacker.GameServer.Data.BinOut.Avatar
 {
-    internal class ConfigAvatar
+    internal class ConfigAvatar// : ConfigCharacter
     {
-        [JsonProperty] public readonly List<TargetAbility> abilities;
+        [JsonProperty] public readonly ConfigEntityAbilityEntry[] abilities;
     }
 }

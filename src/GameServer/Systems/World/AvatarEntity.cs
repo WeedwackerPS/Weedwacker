@@ -222,7 +222,7 @@ namespace Weedwacker.GameServer.Systems.World
 
             if (Scene != null && Avatar.Owner.TeamManager.CurrentAvatarEntity == this)
             {
-                entityInfo.MotionInfo = GetMotionInfo();
+                entityInfo.MotionInfo = MotionInfo;
             }
             else
             {

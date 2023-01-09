@@ -7,7 +7,7 @@ namespace Weedwacker.GameServer.Data
         // To handle $type fields
         public class KnownTypesBinder : ISerializationBinder
         {
-            public IList<Type> KnownTypes { get; set; }
+            public IEnumerable<Type> KnownTypes { get; set; }
 
             public Type BindToType(string assemblyName, string typeName)
             {

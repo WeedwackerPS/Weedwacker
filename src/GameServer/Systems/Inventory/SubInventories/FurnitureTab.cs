@@ -11,8 +11,8 @@ namespace Weedwacker.GameServer.Systems.Inventory
     internal class FurnitureTab : InventoryTab
     {
         [BsonIgnore] public new const int InventoryLimit = 2000;
-        [BsonSerializer(typeof(IntDictionarySerializer<MaterialItem>))]
-        public Dictionary<int, MaterialItem> Materials = new(); // ItemId
+        [BsonSerializer(typeof(UIntDictionarySerializer<MaterialItem>))]
+        public Dictionary<uint, MaterialItem> Materials = new(); // ItemId
 
         private static string mongoPathToItems = $"{nameof(InventoryManager.SubInventories)}.{ItemType.ITEM_FURNITURE}";
         public FurnitureTab(Player.Player owner, InventoryManager inventory) : base(owner, inventory) { }
@@ -34,7 +34,7 @@ namespace Weedwacker.GameServer.Systems.Inventory
         }
 
         //TODO FurnitureItem
-        public override async Task<GameItem?> AddItemAsync(int itemId, int count = 1, int level = 1, int refinement = 0)
+        public override async Task<GameItem?> AddItemAsync(uint itemId, int count = 1, uint level = 1, uint refinement = 0)
         {
 
             if (GameData.ItemDataMap[itemId].itemType == ItemType.ITEM_MATERIAL)

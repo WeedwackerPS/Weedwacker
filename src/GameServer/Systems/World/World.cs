@@ -15,11 +15,11 @@ namespace Weedwacker.GameServer.Systems.World
     {
         public readonly Player.Player Host;
         public HashSet<Player.Player> Players { get; private set; } = new();
-        private readonly Dictionary<int, Scene> Scenes = new();
+        private readonly Dictionary<uint, Scene> Scenes = new();
         public uint LevelEntityId { get; private set; }
         private int NextEntityId = 0;
         private uint NextPeerId = 0;
-        public int WorldLevel { get; private set; }
+        public uint WorldLevel => Host.Profile.WorldLevel;
         public bool IsMultiplayer { get; private set; } = false;
         public uint HostPeerId => Host.PeerId;
         public World(Player.Player owner)
@@ -27,12 +27,11 @@ namespace Weedwacker.GameServer.Systems.World
             Host = owner;
             LevelEntityId = GetNextEntityId(EntityIdType.MPLEVEL);
             AbilityManager = new WorldAbilityManager(this);
-            WorldLevel = owner.Profile.WorldLevel;
             GameServer.RegisterWorld(this);
         }
         public uint GetNextPeerId() => ++NextPeerId;
 
-        public async Task<Scene?> GetSceneById(int sceneId)
+        public async Task<Scene?> GetSceneById(uint sceneId)
         {
             // Get scene normally
             Scene? scene = Scenes.GetValueOrDefault(sceneId);
@@ -135,7 +134,7 @@ namespace Weedwacker.GameServer.Systems.World
             Scenes.Remove(scene.SceneData.id);
         }
 
-        public async Task<bool> TransferPlayerToSceneAsync(Player.Player player, EnterReason enterReason, EnterType enterType, int sceneId, Vector3 teleportTo, Vector3 teleportToRot = default, bool useDefaultBornPosition = true)
+        public async Task<bool> TransferPlayerToSceneAsync(Player.Player player, EnterReason enterReason, EnterType enterType, uint sceneId, Vector3 teleportTo, Vector3 teleportToRot = default, bool useDefaultBornPosition = true)
         {
             if (!GameData.SceneDataMap.TryGetValue(sceneId, out SceneData sceneData))
             {
@@ -143,7 +142,7 @@ namespace Weedwacker.GameServer.Systems.World
             }
 
             Scene? oldScene = player.Scene;
-            int oldSceneId = oldScene == null ? 0 : oldScene.SceneId;
+            uint oldSceneId = oldScene == null ? 0 : oldScene.SceneId;
             Scene newScene = await GetSceneById(sceneId);
 
             if (oldScene != null)

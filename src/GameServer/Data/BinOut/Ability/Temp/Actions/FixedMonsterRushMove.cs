@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Weedwacker.GameServer.Data.BinOut.Shared;
 using Weedwacker.GameServer.Enums;
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
@@ -7,7 +8,7 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.Actions
 	{
 		[JsonProperty] public readonly TargetType target;
 		[JsonProperty] public readonly string[] animatorStateIDs;
-		[JsonProperty] public readonly BaseBornType toPos;
+		[JsonProperty] public readonly ConfigBornType toPos;
 		[JsonProperty] public readonly float maxRange;
 		[JsonProperty] public readonly float timeRange;
     }

@@ -1,24 +1,23 @@
 ﻿using Newtonsoft.Json;
 using Weedwacker.GameServer.Enums;
-using static Weedwacker.GameServer.Data.ResourceAttribute;
 
 namespace Weedwacker.GameServer.Data.Excel
 {
-    [Resource("AvatarSkillExcelConfigData.json", LoadPriority.HIGHEST)]
+    [Resource("AvatarSkillExcelConfigData.json")]
     internal class AvatarSkillData
     {
-        [JsonProperty] public readonly int id;
+        [JsonProperty] public readonly uint id;
         [JsonProperty] public readonly double cdTime;
         [JsonProperty] public readonly float costElemVal;
-        [JsonProperty] public readonly int maxChargeNum;
-        [JsonProperty] public readonly int triggerID;
+        [JsonProperty] public readonly uint maxChargeNum;
+        [JsonProperty] public readonly uint triggerID;
         [JsonProperty] public readonly bool isAttackCameraLock;
         [JsonProperty] public readonly string? dragType;
         [JsonProperty] public readonly bool showIconArrow;
-        [JsonProperty] public readonly int proudSkillGroupId;
+        [JsonProperty] public readonly uint proudSkillGroupId;
         [JsonProperty] public readonly ElementType costElemType;
-        [JsonProperty] public readonly long nameTextMapHash;
-        [JsonProperty] public readonly long descTextMapHash;
+        [JsonProperty] public readonly ulong nameTextMapHash;
+        [JsonProperty] public readonly ulong descTextMapHash;
         [JsonProperty] public readonly string? abilityName;
         [JsonProperty] public readonly string? skillIcon;
         [JsonProperty] public readonly bool isRanged;

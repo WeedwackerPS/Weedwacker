@@ -5,9 +5,7 @@ namespace Weedwacker.GameServer.Data.Common
 {
     internal class PropGrowCurve
     {
-        [JsonProperty]
-        public readonly FightProperty type;
-        [JsonProperty]
-        public readonly GrowCurveType growCurve;
+        [JsonProperty] public readonly FightProperty type;
+        [JsonProperty] public readonly GrowCurveType growCurve;
     }
 }

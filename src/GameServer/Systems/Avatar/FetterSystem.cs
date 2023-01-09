@@ -18,15 +18,15 @@ namespace Weedwacker.GameServer.Systems.Avatar
         [BsonIgnore] private Avatar Avatar; // Loaded by DatabaseManager
         [BsonIgnore] public FetterCharacterCardData CardData => GameServer.AvatarInfo[Avatar.AvatarId].CardData;
         [BsonIgnore] public FetterInfoData FetterInfoData => GameServer.AvatarInfo[Avatar.AvatarId].FetterInfoData; // General info
-        [BsonIgnore] public SortedList<int, FetterStoryData> FetterStoryData => GameServer.AvatarInfo[Avatar.AvatarId].FetterStoryData; // fetterId
-        [BsonIgnore] public SortedList<int, FettersData> FettersData => GameServer.AvatarInfo[Avatar.AvatarId].FettersData; // fetterId
-        [BsonIgnore] public SortedList<int, PhotographPosenameData> PhotographPosenameData => GameServer.AvatarInfo[Avatar.AvatarId].PhotographPosenameData; // fetterId
-        [BsonIgnore] public SortedList<int, PhotographExpressionData> PhotographExpressionData => GameServer.AvatarInfo[Avatar.AvatarId].PhotographExpressionData; // fetterId
-        [BsonIgnore] public SortedList<int, AvatarFetterLevelData> FetterLevelData => GameData.AvatarFetterLevelDataMap; // level Friendship exp breakpoints
+        [BsonIgnore] public Dictionary<uint, FetterStoryData> FetterStoryData => GameServer.AvatarInfo[Avatar.AvatarId].FetterStoryData; // fetterId
+        [BsonIgnore] public Dictionary<uint, FettersData> FettersData => GameServer.AvatarInfo[Avatar.AvatarId].FettersData; // fetterId
+        [BsonIgnore] public Dictionary<uint, PhotographPosenameData> PhotographPosenameData => GameServer.AvatarInfo[Avatar.AvatarId].PhotographPosenameData; // fetterId
+        [BsonIgnore] public Dictionary<uint, PhotographExpressionData> PhotographExpressionData => GameServer.AvatarInfo[Avatar.AvatarId].PhotographExpressionData; // fetterId
+        [BsonIgnore] public static Dictionary<uint, AvatarFetterLevelData> FetterLevelData => GameData.AvatarFetterLevelDataMap; // level Friendship exp breakpoints
         public int FetterLevel { get; private set; } = 1;
         public int FetterExp { get; private set; } = 0;
-        [BsonSerializer(typeof(IntSortedListSerializer<FetterData>))]
-        public SortedList<int, FetterData> FetterStates { get; private set; } = new();
+        [BsonSerializer(typeof(UIntDictionarySerializer<FetterData>))]
+        public Dictionary<uint, FetterData> FetterStates { get; private set; } = new();
 
         public static Task<FetterSystem> CreateAsync(Avatar avatar, Player.Player owner)
         {
@@ -54,7 +54,7 @@ namespace Weedwacker.GameServer.Systems.Avatar
             }
             foreach (PhotographExpressionData expressionData in PhotographExpressionData.Values)
             {
-                FetterStates.Add(expressionData.fetterId, new FetterData() { FetterId = (uint)expressionData.fetterId, FetterState = DEFAULT_STATE });
+                FetterStates.Add(expressionData.fetterId, new FetterData() { FetterId = expressionData.fetterId, FetterState = DEFAULT_STATE });
             }
         }
 
@@ -128,7 +128,7 @@ namespace Weedwacker.GameServer.Systems.Avatar
             }
             return FetterStates[fetter.fetterId].FetterState;
         }
-        private async Task<bool> EvaluateFetterCond(int fetterId, FetterCond cond)
+        private async Task<bool> EvaluateFetterCond(uint fetterId, FetterCond cond)
         {
             switch (cond.condType)
             {

@@ -7,7 +7,7 @@ namespace Weedwacker.GameServer.Systems.Social
 {
     internal class SocialManager
     {
-        [BsonId][BsonElement("_id")] public int OwnerId { get; private set; }
+        [BsonId][BsonElement("_id")] public uint OwnerId { get; private set; }
         [BsonIgnore] private Player.Player Owner;
         [BsonElement] public HashSet<int> ShowAvatarList = new(); // avatarId
         [BsonElement] public bool IsShowAvatar = false;
@@ -41,7 +41,7 @@ namespace Weedwacker.GameServer.Systems.Social
 
             if (ShowAvatarList != null)
             {
-                foreach (int avatarId in ShowAvatarList)
+                foreach (uint avatarId in ShowAvatarList)
                 {
                     Avatar.Avatar avatar = avatars.GetAvatarById(avatarId);
                     showAvatarInfoList.Add(avatar.ToShowAvatarInfoProto());
@@ -50,20 +50,20 @@ namespace Weedwacker.GameServer.Systems.Social
             return showAvatarInfoList;
         }
 
-        public SocialDetail GetSocialDetail(int asker)
+        public SocialDetail GetSocialDetail(uint asker)
         {
             List<SocialShowAvatarInfo> socialShowAvatarInfoList = new();
             if (ShowAvatarList != null)
             {
-                foreach (int avatarId in ShowAvatarList)
+                foreach (uint avatarId in ShowAvatarList)
                 {
                     var avatar = Owner.Avatars.GetAvatarById(avatarId);
                     socialShowAvatarInfoList.Add(
                             new SocialShowAvatarInfo()
                             {
-                                AvatarId = (uint)avatarId,
-                                Level = (uint)avatar.Level,
-                                CostumeId = (uint)avatar.Costume
+                                AvatarId = avatarId,
+                                Level = avatar.Level,
+                                CostumeId = avatar.Costume
                             });
                 }
             }
@@ -71,14 +71,14 @@ namespace Weedwacker.GameServer.Systems.Social
 
             SocialDetail social = new SocialDetail()
             {
-                Uid = (uint)Owner.GameUid,
+                Uid = Owner.GameUid,
                 ProfilePicture = Owner.Profile.HeadImage,
                 Nickname = Owner.Profile.Nickname,
                 Signature = Owner.Profile.Signature,
                 Level = (uint)Owner.PlayerProperties[Enums.PlayerProperty.PROP_PLAYER_LEVEL],
                 Birthday = Owner.Profile.Birthday,
                 WorldLevel = (uint)Owner.PlayerProperties.GetValueOrDefault(Enums.PlayerProperty.PROP_PLAYER_WORLD_LEVEL, 0),
-                NameCardId = (uint)Owner.Profile.NameCardId,
+                NameCardId = Owner.Profile.NameCardId,
                 IsShowAvatar = IsShowAvatar,
                 /* TODO
                 FinishAchievementNum =,

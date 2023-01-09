@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using Weedwacker.GameServer.Data.Common;
+using Weedwacker.GameServer.Data.BinOut.Shared;
 
 namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
 {
@@ -7,6 +7,6 @@ namespace Weedwacker.GameServer.Data.BinOut.Ability.Temp.AbilityMixins
     {
         [JsonProperty] public readonly string attackID;
         [JsonProperty] public readonly float interval;
-        [JsonProperty] public readonly AttackInfo attackInfo;
+        [JsonProperty] public readonly ConfigAttackInfo attackInfo;
     }
 }
