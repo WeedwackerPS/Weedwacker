@@ -253,16 +253,9 @@ namespace Weedwacker.GameServer.Data
             ScriptPath = Path.Combine(resourcesPath, "Scripts/");
 
             string binout = "Weedwacker.GameServer.Data.BinOut";
-            string abilityTemp = "Weedwacker.GameServer.Data.BinOut.Ability.Temp";
-            string[] nspaces = { abilityTemp, $"{abilityTemp}.AbilityMixins", $"{abilityTemp}.Actions", $"{abilityTemp}.AttackPatterns", $"{abilityTemp}.Bullets",
-                $"{abilityTemp}.DirectionTypes", $"{abilityTemp}.EventOps", $"{abilityTemp}.Predicates", $"{abilityTemp}.SelectTargetType", $"{abilityTemp}.Shapes",
-                $"{binout}.AbilityGroup", $"{binout}.Avatar", $"{binout}.Gadget", $"{binout}.Scene.Point", $"{binout}.Scene.SceneNpcBorn", $"{binout}.Shared",
-                $"{binout}.Shared.BornTypes", $"{binout}.Shared.ConfigEntity", $"{binout}.Shared.ConfigEntity.ConfigEffectAttach", $"{binout}.Shared.ConfigEntity.ConfigMoveType",
-                $"{binout}.Shared.ConfigEntity.ConfigMoveType.ConfigBulletMoveAngleType", $"{binout}.Shared.ConfigEntity.ConfigMoveType.ConfigMoveCorrectionType", $"{binout}.Talent",
-                $"{binout}.Gadget.ConfigGadgetPatternType", $"{binout}.Gadget.ConfigGadgetTriggerActionType" };
 
             var q = from t in Assembly.GetExecutingAssembly().GetTypes()
-                    where t.IsClass && nspaces.Contains(t.Namespace)
+                    where t.IsClass && t.Namespace != null && t.Namespace.StartsWith(binout)
                     select t;
             var arr = q.ToArray();
             var binder = new KnownTypesBinder() { KnownTypes = q };
